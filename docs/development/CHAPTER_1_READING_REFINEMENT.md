@@ -3,6 +3,10 @@
 Baseline: `0f243ef`. Review branch: `feature/chapter1-reading-navigation`.
 Scope: Chapter 1 interface and navigation only. Production remains on `main`; this branch is prepared for review before merging.
 
+Implementation commit: `cc54ba36c584d29b48e84cfe98c24370a2b6d3c9`.
+Verified preview: https://f38e2dc9.itpecfetextbook.pages.dev/ (branch alias: https://feature-chapter1-reading-nav.itpecfetextbook.pages.dev/).
+No automatic preview appeared after the push, so the verified production build was uploaded with Wrangler using the feature branch explicitly. Cloudflare confirmed environment `preview`, that implementation commit, and successful deployment. The production deployment remains `0ae0ac1b` at baseline `0f243ef`.
+
 ## Reading experience
 
 The home and Chapter 1 routes now show `CHAPTER 1`, `Hardware`, and the original content beginning on printed page 13. The duplicate landing introduction, Start button, inline contents overview, separate Memory & Cache entry, repeated source-edition introduction, and header/footer slogans have been removed. Section routes begin with their original source heading and a small chapter breadcrumb. Printed page badges and figure captions use `p. …`; the edition remains identified at the end of each section.
@@ -52,6 +56,7 @@ Executed on 2026-10-21:
 | `npm run test:accounts` | 3 passed against local Auth/Firestore emulators |
 | `npm run build` | 24 static pages; source, question, asset, and publication checks passed |
 | `git diff --check` | Passed |
+| `node scripts/verify-reading-preview.mjs https://f38e2dc9.itpecfetextbook.pages.dev` | Passed: 7 readers, all 200 source hashes, all source text hashes, published bank, 52 contents links, guest practice and 4 viewport sizes; no browser errors |
 
 Browser coverage includes original hierarchy and page references, section/subsection links, scrolling selection, native Back/Forward, keyboard disclosure/link/focus behavior, legacy cache URLs and historical checkpoints, related question/video counts, blocked storage, guest persistence, exact source-figure offsets, question answers/explanations/navigation/zoom, and non-JavaScript readers. Layout checks cover 320, 375, 414, 768, 1024, 1280, and 1440px across the suite and preview verification. Account scenarios cover Google popup sign-in, guest migration, legacy subsection completion across devices, offline retry, multiple tabs, account isolation, and exact cross-device source-figure restoration.
 
@@ -60,6 +65,8 @@ Screenshots and traces are local, outside the public build:
 - `.local/reading-refinement-e2e/`: browser regression screenshots.
 - `test-results/accounts/`: emulator account screenshots.
 - `.local/reading-review/`: hosted preview desktop/mobile/tablet screenshots and `preview-check.json` recording the verified URL and checks.
+
+Hosted screenshots were visually reviewed: `desktop.png`, `cache-desktop.png`, `mobile.png`, `mobile-tools.png`, and `tablet.png` in `.local/reading-review/`. Original figures, readable source text, current-section selection, and the collapsed mobile controls were retained. The implementation is ready for review and merge; merging and production publication remain a separate step.
 
 Run the hosted preview verification after Pages finishes building the branch:
 
