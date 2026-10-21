@@ -1,0 +1,26 @@
+[
+  {
+    "id": "cache-memory",
+    "title": "Cache memory",
+    "sectionId": "fe-v1-ch01-memory-cache",
+    "sectionUrl": "/chapters/hardware/memory-and-cache/",
+    "summary": "Understand cache hits and misses, then use a weighted average to reason about memory access time.",
+    "questionIds": ["2024A-A-Q009", "2025S-A-Q010", "2026S-A-Q010"],
+    "mappingEvidence": [
+      { "questionId": "2024A-A-Q009", "reason": "The original question asks for average memory access time given cache and main-memory timings and a cache miss ratio.", "reviewedAgainst": ["original question image", "processed topic and notes", "2024A_FE-A_Answers.pdf Q9"] },
+      { "questionId": "2025S-A-Q010", "reason": "The original question asks for a shared cache hit ratio from two systems with equal effective memory access times.", "reviewedAgainst": ["original question image", "processed topic and notes", "2025S_FE-A_Answers.pdf Q10"] },
+      { "questionId": "2026S-A-Q010", "reason": "The original question directly tests whether a cache miss fetches data from main memory.", "reviewedAgainst": ["original question image", "processed topic and notes", "2026S_FE-A_Answers.pdf Q10"] }
+    ],
+    "videos": [
+      {
+        "id": "legacy-a-memory-hierarchy",
+        "title": "HDD, RAM, register & cache",
+        "platform": "telegram",
+        "url": "https://t.me/itpecmm/101",
+        "conceptIds": ["cache-memory"],
+        "questionIds": [],
+        "source": "Existing src/data/lectureResources.js: memory-hierarchy, tagged cache and memory-hierarchy. Topic lesson, not a question-specific solution."
+      }
+    ]
+  }
+]

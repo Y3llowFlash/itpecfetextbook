@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /progress/
+Sitemap: https://itpecfetextbook.com/sitemap.xml

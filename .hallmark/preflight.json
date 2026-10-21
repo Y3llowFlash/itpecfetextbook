@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-21",
+  "existingApplication": false,
+  "audience": "ITPEC FE students",
+  "use": "Free textbook reading and linked past-question practice",
+  "genre": "editorial",
+  "macrostructure": "Long Document",
+  "theme": "Almanac",
+  "fonts": ["Newsreader", "IBM Plex Sans"],
+  "motion": "none apart from button press",
+  "constraint": "Preserve the requested three-column learning layout; narrow screens collapse navigation and companion."
+}

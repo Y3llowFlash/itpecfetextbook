@@ -1,0 +1,48 @@
+[
+  {
+    "questionId": "2024A-A-Q009", "revision": "1", "answer": "b",
+    "summary": "The hit ratio is 0.8, so the average access time is 0.8 × 75 + 0.2 × 1500 = 360 ns.",
+    "steps": [
+      "The miss ratio is 0.2. Therefore the hit ratio is 1 − 0.2 = 0.8.",
+      "A hit takes 75 ns; the main-memory path takes 1500 ns. The question explicitly says that 1500 ns already includes checking the cache.",
+      "Weight the complete paths by their probabilities: 0.8 × 75 ns + 0.2 × 1500 ns = 60 ns + 300 ns = 360 ns.",
+      "Option a (315 ns) does not match these timings. Options c and d put too much weight on the slow path. The given 0.2 is the miss ratio, not the hit ratio."
+    ],
+    "takeaway": "Read what the miss time includes. Do not add the cache-check time a second time.",
+    "optionText": { "a": "315 ns", "b": "360 ns", "c": "1,215 ns", "d": "1,260 ns" },
+    "imageDescription": "Cache memory takes 75 ns; main memory takes 1500 ns including the cache check. The miss ratio is 0.2. Find the approximate average access time.",
+    "reviewedAgainst": ["2024A-A-Q009 original image", "2024A_FE-A_Answers.pdf Q9: b", "independent weighted-average calculation"]
+  },
+  {
+    "questionId": "2025S-A-Q010", "revision": "1", "answer": "c",
+    "summary": "Equating the two weighted access times gives a cache hit ratio of 5/6, approximately 0.83.",
+    "steps": [
+      "Let h be the shared hit ratio. Under the weighted-path model, system A takes 14h + 80(1 − h) ns. System B takes 12h + 90(1 − h) ns.",
+      "The effective times are equal: 80 − 66h = 90 − 78h. Rearranging gives 12h = 10, so h = 10/12 = 5/6 ≈ 0.83.",
+      "Check: system A takes 14 × 5/6 + 80 × 1/6 = 25 ns. System B takes 12 × 5/6 + 90 × 1/6 = 25 ns.",
+      "Option a, 0.17, approximates the miss ratio 1 − h. Option b does not make the effective times equal; at h = 1 (option d), the times would be 14 ns and 12 ns."
+    ],
+    "takeaway": "Write a separate weighted average for each system, then equate them. The answer requested is the hit ratio.",
+    "optionText": { "a": "0.17", "b": "0.20", "c": "0.83", "d": "1.00" },
+    "imageDescription": "System A: cache 14 ns, main memory 80 ns. System B: cache 12 ns, main memory 90 ns. Both have the same effective access time and hit ratio. Find the approximate hit ratio.",
+    "reviewedAgainst": ["2025S-A-Q010 original image", "2025S_FE-A_Answers.pdf Q10: c", "independent algebra and substitution"]
+  },
+  {
+    "questionId": "2026S-A-Q010", "revision": "1", "answer": "d",
+    "summary": "A cache miss means the requested data is not in the cache. In this question's cache/main-memory model, the CPU fetches it from main memory.",
+    "steps": [
+      "A cache hit means the requested data is available in the cache, so it can be served there. Fetching it from ROM or main memory is not the defining action of a hit.",
+      "A cache miss means the requested data is absent from the cache. It cannot be supplied by that cache, which rules out option c.",
+      "The CPU must obtain the missing data from the next level of the memory hierarchy, main memory in this question. That is option d. Real processors can have additional cache levels before RAM."
+    ],
+    "takeaway": "Hit: data found in the cache. Miss: continue to the next level of the memory hierarchy.",
+    "optionText": {
+      "a": "On a cache hit, fetch data from ROM.",
+      "b": "On a cache hit, fetch data from main memory.",
+      "c": "On a cache miss, fetch data from cache memory.",
+      "d": "On a cache miss, fetch data from main memory."
+    },
+    "imageDescription": "Choose the appropriate CPU operation associated with cache memory. The four choices pair a cache hit or miss with fetching from ROM, cache or main memory.",
+    "reviewedAgainst": ["2026S-A-Q010 original image", "2026S_FE-A_Answers.pdf Q10: d", "processed topic and notes"]
+  }
+]

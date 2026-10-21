@@ -1,0 +1,14 @@
+{
+  "id": "fe-v1-ch01",
+  "title": "Hardware",
+  "volume": "IT Fundamentals",
+  "number": 1,
+  "structureSource": "New FE Textbook Vol. 1, Chapter 1 table of contents",
+  "sections": [
+    { "id": "fe-v1-ch01-s01", "number": "1.1", "title": "Basic configuration of computers", "status": "planned", "topics": ["History of computers", "Five major units"] },
+    { "id": "fe-v1-ch01-s02", "number": "1.2", "title": "Data representation", "status": "planned", "topics": ["Data representation", "Radix conversion", "Representing data"] },
+    { "id": "fe-v1-ch01-s03", "number": "1.3", "title": "CPU & main memory", "status": "published", "topics": ["CPU configuration", "Main memory", "Instructions & addressing", "Logic circuits", "High-speed technologies"], "lesson": { "id": "fe-v1-ch01-memory-cache", "title": "Memory hierarchy & cache", "url": "/chapters/hardware/memory-and-cache/" } },
+    { "id": "fe-v1-ch01-s04", "number": "1.4", "title": "Auxiliary storage", "status": "planned", "topics": ["Magnetic disks", "Optical discs", "Semiconductor memory"] },
+    { "id": "fe-v1-ch01-s05", "number": "1.5", "title": "Input & output", "status": "planned", "topics": ["Input devices", "Output devices", "Control methods", "Interfaces"] }
+  ]
+}

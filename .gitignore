@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.astro/
+.env
+.env.*
+!.env.example
+*.log
+coverage/
+test-results/
+.local/
+tmp/
+**/__pycache__/
+*.pyc
+.DS_Store

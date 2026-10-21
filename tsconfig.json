@@ -1,0 +1,6 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "include": [".astro/types.d.ts", "**/*"],
+  "exclude": ["dist", "node_modules", "docs"],
+  "compilerOptions": { "jsx": "react-jsx", "resolveJsonModule": true, "types": ["node", "vitest/globals"] }
+}

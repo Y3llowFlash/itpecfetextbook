@@ -1,0 +1,14 @@
+---
+import chapter from '../content/chapters.json';
+interface Props { count: number; home?: boolean }
+const { count, home = false } = Astro.props;
+---
+<article class="chapter-overview">
+  <p class="small-label">IT FUNDAMENTALS · CHAPTER 1</p>
+  <h1>{home ? 'Understand what’s\ninside the computer.' : 'Hardware'}</h1>
+  <p class="page-lede">A free, interactive textbook for ITPEC FE. Build an understanding of the idea, then put it to work with real past-exam questions.</p>
+  <a class="button button-primary" href="/chapters/hardware/memory-and-cache/">Start learning <span aria-hidden="true">→</span></a>
+  <div class="featured-lesson"><p class="small-label">AVAILABLE TO READ</p><h2>Memory hierarchy & cache</h2><p>Discover how registers, cache and main memory work together. Practise cache hits, misses and access-time calculations.</p><a href="/chapters/hardware/memory-and-cache/">Read the lesson →</a><span class="quiet-note">{count} related published exam questions</span></div>
+  <h2>Inside this chapter</h2><ol class="chapter-outline">{chapter.sections.map((section) => <li><span>{section.number}</span><div><h3>{section.title}</h3><p>{section.topics.join(' · ')}</p>{section.lesson ? <a href={section.lesson.url}>Read: {section.lesson.title} →</a> : <small>Planned for a later update</small>}</div></li>)}</ol>
+  <p class="content-note">This first release includes one complete Hardware lesson. Further sections will be added after review. No account is needed to read or practise.</p>
+</article>

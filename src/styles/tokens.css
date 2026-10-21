@@ -1,0 +1,39 @@
+/* Hallmark · macrostructure: Long Document · tone: editorial · anchor hue: warm yellow
+ * theme: Almanac · audience: ITPEC FE students · use: textbook + practice
+ * Hallmark · pre-emit critique: P5 H4 E4 S5 R5 V4
+ * Verified details and limitations are recorded in docs/development/MILESTONE_1.md.
+ */
+:root {
+  --color-paper: oklch(98% 0.009 90);
+  --color-surface: oklch(96% 0.012 90);
+  --color-paper-2: oklch(93.5% 0.016 90);
+  --color-ink: oklch(24% 0.019 255);
+  --color-muted: oklch(46% 0.015 255);
+  --color-rule: oklch(85% 0.014 90);
+  --color-control: oklch(59% 0.014 90);
+  --color-accent: oklch(89% 0.145 93);
+  --color-accent-ink: oklch(24% 0.019 255);
+  --color-accent-soft: oklch(96% 0.065 94);
+  --color-focus: oklch(46% 0.12 255);
+  --color-correct: oklch(36% 0.075 155);
+  --color-correct-bg: oklch(96% 0.026 155);
+  --color-incorrect: oklch(39% 0.12 30);
+  --color-incorrect-bg: oklch(97% 0.02 40);
+  --color-overlay: oklch(20% 0.015 255 / 0.6);
+  --font-display: 'Newsreader Variable', Georgia, serif;
+  --font-body: 'IBM Plex Sans Variable', 'Segoe UI', sans-serif;
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms;
+  --z-sticky: 10;
+  --z-modal: 100;
+}
