@@ -11,6 +11,7 @@ import re
 import shutil
 from collections import defaultdict
 from pathlib import Path
+from urllib.parse import urlsplit
 
 import fitz
 from PIL import Image, ImageDraw
@@ -163,10 +164,13 @@ def render(source, metadata):
     pdf.close()
 
 
-def review_report(metadata):
+def review_report(metadata, reader_origin='https://itpecfetextbook.pages.dev'):
+    origin=urlsplit(reader_origin)
+    if origin.scheme not in {'https','http'} or not origin.netloc or origin.path not in {'','/'} or origin.query or origin.fragment:
+        raise ValueError('The reader origin must be an HTTP(S) origin without a path, query or fragment')
     cards=[];rows=[]
     for r in metadata['regions']:
-        img='assets/'+Path(r['asset']['path']).name;label=html.escape(r['description']);url='https://itpecfetextbook.pages.dev'+r['url']
+        img='assets/'+Path(r['asset']['path']).name;label=html.escape(r['description']);url=html.escape(reader_origin.rstrip('/')+r['url'],quote=True)
         cards.append(f'<article id="{r["id"]}"><h2>{r["id"]} · p. {r["printedPage"]} / PDF {r["pdfPage"]}</h2><p>{label}</p><div class="compare"><a href="context/{r["id"]}.jpg"><img src="context/{r["id"]}.jpg" alt="Original source page with crop boundary"></a><a href="{img}"><img src="{img}" alt="{html.escape(r["alt"],quote=True)}"></a></div><p><a href="{url}">Website location</a> · {r["asset"]["width"]} × {r["asset"]["height"]} · {metadata["dpi"]} dpi · {len(r["sourceBlockIds"])} replaced fragments</p><p>PDF-point crop: {r["bbox"]}</p></article>')
         rows.append(f'| {r["id"]} | {r["printedPage"]} | {r["pdfPage"]} | {r["description"]} | [Source location]({url}) |')
     page=f'<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Chapter 1 spatial crop review</title><style>body{{font:16px/1.6 system-ui;max-width:1500px;margin:auto;padding:24px;background:#f7f5ef}}article{{padding:24px 0;border-bottom:1px solid #aaa}}h2{{font-size:20px}}.compare{{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}}img{{max-width:100%;height:auto;background:white}}@media(max-width:700px){{.compare{{display:block}}}}</style><h1>Chapter 1 · crop-first visual review</h1><p>{len(metadata["regions"])} original regions across {len(set(r["pdfPage"] for r in metadata["regions"]))} pages. Left: original page with the reviewed boundary. Right: exact crop. Context pages remain local; only the original-region crops enter the reader.</p>'+''.join(cards)+'</html>'
@@ -223,12 +227,15 @@ def publish(source, metadata):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('command',choices=['build','verify','publish'])
+    parser.add_argument('command',choices=['build','verify','review','publish'])
     parser.add_argument('--source',type=Path,default=Path(r'D:\ITPEC Old Questions\database\raw\FE Vol 1.pdf'))
+    parser.add_argument('--reader-origin',default='https://itpecfetextbook.pages.dev',help='Reader origin for local gallery links, e.g. a verified feature preview')
     args=parser.parse_args();WORK.mkdir(parents=True,exist_ok=True)
     if args.command=='build':
-        manifest=compile_metadata(args.source);render(args.source,manifest);write_json(WORK/'manifest.json',manifest);review_report(manifest);verify(args.source,manifest)
+        manifest=compile_metadata(args.source);render(args.source,manifest);write_json(WORK/'manifest.json',manifest);review_report(manifest,args.reader_origin);verify(args.source,manifest)
     else:
         manifest=json.loads((WORK/'manifest.json').read_text('utf-8'))
         if args.command=='publish':publish(args.source,manifest)
-        else:verify(args.source,manifest)
+        else:
+            verify(args.source,manifest)
+            if args.command=='review':review_report(manifest,args.reader_origin)
