@@ -1,0 +1,12 @@
+[
+  {
+    "editionId": "new-fe-vol1-2015-04",
+    "title": "New FE Textbook Vol.1",
+    "volume": "IT Fundamentals",
+    "edition": "First Edition, April 2015",
+    "sourceFile": "FE Vol 1.pdf",
+    "sha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+    "contentsPdfPage": 2,
+    "colophonPdfPage": 487
+  }
+]

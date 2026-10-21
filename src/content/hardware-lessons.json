@@ -1,0 +1,545 @@
+[
+  {
+    "id": "fe-v1-ch01-s01",
+    "slug": "basic-configuration",
+    "title": "Basic Configuration of Computers",
+    "number": "1.1",
+    "pages": [
+      13,
+      19
+    ],
+    "description": "Understand computer generations, the stored-program principle and the five major units.",
+    "editionId": "new-fe-vol1-2015-04",
+    "headings": [
+      {
+        "id": "history-of-computers",
+        "title": "History of Computers",
+        "level": 2,
+        "pages": [
+          13,
+          16
+        ]
+      },
+      {
+        "id": "five-major-units",
+        "title": "Five Major Units of Computers",
+        "level": 2,
+        "pages": [
+          16,
+          19
+        ]
+      }
+    ]
+  },
+  {
+    "id": "fe-v1-ch01-s02",
+    "slug": "data-representation",
+    "title": "Data Representation in Computers",
+    "number": "1.2",
+    "pages": [
+      20,
+      45
+    ],
+    "description": "Represent information with bits, convert number bases and reason about signed values, floating point, errors and shifts.",
+    "editionId": "new-fe-vol1-2015-04",
+    "headings": [
+      {
+        "id": "data-representation",
+        "title": "Data Representation",
+        "level": 2,
+        "pages": [
+          20,
+          23
+        ]
+      },
+      {
+        "id": "radix-conversion",
+        "title": "Radix and Radix Conversion",
+        "level": 2,
+        "pages": [
+          23,
+          28
+        ]
+      },
+      {
+        "id": "representation-form",
+        "title": "Representation Form of Data",
+        "level": 2,
+        "pages": [
+          28,
+          45
+        ]
+      },
+      {
+        "id": "character-data",
+        "title": "Character Data",
+        "level": 3,
+        "pages": [
+          29,
+          31
+        ]
+      },
+      {
+        "id": "numeric-data",
+        "title": "Numeric Data",
+        "level": 3,
+        "pages": [
+          31,
+          41
+        ]
+      },
+      {
+        "id": "numeric-error",
+        "title": "Error",
+        "level": 3,
+        "pages": [
+          41,
+          43
+        ]
+      },
+      {
+        "id": "shift-operation",
+        "title": "Shift Operation",
+        "level": 3,
+        "pages": [
+          43,
+          45
+        ]
+      }
+    ]
+  },
+  {
+    "id": "fe-v1-ch01-s03",
+    "slug": "cpu-and-main-memory",
+    "title": "Central Processing Unit and Main Memory Unit",
+    "number": "1.3",
+    "pages": [
+      46,
+      77
+    ],
+    "description": "Follow instructions through the CPU, calculate addresses and bus rates, build logic circuits and compare performance techniques.",
+    "editionId": "new-fe-vol1-2015-04",
+    "headings": [
+      {
+        "id": "cpu-configuration",
+        "title": "Configuration of CPU",
+        "level": 2,
+        "pages": [
+          46,
+          49
+        ]
+      },
+      {
+        "id": "main-memory",
+        "title": "Main Memory Configuration",
+        "level": 2,
+        "pages": [
+          49,
+          52
+        ]
+      },
+      {
+        "id": "memory-devices",
+        "title": "Memory Devices",
+        "level": 3,
+        "pages": [
+          49,
+          51
+        ]
+      },
+      {
+        "id": "memory-components",
+        "title": "Components of Main Memory",
+        "level": 3,
+        "pages": [
+          51,
+          52
+        ]
+      },
+      {
+        "id": "memory-expansion",
+        "title": "Capacity Expansion of Main Memory",
+        "level": 3,
+        "pages": [
+          52,
+          52
+        ]
+      },
+      {
+        "id": "instructions-addressing",
+        "title": "Instruction and Addressing",
+        "level": 2,
+        "pages": [
+          52,
+          61
+        ]
+      },
+      {
+        "id": "instruction-types",
+        "title": "Types and Configuration of Instructions",
+        "level": 3,
+        "pages": [
+          52,
+          54
+        ]
+      },
+      {
+        "id": "instruction-sequence",
+        "title": "Execution Sequence of Instructions",
+        "level": 3,
+        "pages": [
+          54,
+          57
+        ]
+      },
+      {
+        "id": "addressing-modes",
+        "title": "Addressing Mode",
+        "level": 3,
+        "pages": [
+          57,
+          59
+        ]
+      },
+      {
+        "id": "interrupts",
+        "title": "Interrupt",
+        "level": 3,
+        "pages": [
+          59,
+          61
+        ]
+      },
+      {
+        "id": "alu-circuits",
+        "title": "Circuit Configuration of ALU",
+        "level": 2,
+        "pages": [
+          61,
+          70
+        ]
+      },
+      {
+        "id": "logic-circuits",
+        "title": "Logic Circuit",
+        "level": 3,
+        "pages": [
+          61,
+          66
+        ]
+      },
+      {
+        "id": "arithmetic-circuits",
+        "title": "Arithmetic Operation Circuit",
+        "level": 3,
+        "pages": [
+          66,
+          70
+        ]
+      },
+      {
+        "id": "high-speed",
+        "title": "High Speed Technologies",
+        "level": 2,
+        "pages": [
+          70,
+          77
+        ]
+      },
+      {
+        "id": "high-speed-memory",
+        "title": "High Speed Memory Access",
+        "level": 3,
+        "pages": [
+          70,
+          74
+        ]
+      },
+      {
+        "id": "processor-speed",
+        "title": "Speeding-up of Processor",
+        "level": 3,
+        "pages": [
+          74,
+          77
+        ]
+      }
+    ]
+  },
+  {
+    "id": "fe-v1-ch01-s04",
+    "slug": "auxiliary-storage",
+    "title": "Auxiliary Storage",
+    "number": "1.4",
+    "pages": [
+      78,
+      91
+    ],
+    "description": "Compare magnetic, optical and semiconductor storage, then calculate disk capacity and access time.",
+    "editionId": "new-fe-vol1-2015-04",
+    "headings": [
+      {
+        "id": "magnetic-disk",
+        "title": "Magnetic Disk",
+        "level": 2,
+        "pages": [
+          78,
+          86
+        ]
+      },
+      {
+        "id": "disk-capacity",
+        "title": "Storage Capacity of Magnetic Disk Drive",
+        "level": 3,
+        "pages": [
+          80,
+          81
+        ]
+      },
+      {
+        "id": "disk-recording",
+        "title": "Recording Area in Magnetic Disk Drive",
+        "level": 3,
+        "pages": [
+          81,
+          83
+        ]
+      },
+      {
+        "id": "disk-access",
+        "title": "Average Access Time of Magnetic Disk Drive",
+        "level": 3,
+        "pages": [
+          83,
+          86
+        ]
+      },
+      {
+        "id": "optical-disc",
+        "title": "Optical Disc",
+        "level": 2,
+        "pages": [
+          86,
+          88
+        ]
+      },
+      {
+        "id": "semiconductor-storage",
+        "title": "Semiconductor Memory",
+        "level": 2,
+        "pages": [
+          89,
+          90
+        ]
+      },
+      {
+        "id": "other-storage",
+        "title": "Other Auxiliary Storage Media and Drives",
+        "level": 2,
+        "pages": [
+          90,
+          91
+        ]
+      }
+    ]
+  },
+  {
+    "id": "fe-v1-ch01-s05",
+    "slug": "input-output",
+    "title": "Input/Output Unit",
+    "number": "1.5",
+    "pages": [
+      92,
+      111
+    ],
+    "description": "Choose input and output devices, calculate image sizes and compare I/O control methods and interfaces.",
+    "editionId": "new-fe-vol1-2015-04",
+    "headings": [
+      {
+        "id": "input-unit",
+        "title": "Input Unit",
+        "level": 2,
+        "pages": [
+          92,
+          97
+        ]
+      },
+      {
+        "id": "signal-input",
+        "title": "Devices for Entering Characters and Numbers by Using Signals",
+        "level": 3,
+        "pages": [
+          92,
+          93
+        ]
+      },
+      {
+        "id": "paper-input",
+        "title": "Device for Reading Data Written on Paper",
+        "level": 3,
+        "pages": [
+          93,
+          95
+        ]
+      },
+      {
+        "id": "pointing-devices",
+        "title": "Pointing Device",
+        "level": 3,
+        "pages": [
+          95,
+          96
+        ]
+      },
+      {
+        "id": "other-input",
+        "title": "Other Input Devices",
+        "level": 3,
+        "pages": [
+          96,
+          97
+        ]
+      },
+      {
+        "id": "output-unit",
+        "title": "Output Unit",
+        "level": 2,
+        "pages": [
+          97,
+          103
+        ]
+      },
+      {
+        "id": "display",
+        "title": "Display",
+        "level": 3,
+        "pages": [
+          97,
+          100
+        ]
+      },
+      {
+        "id": "printer",
+        "title": "Printer",
+        "level": 3,
+        "pages": [
+          100,
+          102
+        ]
+      },
+      {
+        "id": "other-output",
+        "title": "Other Output Devices",
+        "level": 3,
+        "pages": [
+          102,
+          103
+        ]
+      },
+      {
+        "id": "other-io",
+        "title": "Other Input/Output Units",
+        "level": 2,
+        "pages": [
+          103,
+          104
+        ]
+      },
+      {
+        "id": "io-control",
+        "title": "Input/Output Control Methods",
+        "level": 2,
+        "pages": [
+          104,
+          105
+        ]
+      },
+      {
+        "id": "io-interfaces",
+        "title": "Input/Output Interfaces",
+        "level": 2,
+        "pages": [
+          105,
+          111
+        ]
+      },
+      {
+        "id": "interface-classification",
+        "title": "Classification of Input/Output Interfaces",
+        "level": 3,
+        "pages": [
+          105,
+          106
+        ]
+      },
+      {
+        "id": "interface-types",
+        "title": "Types of Input/Output Interfaces and their Characteristics",
+        "level": 3,
+        "pages": [
+          106,
+          110
+        ]
+      },
+      {
+        "id": "device-driver",
+        "title": "Device Driver",
+        "level": 3,
+        "pages": [
+          110,
+          111
+        ]
+      }
+    ]
+  },
+  {
+    "id": "fe-v1-ch01-memory-cache",
+    "slug": "memory-and-cache",
+    "title": "Memory hierarchy & cache",
+    "number": "1.3 · Focus lesson",
+    "pages": [
+      70,
+      74
+    ],
+    "description": "Learn how registers, cache and RAM work together, and calculate effective memory access time with real ITPEC FE questions.",
+    "editionId": "new-fe-vol1-2015-04",
+    "headings": [
+      {
+        "id": "why-a-hierarchy",
+        "title": "Why do computers need several kinds of memory?",
+        "level": 2,
+        "pages": [
+          70,
+          74
+        ]
+      },
+      {
+        "id": "cache-hits-and-misses",
+        "title": "A small memory with a useful shortcut",
+        "level": 2,
+        "pages": [
+          70,
+          72
+        ]
+      },
+      {
+        "id": "hit-ratio",
+        "title": "Hit ratio and miss ratio",
+        "level": 2,
+        "pages": [
+          70,
+          71
+        ]
+      },
+      {
+        "id": "average-access-time",
+        "title": "Calculate a weighted average",
+        "level": 2,
+        "pages": [
+          70,
+          71
+        ]
+      }
+    ]
+  }
+]

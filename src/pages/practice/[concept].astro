@@ -7,7 +7,7 @@ const { concept } = Astro.props;
 const questions = questionsForConcept(concept, await publishedQuestions());
 const explanations = questions.map((question) => explanationMap.get(question.id)!);
 ---
-<SiteLayout title={`${concept.title} practice`} description={concept.summary} active="practice" count={questions.length}>
+<SiteLayout title={`${concept.title} practice`} description={concept.summary} active="practice" count={questions.length} practiceLinks={[{ id: concept.id, title: concept.title, count: questions.length }]}>
   <Practice client:load concept={concept} questions={questions} explanations={explanations} />
   <noscript><p class="storage-warning">Answer checking needs JavaScript. You can still <a href={concept.sectionUrl}>read the complete textbook lesson</a>.</p></noscript>
 </SiteLayout>

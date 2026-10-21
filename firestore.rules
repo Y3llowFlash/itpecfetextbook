@@ -29,11 +29,19 @@ service cloud.firestore {
       return r is map && r.keys().hasOnly(['sectionId', 'path', 'blockId', 'offset', 'scrollY', 'focusId', 'updatedAt'])
         && r.keys().hasAll(['sectionId', 'path', 'blockId', 'offset', 'scrollY', 'updatedAt'])
         && shortId(r.sectionId) && shortId(r.blockId)
-        && r.path == '/chapters/hardware/memory-and-cache/'
+        && validReadingRoute(r)
         && r.offset is number && r.offset > -100000 && r.offset < 100000
         && r.scrollY is number && r.scrollY >= 0
         && r.updatedAt is string && r.updatedAt.size() <= 40
         && (!('focusId' in r) || shortId(r.focusId));
+    }
+    function validReadingRoute(r) {
+      return (r.sectionId == 'fe-v1-ch01-s01' && r.path == '/chapters/hardware/basic-configuration/')
+        || (r.sectionId == 'fe-v1-ch01-s02' && r.path == '/chapters/hardware/data-representation/')
+        || (r.sectionId == 'fe-v1-ch01-s03' && r.path == '/chapters/hardware/cpu-and-main-memory/')
+        || (r.sectionId == 'fe-v1-ch01-s04' && r.path == '/chapters/hardware/auxiliary-storage/')
+        || (r.sectionId == 'fe-v1-ch01-s05' && r.path == '/chapters/hardware/input-output/')
+        || (r.sectionId == 'fe-v1-ch01-memory-cache' && r.path == '/chapters/hardware/memory-and-cache/');
     }
     match /users/{uid}/progress/{recordId} {
       allow read: if owner(uid);

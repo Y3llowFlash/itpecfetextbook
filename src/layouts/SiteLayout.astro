@@ -6,8 +6,9 @@ import '../styles/global.css';
 import ChapterNav from '../components/ChapterNav.astro';
 import StudyCompanion from '../components/StudyCompanion';
 import AccountControls from '../components/AccountControls';
-interface Props { title: string; description: string; active?: 'reader' | 'chapter' | 'practice' | 'progress'; noindex?: boolean; companion?: boolean; count?: number }
-const { title, description, active = 'reader', noindex = false, companion = true, count = 3 } = Astro.props;
+import type { PracticeLink } from '../components/SectionActions';
+interface Props { title: string; description: string; active?: 'reader' | 'chapter' | 'practice' | 'progress'; noindex?: boolean; companion?: boolean; count?: number; practiceLinks?: PracticeLink[] }
+const { title, description, active = 'reader', noindex = false, companion = true, count = 3, practiceLinks } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 ---
 <!doctype html>
@@ -30,7 +31,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <div class:list={['app-layout', { 'without-companion': !companion }]}>
       <aside class="sidebar"><ChapterNav active={active} /></aside>
       <main id="main" tabindex="-1"><slot /></main>
-      {companion && <aside class="study-companion" aria-label="Study companion"><StudyCompanion client:load questionCount={count} /></aside>}
+      {companion && <aside class="study-companion" aria-label="Study companion"><StudyCompanion client:load questionCount={count} links={practiceLinks} /></aside>}
     </div>
     <footer class="site-footer"><span>ITPEC FE Textbook</span><span>Read. Practise. Understand.</span><a href="/progress/#about-progress">About local progress</a></footer>
     <script>

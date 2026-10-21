@@ -76,4 +76,13 @@ describe('real Auth and Firestore emulator integration', () => {
     await expect(a.adapter.pull(b.uid)).rejects.toThrow('Account changed');
     await expect(a.adapter.push(b.uid, [{ kind: 'bookmark', key: 'q1', value: true, clock: 1, device: 'a' }])).rejects.toThrow('Account changed');
   });
+  it('synchronizes a new lesson reading checkpoint, completion and a non-cache bookmark', async () => {
+    const a = await device('chapter-reading'), b = await device('chapter-reading');
+    const position = { sectionId: 'fe-v1-ch01-s02', path: '/chapters/hardware/data-representation/', blockId: 'radix-weights', offset: 71, scrollY: 1200, focusId: 'concept-radix-conversion', updatedAt: new Date().toISOString() };
+    a.store.saveReading(position); a.store.checkpointReading(); a.store.setCompleted('fe-v1-ch01-s02', true); a.store.toggleBookmark('2024S-A-Q001');
+    await sync(a); await sync(b);
+    expect(b.store.getSnapshot().progress.reading).toEqual(position);
+    expect(b.store.getSnapshot().progress.completedSections).toEqual(['fe-v1-ch01-s02']);
+    expect(b.store.getSnapshot().progress.bookmarks).toEqual(['2024S-A-Q001']);
+  });
 });

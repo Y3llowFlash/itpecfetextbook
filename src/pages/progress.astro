@@ -1,8 +1,10 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
 import ProgressDashboard from '../components/ProgressDashboard';
-import { concepts, publishedQuestions, questionsForConcept } from '../lib/catalog';
-const questions = questionsForConcept(concepts[0], await publishedQuestions());
+import { concepts, publishedQuestions } from '../lib/catalog';
+const bank = await publishedQuestions();
+const ids = new Set(concepts.flatMap((concept) => concept.questionIds));
+const questions = bank.filter((question) => ids.has(question.id));
 ---
 <SiteLayout title="Your progress" description="Your private ITPEC FE reading and practice progress, with optional free account backup." active="progress" noindex count={questions.length}>
   <ProgressDashboard client:load questions={questions} />

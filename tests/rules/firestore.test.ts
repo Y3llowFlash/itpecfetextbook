@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs';
 import { afterAll, beforeAll, beforeEach, describe, it } from 'vitest';
 import { initializeTestEnvironment, assertFails, assertSucceeds, type RulesTestEnvironment } from '@firebase/rules-unit-testing';
 import { collection, doc, getDoc, getDocs, serverTimestamp, setDoc, deleteDoc } from 'firebase/firestore';
+import { hardwareLessons, lessonPath } from '../../src/lib/lessons';
 let env: RulesTestEnvironment;
 const google = (uid: string) => env.authenticatedContext(uid, { firebase: { sign_in_provider: 'google.com' } }).firestore();
 const record = (clock = 1) => ({ kind: 'bookmark', key: 'question-1', value: true, clock, device: 'device-a', updatedAt: serverTimestamp() });
@@ -13,6 +14,16 @@ beforeAll(async () => {
 beforeEach(async () => { await env.clearFirestore(); });
 afterAll(async () => { await env?.cleanup(); });
 describe('student progress security', () => {
+  it('allows verified Chapter 1 reading routes, but denies external, unknown and mismatched routes', async () => {
+    const ref = doc(google('alice'), 'users/alice/progress/reading:latest');
+    let clock = 1;
+    const value = { sectionId: 'fe-v1-ch01-s01', path: '/chapters/hardware/basic-configuration/', blockId: 'history-of-computers', offset: 40, scrollY: 500, updatedAt: new Date().toISOString() };
+    const reading = (changes = {}) => ({ kind: 'reading', key: 'latest', clock: clock++, device: 'device-a', updatedAt: serverTimestamp(), value: { ...value, ...changes } });
+    for (const lesson of hardwareLessons) await assertSucceeds(setDoc(ref, reading({ sectionId: lesson.id, path: lessonPath(lesson) })));
+    await assertFails(setDoc(ref, reading({ path: 'https://malicious.invalid/' })));
+    await assertFails(setDoc(ref, reading({ path: '/chapters/hardware/not-a-lesson/' })));
+    await assertFails(setDoc(ref, reading({ sectionId: 'fe-v1-ch01-s02' })));
+  });
   it('denies all unauthenticated reads, queries and writes', async () => {
     const db = env.unauthenticatedContext().firestore();
     await assertFails(getDoc(doc(db, 'users/alice/progress/bookmark:question-1')));

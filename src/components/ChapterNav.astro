@@ -2,6 +2,7 @@
 import chapter from '../content/chapters.json';
 interface Props { active?: 'reader' | 'chapter' | 'practice' | 'progress' }
 const { active = 'reader' } = Astro.props;
+const current = Astro.url.pathname;
 ---
 <nav class="chapter-nav" aria-label="Chapter navigation">
   <a class="library-link" href="/">← Textbook home</a>
@@ -9,14 +10,12 @@ const { active = 'reader' } = Astro.props;
   <a class="chapter-title" href="/chapters/hardware/" aria-current={active === 'chapter' ? 'page' : undefined}><span class="chapter-icon" aria-hidden="true">01</span><span>Hardware</span></a>
   <ol class="chapter-section-list">
     {chapter.sections.map((section) => <li>
-      {section.lesson ? <>
-        <a href={section.lesson.url} aria-current={active === 'reader' ? 'page' : undefined} class:list={[{ active: active === 'reader' || active === 'practice' }]}><span class="section-number">{section.number}</span><span>CPU & memory</span></a>
-        <a class="lesson-link" href={section.lesson.url}>Memory & cache</a>
-      </> : <div class="planned-section"><span class="section-number">{section.number}</span><span>{section.title}<small>Coming later</small></span></div>}
+      <a href={section.lesson.url} aria-current={current === section.lesson.url ? 'page' : undefined} class:list={[{ active: current === section.lesson.url }]}><span class="section-number">{section.number}</span><span>{section.title}</span></a>
+      {section.id === 'fe-v1-ch01-s03' && <a class:list={['lesson-link', { active: current === '/chapters/hardware/memory-and-cache/' }]} href="/chapters/hardware/memory-and-cache/" aria-current={current === '/chapters/hardware/memory-and-cache/' ? 'page' : undefined}>Memory & cache focus lesson</a>}
     </li>)}
   </ol>
   <div class="nav-divider"></div>
-  <a class:list={['nav-secondary', { active: active === 'practice' }]} href="/practice/cache-memory/">Practice questions <span aria-hidden="true">↗</span></a>
+  <a class:list={['nav-secondary', { active: active === 'practice' }]} href="/chapters/hardware/#chapter-practice">Practice questions <span aria-hidden="true">↗</span></a>
   <a class:list={['nav-secondary', { active: active === 'progress' }]} href="/progress/">Your progress <span aria-hidden="true">→</span></a>
   <div class="nav-footnote"><span class="free-dot" aria-hidden="true"></span> A free place to learn.</div>
 </nav>

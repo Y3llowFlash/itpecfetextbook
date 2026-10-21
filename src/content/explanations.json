@@ -1,6 +1,8 @@
 [
   {
-    "questionId": "2024A-A-Q009", "revision": "1", "answer": "b",
+    "questionId": "2024A-A-Q009",
+    "revision": "1",
+    "answer": "b",
     "summary": "The hit ratio is 0.8, so the average access time is 0.8 × 75 + 0.2 × 1500 = 360 ns.",
     "steps": [
       "The miss ratio is 0.2. Therefore the hit ratio is 1 − 0.2 = 0.8.",
@@ -9,12 +11,23 @@
       "Option a (315 ns) does not match these timings. Options c and d put too much weight on the slow path. The given 0.2 is the miss ratio, not the hit ratio."
     ],
     "takeaway": "Read what the miss time includes. Do not add the cache-check time a second time.",
-    "optionText": { "a": "315 ns", "b": "360 ns", "c": "1,215 ns", "d": "1,260 ns" },
+    "optionText": {
+      "a": "315 ns",
+      "b": "360 ns",
+      "c": "1,215 ns",
+      "d": "1,260 ns"
+    },
     "imageDescription": "Cache memory takes 75 ns; main memory takes 1500 ns including the cache check. The miss ratio is 0.2. Find the approximate average access time.",
-    "reviewedAgainst": ["2024A-A-Q009 original image", "2024A_FE-A_Answers.pdf Q9: b", "independent weighted-average calculation"]
+    "reviewedAgainst": [
+      "2024A-A-Q009 original image",
+      "2024A_FE-A_Answers.pdf Q9: b",
+      "independent weighted-average calculation"
+    ]
   },
   {
-    "questionId": "2025S-A-Q010", "revision": "1", "answer": "c",
+    "questionId": "2025S-A-Q010",
+    "revision": "1",
+    "answer": "c",
     "summary": "Equating the two weighted access times gives a cache hit ratio of 5/6, approximately 0.83.",
     "steps": [
       "Let h be the shared hit ratio. Under the weighted-path model, system A takes 14h + 80(1 − h) ns. System B takes 12h + 90(1 − h) ns.",
@@ -23,12 +36,23 @@
       "Option a, 0.17, approximates the miss ratio 1 − h. Option b does not make the effective times equal; at h = 1 (option d), the times would be 14 ns and 12 ns."
     ],
     "takeaway": "Write a separate weighted average for each system, then equate them. The answer requested is the hit ratio.",
-    "optionText": { "a": "0.17", "b": "0.20", "c": "0.83", "d": "1.00" },
+    "optionText": {
+      "a": "0.17",
+      "b": "0.20",
+      "c": "0.83",
+      "d": "1.00"
+    },
     "imageDescription": "System A: cache 14 ns, main memory 80 ns. System B: cache 12 ns, main memory 90 ns. Both have the same effective access time and hit ratio. Find the approximate hit ratio.",
-    "reviewedAgainst": ["2025S-A-Q010 original image", "2025S_FE-A_Answers.pdf Q10: c", "independent algebra and substitution"]
+    "reviewedAgainst": [
+      "2025S-A-Q010 original image",
+      "2025S_FE-A_Answers.pdf Q10: c",
+      "independent algebra and substitution"
+    ]
   },
   {
-    "questionId": "2026S-A-Q010", "revision": "1", "answer": "d",
+    "questionId": "2026S-A-Q010",
+    "revision": "1",
+    "answer": "d",
     "summary": "A cache miss means the requested data is not in the cache. In this question's cache/main-memory model, the CPU fetches it from main memory.",
     "steps": [
       "A cache hit means the requested data is available in the cache, so it can be served there. Fetching it from ROM or main memory is not the defining action of a hit.",
@@ -43,6 +67,490 @@
       "d": "On a cache miss, fetch data from main memory."
     },
     "imageDescription": "Choose the appropriate CPU operation associated with cache memory. The four choices pair a cache hit or miss with fetching from ROM, cache or main memory.",
-    "reviewedAgainst": ["2026S-A-Q010 original image", "2026S_FE-A_Answers.pdf Q10: d", "processed topic and notes"]
+    "reviewedAgainst": [
+      "2026S-A-Q010 original image",
+      "2026S_FE-A_Answers.pdf Q10: d",
+      "processed topic and notes"
+    ]
+  },
+  {
+    "questionId": "2024S-A-Q001",
+    "revision": "hardware-complete-1",
+    "answer": "c",
+    "summary": "The hexadecimal integer part is 291 and the fractional part is one quarter.",
+    "steps": [
+      "Expand each position in base 16: 1×16² + 2×16¹ + 3×16⁰ + 4×16⁻¹.",
+      "The integer part is 256 + 32 + 3 = 291. The fractional digit contributes 4/16 = 0.25.",
+      "Combine the two parts: 291 + 0.25 = 291.25, option C. A hexadecimal fractional digit has weight 1/16, not 1/8 or 1/10."
+    ],
+    "takeaway": "Positions right of the radix point have negative powers of the base.",
+    "optionText": {
+      "a": "83.25",
+      "b": "83.5",
+      "c": "291.25",
+      "d": "291.5"
+    },
+    "imageDescription": "Convert hexadecimal 123.4 to decimal. The four numerical choices are listed below.",
+    "reviewedAgainst": [
+      "original question image",
+      "2024S_FE-A_Answers.pdf Q1",
+      "independent calculation or truth-table review"
+    ]
+  },
+  {
+    "questionId": "2025S-A-Q002",
+    "revision": "hardware-complete-1",
+    "answer": "a",
+    "summary": "Both the integer part and the fractional part must be converted.",
+    "steps": [
+      "23 = 16 + 4 + 2 + 1, so the integer bits are 10111.",
+      "0.375 = 3/8 = 1/4 + 1/8, so its binary fraction is .011.",
+      "Together they give 10111.011, option A. The .110 alternatives mean 0.75; 11101 means 29 rather than 23."
+    ],
+    "takeaway": "Convert the two sides of the radix point separately.",
+    "optionText": {
+      "a": "10111.011",
+      "b": "10111.110",
+      "c": "11101.011",
+      "d": "11101.110"
+    },
+    "imageDescription": "Choose the binary representation of decimal 23.375. Each choice combines an integer part with a three-bit fraction.",
+    "reviewedAgainst": [
+      "original question image",
+      "2025S_FE-A_Answers.pdf Q2",
+      "independent calculation or truth-table review"
+    ]
+  },
+  {
+    "questionId": "2026S-A-Q002",
+    "revision": "hardware-complete-1",
+    "answer": "b",
+    "summary": "Each octal digit is weighted by a power of eight.",
+    "steps": [
+      "1234.2 in base 8 is 1×8³ + 2×8² + 3×8 + 4 + 2×8⁻¹.",
+      "Calculate 512 + 128 + 24 + 4 = 668 for the integer part.",
+      "The fractional part is 2/8 = 0.25. The total is 668.25, option B."
+    ],
+    "takeaway": "Do not treat the fractional digit of an octal number as a decimal tenth.",
+    "optionText": {
+      "a": "27.0",
+      "b": "668.25",
+      "c": "1542.5",
+      "d": "5346.0"
+    },
+    "imageDescription": "Convert octal 1234.2 into decimal. Four numerical choices follow.",
+    "reviewedAgainst": [
+      "original question image",
+      "2026S_FE-A_Answers.pdf Q2",
+      "independent calculation or truth-table review"
+    ]
+  },
+  {
+    "questionId": "2025A-A-Q001",
+    "revision": "hardware-complete-1",
+    "answer": "d",
+    "summary": "The normal single-precision bit pattern represents positive 14.",
+    "steps": [
+      "Split the bits as 0 | 10000010 | 11000000000000000000000: sign S=0, exponent E=130 and fraction F=1/2+1/4=0.75.",
+      "Remove the exponent bias: E−127 = 3. Include the implicit leading 1, giving significand 1+F=1.75.",
+      "Evaluate (+1)×2³×1.75 = 14.0, option D. Reading only the stored fraction would give 8×0.75=6.0, the misconception behind option C."
+    ],
+    "takeaway": "A normal IEEE 754 value includes an unstored leading 1.",
+    "optionText": {
+      "a": "0.1875",
+      "b": "0.4375",
+      "c": "6.0",
+      "d": "14.0"
+    },
+    "imageDescription": "IEEE 754 binary32 uses a one-bit sign, eight-bit biased exponent and 23-bit fraction. Decode 01000001011000000000000000000000 using bias 127 and the normal-number formula.",
+    "reviewedAgainst": [
+      "original question image",
+      "2025A_FE-A_Answers.pdf Q1",
+      "independent calculation or truth-table review"
+    ]
+  },
+  {
+    "questionId": "2025A-A-Q002",
+    "revision": "hardware-complete-1",
+    "answer": "c",
+    "summary": "A three-bit left shift produces 8n; adding n produces 9n.",
+    "steps": [
+      "A left shift by k positions multiplies the represented integer by 2ᵏ when the mathematical result fits the available signed width.",
+      "Check the alternatives algebraically: (n<<2)+n = 5n; (n<<2)−n = 3n; (n<<3)+n = 9n; (n<<3)−n = 7n.",
+      "Only the third expression gives 9n, so choose C. Fixed-width overflow must be considered in an actual implementation."
+    ],
+    "takeaway": "Translate each shift into a power of two before combining terms.",
+    "optionText": {
+      "a": "Shift left 2 bits, then add n.",
+      "b": "Shift left 2 bits, then subtract n.",
+      "c": "Shift left 3 bits, then add n.",
+      "d": "Shift left 3 bits, then subtract n."
+    },
+    "imageDescription": "Choose a shift-and-add/subtract expression for 9 times a two’s-complement integer n.",
+    "reviewedAgainst": [
+      "original question image",
+      "2025A_FE-A_Answers.pdf Q2",
+      "independent calculation or truth-table review"
+    ]
+  },
+  {
+    "questionId": "2025S-A-Q001",
+    "revision": "hardware-complete-1",
+    "answer": "a",
+    "summary": "An AND mask retains the upper four bits and clears the lower four.",
+    "steps": [
+      "For each bit x, x AND 1 = x, while x AND 0 = 0.",
+      "Apply mask 11110000. Its four high ones retain the corresponding source bits; its four low zeros force those result bits to zero.",
+      "NAND complements the desired AND result. OR with 00001111 sets the low bits to one, while XOR toggles them rather than clearing them. Choose A."
+    ],
+    "takeaway": "Use AND with ones in positions to keep and zeros in positions to clear.",
+    "optionText": {
+      "a": "AND with 11110000",
+      "b": "NAND with 11110000",
+      "c": "OR with 00001111",
+      "d": "XOR with 00001111"
+    },
+    "imageDescription": "For an eight-bit integer, keep the most significant four bits in their original positions and make all other bits zero. Choose the appropriate bitwise operation.",
+    "reviewedAgainst": [
+      "original question image",
+      "2025S_FE-A_Answers.pdf Q1",
+      "independent calculation or truth-table review"
+    ]
+  },
+  {
+    "questionId": "2025S-A-Q009",
+    "revision": "hardware-complete-1",
+    "answer": "c",
+    "summary": "Push and pop use the stack pointer to locate the stack top.",
+    "steps": [
+      "A stack stores items in last-in, first-out order. Push adds an item and pop removes the most recently added one.",
+      "The stack pointer tracks the stack position used by these operations; the exact increment/decrement convention depends on the architecture.",
+      "The instruction register holds an instruction, the program counter identifies an instruction address and the status register holds flags. None of those is the stack pointer. Choose C."
+    ],
+    "takeaway": "Match each register to what it stores, rather than to a similar-sounding name.",
+    "optionText": {
+      "a": "Instruction register",
+      "b": "Program counter",
+      "c": "Stack pointer",
+      "d": "Status register"
+    },
+    "imageDescription": "Identify the special CPU register associated with push and pop instructions.",
+    "reviewedAgainst": [
+      "original question image",
+      "2025S_FE-A_Answers.pdf Q9",
+      "independent calculation or truth-table review"
+    ]
+  },
+  {
+    "questionId": "2026S-A-Q009",
+    "revision": "hardware-complete-1",
+    "answer": "c",
+    "summary": "The fetched instruction goes into the instruction register before decoding.",
+    "steps": [
+      "Follow the arrows: main memory → a → instruction decoder. The value moving along this path is an instruction word.",
+      "The instruction register temporarily holds that fetched word so the decoder can interpret its opcode and operand fields.",
+      "The program counter stores an address; an accumulator stores arithmetic data; a data cache stores memory copies. Choose instruction register, option C."
+    ],
+    "takeaway": "The PC points to an instruction; the IR contains the fetched instruction.",
+    "optionText": {
+      "a": "Accumulator",
+      "b": "Data cache",
+      "c": "Instruction register",
+      "d": "Program register (program counter)"
+    },
+    "imageDescription": "The diagram sends an instruction from main memory into a box marked a inside the processor, then into the instruction decoder. Identify box a.",
+    "reviewedAgainst": [
+      "original question image",
+      "2026S_FE-A_Answers.pdf Q9",
+      "independent calculation or truth-table review"
+    ]
+  },
+  {
+    "questionId": "2026S-A-Q011",
+    "revision": "hardware-complete-1",
+    "answer": "b",
+    "summary": "There are 16 million bus transfers per second, each carrying eight bytes.",
+    "steps": [
+      "The 64 MHz input clock has 64×10⁶ cycles per second. One bus cycle takes four input cycles, so transfer frequency = 64×10⁶/4 = 16×10⁶ per second.",
+      "The 64-bit data bus carries 64/8 = 8 bytes per bus transfer.",
+      "The maximum rate is 16×10⁶×8 = 128×10⁶ bytes/s = 128 MB/s, option B. 512 MB/s would incorrectly assume one complete bus transfer per input clock."
+    ],
+    "takeaway": "Divide by cycles per bus transfer and convert bits to bytes.",
+    "optionText": {
+      "a": "12.8 MB/s",
+      "b": "128 MB/s",
+      "c": "512 MB/s",
+      "d": "1280 MB/s"
+    },
+    "imageDescription": "Calculate the theoretical rate of a 64-bit external bus driven by a 64 MHz clock when each bus cycle takes four input clock cycles.",
+    "reviewedAgainst": [
+      "original question image",
+      "2026S_FE-A_Answers.pdf Q11",
+      "independent calculation or truth-table review"
+    ]
+  },
+  {
+    "questionId": "2025A-A-Q008",
+    "revision": "hardware-complete-1",
+    "answer": "a",
+    "summary": "The main process receives the two milliseconds not occupied by handlers.",
+    "steps": [
+      "The diagram has interrupt A at 1, 2.5 and 3.5 ms. Each high-priority A handler needs 0.5 ms: total A time is 1.5 ms.",
+      "B arrives at 0 ms and needs 1.5 ms. It runs from 0–1, is preempted by A from 1–1.5, and completes its remaining 0.5 ms from 1.5–2. The B arrival at 5 ms is outside the interval being measured.",
+      "The main process runs during 2–2.5, 3–3.5 and 4–5 ms: 0.5+0.5+1=2 ms, option A. Equivalently, 5−1.5−1.5=2."
+    ],
+    "takeaway": "A preempted handler resumes its remaining work; it does not restart from the beginning.",
+    "optionText": {
+      "a": "2 ms",
+      "b": "2.5 ms",
+      "c": "3.5 ms",
+      "d": "5 ms"
+    },
+    "imageDescription": "Two nested interrupt priorities are permitted. A takes 0.5 ms and is higher priority; B takes 1.5 ms. A arrives at 1, 2.5 and 3.5 ms; B arrives at 0 and 5 ms. Find main-process CPU time in [0,5) ms, ignoring overhead.",
+    "reviewedAgainst": [
+      "original question image",
+      "2025A_FE-A_Answers.pdf Q8",
+      "independent calculation or truth-table review"
+    ]
+  },
+  {
+    "questionId": "2024A-A-Q001",
+    "revision": "hardware-complete-1",
+    "answer": "d",
+    "summary": "Both Q and R must be true.",
+    "steps": [
+      "P is true, so NOT P is false. To make (NOT P) OR Q true, Q must be true.",
+      "With Q true, NOT Q is false. To make (NOT Q) OR R true, R must also be true.",
+      "The only compatible pair is Q=true and R=true, option D. Evaluate the first expression before using its consequence in the second."
+    ],
+    "takeaway": "An OR expression with one false input can be true only if the other input is true.",
+    "optionText": {
+      "a": "Q=false, R=false",
+      "b": "Q=false, R=true",
+      "c": "Q=true, R=false",
+      "d": "Q=true, R=true"
+    },
+    "imageDescription": "P is true. Both (NOT P) OR Q and (NOT Q) OR R are true. Determine the truth values of Q and R.",
+    "reviewedAgainst": [
+      "original question image",
+      "2024A_FE-A_Answers.pdf Q1",
+      "independent calculation or truth-table review"
+    ]
+  },
+  {
+    "questionId": "2024A-A-Q016",
+    "revision": "hardware-complete-1",
+    "answer": "d",
+    "summary": "The multiplexer outputs X₂ when X₁=0, and NOT X₂ when X₁=1: XOR.",
+    "steps": [
+      "The upper MUX input I₀ receives X₂ directly. The lower input I₁ receives NOT X₂. X₁ controls the select line.",
+      "For input pairs (X₁,X₂) = 00,01,10,11, the output is 0,1,1,0.",
+      "That is exactly XOR, the fourth gate symbol (D). AND outputs 1 only on 11; NAND is zero only on 11; OR is zero only on 00."
+    ],
+    "takeaway": "Derive the MUX output separately for select 0 and select 1.",
+    "optionText": {
+      "a": "AND gate",
+      "b": "NAND gate",
+      "c": "OR gate",
+      "d": "XOR gate"
+    },
+    "imageDescription": "A 2-to-1 MUX selects I₀ for S=0 and I₁ for S=1. In the target circuit, I₀=X₂, I₁=NOT X₂ and S=X₁. Choices are AND, NAND, OR and XOR gate symbols.",
+    "reviewedAgainst": [
+      "original question image",
+      "2024A_FE-A_Answers.pdf Q16",
+      "independent calculation or truth-table review"
+    ]
+  },
+  {
+    "questionId": "2024S-A-Q016",
+    "revision": "hardware-complete-1",
+    "answer": "d",
+    "summary": "The circuit is a three-input NAND gate.",
+    "steps": [
+      "The first gate produces NOT(x AND y). The separate z input has an inversion bubble before entering the final OR gate.",
+      "Therefore f = NOT(x AND y) OR NOT z. By De Morgan’s law this equals NOT(x AND y AND z).",
+      "Only option D is a three-input NAND. Its output is zero only for x=y=z=1. Option A lacks the output inversion; B and C combine different input groups."
+    ],
+    "takeaway": "Treat an inversion bubble as NOT, then apply De Morgan’s law to the entire grouped expression.",
+    "optionText": {
+      "a": "Three-input AND: x AND y AND z",
+      "b": "x OR ((NOT y) AND (NOT z))",
+      "c": "NOT(x AND (y OR z))",
+      "d": "Three-input NAND: NOT(x AND y AND z)"
+    },
+    "imageDescription": "x and y feed a NAND gate. Its output and inverted z feed an OR gate. Choose the equivalent circuit from the four diagrams described below.",
+    "reviewedAgainst": [
+      "original question image",
+      "2024S_FE-A_Answers.pdf Q16",
+      "independent calculation or truth-table review"
+    ]
+  },
+  {
+    "questionId": "2025A-A-Q016",
+    "revision": "hardware-complete-1",
+    "answer": "b",
+    "summary": "The output is NOT A AND B.",
+    "steps": [
+      "The upper branch inverts A before NAND with B, giving U=NOT((NOT A) AND B)=A OR NOT B.",
+      "The lower branch is NOR(A,B), giving V=NOT(A OR B)=(NOT A) AND (NOT B). The final gate is NOR(U,V).",
+      "Absorption gives U OR V = A OR NOT B, so Y=NOT(A OR NOT B)=(NOT A) AND B. Choose B. Check: the output is 1 only when A=0 and B=1."
+    ],
+    "takeaway": "Name intermediate gate outputs to avoid losing inversion bubbles.",
+    "optionText": {
+      "a": "A AND B",
+      "b": "(NOT A) AND B",
+      "c": "A AND (NOT B)",
+      "d": "(NOT A) AND (NOT B)"
+    },
+    "imageDescription": "In the diagram, the upper branch is NAND(NOT A,B), the lower branch is NOR(A,B), and both outputs enter a final NOR gate. Choose an equivalent Boolean expression.",
+    "reviewedAgainst": [
+      "original question image",
+      "2025A_FE-A_Answers.pdf Q16",
+      "independent calculation or truth-table review"
+    ]
+  },
+  {
+    "questionId": "2026S-A-Q017",
+    "revision": "hardware-complete-1",
+    "answer": "b",
+    "summary": "NAND is the negation of AND, so it is zero only when both inputs are one.",
+    "steps": [
+      "AND is 1 only for A=B=1. Applying NOT reverses all four entries of that truth table.",
+      "NAND outputs 1,1,1,0 for inputs 00,01,10,11 respectively. This matches the required zero condition, option B.",
+      "OR is also zero on 00, and XOR is zero on both 00 and 11; those do not match “zero only when both inputs are one.”"
+    ],
+    "takeaway": "Read words such as only carefully: one matching row is not enough.",
+    "optionText": {
+      "a": "AND circuit",
+      "b": "NAND circuit",
+      "c": "OR circuit",
+      "d": "XOR circuit"
+    },
+    "imageDescription": "Choose a two-input, one-output circuit whose output is zero only when A and B are both one.",
+    "reviewedAgainst": [
+      "original question image",
+      "2026S_FE-A_Answers.pdf Q17",
+      "independent calculation or truth-table review"
+    ]
+  },
+  {
+    "questionId": "2024S-A-Q009",
+    "revision": "hardware-complete-1",
+    "answer": "c",
+    "summary": "The complete access takes approximately 27.92 ms.",
+    "steps": [
+      "At 5,000 rpm, one rotation takes 60,000/5,000 = 12 ms. Average rotational latency is half of that: 6 ms.",
+      "Transfer time for 1 MB at 60 MB/s is 1/60 s = 16.6667 ms.",
+      "Add all specified components: 4 ms seek + 1.25 ms controller + 6 ms rotation + 16.6667 ms transfer = 27.9167 ms ≈ 27.92 ms, option C. Option D adds a full rotation instead of an average half-rotation."
+    ],
+    "takeaway": "Use half a rotation for average rotational latency, and include every stated overhead.",
+    "optionText": {
+      "a": "21.93 ms",
+      "b": "26.67 ms",
+      "c": "27.92 ms",
+      "d": "33.92 ms"
+    },
+    "imageDescription": "An HDD has average seek 4 ms, controller overhead 1.25 ms, 5,000 rpm rotation and 60 MB/s transfer. Calculate average complete access time for 1 MB.",
+    "reviewedAgainst": [
+      "original question image",
+      "2024S_FE-A_Answers.pdf Q9",
+      "independent calculation or truth-table review"
+    ]
+  },
+  {
+    "questionId": "2025A-A-Q009",
+    "revision": "hardware-complete-1",
+    "answer": "b",
+    "summary": "With the stated binary unit convention, the complete access is 25.725 ms.",
+    "steps": [
+      "One rotation at 6,000 rpm takes 60,000/6,000 = 10 ms, so average rotational latency is 5 ms.",
+      "The question explicitly defines 1 MB = 1,024 kB. Transfer time = 16/1,024 seconds = 0.015625 s = 15.625 ms.",
+      "Total = 5 ms seek + 0.1 ms controller + 5 ms rotation + 15.625 ms transfer = 25.725 ms, option B. Using a full rotation would give option C, 30.725 ms."
+    ],
+    "takeaway": "Follow the problem’s unit definition instead of assuming that MB always uses the same convention.",
+    "optionText": {
+      "a": "20.1 ms",
+      "b": "25.725 ms",
+      "c": "30.725 ms",
+      "d": "74.1 ms"
+    },
+    "imageDescription": "An HDD has average seek 5 ms, 6,000 rpm rotation, 1 MB/s transfer and controller overhead 0.1 ms. Find complete average access time for 16 kB, using 1 MB = 1,024 kB.",
+    "reviewedAgainst": [
+      "original question image",
+      "2025A_FE-A_Answers.pdf Q9",
+      "independent calculation or truth-table review"
+    ]
+  },
+  {
+    "questionId": "2024A-A-Q010",
+    "revision": "hardware-complete-1",
+    "answer": "a",
+    "summary": "Defragmentation improves the placement of an HDD file’s blocks for access.",
+    "steps": [
+      "A fragmented file occupies separated disk regions. Reading it can require extra head movement between fragments.",
+      "Defragmentation rearranges allocated blocks so related data is more contiguous, improving mechanical access efficiency: option A.",
+      "It is not junk-file deletion, does not remove physical interblock gaps, and cannot prevent a mechanical disk failure. The same mechanical-seek rationale does not apply to SSDs."
+    ],
+    "takeaway": "Defragmentation changes block placement; it does not create a backup or repair hardware.",
+    "optionText": {
+      "a": "Improve disk-file access efficiency",
+      "b": "Remove temporary and junk files",
+      "c": "Delete interblock gaps to increase capacity",
+      "d": "Protect against physical drive failure"
+    },
+    "imageDescription": "Choose the purpose of hard-disk defragmentation. Alternatives concern faster access, junk-file cleanup, removing interblock gaps, and preventing hardware failure.",
+    "reviewedAgainst": [
+      "original question image",
+      "2024A_FE-A_Answers.pdf Q10",
+      "independent calculation or truth-table review"
+    ]
+  },
+  {
+    "questionId": "2024S-A-Q010",
+    "revision": "hardware-complete-1",
+    "answer": "d",
+    "summary": "USB is the interface associated with a theoretical limit of 127 addressed devices.",
+    "steps": [
+      "USB uses a host-controlled tiered arrangement, with hubs connecting multiple devices.",
+      "Its theoretical address space supports up to 127 addressed devices on a USB bus. Hubs consume addresses, and power, bandwidth and topology limits reduce practical expansion.",
+      "DisplayPort and HDMI primarily carry display/audio signals, and SATA connects storage devices. The quoted limit identifies USB, option D."
+    ],
+    "takeaway": "A device-count limit is a logical addressing limit, not a promise of unlimited bandwidth or power.",
+    "optionText": {
+      "a": "DisplayPort",
+      "b": "HDMI",
+      "c": "SATA",
+      "d": "USB"
+    },
+    "imageDescription": "Identify the interface that can theoretically connect up to 127 peripheral devices under PC control.",
+    "reviewedAgainst": [
+      "original question image",
+      "2024S_FE-A_Answers.pdf Q10",
+      "independent calculation or truth-table review"
+    ]
+  },
+  {
+    "questionId": "2025A-A-Q010",
+    "revision": "hardware-complete-1",
+    "answer": "c",
+    "summary": "A 3D printer fabricates a physical object from a digital model.",
+    "steps": [
+      "Additive manufacturing creates an object layer by layer. Fused filament fabrication is one method: deposited thermoplastic forms successive layers.",
+      "That physical object-making function is option C. A 3D scanner performs the reverse direction, measuring an object to create digital shape data.",
+      "A hot head acting on heat-sensitive paper describes thermal printing; projecting images onto surfaces describes projection mapping. Neither fabricates the object."
+    ],
+    "takeaway": "Distinguish physical fabrication, shape capture and image projection.",
+    "optionText": {
+      "a": "Measure a 3D object to produce digital shape data",
+      "b": "Use a heated head on heat-sensitive paper",
+      "c": "Fabricate an object using methods such as fused filament fabrication",
+      "d": "Project computer graphics onto uneven objects"
+    },
+    "imageDescription": "Choose the correct function of a 3D printer. This modern extension is linked to the chapter’s output-device discussion rather than assigned an invented 2015 textbook page.",
+    "reviewedAgainst": [
+      "original question image",
+      "2025A_FE-A_Answers.pdf Q10",
+      "independent calculation or truth-table review"
+    ]
   }
 ]

@@ -1,5 +1,7 @@
 ---
 import chapter from '../content/chapters.json';
+import { concepts } from '../lib/catalog';
+import { hardwareLessons, editionLabel, pageLabel } from '../lib/lessons';
 interface Props { count: number; home?: boolean }
 const { count, home = false } = Astro.props;
 ---
@@ -7,8 +9,9 @@ const { count, home = false } = Astro.props;
   <p class="small-label">IT FUNDAMENTALS · CHAPTER 1</p>
   <h1>{home ? 'Understand what’s\ninside the computer.' : 'Hardware'}</h1>
   <p class="page-lede">A free, interactive textbook for ITPEC FE. Build an understanding of the idea, then put it to work with real past-exam questions.</p>
-  <a class="button button-primary" href="/chapters/hardware/memory-and-cache/">Start learning <span aria-hidden="true">→</span></a>
+  <a class="button button-primary" href="/chapters/hardware/basic-configuration/">Start Chapter 1 <span aria-hidden="true">→</span></a>
   <div class="featured-lesson"><p class="small-label">AVAILABLE TO READ</p><h2>Memory hierarchy & cache</h2><p>Discover how registers, cache and main memory work together. Practise cache hits, misses and access-time calculations.</p><a href="/chapters/hardware/memory-and-cache/">Read the lesson →</a><span class="quiet-note">{count} related published exam questions</span></div>
-  <h2>Inside this chapter</h2><ol class="chapter-outline">{chapter.sections.map((section) => <li><span>{section.number}</span><div><h3>{section.title}</h3><p>{section.topics.join(' · ')}</p>{section.lesson ? <a href={section.lesson.url}>Read: {section.lesson.title} →</a> : <small>Planned for a later update</small>}</div></li>)}</ol>
-  <p class="content-note">This first release includes one complete Hardware lesson. Further sections will be added after review. No account is needed to read or practise.</p>
+  <h2>Inside this chapter</h2><ol class="chapter-outline">{chapter.sections.map((section, index) => <li><span>{section.number}</span><div><h3>{section.title}</h3><p class="source-badge" title={editionLabel}>Original textbook · {pageLabel(hardwareLessons[index].pages)}</p><p>{section.topics.join(' · ')}</p><a href={section.lesson.url}>Read this section →</a></div></li>)}</ol>
+  <section id="chapter-practice" class="chapter-practice"><h2>Practice by concept</h2><p>Only directly reviewed questions are linked. Start from a yellow highlight to return to the exact place you were reading.</p><ul>{concepts.map((concept) => <li><a href={`/practice/${concept.id}/`}>{concept.title} <span>{concept.questionIds.length} {concept.questionIds.length === 1 ? 'question' : 'questions'} ↗</span></a></li>)}</ul></section>
+  <p class="content-note">All five Hardware sections are available, with the original Memory & cache focus lesson retained. No account is needed to read or practise.</p>
 </article>

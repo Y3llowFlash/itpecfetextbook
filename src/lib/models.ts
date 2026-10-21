@@ -48,6 +48,7 @@ export interface Concept {
   title: string;
   sectionId: string;
   sectionUrl: string;
+  anchor?: string;
   summary: string;
   questionIds: string[];
   mappingEvidence: { questionId: string; reason: string; reviewedAgainst: string[] }[];

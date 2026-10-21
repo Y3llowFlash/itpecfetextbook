@@ -6,7 +6,7 @@ export function safeYoutubeId(video: VideoLesson): string | null {
   try { const url = new URL(video.url); return ['youtube.com', 'www.youtube.com', 'youtu.be'].includes(url.hostname) && url.protocol === 'https:' ? video.youtubeId! : null; } catch { return null; }
 }
 
-export default function VideoRecommendation({ videos, conceptId, questionId, fallback }: { videos: VideoLesson[]; conceptId: string; questionId: string; fallback: string }) {
+export default function VideoRecommendation({ videos, conceptId, questionId, fallback, readingUrl = '/chapters/hardware/memory-and-cache/#weighted-average' }: { videos: VideoLesson[]; conceptId: string; questionId: string; fallback: string; readingUrl?: string }) {
   const [play, setPlay] = useState<string | null>(null);
   const relevant = videos.filter((video) => video.questionIds.includes(questionId) || video.conceptIds.includes(conceptId));
   return <aside className="video-help" aria-label="Free learning help">
@@ -19,7 +19,7 @@ export default function VideoRecommendation({ videos, conceptId, questionId, fal
       </> : <a className="external-lesson" href={video.url} target="_blank" rel="noopener noreferrer">{video.title}<span>{video.platform === 'telegram' ? 'Free topic lesson · Telegram' : 'Free external lesson'} ↗</span></a>}
         <p className="quiet-note">{video.questionIds.includes(questionId) ? 'Linked to this question.' : 'A concept lesson to help you review the idea.'}</p>
       </div>;
-    })}</> : <><p>{fallback}</p><a href="/chapters/hardware/memory-and-cache/#weighted-average">Read the worked example →</a></>}
+    })}</> : <><p>{fallback}</p><a href={readingUrl}>Review this idea in the textbook →</a></>}
     <details className="course-note"><summary>Looking for a guided course?</summary><p>The 1% paid ITPEC course is an optional next step. Free textbook learning and practice remain available to everyone.</p></details>
   </aside>;
 }

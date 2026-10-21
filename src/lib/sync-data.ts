@@ -1,4 +1,5 @@
 import type { GuestProgress, ProgressRecord, ReadingPosition, SyncMetadata } from './models';
+import { lessonForPath } from './lessons';
 
 export const recordId = (record: ProgressRecord) => `${record.kind}:${record.key}`;
 export const compareRecords = (a: ProgressRecord, b: ProgressRecord) => a.clock - b.clock || (a.device < b.device ? -1 : a.device > b.device ? 1 : 0);
@@ -16,7 +17,7 @@ export function validCloudRecord(value: unknown): value is ProgressRecord {
   if (r.kind === 'reading') {
     const p = r.value;
     return r.key === 'latest' && !!p && id(p.sectionId) && id(p.blockId)
-      && p.path === '/chapters/hardware/memory-and-cache/' && Number.isFinite(p.offset) && Math.abs(p.offset) < 100000
+      && lessonForPath(p.path)?.id === p.sectionId && Number.isFinite(p.offset) && Math.abs(p.offset) < 100000
       && Number.isFinite(p.scrollY) && p.scrollY >= 0 && typeof p.updatedAt === 'string'
       && p.updatedAt.length <= 40 && (!p.focusId || id(p.focusId));
   }

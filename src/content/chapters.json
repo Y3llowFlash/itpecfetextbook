@@ -5,10 +5,90 @@
   "number": 1,
   "structureSource": "New FE Textbook Vol. 1, Chapter 1 table of contents",
   "sections": [
-    { "id": "fe-v1-ch01-s01", "number": "1.1", "title": "Basic configuration of computers", "status": "planned", "topics": ["History of computers", "Five major units"] },
-    { "id": "fe-v1-ch01-s02", "number": "1.2", "title": "Data representation", "status": "planned", "topics": ["Data representation", "Radix conversion", "Representing data"] },
-    { "id": "fe-v1-ch01-s03", "number": "1.3", "title": "CPU & main memory", "status": "published", "topics": ["CPU configuration", "Main memory", "Instructions & addressing", "Logic circuits", "High-speed technologies"], "lesson": { "id": "fe-v1-ch01-memory-cache", "title": "Memory hierarchy & cache", "url": "/chapters/hardware/memory-and-cache/" } },
-    { "id": "fe-v1-ch01-s04", "number": "1.4", "title": "Auxiliary storage", "status": "planned", "topics": ["Magnetic disks", "Optical discs", "Semiconductor memory"] },
-    { "id": "fe-v1-ch01-s05", "number": "1.5", "title": "Input & output", "status": "planned", "topics": ["Input devices", "Output devices", "Control methods", "Interfaces"] }
-  ]
+    {
+      "id": "fe-v1-ch01-s01",
+      "number": "1.1",
+      "title": "Basic Configuration of Computers",
+      "status": "published",
+      "topics": [
+        "History of Computers",
+        "Five Major Units of Computers"
+      ],
+      "lesson": {
+        "id": "fe-v1-ch01-s01",
+        "title": "Basic Configuration of Computers",
+        "url": "/chapters/hardware/basic-configuration/"
+      }
+    },
+    {
+      "id": "fe-v1-ch01-s02",
+      "number": "1.2",
+      "title": "Data Representation in Computers",
+      "status": "published",
+      "topics": [
+        "Data Representation",
+        "Radix and Radix Conversion",
+        "Representation Form of Data"
+      ],
+      "lesson": {
+        "id": "fe-v1-ch01-s02",
+        "title": "Data Representation in Computers",
+        "url": "/chapters/hardware/data-representation/"
+      }
+    },
+    {
+      "id": "fe-v1-ch01-s03",
+      "number": "1.3",
+      "title": "Central Processing Unit and Main Memory Unit",
+      "status": "published",
+      "topics": [
+        "Configuration of CPU",
+        "Main Memory Configuration",
+        "Instruction and Addressing",
+        "Circuit Configuration of ALU",
+        "High Speed Technologies"
+      ],
+      "lesson": {
+        "id": "fe-v1-ch01-s03",
+        "title": "Central Processing Unit and Main Memory Unit",
+        "url": "/chapters/hardware/cpu-and-main-memory/"
+      }
+    },
+    {
+      "id": "fe-v1-ch01-s04",
+      "number": "1.4",
+      "title": "Auxiliary Storage",
+      "status": "published",
+      "topics": [
+        "Magnetic Disk",
+        "Optical Disc",
+        "Semiconductor Memory",
+        "Other Auxiliary Storage Media and Drives"
+      ],
+      "lesson": {
+        "id": "fe-v1-ch01-s04",
+        "title": "Auxiliary Storage",
+        "url": "/chapters/hardware/auxiliary-storage/"
+      }
+    },
+    {
+      "id": "fe-v1-ch01-s05",
+      "number": "1.5",
+      "title": "Input/Output Unit",
+      "status": "published",
+      "topics": [
+        "Input Unit",
+        "Output Unit",
+        "Other Input/Output Units",
+        "Input/Output Control Methods",
+        "Input/Output Interfaces"
+      ],
+      "lesson": {
+        "id": "fe-v1-ch01-s05",
+        "title": "Input/Output Unit",
+        "url": "/chapters/hardware/input-output/"
+      }
+    }
+  ],
+  "sourceEditionId": "new-fe-vol1-2015-04"
 }

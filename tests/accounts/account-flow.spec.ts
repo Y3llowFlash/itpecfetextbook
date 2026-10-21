@@ -111,3 +111,27 @@ test('sign-out clears other tabs immediately and preserves an offline outbox for
   await expect(other.getByRole('button', { name: 'Remove bookmark 2024A-A-Q009' })).toBeVisible();
   expect(blocked.filter((url) => !/unpkg\.com|fonts\.googleapis\.com|fonts\.gstatic\.com|www\.google\.com\/images\/cleardot\.gif/.test(url))).toEqual([]);
 });
+
+test('a new lesson reading checkpoint, bookmark and completion resume on another signed-in device', async ({ browser }) => {
+  const a = await browser.newContext(), b = await browser.newContext();
+  await emulatorTraffic(a); await emulatorTraffic(b);
+  const first = await a.newPage(), second = await b.newPage();
+  const email = `chapter1-${Date.now()}@example.test`;
+  await first.goto('/chapters/hardware/data-representation/');
+  await first.locator('#concept-radix-conversion').click();
+  await first.getByRole('radio', { name: 'Option C: 291.25' }).check();
+  await first.getByRole('button', { name: 'Check answer' }).click();
+  await first.getByRole('button', { name: '◇ Bookmark' }).click();
+  await first.goto('/progress/'); await googleSignIn(first, email, 'Chapter Student');
+  await second.goto('/progress/'); await googleSignIn(second, email, 'Chapter Student');
+  await expect(second.getByRole('button', { name: 'Remove bookmark 2024S-A-Q001' })).toBeVisible();
+  await second.getByRole('link', { name: 'Continue reading →' }).click();
+  await expect(second).toHaveURL(/data-representation\//);
+  await expect(second.locator('#concept-radix-conversion')).toBeFocused();
+  await second.getByRole('button', { name: 'Mark as completed' }).click();
+  await second.goto('/progress/');
+  await expect(second.locator('#account').getByRole('status')).toHaveText('Progress backed up', { timeout: 20000 });
+  await first.getByRole('button', { name: 'Sync now' }).click();
+  await expect(first.getByText('1 of 5 main sections completed')).toBeVisible();
+  await a.close(); await b.close();
+});

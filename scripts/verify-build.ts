@@ -1,6 +1,8 @@
 import { readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
 import { digest } from './question-importer';
+import { hardwareLessons, pageLabel } from '../src/lib/lessons';
+import { concepts } from '../src/lib/catalog';
 const root = path.resolve('dist');
 const source = await readFile('public/data/questions.json');
 const built = await readFile(path.join(root, 'data/questions.json'));
@@ -12,6 +14,18 @@ const images = await readdir(path.join(root, 'questions'));
 if (images.length !== expected.size || images.some((filename) => !expected.has(filename))) throw new Error('Extra or missing question image in production output');
 const reader = await readFile(path.join(root, 'chapters/hardware/memory-and-cache/index.html'), 'utf8');
 if (!reader.includes('Why do computers need several kinds of memory?') || !reader.includes('data-concept="cache-memory"')) throw new Error('Static reader content/highlight missing');
+for (const lesson of hardwareLessons) {
+  const html = await readFile(path.join(root, 'chapters/hardware', lesson.slug, 'index.html'), 'utf8');
+  if (!html.includes(`data-section-id="${lesson.id}"`) || !html.includes(`Original textbook · ${pageLabel(lesson.pages)}`)) throw new Error(`Missing lesson/page badge: ${lesson.slug}`);
+  for (const heading of lesson.headings) if (!html.includes(`data-source-ref="${heading.id}"`)) throw new Error(`Missing printed reference: ${heading.id}`);
+  if (/Planned for a later update|Coming later/.test(html)) throw new Error(`Incomplete chapter navigation in ${lesson.slug}`);
+}
+for (const concept of concepts) {
+  const html = await readFile(path.join(root, 'practice', concept.id, 'index.html'), 'utf8');
+  for (const id of concept.questionIds) if (!html.includes(id)) throw new Error(`Missing reviewed practice question ${id}`);
+}
+const publicFiles = await readdir(root, { recursive: true });
+if (publicFiles.some((name) => /\.(?:pdf|env|py|mjs)$/.test(name) || name.includes('hardware-review'))) throw new Error('Source/editorial material leaked into public output');
 const progress = await readFile(path.join(root, 'progress/index.html'), 'utf8');
 if (!progress.includes('noindex,follow')) throw new Error('Private progress route is indexable');
 for (const name of await readdir(path.join(root, '_astro'))) {

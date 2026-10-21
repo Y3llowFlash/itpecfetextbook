@@ -6,12 +6,15 @@ import { returnUrl, savedReturnPosition } from '../lib/reading';
 import { StorageNotice } from './GuestNotice';
 import GuestNotice from './GuestNotice';
 import VideoRecommendation from './VideoRecommendation';
+import { useAccount } from './AccountControls';
 
 export interface PracticeProps { concept: Concept; questions: Question[]; explanations: Explanation[] }
 const paperLabel = (q: Question) => `${q.year} ${q.season === 'S' ? 'Spring' : 'Autumn'} · Subject ${q.subject}`;
 
 export default function Practice({ concept, questions, explanations }: PracticeProps) {
   const { progress } = useProgress();
+  const account = useAccount();
+  const restoringAccount = account.busy && !account.user;
   const [index, setIndex] = useState(0);
   const [selected, setSelected] = useState('');
   const [ready, setReady] = useState(false);
@@ -27,7 +30,7 @@ export default function Practice({ concept, questions, explanations }: PracticeP
   const correct = Boolean(saved && saved.selected === question?.correctAnswer);
   const answeredCount = questions.filter((q) => progress.practice[concept.id]?.answers[q.id]).length;
   // Hydration must initially match the static HTML; read sessionStorage only after mount.
-  const readingReturn = returnUrl(ready ? savedReturnPosition(progress.reading) : progress.reading);
+  const readingReturn = returnUrl(ready ? savedReturnPosition(progress.reading, concept.sectionId) : progress.reading?.sectionId === concept.sectionId ? progress.reading : null, concept.sectionUrl);
 
   useEffect(() => {
     if (hydrated.current) return;
@@ -59,7 +62,7 @@ export default function Practice({ concept, questions, explanations }: PracticeP
     heading.current?.focus({ preventScroll: true });
   };
   const submit = () => {
-    if (!selected || saved) return;
+    if (!selected || saved || restoringAccount) return;
     guestStore.recordAttempt({ id: newId(), questionId: question.id, conceptId: concept.id, selected,
       correct: selected === question.correctAnswer, at: new Date().toISOString(), revision: explanation.revision });
   };
@@ -84,14 +87,14 @@ export default function Practice({ concept, questions, explanations }: PracticeP
     </figure>
     <details className="question-transcript"><summary>Read the question as text</summary><p>{explanation.imageDescription}</p><p>The original image above preserves the complete exam wording and layout.</p></details>
     <form onSubmit={(event) => { event.preventDefault(); submit(); }}>
-      <fieldset className="answer-options" disabled={!ready || Boolean(saved)}><legend>Choose your answer</legend>
+      <fieldset className="answer-options" disabled={!ready || restoringAccount || Boolean(saved)}><legend>Choose your answer</legend>
         {question.options.map((option) => <label key={option} className={`answer-option ${selected === option ? 'selected' : ''} ${saved && option === question.correctAnswer ? 'answer-correct' : ''} ${saved && option === saved.selected && !correct ? 'answer-incorrect' : ''}`}>
           <input type="radio" name={`answer-${question.id}`} aria-label={`Option ${option.toUpperCase()}: ${explanation.optionText[option] || option.toUpperCase()}`} value={option} checked={selected === option} onChange={() => setSelected(option)} />
           <span className="option-letter">{option.toUpperCase()}</span><span>{explanation.optionText[option] || `Option ${option.toUpperCase()}`}</span>
           {saved && option === question.correctAnswer && <span className="answer-state">✓ Correct answer</span>}
         </label>)}
       </fieldset>
-      {!saved && <div className="submit-row"><button className="button button-primary" type="submit" disabled={!selected || !ready}>Check answer</button><span className="quiet-note">{selected ? 'Ready when you are.' : 'Choose an option to check your answer.'}</span></div>}
+      {!saved && <div className="submit-row"><button className="button button-primary" type="submit" disabled={!selected || !ready || restoringAccount}>Check answer</button><span className="quiet-note">{restoringAccount ? 'Restoring your account progress…' : selected ? 'Ready when you are.' : 'Choose an option to check your answer.'}</span></div>}
     </form>
     {saved && <section className={`answer-feedback ${correct ? 'is-correct' : 'is-incorrect'}`} aria-label="Answer feedback" aria-live="polite">
       <h3>{correct ? '✓ That’s correct.' : 'Let’s work through it.'}</h3>
@@ -101,7 +104,7 @@ export default function Practice({ concept, questions, explanations }: PracticeP
       <p className="takeaway"><strong>Remember:</strong> {explanation.takeaway}</p>
       <button className="text-button" type="button" onClick={() => { guestStore.retryQuestion(concept.id, question.id); setSelected(''); }}>Try this question again</button>
     </section>}
-    {saved && !correct && <VideoRecommendation videos={concept.videos} conceptId={concept.id} questionId={question.id} fallback={explanation.takeaway} />}
+    {saved && !correct && <VideoRecommendation videos={concept.videos} conceptId={concept.id} questionId={question.id} fallback={explanation.takeaway} readingUrl={`${concept.sectionUrl}${concept.anchor ? `#${concept.anchor}` : ''}`} />}
     <div className="practice-bottom"><button className="button button-secondary" type="button" disabled={index === 0} onClick={() => goTo(index - 1)}>← Previous</button>
       <span>{index + 1} / {questions.length}</span>
       {index < questions.length - 1 ? <button className="button button-primary" type="button" onClick={() => goTo(index + 1)}>Next →</button> : <a className="button button-primary" href={readingReturn}>Back to lesson →</a>}

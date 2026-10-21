@@ -5,11 +5,39 @@
     "sectionId": "fe-v1-ch01-memory-cache",
     "sectionUrl": "/chapters/hardware/memory-and-cache/",
     "summary": "Understand cache hits and misses, then use a weighted average to reason about memory access time.",
-    "questionIds": ["2024A-A-Q009", "2025S-A-Q010", "2026S-A-Q010"],
+    "questionIds": [
+      "2024A-A-Q009",
+      "2025S-A-Q010",
+      "2026S-A-Q010"
+    ],
     "mappingEvidence": [
-      { "questionId": "2024A-A-Q009", "reason": "The original question asks for average memory access time given cache and main-memory timings and a cache miss ratio.", "reviewedAgainst": ["original question image", "processed topic and notes", "2024A_FE-A_Answers.pdf Q9"] },
-      { "questionId": "2025S-A-Q010", "reason": "The original question asks for a shared cache hit ratio from two systems with equal effective memory access times.", "reviewedAgainst": ["original question image", "processed topic and notes", "2025S_FE-A_Answers.pdf Q10"] },
-      { "questionId": "2026S-A-Q010", "reason": "The original question directly tests whether a cache miss fetches data from main memory.", "reviewedAgainst": ["original question image", "processed topic and notes", "2026S_FE-A_Answers.pdf Q10"] }
+      {
+        "questionId": "2024A-A-Q009",
+        "reason": "The original question asks for average memory access time given cache and main-memory timings and a cache miss ratio.",
+        "reviewedAgainst": [
+          "original question image",
+          "processed topic and notes",
+          "2024A_FE-A_Answers.pdf Q9"
+        ]
+      },
+      {
+        "questionId": "2025S-A-Q010",
+        "reason": "The original question asks for a shared cache hit ratio from two systems with equal effective memory access times.",
+        "reviewedAgainst": [
+          "original question image",
+          "processed topic and notes",
+          "2025S_FE-A_Answers.pdf Q10"
+        ]
+      },
+      {
+        "questionId": "2026S-A-Q010",
+        "reason": "The original question directly tests whether a cache miss fetches data from main memory.",
+        "reviewedAgainst": [
+          "original question image",
+          "processed topic and notes",
+          "2026S_FE-A_Answers.pdf Q10"
+        ]
+      }
     ],
     "videos": [
       {
@@ -17,10 +45,403 @@
         "title": "HDD, RAM, register & cache",
         "platform": "telegram",
         "url": "https://t.me/itpecmm/101",
-        "conceptIds": ["cache-memory"],
+        "conceptIds": [
+          "cache-memory"
+        ],
         "questionIds": [],
         "source": "Existing src/data/lectureResources.js: memory-hierarchy, tagged cache and memory-hierarchy. Topic lesson, not a question-specific solution."
       }
     ]
+  },
+  {
+    "id": "radix-conversion",
+    "title": "Radix conversion",
+    "sectionId": "fe-v1-ch01-s02",
+    "sectionUrl": "/chapters/hardware/data-representation/",
+    "anchor": "radix-conversion",
+    "summary": "Use positional weights to convert integer and fractional numbers between bases.",
+    "questionIds": [
+      "2024S-A-Q001",
+      "2025S-A-Q002",
+      "2026S-A-Q002"
+    ],
+    "mappingEvidence": [
+      {
+        "questionId": "2024S-A-Q001",
+        "reason": "Hexadecimal fractional number to decimal conversion",
+        "reviewedAgainst": [
+          "original question image",
+          "2024S_FE-A_Answers.pdf Q1",
+          "independent calculation or truth-table review"
+        ]
+      },
+      {
+        "questionId": "2025S-A-Q002",
+        "reason": "Binary fraction conversion",
+        "reviewedAgainst": [
+          "original question image",
+          "2025S_FE-A_Answers.pdf Q2",
+          "independent calculation or truth-table review"
+        ]
+      },
+      {
+        "questionId": "2026S-A-Q002",
+        "reason": "Octal fraction to decimal conversion",
+        "reviewedAgainst": [
+          "original question image",
+          "2026S_FE-A_Answers.pdf Q2",
+          "independent calculation or truth-table review"
+        ]
+      }
+    ],
+    "videos": []
+  },
+  {
+    "id": "floating-point",
+    "title": "Floating-point representation",
+    "sectionId": "fe-v1-ch01-s02",
+    "sectionUrl": "/chapters/hardware/data-representation/",
+    "anchor": "numeric-data",
+    "summary": "Separate sign, biased exponent and fraction in an IEEE 754 normal number.",
+    "questionIds": [
+      "2025A-A-Q001"
+    ],
+    "mappingEvidence": [
+      {
+        "questionId": "2025A-A-Q001",
+        "reason": "IEEE 754 single-precision floating point (32-bit)",
+        "reviewedAgainst": [
+          "original question image",
+          "2025A_FE-A_Answers.pdf Q1",
+          "independent calculation or truth-table review"
+        ]
+      }
+    ],
+    "videos": []
+  },
+  {
+    "id": "signed-shifts",
+    "title": "Signed integers and shifts",
+    "sectionId": "fe-v1-ch01-s02",
+    "sectionUrl": "/chapters/hardware/data-representation/",
+    "anchor": "shift-operation",
+    "summary": "Relate binary shifts to multiplication by powers of two, checking for overflow.",
+    "questionIds": [
+      "2025A-A-Q002"
+    ],
+    "mappingEvidence": [
+      {
+        "questionId": "2025A-A-Q002",
+        "reason": "Two’s complement + left shift + addition/subtraction",
+        "reviewedAgainst": [
+          "original question image",
+          "2025A_FE-A_Answers.pdf Q2",
+          "independent calculation or truth-table review"
+        ]
+      }
+    ],
+    "videos": []
+  },
+  {
+    "id": "bit-masks",
+    "title": "Bit masks",
+    "sectionId": "fe-v1-ch01-s02",
+    "sectionUrl": "/chapters/hardware/data-representation/",
+    "anchor": "shift-operation",
+    "summary": "Use an AND mask to retain selected bits and clear the rest.",
+    "questionIds": [
+      "2025S-A-Q001"
+    ],
+    "mappingEvidence": [
+      {
+        "questionId": "2025S-A-Q001",
+        "reason": "Bit mask / bitwise logical operation",
+        "reviewedAgainst": [
+          "original question image",
+          "2025S_FE-A_Answers.pdf Q1",
+          "independent calculation or truth-table review"
+        ]
+      }
+    ],
+    "videos": []
+  },
+  {
+    "id": "cpu-registers",
+    "title": "CPU registers",
+    "sectionId": "fe-v1-ch01-s03",
+    "sectionUrl": "/chapters/hardware/cpu-and-main-memory/",
+    "anchor": "cpu-configuration",
+    "summary": "Distinguish instruction storage, the next instruction address, flags and the stack pointer.",
+    "questionIds": [
+      "2025S-A-Q009",
+      "2026S-A-Q009"
+    ],
+    "mappingEvidence": [
+      {
+        "questionId": "2025S-A-Q009",
+        "reason": "Stack pointer register",
+        "reviewedAgainst": [
+          "original question image",
+          "2025S_FE-A_Answers.pdf Q9",
+          "independent calculation or truth-table review"
+        ]
+      },
+      {
+        "questionId": "2026S-A-Q009",
+        "reason": "Instruction register in the fetch/decode cycle",
+        "reviewedAgainst": [
+          "original question image",
+          "2026S_FE-A_Answers.pdf Q9",
+          "independent calculation or truth-table review"
+        ]
+      }
+    ],
+    "videos": [
+      {
+        "id": "legacy-register-memory",
+        "title": "HDD, RAM, register & cache",
+        "platform": "telegram",
+        "url": "https://t.me/itpecmm/101",
+        "conceptIds": [
+          "cpu-registers"
+        ],
+        "questionIds": [],
+        "source": "Existing lectureResources.js memory-hierarchy, tagged register. Topic overview, not an exact question solution."
+      }
+    ]
+  },
+  {
+    "id": "interrupts",
+    "title": "Interrupt priority",
+    "sectionId": "fe-v1-ch01-s03",
+    "sectionUrl": "/chapters/hardware/cpu-and-main-memory/",
+    "anchor": "interrupts",
+    "summary": "Trace preemption, handler completion and resumption on a CPU timeline.",
+    "questionIds": [
+      "2025A-A-Q008"
+    ],
+    "mappingEvidence": [
+      {
+        "questionId": "2025A-A-Q008",
+        "reason": "Interrupt processing / priority / nested interrupt",
+        "reviewedAgainst": [
+          "original question image",
+          "2025A_FE-A_Answers.pdf Q8",
+          "independent calculation or truth-table review"
+        ]
+      }
+    ],
+    "videos": []
+  },
+  {
+    "id": "bus-transfer",
+    "title": "Bus transfer rate",
+    "sectionId": "fe-v1-ch01-s03",
+    "sectionUrl": "/chapters/hardware/cpu-and-main-memory/",
+    "anchor": "cpu-configuration",
+    "summary": "Calculate useful transfers per second from bus width, input clock and cycles per transfer.",
+    "questionIds": [
+      "2026S-A-Q011"
+    ],
+    "mappingEvidence": [
+      {
+        "questionId": "2026S-A-Q011",
+        "reason": "External bus transfer rate from width and clock frequency",
+        "reviewedAgainst": [
+          "original question image",
+          "2026S_FE-A_Answers.pdf Q11",
+          "independent calculation or truth-table review"
+        ]
+      }
+    ],
+    "videos": []
+  },
+  {
+    "id": "logic-gates",
+    "title": "Logic gates and equivalent circuits",
+    "sectionId": "fe-v1-ch01-s03",
+    "sectionUrl": "/chapters/hardware/cpu-and-main-memory/",
+    "anchor": "logic-circuits",
+    "summary": "Evaluate truth tables, complemented inputs and the behavior of a multiplexer.",
+    "questionIds": [
+      "2024A-A-Q001",
+      "2024A-A-Q016",
+      "2024S-A-Q016",
+      "2025A-A-Q016",
+      "2026S-A-Q017"
+    ],
+    "mappingEvidence": [
+      {
+        "questionId": "2024A-A-Q001",
+        "reason": "Propositional truth values; logical sum (OR) and negation (NOT)",
+        "reviewedAgainst": [
+          "original question image",
+          "2024A_FE-A_Answers.pdf Q1",
+          "independent calculation or truth-table review"
+        ]
+      },
+      {
+        "questionId": "2024A-A-Q016",
+        "reason": "Multiplexer implementation as equivalent logic gate circuit",
+        "reviewedAgainst": [
+          "original question image",
+          "2024A_FE-A_Answers.pdf Q16",
+          "independent calculation or truth-table review"
+        ]
+      },
+      {
+        "questionId": "2024S-A-Q016",
+        "reason": "Equivalent logic circuit / Boolean gate expression",
+        "reviewedAgainst": [
+          "original question image",
+          "2024S_FE-A_Answers.pdf Q16",
+          "independent calculation or truth-table review"
+        ]
+      },
+      {
+        "questionId": "2025A-A-Q016",
+        "reason": "Logic circuit simplification",
+        "reviewedAgainst": [
+          "original question image",
+          "2025A_FE-A_Answers.pdf Q16",
+          "independent calculation or truth-table review"
+        ]
+      },
+      {
+        "questionId": "2026S-A-Q017",
+        "reason": "NAND gate truth condition",
+        "reviewedAgainst": [
+          "original question image",
+          "2026S_FE-A_Answers.pdf Q17",
+          "independent calculation or truth-table review"
+        ]
+      }
+    ],
+    "videos": [
+      {
+        "id": "legacy-logic-adder",
+        "title": "Full Adder Half Adder Logic Gate",
+        "platform": "telegram",
+        "url": "https://t.me/itpecmm/64",
+        "conceptIds": [
+          "logic-gates"
+        ],
+        "questionIds": [],
+        "source": "Existing lectureResources.js adder-logic-gate. Relevant circuit fundamentals; not claimed as an exact question solution."
+      },
+      {
+        "id": "legacy-mux",
+        "title": "Logic Gate Select Line",
+        "platform": "telegram",
+        "url": "https://t.me/itpecmm/178",
+        "conceptIds": [],
+        "questionIds": [
+          "2024A-A-Q016"
+        ],
+        "source": "Existing lectureResources.js logic-gate-select-line, tagged multiplexer and select-line."
+      }
+    ]
+  },
+  {
+    "id": "disk-access",
+    "title": "Disk access time",
+    "sectionId": "fe-v1-ch01-s04",
+    "sectionUrl": "/chapters/hardware/auxiliary-storage/",
+    "anchor": "disk-access",
+    "summary": "Add seek, average rotational latency, controller overhead and transfer time.",
+    "questionIds": [
+      "2024S-A-Q009",
+      "2025A-A-Q009"
+    ],
+    "mappingEvidence": [
+      {
+        "questionId": "2024S-A-Q009",
+        "reason": "HDD average seek, rotational latency, and transfer time",
+        "reviewedAgainst": [
+          "original question image",
+          "2024S_FE-A_Answers.pdf Q9",
+          "independent calculation or truth-table review"
+        ]
+      },
+      {
+        "questionId": "2025A-A-Q009",
+        "reason": "HDD average access time",
+        "reviewedAgainst": [
+          "original question image",
+          "2025A_FE-A_Answers.pdf Q9",
+          "independent calculation or truth-table review"
+        ]
+      }
+    ],
+    "videos": []
+  },
+  {
+    "id": "defragmentation",
+    "title": "Disk defragmentation",
+    "sectionId": "fe-v1-ch01-s04",
+    "sectionUrl": "/chapters/hardware/auxiliary-storage/",
+    "anchor": "disk-access",
+    "summary": "Distinguish rearranging file blocks for mechanical access from deleting files or preventing hardware failures.",
+    "questionIds": [
+      "2024A-A-Q010"
+    ],
+    "mappingEvidence": [
+      {
+        "questionId": "2024A-A-Q010",
+        "reason": "Disk fragmentation and defragmentation purpose",
+        "reviewedAgainst": [
+          "original question image",
+          "2024A_FE-A_Answers.pdf Q10",
+          "independent calculation or truth-table review"
+        ]
+      }
+    ],
+    "videos": []
+  },
+  {
+    "id": "usb-interface",
+    "title": "USB interfaces",
+    "sectionId": "fe-v1-ch01-s05",
+    "sectionUrl": "/chapters/hardware/input-output/",
+    "anchor": "interface-types",
+    "summary": "Recognize the USB logical device limit and distinguish storage and display interfaces.",
+    "questionIds": [
+      "2024S-A-Q010"
+    ],
+    "mappingEvidence": [
+      {
+        "questionId": "2024S-A-Q010",
+        "reason": "USB hub maximum connected devices",
+        "reviewedAgainst": [
+          "original question image",
+          "2024S_FE-A_Answers.pdf Q10",
+          "independent calculation or truth-table review"
+        ]
+      }
+    ],
+    "videos": []
+  },
+  {
+    "id": "three-dimensional-printing",
+    "title": "3D printing",
+    "sectionId": "fe-v1-ch01-s05",
+    "sectionUrl": "/chapters/hardware/input-output/",
+    "anchor": "printer",
+    "summary": "Distinguish making an object from scanning an object or projecting an image.",
+    "questionIds": [
+      "2025A-A-Q010"
+    ],
+    "mappingEvidence": [
+      {
+        "questionId": "2025A-A-Q010",
+        "reason": "Printer / output device; 3D printer",
+        "reviewedAgainst": [
+          "original question image",
+          "2025A_FE-A_Answers.pdf Q10",
+          "independent calculation or truth-table review"
+        ]
+      }
+    ],
+    "videos": []
   }
 ]

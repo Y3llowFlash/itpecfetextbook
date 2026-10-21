@@ -4,16 +4,17 @@ import { guestStore, validReading } from './progress';
 export const READER_PATH = '/chapters/hardware/memory-and-cache/';
 const RETURN_KEY = 'itpecTextbook:return:v1';
 
-export function returnUrl(position: ReadingPosition | null) {
-  return position && validReading(position) ? `${position.path}?resume=1#${encodeURIComponent(position.focusId || position.blockId)}` : READER_PATH;
+export function returnUrl(position: ReadingPosition | null, fallback = READER_PATH) {
+  return position && validReading(position) ? `${position.path}?resume=1#${encodeURIComponent(position.focusId || position.blockId)}` : fallback;
 }
 
-export function savedReturnPosition(fallback: ReadingPosition | null): ReadingPosition | null {
+export function savedReturnPosition(fallback: ReadingPosition | null, sectionId?: string): ReadingPosition | null {
+  if (sectionId && fallback?.sectionId !== sectionId) fallback = null;
   if (typeof window === 'undefined') return fallback;
   try {
     const raw = sessionStorage.getItem(RETURN_KEY);
     const position = raw ? JSON.parse(raw) : null;
-    if (validReading(position) && (!fallback || position.updatedAt >= fallback.updatedAt)) return position;
+    if (validReading(position) && (!sectionId || position.sectionId === sectionId) && (!fallback || position.updatedAt >= fallback.updatedAt)) return position;
   } catch { /* durable or in-memory pointer remains available */ }
   return fallback;
 }
@@ -22,6 +23,7 @@ export function setupReader() {
   const reader = document.querySelector<HTMLElement>('[data-reader]');
   if (!reader) return;
   const sectionId = reader.dataset.sectionId!;
+  const readerPath = location.pathname;
   let timer: ReturnType<typeof setTimeout>;
   let leavingForPractice = false;
   let cancelled = false;
@@ -30,7 +32,7 @@ export function setupReader() {
     const anchor = focusId ? document.getElementById(focusId) : undefined;
     const block = anchor?.closest<HTMLElement>('[data-reading-block]') || [...blocks].reverse().find((b) => b.getBoundingClientRect().top <= 130) || blocks[0];
     if (!block?.id) return;
-    const position: ReadingPosition = { sectionId, path: READER_PATH, blockId: block.id, offset: block.getBoundingClientRect().top,
+    const position: ReadingPosition = { sectionId, path: readerPath, blockId: block.id, offset: block.getBoundingClientRect().top,
       scrollY: window.scrollY, focusId, updatedAt: new Date().toISOString() };
     guestStore.saveReading(position);
     return position;
@@ -52,7 +54,7 @@ export function setupReader() {
 
   async function restore(force = false) {
     if (!force && new URLSearchParams(location.search).get('resume') !== '1') return;
-    const position = savedReturnPosition(guestStore.getSnapshot().progress.reading);
+    const position = savedReturnPosition(guestStore.getSnapshot().progress.reading, sectionId);
     if (!position || position.sectionId !== sectionId) return;
     await document.fonts.ready;
     if (cancelled) return;
@@ -62,7 +64,7 @@ export function setupReader() {
       const target = block ? window.scrollY + block.getBoundingClientRect().top - position!.offset : position!.scrollY;
       window.scrollTo({ top: Math.max(0, target), behavior: 'instant' });
       if (position!.focusId) document.getElementById(position!.focusId)?.focus({ preventScroll: true });
-      history.replaceState(null, '', `${READER_PATH}#${encodeURIComponent(position!.focusId || position!.blockId)}`);
+      history.replaceState(null, '', `${readerPath}#${encodeURIComponent(position!.focusId || position!.blockId)}`);
     }));
   }
   const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming | undefined;

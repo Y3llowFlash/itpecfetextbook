@@ -1,0 +1,43 @@
+---
+import type { MarkdownInstance } from 'astro';
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+import SectionActions from '../../../components/SectionActions';
+import { concepts, publishedQuestions, questionsForConcept } from '../../../lib/catalog';
+import { annotateLesson, editionLabel, hardwareLessons, lessonPath, pageLabel } from '../../../lib/lessons';
+export function getStaticPaths() { return hardwareLessons.map((lesson) => ({ params: { lesson: lesson.slug }, props: { lesson } })); }
+const { lesson } = Astro.props;
+const modules = import.meta.glob<MarkdownInstance<Record<string, unknown>>>('../../../content/hardware/*.md', { eager: true });
+const content = modules[`../../../content/hardware/${lesson.slug}.md`];
+if (!content || content.frontmatter.id !== lesson.id) throw new Error(`Missing or mismatched lesson ${lesson.slug}`);
+const bank = await publishedQuestions();
+const counts = new Map(concepts.map((concept) => [concept.id, questionsForConcept(concept, bank).length]));
+const links = concepts.filter((concept) => concept.sectionId === lesson.id).map((concept) => ({ id: concept.id, title: concept.title, count: counts.get(concept.id)! }));
+const count = new Set(concepts.filter((concept) => concept.sectionId === lesson.id).flatMap((concept) => concept.questionIds)).size;
+const html = annotateLesson(await content.compiledContent(), lesson, counts);
+const index = hardwareLessons.findIndex((entry) => entry.id === lesson.id);
+const previous = index > 0 && index < 5 ? hardwareLessons[index - 1] : null;
+const next = index < 4 ? hardwareLessons[index + 1] : null;
+---
+<SiteLayout title={lesson.title} description={lesson.description} count={count} practiceLinks={links}>
+  <article class="reader" data-reader data-section-id={lesson.id}>
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/chapters/hardware/">Hardware</a><span aria-hidden="true">/</span><span>{lesson.number}</span></nav>
+    <header class="reader-heading"><p class="small-label">CHAPTER 1 · HARDWARE</p><h1>{lesson.title}</h1>
+      <p class="source-badge" data-source-ref="lesson" title={editionLabel}>Original textbook · {pageLabel(lesson.pages)}</p>
+      <p class="reader-deck">{lesson.description}</p>
+      <div class="lesson-meta"><span>{count ? `${count} related published questions` : 'Foundations · no directly linked published questions'}</span></div>
+    </header>
+    {lesson.headings.length > 1 && <nav class="lesson-contents" aria-label="In this lesson"><strong>In this lesson</strong><ol>{lesson.headings.filter((heading) => heading.level === 2).map((heading) => <li><a href={`#${heading.id}`}>{heading.title}</a></li>)}</ol></nav>}
+    <div class="reader-prose" set:html={html} />
+    <div data-reading-block id="lesson-complete"><SectionActions client:load sectionId={lesson.id} count={count} links={links} /></div>
+    <nav class="lesson-pagination" aria-label="Lesson navigation">
+      {previous && <a href={lessonPath(previous)}>← {previous.title}</a>}
+      {next && <a href={lessonPath(next)}>{next.title} →</a>}
+      {!next && <a href="/chapters/hardware/">Chapter overview →</a>}
+    </nav>
+    <p class="content-note">Original explanations, worked examples and diagrams. Topic order and printed-page references follow {editionLabel}. Exam images retain original source attribution.</p>
+  </article>
+</SiteLayout>
+<script>
+  import { setupReader } from '../../../lib/reading';
+  setupReader();
+</script>

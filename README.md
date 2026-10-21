@@ -1,6 +1,6 @@
 # ITPEC FE Textbook
 
-A free, static textbook with real ITPEC FE question practice. Includes one complete **Hardware → Memory hierarchy & cache** lesson, three related-question explanations, browser-local guest progress, and optional Google accounts for progress backup.
+A free, static textbook with real ITPEC FE question practice. **Chapter 1: Hardware is complete**: five main sections, 19 source subsections, deeper topics, and the retained Memory & cache focus lesson. Thirteen reviewed concepts link 23 published questions with explanations. Guest learning works locally; optional Google accounts back up progress.
 
 Built with **Astro, React and TypeScript**. Output is compatible with static Cloudflare Pages hosting. This repository does not provision or deploy infrastructure.
 
@@ -18,6 +18,11 @@ Open `http://127.0.0.1:4321/`. On shells without PowerShell's script restriction
 Useful routes:
 
 - `/chapters/hardware/` — chapter structure and the available lesson.
+- `/chapters/hardware/basic-configuration/` — computer history and the five major units.
+- `/chapters/hardware/data-representation/` — bits, bases, character/numeric formats, errors and shifts.
+- `/chapters/hardware/cpu-and-main-memory/` — CPU, memory, addressing, interrupts, circuits and high-speed techniques.
+- `/chapters/hardware/auxiliary-storage/` — magnetic, optical and semiconductor storage.
+- `/chapters/hardware/input-output/` — input/output devices, control methods and interfaces.
 - `/chapters/hardware/memory-and-cache/` — complete static lesson.
 - `/practice/cache-memory/` — real questions, answer checking and explanations.
 - `/progress/` — local reading, attempts, completion and bookmarks.
@@ -65,7 +70,7 @@ The importer:
 5. Validates all inputs before replacing its own `public/questions/` directory and `public/data/` output files. Treat `public/questions/` as generated; do not put hand-authored files there.
 6. Produces `public/data/import-manifest.json` with source hashes, included IDs, publication totals and image inventory. It never writes to the source checkout or connects to Firebase.
 
-Current snapshot: **420 published questions** (300 A + 100 dated B + 20 sample B); **160 unpublished records excluded**. There are exactly 420 public question images. All included IDs are listed in the import manifest. The pilot UI exposes only these three reviewed cache-memory questions:
+Current snapshot: **420 published questions** (300 A + 100 dated B + 20 sample B); **160 unpublished records excluded**. There are exactly 420 public question images. All included IDs are listed in the import manifest. Chapter 1 exposes 23 directly reviewed Hardware questions across 13 concepts; the retained cache-memory set is:
 
 | Original ID | Source | Answer |
 |---|---|---|
@@ -73,13 +78,15 @@ Current snapshot: **420 published questions** (300 A + 100 dated B + 20 sample B
 | `2025S-A-Q010` | 2025 Spring Subject A, Q10 | c |
 | `2026S-A-Q010` | 2026 Spring Subject A, Q10 | d |
 
-The other published records are available as static release data for later reviewed mappings. They are not given invented concepts or explanations. No unpublished AM questions or images are included in the application build.
+The [Chapter 1 report](docs/development/CHAPTER_1_HARDWARE.md) lists all 23 linked IDs. Other published records remain static release data for later reviewed mappings. They are not given invented concepts or explanations. No unpublished AM questions or images are included in the application build.
 
 ## Edit content
 
 | Location | Purpose |
 |---|---|
-| `src/content/hardware/memory-and-cache.md` | Editable original lesson prose, headings, persistent reading blocks and concept links |
+| `src/content/hardware/*.md` | Six original lessons, persistent reading blocks and concept links |
+| `src/content/hardware-lessons.json` | Stable lesson IDs/routes, ordered subsection headings and verified printed-page ranges |
+| `src/content/textbook-editions.json` | Source volume, edition and PDF fingerprint; source bytes are not published |
 | `src/content/chapters.json` | Hardware's five-part structure and availability |
 | `src/content/concepts.json` | Explicit concept/question associations, evidence and video mappings |
 | `src/content/explanations.json` | Original answer reasoning, option text and accessible image descriptions |
@@ -89,6 +96,8 @@ The other published records are available as static release data for later revie
 | `public/data/`, `public/questions/` | Generated published-only snapshot and local images |
 
 Concept counts are derived from distinct published question IDs. Add an association only after checking the original image, source mapping and answer. Add a complete explanation whose answer matches the source key; validation rejects missing or inconsistent pilot explanations.
+
+One subtle badge beneath a mapped lesson/subsection heading shows **printed textbook page numbers**, with volume/edition in its title. References are checked against the committed footer-label evidence in `docs/development/evidence/hardware-printed-pages.json`; the PDF has an unnumbered insertion, so one global offset is unsafe. To reverify against the read-only local source, run `python scripts/verify-textbook-source.py` (requires PyMuPDF). Ordinary builds need neither Python nor the old repository. Raw PDF text, figures and review crops stay out of public output. Missing source mappings and modern exam extensions are documented in the chapter report.
 
 Keep section and reading-block IDs stable when editing prose. The return flow stores the block's viewport offset and clicked concept before leaving, restores after fonts/layout settle, and supports explicit return and browser Back. A pixel-scroll fallback covers removed anchors.
 
@@ -114,4 +123,4 @@ Incorrect answers show a relevant free memory-hierarchy lesson from the existing
 
 ## Scope
 
-This is the first Hardware learning experience, not a completed 14-chapter textbook. Further Hardware lessons, CET and public website deployment remain deferred. The [original milestone report](docs/development/MILESTONE_1.md) and [investigation reports](docs/investigation/06_IMPLEMENTATION_ROADMAP.md) describe the earlier implementation; the Firebase integration report records the subsequent account/security work.
+Chapter 1 Hardware is complete; the other chapters and CET remain deferred. Cloudflare Pages is connected to `main`, using Node 24, `npm run build` and `dist`. A push can deploy automatically, so production validation must pass before pushing. The source/rules/account deployment details and editorial gaps are in the [Chapter 1 report](docs/development/CHAPTER_1_HARDWARE.md). Earlier milestone and investigation reports are historical records.

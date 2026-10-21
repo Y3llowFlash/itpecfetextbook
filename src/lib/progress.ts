@@ -1,5 +1,6 @@
 import type { Attempt, GuestProgress, ReadingPosition } from './models';
 import { checkpointReading, mergeRecords, migrateProgress, seedSync, trackChanges, validCloudRecord } from './sync-data';
+import { lessonForPath } from './lessons';
 
 export const STORAGE_KEY = 'itpecTextbook:guest:v1';
 const validId = (value: unknown): value is string => typeof value === 'string' && /^[a-zA-Z0-9:_-]{1,160}$/.test(value);
@@ -8,7 +9,7 @@ export const emptyProgress = (): GuestProgress => ({ version: 1, guestId: '', at
 
 export function validReading(value: unknown): value is ReadingPosition {
   const p = value as ReadingPosition;
-  return Boolean(p && validId(p.sectionId) && validId(p.blockId) && p.path === '/chapters/hardware/memory-and-cache/' &&
+  return Boolean(p && validId(p.sectionId) && validId(p.blockId) && lessonForPath(p.path)?.id === p.sectionId &&
     Number.isFinite(p.offset) && Math.abs(p.offset) < 100000 && Number.isFinite(p.scrollY) && p.scrollY >= 0 &&
     typeof p.updatedAt === 'string' && (!p.focusId || validId(p.focusId)));
 }
