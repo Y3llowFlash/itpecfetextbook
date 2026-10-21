@@ -1,0 +1,1463 @@
+﻿{
+  "audit_date": "2026-10-21",
+  "source_root": "D:\\ITPEC Old Questions",
+  "scope": "Local files only; no Firebase, live-site, deployment, or sign-in requests.",
+  "total_questions": 580,
+  "subject_a": 460,
+  "subject_b": 120,
+  "sample_questions": 20,
+  "duplicate_question_ids": [],
+  "json_files": [
+    {
+      "path": "database/firebase_import/questions_subjectA_firestore.json",
+      "bytes": 850873,
+      "sha256": "88df01998324b4e72a08c2fbf3dfc5230f220aef149a78cd706a7b424bde7520",
+      "rows": 460,
+      "fields": [
+        "book",
+        "canonical_bucket",
+        "chapter",
+        "chapter_name",
+        "confidence",
+        "correct_answer",
+        "crop_method",
+        "crop_notes",
+        "display_subject",
+        "exam_id",
+        "exam_label",
+        "exam_pdf_page",
+        "firestore_path",
+        "format",
+        "free_video_url",
+        "image_review_status",
+        "is_legacy_format",
+        "is_published",
+        "legacy_display_name",
+        "mapped_chapter",
+        "mapped_page",
+        "mapped_section",
+        "mapped_topic",
+        "mapped_volume",
+        "notes",
+        "old_format_name",
+        "paid_course_cta",
+        "paper",
+        "question_count",
+        "question_end",
+        "question_id",
+        "question_image_path",
+        "question_no",
+        "question_start",
+        "related_textbook_pages",
+        "season",
+        "section",
+        "source_page_end",
+        "source_page_start",
+        "source_pdf",
+        "subject",
+        "subject_key",
+        "topic",
+        "website_tag",
+        "year"
+      ]
+    },
+    {
+      "path": "database/firebase_import/questions_subjectB_2024A_firestore.json",
+      "bytes": 30130,
+      "sha256": "699e2460fe83f23b507a42da643fbe12feeb9a3cc8c9f98b8d82d431f0acd9fa",
+      "rows": 20,
+      "fields": [
+        "answerOptions",
+        "answer_options",
+        "choiceCount",
+        "choice_count",
+        "correctAnswer",
+        "correct_answer",
+        "display_subject",
+        "durationMinutes",
+        "exam_id",
+        "exam_label",
+        "firestore_path",
+        "format",
+        "isPublished",
+        "is_published",
+        "paper",
+        "questionId",
+        "questionImagePath",
+        "questionImageUrl",
+        "questionNo",
+        "question_count",
+        "question_id",
+        "question_image_path",
+        "question_no",
+        "season",
+        "section",
+        "source_page_end",
+        "source_page_start",
+        "source_pdf",
+        "storagePath",
+        "storage_path",
+        "subject",
+        "subject_key",
+        "tags",
+        "topic",
+        "year"
+      ]
+    },
+    {
+      "path": "database/firebase_import/questions_subjectB_2024S_firestore.json",
+      "bytes": 30301,
+      "sha256": "2aadd070fca669eb1848ee5270ac19e63a76ccd40ef8d34789b3174995546537",
+      "rows": 20,
+      "fields": [
+        "answerOptions",
+        "answer_options",
+        "choiceCount",
+        "choice_count",
+        "correctAnswer",
+        "correct_answer",
+        "display_subject",
+        "durationMinutes",
+        "exam_id",
+        "exam_label",
+        "firestore_path",
+        "format",
+        "isPublished",
+        "is_published",
+        "paper",
+        "questionId",
+        "questionImagePath",
+        "questionImageUrl",
+        "questionNo",
+        "question_count",
+        "question_id",
+        "question_image_path",
+        "question_no",
+        "season",
+        "section",
+        "source_page_end",
+        "source_page_start",
+        "source_pdf",
+        "storagePath",
+        "storage_path",
+        "subject",
+        "subject_key",
+        "tags",
+        "topic",
+        "year"
+      ]
+    },
+    {
+      "path": "database/firebase_import/questions_subjectB_2025A_firestore.json",
+      "bytes": 30229,
+      "sha256": "1a191581fd5129cac98faf127a9af87aaac711c37f7d382edbab1218049e9fe1",
+      "rows": 20,
+      "fields": [
+        "answerOptions",
+        "answer_options",
+        "choiceCount",
+        "choice_count",
+        "correctAnswer",
+        "correct_answer",
+        "display_subject",
+        "durationMinutes",
+        "exam_id",
+        "exam_label",
+        "firestore_path",
+        "format",
+        "isPublished",
+        "is_published",
+        "paper",
+        "questionId",
+        "questionImagePath",
+        "questionImageUrl",
+        "questionNo",
+        "question_count",
+        "question_id",
+        "question_image_path",
+        "question_no",
+        "season",
+        "section",
+        "source_page_end",
+        "source_page_start",
+        "source_pdf",
+        "storagePath",
+        "storage_path",
+        "subject",
+        "subject_key",
+        "tags",
+        "topic",
+        "year"
+      ]
+    },
+    {
+      "path": "database/firebase_import/questions_subjectB_2025S_firestore.json",
+      "bytes": 30466,
+      "sha256": "a06a75e2d9caa4a17e9af2444871230fe5ae772acb6a6cc56635ee54553182aa",
+      "rows": 20,
+      "fields": [
+        "answerOptions",
+        "answer_options",
+        "choiceCount",
+        "choice_count",
+        "correctAnswer",
+        "correct_answer",
+        "display_subject",
+        "durationMinutes",
+        "exam_id",
+        "exam_label",
+        "firestore_path",
+        "format",
+        "isPublished",
+        "is_published",
+        "paper",
+        "questionId",
+        "questionImagePath",
+        "questionImageUrl",
+        "questionNo",
+        "question_count",
+        "question_id",
+        "question_image_path",
+        "question_no",
+        "season",
+        "section",
+        "source_page_end",
+        "source_page_start",
+        "source_pdf",
+        "storagePath",
+        "storage_path",
+        "subject",
+        "subject_key",
+        "tags",
+        "topic",
+        "year"
+      ]
+    },
+    {
+      "path": "database/firebase_import/questions_subjectB_2026S_firestore.json",
+      "bytes": 31289,
+      "sha256": "0b1e901c63d9d719663c5b810ec3cd59177e02a1887db9b4296329c702d3cfde",
+      "rows": 20,
+      "fields": [
+        "answerOptions",
+        "answer_options",
+        "choiceCount",
+        "choice_count",
+        "correctAnswer",
+        "correct_answer",
+        "display_name",
+        "display_subject",
+        "durationMinutes",
+        "exam_id",
+        "exam_label",
+        "firestore_path",
+        "format",
+        "isPublished",
+        "is_published",
+        "paper",
+        "questionId",
+        "questionImagePath",
+        "questionImageUrl",
+        "questionNo",
+        "question_count",
+        "question_id",
+        "question_image_path",
+        "question_no",
+        "season",
+        "section",
+        "source_kind",
+        "source_page_end",
+        "source_page_start",
+        "source_pdf",
+        "storagePath",
+        "storage_path",
+        "subject",
+        "subject_key",
+        "tags",
+        "topic",
+        "year"
+      ]
+    },
+    {
+      "path": "database/firebase_import/questions_subjectB_sample_firestore.json",
+      "bytes": 32053,
+      "sha256": "fff0447cca254c64a123014f5b2a61d504f16307aaa69c7b0a6a6af4a41eca65",
+      "rows": 20,
+      "fields": [
+        "answerOptions",
+        "answer_options",
+        "choiceCount",
+        "choice_count",
+        "correctAnswer",
+        "correct_answer",
+        "display_name",
+        "display_subject",
+        "durationMinutes",
+        "exam_id",
+        "exam_label",
+        "firestore_path",
+        "format",
+        "isPublished",
+        "is_published",
+        "paper",
+        "questionId",
+        "questionImagePath",
+        "questionImageUrl",
+        "questionNo",
+        "question_count",
+        "question_id",
+        "question_image_path",
+        "question_no",
+        "season",
+        "section",
+        "source_kind",
+        "source_page_end",
+        "source_page_start",
+        "source_pdf",
+        "storagePath",
+        "storage_path",
+        "subject",
+        "subject_key",
+        "tags",
+        "topic",
+        "year"
+      ]
+    }
+  ],
+  "exams": [
+    {
+      "exam_id": "2024S_FE_A",
+      "paper": "A",
+      "format": "subject_a",
+      "expected": 60,
+      "rows": 60,
+      "missing_numbers": [],
+      "duplicate_numbers": [],
+      "answer_pdf_parsed_count": 60,
+      "answer_pdf_mismatches": [],
+      "invalid_answer_options": [],
+      "published_true": 60,
+      "image_review_status": {
+        "approved": 60
+      },
+      "populated_fields": {
+        "chapter": 60,
+        "section": 60,
+        "topic": 60,
+        "notes": 60,
+        "confidence": 60,
+        "free_video_url": 0,
+        "explanation": 0,
+        "question_text": 0,
+        "source_pdf": 60,
+        "source_page_start": 60,
+        "source_page_end": 60
+      },
+      "mapping_path": "database/sorted/itpec_fe_2024S_subjectA_question_map_REVIEWED.xlsx",
+      "mapping": {
+        "sheets": [
+          "Q_Map_2024S_REVIEWED",
+          "Mapping_Summary",
+          "Manual_Review_Notes",
+          "Sources"
+        ],
+        "rows": 60,
+        "headers": [
+          "question_id",
+          "year",
+          "season",
+          "subject",
+          "question_no",
+          "correct_answer",
+          "exam_pdf_page",
+          "book",
+          "chapter",
+          "chapter_name",
+          "section",
+          "topic",
+          "related_textbook_pages",
+          "confidence",
+          "notes",
+          "free_video_url",
+          "paid_course_cta",
+          "website_tag",
+          "question_image_path",
+          "image_review_status",
+          "crop_method",
+          "crop_notes",
+          "source_pdf",
+          "source_page_start",
+          "source_page_end",
+          "is_published"
+        ]
+      },
+      "question_pdf": "database/raw/2024S_FE-A_Questions.pdf",
+      "answer_pdf": "database/raw/2024S_FE-A_Answers.pdf",
+      "crop_manifest": "database/builder/crop_manifest/2024S_subjectA_crop_manifest.csv",
+      "crop_rows": 60,
+      "crop_review_status": {
+        "approved": 60
+      },
+      "crop_methods": {
+        "auto": 60
+      },
+      "missing_images": []
+    },
+    {
+      "exam_id": "2024A_FE_A",
+      "paper": "A",
+      "format": "subject_a",
+      "expected": 60,
+      "rows": 60,
+      "missing_numbers": [],
+      "duplicate_numbers": [],
+      "answer_pdf_parsed_count": 60,
+      "answer_pdf_mismatches": [],
+      "invalid_answer_options": [],
+      "published_true": 60,
+      "image_review_status": {
+        "approved": 60
+      },
+      "populated_fields": {
+        "chapter": 60,
+        "section": 60,
+        "topic": 60,
+        "notes": 60,
+        "confidence": 60,
+        "free_video_url": 0,
+        "explanation": 0,
+        "question_text": 0,
+        "source_pdf": 60,
+        "source_page_start": 60,
+        "source_page_end": 60
+      },
+      "mapping_path": "database/sorted/itpec_fe_2024A_subjectA_question_map_REVIEWED.xlsx",
+      "mapping": {
+        "sheets": [
+          "Q_Map_2024A_REVIEWED",
+          "Mapping_Summary",
+          "Manual_Review_Notes",
+          "Sources"
+        ],
+        "rows": 60,
+        "headers": [
+          "question_id",
+          "year",
+          "season",
+          "subject",
+          "question_no",
+          "correct_answer",
+          "exam_pdf_page",
+          "book",
+          "chapter",
+          "chapter_name",
+          "section",
+          "topic",
+          "related_textbook_pages",
+          "confidence",
+          "notes",
+          "free_video_url",
+          "paid_course_cta",
+          "website_tag",
+          "question_image_path",
+          "image_review_status",
+          "crop_method",
+          "crop_notes",
+          "source_pdf",
+          "source_page_start",
+          "source_page_end",
+          "is_published"
+        ]
+      },
+      "question_pdf": "database/raw/2024A_FE-A_Questions.pdf",
+      "answer_pdf": "database/raw/2024A_FE-A_Answers.pdf",
+      "crop_manifest": "database/builder/crop_manifest/2024A_subjectA_crop_manifest.csv",
+      "crop_rows": 60,
+      "crop_review_status": {
+        "approved": 60
+      },
+      "crop_methods": {
+        "auto": 60
+      },
+      "missing_images": []
+    },
+    {
+      "exam_id": "2025A_FE_A",
+      "paper": "A",
+      "format": "subject_a",
+      "expected": 60,
+      "rows": 60,
+      "missing_numbers": [],
+      "duplicate_numbers": [],
+      "answer_pdf_parsed_count": 60,
+      "answer_pdf_mismatches": [],
+      "invalid_answer_options": [],
+      "published_true": 60,
+      "image_review_status": {
+        "approved": 60
+      },
+      "populated_fields": {
+        "chapter": 60,
+        "section": 60,
+        "topic": 60,
+        "notes": 60,
+        "confidence": 60,
+        "free_video_url": 0,
+        "explanation": 0,
+        "question_text": 0,
+        "source_pdf": 60,
+        "source_page_start": 60,
+        "source_page_end": 60
+      },
+      "mapping_path": "database/sorted/itpec_fe_2025A_subjectA_question_map.xlsx",
+      "mapping": {
+        "sheets": [
+          "Sheet1"
+        ],
+        "rows": 60,
+        "headers": [
+          "year",
+          "season",
+          "Q_No",
+          "Answer",
+          "Exam_PDF_Page",
+          "Book",
+          "Chapter",
+          "Section",
+          "Topic",
+          "Related_Textbook_Pages",
+          "Confidence",
+          "Notes",
+          "question_id",
+          "question_image_path",
+          "image_review_status",
+          "crop_method",
+          "crop_notes",
+          "source_pdf",
+          "source_page_start",
+          "source_page_end"
+        ]
+      },
+      "question_pdf": "database/raw/2025A_FE-A_Questions.pdf",
+      "answer_pdf": "database/raw/2025A_FE-A_Answers.pdf",
+      "crop_manifest": "database/builder/crop_manifest/2025A_subjectA_crop_manifest.csv",
+      "crop_rows": 60,
+      "crop_review_status": {
+        "approved": 60
+      },
+      "crop_methods": {
+        "auto": 60
+      },
+      "missing_images": []
+    },
+    {
+      "exam_id": "2025S_FE_A",
+      "paper": "A",
+      "format": "subject_a",
+      "expected": 60,
+      "rows": 60,
+      "missing_numbers": [],
+      "duplicate_numbers": [],
+      "answer_pdf_parsed_count": 60,
+      "answer_pdf_mismatches": [],
+      "invalid_answer_options": [],
+      "published_true": 60,
+      "image_review_status": {
+        "approved": 60
+      },
+      "populated_fields": {
+        "chapter": 60,
+        "section": 60,
+        "topic": 60,
+        "notes": 60,
+        "confidence": 60,
+        "free_video_url": 60,
+        "explanation": 0,
+        "question_text": 0,
+        "source_pdf": 60,
+        "source_page_start": 60,
+        "source_page_end": 60
+      },
+      "mapping_path": "database/sorted/itpec_fe_2025S_subjectA_question_map.xlsx",
+      "mapping": {
+        "sheets": [
+          "Sheet1"
+        ],
+        "rows": 60,
+        "headers": [
+          "year",
+          "season",
+          "question_no",
+          "correct_answer",
+          "exam_pdf_page",
+          "book",
+          "chapter",
+          "section",
+          "topic",
+          "related_textbook_pages",
+          "confidence",
+          "notes",
+          "free_video_placeholder",
+          "paid_course_cta_placeholder",
+          "website_tag",
+          "question_id",
+          "question_image_path",
+          "image_review_status",
+          "crop_method",
+          "crop_notes",
+          "source_pdf",
+          "source_page_start",
+          "source_page_end"
+        ]
+      },
+      "question_pdf": "database/raw/2025S_FE-A_Questions.pdf",
+      "answer_pdf": "database/raw/2025S_FE-A_Answers.pdf",
+      "crop_manifest": "database/builder/crop_manifest/2025S_subjectA_crop_manifest.csv",
+      "crop_rows": 60,
+      "crop_review_status": {
+        "approved": 60
+      },
+      "crop_methods": {
+        "auto": 60
+      },
+      "missing_images": []
+    },
+    {
+      "exam_id": "2026S_FE_A",
+      "paper": "A",
+      "format": "subject_a",
+      "expected": 60,
+      "rows": 60,
+      "missing_numbers": [],
+      "duplicate_numbers": [],
+      "answer_pdf_parsed_count": 60,
+      "answer_pdf_mismatches": [],
+      "invalid_answer_options": [],
+      "published_true": 60,
+      "image_review_status": {
+        "approved": 60
+      },
+      "populated_fields": {
+        "chapter": 60,
+        "section": 60,
+        "topic": 60,
+        "notes": 60,
+        "confidence": 60,
+        "free_video_url": 60,
+        "explanation": 0,
+        "question_text": 0,
+        "source_pdf": 60,
+        "source_page_start": 60,
+        "source_page_end": 60
+      },
+      "mapping_path": "database/sorted/itpec_fe_2026S_subjectA_question_map.xlsx",
+      "mapping": {
+        "sheets": [
+          "Sheet1"
+        ],
+        "rows": 60,
+        "headers": [
+          "year",
+          "season",
+          "question_no",
+          "correct_answer",
+          "exam_pdf_page",
+          "book",
+          "chapter",
+          "section",
+          "topic",
+          "related_textbook_pages",
+          "confidence",
+          "notes",
+          "free_video_placeholder",
+          "paid_course_cta_placeholder",
+          "website_tag",
+          "question_id",
+          "question_image_path",
+          "image_review_status",
+          "crop_method",
+          "crop_notes",
+          "source_pdf",
+          "source_page_start",
+          "source_page_end"
+        ]
+      },
+      "question_pdf": "database/raw/2026S_FE-A_Questions.pdf",
+      "answer_pdf": "database/raw/2026S_FE-A_Answers.pdf",
+      "crop_manifest": "database/builder/crop_manifest/2026S_subjectA_crop_manifest.csv",
+      "crop_rows": 60,
+      "crop_review_status": {
+        "approved": 60
+      },
+      "crop_methods": {
+        "auto": 60
+      },
+      "missing_images": []
+    },
+    {
+      "exam_id": "2024S_FE_B",
+      "paper": "B",
+      "format": "subject_b",
+      "expected": 20,
+      "rows": 20,
+      "missing_numbers": [],
+      "duplicate_numbers": [],
+      "answer_pdf_parsed_count": 20,
+      "answer_pdf_mismatches": [],
+      "invalid_answer_options": [],
+      "published_true": 20,
+      "image_review_status": {
+        "absent": 20
+      },
+      "populated_fields": {
+        "chapter": 0,
+        "section": 20,
+        "topic": 20,
+        "notes": 0,
+        "confidence": 0,
+        "free_video_url": 0,
+        "explanation": 0,
+        "question_text": 0,
+        "source_pdf": 20,
+        "source_page_start": 20,
+        "source_page_end": 20
+      },
+      "mapping_path": "database/sorted/itpec_fe_2024S_subjectB_question_map.xlsx",
+      "mapping": {
+        "sheets": [
+          "Sheet1"
+        ],
+        "rows": 20,
+        "headers": [
+          "exam_id",
+          "exam_label",
+          "year",
+          "season",
+          "subject",
+          "subject_key",
+          "display_subject",
+          "paper",
+          "format",
+          "question_count",
+          "question_no",
+          "question_id",
+          "correct_answer",
+          "choice_count",
+          "answer_options",
+          "section",
+          "topic",
+          "tags",
+          "question_image_path",
+          "storage_path",
+          "source_pdf",
+          "source_page_start",
+          "source_page_end",
+          "needs_review",
+          "notes"
+        ]
+      },
+      "question_pdf": "database/raw/2024S_FE-B_Questions.pdf",
+      "answer_pdf": "database/raw/2024S_FE-B_Answers.pdf",
+      "crop_manifest": "database/builder/crop_manifest/2024S_subjectB_crop_manifest.csv",
+      "crop_rows": 20,
+      "crop_review_status": {
+        "approved": 20
+      },
+      "crop_methods": {
+        "auto": 20
+      },
+      "missing_images": []
+    },
+    {
+      "exam_id": "FE_B_SAMPLE",
+      "paper": "B",
+      "format": "subject_b_sample",
+      "expected": 20,
+      "rows": 20,
+      "missing_numbers": [],
+      "duplicate_numbers": [],
+      "answer_pdf_parsed_count": 20,
+      "answer_pdf_mismatches": [],
+      "invalid_answer_options": [],
+      "published_true": 20,
+      "image_review_status": {
+        "absent": 20
+      },
+      "populated_fields": {
+        "chapter": 0,
+        "section": 20,
+        "topic": 20,
+        "notes": 0,
+        "confidence": 0,
+        "free_video_url": 0,
+        "explanation": 0,
+        "question_text": 0,
+        "source_pdf": 20,
+        "source_page_start": 20,
+        "source_page_end": 20
+      },
+      "mapping_path": "database/sorted/itpec_fe_sample_subjectB_question_map.xlsx",
+      "mapping": {
+        "sheets": [
+          "Sheet1"
+        ],
+        "rows": 20,
+        "headers": [
+          "exam_id",
+          "exam_label",
+          "display_name",
+          "source_kind",
+          "year",
+          "season",
+          "subject",
+          "subject_key",
+          "display_subject",
+          "paper",
+          "format",
+          "question_count",
+          "question_no",
+          "question_id",
+          "correct_answer",
+          "choice_count",
+          "answer_options",
+          "section",
+          "topic",
+          "tags",
+          "question_image_path",
+          "storage_path",
+          "source_pdf",
+          "source_page_start",
+          "source_page_end",
+          "needs_review",
+          "notes"
+        ]
+      },
+      "question_pdf": "database/raw/FE-B-SampleQuestions.pdf",
+      "answer_pdf": "database/raw/FE-B-SampleQuestions.pdf",
+      "crop_manifest": "database/builder/crop_manifest/sample_subjectB_crop_manifest.csv",
+      "crop_rows": 20,
+      "crop_review_status": {
+        "approved": 20
+      },
+      "crop_methods": {
+        "auto": 20
+      },
+      "missing_images": []
+    },
+    {
+      "exam_id": "2024A_FE_B",
+      "paper": "B",
+      "format": "subject_b",
+      "expected": 20,
+      "rows": 20,
+      "missing_numbers": [],
+      "duplicate_numbers": [],
+      "answer_pdf_parsed_count": 20,
+      "answer_pdf_mismatches": [],
+      "invalid_answer_options": [],
+      "published_true": 20,
+      "image_review_status": {
+        "absent": 20
+      },
+      "populated_fields": {
+        "chapter": 0,
+        "section": 20,
+        "topic": 20,
+        "notes": 0,
+        "confidence": 0,
+        "free_video_url": 0,
+        "explanation": 0,
+        "question_text": 0,
+        "source_pdf": 20,
+        "source_page_start": 20,
+        "source_page_end": 20
+      },
+      "mapping_path": "database/sorted/itpec_fe_2024A_subjectB_question_map.xlsx",
+      "mapping": {
+        "sheets": [
+          "Sheet1"
+        ],
+        "rows": 20,
+        "headers": [
+          "exam_id",
+          "exam_label",
+          "year",
+          "season",
+          "subject",
+          "subject_key",
+          "display_subject",
+          "paper",
+          "format",
+          "question_count",
+          "question_no",
+          "question_id",
+          "correct_answer",
+          "choice_count",
+          "answer_options",
+          "section",
+          "topic",
+          "tags",
+          "question_image_path",
+          "storage_path",
+          "source_pdf",
+          "source_page_start",
+          "source_page_end",
+          "needs_review",
+          "notes"
+        ]
+      },
+      "question_pdf": "database/raw/2024A_FE-B_Questions.pdf",
+      "answer_pdf": "database/raw/2024A_FE-B_Answers.pdf",
+      "crop_manifest": "database/builder/crop_manifest/2024A_subjectB_crop_manifest.csv",
+      "crop_rows": 20,
+      "crop_review_status": {
+        "approved": 20
+      },
+      "crop_methods": {
+        "auto": 20
+      },
+      "missing_images": []
+    },
+    {
+      "exam_id": "2025S_FE_B",
+      "paper": "B",
+      "format": "subject_b",
+      "expected": 20,
+      "rows": 20,
+      "missing_numbers": [],
+      "duplicate_numbers": [],
+      "answer_pdf_parsed_count": 20,
+      "answer_pdf_mismatches": [],
+      "invalid_answer_options": [],
+      "published_true": 20,
+      "image_review_status": {
+        "absent": 20
+      },
+      "populated_fields": {
+        "chapter": 0,
+        "section": 20,
+        "topic": 20,
+        "notes": 0,
+        "confidence": 0,
+        "free_video_url": 0,
+        "explanation": 0,
+        "question_text": 0,
+        "source_pdf": 20,
+        "source_page_start": 20,
+        "source_page_end": 20
+      },
+      "mapping_path": "database/sorted/itpec_fe_2025S_subjectB_question_map.xlsx",
+      "mapping": {
+        "sheets": [
+          "Sheet1"
+        ],
+        "rows": 20,
+        "headers": [
+          "exam_id",
+          "exam_label",
+          "year",
+          "season",
+          "subject",
+          "subject_key",
+          "display_subject",
+          "paper",
+          "format",
+          "question_count",
+          "question_no",
+          "question_id",
+          "correct_answer",
+          "choice_count",
+          "answer_options",
+          "section",
+          "topic",
+          "tags",
+          "question_image_path",
+          "storage_path",
+          "source_pdf",
+          "source_page_start",
+          "source_page_end",
+          "needs_review",
+          "notes"
+        ]
+      },
+      "question_pdf": "database/raw/2025S_FE-B_Questions.pdf",
+      "answer_pdf": "database/raw/2025S_FE-B_Answers.pdf",
+      "crop_manifest": "database/builder/crop_manifest/2025S_subjectB_crop_manifest.csv",
+      "crop_rows": 20,
+      "crop_review_status": {
+        "approved": 20
+      },
+      "crop_methods": {
+        "auto": 20
+      },
+      "missing_images": []
+    },
+    {
+      "exam_id": "2025A_FE_B",
+      "paper": "B",
+      "format": "subject_b",
+      "expected": 20,
+      "rows": 20,
+      "missing_numbers": [],
+      "duplicate_numbers": [],
+      "answer_pdf_parsed_count": 20,
+      "answer_pdf_mismatches": [],
+      "invalid_answer_options": [],
+      "published_true": 20,
+      "image_review_status": {
+        "absent": 20
+      },
+      "populated_fields": {
+        "chapter": 0,
+        "section": 20,
+        "topic": 20,
+        "notes": 0,
+        "confidence": 0,
+        "free_video_url": 0,
+        "explanation": 0,
+        "question_text": 0,
+        "source_pdf": 20,
+        "source_page_start": 20,
+        "source_page_end": 20
+      },
+      "mapping_path": "database/sorted/itpec_fe_2025A_subjectB_question_map.xlsx",
+      "mapping": {
+        "sheets": [
+          "Sheet1"
+        ],
+        "rows": 20,
+        "headers": [
+          "exam_id",
+          "exam_label",
+          "year",
+          "season",
+          "subject",
+          "subject_key",
+          "display_subject",
+          "paper",
+          "format",
+          "question_count",
+          "question_no",
+          "question_id",
+          "correct_answer",
+          "choice_count",
+          "answer_options",
+          "section",
+          "topic",
+          "tags",
+          "question_image_path",
+          "storage_path",
+          "source_pdf",
+          "source_page_start",
+          "source_page_end",
+          "needs_review",
+          "notes"
+        ]
+      },
+      "question_pdf": "database/raw/2025A_FE-B_Questions.pdf",
+      "answer_pdf": "database/raw/2025A_FE-B_Answers.pdf",
+      "crop_manifest": "database/builder/crop_manifest/2025A_subjectB_crop_manifest.csv",
+      "crop_rows": 20,
+      "crop_review_status": {
+        "approved": 20
+      },
+      "crop_methods": {
+        "auto": 20
+      },
+      "missing_images": []
+    },
+    {
+      "exam_id": "2026S_FE_B",
+      "paper": "B",
+      "format": "subject_b",
+      "expected": 20,
+      "rows": 20,
+      "missing_numbers": [],
+      "duplicate_numbers": [],
+      "answer_pdf_parsed_count": 20,
+      "answer_pdf_mismatches": [],
+      "invalid_answer_options": [],
+      "published_true": 20,
+      "image_review_status": {
+        "absent": 20
+      },
+      "populated_fields": {
+        "chapter": 0,
+        "section": 20,
+        "topic": 20,
+        "notes": 0,
+        "confidence": 0,
+        "free_video_url": 0,
+        "explanation": 0,
+        "question_text": 0,
+        "source_pdf": 20,
+        "source_page_start": 20,
+        "source_page_end": 20
+      },
+      "mapping_path": "database/sorted/itpec_fe_2026S_subjectB_question_map.xlsx",
+      "mapping": {
+        "sheets": [
+          "Sheet1"
+        ],
+        "rows": 20,
+        "headers": [
+          "exam_id",
+          "exam_label",
+          "display_name",
+          "source_kind",
+          "year",
+          "season",
+          "subject",
+          "subject_key",
+          "display_subject",
+          "paper",
+          "format",
+          "question_count",
+          "question_no",
+          "question_id",
+          "correct_answer",
+          "choice_count",
+          "answer_options",
+          "section",
+          "topic",
+          "tags",
+          "question_image_path",
+          "storage_path",
+          "source_pdf",
+          "source_page_start",
+          "source_page_end",
+          "needs_review",
+          "notes"
+        ]
+      },
+      "question_pdf": "database/raw/2026S_FE-B_Questions.pdf",
+      "answer_pdf": "database/raw/2026S_FE-B_Answers.pdf",
+      "crop_manifest": "database/builder/crop_manifest/2026S_subjectB_crop_manifest.csv",
+      "crop_rows": 20,
+      "crop_review_status": {
+        "approved": 20
+      },
+      "crop_methods": {
+        "auto": 19,
+        "manual": 1
+      },
+      "missing_images": []
+    },
+    {
+      "exam_id": "2023A_FE_AM",
+      "paper": "AM",
+      "format": "legacy_morning",
+      "expected": 80,
+      "rows": 80,
+      "missing_numbers": [],
+      "duplicate_numbers": [],
+      "answer_pdf_parsed_count": 80,
+      "answer_pdf_mismatches": [],
+      "invalid_answer_options": [],
+      "published_true": 0,
+      "image_review_status": {
+        "approved": 80
+      },
+      "populated_fields": {
+        "chapter": 80,
+        "section": 80,
+        "topic": 80,
+        "notes": 80,
+        "confidence": 80,
+        "free_video_url": 0,
+        "explanation": 0,
+        "question_text": 0,
+        "source_pdf": 80,
+        "source_page_start": 80,
+        "source_page_end": 80
+      },
+      "mapping_path": "database/sorted/itpec_fe_2023A_morning_question_map_REVIEWED.xlsx",
+      "mapping": {
+        "sheets": [
+          "Sheet1"
+        ],
+        "rows": 80,
+        "headers": [
+          "question_id",
+          "year",
+          "season",
+          "subject",
+          "question_no",
+          "correct_answer",
+          "exam_pdf_page",
+          "book",
+          "chapter",
+          "chapter_name",
+          "section",
+          "topic",
+          "related_textbook_pages",
+          "confidence",
+          "notes",
+          "free_video_url",
+          "paid_course_cta",
+          "website_tag",
+          "question_image_path",
+          "image_review_status",
+          "crop_method",
+          "crop_notes",
+          "source_pdf",
+          "source_page_start",
+          "source_page_end",
+          "is_published"
+        ]
+      },
+      "question_pdf": "database/raw/2023A_FE_AM_Questions.pdf",
+      "answer_pdf": "database/raw/2023A_FE_AM_Answers.pdf",
+      "crop_manifest": "database/builder/crop_manifest/2023A_FE_AM_crop_manifest.csv",
+      "crop_rows": 80,
+      "crop_review_status": {
+        "approved": 80
+      },
+      "crop_methods": {
+        "auto": 80
+      },
+      "missing_images": []
+    },
+    {
+      "exam_id": "2023S_FE_AM",
+      "paper": "AM",
+      "format": "legacy_morning",
+      "expected": 80,
+      "rows": 80,
+      "missing_numbers": [],
+      "duplicate_numbers": [],
+      "answer_pdf_parsed_count": 80,
+      "answer_pdf_mismatches": [],
+      "invalid_answer_options": [],
+      "published_true": 0,
+      "image_review_status": {
+        "approved": 80
+      },
+      "populated_fields": {
+        "chapter": 80,
+        "section": 80,
+        "topic": 80,
+        "notes": 80,
+        "confidence": 80,
+        "free_video_url": 0,
+        "explanation": 0,
+        "question_text": 0,
+        "source_pdf": 80,
+        "source_page_start": 80,
+        "source_page_end": 80
+      },
+      "mapping_path": "database/sorted/itpec_fe_2023S_morning_question_map_REVIEWED.xlsx",
+      "mapping": {
+        "sheets": [
+          "Sheet1"
+        ],
+        "rows": 80,
+        "headers": [
+          "question_id",
+          "year",
+          "season",
+          "subject",
+          "question_no",
+          "correct_answer",
+          "exam_pdf_page",
+          "book",
+          "chapter",
+          "chapter_name",
+          "section",
+          "topic",
+          "related_textbook_pages",
+          "confidence",
+          "notes",
+          "free_video_url",
+          "paid_course_cta",
+          "website_tag",
+          "question_image_path",
+          "image_review_status",
+          "crop_method",
+          "crop_notes",
+          "source_pdf",
+          "source_page_start",
+          "source_page_end",
+          "is_published"
+        ]
+      },
+      "question_pdf": "database/raw/2023S_FE_AM_Questions.pdf",
+      "answer_pdf": "database/raw/2023S_FE_AM_Answer.pdf",
+      "crop_manifest": "database/builder/crop_manifest/2023S_FE_AM_crop_manifest.csv",
+      "crop_rows": 80,
+      "crop_review_status": {
+        "approved": 80
+      },
+      "crop_methods": {
+        "auto": 78,
+        "manual": 2
+      },
+      "missing_images": []
+    }
+  ],
+  "books": [
+    {
+      "path": "database/raw/FE Vol 1.pdf",
+      "bytes": 8207454,
+      "sha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+      "pages": 487,
+      "pages_with_text": 484,
+      "text_characters": 889669,
+      "bookmarks": [
+        [
+          1,
+          "FE1_1_Introduction",
+          1
+        ],
+        [
+          1,
+          "FE1_2_Hardware",
+          17
+        ],
+        [
+          1,
+          "FE1_3_Information_processing_system",
+          126
+        ],
+        [
+          1,
+          "FE1_4_Software",
+          193
+        ],
+        [
+          1,
+          "FE1_5_Database",
+          256
+        ],
+        [
+          1,
+          "FE1_6_Networks",
+          298
+        ],
+        [
+          1,
+          "FE1_7_Security",
+          361
+        ],
+        [
+          1,
+          "FE1_8_ Data_structure_and_Algorithm",
+          412
+        ],
+        [
+          1,
+          "FE1_9_Index",
+          460
+        ],
+        [
+          1,
+          "FE1_10_ Explanations_and_Answers",
+          1
+        ]
+      ],
+      "annotations": {
+        "Highlight": 712,
+        "Square": 1,
+        "Text": 15,
+        "Underline": 61
+      }
+    },
+    {
+      "path": "database/raw/FE Vol 2.pdf",
+      "bytes": 5081119,
+      "sha256": "106b9ed5ac8d998d43e2e5ff658f6afc83bab6f61458fc43b666e06810583f8d",
+      "pages": 423,
+      "pages_with_text": 421,
+      "text_characters": 835001,
+      "bookmarks": [
+        [
+          1,
+          "FE2_1_Introduction",
+          1
+        ],
+        [
+          1,
+          "FE2_2_Corporate_and_legal_affairs",
+          14
+        ],
+        [
+          1,
+          "FE2_3_Business_strategy",
+          147
+        ],
+        [
+          1,
+          "FE2_4_System_strategy",
+          201
+        ],
+        [
+          1,
+          "FE2_5_Development_technology",
+          236
+        ],
+        [
+          1,
+          "FE2_6_Project_management",
+          313
+        ],
+        [
+          1,
+          "FE2_7_Service_management",
+          349
+        ],
+        [
+          1,
+          "FE2_8_System_audit_and_Internal_control",
+          384
+        ],
+        [
+          1,
+          "FE2_9_Index",
+          400
+        ],
+        [
+          1,
+          "FE2_10_Explanations_and_Answers",
+          1
+        ]
+      ],
+      "annotations": {
+        "Highlight": 546,
+        "Underline": 53,
+        "Text": 2,
+        "Squiggly": 1,
+        "Ink": 33,
+        "FreeText": 1
+      }
+    }
+  ],
+  "chapter_counts": {
+    "Chapter 1 Corporate and Legal Affairs": 51,
+    "Chapter 1 Hardware": 38,
+    "Chapter 2 Business Strategy": 62,
+    "Chapter 2 Information Processing System": 29,
+    "Chapter 3 Information Systems Strategy": 15,
+    "Chapter 3 Software": 30,
+    "Chapter 4 Database": 34,
+    "Chapter 4 Development Technology": 50,
+    "Chapter 5 Network": 34,
+    "Chapter 5 Project Management": 15,
+    "Chapter 6 Security": 53,
+    "Chapter 6 Service Management": 16,
+    "Chapter 7 Data Structure and Algorithm": 24,
+    "Chapter 7 System Audit and Internal Control": 9
+  },
+  "mapping_confidence": {
+    "High": 370,
+    "Medium": 89,
+    "Low": 1
+  },
+  "subject_b_sections": {
+    "algorithm_programming": 96,
+    "information_security": 24
+  },
+  "images": {
+    "files": 580,
+    "bytes": 41246360
+  }
+}
