@@ -5,6 +5,7 @@ import release from '../src/content/hardware-source-release.json';
 import approval from '../docs/development/editorial/chapter1-publication.json';
 import evidence from '../docs/development/evidence/hardware-printed-pages.json';
 import { digest } from './question-importer';
+import proseRepairs from '../src/content/hardware-prose-repairs.json';
 
 const normalize=(text:string)=>text.replace(/\s+/g,' ').trim();
 const { JSDOM }=createRequire(import.meta.url)('jsdom') as {JSDOM:new(html:string)=>{window:{document:Document;close():void}}};
@@ -12,6 +13,7 @@ export const sourceAssets=new Map(release.assets.map(asset=>[asset.path,asset]))
 
 export async function validateSourceRelease(builtRoot?:string){
   if(approval.status!=='owner-approved'||release.publicationStatus!=='owner-approved'||approval.sourceSha256!==release.sourceSha256||release.sourceSha256!==evidence.sha256||approval.releaseId!==release.releaseId)throw new Error('Unapproved source edition');
+  if(proseRepairs.sourceSha256!==release.sourceSha256||proseRepairs.releaseId!==release.releaseId)throw new Error('Prose layout metadata belongs to another source edition');
   const pages=release.lessons.slice(0,5).flatMap(lesson=>lesson.pages);
   if(pages.length!==100||pages.some((page,index)=>page.pdfPage!==index+18||page.printedPage!==evidence.pages.find(p=>p.pdfPage===page.pdfPage)?.printedPage))throw new Error('Source release lost or reordered a page');
   const numbered=new Set<string>();
@@ -29,6 +31,15 @@ export async function validateSourceRelease(builtRoot?:string){
       const actual=[...doc.querySelectorAll<HTMLElement>('[data-source-block]')];
       const expected=lesson.pages.flatMap(page=>page.blocks);
       if(actual.length!==expected.length)throw new Error(`Missing source blocks: ${lesson.slug}`);
+      if(builtRoot&&lesson.pages.some(page=>page.pdfPage===proseRepairs.pdfPage)){
+        const inserted=doc.querySelector(`[data-pdf-page="${proseRepairs.pdfPage}"]`)!;
+        const paragraphs=[...inserted.querySelectorAll('[data-source-paragraph]')];
+        if(paragraphs.length!==proseRepairs.paragraphs.length||inserted.querySelector('p[data-source-kind="paragraph"]'))throw new Error('Fragmented source words were rendered as separate paragraphs');
+        for(const group of proseRepairs.paragraphs){
+          const paragraph=inserted.querySelector(`[data-source-paragraph="${group.id}"]`)!;
+          if(!paragraph||paragraph.tagName!=='P'||paragraph.querySelectorAll('[data-source-block]').length!==group.fragmentCount||digest(normalize(paragraph.textContent||''))!==group.textSha256)throw new Error(`Reviewed source paragraph changed: ${group.id}`);
+        }
+      }
       for(let index=0;index<expected.length;index++){
         const block=expected[index],element=actual[index];
         if(element.id!==block.id||element.dataset.sourceBlock!==block.sourceId||element.dataset.sourceKind!==block.kind)throw new Error('Source reading order changed');

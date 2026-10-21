@@ -7,6 +7,7 @@ const origin=process.argv[2];
 if(!origin||!/^https:\/\/[a-z0-9-]+\.itpecfetextbook\.pages\.dev\/?$/.test(origin))throw new Error('Pass a Cloudflare Pages preview URL; production is excluded');
 const release=JSON.parse(await readFile('src/content/hardware-source-release.json','utf8'));
 const toc=JSON.parse(await readFile('src/content/hardware-toc.json','utf8'));
+const prose=JSON.parse(await readFile('src/content/hardware-prose-repairs.json','utf8'));
 const bank=await readFile('public/data/questions.json');
 const output='.local/reading-review';await mkdir(output,{recursive:true});
 const browser=await chromium.launch();
@@ -19,7 +20,7 @@ try{
  assert.equal(await page.locator('main h1').innerText(),'Hardware');
  assert.equal(await page.locator('.sidebar [data-toc-link]').count(),52);
  await page.screenshot({path:`${output}/desktop.png`});
- const source=await page.evaluate(async({release,bankHash})=>{
+ const source=await page.evaluate(async({release,bankHash,prose})=>{
   const hash=async bytes=>[...new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))].map(v=>v.toString(16).padStart(2,'0')).join('');
   let index=0,assets=0;
   await Promise.all(Array.from({length:6},async()=>{while(index<release.assets.length){const asset=release.assets[index++],r=await fetch('/'+asset.path);if(!r.ok||await hash(await r.arrayBuffer())!==asset.sha256)throw new Error('Preview asset changed: '+asset.path);assets++;}}));
@@ -29,6 +30,11 @@ try{
    const doc=new DOMParser().parseFromString(await r.text(),'text/html');
    const actual=[...doc.querySelectorAll('[data-source-block]')],expected=lesson.pages.flatMap(p=>p.blocks);
    if(actual.length!==expected.length)throw new Error('Missing source blocks');
+   if(lesson.pages.some(p=>p.pdfPage===prose.pdfPage)){
+    const insertion=doc.querySelector(`[data-pdf-page="${prose.pdfPage}"]`);
+    if(insertion.querySelectorAll('p[data-source-paragraph]').length!==5||insertion.querySelector('p[data-source-kind="paragraph"]'))throw new Error('Preview prose is fragmented');
+    for(const group of prose.paragraphs){const paragraph=insertion.querySelector(`[data-source-paragraph="${group.id}"]`);if(!paragraph||await hash(new TextEncoder().encode(paragraph.textContent.replace(/\s+/g,' ').trim()))!==group.textSha256)throw new Error('Source paragraph text changed');}
+   }
    for(let i=0;i<expected.length;i++){
     const block=expected[i],element=actual[i];if(element.id!==block.id)throw new Error('Source reading order changed');
     if(['paragraph','heading','list-item'].includes(block.kind)){
@@ -39,7 +45,15 @@ try{
   }
   const published=await fetch('/data/questions.json');if(!published.ok||await hash(await published.arrayBuffer())!==bankHash)throw new Error('Published question bank changed');
   return {readers:readers.length,sourceAssets:assets,publishedQuestions:420};
- },{release,bankHash:createHash('sha256').update(bank).digest('hex')});
+ },{release,bankHash:createHash('sha256').update(bank).digest('hex'),prose});
+ const checkParagraph=async(name)=>{
+  await page.goto(origin+'/chapters/hardware/cpu-and-main-memory/#'+prose.paragraphs[3].firstId);await page.evaluate(()=>document.fonts.ready);
+  const paragraph=page.locator('[data-source-paragraph="pdf-083-prose-004"]');await paragraph.scrollIntoViewIfNeeded();
+  const words=paragraph.locator('[data-source-block]'),first=await words.nth(0).boundingBox(),second=await words.nth(1).boundingBox();
+  assert.ok(Math.abs(first.y-second.y)<2,'Source prose words must share a row');
+  await page.screenshot({path:`${output}/uart-${name}.png`});
+ };
+ await checkParagraph('desktop');
  const cache=toc.nodes.find(n=>n.number==='3-5-1');
  await page.goto(origin+'/chapters/hardware/memory-and-cache/');
  await page.waitForURL(new RegExp(`cpu-and-main-memory/.*#${cache.id}$`));
@@ -60,8 +74,9 @@ try{
   await page.screenshot({path:`${output}/${name}.png`});
   await page.locator('[data-study-tools] > summary').click();await page.locator('.companion-content h2').waitFor();
   await page.screenshot({path:`${output}/${name}-tools.png`});
+  await checkParagraph(name);
  }
  assert.deepEqual(errors,[]);
- const result={preview:origin,checkedAt:new Date().toISOString(),...source,contents:52,legacyCacheRedirect:true,practiceAnswerBookmarkAndReturn:true,widths:[375,768,1024,1440],browserErrors:errors};
+ const result={preview:origin,checkedAt:new Date().toISOString(),...source,contents:52,repairedParagraphs:5,preservedWordAnchors:235,legacyCacheRedirect:true,practiceAnswerBookmarkAndReturn:true,widths:[375,768,1024,1440],browserErrors:errors};
  await writeFile(`${output}/preview-check.json`,JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result,null,2));
 }finally{await browser.close();}

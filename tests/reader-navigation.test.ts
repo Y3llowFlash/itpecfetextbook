@@ -7,6 +7,7 @@ import {contents,mainContents,completionId} from '../src/lib/toc';
 import {studyContext} from '../src/lib/study-context';
 import {publishedQuestions} from '../src/lib/catalog';
 import {presentSourceHTML} from '../src/lib/reader-presentation';
+import proseRepairs from '../src/content/hardware-prose-repairs.json';
 import {canonicalReadingPosition,CPU_PATH,CACHE_HEADING} from '../src/lib/reading-routes';
 const {JSDOM}=createRequire(import.meta.url)('jsdom') as {JSDOM:new(html:string)=>{window:{document:Document;close():void}}};
 describe('original source navigation',()=>{
@@ -38,6 +39,26 @@ describe('original source navigation',()=>{
   expect(canonicalReadingPosition({...old,blockId:'why-a-hierarchy'}).blockId).toBe(CACHE_HEADING);
   expect(completionId(contents.find(n=>n.number==='3-5-1')!)).toBe('fe-v1-ch01-memory-cache');
   expect(completionId(contents.find(n=>n.number==='3')!)).toBe('fe-v1-ch01-s03');
+ });
+ it('restores the five source paragraphs from fragmented PDF words without losing their reading anchors',()=>{
+  const source=readFileSync('src/content/source-hardware/cpu-and-main-memory.html','utf8');
+  const before=new JSDOM(source),after=new JSDOM(presentSourceHTML(source));
+  const original=before.window.document.querySelector('[data-pdf-page="83"]')!;
+  const repaired=after.window.document.querySelector('[data-pdf-page="83"]')!;
+  expect(original.querySelectorAll('p[data-source-kind="paragraph"]')).toHaveLength(235);
+  expect(repaired.querySelectorAll('p[data-source-kind="paragraph"]')).toHaveLength(0);
+  const paragraphs=[...repaired.querySelectorAll('p[data-source-paragraph]')];
+  expect(paragraphs).toHaveLength(5);
+  expect(paragraphs.map(p=>p.querySelectorAll('[data-source-block]').length)).toEqual([50,56,48,57,24]);
+  expect(paragraphs.map(p=>p.textContent)).toEqual(proseRepairs.paragraphs.map(group=>{
+   const blocks=[...original.querySelectorAll('[data-source-kind="paragraph"]')];
+   return blocks.slice(blocks.findIndex(b=>b.id===group.firstId),blocks.findIndex(b=>b.id===group.lastId)+1).map(b=>b.textContent).join(' ');
+  }));
+  expect(paragraphs[3].textContent).toMatch(/^d\) UART \(Universal Asynchronous Receiver-Transmitter\): UART is a widely used/);
+  const anchors=(doc:Element)=>[...doc.querySelectorAll('[data-reading-block]')].map(el=>({id:el.id,text:el.textContent}));
+  expect(anchors(repaired)).toEqual(anchors(original));
+  expect(repaired.querySelector('figure')?.outerHTML.replace(/Original textbook · /g,'')).toBe(original.querySelector('figure')?.outerHTML.replace(/Original textbook · /g,''));
+  before.window.close();after.window.close();
  });
  it('derives only contextual published questions and mapped videos, with no default cache recommendation',async()=>{
   const bank=await publishedQuestions();

@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "releaseId": "fev1-201504-ch1-r1",
+  "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+  "pdfPage": 83,
+  "printedPage": null,
+  "review": "Five prose paragraphs visually verified against the original PDF; original word IDs and text remain unchanged.",
+  "paragraphs": [
+    {
+      "id": "pdf-083-prose-001",
+      "firstId": "fev1-201504-ch1-r1-pdf-083-b000-l00-text-0",
+      "lastId": "fev1-201504-ch1-r1-pdf-083-b098-l00-text-0",
+      "fragmentCount": 50,
+      "bbox": [
+        85.41,
+        266.24,
+        512.956,
+        361.16
+      ],
+      "textSha256": "6df231fc0d72ce1d419c3c61d4219cca2461689b0c3a01e186eb5f6319aed48e"
+    },
+    {
+      "id": "pdf-083-prose-002",
+      "firstId": "fev1-201504-ch1-r1-pdf-083-b099-l00-text-0",
+      "lastId": "fev1-201504-ch1-r1-pdf-083-b209-l00-text-0",
+      "fragmentCount": 56,
+      "bbox": [
+        85.41,
+        376.98,
+        511.556,
+        471.9
+      ],
+      "textSha256": "5e92ef18c9f4b4047d71c000c52a2a3bc4fbfae859d9525adc22b21f6b7e9c15"
+    },
+    {
+      "id": "pdf-083-prose-003",
+      "firstId": "fev1-201504-ch1-r1-pdf-083-b210-l00-text-0",
+      "lastId": "fev1-201504-ch1-r1-pdf-083-b304-l00-text-0",
+      "fragmentCount": 48,
+      "bbox": [
+        85.41,
+        487.72,
+        514.146,
+        582.64
+      ],
+      "textSha256": "aba579037883aee7585fc698528106c90d4d57db7dfaf2dfc72e4334cb298d50"
+    },
+    {
+      "id": "pdf-083-prose-004",
+      "firstId": "fev1-201504-ch1-r1-pdf-083-b305-l00-text-0",
+      "lastId": "fev1-201504-ch1-r1-pdf-083-b417-l00-text-0",
+      "fragmentCount": 57,
+      "bbox": [
+        85.41,
+        598.46,
+        509.162,
+        709.2
+      ],
+      "textSha256": "17df5ccfa88324c89a8d23c48df6a3b1edd0407b0dec6c425b2dfd63cf874e76"
+    },
+    {
+      "id": "pdf-083-prose-005",
+      "firstId": "fev1-201504-ch1-r1-pdf-083-b418-l00-text-0",
+      "lastId": "fev1-201504-ch1-r1-pdf-083-b464-l00-text-0",
+      "fragmentCount": 24,
+      "bbox": [
+        85.41,
+        725.02,
+        464.068,
+        772.48
+      ],
+      "textSha256": "42dde536d9b657af8e26545e7b5b13b4d43aec6ad4cc382d58687f34ec7afce4"
+    }
+  ]
+}

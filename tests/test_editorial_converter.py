@@ -4,9 +4,23 @@ from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
 from editorial_convert import safe_output,classify_line,math_risk,merge_regions,snap_bounds,boundary_findings
 from editorial_validate import Blocks,normalized
+from generate_prose_repairs import paragraph_groups
 
 
 class EditorialConverterTests(unittest.TestCase):
+    def test_word_objects_from_distinct_pdf_blocks_form_rows_and_paragraphs(self):
+        def word(text,box,index):
+            return {'kind':'paragraph','sourceText':text,'bbox':box,'id':f'word-{index}','pdfBlock':index}
+        blocks=[word('UART',[85,100,120,116],0),word('is',[124,100,135,116],1),
+                word('asynchronous.',[85,116,190,132],2),word('Another',[85,148,140,164],3)]
+        self.assertEqual([[b['sourceText'] for b in group] for group in paragraph_groups(blocks)],
+                         [['UART','is','asynchronous.'],['Another']])
+
+    def test_prose_repair_rejects_separate_columns_and_non_prose(self):
+        first={'kind':'paragraph','sourceText':'Sign','bbox':[85,100,110,116]}
+        with self.assertRaises(ValueError):paragraph_groups([first,{**first,'sourceText':'Exponent','bbox':[250,100,300,116]}])
+        with self.assertRaises(ValueError):paragraph_groups([{**first,'kind':'table'}])
+
     def test_public_and_external_output_paths_are_rejected(self):
         root=Path(__file__).resolve().parents[1]
         for path in [root/'public/editorial',root/'dist',root/'src/content',root.parent/'other']:
