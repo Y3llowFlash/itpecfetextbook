@@ -20,6 +20,7 @@
     "editorial:convert": "python scripts/editorial_convert.py convert",
     "editorial:validate": "python scripts/editorial_convert.py validate",
     "editorial:preview": "node scripts/editorial-server.mjs",
+    "editorial:release": "python scripts/publish-source.py",
     "test:editorial": "node scripts/test-editorial.mjs"
   },
   "dependencies": {

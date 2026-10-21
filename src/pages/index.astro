@@ -4,4 +4,4 @@ import ChapterOverview from '../components/ChapterOverview.astro';
 import { concepts, publishedQuestions, questionsForConcept } from '../lib/catalog';
 const count = questionsForConcept(concepts[0], await publishedQuestions()).length;
 ---
-<SiteLayout title="Learn ITPEC FE, one idea at a time" description="A free interactive ITPEC FE textbook. Read original Hardware explanations and practise real published past-exam questions." active="chapter" count={count}><ChapterOverview count={count} home /></SiteLayout>
+<SiteLayout title="Learn ITPEC FE, one idea at a time" description="Read the original ITPEC FE Hardware textbook with its complete text, figures, tables and formulas, and practise published past-exam questions." active="chapter" count={count}><ChapterOverview count={count} home /></SiteLayout>

@@ -8,7 +8,9 @@ it('rejects reproduced datasets, raw/source assets and disguised local preview H
   expect(()=>assertPublicationBoundary('unknown.html','',new Set(['index.html']))).toThrow();
   for(const name of ['book.txt','renamed-source.bin','_astro/source.pdf','questions/unapproved.webp'])expect(()=>assertApprovedPublicFile(name,new Set(['index.html']),new Set(['approved.webp']))).toThrow();
 });
-it('permits the current public fallback and published question snapshot',()=>{
+it('permits approved reader assets and the published question snapshot',()=>{
   for(const name of ['index.html','data/questions.json','data/import-manifest.json','questions/approved.webp','_astro/reader.js'])expect(()=>assertPublicationBoundary(name)).not.toThrow();
   for(const name of ['index.html','robots.txt','sitemap.xml','_headers','_astro/font.woff2','questions/approved.webp'])expect(()=>assertApprovedPublicFile(name,new Set(['index.html']),new Set(['approved.webp']))).not.toThrow();
+  expect(()=>assertApprovedPublicFile('textbook/hardware/approved.webp',new Set(),new Set(),new Set(['textbook/hardware/approved.webp']))).not.toThrow();
+  expect(()=>assertApprovedPublicFile('textbook/hardware/unreviewed.webp',new Set(),new Set(),new Set(['textbook/hardware/approved.webp']))).toThrow();
 });

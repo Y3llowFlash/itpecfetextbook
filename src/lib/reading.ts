@@ -20,6 +20,14 @@ export function savedReturnPosition(fallback: ReadingPosition | null, sectionId?
   return fallback;
 }
 
+/** One source concept can appear in both the full section and a source excerpt. */
+export function conceptReturnPosition(fallback:ReadingPosition|null,conceptId:string,sectionId:string){
+  const matches=(p:ReadingPosition|null)=>!!p&&validReading(p)&&(p.sectionId===sectionId||p.focusId===`concept-${conceptId}`);
+  const saved=savedReturnPosition(null);
+  if(matches(saved)&&(!matches(fallback)||saved!.updatedAt>=fallback!.updatedAt))return saved;
+  return matches(fallback)?fallback:null;
+}
+
 export function setupReader() {
   const reader = document.querySelector<HTMLElement>('[data-reader]');
   if (!reader) return;

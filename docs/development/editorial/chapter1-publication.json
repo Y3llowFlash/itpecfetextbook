@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "editionId": "new-fe-vol1-2015-04",
+  "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+  "releaseId": "fev1-201504-ch1-r1",
+  "status": "owner-approved",
+  "approval": "The project owner approved the local Chapter 1 preview and explicitly requested publishing it to https://itpecfetextbook.pages.dev/ in this conversation.",
+  "scope": "Complete Chapter 1 source text and original reader figures, tables and notation, printed 13–111 including the unnumbered insertion. Replace the summarized public lesson bodies.",
+  "destination": "https://itpecfetextbook.pages.dev/"
+}

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import type { Concept, Explanation, Question } from '../lib/models';
 import { guestStore, newId } from '../lib/progress';
 import { useProgress } from '../lib/use-progress';
-import { returnUrl, savedReturnPosition } from '../lib/reading';
+import { returnUrl, conceptReturnPosition } from '../lib/reading';
 import { StorageNotice } from './GuestNotice';
 import GuestNotice from './GuestNotice';
 import VideoRecommendation from './VideoRecommendation';
@@ -30,7 +30,7 @@ export default function Practice({ concept, questions, explanations }: PracticeP
   const correct = Boolean(saved && saved.selected === question?.correctAnswer);
   const answeredCount = questions.filter((q) => progress.practice[concept.id]?.answers[q.id]).length;
   // Hydration must initially match the static HTML; read sessionStorage only after mount.
-  const readingReturn = returnUrl(ready ? savedReturnPosition(progress.reading, concept.sectionId) : progress.reading?.sectionId === concept.sectionId ? progress.reading : null, concept.sectionUrl);
+  const readingReturn = returnUrl(ready ? conceptReturnPosition(progress.reading, concept.id, concept.sectionId) : progress.reading?.sectionId === concept.sectionId ? progress.reading : null, concept.sectionUrl);
 
   useEffect(() => {
     if (hydrated.current) return;

@@ -7,6 +7,7 @@ import { hardwareLessons, lessonPath, pageLabel } from '../src/lib/lessons';
 import { concepts, explanationMap, publishedQuestions, questionsForConcept } from '../src/lib/catalog';
 import { validReading } from '../src/lib/progress';
 import { returnUrl, savedReturnPosition } from '../src/lib/reading';
+import release from '../src/content/hardware-source-release.json';
 
 describe('completed Hardware chapter', () => {
   it('preserves all five sections, 19 source subsections, deeper topics and the old cache ID', () => {
@@ -14,8 +15,9 @@ describe('completed Hardware chapter', () => {
     expect(hardwareLessons.slice(0, 5).flatMap((lesson) => lesson.headings.filter((heading) => heading.level === 2))).toHaveLength(19);
     expect(hardwareLessons.map((lesson) => lesson.id)).toEqual(['fe-v1-ch01-s01','fe-v1-ch01-s02','fe-v1-ch01-s03','fe-v1-ch01-s04','fe-v1-ch01-s05','fe-v1-ch01-memory-cache']);
     for (const lesson of hardwareLessons) {
-      const markdown = readFileSync(`src/content/hardware/${lesson.slug}.md`, 'utf8');
-      for (const heading of lesson.headings) expect(markdown).toContain(`<h${heading.level} id="${heading.id}" data-reading-block>${heading.title}</h${heading.level}>`);
+      const source = readFileSync(`src/content/source-hardware/${lesson.slug}.html`, 'utf8');
+      const converted=release.lessons.find(entry=>entry.id===lesson.id)!;
+      for (const heading of converted.headings) expect(source).toContain(`id="${heading.id}" data-reading-block`);
     }
   });
   it('uses verified printed labels rather than assuming one PDF offset', () => {

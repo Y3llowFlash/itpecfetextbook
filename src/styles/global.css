@@ -292,3 +292,25 @@ main:focus { outline: none; }
 .technical-figure figcaption strong { color: var(--color-ink); }
 .technical-figure figcaption .source-badge { display: block; margin-top: var(--space-sm); font-size: 0.74rem; }
 @media (max-width: 24rem) { .technical-figure { padding: var(--space-sm); } }
+
+/* Published source edition: original content reflows; complex source pixels stay intact. */
+.source-book .source-page { margin-block: 2.5rem; }
+.source-book .source-page > .source-badge { margin: 0 0 1.5rem; padding-top: 1rem; border-top: 1px solid var(--color-rule); }
+.source-book h4 { font-family: var(--font-body); font-size: 1.05rem; margin: 2rem 0 1rem; }
+.source-book figure { padding: .75rem; border: 1px solid var(--color-rule); border-radius: 4px; background: var(--color-paper-2); }
+.source-book .source-visual-scroll { max-width: 100%; overflow: auto; }
+.source-book .source-visual-scroll a { display: block; width: max-content; }
+.source-book .source-visual-scroll img { display: block; max-width: none; height: auto; }
+.source-book .source-table { max-width: 100%; overflow: auto; font-family: var(--font-body); }
+.source-book .source-table table { display: table; width: max-content; max-width: none; min-width: 100%; margin: 0; font-size: 1rem; }
+.source-book .source-table td,.source-book .source-table th { min-width: 3rem; max-width: 16rem; }
+.source-book .cell-image { display: block; width: auto; max-width: 16rem; max-height: 10rem; height: auto; }
+.source-book .source-list { list-style: none; padding-left: 1rem; }
+.source-book .source-list li { padding-left: 0; }
+.source-book sup { font-size: .7em; vertical-align: super; line-height: 0; }
+.source-book .concept-highlight { background: var(--color-accent); color: var(--color-accent-ink); padding: .08em .12em; border-radius: 2px; }
+.source-book .concept-highlight .concept-count { font: .7rem var(--font-body); white-space: nowrap; }
+.source-book .source-alias { display: block; scroll-margin-top: 7rem; }
+.source-book span[style*="color:#ff0000"] { color: #b02323 !important; }
+.source-book span[style*="color:#ff00ff"] { color: #8e267f !important; }
+@media(max-width: 40rem) { .source-book figure { padding: .5rem; } }

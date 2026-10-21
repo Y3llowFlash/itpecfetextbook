@@ -1,4 +1,6 @@
 import { test, expect, type BrowserContext, type Page } from '@playwright/test';
+import release from '../../src/content/hardware-source-release.json' with { type: 'json' };
+const diskFigureId=release.lessons.find(l=>l.slug==='auxiliary-storage')!.pages.flatMap(p=>p.blocks).find(b=>b.regionIds.includes('figure-1-42'))!.id;
 
 test.beforeAll(() => {
   if (process.env.FIREBASE_AUTH_EMULATOR_HOST !== '127.0.0.1:19099' || process.env.FIRESTORE_EMULATOR_HOST !== '127.0.0.1:18080') throw new Error('Account browser tests require local emulators');
@@ -134,16 +136,19 @@ test('a new lesson reading checkpoint, bookmark and completion resume on another
   await first.getByRole('button', { name: 'Sync now' }).click();
   await expect(first.getByText('1 of 5 main sections completed')).toBeVisible();
   await second.goto('/chapters/hardware/auxiliary-storage/');
+  await expect(second.locator('.guest-pill')).toHaveAttribute('title', 'Progress backed up', { timeout: 20000 });
   await second.evaluate(() => document.fonts.ready);
-  const figure = second.locator('#figure-disk-geometry-figure');
+  const figure = second.locator(`#${diskFigureId}`);
+  await figure.locator('img').evaluate((image:HTMLImageElement)=>image.decode());
   await figure.evaluate((element) => window.scrollTo(0, window.scrollY + element.getBoundingClientRect().top - 75));
   await second.waitForTimeout(350); // Allow the reader's 250ms checkpoint debounce.
+  await expect.poll(()=>figure.evaluate(el=>Math.abs(el.getBoundingClientRect().top-75))).toBeLessThan(3);
   await second.goto('/progress/');
   await expect(second.locator('#account').getByRole('status')).toHaveText('Progress backed up', { timeout: 20000 });
   await first.getByRole('button', { name: 'Sync now' }).click();
-  await expect(first.getByRole('link', { name: 'Continue reading →' })).toHaveAttribute('href', /auxiliary-storage\/.*#figure-disk-geometry-figure/);
+  await expect(first.getByRole('link', { name: 'Continue reading →' })).toHaveAttribute('href', new RegExp(`auxiliary-storage/.*#${diskFigureId}`));
   await first.getByRole('link', { name: 'Continue reading →' }).click();
-  await expect(first).toHaveURL(/#figure-disk-geometry-figure/);
-  await expect.poll(() => first.locator('#figure-disk-geometry-figure').evaluate((element) => Math.abs(element.getBoundingClientRect().top - 75))).toBeLessThan(3);
+  await expect(first).toHaveURL(new RegExp(`#${diskFigureId}`));
+  await expect.poll(() => first.locator(`#${diskFigureId}`).evaluate((element) => Math.abs(element.getBoundingClientRect().top - 75))).toBeLessThan(3);
   await a.close(); await b.close();
 });

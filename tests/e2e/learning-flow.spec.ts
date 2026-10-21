@@ -8,7 +8,7 @@ test('read, practise real questions, save progress, and return to the exact read
   await expect(page.getByRole('heading', { name: 'Memory hierarchy & cache' })).toBeVisible();
   const concept = page.locator('#concept-cache-memory');
   await concept.scrollIntoViewIfNeeded();
-  const before = await page.locator('#cache-definition').evaluate((element) => element.getBoundingClientRect().top);
+  const before = await concept.locator('xpath=ancestor::*[@data-reading-block][1]').evaluate((element) => element.getBoundingClientRect().top);
   await concept.click();
   await expect(page).toHaveURL(/\/practice\/cache-memory\//);
   await expect(page.getByText('3 related published questions. Take them one at a time.')).toBeVisible();
@@ -32,24 +32,25 @@ test('read, practise real questions, save progress, and return to the exact read
   await page.getByRole('link', { name: '← Return to textbook' }).click();
   await expect(page).toHaveURL(/memory-and-cache\//);
   await expect(page.locator('#concept-cache-memory')).toBeFocused();
-  const after = await page.locator('#cache-definition').evaluate((element) => element.getBoundingClientRect().top);
+  const after = await concept.locator('xpath=ancestor::*[@data-reading-block][1]').evaluate((element) => element.getBoundingClientRect().top);
   expect(Math.abs(before - after)).toBeLessThan(3);
   await page.getByRole('button', { name: 'Mark as completed' }).click();
   await expect(page.getByRole('button', { name: '✓ Section completed' })).toHaveAttribute('aria-pressed', 'true');
   await page.goto('/progress/');
   await expect(page.locator('.progress-stat-grid')).toContainText('3');
+  await expect(page.locator('.study-companion .companion-practice').first()).toContainText('3 questions');
   await expect(page.getByRole('link', { name: '2024A-A-Q009 →' })).toHaveCount(2);
   expect(errors).toEqual([]);
 });
 
 test('browser Back restores the clicked reading block', async ({ page }) => {
   await page.goto(lesson); await page.locator('#concept-cache-memory').scrollIntoViewIfNeeded();
-  const before = await page.locator('#cache-definition').evaluate((element) => element.getBoundingClientRect().top);
+  const before = await page.locator('#concept-cache-memory').locator('xpath=ancestor::*[@data-reading-block][1]').evaluate((element) => element.getBoundingClientRect().top);
   await page.locator('#concept-cache-memory').click();
   await expect(page.getByRole('heading', { name: 'Cache memory', exact: true })).toBeVisible();
   await page.goBack();
   await expect(page.locator('#concept-cache-memory')).toBeFocused();
-  const after = await page.locator('#cache-definition').evaluate((element) => element.getBoundingClientRect().top);
+  const after = await page.locator('#concept-cache-memory').locator('xpath=ancestor::*[@data-reading-block][1]').evaluate((element) => element.getBoundingClientRect().top);
   expect(Math.abs(before - after)).toBeLessThan(3);
 });
 
@@ -66,7 +67,7 @@ test('reader works as static HTML without JavaScript', async ({ browser }) => {
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage();
   await page.goto(`http://127.0.0.1:4322${lesson}`);
-  await expect(page.getByRole('heading', { name: 'Calculate a weighted average' })).toBeVisible();
+  await expect(page.locator('.source-page').first()).toContainText('Cache memory');
   await expect(page.locator('#concept-cache-memory')).toHaveAttribute('href', '/practice/cache-memory/');
   await context.close();
 });
@@ -97,7 +98,7 @@ for (const width of [320, 375, 414, 768, 1280]) {
     await page.setViewportSize({ width, height: 900 });
     await page.goto(lesson); await page.evaluate(() => document.fonts.ready);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-    await page.screenshot({ path: testInfo.outputPath(`reader-${width}.png`), fullPage: true });
+    await page.screenshot({ path: testInfo.outputPath(`reader-${width}.png`) });
     await page.goto('/practice/cache-memory/');
     await page.getByRole('button', { name: 'Question 3, unanswered' }).click();
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);

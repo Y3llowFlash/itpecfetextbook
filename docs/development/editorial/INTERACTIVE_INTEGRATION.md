@@ -1,5 +1,7 @@
 # Source edition and existing practice integration
 
+**Implemented release update:** the owner approved publication after reviewing the local edition. The production reader now uses the original source blocks, lossless source figures and exact-quote concept annotations. The existing six section URLs and IDs are retained; versioned source block IDs fit the existing owner-scoped reading schema and rules, so no schema widening or Firebase deployment was necessary. Account emulator tests exercise the source block IDs. Shared cache practice returns to the full CPU section or source excerpt from which it was opened. The plan below records the earlier local phase; see [publication report](../CHAPTER_1_SOURCE_PUBLICATION.md) for the final implementation.
+
 The source edition is an editorial conversion, not a rewritten lesson. It keeps its exact source text and region assets immutable. Learning features belong in a separate annotation/reading adapter.
 
 ## Working local integration

@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { setupReader, READER_PATH } from '../src/lib/reading';
+import { setupReader, READER_PATH, conceptReturnPosition } from '../src/lib/reading';
 import { guestStore } from '../src/lib/progress';
 
 let teardown: (() => void) | undefined;
@@ -16,6 +16,12 @@ beforeEach(() => {
 afterEach(() => { teardown?.(); teardown = undefined; document.body.innerHTML = ''; vi.useRealTimers(); });
 
 describe('reading-to-practice return', () => {
+  it('returns a shared source concept to its actual section while rejecting unrelated checkpoints',()=>{
+    const source={sectionId:'fe-v1-ch01-s03',path:'/chapters/hardware/cpu-and-main-memory/',blockId:'fev1-201504-ch1-r1-pdf-075-b005-l00-paragraph',offset:70,scrollY:900,focusId:'concept-cache-memory',updatedAt:'2026-10-21T07:00:00Z'};
+    expect(conceptReturnPosition(source,'cache-memory','fe-v1-ch01-memory-cache')).toEqual(source);
+    expect(conceptReturnPosition(source,'radix-conversion','fe-v1-ch01-s02')).toBeNull();
+    expect(conceptReturnPosition({...source,path:'https://example.invalid/'},'cache-memory','fe-v1-ch01-memory-cache')).toBeNull();
+  });
   it('captures the exact block/offset and focused concept before navigation, preserving it at pagehide', () => {
     teardown = setupReader();
     const link = document.getElementById('concept-cache-memory')!;

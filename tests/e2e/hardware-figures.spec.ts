@@ -1,65 +1,54 @@
 import { test, expect } from '@playwright/test';
-import { hardwareFigures, figurePageLabel } from '../../src/lib/figures';
-import { hardwareLessons, lessonPath } from '../../src/lib/lessons';
+import release from '../../src/content/hardware-source-release.json' with { type: 'json' };
 
-for(const lesson of hardwareLessons.slice(0,5)) {
-  test(`${lesson.slug}: original figures, accessible descriptions and mobile SVG bounds`,async({page},testInfo)=>{
-    await page.setViewportSize({width:320,height:900});
-    await page.goto(lessonPath(lesson));
-    const figures=hardwareFigures.filter(f=>f.lesson===lesson.slug);
-    await expect(page.locator('[data-original-figure]')).toHaveCount(figures.length);
-    for(const figure of figures) {
-      const item=page.locator(`#figure-${figure.id}`);
-      await expect(item.getByRole('img',{name:`${figure.title} ${figure.alt}`,exact:true})).toHaveCount(1);
-      await expect(item.locator(`[data-figure-source="${figure.id}"]`)).toHaveText(`Original textbook · ${figurePageLabel(figure.sourcePages)}`);
-      const problems=await item.locator('svg').evaluate(svg=>{
-        const root=svg as SVGSVGElement, view=root.viewBox.baseVal, scale=root.getBoundingClientRect().width/view.width;
-        return [...root.querySelectorAll('text')].flatMap(text=>{
-          const rect=text.getBBox(),size=parseFloat(getComputedStyle(text).fontSize)*scale;
-          const issues=[];
-          if(rect.x < -0.5 || rect.y < -0.5 || rect.x+rect.width>view.width+0.5 || rect.y+rect.height>view.height+0.5)issues.push(`${text.textContent}: outside viewBox`);
-          if(size<14)issues.push(`${text.textContent}: ${size.toFixed(1)}px text`);
-          return issues;
-        });
-      });
-      expect(problems,figure.id).toEqual([]);
-      await item.screenshot({path:testInfo.outputPath(`${figure.id}-320.png`)});
+for(const lesson of release.lessons.slice(0,5)){
+  test(`${lesson.slug}: source visuals, readable scale, labels and mobile bounds`,async({page},info)=>{
+    await page.setViewportSize({width:320,height:900});await page.goto(lesson.path);
+    expect(await page.locator('.source-book svg').count()).toBe(0);
+    expect(await page.locator('.source-book figure').count()).toBe(lesson.pages.flatMap(p=>p.blocks).filter(b=>['figure','formula','table','source-visual'].includes(b.kind)).length);
+    const images=page.locator('.source-book .source-visual-scroll img');
+    for(const index of [...new Set([0,Math.floor(await images.count()/2),(await images.count())-1])]){
+      const img=images.nth(index);await img.scrollIntoViewIfNeeded();
+      await expect.poll(()=>img.evaluate((el:HTMLImageElement)=>el.naturalWidth)).toBeGreaterThan(0);
+      await expect(img).toHaveAttribute('alt',/\S/);await expect(img).toHaveAttribute('src',/^\/textbook\/hardware\/[a-f0-9]{64}\.webp$/);
+      expect(await img.evaluate(el=>el.getBoundingClientRect().width/Number(el.getAttribute('width')))).toBeGreaterThan(.5);
+      await page.screenshot({path:info.outputPath(`source-${index}-320.png`)});
     }
     expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
-    // Inline figures add no image downloads and cannot request third-party artwork.
-    expect(await page.locator('.technical-figure image, .technical-figure img').count()).toBe(0);
-    const duplicateIds=await page.evaluate(()=>{
-      const ids=[...document.querySelectorAll('[id]')].map(el=>el.id);return ids.filter((id,index)=>ids.indexOf(id)!==index);
-    });
-    expect(duplicateIds).toEqual([]);
-    await page.setViewportSize({width:1280,height:900});
-    await page.screenshot({path:testInfo.outputPath(`${lesson.slug}-desktop.png`),fullPage:true});
+    const duplicates=await page.evaluate(()=>{const ids=[...document.querySelectorAll('[id]')].map(el=>el.id);return ids.filter((id,index)=>ids.indexOf(id)!==index)});
+    expect(duplicates).toEqual([]);
+    await page.setViewportSize({width:1440,height:1000});await page.goto(lesson.path);
+    await page.screenshot({path:info.outputPath(`${lesson.slug}-desktop.png`)});
   });
 }
 
-test('new diagrams remain described without JavaScript and retain figure reading checkpoints',async({browser})=>{
-  const context=await browser.newContext({javaScriptEnabled:false});
-  const page=await context.newPage();
+test('original figures remain described and readable without JavaScript',async({browser})=>{
+  const context=await browser.newContext({javaScriptEnabled:false});const page=await context.newPage();
   await page.goto('http://127.0.0.1:4322/chapters/hardware/cpu-and-main-memory/');
-  await expect(page.locator('#figure-memory-address-grid')).toHaveAttribute('data-reading-block','');
-  await expect(page.locator('#figure-memory-address-grid figcaption')).toContainText('The address is not the byte');
-  await expect(page.locator('#figure-memory-address-grid svg desc')).toContainText('Address 2');
+  const figure=page.locator('[data-pdf-page="56"] figure').first();
+  await expect(figure).toHaveAttribute('data-reading-block','');
+  await expect(figure.locator('img')).toHaveAttribute('alt',/\S/);
+  await expect(figure.locator('figcaption')).toContainText('Original textbook');
   await context.close();
 });
 
-test('keyboard navigation through exam highlights still restores a nearby figure context',async({page})=>{
+test('figure checkpoints and keyboard exam navigation restore original source context',async({page})=>{
+  const record=release.lessons.find(l=>l.slug==='auxiliary-storage')!.pages.flatMap(p=>p.blocks).find(b=>b.regionIds.includes('figure-1-42'))!;
   await page.goto('/chapters/hardware/auxiliary-storage/');
-  const figure=page.locator('#figure-disk-geometry-figure');
-  await figure.scrollIntoViewIfNeeded();
-  await page.waitForTimeout(350);
-  await page.goto('/progress/');
+  const figure=page.locator(`#${record.id}`);await figure.evaluate(el=>scrollTo(0,scrollY+el.getBoundingClientRect().top-75));
+  await page.waitForTimeout(350);await page.goto('/progress/');
   await page.getByRole('link',{name:'Continue reading →'}).click();
-  await expect(page).toHaveURL(/auxiliary-storage\/.*#figure-disk-geometry-figure/);
-  const top=await figure.evaluate(el=>el.getBoundingClientRect().top);
-  expect(top).toBeGreaterThan(-100);expect(top).toBeLessThan(450);
-  const highlight=page.locator('#concept-disk-access');
-  await highlight.focus();await page.keyboard.press('Enter');
-  await expect(page).toHaveURL(/practice\/disk-access/);
-  await page.getByRole('link',{name:'← Return to textbook'}).click();
+  await expect.poll(()=>figure.evaluate(el=>Math.abs(el.getBoundingClientRect().top-75))).toBeLessThan(3);
+  const highlight=page.locator('#concept-disk-access');await highlight.focus();await page.keyboard.press('Enter');
+  await expect(page).toHaveURL(/practice\/disk-access/);await page.getByRole('link',{name:'← Return to textbook'}).click();
   await expect(highlight).toBeFocused();
+});
+
+test('cache practice returns to the full CPU source section when opened there',async({page})=>{
+  await page.goto('/chapters/hardware/cpu-and-main-memory/');const link=page.locator('#concept-cache-memory');
+  await link.scrollIntoViewIfNeeded();const block=link.locator('xpath=ancestor::*[@data-reading-block][1]');
+  const offset=await block.evaluate(el=>el.getBoundingClientRect().top);await link.click();
+  await page.getByRole('link',{name:'← Return to textbook'}).click();
+  await expect(page).toHaveURL(/cpu-and-main-memory/);await expect(link).toBeFocused();
+  await expect.poll(()=>block.evaluate((el,expected)=>Math.abs(el.getBoundingClientRect().top-expected),offset)).toBeLessThan(3);
 });

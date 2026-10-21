@@ -1,5 +1,7 @@
 # Chapter 1 faithful source conversion
 
+**Publication update:** the owner subsequently approved this preview and requested publication. The [source publication report](CHAPTER_1_SOURCE_PUBLICATION.md) describes the resulting release. The local-only boundary below records the previous phase, not the current publication status.
+
 Verified 21 October 2026. This report supersedes earlier statements that a summarized, independently authored Hardware chapter constituted a completed textbook conversion. Those lessons and their replacement diagrams remain the public fallback. The source edition is a separate, unpublished local editorial conversion.
 
 ## Outcome and scope

@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { hardwareLessons, lessonPath, pageLabel } from '../../src/lib/lessons';
+import release from '../../src/content/hardware-source-release.json' with { type: 'json' };
 
 for (const lesson of hardwareLessons.slice(0, 5)) {
   test(`${lesson.title}: printed references, substantive sections and 320px layout`, async ({ page }, testInfo) => {
@@ -8,23 +9,25 @@ for (const lesson of hardwareLessons.slice(0, 5)) {
     await expect(page.getByRole('heading', { name: lesson.title, exact: true, level: 1 })).toBeVisible();
     await expect(page.locator('[data-source-ref="lesson"]')).toHaveText(`Original textbook · ${pageLabel(lesson.pages)}`);
     await expect(page.locator('[data-source-ref="lesson"]')).toHaveAttribute('title', /First Edition, April 2015/);
-    for (const heading of lesson.headings) {
-      await expect(page.locator(`#${heading.id} + .source-badge`)).toHaveText(`Original textbook · ${pageLabel(heading.pages)}`);
-    }
+    const source=release.lessons.find(entry=>entry.id===lesson.id)!;
+    expect(await page.locator('.source-page').evaluateAll(nodes=>nodes.map(node=>Number((node as HTMLElement).dataset.pdfPage)))).toEqual(source.pages.map(p=>p.pdfPage));
+    expect(await page.locator('[data-source-block]').evaluateAll(nodes=>nodes.map(node=>node.id))).toEqual(source.pages.flatMap(p=>p.blocks.map(b=>b.id)));
     expect(await page.locator('.reader-prose').innerText()).not.toContain('Coming later');
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-    for (const table of await page.locator('.reader-prose table').all()) {
+    for (const table of await page.locator('.source-table,.source-visual-scroll').all()) {
       const box = await table.boundingBox(); expect(box!.width).toBeLessThanOrEqual(288);
     }
-    await page.screenshot({ path: testInfo.outputPath(`${lesson.slug}-320.png`), fullPage: true });
+    await page.screenshot({ path: testInfo.outputPath(`${lesson.slug}-320.png`) });
     await page.locator('.mobile-navigation summary').click();
     const nav = page.locator('.mobile-navigation nav');
     await expect(nav.locator('[aria-current="page"]')).toHaveAttribute('href', lessonPath(lesson));
     for (const item of hardwareLessons.slice(0,5)) await expect(nav.locator(`a[href="${lessonPath(item)}"]`)).toBeVisible();
     if (lesson.slug === 'cpu-and-main-memory') {
       await page.setViewportSize({ width: 1280, height: 1000 });
-      await page.screenshot({ path: testInfo.outputPath('cpu-desktop.png'), fullPage: true });
-      await page.locator('#logic-truth-table').screenshot({ path: testInfo.outputPath('logic-table.png') });
+      await page.locator('[data-pdf-page="67"]').scrollIntoViewIfNeeded();
+      await page.locator('[data-pdf-page="67"] figure img').first().evaluate((image:HTMLImageElement)=>image.decode());
+      await page.screenshot({ path: testInfo.outputPath('cpu-desktop.png') });
+      await page.locator('[data-pdf-page="67"] figure').first().screenshot({ path: testInfo.outputPath('logic-table.png') });
     }
   });
 }
@@ -34,7 +37,8 @@ test('new concept practice returns to its source block and records guest complet
   const highlight = page.locator('#concept-radix-conversion');
   await expect(highlight).toContainText('3 questions');
   await highlight.scrollIntoViewIfNeeded();
-  const before = await page.locator('#radix-weights').evaluate((element) => element.getBoundingClientRect().top);
+  const block=highlight.locator('xpath=ancestor::*[@data-reading-block][1]');
+  const before = await block.evaluate((element) => element.getBoundingClientRect().top);
   await highlight.click();
   await expect(page).toHaveURL(/\/practice\/radix-conversion\//);
   await page.getByRole('radio', { name: 'Option A: 83.25' }).check();
@@ -54,7 +58,7 @@ test('new concept practice returns to its source block and records guest complet
   await page.getByRole('link', { name: '← Return to textbook' }).click();
   await expect(page).toHaveURL(/data-representation\//);
   await expect(highlight).toBeFocused();
-  const after = await page.locator('#radix-weights').evaluate((element) => element.getBoundingClientRect().top);
+  const after = await block.evaluate((element) => element.getBoundingClientRect().top);
   expect(Math.abs(before - after)).toBeLessThan(3);
   await page.getByRole('button', { name: 'Mark as completed' }).click();
   await page.goto('/progress/');
@@ -71,10 +75,11 @@ test('browser Back restores a new lesson and a direct practice visit returns to 
   await page.goto('/chapters/hardware/auxiliary-storage/');
   const highlight = page.locator('#concept-disk-access');
   await highlight.scrollIntoViewIfNeeded();
-  const before = await page.locator('#disk-access-model').evaluate((element) => element.getBoundingClientRect().top);
+  const block=highlight.locator('xpath=ancestor::*[@data-reading-block][1]');
+  const before = await block.evaluate((element) => element.getBoundingClientRect().top);
   await highlight.click(); await page.goBack();
   await expect(highlight).toBeFocused();
-  const after = await page.locator('#disk-access-model').evaluate((element) => element.getBoundingClientRect().top);
+  const after = await block.evaluate((element) => element.getBoundingClientRect().top);
   expect(Math.abs(before - after)).toBeLessThan(3);
 });
 
@@ -83,7 +88,7 @@ test('all new lesson routes remain readable without JavaScript', async ({ browse
   const page = await context.newPage();
   for (const lesson of hardwareLessons.slice(0,5)) {
     await page.goto(`http://127.0.0.1:4322${lessonPath(lesson)}`);
-    await expect(page.locator(`[data-source-ref="${lesson.headings[0].id}"]`)).toBeVisible();
+    await expect(page.locator('.source-page').first()).toBeVisible();
     expect((await page.locator('.reader-prose').innerText()).split(/\s+/).length).toBeGreaterThan(500);
   }
   await context.close();

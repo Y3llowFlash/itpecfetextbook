@@ -11,7 +11,7 @@ const current = Astro.url.pathname;
   <ol class="chapter-section-list">
     {chapter.sections.map((section) => <li>
       <a href={section.lesson.url} aria-current={current === section.lesson.url ? 'page' : undefined} class:list={[{ active: current === section.lesson.url }]}><span class="section-number">{section.number}</span><span>{section.title}</span></a>
-      {section.id === 'fe-v1-ch01-s03' && <a class:list={['lesson-link', { active: current === '/chapters/hardware/memory-and-cache/' }]} href="/chapters/hardware/memory-and-cache/" aria-current={current === '/chapters/hardware/memory-and-cache/' ? 'page' : undefined}>Memory & cache focus lesson</a>}
+      {section.id === 'fe-v1-ch01-s03' && <a class:list={['lesson-link', { active: current === '/chapters/hardware/memory-and-cache/' }]} href="/chapters/hardware/memory-and-cache/" aria-current={current === '/chapters/hardware/memory-and-cache/' ? 'page' : undefined}>Memory & cache · pp. 70–74</a>}
     </li>)}
   </ol>
   <div class="nav-divider"></div>

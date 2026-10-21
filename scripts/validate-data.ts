@@ -4,7 +4,8 @@ import { digest, webpDimensions } from './question-importer';
 import { concepts, explanationMap, publishedQuestions, questionsForConcept } from '../src/lib/catalog';
 import { hardwareLessons, lessonPath } from '../src/lib/lessons';
 import sourceEvidence from '../docs/development/evidence/hardware-printed-pages.json';
-import { validateFigures } from './validate-figures';
+import { validateSourceRelease } from './source-release';
+import release from '../src/content/hardware-source-release.json';
 
 const root = path.resolve('.');
 const questions = await publishedQuestions();
@@ -24,7 +25,7 @@ for (const question of questions) {
 for (const concept of concepts) {
   if (!hardwareLessons.some((lesson) => lesson.id === concept.sectionId && lessonPath(lesson) === concept.sectionUrl)) throw new Error(`Invalid concept reading destination: ${concept.id}`);
   const lesson = hardwareLessons.find((lesson) => lesson.id === concept.sectionId)!;
-  if (!(await readFile(`src/content/hardware/${lesson.slug}.md`, 'utf8')).includes(`data-concept="${concept.id}"`)) throw new Error(`Concept lacks an inline learning context: ${concept.id}`);
+  if (!release.unanchoredConcepts.includes(concept.id) && !(await readFile(`src/content/source-hardware/${lesson.slug}.html`, 'utf8')).includes(`data-concept="${concept.id}"`)) throw new Error(`Concept lacks an exact source annotation: ${concept.id}`);
   const linked = questionsForConcept(concept, questions);
   if (new Set(concept.questionIds).size !== concept.questionIds.length || linked.length !== concept.questionIds.length || !linked.length) throw new Error(`Missing/unpublished concept question: ${concept.id}`);
   for (const question of linked) {
@@ -39,16 +40,14 @@ for (const concept of concepts) {
 }
 const printed = new Set(sourceEvidence.pages.map((page) => page.printedPage).filter((page) => page !== null));
 for (const lesson of hardwareLessons) {
-  const markdown = await readFile(`src/content/hardware/${lesson.slug}.md`, 'utf8');
-  if (lesson.editionId !== sourceEvidence.editionId || !markdown.includes(`id: ${lesson.id}`)) throw new Error(`Lesson edition/ID mismatch: ${lesson.slug}`);
+  if (lesson.editionId !== sourceEvidence.editionId || !release.lessons.some(entry=>entry.id===lesson.id&&entry.slug===lesson.slug)) throw new Error(`Lesson edition/ID mismatch: ${lesson.slug}`);
   for (const reference of [lesson, ...lesson.headings]) {
     const [first, last = first] = reference.pages;
     if (!Number.isInteger(first) || last < first || first < 13 || last > 111) throw new Error(`Invalid printed range: ${lesson.slug}`);
     for (let page = first; page <= last; page++) if (!printed.has(page)) throw new Error(`Unverified printed page: ${page}`);
   }
-  for (const heading of lesson.headings) if (!markdown.includes(`<h${heading.level} id="${heading.id}" data-reading-block>${heading.title}</h${heading.level}>`)) throw new Error(`Missing source subsection: ${heading.id}`);
 }
 const linkedIds = new Set(concepts.flatMap((concept) => concept.questionIds));
 if (explanationMap.size !== linkedIds.size) throw new Error('Unassociated or duplicate explanations');
 console.log(`Validated ${questions.length} published questions, ${imageNames.length} matching image hashes, ${hardwareLessons.length} lessons, and ${concepts.length} concepts linking ${linkedIds.size} distinct reviewed questions.`);
-await validateFigures();
+await validateSourceRelease();

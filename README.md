@@ -1,10 +1,10 @@
 # ITPEC FE Textbook
 
-A free, static reading and practice application. The public Chapter 1 lessons are independently authored fallback material, not a complete reproduction of the textbook. A faithful source conversion now has a separate local editorial reader, original crop library and comparison gallery; reproduced material remains unpublished. Thirteen reviewed concepts link 23 published questions with explanations. Guest learning works locally; optional Google accounts back up progress.
+A free, static reading and practice application. Chapter 1 publishes the owner-approved source edition: complete original text, illustrations, tables and notation across printed pages 13–111. The source edition replaces the summarized public lessons. Thirteen reviewed concepts link 23 published questions with explanations. Guest learning works locally; optional Google accounts back up progress.
 
 Built with **Astro, React and TypeScript**. Cloudflare Pages publishes the validated static `dist/` output from `main`.
 
-The [source conversion report](docs/development/CHAPTER_1_SOURCE_CONVERSION.md) supersedes earlier claims of a completed textbook conversion. Follow the [editorial workflow](docs/development/editorial/README.md) to open or reproduce the local edition.
+The [source publication report](docs/development/CHAPTER_1_SOURCE_PUBLICATION.md) describes the approved release and validation. Follow the [editorial workflow](docs/development/editorial/README.md) to regenerate source content or open the private comparison tools.
 
 ## Run locally
 
@@ -86,7 +86,10 @@ The [Chapter 1 report](docs/development/CHAPTER_1_HARDWARE.md) lists all 23 link
 
 | Location | Purpose |
 |---|---|
-| `src/content/hardware/*.md` | Six original lessons, persistent reading blocks and concept links |
+| `src/content/source-hardware/*.html` | Approved complete source text, semantic tables, original visuals and versioned reading blocks |
+| `src/content/hardware-source-release.json` | Source edition, page/block manifest and exact approved asset hashes |
+| `public/textbook/hardware/` | Optimized lossless source illustrations and notation |
+| `src/content/hardware/*.md` | Historical authored fallback; no longer rendered by the public reader |
 | `src/content/hardware-lessons.json` | Stable lesson IDs/routes, ordered subsection headings and verified printed-page ranges |
 | `src/content/textbook-editions.json` | Source volume, edition and PDF fingerprint; source bytes are not published |
 | `src/content/chapters.json` | Hardware's five-part structure and availability |
@@ -99,13 +102,13 @@ The [Chapter 1 report](docs/development/CHAPTER_1_HARDWARE.md) lists all 23 link
 
 Concept counts are derived from distinct published question IDs. Add an association only after checking the original image, source mapping and answer. Add a complete explanation whose answer matches the source key; validation rejects missing or inconsistent pilot explanations.
 
-One subtle badge beneath a mapped lesson/subsection heading shows **printed textbook page numbers**, with volume/edition in its title. References are checked against the committed footer-label evidence in `docs/development/evidence/hardware-printed-pages.json`; the PDF has an unnumbered insertion, so one global offset is unsafe. To reverify against the read-only local source, run `python scripts/verify-textbook-source.py` (requires PyMuPDF). Ordinary builds need neither Python nor the old repository. Raw PDF text, figures and review crops stay out of public output. Missing source mappings and modern exam extensions are documented in the chapter report.
+Minimal badges show **printed textbook page numbers**, with volume/edition on the section badge. References are checked against committed footer-label evidence; the PDF has an unnumbered insertion, so one global offset is unsafe. To reverify against the read-only source, run `python scripts/verify-textbook-source.py` (requires PyMuPDF). Ordinary builds need neither Python nor the old repository. Only the approved rendered source content and listed assets enter public output; raw extraction, annotation metadata and review galleries stay local.
 
 Keep section and reading-block IDs stable when editing prose. The return flow stores the block's viewport offset and clicked concept before leaving, restores after fonts/layout settle, and supports explicit return and browser Back. A pixel-scroll fallback covers removed anchors.
 
-The prose and memory-hierarchy diagram were written for this project. No raw textbook PDF extraction or third-party textbook figure is included. The existing PDF chapter structure informed the outline. Exam images retain original exam attribution and source-page references; these materials are not claimed as original project authorship.
+The current reader publishes the original textbook prose and illustrations with the owner's explicit approval. These source materials and past-exam images are attributed to their originals and are not claimed as project authorship. The source dataset and comparison tools remain available locally for editorial verification.
 
-Chapter 1 now also has **40 original SVG figures** with accessible descriptions, captions and verified printed-page badges, plus expanded prefix/Boolean/full-adder tables. The [figure inventory](docs/development/figures/CHAPTER_1_INVENTORY.md) catalogs all 47 numbered source figures and 130 editorial regions across printed 13–111. See the [local extraction/review workflow](docs/development/figures/README.md) and [figure recovery report](docs/development/CHAPTER_1_FIGURES.md). Crops and comparison galleries remain in ignored `.local/figures/`; only original vectors enter the static build. Stable reading-block IDs and existing lesson routes are retained.
+The earlier 40 authored SVG replacements and summary lessons remain historical repository resources; the public reader does not import them. The published source reader contains all 47 numbered figures, additional illustrations, original tables and notation. Its 200 lossless WebPs total approximately 3 MB and load lazily. Existing lesson routes and section IDs remain stable; source reading-block IDs include the release revision.
 
 ## Guest progress and optional accounts
 
@@ -127,4 +130,4 @@ Incorrect answers show a relevant free memory-hierarchy lesson from the existing
 
 ## Scope
 
-Only Chapter 1 has been converted into the local source edition; semantic review and publication authorization remain outstanding. The other chapters and CET remain deferred. Cloudflare Pages is connected to `main`, using Node 24, `npm run build` and `dist`. A push can deploy automatically, so production validation must pass before pushing. Earlier milestone and investigation reports describe the independently authored fallback and are historical records.
+Only Chapter 1 is published as the approved source edition; other chapters and CET remain deferred. Complex notation and raster tables retain original pixels, with the semantic-review queue still available locally. Cloudflare Pages is connected to `main`, using Node 24, `npm run build` and `dist`. A push deploys automatically after production validation. Earlier fallback and local-only milestone reports are historical records.
