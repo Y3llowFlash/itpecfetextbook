@@ -1,16 +1,19 @@
-// Read-only hosted-preview checks. Practice interactions stay in browser storage.
+// Hosted reader checks. Practice interactions stay in browser storage.
+// Production verification is explicit: pass the canonical origin and --production.
 import assert from 'node:assert/strict';
 import {readFile,mkdir,writeFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {chromium} from '@playwright/test';
 const origin=process.argv[2];
-if(!origin||!/^https:\/\/[a-z0-9-]+\.itpecfetextbook\.pages\.dev\/?$/.test(origin))throw new Error('Pass a Cloudflare Pages preview URL; production is excluded');
+const production=process.argv.includes('--production');
+const validOrigin=production?origin==='https://itpecfetextbook.pages.dev':/^https:\/\/[a-z0-9-]+\.itpecfetextbook\.pages\.dev\/?$/.test(origin||'');
+if(!validOrigin)throw new Error('Pass a Cloudflare Pages preview URL, or the canonical production origin with --production');
 const release=JSON.parse(await readFile('src/content/hardware-source-release.json','utf8'));
 const toc=JSON.parse(await readFile('src/content/hardware-toc.json','utf8'));
 const prose=JSON.parse(await readFile('src/content/hardware-prose-repairs.json','utf8'));
 const crops=JSON.parse(await readFile('src/content/hardware-spatial-crops.json','utf8'));
 const bank=await readFile('public/data/questions.json');
-const output='.local/crop-first/hosted-review';await mkdir(output,{recursive:true});
+const output=production?'.local/crop-first/production-review':'.local/crop-first/hosted-review';await mkdir(output,{recursive:true});
 const browser=await chromium.launch();
 const errors=[];
 try{
@@ -98,6 +101,6 @@ try{
   await checkBCD(name);
  }
  assert.deepEqual(errors,[]);
- const result={preview:origin,checkedAt:new Date().toISOString(),...source,contents:52,spatialCrops:crops.regions.length,restoredProseFragments:crops.regions.reduce((n,r)=>n+r.recoveries.length,0),repairedParagraphs:5,preservedWordAnchors:235,legacyCacheRedirect:true,practiceAnswerBookmarkAndReturn:true,widths:[375,768,1024,1440],browserErrors:errors};
- await writeFile(`${output}/preview-check.json`,JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result,null,2));
+ const result={...(production?{production:origin}:{preview:origin}),checkedAt:new Date().toISOString(),...source,contents:52,spatialCrops:crops.regions.length,restoredProseFragments:crops.regions.reduce((n,r)=>n+r.recoveries.length,0),repairedParagraphs:5,preservedWordAnchors:235,legacyCacheRedirect:true,practiceAnswerBookmarkAndReturn:true,widths:[375,768,1024,1440],browserErrors:errors};
+ await writeFile(`${output}/${production?'production':'preview'}-check.json`,JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result,null,2));
 }finally{await browser.close();}
