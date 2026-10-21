@@ -200,6 +200,10 @@ main:focus { outline: none; }
 .progress-section h2 { font-size: 1.9rem; margin-bottom: var(--space-lg); }
 .progress-section p { font-size: 0.9rem; }
 .progress-section .quiet-note { font-size: 0.75rem; margin-top: var(--space-sm); }
+.account-panel { border-top: 1px solid var(--color-rule); scroll-margin-top: 6rem; overflow-wrap: anywhere; }
+.account-panel .sync-status { font-weight: 600; margin-block: var(--space-md); }
+.account-panel[data-sync-state="saved"] .sync-status { color: var(--color-correct); }
+.account-panel[data-sync-state="error"] .sync-status { color: var(--color-incorrect); }
 .history-list { margin: 0; padding: 0; list-style: none; font-size: 0.8rem; }
 .history-list li { display: flex; justify-content: space-between; gap: var(--space-md); padding: var(--space-md) 0; border-bottom: 1px solid var(--color-rule); align-items: center; }
 .history-list div > span { display: block; color: var(--color-muted); font-size: 0.73rem; margin-top: var(--space-xs); }

@@ -1,4 +1,5 @@
 import type { Attempt, GuestProgress, ReadingPosition } from './models';
+import { checkpointReading, mergeRecords, migrateProgress, seedSync, trackChanges, validCloudRecord } from './sync-data';
 
 export const STORAGE_KEY = 'itpecTextbook:guest:v1';
 const validId = (value: unknown): value is string => typeof value === 'string' && /^[a-zA-Z0-9:_-]{1,160}$/.test(value);
@@ -17,6 +18,7 @@ export function parseProgress(raw: string): GuestProgress {
   if (!p || p.version !== 1 || !validId(p.guestId) || !Array.isArray(p.attempts) || !Array.isArray(p.bookmarks) ||
     !Array.isArray(p.completedSections) || !p.practice || typeof p.practice !== 'object' || Array.isArray(p.practice)) throw new Error('Invalid guest progress');
   if (!p.bookmarks.every(validId) || !p.completedSections.every(validId) || (p.reading && !validReading(p.reading))) throw new Error('Invalid guest records');
+  if (p.migrationOwner && !validId(p.migrationOwner)) throw new Error('Invalid migration owner');
   for (const a of p.attempts) {
     if (!a || !validId(a.id) || !validId(a.questionId) || !validId(a.conceptId) || !/^[a-z]$/.test(a.selected) || typeof a.correct !== 'boolean' || typeof a.at !== 'string') throw new Error('Invalid attempt');
   }
@@ -26,6 +28,13 @@ export function parseProgress(raw: string): GuestProgress {
       if (!validId(questionId) || !answer || !/^[a-z]$/.test(answer.selected) || !validId(answer.attemptId)) throw new Error('Invalid practice answer');
     }
   }
+  if (p.sync && (!validId(p.sync.device) || !Number.isSafeInteger(p.sync.clock) || p.sync.clock < 0
+    || !p.sync.records || !Array.isArray(p.sync.pending)
+    || !Object.entries(p.sync.records).every(([key, record]) => validCloudRecord(record) && key === `${record.kind}:${record.key}`)
+    || !p.sync.pending.every((key) => typeof key === 'string' && Object.hasOwn(p.sync!.records, key))
+    || (p.sync.cursor && (!Number.isInteger(p.sync.cursor.seconds) || !Number.isInteger(p.sync.cursor.nanoseconds)
+      || p.sync.cursor.nanoseconds < 0 || p.sync.cursor.nanoseconds >= 1e9
+      || (p.sync.cursor.id !== undefined && !/^[a-zA-Z0-9:_-]{1,180}$/.test(p.sync.cursor.id)))))) throw new Error('Invalid sync metadata');
   return { ...p, bookmarks: [...new Set(p.bookmarks)], completedSections: [...new Set(p.completedSections)] };
 }
 
@@ -38,6 +47,8 @@ export class GuestProgressStore {
   private listeners = new Set<() => void>();
   private initialized = false;
   private storage: StorageLike | undefined;
+  private storageKey = STORAGE_KEY;
+  private userId: string | null = null;
   private snapshot: ProgressSnapshot = { progress: emptyProgress(), persistence: 'saved' };
   private readonly serverSnapshot = this.snapshot;
   constructor(private storageProvider: () => StorageLike = () => window.localStorage) {}
@@ -47,8 +58,12 @@ export class GuestProgressStore {
     const progress = { ...emptyProgress(), guestId: newId() };
     try {
       this.storage = this.storageProvider();
-      const raw = this.storage.getItem(STORAGE_KEY);
-      this.snapshot = { progress: raw ? parseProgress(raw) : progress, persistence: 'saved' };
+      const raw = this.storage.getItem(this.storageKey);
+      const saved = raw ? parseProgress(raw) : progress;
+      if (!this.userId && saved.migrationOwner) {
+        // An interrupted transfer must never appear in a new guest/account view.
+        this.snapshot = { progress, persistence: 'unavailable' }; this.storage = undefined;
+      } else this.snapshot = { progress: saved, persistence: 'saved' };
     } catch (error) {
       this.snapshot = { progress, persistence: this.storage ? 'corrupt' : 'unavailable' };
       // Preserve corrupt data for recovery; never overwrite it silently.
@@ -58,12 +73,26 @@ export class GuestProgressStore {
   getSnapshot = () => { this.load(); return this.snapshot; };
   getServerSnapshot = () => this.serverSnapshot;
   subscribe = (listener: () => void) => { this.listeners.add(listener); return () => this.listeners.delete(listener); };
-  private update(mutator: (progress: GuestProgress) => GuestProgress) {
+  private update(mutator: (progress: GuestProgress) => GuestProgress, track = true) {
     this.load();
-    const progress = mutator(this.snapshot.progress);
+    // Merge concurrent tab changes before applying a local mutation.
+    if (this.userId && this.storage) {
+      try {
+        const raw = this.storage.getItem(this.storageKey);
+        if (raw) {
+          const other = parseProgress(raw), own = this.snapshot.progress;
+          const otherSync = seedSync(other);
+          const merged = mergeRecords(own, Object.values(otherSync.records));
+          this.snapshot = { ...this.snapshot, progress: { ...merged, sync: { ...merged.sync!,
+            pending: [...new Set([...merged.sync!.pending, ...otherSync.pending])], cursor: own.sync?.cursor } } };
+        }
+      } catch { /* Never replace usable in-memory progress with damaged data. */ }
+    }
+    const next = mutator(this.snapshot.progress);
+    const progress = track ? trackChanges(this.snapshot.progress, next) : next;
     let persistence = this.snapshot.persistence;
     if (this.storage) {
-      try { this.storage.setItem(STORAGE_KEY, JSON.stringify(progress)); persistence = 'saved'; }
+      try { this.storage.setItem(this.storageKey, JSON.stringify(progress)); persistence = 'saved'; }
       catch { persistence = 'unavailable'; }
     }
     this.snapshot = { progress, persistence };
@@ -74,6 +103,67 @@ export class GuestProgressStore {
     this.load();
     this.listeners.forEach((listener) => listener());
   };
+  getUserId = () => this.userId;
+  getStorageKey = () => this.storageKey;
+  clearSyncedAccountCache() {
+    if (!this.userId || this.getSnapshot().progress.sync?.pending.length) return;
+    try {
+      const raw = this.storage?.getItem(this.storageKey);
+      if (raw && parseProgress(raw).sync?.pending.length) return;
+      this.storage?.setItem(this.storageKey, JSON.stringify({ ...emptyProgress(), guestId: newId() }));
+    } catch { /* The active view is still cleared; a UID-scoped cache is never shown to a different user. */ }
+  }
+  /** Switch the active view before loading any other identity's progress. */
+  switchAccount(userId: string | null, migrateGuest = false) {
+    if (userId !== null && !validId(userId)) throw new Error('Invalid account ID');
+    let previousGuest = !this.userId && userId && migrateGuest ? this.getSnapshot().progress : null;
+    let transferFailed = false;
+    if (previousGuest && userId) {
+      // Claim the source in one atomic localStorage write before uploading it.
+      // If a later write fails, another account cannot inherit this history.
+      let source: StorageLike | undefined;
+      try { source = this.storageProvider(); }
+      catch { previousGuest = null; transferFailed = true; }
+      if (source && previousGuest) {
+        try {
+          const raw = source.getItem(STORAGE_KEY);
+          const stored = raw ? parseProgress(raw) : previousGuest;
+          if (stored.migrationOwner && stored.migrationOwner !== userId) previousGuest = null;
+          else {
+            previousGuest = stored.migrationOwner ? stored : previousGuest;
+            source.setItem(STORAGE_KEY, JSON.stringify({ ...previousGuest, migrationOwner: userId }));
+          }
+        } catch { previousGuest = null; transferFailed = true; }
+      }
+    }
+    this.userId = userId;
+    this.storageKey = userId ? `itpecTextbook:account:${userId}:v1` : STORAGE_KEY;
+    this.storage = undefined;
+    this.initialized = false;
+    this.snapshot = { progress: emptyProgress(), persistence: 'saved' };
+    this.load();
+    if (userId) {
+      this.update((p) => previousGuest ? migrateProgress(p, previousGuest) : { ...p, sync: seedSync(p) }, false);
+      // Transfer, rather than copy, the guest history. A later account must not inherit it.
+      const activeStorage = this.storage as StorageLike | undefined;
+      if (previousGuest && this.snapshot.persistence === 'saved' && activeStorage) {
+        try { activeStorage.setItem(STORAGE_KEY, JSON.stringify({ ...emptyProgress(), guestId: newId() })); }
+        catch { this.snapshot = { ...this.snapshot, persistence: 'unavailable' }; }
+      }
+      if (transferFailed) this.snapshot = { ...this.snapshot, persistence: 'unavailable' };
+    }
+    if (typeof window !== 'undefined') {
+      try { window.sessionStorage.removeItem('itpecTextbook:return:v1'); } catch { /* no account pointer remains in memory */ }
+    }
+    this.listeners.forEach((listener) => listener());
+  }
+  mergeCloud(records: import('./models').ProgressRecord[], acknowledged: import('./models').ProgressRecord[] = [], cursor?: import('./models').SyncCursor) {
+    this.update((p) => {
+      const merged = mergeRecords(p, records, acknowledged);
+      return { ...merged, sync: { ...merged.sync!, cursor: cursor || merged.sync?.cursor } };
+    }, false);
+  }
+  checkpointReading() { this.update(checkpointReading, false); }
   saveReading(position: ReadingPosition) {
     if (!validReading(position)) return;
     this.update((p) => ({ ...p, reading: position }));
@@ -109,7 +199,7 @@ export class GuestProgressStore {
 }
 
 export const guestStore = new GuestProgressStore();
-if (typeof window !== 'undefined') window.addEventListener('storage', (event) => { if (event.key === STORAGE_KEY) guestStore.refresh(); });
+if (typeof window !== 'undefined') window.addEventListener('storage', (event) => { if (event.key === guestStore.getStorageKey()) guestStore.refresh(); });
 
 export function learningStats(progress: GuestProgress) {
   const latest = new Map<string, Attempt>();

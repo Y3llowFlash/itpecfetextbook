@@ -1,5 +1,6 @@
 import { guestStore, learningStats } from '../lib/progress';
 import { useProgress } from '../lib/use-progress';
+import { GoogleSignInButton, useAccount } from './AccountControls';
 
 export function StorageNotice() {
   const { persistence } = useProgress();
@@ -11,12 +12,15 @@ export function StorageNotice() {
 
 export default function GuestNotice() {
   const { progress } = useProgress();
+  const account = useAccount();
   const stats = learningStats(progress);
-  if (progress.dismissedAccountPrompt || (stats.attempts < 3 && !stats.completedSections)) return null;
+  if (account.user || progress.dismissedAccountPrompt || (stats.attempts < 3 && !stats.completedSections)) return null;
   return <aside className="guest-notice" aria-label="Optional account backup">
     <button type="button" className="dismiss-button" aria-label="Dismiss account reminder" onClick={() => guestStore.dismissAccountPrompt()}>×</button>
     <strong>Keep your learning progress!</strong>
-    <p>Your progress is saved on this device. Free accounts for cross-device backup are coming later. You can always learn as a guest.</p>
+    <p>Create a free account to save your learning history and continue across devices. You can always learn as a guest.</p>
+    <GoogleSignInButton />
+    {account.error && <p role="alert">{account.error}</p>}
     <a href="/progress/#about-progress">About your progress →</a>
   </aside>;
 }

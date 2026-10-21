@@ -5,6 +5,7 @@ import '../styles/tokens.css';
 import '../styles/global.css';
 import ChapterNav from '../components/ChapterNav.astro';
 import StudyCompanion from '../components/StudyCompanion';
+import AccountControls from '../components/AccountControls';
 interface Props { title: string; description: string; active?: 'reader' | 'chapter' | 'practice' | 'progress'; noindex?: boolean; companion?: boolean; count?: number }
 const { title, description, active = 'reader', noindex = false, companion = true, count = 3 } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -23,7 +24,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <header class="site-header">
       <a class="wordmark" href="/" aria-label="ITPEC FE Textbook home"><span class="brand-mark" aria-hidden="true">fe<span>.</span></span><span>ITPEC FE <strong>Textbook</strong></span></a>
       <span class="header-tagline">Understand the idea. Then try it.</span>
-      <a class="guest-pill" href="/progress/"><span aria-hidden="true">◌</span><span>Learning as a guest</span><span class="guest-short">Your progress</span></a>
+      <AccountControls compact client:load />
     </header>
     <div class="mobile-navigation"><details><summary>Chapters & sections <span aria-hidden="true">⌄</span></summary><ChapterNav active={active} /></details></div>
     <div class:list={['app-layout', { 'without-companion': !companion }]}>
@@ -32,5 +33,9 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
       {companion && <aside class="study-companion" aria-label="Study companion"><StudyCompanion client:load questionCount={count} /></aside>}
     </div>
     <footer class="site-footer"><span>ITPEC FE Textbook</span><span>Read. Practise. Understand.</span><a href="/progress/#about-progress">About local progress</a></footer>
+    <script>
+      import { getFirebaseAnalytics } from '../lib/firebase';
+      void getFirebaseAnalytics();
+    </script>
   </body>
 </html>

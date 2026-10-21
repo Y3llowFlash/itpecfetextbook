@@ -42,7 +42,7 @@ export default function Practice({ concept, questions, explanations }: PracticeP
   useEffect(() => {
     setSelected(saved?.selected || '');
     setImageFailed(false);
-  }, [question?.id, saved?.selected]);
+  }, [question?.id, saved?.selected, progress.guestId]);
 
   useEffect(() => {
     if (zoom) dialog.current?.showModal();

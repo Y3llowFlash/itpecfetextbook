@@ -4,7 +4,7 @@ import ProgressDashboard from '../components/ProgressDashboard';
 import { concepts, publishedQuestions, questionsForConcept } from '../lib/catalog';
 const questions = questionsForConcept(concepts[0], await publishedQuestions());
 ---
-<SiteLayout title="Your progress" description="Your private, browser-local ITPEC FE reading and practice progress." active="progress" noindex count={questions.length}>
+<SiteLayout title="Your progress" description="Your private ITPEC FE reading and practice progress, with optional free account backup." active="progress" noindex count={questions.length}>
   <ProgressDashboard client:load questions={questions} />
   <noscript><p>Viewing locally saved progress requires JavaScript. <a href="/chapters/hardware/memory-and-cache/">Continue reading</a>.</p></noscript>
 </SiteLayout>

@@ -1,0 +1,51 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function owner(uid) {
+      return request.auth != null && request.auth.uid == uid
+        && request.auth.token.firebase.sign_in_provider == 'google.com';
+    }
+    function shortId(value) { return value is string && value.matches('[a-zA-Z0-9:_-]{1,160}'); }
+    function validRecord(id, d) {
+      return d.keys().hasOnly(['kind', 'key', 'value', 'clock', 'device', 'updatedAt'])
+        && d.keys().hasAll(['kind', 'key', 'value', 'clock', 'device', 'updatedAt'])
+        && shortId(d.key) && shortId(d.device)
+        && d.clock is int && d.clock >= 0 && d.clock <= 9007199254740991
+        && d.updatedAt == request.time
+        && (
+          (d.kind == 'attempt' && id == 'attempt:' + d.key && validAttempt(d.key, d.value))
+          || (d.kind in ['bookmark', 'completion'] && id == d.kind + ':' + d.key && d.value is bool)
+          || (d.kind == 'reading' && id == 'reading:latest' && d.key == 'latest' && validReading(d.value))
+        );
+    }
+    function validAttempt(id, a) {
+      return a is map && a.keys().hasOnly(['id', 'questionId', 'conceptId', 'selected', 'correct', 'at', 'revision'])
+        && a.keys().hasAll(['id', 'questionId', 'conceptId', 'selected', 'correct', 'at', 'revision'])
+        && a.id == id && shortId(a.questionId) && shortId(a.conceptId)
+        && a.selected is string && a.selected.matches('[a-z]') && a.correct is bool
+        && a.at is string && a.at.size() <= 40 && a.revision is string && a.revision.size() <= 160;
+    }
+    function validReading(r) {
+      return r is map && r.keys().hasOnly(['sectionId', 'path', 'blockId', 'offset', 'scrollY', 'focusId', 'updatedAt'])
+        && r.keys().hasAll(['sectionId', 'path', 'blockId', 'offset', 'scrollY', 'updatedAt'])
+        && shortId(r.sectionId) && shortId(r.blockId)
+        && r.path == '/chapters/hardware/memory-and-cache/'
+        && r.offset is number && r.offset > -100000 && r.offset < 100000
+        && r.scrollY is number && r.scrollY >= 0
+        && r.updatedAt is string && r.updatedAt.size() <= 40
+        && (!('focusId' in r) || shortId(r.focusId));
+    }
+    match /users/{uid}/progress/{recordId} {
+      allow read: if owner(uid);
+      allow create: if owner(uid) && validRecord(recordId, request.resource.data);
+      allow update: if owner(uid) && resource.data.kind != 'attempt'
+        && validRecord(recordId, request.resource.data)
+        && request.resource.data.kind == resource.data.kind && request.resource.data.key == resource.data.key
+        && (request.resource.data.clock > resource.data.clock
+          || (request.resource.data.clock == resource.data.clock && request.resource.data.device > resource.data.device));
+      allow delete: if owner(uid);
+    }
+    // Deny public records, parent profiles, nested paths and other collections.
+    match /{document=**} { allow read, write: if false; }
+  }
+}

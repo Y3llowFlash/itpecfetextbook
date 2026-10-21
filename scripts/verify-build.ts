@@ -17,6 +17,6 @@ if (!progress.includes('noindex,follow')) throw new Error('Private progress rout
 for (const name of await readdir(path.join(root, '_astro'))) {
   if (!/\.(js|css)$/.test(name)) continue;
   const content = await readFile(path.join(root, '_astro', name), 'utf8');
-  if (/itpec-fe-practice|firebasestorage\.googleapis\.com|BEGIN (?:RSA )?PRIVATE KEY|free-video-/.test(content)) throw new Error(`Production dependency or credential/placeholder found: ${name}`);
+  if (/itpec-fe-practice|demo-itpec-textbook|firebasestorage\.googleapis\.com|BEGIN (?:RSA )?PRIVATE KEY|free-video-/.test(content)) throw new Error(`Production dependency or credential/placeholder found: ${name}`);
 }
 console.log(`Production verified: ${questions.length} published records; ${images.length} approved image files; static reader and private progress metadata; no old Firebase dependencies.`);

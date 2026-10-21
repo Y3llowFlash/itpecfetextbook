@@ -1,6 +1,6 @@
 # ITPEC FE Textbook
 
-A free, static textbook with real ITPEC FE question practice. The first milestone contains one complete **Hardware → Memory hierarchy & cache** lesson, three related-question explanations, and browser-local guest progress.
+A free, static textbook with real ITPEC FE question practice. Includes one complete **Hardware → Memory hierarchy & cache** lesson, three related-question explanations, browser-local guest progress, and optional Google accounts for progress backup.
 
 Built with **Astro, React and TypeScript**. Output is compatible with static Cloudflare Pages hosting. This repository does not provision or deploy infrastructure.
 
@@ -30,12 +30,16 @@ npm.cmd test
 npm.cmd run build
 npx.cmd playwright install chromium
 npm.cmd run test:e2e
+npm.cmd run test:rules
+npm.cmd run test:accounts
 npm.cmd run preview
 ```
 
 `check` runs Astro diagnostics and TypeScript. Unit/component tests cover publication filtering, duplicates, answer explanations, persistence failures, navigation and reading restoration. End-to-end tests run against the production build in a fresh headless browser, including 320, 375, 414, 768 and 1280 pixel viewports. The build validates data/assets before rendering and verifies the final public output afterward. Preview serves the production `dist/` directory, normally on port 4321. E2E uses its own temporary preview on port 4322 and stops it on completion.
 
-Astro CLI telemetry is disabled by the local wrapper. No Firebase configuration or credentials are required. The pilot sends no learning data to a server.
+Emulator tests require Java 21 or newer. `test:rules` runs security rules and real SDK synchronization tests. `test:accounts` builds a separate demo application under ignored `.local/account-dist/` and tests Google sign-in, migration, two-device/offline sync and sign-out in Chromium. It never replaces the production `dist/`. Both commands start/stop local Auth and Firestore emulators using `demo-itpec-textbook`; test accounts and records never reach production. The popup test permits Google's static popup JavaScript while blocking production Auth/Firestore APIs.
+
+Astro CLI telemetry is disabled by the local wrapper. Firebase's public web configuration defaults to the verified `itpec-textbook` app. Optional Astro `PUBLIC_FIREBASE_*` overrides are listed in `.env.example`; never put Admin credentials in public environment variables. Production builds always target `itpec-textbook`. `PUBLIC_FIREBASE_USE_EMULATORS=true` selects only `demo-itpec-textbook`, and runtime use is restricted to loopback hosts. Analytics runs in supported production browsers and is skipped for development, loopback previews and emulator builds. No learning records are sent as custom Analytics events.
 
 ## Published-question import
 
@@ -90,13 +94,19 @@ Keep section and reading-block IDs stable when editing prose. The return flow st
 
 The prose and memory-hierarchy diagram were written for this project. No raw textbook PDF extraction or third-party textbook figure is included. The existing PDF chapter structure informed the outline. Exam images retain original exam attribution and source-page references; these materials are not claimed as original project authorship.
 
-## Guest progress and future accounts
+## Guest progress and optional accounts
 
 Progress uses the namespaced local key `itpecTextbook:guest:v1`, with stable attempt, question and section IDs. It tracks submitted attempts, latest correctness per question, bookmarks, section completion, last reading position and current practice question. Retrying preserves attempt history. A duplicate attempt ID does not count twice.
 
-Storage-denied/quota failures leave an in-memory learning session available with a clear message. Corrupt or unknown-version data is preserved rather than overwritten. Progress can be downloaded as JSON. File restore and multi-tab simultaneous-edit conflict resolution are not part of this milestone. Clearing browser data or using another device does not retain local progress.
+Storage-denied/quota failures leave an in-memory learning session available with a clear message. Corrupt or unknown-version data is preserved rather than overwritten. Progress can be downloaded as JSON. File restore is not implemented. Clearing browser data or using another device does not retain unsynced local progress.
 
-After meaningful activity, a dismissible reminder explains future free account backup. It does not display a nonfunctional sign-in button or force registration. `ProgressSyncAdapter` in `src/lib/models.ts` defines the future interface; there is **no Firebase SDK, Auth setup, Firestore connection, cloud sync or server-side personal data** in this release.
+Guests never use Anonymous Authentication, create cloud records or read/write Firestore. Google sign-in is voluntary from `/progress/#account` or a dismissible prompt after meaningful learning activity. Auth/Firestore code loads only after explicit sign-in or restoration of a previously chosen account.
+
+Account progress uses `itpecTextbook:account:{uid}:v1` locally and `users/{uid}/progress/{recordId}` in Firestore. Guest migration merges with existing account history and consumes the guest source rather than copying it into future accounts. A durable ownership claim protects interrupted migrations. Attempts are immutable records keyed by attempt ID; bookmarks and completed sections retain removal tombstones, resolving conflicts by logical clock and device ID. Reading checkpoints synchronize periodically; raw scroll events only update local storage. Practice navigation and reminder dismissal remain device-local.
+
+Changes debounce for 2.5 seconds; foreground polling uses an incremental server-timestamp/document-ID cursor every minute and pauses while hidden. Transactions upload only pending records in chunks of 100, preserve newer cloud state, and make retries idempotent. Offline/network/quota errors retain the local outbox and show sync status. Retry backoff caps at five minutes; `Sync now` and reconnect/focus also retry. Sign-out immediately clears the active account view and reading-return pointer across tabs. Synced caches are cleared; unsynced data remains isolated under its original UID until that account returns.
+
+See [Firebase security and integration report](docs/development/FIREBASE_INTEGRATION.md) for the audit, deployed rules, conflict policy, test coverage and limitations.
 
 ## Free help
 
@@ -104,4 +114,4 @@ Incorrect answers show a relevant free memory-hierarchy lesson from the existing
 
 ## Scope
 
-This is the first Hardware learning experience, not a completed 14-chapter textbook. Further Hardware lessons, CET, Firebase accounts/sync and deployment are intentionally deferred. See [milestone report](docs/development/MILESTONE_1.md) for verification and limitations, and [investigation reports](docs/investigation/06_IMPLEMENTATION_ROADMAP.md) for the prior evidence.
+This is the first Hardware learning experience, not a completed 14-chapter textbook. Further Hardware lessons, CET and public website deployment remain deferred. The [original milestone report](docs/development/MILESTONE_1.md) and [investigation reports](docs/investigation/06_IMPLEMENTATION_ROADMAP.md) describe the earlier implementation; the Firebase integration report records the subsequent account/security work.
