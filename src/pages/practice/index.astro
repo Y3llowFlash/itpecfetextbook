@@ -1,0 +1,14 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import {concepts,publishedQuestions,questionsForConcept} from '../../lib/catalog';
+import {mainContents,descendants} from '../../lib/toc';
+const bank=await publishedQuestions();
+---
+<SiteLayout title="Practice" description="Reviewed ITPEC FE Hardware questions by source section." active="practice" companion={false}>
+ <article class="practice-index"><p class="small-label">CHAPTER 1 · HARDWARE</p><h1>Practice</h1>
+ {mainContents.map(section=>{
+  const ids=new Set(descendants(section).flatMap(node=>node.conceptIds));
+  const related=concepts.filter(concept=>ids.has(concept.id));
+  return related.length>0&&<section><h2>{section.number} {section.title}</h2><ul>{related.map(concept=><li><a href={`/practice/${concept.id}/`}><span>{concept.title}</span><span>{questionsForConcept(concept,bank).length} questions</span></a></li>)}</ul></section>;
+ })}</article>
+</SiteLayout>

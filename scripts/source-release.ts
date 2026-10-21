@@ -15,7 +15,10 @@ export async function validateSourceRelease(builtRoot?:string){
   const pages=release.lessons.slice(0,5).flatMap(lesson=>lesson.pages);
   if(pages.length!==100||pages.some((page,index)=>page.pdfPage!==index+18||page.printedPage!==evidence.pages.find(p=>p.pdfPage===page.pdfPage)?.printedPage))throw new Error('Source release lost or reordered a page');
   const numbered=new Set<string>();
-  for(const lesson of release.lessons){
+  // The cache excerpt remains an immutable input for historical compatibility.
+  // Public readers contain five full sections plus the two chapter entry aliases.
+  const readers=builtRoot?[...release.lessons.slice(0,5),{...release.lessons[0],path:'/'},{...release.lessons[0],path:'/chapters/hardware/'}]:release.lessons;
+  for(const lesson of readers){
     const file=builtRoot?path.join(builtRoot,lesson.path,'index.html'):path.join('src/content/source-hardware',lesson.slug+'.html');
     const html=await readFile(file,'utf8');
     if(!builtRoot&&digest(html.replace(/\r\n/g,'\n'))!==lesson.htmlSha256)throw new Error(`Changed source HTML: ${lesson.slug}`);

@@ -1,0 +1,29 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import SectionActions from './SectionActions';
+import release from '../content/hardware-source-release.json';
+import {hardwareLessons,lessonPath,editionLabel} from '../lib/lessons';
+import {publishedQuestions} from '../lib/catalog';
+import {studyContextsForSection} from '../lib/study-context';
+import {presentSourceHTML} from '../lib/reader-presentation';
+interface Props{slug:string;chapterStart?:boolean}
+const {slug,chapterStart=false}=Astro.props;
+const lesson=hardwareLessons.find(entry=>entry.slug===slug)!;
+const modules=import.meta.glob<string>('../content/source-hardware/*.html',{query:'?raw',import:'default',eager:true});
+const html=presentSourceHTML(modules[`../content/source-hardware/${slug}.html`],chapterStart);
+const contexts=studyContextsForSection(lesson.id,await publishedQuestions());
+const root=contexts[0];
+const index=hardwareLessons.findIndex(entry=>entry.id===lesson.id);
+const previous=index>0?hardwareLessons[index-1]:null;
+const next=index<4?hardwareLessons[index+1]:null;
+---
+<SiteLayout title={chapterStart?'Chapter 1: Hardware':lesson.title} description={`ITPEC FE textbook · ${lesson.title}. ${editionLabel}.`} active="reader" studyContexts={contexts} readingPath={lessonPath(lesson)}>
+ <article class="reader" data-reader data-section-id={lesson.id} data-reader-path={lessonPath(lesson)} data-source-release={release.releaseId}>
+   {chapterStart?<header class="book-chapter-heading"><p class="small-label">CHAPTER 1</p><h1>Hardware</h1></header>:<nav class="book-breadcrumb" aria-label="Breadcrumb"><a href="/chapters/hardware/">Chapter 1 · Hardware</a></nav>}
+   <div class="reader-prose source-book" set:html={html}/>
+   <div data-reading-block id="lesson-complete"><SectionActions client:load sectionId={lesson.id} count={root.questionIds.length} links={root.links}/></div>
+   <nav class="lesson-pagination" aria-label="Section navigation">{previous&&<a href={lessonPath(previous)}>← {previous.title}</a>}{next&&<a href={lessonPath(next)}>{next.title} →</a>}</nav>
+   <p class="content-note">{editionLabel}</p>
+ </article>
+</SiteLayout>
+<script>import {setupReader} from '../lib/reading';setupReader();</script>

@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { GuestProgressStore, learningStats, parseProgress, STORAGE_KEY } from '../src/lib/progress';
 import { returnUrl } from '../src/lib/reading';
+import {CPU_PATH,CACHE_HEADING} from '../src/lib/reading-routes';
 import type { Attempt } from '../src/lib/models';
 
 const attempt = (id: string, correct = false): Attempt => ({ id, questionId: '2024A-A-Q009', conceptId: 'cache-memory', selected: correct ? 'b' : 'a', correct, at: '2026-10-21T06:00:00Z', revision: '1' });
@@ -45,10 +46,10 @@ describe('guest learning progress', () => {
     const store = new GuestProgressStore(memory);
     const position = { sectionId: 'fe-v1-ch01-memory-cache', path: '/chapters/hardware/memory-and-cache/', blockId: 'cache-definition', offset: 124, scrollY: 822, focusId: 'concept-cache-memory', updatedAt: '2026-10-21T06:00:00Z' };
     store.saveReading(position);
-    expect(returnUrl(store.getSnapshot().progress.reading)).toBe('/chapters/hardware/memory-and-cache/?resume=1#concept-cache-memory');
+    expect(returnUrl(store.getSnapshot().progress.reading)).toBe(`${CPU_PATH}?resume=1#concept-cache-memory`);
     store.saveReading({ ...position, path: 'https://malicious.invalid/' });
     expect(store.getSnapshot().progress.reading).toEqual(position);
-    expect(returnUrl({ ...position, path: '//malicious.invalid' })).toBe('/chapters/hardware/memory-and-cache/');
+    expect(returnUrl({ ...position, path: '//malicious.invalid' })).toBe(`${CPU_PATH}#${CACHE_HEADING}`);
   });
   it('retrying retains history but clears the answer so it can be submitted again', () => {
     const store = new GuestProgressStore(memory); store.recordAttempt(attempt('attempt-1'));

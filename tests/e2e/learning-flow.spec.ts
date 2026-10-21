@@ -1,11 +1,11 @@
 import { test, expect } from '@playwright/test';
 
-const lesson = '/chapters/hardware/memory-and-cache/';
+const lesson = '/chapters/hardware/cpu-and-main-memory/#fev1-201504-ch1-r1-pdf-075-b005-l00-text-0';
 test('read, practise real questions, save progress, and return to the exact reading position', async ({ page }) => {
   const errors: string[] = []; page.on('pageerror', (error) => errors.push(error.message));
   page.on('console', (message) => { if (message.type() === 'error') errors.push(message.text()); });
   await page.goto(lesson);
-  await expect(page.getByRole('heading', { name: 'Memory hierarchy & cache' })).toBeVisible();
+  await expect(page.locator('.source-book').getByRole('heading', { name: '3-5-1 High Speed Memory Access', exact:true })).toBeVisible();
   const concept = page.locator('#concept-cache-memory');
   await concept.scrollIntoViewIfNeeded();
   const before = await concept.locator('xpath=ancestor::*[@data-reading-block][1]').evaluate((element) => element.getBoundingClientRect().top);
@@ -30,7 +30,7 @@ test('read, practise real questions, save progress, and return to the exact read
   await page.getByRole('button', { name: 'Check answer' }).click();
   await expect(page.getByText('✓ That’s correct.')).toBeVisible();
   await page.getByRole('link', { name: '← Return to textbook' }).click();
-  await expect(page).toHaveURL(/memory-and-cache\//);
+  await expect(page).toHaveURL(/cpu-and-main-memory\//);
   await expect(page.locator('#concept-cache-memory')).toBeFocused();
   const after = await concept.locator('xpath=ancestor::*[@data-reading-block][1]').evaluate((element) => element.getBoundingClientRect().top);
   expect(Math.abs(before - after)).toBeLessThan(3);
@@ -38,7 +38,7 @@ test('read, practise real questions, save progress, and return to the exact read
   await expect(page.getByRole('button', { name: '✓ Section completed' })).toHaveAttribute('aria-pressed', 'true');
   await page.goto('/progress/');
   await expect(page.locator('.progress-stat-grid')).toContainText('3');
-  await expect(page.locator('.study-companion .companion-practice').first()).toContainText('3 questions');
+  await expect(page.locator('.study-companion')).toHaveCount(0);
   await expect(page.getByRole('link', { name: '2024A-A-Q009 →' })).toHaveCount(2);
   expect(errors).toEqual([]);
 });
@@ -60,14 +60,14 @@ test('learning remains usable when browser storage is blocked', async ({ page })
   await page.getByRole('radio', { name: 'Option B: 360 ns' }).check();
   await page.getByRole('button', { name: 'Check answer' }).click();
   await expect(page.getByText('✓ That’s correct.')).toBeVisible();
-  await expect(page.getByRole('status')).toContainText('Browser storage is unavailable');
+  await expect(page.locator('main').getByRole('status')).toContainText('Browser storage is unavailable');
 });
 
 test('reader works as static HTML without JavaScript', async ({ browser }) => {
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage();
   await page.goto(`http://127.0.0.1:4322${lesson}`);
-  await expect(page.locator('.source-page').first()).toContainText('Cache memory');
+  await expect(page.locator('.source-book')).toContainText('Cache memory');
   await expect(page.locator('#concept-cache-memory')).toHaveAttribute('href', '/practice/cache-memory/');
   await context.close();
 });

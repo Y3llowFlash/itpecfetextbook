@@ -8,6 +8,7 @@ import { concepts, explanationMap, publishedQuestions, questionsForConcept } fro
 import { validReading } from '../src/lib/progress';
 import { returnUrl, savedReturnPosition } from '../src/lib/reading';
 import release from '../src/content/hardware-source-release.json';
+import {canonicalReadingPosition} from '../src/lib/reading-routes';
 
 describe('completed Hardware chapter', () => {
   it('preserves all five sections, 19 source subsections, deeper topics and the old cache ID', () => {
@@ -67,7 +68,8 @@ describe('completed Hardware chapter', () => {
     for (const lesson of hardwareLessons) {
       const position = { sectionId: lesson.id, path: lessonPath(lesson), blockId: lesson.headings[0].id, offset: 30, scrollY: 100, updatedAt: '2026-10-21T10:00:00Z' };
       expect(validReading(position)).toBe(true);
-      expect(returnUrl(position)).toBe(`${position.path}?resume=1#${position.blockId}`);
+      const canonical=canonicalReadingPosition(position);
+      expect(returnUrl(position)).toBe(`${canonical.path}?resume=1#${canonical.blockId}`);
       expect(validReading({ ...position, sectionId: 'wrong-section' })).toBe(false);
       expect(validReading({ ...position, path: 'https://example.invalid/' })).toBe(false);
       expect(savedReturnPosition(position, 'wrong-section')).toBeNull();

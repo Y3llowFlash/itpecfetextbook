@@ -1,20 +1,25 @@
 import type { ReadingPosition } from './models';
 import { guestStore, validReading } from './progress';
 import { accountStore } from './account';
+import {canonicalReadingPosition,CPU_PATH,CACHE_HEADING,CACHE_LEGACY_ID} from './reading-routes';
 
-export const READER_PATH = '/chapters/hardware/memory-and-cache/';
+export const READER_PATH = CPU_PATH;
 const RETURN_KEY = 'itpecTextbook:return:v1';
 
-export function returnUrl(position: ReadingPosition | null, fallback = READER_PATH) {
-  return position && validReading(position) ? `${position.path}?resume=1#${encodeURIComponent(position.focusId || position.blockId)}` : fallback;
+export function returnUrl(position: ReadingPosition | null, fallback = `${READER_PATH}#${CACHE_HEADING}`) {
+  const source=position&&validReading(position)?canonicalReadingPosition(position):null;
+  return source ? `${source.path}?resume=1#${encodeURIComponent(source.focusId || source.blockId)}` : fallback;
 }
 
 export function savedReturnPosition(fallback: ReadingPosition | null, sectionId?: string): ReadingPosition | null {
+  if(fallback&&validReading(fallback))fallback=canonicalReadingPosition(fallback);
+  if(sectionId===CACHE_LEGACY_ID)sectionId='fe-v1-ch01-s03';
   if (sectionId && fallback?.sectionId !== sectionId) fallback = null;
   if (typeof window === 'undefined') return fallback;
   try {
     const raw = sessionStorage.getItem(RETURN_KEY);
-    const position = raw ? JSON.parse(raw) : null;
+    const parsed = raw ? JSON.parse(raw) : null;
+    const position=validReading(parsed)?canonicalReadingPosition(parsed):null;
     if (validReading(position) && (!sectionId || position.sectionId === sectionId) && (!fallback || position.updatedAt >= fallback.updatedAt)) return position;
   } catch { /* durable or in-memory pointer remains available */ }
   return fallback;
@@ -22,6 +27,8 @@ export function savedReturnPosition(fallback: ReadingPosition | null, sectionId?
 
 /** One source concept can appear in both the full section and a source excerpt. */
 export function conceptReturnPosition(fallback:ReadingPosition|null,conceptId:string,sectionId:string){
+  if(fallback&&validReading(fallback))fallback=canonicalReadingPosition(fallback);
+  if(sectionId===CACHE_LEGACY_ID)sectionId='fe-v1-ch01-s03';
   const matches=(p:ReadingPosition|null)=>!!p&&validReading(p)&&(p.sectionId===sectionId||p.focusId===`concept-${conceptId}`);
   const saved=savedReturnPosition(null);
   if(matches(saved)&&(!matches(fallback)||saved!.updatedAt>=fallback!.updatedAt))return saved;
@@ -32,7 +39,7 @@ export function setupReader() {
   const reader = document.querySelector<HTMLElement>('[data-reader]');
   if (!reader) return;
   const sectionId = reader.dataset.sectionId!;
-  const readerPath = location.pathname;
+  const readerPath = reader.dataset.readerPath||location.pathname;
   let timer: ReturnType<typeof setTimeout>;
   let leavingForPractice = false;
   let cancelled = false;

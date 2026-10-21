@@ -6,7 +6,7 @@ const bank = await publishedQuestions();
 const ids = new Set(concepts.flatMap((concept) => concept.questionIds));
 const questions = bank.filter((question) => ids.has(question.id));
 ---
-<SiteLayout title="Your progress" description="Your private ITPEC FE reading and practice progress, with optional free account backup." active="progress" noindex count={questions.length}>
+<SiteLayout title="Progress" description="Your private ITPEC FE reading and practice progress, with optional account backup." active="progress" noindex companion={false}>
   <ProgressDashboard client:load questions={questions} />
-  <noscript><p>Viewing locally saved progress requires JavaScript. <a href="/chapters/hardware/memory-and-cache/">Continue reading</a>.</p></noscript>
+  <noscript><p>Saved progress requires JavaScript. <a href="/chapters/hardware/">Chapter 1</a>.</p></noscript>
 </SiteLayout>

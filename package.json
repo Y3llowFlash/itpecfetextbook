@@ -8,7 +8,8 @@
   },
   "scripts": {
     "dev": "node scripts/astro.mjs dev --host 127.0.0.1",
-    "build": "tsx scripts/validate-data.ts && node scripts/astro.mjs build && tsx scripts/verify-build.ts",
+    "build": "node scripts/generate-reader-toc.mjs --check && tsx scripts/validate-data.ts && node scripts/astro.mjs build && tsx scripts/verify-build.ts",
+    "generate:reader-toc": "node scripts/generate-reader-toc.mjs",
     "preview": "node scripts/astro.mjs preview --host 127.0.0.1",
     "check": "node scripts/astro.mjs check && tsc --noEmit",
     "test": "vitest run",

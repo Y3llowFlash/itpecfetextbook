@@ -1,7 +1,4 @@
 ---
-import SiteLayout from '../layouts/SiteLayout.astro';
-import ChapterOverview from '../components/ChapterOverview.astro';
-import { concepts, publishedQuestions, questionsForConcept } from '../lib/catalog';
-const count = questionsForConcept(concepts[0], await publishedQuestions()).length;
+import HardwareReader from '../components/HardwareReader.astro';
 ---
-<SiteLayout title="Learn ITPEC FE, one idea at a time" description="Read the original ITPEC FE Hardware textbook with its complete text, figures, tables and formulas, and practise published past-exam questions." active="chapter" count={count}><ChapterOverview count={count} home /></SiteLayout>
+<HardwareReader slug="basic-configuration" chapterStart/>

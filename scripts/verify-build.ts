@@ -1,7 +1,8 @@
 import { readFile, readdir, stat } from 'node:fs/promises';
 import path from 'node:path';
 import { digest } from './question-importer';
-import { hardwareLessons, pageLabel } from '../src/lib/lessons';
+import { hardwareLessons } from '../src/lib/lessons';
+import {CPU_PATH,CACHE_HEADING} from '../src/lib/reading-routes';
 import { concepts } from '../src/lib/catalog';
 import { validateSourceRelease, sourceAssets } from './source-release';
 import { assertPublicationBoundary, assertApprovedPublicFile } from './publication-boundary';
@@ -14,11 +15,13 @@ if (questions.some((q: { is_published: unknown }) => q.is_published !== true)) t
 const expected = new Set(questions.map((q: { image: { src: string } }) => path.basename(q.image.src)));
 const images = await readdir(path.join(root, 'questions'));
 if (images.length !== expected.size || images.some((filename) => !expected.has(filename))) throw new Error('Extra or missing question image in production output');
-const reader = await readFile(path.join(root, 'chapters/hardware/memory-and-cache/index.html'), 'utf8');
+const reader = await readFile(path.join(root, 'chapters/hardware/cpu-and-main-memory/index.html'), 'utf8');
+const legacyReader=await readFile(path.join(root,'chapters/hardware/memory-and-cache/index.html'),'utf8');
+if(!legacyReader.includes('data-legacy-reader')||!legacyReader.includes(`${CPU_PATH}#${CACHE_HEADING}`)||legacyReader.includes('class="reader-prose source-book"'))throw new Error('Legacy cache route must link to the canonical source subsection without duplicating the reader');
 if (!reader.includes('data-source-release="fev1-201504-ch1-r1"') || !reader.includes('data-concept="cache-memory"')) throw new Error('Source reader content/highlight missing');
-for (const lesson of hardwareLessons) {
+for (const lesson of hardwareLessons.slice(0,5)) {
   const html = await readFile(path.join(root, 'chapters/hardware', lesson.slug, 'index.html'), 'utf8');
-  if (!html.includes(`data-section-id="${lesson.id}"`) || !html.includes(`Original textbook · ${pageLabel(lesson.pages)}`)) throw new Error(`Missing lesson/page badge: ${lesson.slug}`);
+  if (!html.includes(`data-section-id="${lesson.id}"`) || !html.includes('class="source-badge"')) throw new Error(`Missing lesson/page badge: ${lesson.slug}`);
   if (/Planned for a later update|Coming later/.test(html)) throw new Error(`Incomplete chapter navigation in ${lesson.slug}`);
 }
 for (const concept of concepts) {
@@ -26,7 +29,7 @@ for (const concept of concepts) {
   for (const id of concept.questionIds) if (!html.includes(id)) throw new Error(`Missing reviewed practice question ${id}`);
 }
 const publicFiles = await readdir(root, { recursive: true });
-const allowedHtml=new Set(['index.html','404.html','progress/index.html','chapters/hardware/index.html',
+const allowedHtml=new Set(['index.html','404.html','progress/index.html','practice/index.html','chapters/hardware/index.html',
   ...hardwareLessons.map((lesson)=>`chapters/hardware/${lesson.slug}/index.html`),
   ...concepts.map((concept)=>`practice/${concept.id}/index.html`)]);
 if (publicFiles.some((name) => /\.(?:pdf|env|py|mjs)$/.test(name) || name.includes('hardware-review'))) throw new Error('Source/editorial material leaked into public output');

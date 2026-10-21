@@ -1,7 +1,4 @@
 ---
-import SiteLayout from '../../../layouts/SiteLayout.astro';
-import ChapterOverview from '../../../components/ChapterOverview.astro';
-import { concepts, publishedQuestions, questionsForConcept } from '../../../lib/catalog';
-const count = questionsForConcept(concepts[0], await publishedQuestions()).length;
+import HardwareReader from '../../../components/HardwareReader.astro';
 ---
-<SiteLayout title="Chapter 1: Hardware" description="Explore the Hardware chapter: computer configuration, data representation, CPU and memory, storage, and input/output." active="chapter" count={count}><ChapterOverview count={count} /></SiteLayout>
+<HardwareReader slug="basic-configuration" chapterStart/>

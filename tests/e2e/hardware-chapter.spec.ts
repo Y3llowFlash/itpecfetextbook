@@ -1,14 +1,15 @@
 import { test, expect } from '@playwright/test';
-import { hardwareLessons, lessonPath, pageLabel } from '../../src/lib/lessons';
+import { hardwareLessons, lessonPath } from '../../src/lib/lessons';
+import {mainContents,contentsUrl} from '../../src/lib/toc';
 import release from '../../src/content/hardware-source-release.json' with { type: 'json' };
 
 for (const lesson of hardwareLessons.slice(0, 5)) {
   test(`${lesson.title}: printed references, substantive sections and 320px layout`, async ({ page }, testInfo) => {
     await page.setViewportSize({ width: 320, height: 900 });
     await page.goto(lessonPath(lesson));
-    await expect(page.getByRole('heading', { name: lesson.title, exact: true, level: 1 })).toBeVisible();
-    await expect(page.locator('[data-source-ref="lesson"]')).toHaveText(`Original textbook · ${pageLabel(lesson.pages)}`);
-    await expect(page.locator('[data-source-ref="lesson"]')).toHaveAttribute('title', /First Edition, April 2015/);
+    const root=mainContents.find(node=>node.sectionId===lesson.id)!;
+    await expect(page.getByRole('heading', { name: `${root.number} ${root.title}`, exact: true, level: 1 })).toBeVisible();
+    await expect(page.locator('.source-page > .source-badge').first()).toHaveText(`p. ${root.page}`);
     const source=release.lessons.find(entry=>entry.id===lesson.id)!;
     expect(await page.locator('.source-page').evaluateAll(nodes=>nodes.map(node=>Number((node as HTMLElement).dataset.pdfPage)))).toEqual(source.pages.map(p=>p.pdfPage));
     expect(await page.locator('[data-source-block]').evaluateAll(nodes=>nodes.map(node=>node.id))).toEqual(source.pages.flatMap(p=>p.blocks.map(b=>b.id)));
@@ -18,10 +19,10 @@ for (const lesson of hardwareLessons.slice(0, 5)) {
       const box = await table.boundingBox(); expect(box!.width).toBeLessThanOrEqual(288);
     }
     await page.screenshot({ path: testInfo.outputPath(`${lesson.slug}-320.png`) });
-    await page.locator('.mobile-navigation summary').click();
+    await page.locator('.mobile-navigation > details > summary').click();
     const nav = page.locator('.mobile-navigation nav');
-    await expect(nav.locator('[aria-current="page"]')).toHaveAttribute('href', lessonPath(lesson));
-    for (const item of hardwareLessons.slice(0,5)) await expect(nav.locator(`a[href="${lessonPath(item)}"]`)).toBeVisible();
+    await expect(nav.locator('[aria-current="location"]')).toHaveAttribute('href', contentsUrl(root));
+    for (const item of mainContents) await expect(nav.locator(`a[href="${contentsUrl(item)}"]`)).toBeVisible();
     if (lesson.slug === 'cpu-and-main-memory') {
       await page.setViewportSize({ width: 1280, height: 1000 });
       await page.locator('[data-pdf-page="67"]').scrollIntoViewIfNeeded();

@@ -28,7 +28,7 @@ test('original figures remain described and readable without JavaScript',async({
   const figure=page.locator('[data-pdf-page="56"] figure').first();
   await expect(figure).toHaveAttribute('data-reading-block','');
   await expect(figure.locator('img')).toHaveAttribute('alt',/\S/);
-  await expect(figure.locator('figcaption')).toContainText('Original textbook');
+  await expect(figure.locator('figcaption')).toContainText('p. 51');
   await context.close();
 });
 

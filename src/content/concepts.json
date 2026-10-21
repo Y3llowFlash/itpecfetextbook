@@ -2,8 +2,9 @@
   {
     "id": "cache-memory",
     "title": "Cache memory",
-    "sectionId": "fe-v1-ch01-memory-cache",
-    "sectionUrl": "/chapters/hardware/memory-and-cache/",
+    "sectionId": "fe-v1-ch01-s03",
+    "sectionUrl": "/chapters/hardware/cpu-and-main-memory/",
+    "anchor": "fev1-201504-ch1-r1-pdf-075-b005-l00-text-0",
     "summary": "Understand cache hits and misses, then use a weighted average to reason about memory access time.",
     "questionIds": [
       "2024A-A-Q009",

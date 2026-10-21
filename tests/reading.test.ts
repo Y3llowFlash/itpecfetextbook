@@ -6,7 +6,7 @@ let teardown: (() => void) | undefined;
 beforeEach(() => {
   localStorage.clear(); sessionStorage.clear(); guestStore.refresh();
   history.replaceState(null, '', READER_PATH);
-  document.body.innerHTML = '<article data-reader data-section-id="fe-v1-ch01-memory-cache"><div id="cache-definition" data-reading-block><a id="concept-cache-memory" data-concept="cache-memory" href="/practice/cache-memory/">Cache memory</a></div></article>';
+  document.body.innerHTML = '<article data-reader data-section-id="fe-v1-ch01-s03"><div id="cache-definition" data-reading-block><a id="concept-cache-memory" data-concept="cache-memory" href="/practice/cache-memory/">Cache memory</a></div></article>';
   vi.spyOn(document.getElementById('cache-definition')!, 'getBoundingClientRect').mockReturnValue({ top: 120 } as DOMRect);
   Object.defineProperty(window, 'scrollY', { value: 900, configurable: true });
   Object.defineProperty(document, 'fonts', { value: { ready: Promise.resolve() }, configurable: true });
@@ -33,7 +33,7 @@ describe('reading-to-practice return', () => {
     expect(guestStore.getSnapshot().progress.reading).toEqual(saved);
   });
   it('restores a stable block offset after layout changes and focuses the clicked highlight', async () => {
-    guestStore.saveReading({ sectionId: 'fe-v1-ch01-memory-cache', path: READER_PATH, blockId: 'cache-definition', offset: 70, scrollY: 400, focusId: 'concept-cache-memory', updatedAt: '2026-10-21T07:00:00Z' });
+    guestStore.saveReading({ sectionId: 'fe-v1-ch01-s03', path: READER_PATH, blockId: 'cache-definition', offset: 70, scrollY: 400, focusId: 'concept-cache-memory', updatedAt: '2026-10-21T07:00:00Z' });
     history.replaceState(null, '', `${READER_PATH}?resume=1#concept-cache-memory`);
     vi.spyOn(window, 'requestAnimationFrame').mockImplementation((callback) => { callback(0); return 0; });
     teardown = setupReader();
@@ -43,7 +43,7 @@ describe('reading-to-practice return', () => {
     expect(location.search).toBe('');
   });
   it('uses the saved scroll fallback when an older content block no longer exists', async () => {
-    guestStore.saveReading({ sectionId: 'fe-v1-ch01-memory-cache', path: READER_PATH, blockId: 'removed-block', offset: 70, scrollY: 400, updatedAt: '2026-10-21T07:00:00Z' });
+    guestStore.saveReading({ sectionId: 'fe-v1-ch01-s03', path: READER_PATH, blockId: 'removed-block', offset: 70, scrollY: 400, updatedAt: '2026-10-21T07:00:00Z' });
     history.replaceState(null, '', `${READER_PATH}?resume=1`);
     vi.spyOn(window, 'requestAnimationFrame').mockImplementation((callback) => { callback(0); return 0; });
     teardown = setupReader(); await Promise.resolve(); await Promise.resolve();

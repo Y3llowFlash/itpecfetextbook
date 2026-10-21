@@ -1,21 +1,27 @@
 ---
-import chapter from '../content/chapters.json';
-interface Props { active?: 'reader' | 'chapter' | 'practice' | 'progress' }
-const { active = 'reader' } = Astro.props;
-const current = Astro.url.pathname;
+import {contents,mainContents,contentsUrl} from '../lib/toc';
+interface Props {active?:'reader'|'chapter'|'practice'|'progress';readingPath?:string}
+const {active='reader',readingPath}=Astro.props;
+const current=readingPath||Astro.url.pathname;
+const children=(number:string,depth:number)=>contents.filter(n=>n.depth===depth&&n.number.startsWith(number+'-'));
 ---
-<nav class="chapter-nav" aria-label="Chapter navigation">
-  <a class="library-link" href="/">← Textbook home</a>
+<nav class="chapter-nav" aria-label="Contents">
   <p class="nav-volume">IT FUNDAMENTALS</p>
-  <a class="chapter-title" href="/chapters/hardware/" aria-current={active === 'chapter' ? 'page' : undefined}><span class="chapter-icon" aria-hidden="true">01</span><span>Hardware</span></a>
-  <ol class="chapter-section-list">
-    {chapter.sections.map((section) => <li>
-      <a href={section.lesson.url} aria-current={current === section.lesson.url ? 'page' : undefined} class:list={[{ active: current === section.lesson.url }]}><span class="section-number">{section.number}</span><span>{section.title}</span></a>
-      {section.id === 'fe-v1-ch01-s03' && <a class:list={['lesson-link', { active: current === '/chapters/hardware/memory-and-cache/' }]} href="/chapters/hardware/memory-and-cache/" aria-current={current === '/chapters/hardware/memory-and-cache/' ? 'page' : undefined}>Memory & cache · pp. 70–74</a>}
+  <a class="chapter-title" href="/chapters/hardware/"><span class="chapter-icon" aria-hidden="true">1</span><span>Hardware</span></a>
+  <ol class="toc-sections">
+    {mainContents.map(section=><li>
+      <details data-toc-group={section.id} open={current===section.path}>
+        <summary><a data-toc-link={section.id} data-toc-section={section.sectionId} href={contentsUrl(section)} aria-current={current===section.path?'page':undefined}><span class="toc-number">{section.number}</span><span>{section.title}<small class="toc-page">p. {section.page}</small></span></a><span class="toc-chevron" aria-hidden="true">⌄</span></summary>
+        <ol>{children(section.number,2).map(subsection=><li>
+          {children(subsection.number,3).length?<details data-toc-group={subsection.id}>
+            <summary><a data-toc-link={subsection.id} data-toc-section={section.sectionId} href={contentsUrl(subsection)}><span class="toc-number">{subsection.number}</span><span>{subsection.title}<small class="toc-page">p. {subsection.page}</small></span></a><span class="toc-chevron" aria-hidden="true">⌄</span></summary>
+            <ol>{children(subsection.number,3).map(child=><li><a data-toc-link={child.id} data-toc-section={section.sectionId} href={contentsUrl(child)}><span class="toc-number">{child.number}</span><span>{child.title}<small class="toc-page">p. {child.page}</small></span></a></li>)}</ol>
+          </details>:<a data-toc-link={subsection.id} data-toc-section={section.sectionId} href={contentsUrl(subsection)}><span class="toc-number">{subsection.number}</span><span>{subsection.title}<small class="toc-page">p. {subsection.page}</small></span></a>}
+        </li>)}</ol>
+      </details>
     </li>)}
   </ol>
   <div class="nav-divider"></div>
-  <a class:list={['nav-secondary', { active: active === 'practice' }]} href="/chapters/hardware/#chapter-practice">Practice questions <span aria-hidden="true">↗</span></a>
-  <a class:list={['nav-secondary', { active: active === 'progress' }]} href="/progress/">Your progress <span aria-hidden="true">→</span></a>
-  <div class="nav-footnote"><span class="free-dot" aria-hidden="true"></span> A free place to learn.</div>
+  <a class="nav-secondary" aria-current={active==='practice'?'page':undefined} href="/practice/">Practice</a>
+  <a class="nav-secondary" aria-current={active==='progress'?'page':undefined} href="/progress/">Progress</a>
 </nav>

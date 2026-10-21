@@ -55,11 +55,13 @@ test('Google popup, guest migration, two devices, offline recovery and account s
   await expect(second.getByRole('button', { name: 'Remove bookmark 2024A-A-Q009' })).toBeVisible();
 
   await second.goto('/chapters/hardware/memory-and-cache/');
-  await second.getByRole('button', { name: 'Mark as completed' }).click();
+  await expect(second).toHaveURL(/cpu-and-main-memory/);
+  await second.getByRole('button', { name: 'Mark 3-5-1 complete',exact:true }).click();
   await second.goto('/progress/');
   await expect(second.locator('#account').getByRole('status')).toHaveText('Progress backed up', { timeout: 20000 });
   await first.getByRole('button', { name: 'Sync now' }).click();
-  await expect(first.getByText('✓ Memory hierarchy & cache is marked complete.')).toBeVisible();
+  await expect(first.getByRole('link', { name: /3-5-1 High Speed Memory Access/ })).toHaveAttribute('href', /cpu-and-main-memory\/.*pdf-075-b005/);
+  await expect(first.getByText('0 of 5 main sections completed')).toBeVisible();
 
   await second.goto('/practice/cache-memory/');
   await expect(second.getByText('Let’s work through it.')).toBeVisible();

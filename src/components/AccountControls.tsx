@@ -19,7 +19,7 @@ export default function AccountControls({ compact = false }: { compact?: boolean
   if (compact) return <a className="guest-pill" href="/progress/#account" title={statusText[account.status]} aria-label={account.user ? `Your account and progress: ${statusText[account.status]}` : 'Your progress and optional account'}>
     <span aria-hidden="true">{account.user ? account.status === 'saved' ? '✓' : '◷' : '◌'}</span><span>{account.user ? statusText[account.status] : 'Learning as a guest'}</span><span className="guest-short">{account.user ? 'Account & sync' : 'Your progress'}</span></a>;
   return <section id="account" className="account-panel progress-section" data-sync-state={account.status} aria-label="Optional account backup">
-    <h2>{account.user ? `Learning with ${account.user.name}` : 'Keep your learning progress!'}</h2>
+    <h2>{account.user ? `Learning with ${account.user.name}` : 'Account backup'}</h2>
     <p>{account.user ? 'Your attempts, bookmarks and completed sections are backed up to your free Google account. You can continue on another device.' : 'Create a free account to save your learning history and continue across devices. Reading and practice are always available as a guest.'}</p>
     <p className="sync-status" role="status">{statusText[account.status]}</p>
     {account.user ? <div className="button-row">
