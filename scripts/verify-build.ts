@@ -3,6 +3,7 @@ import path from 'node:path';
 import { digest } from './question-importer';
 import { hardwareLessons, pageLabel } from '../src/lib/lessons';
 import { concepts } from '../src/lib/catalog';
+import { hardwareFigures, figurePageLabel } from '../src/lib/figures';
 const root = path.resolve('dist');
 const source = await readFile('public/data/questions.json');
 const built = await readFile(path.join(root, 'data/questions.json'));
@@ -19,6 +20,9 @@ for (const lesson of hardwareLessons) {
   if (!html.includes(`data-section-id="${lesson.id}"`) || !html.includes(`Original textbook · ${pageLabel(lesson.pages)}`)) throw new Error(`Missing lesson/page badge: ${lesson.slug}`);
   for (const heading of lesson.headings) if (!html.includes(`data-source-ref="${heading.id}"`)) throw new Error(`Missing printed reference: ${heading.id}`);
   if (/Planned for a later update|Coming later/.test(html)) throw new Error(`Incomplete chapter navigation in ${lesson.slug}`);
+  for (const figure of hardwareFigures.filter((f) => f.lesson === lesson.slug)) {
+    if (!html.includes(`data-original-figure="${figure.id}"`) || !html.includes(`Original textbook · ${figurePageLabel(figure.sourcePages)}`) || !html.includes(`id="${figure.id}-desc"`)) throw new Error(`Missing original diagram/source/description: ${figure.id}`);
+  }
 }
 for (const concept of concepts) {
   const html = await readFile(path.join(root, 'practice', concept.id, 'index.html'), 'utf8');
@@ -26,6 +30,12 @@ for (const concept of concepts) {
 }
 const publicFiles = await readdir(root, { recursive: true });
 if (publicFiles.some((name) => /\.(?:pdf|env|py|mjs)$/.test(name) || name.includes('hardware-review'))) throw new Error('Source/editorial material leaked into public output');
+// Exact asset allowlist: new teaching figures are inline vectors; the existing
+// published exam images and favicon are the only public image files.
+for (const name of publicFiles) {
+  if (/\.(?:webp|png|jpe?g|gif|avif|svg)$/i.test(name) && name !== 'favicon.svg' && !(name.startsWith(`questions${path.sep}`) && expected.has(path.basename(name)))) throw new Error(`Unapproved public illustration: ${name}`);
+  if (/chapter1-inventory|gallery\.html|originals\.html|(?:^|[\\/])crops(?:[\\/]|$)|suggested-manifest/.test(name)) throw new Error('Editorial source material in public output');
+}
 const progress = await readFile(path.join(root, 'progress/index.html'), 'utf8');
 if (!progress.includes('noindex,follow')) throw new Error('Private progress route is indexable');
 for (const name of await readdir(path.join(root, '_astro'))) {

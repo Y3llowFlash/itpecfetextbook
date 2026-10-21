@@ -133,5 +133,17 @@ test('a new lesson reading checkpoint, bookmark and completion resume on another
   await expect(second.locator('#account').getByRole('status')).toHaveText('Progress backed up', { timeout: 20000 });
   await first.getByRole('button', { name: 'Sync now' }).click();
   await expect(first.getByText('1 of 5 main sections completed')).toBeVisible();
+  await second.goto('/chapters/hardware/auxiliary-storage/');
+  await second.evaluate(() => document.fonts.ready);
+  const figure = second.locator('#figure-disk-geometry-figure');
+  await figure.evaluate((element) => window.scrollTo(0, window.scrollY + element.getBoundingClientRect().top - 75));
+  await second.waitForTimeout(350); // Allow the reader's 250ms checkpoint debounce.
+  await second.goto('/progress/');
+  await expect(second.locator('#account').getByRole('status')).toHaveText('Progress backed up', { timeout: 20000 });
+  await first.getByRole('button', { name: 'Sync now' }).click();
+  await expect(first.getByRole('link', { name: 'Continue reading →' })).toHaveAttribute('href', /auxiliary-storage\/.*#figure-disk-geometry-figure/);
+  await first.getByRole('link', { name: 'Continue reading →' }).click();
+  await expect(first).toHaveURL(/#figure-disk-geometry-figure/);
+  await expect.poll(() => first.locator('#figure-disk-geometry-figure').evaluate((element) => Math.abs(element.getBoundingClientRect().top - 75))).toBeLessThan(3);
   await a.close(); await b.close();
 });

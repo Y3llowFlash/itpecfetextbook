@@ -1,0 +1,20 @@
+import { readFile, writeFile } from 'node:fs/promises';
+const base='docs/development/figures/';
+const inventory=JSON.parse(await readFile(`${base}chapter1-inventory.json`,'utf8'));
+const originals=JSON.parse(await readFile('src/content/hardware-figures.json','utf8'));
+const numbered=new Set(inventory.regions.flatMap(r=>[...r.description.matchAll(/Figure 1-(\d+)/g)].map(m=>Number(m[1]))));
+if(numbered.size!==47 || [...numbered].some(n=>n<1||n>47))throw new Error('Incomplete numbered figure coverage');
+let text='# Chapter 1 figure inventory\n\n';
+text+='Source: **New FE Textbook Vol.1, IT Fundamentals, First Edition April 2015**, printed pages **13–111**. All 99 numbered pages and the unnumbered inserted physical page were visually reviewed. The inventory covers every numbered figure **1-1 through 1-47**, plus photographs, tables, worked visual examples and relevant margin annotations. One region may group related images or a multi-part worked example; 130 regions is not a claim of 130 separately numbered figures.\n\n';
+text+='The [machine-readable inventory](chapter1-inventory.json) records complete PDF-point crop bounds, physical/printed page pairs, baseline comparison, destination and review decision for each region. Source crops are editorial-only under `.local/figures/`; publication permission has not been established. Only newly authored artwork is integrated.\n\n';
+text+='**Comparison key:** `recreated` = new conceptual SVG equivalent; `existing-equivalent` = the current lesson’s original explanation/table/diagram already covers the teaching role, with table expansions where needed; `editorial-only` = no source artwork published. Equivalence preserves the concept and necessary labels, not source layout, product likeness or every historical sample value.\n\n';
+for(const section of [...new Set(inventory.regions.map(r=>r.section))]) {
+ text+=`## ${section}\n\n| Region | Printed / PDF page | Visual learning material | Website block / equivalent | Decision |\n|---|---|---|---|---|\n`;
+ for(const r of inventory.regions.filter(r=>r.section===section))text+=`| ${r.id} | ${r.printedPage??'unnumbered'} / ${r.pdfPage} | ${r.description.replaceAll('|','/')} | \`${r.anchor}\` → \`${r.equivalent||'editorial only'}\` | ${r.disposition} |\n`;
+ text+='\n';
+}
+text+='## Newly authored public artwork\n\n| SVG | Lesson / immediate context | Verified printed source pages |\n|---|---|---|\n';
+for(const f of originals)text+=`| [${f.title}](../../../src/assets/hardware/${f.asset}) | ${f.lesson} / \`${f.after}\` | ${f.sourcePages.join(', ')} |\n`;
+text+='\n## Explicit exclusions and adaptations\n\n- Physical PDF page 83 is an unnumbered inserted exam screenshot. It receives no fabricated printed reference.\n- The margin additions on printed 49 and 50 are a transistor-level TTL NAND circuit and a clocked JK circuit. They are not DRAM-cell figures or newly licensed textbook figures. They remain editorial-only.\n- The source’s SR storage circuit uses active-low NAND inputs. The original SVG uses `S_n` and `R_n` to make polarity explicit: 11 hold, 01 set, 10 reset, 00 forbidden.\n- Historical device photographs are represented by original conceptual schematics and role illustrations; no product photographs or third-party source annotations are reused.\n- Legacy interface mode/rate tables are matched to the existing interface comparison and version-dependent explanation; they are not copied verbatim or presented as current universal specifications.\n- The error illustration distinguishes underflow near zero from signed range overflow. It does not repeat the source’s misleading implication that any value below a signed minimum is floating-point underflow.\n- Worked numeric examples use original values and layouts. Existing arithmetic text is retained where it already teaches the figure’s operation; two additional tables cover Boolean laws and every full-adder input combination.\n';
+await writeFile(`${base}CHAPTER_1_INVENTORY.md`,text);
+console.log(`Inventory: ${numbered.size} numbered figures, ${inventory.regions.length} regions; ${originals.length} original SVGs.`);

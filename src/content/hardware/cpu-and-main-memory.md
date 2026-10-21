@@ -176,6 +176,15 @@ Boolean logic works with two states. AND is true when both inputs are true; incl
 
 Useful identities include A AND 1=A, A OR 0=A, A AND 0=0, A OR 1=1, and A XOR A=0. **De Morgan's laws** move a negation across an entire group: NOT(A AND B)=(NOT A) OR (NOT B), and NOT(A OR B)=(NOT A) AND (NOT B). Change both the operation and the inputs' negations; changing only one produces a different function.
 
+| Law | AND form | OR form |
+|---|---|---|
+| Commutative | A AND B = B AND A | A OR B = B OR A |
+| Associative | (A AND B) AND C = A AND (B AND C) | (A OR B) OR C = A OR (B OR C) |
+| Distributive | A AND (B OR C) = (A AND B) OR (A AND C) | A OR (B AND C) = (A OR B) AND (A OR C) |
+| Absorption | A AND (A OR B) = A | A OR (A AND B) = A |
+
+These are alternative circuit descriptions with the same truth values. Parentheses identify the group that an operation or negation applies to.
+
 A two-input **multiplexer (MUX)** selects one data input. With select S, output Y=(NOT S AND I₀) OR (S AND I₁). If I₀=A and I₁=NOT A, the output is A when S=0 and inverted A when S=1: exactly A XOR S. This is a function derived from the connections, not a rule that every MUX is an XOR gate.
 
 To derive a circuit from a truth table, write one AND term for each row where output=1, using an input or its negation to match that row; OR the terms together. Then simplify with identities and verify the resulting truth table. Naming intermediate outputs makes complemented connections easier to follow.
@@ -191,6 +200,17 @@ A **half adder** adds two one-bit inputs. Its sum is A XOR B, and its carry is A
 <p class="formula">sum = A XOR B XOR C<sub>in</sub><br />carry = (A AND B) OR (C<sub>in</sub> AND (A XOR B))</p>
 
 For A=1, B=0 and C<sub>in</sub>=1, sum=0 and carry=1. Connecting stages produces a multi-bit adder; in a simple ripple-carry arrangement a later stage waits for an earlier carry. A **flip-flop** stores a bit of state, unlike a purely combinational gate whose output depends only on its present inputs. Registers combine state-holding elements.
+
+<table id="full-adder-truth"><caption>Full adder: every input combination</caption><thead><tr><th scope="col">A</th><th scope="col">B</th><th scope="col">Carry in</th><th scope="col">Sum</th><th scope="col">Carry out</th></tr></thead><tbody>
+<tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+</tbody></table>
 
 Two's-complement subtraction reuses addition: A−B=A+(NOT B)+1 within a chosen width. An ALU can select normal or complemented operand bits and use the carry-in for the added one. Separate logic detects conditions such as zero and signed overflow. An adder's final carry is not automatically the signed-overflow flag.
 

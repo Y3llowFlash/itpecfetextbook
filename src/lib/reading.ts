@@ -1,5 +1,6 @@
 import type { ReadingPosition } from './models';
 import { guestStore, validReading } from './progress';
+import { accountStore } from './account';
 
 export const READER_PATH = '/chapters/hardware/memory-and-cache/';
 const RETURN_KEY = 'itpecTextbook:return:v1';
@@ -27,7 +28,15 @@ export function setupReader() {
   let timer: ReturnType<typeof setTimeout>;
   let leavingForPractice = false;
   let cancelled = false;
+  let resumeRequested = new URLSearchParams(location.search).get('resume') === '1';
+  let restoring = resumeRequested;
+  let restoreScheduled = false;
+  // Reads only the existing opt-in marker for guests. A remembered account must
+  // settle before a native fragment scroll can overwrite its saved checkpoint.
+  accountStore.start();
+  const accountLoading = () => accountStore.getSnapshot().busy && !accountStore.getSnapshot().user;
   const capture = (focusId?: string) => {
+    if (restoring || accountLoading()) return;
     const blocks = [...reader.querySelectorAll<HTMLElement>('[data-reading-block]')];
     const anchor = focusId ? document.getElementById(focusId) : undefined;
     const block = anchor?.closest<HTMLElement>('[data-reading-block]') || [...blocks].reverse().find((b) => b.getBoundingClientRect().top <= 130) || blocks[0];
@@ -53,22 +62,34 @@ export function setupReader() {
   });
 
   async function restore(force = false) {
-    if (!force && new URLSearchParams(location.search).get('resume') !== '1') return;
+    if (!force && !resumeRequested) return;
+    resumeRequested = true;
+    restoring = true;
+    if (accountLoading() || restoreScheduled) return;
     const position = savedReturnPosition(guestStore.getSnapshot().progress.reading, sectionId);
-    if (!position || position.sectionId !== sectionId) return;
+    if (!position || position.sectionId !== sectionId) { restoring = false; resumeRequested = false; return; }
+    restoreScheduled = true;
+    const owner = guestStore.getUserId();
     await document.fonts.ready;
     if (cancelled) return;
     requestAnimationFrame(() => requestAnimationFrame(() => {
       if (cancelled) return;
+      if (owner !== guestStore.getUserId()) { restoreScheduled = false; restoring = false; resumeRequested = false; return; }
       const block = document.getElementById(position!.blockId);
       const target = block ? window.scrollY + block.getBoundingClientRect().top - position!.offset : position!.scrollY;
       window.scrollTo({ top: Math.max(0, target), behavior: 'instant' });
       if (position!.focusId) document.getElementById(position!.focusId)?.focus({ preventScroll: true });
       history.replaceState(null, '', `${readerPath}#${encodeURIComponent(position!.focusId || position!.blockId)}`);
+      restoreScheduled = false;
+      restoring = false;
+      resumeRequested = false;
     }));
   }
   const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming | undefined;
   void restore(navigation?.type === 'back_forward');
+  const unsubscribeAccount = accountStore.subscribe(() => {
+    if (resumeRequested && !accountLoading()) void restore(true);
+  });
   const onShow = (event: PageTransitionEvent) => {
     if (event.persisted) {
       leavingForPractice = false;
@@ -82,6 +103,7 @@ export function setupReader() {
     window.removeEventListener('scroll', onScroll);
     window.removeEventListener('pagehide', onHide);
     window.removeEventListener('pageshow', onShow);
+    unsubscribeAccount();
     linkHandlers.forEach((cleanup) => cleanup());
   };
 }

@@ -103,6 +103,8 @@ Keep section and reading-block IDs stable when editing prose. The return flow st
 
 The prose and memory-hierarchy diagram were written for this project. No raw textbook PDF extraction or third-party textbook figure is included. The existing PDF chapter structure informed the outline. Exam images retain original exam attribution and source-page references; these materials are not claimed as original project authorship.
 
+Chapter 1 now also has **40 original SVG figures** with accessible descriptions, captions and verified printed-page badges, plus expanded prefix/Boolean/full-adder tables. The [figure inventory](docs/development/figures/CHAPTER_1_INVENTORY.md) catalogs all 47 numbered source figures and 130 editorial regions across printed 13–111. See the [local extraction/review workflow](docs/development/figures/README.md) and [figure recovery report](docs/development/CHAPTER_1_FIGURES.md). Crops and comparison galleries remain in ignored `.local/figures/`; only original vectors enter the static build. Stable reading-block IDs and existing lesson routes are retained.
+
 ## Guest progress and optional accounts
 
 Progress uses the namespaced local key `itpecTextbook:guest:v1`, with stable attempt, question and section IDs. It tracks submitted attempts, latest correctness per question, bookmarks, section completion, last reading position and current practice question. Retrying preserves attempt history. A duplicate attempt ID does not count twice.

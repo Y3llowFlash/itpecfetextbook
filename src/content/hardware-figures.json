@@ -1,0 +1,846 @@
+[
+  {
+    "id": "switching-technologies",
+    "lesson": "basic-configuration",
+    "after": "computer-generations",
+    "title": "From switching devices to chips",
+    "alt": "A vacuum-tube envelope, a three-terminal transistor and an integrated chip illustrate increasing integration. They are schematic symbols of construction, not to scale.",
+    "caption": "Switching technology changed from separate large devices to many circuit elements integrated on one chip.",
+    "asset": "switching-technologies.svg",
+    "sha256": "7bac520fba0a6a657810d743ade8dce01e0d71a34915aeebe12a30695ce97715",
+    "authorship": "authored-original",
+    "sourceReuse": false,
+    "editionId": "new-fe-vol1-2015-04",
+    "sourceRegions": [
+      "hw-p013-01",
+      "hw-p014-01"
+    ],
+    "sourcePages": [
+      13,
+      14
+    ]
+  },
+  {
+    "id": "computer-forms",
+    "lesson": "basic-configuration",
+    "after": "power-example",
+    "title": "Different forms, different roles",
+    "alt": "Original outlines show a rack, a desktop screen, a laptop and a handheld device. Size and shape do not determine whether a computer acts as a server or a client.",
+    "caption": "A form factor describes physical packaging. Server, workstation and embedded controller describe roles.",
+    "asset": "computer-forms.svg",
+    "sha256": "5efbe36fbc8dddb661eea40e9786a4a4ce6aaafcf2443483f48ef7f7d6f9c586",
+    "authorship": "authored-original",
+    "sourceReuse": false,
+    "editionId": "new-fe-vol1-2015-04",
+    "sourceRegions": [
+      "hw-p015-01",
+      "hw-p015-02"
+    ],
+    "sourcePages": [
+      15
+    ]
+  },
+  {
+    "id": "five-unit-control",
+    "lesson": "basic-configuration",
+    "after": "five-unit-flow",
+    "title": "Data paths and control paths",
+    "alt": "The control unit sends dashed command paths to input, storage, ALU and output. Solid arrows carry input to storage, storage to ALU and output, and ALU results back to storage.",
+    "caption": "Solid arrows carry data; dashed arrows indicate commands. The CPU includes the control unit and ALU. Storage remains a separate functional unit in this model.",
+    "asset": "five-unit-control.svg",
+    "sha256": "5c45c96e4b16405d739e72e73429ee1bfbcec53f1289beca97e64bfe1f0d47d9",
+    "authorship": "authored-original",
+    "sourceReuse": false,
+    "editionId": "new-fe-vol1-2015-04",
+    "sourceRegions": [
+      "hw-p016-01",
+      "hw-p017-01",
+      "hw-p018-01"
+    ],
+    "sourcePages": [
+      16,
+      17,
+      18
+    ]
+  },
+  {
+    "id": "memory-persistence",
+    "lesson": "basic-configuration",
+    "after": "stored-program",
+    "title": "Working memory and persistent storage",
+    "alt": "Programs and data move from auxiliary storage into main memory for CPU use. Main RAM loses ordinary state without power; nonvolatile storage retains its recorded state.",
+    "caption": "Loading is a transfer between two different stores. Nonvolatile storage retains data without power; it still needs backup against loss or failure.",
+    "asset": "memory-persistence.svg",
+    "sha256": "d6bc83e555f136aaef9eaacf46bca26322f2ff485f79507974e5567daf237069",
+    "authorship": "authored-original",
+    "sourceReuse": false,
+    "editionId": "new-fe-vol1-2015-04",
+    "sourceRegions": [
+      "hw-p018-02"
+    ],
+    "sourcePages": [
+      18
+    ]
+  },
+  {
+    "id": "bit-patterns",
+    "lesson": "data-representation",
+    "after": "bits-and-units",
+    "title": "Bits, patterns and a byte",
+    "alt": "A binary tree doubles from two one-bit choices to four two-bit choices. Eight bit cells form one byte, with 256 possible patterns and unsigned values 0 to 255.",
+    "caption": "Each independent bit doubles the pattern count. Eight bits give 256 patterns, not a greatest unsigned value of 256.",
+    "asset": "bit-patterns.svg",
+    "sha256": "02968f60337d13722f54d3eccb31bd49b20f6673a8aaae8a2b3961ca4a8e1ec4",
+    "authorship": "authored-original",
+    "sourceReuse": false,
+    "editionId": "new-fe-vol1-2015-04",
+    "sourceRegions": [
+      "hw-p020-01",
+      "hw-p021-01"
+    ],
+    "sourcePages": [
+      20,
+      21
+    ]
+  },
+  {
+    "id": "radix-grouping",
+    "lesson": "data-representation",
+    "after": "grouping-digits",
+    "title": "Group from the radix point",
+    "alt": "The same binary pattern 101101.101 is grouped as 101 101 point 101 for octal 55.5 and as 0010 1101 point 1010 for hexadecimal 2D.A. Only outer padding zeros are added.",
+    "caption": "Three binary digits select one octal digit; four select one hexadecimal digit. Group separately on each side of the point, padding only the outer ends.",
+    "asset": "radix-grouping.svg",
+    "sha256": "c8f2b4487894d9226909d040d0d3909472452003ac1dc47684f77f03a011c68e",
+    "authorship": "authored-original",
+    "sourceReuse": false,
+    "editionId": "new-fe-vol1-2015-04",
+    "sourceRegions": [
+      "hw-p024-01",
+      "hw-p024-02",
+      "hw-p025-01",
+      "hw-p025-02"
+    ],
+    "sourcePages": [
+      24,
+      25
+    ]
+  },
+  {
+    "id": "data-format-tree",
+    "lesson": "data-representation",
+    "after": "encoding-context",
+    "title": "The meaning comes from the format",
+    "alt": "Data branches into character codes and numeric formats. Numeric formats branch into decimal digit codes and binary formats, with fixed point and floating point under binary.",
+    "caption": "A bit pattern has no intrinsic character or numeric meaning. The selected format determines how those bits are interpreted.",
+    "asset": "data-format-tree.svg",
+    "sha256": "3cf0bea8cfb14d98ec69eb23126d172e71e6746a09990ab5cf6d8c344d37c361",
+    "authorship": "authored-original",
+    "sourceReuse": false,
+    "editionId": "new-fe-vol1-2015-04",
+    "sourceRegions": [
+      "hw-p028-02"
+    ],
+    "sourcePages": [
+      28
+    ]
+  },
+  {
+    "id": "character-code",
+    "lesson": "data-representation",
+    "after": "character-encoding",
+    "title": "A character code is a lookup",
+    "alt": "The Latin capital letter A is U+0041 in Unicode and 0x41 in ASCII. Its UTF-8 byte is hexadecimal 41, binary 01000001. A grid uses high nibble 4 and low nibble 1 to locate hexadecimal 41.",
+    "caption": "Split the byte into two nibbles to locate its hexadecimal code. A code point and an encoded byte sequence are different concepts.",
+    "asset": "character-code.svg",
+    "sha256": "ba482c226dfe43425bf195e988b32407acfb6c087786f776285043fd914f6f8d",
+    "authorship": "authored-original",
+    "sourceReuse": false,
+    "editionId": "new-fe-vol1-2015-04",
+    "sourceRegions": [
+      "hw-p030-01"
+    ],
+    "sourcePages": [
+      30
+    ]
+  },
+  {
+    "id": "decimal-packing",
+    "lesson": "data-representation",
+    "after": "decimal-codes",
+    "title": "Decimal digits packed into nibbles",
+    "alt": "Decimal 672 becomes BCD nibbles 0110, 0111, 0010. A common signed packed representation is hexadecimal 67 2C for positive 672. EBCDIC-style zoned positive digits are F6 F7 C2, with the final zone holding the sign.",
+    "caption": "In this explicitly chosen convention, C is a positive sign and D a negative sign. Packed 67 2C uses two bytes; zoned F6 F7 C2 uses three. Sign codes depend on the format.",
+    "asset": "decimal-packing.svg",
+    "sha256": "b206fabb6679e06e9246f148d55c1d38af7d94439988b9a4a1aab0bca7742533",
+    "authorship": "authored-original",
+    "sourceReuse": false,
+    "editionId": "new-fe-vol1-2015-04",
+    "sourceRegions": [
+      "hw-p032-01",
+      "hw-p033-01",
+      "hw-p033-02"
+    ],
+    "sourcePages": [
+      32,
+      33
+    ]
+  },
+  {
+    "id": "signed-range",
+    "lesson": "data-representation",
+    "after": "decimal-codes",
+    "title": "Two signed four-bit interpretations",
+    "alt": "For four bits, sign-magnitude uses 0000 for plus zero and 1000 for minus zero, spanning minus 7 to plus 7. Two’s complement uses one zero, spans minus 8 to plus 7, and gives 1000 the value minus 8.",
+    "caption": "The same 1000 pattern means −0 in sign-magnitude and −8 in two’s complement. Two’s complement uses all 16 patterns for 16 distinct integer values.",
+    "asset": "signed-range.svg",
+    "sha256": "232b52b52c0071af199f1b8b09d864745598dc2b38bb6dc111a51c5328d0e52d",
+    "authorship": "authored-original",
+    "sourceReuse": false,
+    "editionId": "new-fe-vol1-2015-04",
+    "sourceRegions": [
+      "hw-p034-01",
+      "hw-p035-01",
+      "hw-p037-01"
+    ],
+    "sourcePages": [
+      34,
+      35,
+      37
+    ]
+  },
+  {
+    "id": "shift-paths",
+    "lesson": "data-representation",
+    "after": "shifting-bits",
+    "title": "Three ways to shift right",
+    "alt": "Starting with 10010110, logical right shift inserts zero to give 01001011; arithmetic right shift repeats one to give 11001011; rotate right wraps the discarded zero to give 01001011. Rotation differs from a shift even when this example’s results match.",
+    "caption": "Eight-bit operations, shifted once. Logical fill is zero; arithmetic right fill repeats the sign; rotation wraps the outgoing bit. Left shifts can discard significant bits and overflow.",
+    "asset": "shift-paths.svg",
+    "sha256": "6c60099a131fd2fd062c478d584c29715d99f457188767a58936626b88f496e2",
+    "authorship": "authored-original",
+    "sourceReuse": false,
+    "editionId": "new-fe-vol1-2015-04",
+    "sourceRegions": [
+      "hw-p043-01",
+      "hw-p044-01",
+      "hw-p045-01"
+    ],
+    "sourcePages": [
+      43,
+      44,
+      45
+    ]
+  },
+  {
+    "id": "cpu-data-path",
+    "lesson": "cpu-and-main-memory",
+    "after": "instruction-trace",
+    "title": "Trace an instruction through the CPU",
+    "alt": "Step 1: PC sends an instruction address to memory. Step 2: memory returns the instruction to IR, which feeds the decoder. Step 3: the decoder directs registers and ALU. Step 4: an operand is read and the ALU result is written back. PC advances or branches separately.",
+    "caption": "PC holds an instruction address; IR holds the fetched instruction. The decoder directs an operation, while the ALU operates on data. Solid paths move addresses/data; the dashed path carries control.",
+    "asset": "cpu-data-path.svg",
+    "sha256": "37f9904b8406c73ce7052ea007294469fe5b5dcde6b7b88216c4b3dab09a0cc5",
+    "authorship": "authored-original",
+    "sourceReuse": false,
+    "editionId": "new-fe-vol1-2015-04",
+    "sourceRegions": [
+      "hw-p046-01",
+      "hw-p055-01",
+      "hw-p055-02",
+      "hw-p056-01",
+      "hw-p056-02",
+      "hw-p057-01"
+    ],
+    "sourcePages": [
+      46,
+      55,
+      56,
+      57
+    ]
+  },
+  {
+    "id": "clock-buses",
+    "lesson": "cpu-and-main-memory",
+    "after": "bus-rate-example",
+    "title": "Timing and three bus roles",
+    "alt": "Two rising edges delimit one clock period. CPU sends addresses and read/write control to memory; a bidirectional data path carries values. A 100 MHz clock has a 10 nanosecond period.",
+    "caption": "Clock cycles provide timing. Address, data and control have different roles; one cycle need not equal one instruction or one useful bus transfer.",
+    "asset": "clock-buses.svg",
+    "sha256": "879dd13ff3ab1b9bbf951a62f47eb5549c53356a3532e0b803bdefc3457d4958",
+    "authorship": "authored-original",
+    "sourceReuse": false,
+    "editionId": "new-fe-vol1-2015-04",
+    "sourceRegions": [
+      "hw-p048-01",
+      "hw-p048-02"
+    ],
+    "sourcePages": [
+      48
+    ]
+  },
+  {
+    "id": "memory-cells",
+    "lesson": "cpu-and-main-memory",
+    "after": "memory-device-table",
+    "title": "Two ways to retain a working bit",
+    "alt": "A conceptual DRAM cell connects a data line through a selected transistor to a capacitor, whose charge must be refreshed. SRAM uses feedback to retain state while powered. Both are volatile.",
+    "caption": "A capacitor stores charge in DRAM; feedback maintains a state in SRAM while power is supplied. These are conceptual models, not transistor-level manufacturing layouts.",
+    "asset": "memory-cells.svg",
+    "sha256": "6177c3785807b7e64b2d63631e1667f005848f0f691eed1d1729b37cc4a23d80",
+    "authorship": "authored-original",
+    "sourceReuse": false,
+    "editionId": "new-fe-vol1-2015-04",
+    "sourceRegions": [
+      "hw-p050-02"
+    ],
+    "sourcePages": [
+      50
+    ]
+  },
+  {
+    "id": "memory-address-grid",
+    "lesson": "cpu-and-main-memory",
+    "after": "memory-access-flow",
+    "title": "An address selects a location",
+    "alt": "Address 2 enters a decoder, which selects row 2 from a four-row memory. The selected stored value is hexadecimal A6; the address 2 and data A6 are different.",
+    "caption": "This four-location memory has two address bits and one byte per location: 2² × 8 = 32 bits total. The address is not the byte stored there.",
+    "asset": "memory-address-grid.svg",
+    "sha256": "da393b1e3bed8c43cb61e8008ae3f7e0c3c1db3cffd85509974295f72f306a58",
+    "authorship": "authored-original",
+    "sourceReuse": false,
+    "editionId": "new-fe-vol1-2015-04",
+    "sourceRegions": [
+      "hw-p051-01"
+    ],
+    "sourcePages": [
+      51
+    ]
+  },
+  {
+    "id": "instruction-format",
+    "lesson": "cpu-and-main-memory",
+    "after": "instruction-fields",
+    "title": "An instruction contains fields",
+    "alt": "An illustrative sixteen-bit instruction has a four-bit opcode, a four-bit register field and an eight-bit operand field. The format is a teaching example, not a particular ISA.",
+    "caption": "Instruction layout is defined by the ISA. An operand field can encode a literal, register or address information; it is not always a final memory address.",
+    "asset": "instruction-format.svg",
+    "sha256": "0823a49c2516f710ff70cee71ddd59bf22bda91056cd1414b320e18363eef948",
+    "authorship": "authored-original",
+    "sourceReuse": false,
+    "editionId": "new-fe-vol1-2015-04",
+    "sourceRegions": [
+      "hw-p053-02"
+    ],
+    "sourcePages": [
+      53
+    ]
+  },
+  {
+    "id": "operand-addressing",
+    "lesson": "cpu-and-main-memory",
+    "after": "addressing-table",
+    "title": "Follow the dereference",
+    "alt": "Instruction field A is 40. Immediate mode uses operand 40; direct mode reads M[40], which is 700; indirect mode follows 700 to M[700], which is 12. Indexed addressing with R equal to 3 selects address 43.",
+    "caption": "Each arrow through a memory box is a dereference. Immediate 40, direct 700 and indirect 12 are three different operands from the same instruction field.",
+    "asset": "operand-addressing.svg",
+    "sha256": "0ad622ef69861a9dcedab4edbc4b612ea01ef18864dca7284716a7379c54f078",
+    "authorship": "authored-original",
+    "sourceReuse": false,
+    "editionId": "new-fe-vol1-2015-04",
+    "sourceRegions": [
+      "hw-p057-02",
+      "hw-p058-01",
+      "hw-p058-02",
+      "hw-p059-01",
+      "hw-p059-02"
+    ],
+    "sourcePages": [
+      57,
+      58,
+      59
+    ]
+  },
+  {
+    "id": "logic-symbols",
+    "lesson": "cpu-and-main-memory",
+    "after": "logic-truth-table",
+    "title": "Read the gate symbol",
+    "alt": "AND has a flat input side, OR a curved input side and XOR an extra curved line. NOT is a triangle with an output bubble. NAND is AND with a bubble; NOR is OR with a bubble. A bubble means inversion.",
+    "caption": "Gate shape identifies the operation. A small output bubble negates it. Compare the connections with the truth table above; the extra input-side curve distinguishes XOR from OR.",
+    "asset": "logic-symbols.svg",
+    "sha256": "48b8229067660ee61a536617040750eabb8b8be323b0fc03f651ff64802b2d96",
+    "authorship": "authored-original",
+    "sourceReuse": false,
+    "editionId": "new-fe-vol1-2015-04",
+    "sourceRegions": [
+      "hw-p062-02",
+      "hw-p063-01",
+      "hw-p063-02",
+      "hw-p063-03",
+      "hw-p063-04",
+      "hw-p064-01"
+    ],
+    "sourcePages": [
+      62,
+      63,
+      64
+    ]
+  },
+  {
+    "id": "sr-latch",
+    "lesson": "cpu-and-main-memory",
+    "after": "adder-example",
+    "title": "Feedback stores a state",
+    "alt": "Two cross-coupled NAND gates form an active-low SR latch. S_n enters the upper gate and R_n the lower. Q feeds the lower feedback input; Q-bar feeds the upper feedback input. S_n=0 R_n=1 sets Q; S_n=1 R_n=0 resets Q; both one hold; both zero is forbidden.",
+    "caption": "Active-low NAND SR latch, matching the source’s NAND convention. The suffix _n marks a low-active input. S_n=R_n=1 holds; 01 sets; 10 resets; 00 forces both outputs high and is forbidden.",
+    "asset": "sr-latch.svg",
+    "sha256": "139c45dc150216670c9de46918bd1b8d201e2ceda06017f6c6d6cc8685e3025b",
+    "authorship": "authored-original",
+    "sourceReuse": false,
+    "editionId": "new-fe-vol1-2015-04",
+    "sourceRegions": [
+      "hw-p062-01"
+    ],
+    "sourcePages": [
+      62
+    ]
+  },
+  {
+    "id": "xor-network",
+    "lesson": "cpu-and-main-memory",
+    "after": "logic-truth-table",
+    "title": "Construct XOR from two cases",
+    "alt": "Input A and inverted B feed the upper AND gate. Inverted A and B feed the lower AND gate. The two AND outputs feed OR, so Y equals A AND NOT B OR NOT A AND B.",
+    "caption": "XOR is true in exactly the two unequal-input cases. The labeled negations are part of the wiring; omitting either changes the function.",
+    "asset": "xor-network.svg",
+    "sha256": "c41bd1f20e2f6701dc82601dbd26e33c63ace08a58baf46c3b2ce728d10405de",
+    "authorship": "authored-original",
+    "sourceReuse": false,
+    "editionId": "new-fe-vol1-2015-04",
+    "sourceRegions": [
+      "hw-p066-01"
+    ],
+    "sourcePages": [
+      66
+    ]
+  },
+  {
+    "id": "adders",
+    "lesson": "cpu-and-main-memory",
+    "after": "adder-example",
+    "title": "A full adder from two half adders",
+    "alt": "Half adder 1 takes A and B and gives intermediate sum s1 and carry c1. Half adder 2 takes s1 and carry-in, and gives sum and carry c2. OR combines c1 and c2 into carry-out.",
+    "caption": "Each half adder computes XOR for its sum and AND for its carry. OR combines the two carry paths: carry-out = AB OR (carry-in AND (A XOR B)).",
+    "asset": "adders.svg",
+    "sha256": "b31e4a7a22d91efdc3124d9fe3b28be11beeafabb76ca2a9a287774e10df932b",
+    "authorship": "authored-original",
+    "sourceReuse": false,
+    "editionId": "new-fe-vol1-2015-04",
+    "sourceRegions": [
+      "hw-p067-01",
+      "hw-p067-02",
+      "hw-p068-01",
+      "hw-p069-01",
+      "hw-p069-02"
+    ],
+    "sourcePages": [
+      67,
+      68,
+      69
+    ]
+  },
+  {
+    "id": "cache-paths",
+    "lesson": "cpu-and-main-memory",
+    "after": "cache-and-interleaving",
+    "title": "Buffering at different levels",
+    "alt": "CPU registers connect through primary and secondary cache to main memory, and then through a disk-cache role to storage. A miss continues down the hierarchy; a hit returns earlier. A disk cache may use part of main RAM.",
+    "caption": "Each buffer bridges levels with different access costs. A disk cache may occupy main RAM rather than being a separate physical chip. Arrows show a read lookup sequence, not all coherence traffic.",
+    "asset": "cache-paths.svg",
+    "sha256": "3af5b40c5b38d15a9d45997079cf8039e17d8695d05d12404777b6306b15f18a",
+    "authorship": "authored-original",
+    "sourceReuse": false,
+    "editionId": "new-fe-vol1-2015-04",
+    "sourceRegions": [
+      "hw-p070-01",
+      "hw-p072-02",
+      "hw-p072-03"
+    ],
+    "sourcePages": [
+      70,
+      72
+    ]
+  },
+  {
+    "id": "bank-interleaving",
+    "lesson": "cpu-and-main-memory",
+    "after": "cache-and-interleaving",
+    "title": "Distribute successive addresses",
+    "alt": "Four memory banks contain addresses 0,4,8; 1,5,9; 2,6,10; and 3,7,11. A controller can overlap operations across banks. The bank number is address modulo four in this simplified word-addressed model.",
+    "caption": "Successive word addresses go to different banks in this simplified mapping. Interleaving can improve sustained throughput; it does not divide every access latency by four.",
+    "asset": "bank-interleaving.svg",
+    "sha256": "93acd5e60d06748309200625745e69da0e53952998d29fc2666c32736fca4081",
+    "authorship": "authored-original",
+    "sourceReuse": false,
+    "editionId": "new-fe-vol1-2015-04",
+    "sourceRegions": [
+      "hw-p073-02"
+    ],
+    "sourcePages": [
+      73
+    ]
+  },
+  {
+    "id": "pipeline-stalls",
+    "lesson": "cpu-and-main-memory",
+    "after": "pipeline-example",
+    "title": "A stall delays following work",
+    "alt": "A three-stage pipeline takes a bubble when instruction I2 cannot execute. In cycles 1 through 6, I1 runs F D E; I2 runs F D wait E; I3 runs F wait D E. A deeper pipeline splits stages but still must handle dependencies.",
+    "caption": "F = fetch, D = decode, E = execute; “wait” is a bubble. Throughput falls when a stage cannot advance. Splitting stages in a super-pipeline does not remove dependencies.",
+    "asset": "pipeline-stalls.svg",
+    "sha256": "5a4c484582bd2ad59b963b0b21800c25d16d9794dc20683ea71adf77555af695",
+    "authorship": "authored-original",
+    "sourceReuse": false,
+    "editionId": "new-fe-vol1-2015-04",
+    "sourceRegions": [
+      "hw-p075-02",
+      "hw-p076-01"
+    ],
+    "sourcePages": [
+      75,
+      76
+    ]
+  },
+  {
+    "id": "disk-geometry-figure",
+    "lesson": "auxiliary-storage",
+    "after": "disk-geometry",
+    "title": "Track, sector, head and cylinder",
+    "alt": "A disk surface has concentric tracks and sector wedges. The read/write head sits over one track. A second view marks the same-radius tracks on three surfaces as one cylinder.",
+    "caption": "A track circles one recording surface; sectors divide recording regions. Matching-radius tracks across surfaces form the simplified cylinder model. The drawing is not to scale.",
+    "asset": "disk-geometry-figure.svg",
+    "sha256": "58e25414ce748363e986fa3308a00ee82a1011ddcf0e74d69f7e310deef50fe8",
+    "authorship": "authored-original",
+    "sourceReuse": false,
+    "editionId": "new-fe-vol1-2015-04",
+    "sourceRegions": [
+      "hw-p078-01",
+      "hw-p079-01",
+      "hw-p079-02"
+    ],
+    "sourcePages": [
+      78,
+      79
+    ]
+  },
+  {
+    "id": "record-blocks",
+    "lesson": "auxiliary-storage",
+    "after": "records-and-blocks",
+    "title": "Records, blocks and unused space",
+    "alt": "A 512-byte block contains five 100-byte records and 12 unused bytes. A second schematic shows variable-length recorded blocks separated by interblock gaps, distinct from unused space inside a block.",
+    "caption": "Five 100-byte records fit in 512 bytes without spanning. Unused bytes inside an allocated block differ from physical interblock gaps; the recording model must be stated.",
+    "asset": "record-blocks.svg",
+    "sha256": "88867da288e5c5394a3b016aae82791701cedc55c0bdfec8425e7d10862f8b89",
+    "authorship": "authored-original",
+    "sourceReuse": false,
+    "editionId": "new-fe-vol1-2015-04",
+    "sourceRegions": [
+      "hw-p081-02",
+      "hw-p082-01"
+    ],
+    "sourcePages": [
+      81,
+      82
+    ]
+  },
+  {
+    "id": "disk-access-timeline",
+    "lesson": "auxiliary-storage",
+    "after": "disk-access-model",
+    "title": "Three parts of a disk read",
+    "alt": "A timeline separates head movement (seek), waiting for rotation and transferring the requested bytes. At 7200 rpm, a rotation is 8.333 milliseconds and average rotational waiting is 4.167 milliseconds.",
+    "caption": "Seek positions the head, rotation brings the sector under it, and transfer moves bytes. Controller overhead is added separately when specified. Segment lengths here are illustrative.",
+    "asset": "disk-access-timeline.svg",
+    "sha256": "58e7991199b74838a064c87215329c3090999cb58d8ee38f8080b62266462e7c",
+    "authorship": "authored-original",
+    "sourceReuse": false,
+    "editionId": "new-fe-vol1-2015-04",
+    "sourceRegions": [
+      "hw-p084-01"
+    ],
+    "sourcePages": [
+      84
+    ]
+  },
+  {
+    "id": "io-processing",
+    "lesson": "input-output",
+    "after": "io-goals",
+    "title": "From physical input to output",
+    "alt": "A document scanner produces image data, memory and the CPU process it, and a printer produces a physical page. Input and output are relative to the computer.",
+    "caption": "A multifunction device can contain all three stages. Scanning supplies image data; recognition or editing is processing; printing is output.",
+    "asset": "io-processing.svg",
+    "sha256": "9ae156dd6d90fe06196bdf56f1440a453446778130aec6301555780b5264870d",
+    "authorship": "authored-original",
+    "sourceReuse": false,
+    "editionId": "new-fe-vol1-2015-04",
+    "sourceRegions": [
+      "hw-p092-01"
+    ],
+    "sourcePages": [
+      92
+    ]
+  },
+  {
+    "id": "keyboard-signal",
+    "lesson": "input-output",
+    "after": "keyboard-input",
+    "title": "One press, several contact transitions",
+    "alt": "A raw key-contact waveform briefly toggles after the press and then stays high. A debounced waveform changes once after a settling delay. This differs from deliberate held-key repeat.",
+    "caption": "Contact bounce can create several electrical transitions for one press. A debounce method waits or filters; the exact delay depends on the design.",
+    "asset": "keyboard-signal.svg",
+    "sha256": "0ffba28a8e9f70f891bee79febc2344d5e96f8c4d88762de890933b77f861038",
+    "authorship": "authored-original",
+    "sourceReuse": false,
+    "editionId": "new-fe-vol1-2015-04",
+    "sourceRegions": [
+      "hw-p092-02",
+      "hw-p104-01"
+    ],
+    "sourcePages": [
+      92,
+      104
+    ]
+  },
+  {
+    "id": "paper-readers",
+    "lesson": "input-output",
+    "after": "paper-reader-table",
+    "title": "Recognition and capture differ",
+    "alt": "OCR recognizes the printed glyph A; OMR reads a filled option position; a barcode reader decodes bars; MICR senses magnetic characters; a scanner captures pixels before any recognition.",
+    "caption": "OCR reads character shapes; OMR reads marks at known positions; MICR senses magnetic characters. Capturing an image is different from identifying its contents.",
+    "asset": "paper-readers.svg",
+    "sha256": "e71c1f80f4339de217a8f9e8ebc735c0413a32e3e23663770611f08bc20e11b2",
+    "authorship": "authored-original",
+    "sourceReuse": false,
+    "editionId": "new-fe-vol1-2015-04",
+    "sourceRegions": [
+      "hw-p093-01",
+      "hw-p093-02",
+      "hw-p093-03",
+      "hw-p094-01",
+      "hw-p094-02",
+      "hw-p095-01"
+    ],
+    "sourcePages": [
+      93,
+      94,
+      95
+    ]
+  },
+  {
+    "id": "touch-coordinates",
+    "lesson": "input-output",
+    "after": "pointing-input",
+    "title": "Relative motion or absolute position",
+    "alt": "A mouse reports a movement of plus 5 in x and minus 2 in y. A touch or digitizer surface identifies a point with absolute x,y coordinates inside its bounds. These are different input models.",
+    "caption": "A mouse normally reports movement relative to a previous position. A touch panel or digitizer can locate a point on its surface; sensing technology and coordinate interpretation are separate.",
+    "asset": "touch-coordinates.svg",
+    "sha256": "b37479061d4a08e71fd4ca90e943857511f83611850870f729a2b0ea3cd34953",
+    "authorship": "authored-original",
+    "sourceReuse": false,
+    "editionId": "new-fe-vol1-2015-04",
+    "sourceRegions": [
+      "hw-p095-02",
+      "hw-p096-02"
+    ],
+    "sourcePages": [
+      95,
+      96
+    ]
+  },
+  {
+    "id": "pixel-grid",
+    "lesson": "input-output",
+    "after": "display-calculations",
+    "title": "A glyph is a grid of samples",
+    "alt": "A five-by-seven binary pixel grid forms an A from 35 samples. RGB pixels can use eight bits each for red, green and blue, totaling 24 bits or three bytes per pixel.",
+    "caption": "This original 5 × 7 glyph contains 35 samples. Resolution counts samples; color depth counts bits per sample. At 24 bits/pixel, a packed RGB image uses three bytes per pixel.",
+    "asset": "pixel-grid.svg",
+    "sha256": "0790304b7dde9eabbba8e894fe065fd3ff8cb32eebfa79647e24c67eef29a541",
+    "authorship": "authored-original",
+    "sourceReuse": false,
+    "editionId": "new-fe-vol1-2015-04",
+    "sourceRegions": [
+      "hw-p098-01",
+      "hw-p100-01"
+    ],
+    "sourcePages": [
+      98,
+      100
+    ]
+  },
+  {
+    "id": "impact-printer",
+    "lesson": "input-output",
+    "after": "printer-types",
+    "title": "Pins transfer ink through a ribbon",
+    "alt": "An impact print head pushes pins toward an ink ribbon, which contacts paper. Pin positions form dots. It contrasts with inkjet droplets and laser-transferred toner.",
+    "caption": "Mechanical impact transfers ink from the ribbon to the paper. Inkjet and laser printing form marks by different mechanisms; they do not strike an ink ribbon.",
+    "asset": "impact-printer.svg",
+    "sha256": "4941b55947f77627c6faee165ab132b04c9defe718ef9bee1d61ed9373bbca2f",
+    "authorship": "authored-original",
+    "sourceReuse": false,
+    "editionId": "new-fe-vol1-2015-04",
+    "sourceRegions": [
+      "hw-p100-02"
+    ],
+    "sourcePages": [
+      100
+    ]
+  },
+  {
+    "id": "output-paths",
+    "lesson": "input-output",
+    "after": "other-output-examples",
+    "title": "A path drawing or a projected image",
+    "alt": "A plotter pen follows an x-y path to mark a physical surface. A projector sends an image using light onto a screen. Both are output, but they produce different physical results.",
+    "caption": "A plotter controls a tool path. A projector casts light. A shared digital drawing can be represented by either kind of output without making their mechanisms identical.",
+    "asset": "output-paths.svg",
+    "sha256": "a2a0c7b8a372c008050a6eae02f89bfa368c3fa5c088fbbb51cba579ab6d0209",
+    "authorship": "authored-original",
+    "sourceReuse": false,
+    "editionId": "new-fe-vol1-2015-04",
+    "sourceRegions": [
+      "hw-p102-01",
+      "hw-p102-02"
+    ],
+    "sourcePages": [
+      102
+    ]
+  },
+  {
+    "id": "io-transfer",
+    "lesson": "input-output",
+    "after": "io-control-comparison",
+    "title": "Who moves the block?",
+    "alt": "Programmed transfer routes data from device through the CPU to memory. DMA routes data between a device controller and memory after CPU setup, then notifies the CPU on completion.",
+    "caption": "DMA reduces per-byte CPU instructions. The CPU still sets up the transfer and handles completion; bus and memory resources are still used.",
+    "asset": "io-transfer.svg",
+    "sha256": "e45b4d2e6fd54655fdb72c99e5422ff4b0c2a37637d0c3cb3c8df3dd2a1abb24",
+    "authorship": "authored-original",
+    "sourceReuse": false,
+    "editionId": "new-fe-vol1-2015-04",
+    "sourceRegions": [
+      "hw-p104-02"
+    ],
+    "sourcePages": [
+      104
+    ]
+  },
+  {
+    "id": "interface-topologies-figure",
+    "lesson": "input-output",
+    "after": "interface-topologies",
+    "title": "Star, cascade and daisy chain",
+    "alt": "A star connects devices to one hub. A cascade connects a hub to another hub, with devices branching from them. A daisy chain connects onward through devices, with a terminator when that interface requires one.",
+    "caption": "These are connection patterns, not interchangeable USB modes. USB uses hubs in a tiered star; a legacy SCSI daisy chain requires termination under its specified rules.",
+    "asset": "interface-topologies-figure.svg",
+    "sha256": "9abbdb180962bd81ba7b43264cac8137e68d13cd18af6d3be78e3f8a27b9fd6a",
+    "authorship": "authored-original",
+    "sourceReuse": false,
+    "editionId": "new-fe-vol1-2015-04",
+    "sourceRegions": [
+      "hw-p106-01"
+    ],
+    "sourcePages": [
+      106
+    ]
+  },
+  {
+    "id": "radix-conversion-steps",
+    "lesson": "data-representation",
+    "after": "radix-worked",
+    "title": "Read integer and fraction digits differently",
+    "alt": "Repeated division of 26 by two yields remainders 0,1,0,1,1, read upward as 11010. Repeated multiplication of 0.625 by two yields integer parts 1,0,1, read downward as .101.",
+    "caption": "Integer remainders are read from the final division back upward. Fractional integer parts are read in the order generated. The result is 11010.101₂.",
+    "asset": "radix-conversion-steps.svg",
+    "sha256": "29bc88e6bfe5f4c8460a729b453cad5447ac706f427ee76f872b19f02e685511",
+    "authorship": "authored-original",
+    "sourceReuse": false,
+    "editionId": "new-fe-vol1-2015-04",
+    "sourceRegions": [
+      "hw-p026-01",
+      "hw-p027-01"
+    ],
+    "sourcePages": [
+      26,
+      27
+    ]
+  },
+  {
+    "id": "repeating-fraction",
+    "lesson": "data-representation",
+    "after": "grouping-digits",
+    "title": "A recurring remainder creates recurring bits",
+    "alt": "Starting with decimal fraction 0.1, repeated multiplication by two emits bits 0,0,0,1,1 and leaves remainders 0.2,0.4,0.8,0.6,0.2. The remainder 0.2 repeats, so subsequent bits repeat 0011.",
+    "caption": "0.1₁₀ = 0.000110011…₂. Once the same fractional remainder returns, the subsequent digits repeat. Finite storage must round or truncate this expansion.",
+    "asset": "repeating-fraction.svg",
+    "sha256": "5d0ea98a05819533b8db8f39b6572baa67553718a55bb2ca79be692a95786fa2",
+    "authorship": "authored-original",
+    "sourceReuse": false,
+    "editionId": "new-fe-vol1-2015-04",
+    "sourceRegions": [
+      "hw-p028-01"
+    ],
+    "sourcePages": [
+      28
+    ]
+  },
+  {
+    "id": "float-formats",
+    "lesson": "data-representation",
+    "after": "floating-point-layout",
+    "title": "Normalize, then store the fields",
+    "alt": "Binary 1010.1 normalizes to 1.0101 times two cubed. For binary32 the sign is zero, biased exponent is 130 and the stored fraction begins 0101. Binary32 has field widths 1,8,23; binary64 has 1,11,52 and bias 1023.",
+    "caption": "For normal finite values, the leading 1 is implicit. Binary32 has 24 significant binary digits including that 1; binary64 has 53. Zero/subnormal and all-ones exponent fields need separate rules.",
+    "asset": "float-formats.svg",
+    "sha256": "77a2986062550684a61827bbbc5ae88114c67888796a3fcb8c80d69e5c66a36e",
+    "authorship": "authored-original",
+    "sourceReuse": false,
+    "editionId": "new-fe-vol1-2015-04",
+    "sourceRegions": [
+      "hw-p038-01",
+      "hw-p039-01",
+      "hw-p040-01"
+    ],
+    "sourcePages": [
+      38,
+      39,
+      40
+    ]
+  },
+  {
+    "id": "numeric-errors",
+    "lesson": "data-representation",
+    "after": "error-types",
+    "title": "Precision and range are different limits",
+    "alt": "With three significant decimal digits, 1.234 rounds to 1.23. Subtracting the rounded 1.234 and 1.233 gives zero instead of the exact 0.001. Adding 1 to 1.00 million can lose the small term. Underflow concerns tiny magnitudes near zero; overflow concerns excessive magnitude of either sign.",
+    "caption": "Illustrative three-significant-digit decimal arithmetic. Cancellation and lost small terms concern precision. Underflow concerns tiny magnitudes near zero, not simply any value below a signed minimum.",
+    "asset": "numeric-errors.svg",
+    "sha256": "3cb69fdba50ccc798ca02de4c361050abb590fb46434020ff514958d8f733929",
+    "authorship": "authored-original",
+    "sourceReuse": false,
+    "editionId": "new-fe-vol1-2015-04",
+    "sourceRegions": [
+      "hw-p041-01",
+      "hw-p042-01"
+    ],
+    "sourcePages": [
+      41,
+      42
+    ]
+  }
+]

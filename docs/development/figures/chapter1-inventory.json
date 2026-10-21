@@ -1,0 +1,3292 @@
+{
+  "schemaVersion": 1,
+  "editionId": "new-fe-vol1-2015-04",
+  "source": "FE Vol 1.pdf",
+  "coordinateSystem": "PDF points (72/inch), top-left origin, x0 y0 x1 y1",
+  "sourceReuseAuthorized": false,
+  "reviewMethod": "All 99 numbered pages and the unnumbered physical insertion visually inspected at page level; complete regions selected with contextual boundaries. Additional margin annotations included where technically relevant. Figures/tables grouped only where part of one teaching example. Recreated means conceptual equivalent, not a facsimile.",
+  "regions": [
+    {
+      "id": "hw-p013-01",
+      "printedPage": 13,
+      "pdfPage": 18,
+      "description": "ENIAC and vacuum-tube photographs",
+      "kind": "illustration",
+      "section": "basic-configuration",
+      "anchor": "computer-generations",
+      "crop": [
+        62.0,
+        587.0,
+        538.0,
+        830.95
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "switching-technologies",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p014-01",
+      "printedPage": 14,
+      "pdfPage": 19,
+      "description": "Discrete switching-device illustrations",
+      "kind": "illustration",
+      "section": "basic-configuration",
+      "anchor": "computer-generations",
+      "crop": [
+        222.1,
+        652.0,
+        384.26,
+        788.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "switching-technologies",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p015-01",
+      "printedPage": 15,
+      "pdfPage": 20,
+      "description": "Supercomputer photograph",
+      "kind": "illustration",
+      "section": "basic-configuration",
+      "anchor": "computer-generations",
+      "crop": [
+        186.58,
+        62.0,
+        443.0,
+        223.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "computer-forms",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p015-02",
+      "printedPage": 15,
+      "pdfPage": 20,
+      "description": "Desktop, laptop and handheld computer photographs",
+      "kind": "illustration",
+      "section": "basic-configuration",
+      "anchor": "computer-generations",
+      "crop": [
+        62.0,
+        367.0,
+        538.0,
+        518.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "computer-forms",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p016-01",
+      "printedPage": 16,
+      "pdfPage": 21,
+      "description": "Figure 1-1: human calculation analogy",
+      "kind": "flow",
+      "section": "basic-configuration",
+      "anchor": "unit-roles",
+      "crop": [
+        67.42,
+        469.59,
+        538.0,
+        703.0
+      ],
+      "baseline": "existing four-stage flow; control paths and separate ALU missing",
+      "disposition": "recreated",
+      "equivalent": "five-unit-control",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p017-01",
+      "printedPage": 17,
+      "pdfPage": 22,
+      "description": "Figure 1-2: computer calculation analogy",
+      "kind": "flow",
+      "section": "basic-configuration",
+      "anchor": "unit-roles",
+      "crop": [
+        67.42,
+        353.13,
+        538.0,
+        693.0
+      ],
+      "baseline": "existing four-stage flow; control paths and separate ALU missing",
+      "disposition": "recreated",
+      "equivalent": "five-unit-control",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p018-01",
+      "printedPage": 18,
+      "pdfPage": 23,
+      "description": "Figure 1-3: control and data paths between the five units",
+      "kind": "diagram",
+      "section": "basic-configuration",
+      "anchor": "unit-roles",
+      "crop": [
+        103.19,
+        67.0,
+        514.31,
+        343.41
+      ],
+      "baseline": "existing four-stage flow; control paths and separate ALU missing",
+      "disposition": "recreated",
+      "equivalent": "five-unit-control",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p018-02",
+      "printedPage": 18,
+      "pdfPage": 23,
+      "description": "Volatile main memory versus nonvolatile auxiliary storage",
+      "kind": "diagram",
+      "section": "basic-configuration",
+      "anchor": "stored-program",
+      "crop": [
+        67.42,
+        377.0,
+        538.0,
+        764.91
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "memory-persistence",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p020-01",
+      "printedPage": 20,
+      "pdfPage": 25,
+      "description": "Figure 1-4: one bit and an eight-bit byte",
+      "kind": "memory-layout",
+      "section": "data-representation",
+      "anchor": "bits-and-units",
+      "crop": [
+        151.66,
+        499.42,
+        458.0,
+        653.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "bit-patterns",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p021-01",
+      "printedPage": 21,
+      "pdfPage": 26,
+      "description": "Figure 1-5: binary-pattern branching and powers of two",
+      "kind": "diagram",
+      "section": "data-representation",
+      "anchor": "bits-and-units",
+      "crop": [
+        137.0,
+        197.0,
+        436.62,
+        398.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "bit-patterns",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p022-01",
+      "printedPage": 22,
+      "pdfPage": 27,
+      "description": "Decimal and binary large-unit prefix table",
+      "kind": "table",
+      "section": "data-representation",
+      "anchor": "bits-and-units",
+      "crop": [
+        62.0,
+        507.0,
+        433.0,
+        668.0
+      ],
+      "baseline": "text/table/partial visual",
+      "disposition": "existing-equivalent",
+      "equivalent": "bits-and-units",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p023-01",
+      "printedPage": 23,
+      "pdfPage": 28,
+      "description": "Small decimal-unit prefix table",
+      "kind": "table",
+      "section": "data-representation",
+      "anchor": "bits-and-units",
+      "crop": [
+        62.0,
+        62.0,
+        343.0,
+        208.0
+      ],
+      "baseline": "text/table/partial visual",
+      "disposition": "existing-equivalent",
+      "equivalent": "bits-and-units",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p023-02",
+      "printedPage": 23,
+      "pdfPage": 28,
+      "description": "Decimal positional-weight expansion",
+      "kind": "worked-example",
+      "section": "data-representation",
+      "anchor": "radix-weights",
+      "crop": [
+        62.0,
+        483.81,
+        533.0,
+        568.0
+      ],
+      "baseline": "text/table/partial visual",
+      "disposition": "existing-equivalent",
+      "equivalent": "radix-weights",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p024-01",
+      "printedPage": 24,
+      "pdfPage": 29,
+      "description": "Figure 1-6: decimal and binary number correspondence",
+      "kind": "table",
+      "section": "data-representation",
+      "anchor": "radix-weights",
+      "crop": [
+        62.0,
+        200.13,
+        538.0,
+        293.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "radix-grouping",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p024-02",
+      "printedPage": 24,
+      "pdfPage": 29,
+      "description": "Figure 1-7: decimal and octal number correspondence",
+      "kind": "table",
+      "section": "data-representation",
+      "anchor": "grouping-digits",
+      "crop": [
+        62.0,
+        427.0,
+        538.0,
+        513.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "radix-grouping",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p024-03",
+      "printedPage": 24,
+      "pdfPage": 29,
+      "description": "Binary, octal and hexadecimal positional expansions",
+      "kind": "worked-example",
+      "section": "data-representation",
+      "anchor": "radix-weights",
+      "crop": [
+        62.0,
+        62.0,
+        538.0,
+        678.0
+      ],
+      "baseline": "text/table/partial visual",
+      "disposition": "existing-equivalent",
+      "equivalent": "radix-weights",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p025-01",
+      "printedPage": 25,
+      "pdfPage": 30,
+      "description": "Figure 1-8: hexadecimal digit correspondence",
+      "kind": "table",
+      "section": "data-representation",
+      "anchor": "grouping-digits",
+      "crop": [
+        62.0,
+        62.0,
+        538.0,
+        193.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "radix-grouping",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p025-02",
+      "printedPage": 25,
+      "pdfPage": 30,
+      "description": "Grouping binary digits into octal and hexadecimal digits",
+      "kind": "memory-layout",
+      "section": "data-representation",
+      "anchor": "grouping-digits",
+      "crop": [
+        62.0,
+        390.63,
+        538.0,
+        811.38
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "radix-grouping",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p026-01",
+      "printedPage": 26,
+      "pdfPage": 31,
+      "description": "Binary positional-weight conversion example",
+      "kind": "worked-example",
+      "section": "data-representation",
+      "anchor": "radix-worked",
+      "crop": [
+        82.0,
+        342.0,
+        538.0,
+        571.35
+      ],
+      "baseline": "existing worked arithmetic; missing conversion direction diagram",
+      "disposition": "recreated",
+      "equivalent": "radix-conversion-steps",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p027-01",
+      "printedPage": 27,
+      "pdfPage": 32,
+      "description": "Integer division and fractional multiplication conversion diagrams",
+      "kind": "flow",
+      "section": "data-representation",
+      "anchor": "radix-worked",
+      "crop": [
+        62.0,
+        62.0,
+        538.0,
+        788.0
+      ],
+      "baseline": "existing worked arithmetic; missing conversion direction diagram",
+      "disposition": "recreated",
+      "equivalent": "radix-conversion-steps",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p028-01",
+      "printedPage": 28,
+      "pdfPage": 33,
+      "description": "Octal grouping and repeating binary fraction loop",
+      "kind": "flow",
+      "section": "data-representation",
+      "anchor": "grouping-digits",
+      "crop": [
+        62.0,
+        62.0,
+        538.0,
+        451.29
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "repeating-fraction",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p028-02",
+      "printedPage": 28,
+      "pdfPage": 33,
+      "description": "Figure 1-9: data representation classification tree",
+      "kind": "diagram",
+      "section": "data-representation",
+      "anchor": "encoding-context",
+      "crop": [
+        62.0,
+        523.6,
+        538.0,
+        728.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "data-format-tree",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p030-01",
+      "printedPage": 30,
+      "pdfPage": 35,
+      "description": "Character encoding example and Figure 1-10: JIS code lookup grid",
+      "kind": "table",
+      "section": "data-representation",
+      "anchor": "character-encoding",
+      "crop": [
+        62.0,
+        62.0,
+        538.0,
+        443.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "character-code",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p032-01",
+      "printedPage": 32,
+      "pdfPage": 37,
+      "description": "BCD digits and zoned decimal byte layouts",
+      "kind": "memory-layout",
+      "section": "data-representation",
+      "anchor": "decimal-codes",
+      "crop": [
+        62.0,
+        62.0,
+        538.0,
+        543.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "decimal-packing",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p033-01",
+      "printedPage": 33,
+      "pdfPage": 38,
+      "description": "Packed decimal nibble layouts",
+      "kind": "memory-layout",
+      "section": "data-representation",
+      "anchor": "decimal-codes",
+      "crop": [
+        62.0,
+        62.0,
+        538.0,
+        218.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "decimal-packing",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p033-02",
+      "printedPage": 33,
+      "pdfPage": 38,
+      "description": "Figure 1-11: input, decimal packing, ALU and output conversion",
+      "kind": "flow",
+      "section": "data-representation",
+      "anchor": "decimal-codes",
+      "crop": [
+        62.0,
+        454.48,
+        538.0,
+        643.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "decimal-packing",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p034-01",
+      "printedPage": 34,
+      "pdfPage": 39,
+      "description": "Fixed radix point and sign-magnitude bit layouts",
+      "kind": "memory-layout",
+      "section": "data-representation",
+      "anchor": "decimal-codes",
+      "crop": [
+        62.0,
+        110.13,
+        538.0,
+        743.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "signed-range",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p035-01",
+      "printedPage": 35,
+      "pdfPage": 40,
+      "description": "Complement subtraction and signed two’s-complement bit layouts",
+      "kind": "worked-example",
+      "section": "data-representation",
+      "anchor": "decimal-codes",
+      "crop": [
+        62.0,
+        62.0,
+        538.0,
+        759.03
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "signed-range",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p036-01",
+      "printedPage": 36,
+      "pdfPage": 41,
+      "description": "Subtraction by complement and addition",
+      "kind": "worked-example",
+      "section": "data-representation",
+      "anchor": "decimal-codes",
+      "crop": [
+        82.0,
+        162.0,
+        538.0,
+        571.47
+      ],
+      "baseline": "text/table/partial visual",
+      "disposition": "existing-equivalent",
+      "equivalent": "decimal-codes",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p037-01",
+      "printedPage": 37,
+      "pdfPage": 42,
+      "description": "Sign-magnitude versus two’s-complement range tables",
+      "kind": "table",
+      "section": "data-representation",
+      "anchor": "decimal-codes",
+      "crop": [
+        91.42,
+        62.0,
+        493.15,
+        323.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "signed-range",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p037-02",
+      "printedPage": 37,
+      "pdfPage": 42,
+      "description": "Large-number fixed-point versus floating-point layout example",
+      "kind": "memory-layout",
+      "section": "data-representation",
+      "anchor": "floating-point-layout",
+      "crop": [
+        82.0,
+        505.65,
+        533.0,
+        783.0
+      ],
+      "baseline": "text/table/partial visual",
+      "disposition": "existing-equivalent",
+      "equivalent": "floating-point-layout",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p038-01",
+      "printedPage": 38,
+      "pdfPage": 43,
+      "description": "Floating-point sign/exponent/fraction layouts: 32 and 64 bits",
+      "kind": "memory-layout",
+      "section": "data-representation",
+      "anchor": "floating-point-layout",
+      "crop": [
+        62.0,
+        62.0,
+        538.0,
+        683.0
+      ],
+      "baseline": "existing binary32 fields; binary64 and normalization diagram missing",
+      "disposition": "recreated",
+      "equivalent": "float-formats",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p039-01",
+      "printedPage": 39,
+      "pdfPage": 44,
+      "description": "Biased exponent table and normalization example",
+      "kind": "table",
+      "section": "data-representation",
+      "anchor": "floating-point-layout",
+      "crop": [
+        62.0,
+        290.13,
+        538.0,
+        763.0
+      ],
+      "baseline": "existing binary32 fields; binary64 and normalization diagram missing",
+      "disposition": "recreated",
+      "equivalent": "float-formats",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p040-01",
+      "printedPage": 40,
+      "pdfPage": 45,
+      "description": "Normalization continuation and single-precision encoding example",
+      "kind": "worked-example",
+      "section": "data-representation",
+      "anchor": "floating-point-layout",
+      "crop": [
+        62.0,
+        62.0,
+        538.0,
+        713.0
+      ],
+      "baseline": "existing binary32 fields; binary64 and normalization diagram missing",
+      "disposition": "recreated",
+      "equivalent": "float-formats",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p041-01",
+      "printedPage": 41,
+      "pdfPage": 46,
+      "description": "Lost trailing digits in aligned floating-point addition",
+      "kind": "worked-example",
+      "section": "data-representation",
+      "anchor": "error-types",
+      "crop": [
+        82.0,
+        632.0,
+        538.0,
+        786.74
+      ],
+      "baseline": "existing prose; missing visual precision/range comparison",
+      "disposition": "recreated",
+      "equivalent": "numeric-errors",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p042-01",
+      "printedPage": 42,
+      "pdfPage": 47,
+      "description": "Cancellation example and finite numeric-range diagram",
+      "kind": "diagram",
+      "section": "data-representation",
+      "anchor": "error-types",
+      "crop": [
+        67.42,
+        242.71,
+        538.0,
+        661.35
+      ],
+      "baseline": "existing prose; missing visual precision/range comparison",
+      "disposition": "recreated",
+      "equivalent": "numeric-errors",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p043-01",
+      "printedPage": 43,
+      "pdfPage": 48,
+      "description": "Arithmetic left shift with retained sign and discarded bits",
+      "kind": "memory-layout",
+      "section": "data-representation",
+      "anchor": "shifting-bits",
+      "crop": [
+        62.0,
+        502.0,
+        538.0,
+        706.65
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "shift-paths",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p044-01",
+      "printedPage": 44,
+      "pdfPage": 49,
+      "description": "Arithmetic right shift versus logical right shift",
+      "kind": "memory-layout",
+      "section": "data-representation",
+      "anchor": "shifting-bits",
+      "crop": [
+        82.0,
+        442.0,
+        538.0,
+        811.38
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "shift-paths",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p045-01",
+      "printedPage": 45,
+      "pdfPage": 50,
+      "description": "Circular right shift / rotation",
+      "kind": "memory-layout",
+      "section": "data-representation",
+      "anchor": "shifting-bits",
+      "crop": [
+        67.42,
+        89.13,
+        538.0,
+        260.72
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "shift-paths",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p046-01",
+      "printedPage": 46,
+      "pdfPage": 51,
+      "description": "Figure 1-12: CPU control, ALU, registers and clock",
+      "kind": "architecture",
+      "section": "cpu-and-main-memory",
+      "anchor": "cpu-register-table",
+      "crop": [
+        131.98,
+        352.0,
+        503.0,
+        514.83
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "cpu-data-path",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p047-01",
+      "printedPage": 47,
+      "pdfPage": 52,
+      "description": "CPU register roles",
+      "kind": "table",
+      "section": "cpu-and-main-memory",
+      "anchor": "cpu-register-table",
+      "crop": [
+        70.42,
+        143.13,
+        538.0,
+        583.0
+      ],
+      "baseline": "text/table/partial visual",
+      "disposition": "existing-equivalent",
+      "equivalent": "cpu-register-table",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p048-01",
+      "printedPage": 48,
+      "pdfPage": 53,
+      "description": "Figure 1-13: clock waveform and one cycle",
+      "kind": "diagram",
+      "section": "cpu-and-main-memory",
+      "anchor": "bus-rate-example",
+      "crop": [
+        147.0,
+        62.0,
+        448.0,
+        162.62
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "clock-buses",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p048-02",
+      "printedPage": 48,
+      "pdfPage": 53,
+      "description": "Internal/external and address/control/data bus classifications",
+      "kind": "table",
+      "section": "cpu-and-main-memory",
+      "anchor": "bus-rate-example",
+      "crop": [
+        62.0,
+        287.0,
+        538.0,
+        648.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "clock-buses",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p049-01",
+      "printedPage": 49,
+      "pdfPage": 54,
+      "description": "Semiconductor memory device classifications",
+      "kind": "table",
+      "section": "cpu-and-main-memory",
+      "anchor": "memory-device-table",
+      "crop": [
+        62.0,
+        402.82,
+        538.0,
+        676.93
+      ],
+      "baseline": "text/table/partial visual",
+      "disposition": "existing-equivalent",
+      "equivalent": "memory-device-table",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p049-02",
+      "printedPage": 49,
+      "pdfPage": 54,
+      "description": "Added margin annotation: transistor-level TTL two-input NAND circuit",
+      "kind": "circuit",
+      "section": "cpu-and-main-memory",
+      "anchor": "memory-device-table",
+      "crop": [
+        422.77,
+        736.3,
+        590.0,
+        840.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "editorial-only",
+      "equivalent": "",
+      "review": "Margin annotation, not a numbered source figure. Transistor-level implementation is not reproduced. Public logic-symbols teaches the NAND function without copying this annotation."
+    },
+    {
+      "id": "hw-p050-01",
+      "printedPage": 50,
+      "pdfPage": 55,
+      "description": "Added margin annotation: clocked JK storage circuit",
+      "kind": "circuit",
+      "section": "cpu-and-main-memory",
+      "anchor": "memory-device-table",
+      "crop": [
+        440.0,
+        0.0,
+        590.0,
+        75.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "editorial-only",
+      "equivalent": "",
+      "review": "Margin annotation, not a numbered source figure; not a DRAM or simple SRAM-cell schematic. No third-party annotation is published. Chapter storage concepts have original memory-cells and NAND SR-latch diagrams."
+    },
+    {
+      "id": "hw-p050-02",
+      "printedPage": 50,
+      "pdfPage": 55,
+      "description": "SRAM, DRAM and ROM types",
+      "kind": "table",
+      "section": "cpu-and-main-memory",
+      "anchor": "memory-device-table",
+      "crop": [
+        1.53,
+        0.0,
+        588.4,
+        761.91
+      ],
+      "baseline": "existing memory comparison table; missing visual retention model",
+      "disposition": "recreated",
+      "equivalent": "memory-cells",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p051-01",
+      "printedPage": 51,
+      "pdfPage": 56,
+      "description": "Figure 1-14: address selection and read/write memory organization",
+      "kind": "architecture",
+      "section": "cpu-and-main-memory",
+      "anchor": "memory-access-flow",
+      "crop": [
+        70.42,
+        433.36,
+        483.0,
+        626.37
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "memory-address-grid",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p052-01",
+      "printedPage": 52,
+      "pdfPage": 57,
+      "description": "Memory read/write sequence and expansion options",
+      "kind": "table",
+      "section": "cpu-and-main-memory",
+      "anchor": "memory-expansion-example",
+      "crop": [
+        62.0,
+        62.0,
+        538.0,
+        555.09
+      ],
+      "baseline": "text/table/partial visual",
+      "disposition": "existing-equivalent",
+      "equivalent": "memory-expansion-example",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p053-01",
+      "printedPage": 53,
+      "pdfPage": 58,
+      "description": "Instruction types",
+      "kind": "table",
+      "section": "cpu-and-main-memory",
+      "anchor": "instruction-fields",
+      "crop": [
+        62.0,
+        92.0,
+        538.0,
+        443.0
+      ],
+      "baseline": "text/table/partial visual",
+      "disposition": "existing-equivalent",
+      "equivalent": "instruction-fields",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p053-02",
+      "printedPage": 53,
+      "pdfPage": 58,
+      "description": "Figure 1-15: opcode and address/operand instruction fields",
+      "kind": "memory-layout",
+      "section": "cpu-and-main-memory",
+      "anchor": "instruction-fields",
+      "crop": [
+        132.46,
+        577.0,
+        462.89,
+        658.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "instruction-format",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p054-01",
+      "printedPage": 54,
+      "pdfPage": 59,
+      "description": "Figure 1-16: fetch, decode, effective address, operand fetch and compute flow",
+      "kind": "flowchart",
+      "section": "cpu-and-main-memory",
+      "anchor": "instruction-trace",
+      "crop": [
+        70.42,
+        163.42,
+        508.0,
+        548.0
+      ],
+      "baseline": "text/table/partial visual",
+      "disposition": "existing-equivalent",
+      "equivalent": "fetch-execute-flow",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p055-01",
+      "printedPage": 55,
+      "pdfPage": 60,
+      "description": "Figure 1-17: CPU and main memory baseline",
+      "kind": "architecture",
+      "section": "cpu-and-main-memory",
+      "anchor": "instruction-trace",
+      "crop": [
+        113.92,
+        67.0,
+        538.0,
+        298.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "cpu-data-path",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p055-02",
+      "printedPage": 55,
+      "pdfPage": 60,
+      "description": "Figure 1-18: instruction fetching, PC increment and IR load",
+      "kind": "architecture",
+      "section": "cpu-and-main-memory",
+      "anchor": "instruction-trace",
+      "crop": [
+        107.0,
+        437.0,
+        538.0,
+        658.35
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "cpu-data-path",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p056-01",
+      "printedPage": 56,
+      "pdfPage": 61,
+      "description": "Figure 1-19: instruction decoding path",
+      "kind": "architecture",
+      "section": "cpu-and-main-memory",
+      "anchor": "instruction-trace",
+      "crop": [
+        107.0,
+        67.0,
+        538.0,
+        298.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "cpu-data-path",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p056-02",
+      "printedPage": 56,
+      "pdfPage": 61,
+      "description": "Figure 1-20: effective address and operand fetching",
+      "kind": "architecture",
+      "section": "cpu-and-main-memory",
+      "anchor": "instruction-trace",
+      "crop": [
+        107.0,
+        467.0,
+        538.0,
+        703.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "cpu-data-path",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p057-01",
+      "printedPage": 57,
+      "pdfPage": 62,
+      "description": "Figure 1-21: ALU execution and result write-back",
+      "kind": "architecture",
+      "section": "cpu-and-main-memory",
+      "anchor": "instruction-trace",
+      "crop": [
+        107.0,
+        121.9,
+        538.0,
+        348.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "cpu-data-path",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p057-02",
+      "printedPage": 57,
+      "pdfPage": 62,
+      "description": "Absolute addressing address path",
+      "kind": "diagram",
+      "section": "cpu-and-main-memory",
+      "anchor": "addressing-table",
+      "crop": [
+        88.54,
+        594.88,
+        527.9,
+        723.87
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "operand-addressing",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p058-01",
+      "printedPage": 58,
+      "pdfPage": 63,
+      "description": "Indexed, base and PC-relative address addition diagrams",
+      "kind": "diagram",
+      "section": "cpu-and-main-memory",
+      "anchor": "addressing-table",
+      "crop": [
+        88.54,
+        62.0,
+        538.0,
+        518.42
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "operand-addressing",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p058-02",
+      "printedPage": 58,
+      "pdfPage": 63,
+      "description": "Figure 1-22: immediate addressing",
+      "kind": "memory-layout",
+      "section": "cpu-and-main-memory",
+      "anchor": "addressing-table",
+      "crop": [
+        105.88,
+        632.0,
+        513.0,
+        788.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "operand-addressing",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p059-01",
+      "printedPage": 59,
+      "pdfPage": 64,
+      "description": "Figure 1-23: direct addressing",
+      "kind": "memory-layout",
+      "section": "cpu-and-main-memory",
+      "anchor": "addressing-table",
+      "crop": [
+        128.2,
+        174.34,
+        503.0,
+        323.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "operand-addressing",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p059-02",
+      "printedPage": 59,
+      "pdfPage": 64,
+      "description": "Figure 1-24: indirect addressing",
+      "kind": "memory-layout",
+      "section": "cpu-and-main-memory",
+      "anchor": "addressing-table",
+      "crop": [
+        136.36,
+        409.42,
+        503.0,
+        558.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "operand-addressing",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p060-01",
+      "printedPage": 60,
+      "pdfPage": 65,
+      "description": "Interrupt processing sequence and classification",
+      "kind": "flow",
+      "section": "cpu-and-main-memory",
+      "anchor": "interrupt-priority",
+      "crop": [
+        62.0,
+        62.0,
+        538.0,
+        765.15
+      ],
+      "baseline": "text/table/partial visual",
+      "disposition": "existing-equivalent",
+      "equivalent": "interrupt-priority",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p061-01",
+      "printedPage": 61,
+      "pdfPage": 66,
+      "description": "Basic logical operations truth table",
+      "kind": "table",
+      "section": "cpu-and-main-memory",
+      "anchor": "logic-truth-table",
+      "crop": [
+        82.0,
+        632.0,
+        518.0,
+        758.0
+      ],
+      "baseline": "text/table/partial visual",
+      "disposition": "existing-equivalent",
+      "equivalent": "logic-truth-table",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p062-01",
+      "printedPage": 62,
+      "pdfPage": 67,
+      "description": "Figure 1-25: active-low NAND SR latch and state table",
+      "kind": "circuit",
+      "section": "cpu-and-main-memory",
+      "anchor": "adder-example",
+      "crop": [
+        149.44,
+        287.0,
+        538.0,
+        419.6
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "sr-latch",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p062-02",
+      "printedPage": 62,
+      "pdfPage": 67,
+      "description": "Figure 1-26: AND gate and truth table",
+      "kind": "circuit",
+      "section": "cpu-and-main-memory",
+      "anchor": "logic-truth-table",
+      "crop": [
+        91.54,
+        590.13,
+        458.0,
+        718.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "logic-symbols",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p063-01",
+      "printedPage": 63,
+      "pdfPage": 68,
+      "description": "Figure 1-27: OR gate and truth table",
+      "kind": "circuit",
+      "section": "cpu-and-main-memory",
+      "anchor": "logic-truth-table",
+      "crop": [
+        91.54,
+        74.13,
+        458.0,
+        208.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "logic-symbols",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p063-02",
+      "printedPage": 63,
+      "pdfPage": 68,
+      "description": "Figure 1-28: NOT gate and truth table",
+      "kind": "circuit",
+      "section": "cpu-and-main-memory",
+      "anchor": "logic-truth-table",
+      "crop": [
+        102.0,
+        267.0,
+        458.0,
+        343.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "logic-symbols",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p063-03",
+      "printedPage": 63,
+      "pdfPage": 68,
+      "description": "Figure 1-29: NAND gate and truth table",
+      "kind": "circuit",
+      "section": "cpu-and-main-memory",
+      "anchor": "logic-truth-table",
+      "crop": [
+        91.54,
+        421.11,
+        458.0,
+        558.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "logic-symbols",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p063-04",
+      "printedPage": 63,
+      "pdfPage": 68,
+      "description": "Figure 1-30: NOR gate and truth table",
+      "kind": "circuit",
+      "section": "cpu-and-main-memory",
+      "anchor": "logic-truth-table",
+      "crop": [
+        102.0,
+        647.0,
+        458.0,
+        758.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "logic-symbols",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p064-01",
+      "printedPage": 64,
+      "pdfPage": 69,
+      "description": "Figure 1-31: XOR gate and truth table",
+      "kind": "circuit",
+      "section": "cpu-and-main-memory",
+      "anchor": "logic-truth-table",
+      "crop": [
+        88.54,
+        107.13,
+        458.0,
+        238.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "logic-symbols",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p065-01",
+      "printedPage": 65,
+      "pdfPage": 70,
+      "description": "Boolean algebra laws",
+      "kind": "table",
+      "section": "cpu-and-main-memory",
+      "anchor": "logic-truth-table",
+      "crop": [
+        72.0,
+        62.0,
+        538.0,
+        628.0
+      ],
+      "baseline": "text/table/partial visual",
+      "disposition": "existing-equivalent",
+      "equivalent": "logic-truth-table",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p066-01",
+      "printedPage": 66,
+      "pdfPage": 71,
+      "description": "Two equivalent XOR networks and Boolean derivation",
+      "kind": "circuit",
+      "section": "cpu-and-main-memory",
+      "anchor": "logic-truth-table",
+      "crop": [
+        67.42,
+        62.0,
+        538.0,
+        634.41
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "xor-network",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p067-01",
+      "printedPage": 67,
+      "pdfPage": 72,
+      "description": "Half-adder truth table",
+      "kind": "table",
+      "section": "cpu-and-main-memory",
+      "anchor": "adder-example",
+      "crop": [
+        97.0,
+        257.0,
+        443.0,
+        401.42
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "adders",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p067-02",
+      "printedPage": 67,
+      "pdfPage": 72,
+      "description": "Figure 1-32: half-adder XOR/AND connections",
+      "kind": "circuit",
+      "section": "cpu-and-main-memory",
+      "anchor": "adder-example",
+      "crop": [
+        67.42,
+        488.44,
+        505.54,
+        661.89
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "adders",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p068-01",
+      "printedPage": 68,
+      "pdfPage": 73,
+      "description": "Full-adder three-input truth table and Boolean derivation",
+      "kind": "table",
+      "section": "cpu-and-main-memory",
+      "anchor": "adder-example",
+      "crop": [
+        67.42,
+        62.0,
+        538.0,
+        758.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "adders",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p069-01",
+      "printedPage": 69,
+      "pdfPage": 74,
+      "description": "Three-input addition as two half additions",
+      "kind": "diagram",
+      "section": "cpu-and-main-memory",
+      "anchor": "adder-example",
+      "crop": [
+        67.42,
+        212.0,
+        538.0,
+        495.63
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "adders",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p069-02",
+      "printedPage": 69,
+      "pdfPage": 74,
+      "description": "Figure 1-33: full adder made from two half adders and OR",
+      "kind": "circuit",
+      "section": "cpu-and-main-memory",
+      "anchor": "adder-example",
+      "crop": [
+        67.42,
+        512.0,
+        527.89,
+        684.63
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "adders",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p070-01",
+      "printedPage": 70,
+      "pdfPage": 75,
+      "description": "Figure 1-34: register/cache/main-memory buffering",
+      "kind": "architecture",
+      "section": "cpu-and-main-memory",
+      "anchor": "cache-and-interleaving",
+      "crop": [
+        67.42,
+        508.11,
+        527.9,
+        699.39
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "cache-paths",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p071-01",
+      "printedPage": 71,
+      "pdfPage": 76,
+      "description": "Weighted cache and main-memory access-time example",
+      "kind": "table",
+      "section": "cpu-and-main-memory",
+      "anchor": "cache-and-interleaving",
+      "crop": [
+        67.42,
+        179.13,
+        538.0,
+        443.0
+      ],
+      "baseline": "text/table/partial visual",
+      "disposition": "existing-equivalent",
+      "equivalent": "cache-and-interleaving",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p072-01",
+      "printedPage": 72,
+      "pdfPage": 77,
+      "description": "Cache write-through and write-back policies",
+      "kind": "table",
+      "section": "cpu-and-main-memory",
+      "anchor": "cache-and-interleaving",
+      "crop": [
+        62.0,
+        62.0,
+        538.0,
+        268.0
+      ],
+      "baseline": "text/table/partial visual",
+      "disposition": "existing-equivalent",
+      "equivalent": "cache-and-interleaving",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p072-02",
+      "printedPage": 72,
+      "pdfPage": 77,
+      "description": "Figure 1-35: multilevel cache path",
+      "kind": "architecture",
+      "section": "cpu-and-main-memory",
+      "anchor": "cache-and-interleaving",
+      "crop": [
+        121.36,
+        377.0,
+        538.0,
+        478.64
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "cache-paths",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p072-03",
+      "printedPage": 72,
+      "pdfPage": 77,
+      "description": "Figure 1-36: main-memory/disk buffering",
+      "kind": "architecture",
+      "section": "cpu-and-main-memory",
+      "anchor": "cache-and-interleaving",
+      "crop": [
+        121.11,
+        532.0,
+        527.97,
+        704.91
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "cache-paths",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p073-01",
+      "printedPage": 73,
+      "pdfPage": 78,
+      "description": "Figure 1-37: memory hierarchy pyramid",
+      "kind": "diagram",
+      "section": "cpu-and-main-memory",
+      "anchor": "cache-and-interleaving",
+      "crop": [
+        70.42,
+        73.96,
+        478.0,
+        308.0
+      ],
+      "baseline": "text/table/partial visual",
+      "disposition": "existing-equivalent",
+      "equivalent": "memory-hierarchy",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p073-02",
+      "printedPage": 73,
+      "pdfPage": 78,
+      "description": "Figure 1-38: sequential addresses distributed over memory banks",
+      "kind": "memory-layout",
+      "section": "cpu-and-main-memory",
+      "anchor": "cache-and-interleaving",
+      "crop": [
+        70.42,
+        417.0,
+        538.0,
+        700.41
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "bank-interleaving",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p075-01",
+      "printedPage": 75,
+      "pdfPage": 80,
+      "description": "Figure 1-39: overlapped instruction pipeline timing",
+      "kind": "timing",
+      "section": "cpu-and-main-memory",
+      "anchor": "pipeline-example",
+      "crop": [
+        62.0,
+        42.58,
+        538.0,
+        376.41
+      ],
+      "baseline": "text/table/partial visual",
+      "disposition": "existing-equivalent",
+      "equivalent": "pipeline-example",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p075-02",
+      "printedPage": 75,
+      "pdfPage": 80,
+      "description": "Figure 1-40: uneven stage duration and pipeline stalls",
+      "kind": "timing",
+      "section": "cpu-and-main-memory",
+      "anchor": "pipeline-example",
+      "crop": [
+        62.0,
+        398.13,
+        538.0,
+        603.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "pipeline-stalls",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p076-01",
+      "printedPage": 76,
+      "pdfPage": 81,
+      "description": "Figure 1-41: pipeline versus super-pipeline timing",
+      "kind": "timing",
+      "section": "cpu-and-main-memory",
+      "anchor": "pipeline-example",
+      "crop": [
+        107.0,
+        503.38,
+        503.0,
+        614.85
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "pipeline-stalls",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p077-01",
+      "printedPage": 77,
+      "pdfPage": 82,
+      "description": "SISD/SIMD/MISD/MIMD classification",
+      "kind": "table",
+      "section": "cpu-and-main-memory",
+      "anchor": "pipeline-example",
+      "crop": [
+        62.0,
+        412.0,
+        538.0,
+        708.0
+      ],
+      "baseline": "text/table/partial visual",
+      "disposition": "existing-equivalent",
+      "equivalent": "pipeline-example",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p078-01",
+      "printedPage": 78,
+      "pdfPage": 84,
+      "description": "Figure 1-42: tracks, sectors and magnetic recording orientations",
+      "kind": "storage",
+      "section": "auxiliary-storage",
+      "anchor": "disk-geometry",
+      "crop": [
+        62.0,
+        431.61,
+        538.0,
+        623.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "disk-geometry-figure",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p079-01",
+      "printedPage": 79,
+      "pdfPage": 85,
+      "description": "Figure 1-43: head, access arm and target track",
+      "kind": "storage",
+      "section": "auxiliary-storage",
+      "anchor": "disk-geometry",
+      "crop": [
+        107.0,
+        62.0,
+        503.0,
+        193.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "disk-geometry-figure",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p079-02",
+      "printedPage": 79,
+      "pdfPage": 85,
+      "description": "Figure 1-44: HDD photograph and platter/head/cylinder schematic",
+      "kind": "storage",
+      "section": "auxiliary-storage",
+      "anchor": "disk-geometry",
+      "crop": [
+        111.46,
+        386.02,
+        523.0,
+        538.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "disk-geometry-figure",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p080-01",
+      "printedPage": 80,
+      "pdfPage": 86,
+      "description": "Uniform disk geometry capacity table",
+      "kind": "table",
+      "section": "auxiliary-storage",
+      "anchor": "disk-capacity-example",
+      "crop": [
+        82.84,
+        632.0,
+        533.0,
+        758.0
+      ],
+      "baseline": "text/table/partial visual",
+      "disposition": "existing-equivalent",
+      "equivalent": "disk-capacity-example",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p081-01",
+      "printedPage": 81,
+      "pdfPage": 87,
+      "description": "Capacity calculation continuation",
+      "kind": "worked-example",
+      "section": "auxiliary-storage",
+      "anchor": "disk-capacity-example",
+      "crop": [
+        82.0,
+        62.0,
+        538.0,
+        353.0
+      ],
+      "baseline": "text/table/partial visual",
+      "disposition": "existing-equivalent",
+      "equivalent": "disk-capacity-example",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p081-02",
+      "printedPage": 81,
+      "pdfPage": 87,
+      "description": "Variable-length blocks and interblock gaps",
+      "kind": "memory-layout",
+      "section": "auxiliary-storage",
+      "anchor": "records-and-blocks",
+      "crop": [
+        109.72,
+        642.0,
+        503.0,
+        763.89
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "record-blocks",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p082-01",
+      "printedPage": 82,
+      "pdfPage": 88,
+      "description": "Sector recording and block grouping",
+      "kind": "memory-layout",
+      "section": "auxiliary-storage",
+      "anchor": "records-and-blocks",
+      "crop": [
+        132.94,
+        132.0,
+        513.85,
+        242.67
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "record-blocks",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p082-02",
+      "printedPage": 82,
+      "pdfPage": 88,
+      "description": "Recording area calculation table and worked example",
+      "kind": "table",
+      "section": "auxiliary-storage",
+      "anchor": "records-and-blocks",
+      "crop": [
+        62.0,
+        243.39,
+        538.0,
+        770.13
+      ],
+      "baseline": "text/table/partial visual",
+      "disposition": "existing-equivalent",
+      "equivalent": "records-and-blocks",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p083-01",
+      "printedPage": 83,
+      "pdfPage": 89,
+      "description": "Recording area calculation continuation",
+      "kind": "worked-example",
+      "section": "auxiliary-storage",
+      "anchor": "records-and-blocks",
+      "crop": [
+        67.42,
+        62.0,
+        538.0,
+        554.37
+      ],
+      "baseline": "text/table/partial visual",
+      "disposition": "existing-equivalent",
+      "equivalent": "records-and-blocks",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p084-01",
+      "printedPage": 84,
+      "pdfPage": 90,
+      "description": "Seek, rotational wait and data-transfer timing diagram",
+      "kind": "timing",
+      "section": "auxiliary-storage",
+      "anchor": "disk-access-model",
+      "crop": [
+        62.0,
+        153.63,
+        538.0,
+        338.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "disk-access-timeline",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p085-01",
+      "printedPage": 85,
+      "pdfPage": 91,
+      "description": "Rotation/transfer formulas and worked specification table",
+      "kind": "table",
+      "section": "auxiliary-storage",
+      "anchor": "disk-access-model",
+      "crop": [
+        62.0,
+        202.0,
+        538.0,
+        758.0
+      ],
+      "baseline": "text/table/partial visual",
+      "disposition": "existing-equivalent",
+      "equivalent": "disk-access-model",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p086-01",
+      "printedPage": 86,
+      "pdfPage": 92,
+      "description": "Worked average disk access time calculation",
+      "kind": "worked-example",
+      "section": "auxiliary-storage",
+      "anchor": "disk-access-model",
+      "crop": [
+        82.0,
+        62.0,
+        538.0,
+        513.0
+      ],
+      "baseline": "text/table/partial visual",
+      "disposition": "existing-equivalent",
+      "equivalent": "disk-access-model",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p088-01",
+      "printedPage": 88,
+      "pdfPage": 94,
+      "description": "Optical-disc recording method comparison",
+      "kind": "table",
+      "section": "auxiliary-storage",
+      "anchor": "optical-types",
+      "crop": [
+        62.0,
+        287.0,
+        538.0,
+        633.0
+      ],
+      "baseline": "text/table/partial visual",
+      "disposition": "existing-equivalent",
+      "equivalent": "optical-types",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p092-01",
+      "printedPage": 92,
+      "pdfPage": 98,
+      "description": "Figure 1-45: input-processing-output data path",
+      "kind": "flow",
+      "section": "input-output",
+      "anchor": "io-goals",
+      "crop": [
+        107.16,
+        179.92,
+        453.0,
+        288.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "io-processing",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p092-02",
+      "printedPage": 92,
+      "pdfPage": 98,
+      "description": "Keyboard illustration",
+      "kind": "illustration",
+      "section": "input-output",
+      "anchor": "keyboard-input",
+      "crop": [
+        70.42,
+        537.0,
+        533.0,
+        682.59
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "keyboard-signal",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p093-01",
+      "printedPage": 93,
+      "pdfPage": 99,
+      "description": "OCR device illustration",
+      "kind": "illustration",
+      "section": "input-output",
+      "anchor": "paper-reader-table",
+      "crop": [
+        362.0,
+        167.0,
+        528.0,
+        323.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "paper-readers",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p093-02",
+      "printedPage": 93,
+      "pdfPage": 99,
+      "description": "OMR response-sheet example",
+      "kind": "illustration",
+      "section": "input-output",
+      "anchor": "paper-reader-table",
+      "crop": [
+        362.0,
+        377.0,
+        528.0,
+        538.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "paper-readers",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p093-03",
+      "printedPage": 93,
+      "pdfPage": 99,
+      "description": "MICR document example",
+      "kind": "illustration",
+      "section": "input-output",
+      "anchor": "paper-reader-table",
+      "crop": [
+        362.0,
+        607.0,
+        528.0,
+        738.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "paper-readers",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p094-01",
+      "printedPage": 94,
+      "pdfPage": 100,
+      "description": "Barcode reader illustration",
+      "kind": "illustration",
+      "section": "input-output",
+      "anchor": "paper-reader-table",
+      "crop": [
+        362.0,
+        97.0,
+        528.0,
+        213.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "paper-readers",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p094-02",
+      "printedPage": 94,
+      "pdfPage": 100,
+      "description": "One-dimensional barcode and two-dimensional QR examples",
+      "kind": "illustration",
+      "section": "input-output",
+      "anchor": "paper-reader-table",
+      "crop": [
+        102.0,
+        465.81,
+        522.61,
+        588.57
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "paper-readers",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p095-01",
+      "printedPage": 95,
+      "pdfPage": 101,
+      "description": "Image scanner illustration",
+      "kind": "illustration",
+      "section": "input-output",
+      "anchor": "paper-reader-table",
+      "crop": [
+        70.42,
+        97.0,
+        528.0,
+        223.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "paper-readers",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p095-02",
+      "printedPage": 95,
+      "pdfPage": 101,
+      "description": "Mouse illustration",
+      "kind": "illustration",
+      "section": "input-output",
+      "anchor": "pointing-input",
+      "crop": [
+        397.0,
+        292.0,
+        533.0,
+        428.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "touch-coordinates",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p096-01",
+      "printedPage": 96,
+      "pdfPage": 102,
+      "description": "Touch-sensing methods comparison",
+      "kind": "table",
+      "section": "input-output",
+      "anchor": "pointing-input",
+      "crop": [
+        62.0,
+        62.0,
+        538.0,
+        398.91
+      ],
+      "baseline": "text/table/partial visual",
+      "disposition": "existing-equivalent",
+      "equivalent": "pointing-input",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p096-02",
+      "printedPage": 96,
+      "pdfPage": 102,
+      "description": "Digitizer/tablet illustration",
+      "kind": "illustration",
+      "section": "input-output",
+      "anchor": "other-input-examples",
+      "crop": [
+        382.0,
+        527.0,
+        528.0,
+        668.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "touch-coordinates",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p098-01",
+      "printedPage": 98,
+      "pdfPage": 104,
+      "description": "Display illustration and resolution standards table",
+      "kind": "table",
+      "section": "input-output",
+      "anchor": "display-calculations",
+      "crop": [
+        97.54,
+        62.0,
+        513.0,
+        208.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "pixel-grid",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p098-02",
+      "printedPage": 98,
+      "pdfPage": 104,
+      "description": "Frame-buffer capacity worked example",
+      "kind": "worked-example",
+      "section": "input-output",
+      "anchor": "display-calculations",
+      "crop": [
+        70.42,
+        290.13,
+        538.0,
+        558.0
+      ],
+      "baseline": "text/table/partial visual",
+      "disposition": "existing-equivalent",
+      "equivalent": "display-calculations",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p100-01",
+      "printedPage": 100,
+      "pdfPage": 106,
+      "description": "Figure 1-46: character glyph as dots at different resolutions",
+      "kind": "diagram",
+      "section": "input-output",
+      "anchor": "printer-types",
+      "crop": [
+        121.12,
+        238.42,
+        448.0,
+        398.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "pixel-grid",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p100-02",
+      "printedPage": 100,
+      "pdfPage": 106,
+      "description": "Figure 1-47: impact print head, ink ribbon and paper",
+      "kind": "diagram",
+      "section": "input-output",
+      "anchor": "printer-types",
+      "crop": [
+        167.0,
+        607.0,
+        453.0,
+        778.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "impact-printer",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p101-01",
+      "printedPage": 101,
+      "pdfPage": 107,
+      "description": "Inkjet printer illustration",
+      "kind": "illustration",
+      "section": "input-output",
+      "anchor": "printer-types",
+      "crop": [
+        367.0,
+        532.0,
+        538.0,
+        653.0
+      ],
+      "baseline": "text/table/partial visual",
+      "disposition": "existing-equivalent",
+      "equivalent": "printer-types",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p102-01",
+      "printedPage": 102,
+      "pdfPage": 108,
+      "description": "Plotter illustration",
+      "kind": "illustration",
+      "section": "input-output",
+      "anchor": "other-output-examples",
+      "crop": [
+        362.0,
+        222.0,
+        538.0,
+        350.73
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "output-paths",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p102-02",
+      "printedPage": 102,
+      "pdfPage": 108,
+      "description": "Projector illustration",
+      "kind": "illustration",
+      "section": "input-output",
+      "anchor": "other-output-examples",
+      "crop": [
+        362.0,
+        382.0,
+        538.0,
+        509.31
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "output-paths",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p103-01",
+      "printedPage": 103,
+      "pdfPage": 109,
+      "description": "LAN interface card function",
+      "kind": "table",
+      "section": "input-output",
+      "anchor": "bidirectional-io",
+      "crop": [
+        82.0,
+        397.0,
+        538.0,
+        543.0
+      ],
+      "baseline": "text/table/partial visual",
+      "disposition": "existing-equivalent",
+      "equivalent": "bidirectional-io",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p104-01",
+      "printedPage": 104,
+      "pdfPage": 110,
+      "description": "Contact chatter definition",
+      "kind": "timing",
+      "section": "input-output",
+      "anchor": "keyboard-input",
+      "crop": [
+        67.42,
+        62.0,
+        538.0,
+        213.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "keyboard-signal",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p104-02",
+      "printedPage": 104,
+      "pdfPage": 110,
+      "description": "Programmed transfer versus DMA data paths (source text)",
+      "kind": "flow",
+      "section": "input-output",
+      "anchor": "io-control-comparison",
+      "crop": [
+        62.0,
+        356.62,
+        538.0,
+        770.07
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "io-transfer",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p105-01",
+      "printedPage": 105,
+      "pdfPage": 111,
+      "description": "I/O channel classifications",
+      "kind": "table",
+      "section": "input-output",
+      "anchor": "io-control-comparison",
+      "crop": [
+        62.0,
+        197.0,
+        538.0,
+        353.0
+      ],
+      "baseline": "text/table/partial visual",
+      "disposition": "existing-equivalent",
+      "equivalent": "io-control-comparison",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p106-01",
+      "printedPage": 106,
+      "pdfPage": 112,
+      "description": "Star, cascade and daisy-chain connection diagrams",
+      "kind": "architecture",
+      "section": "input-output",
+      "anchor": "interface-topologies",
+      "crop": [
+        62.0,
+        62.0,
+        538.0,
+        598.0
+      ],
+      "baseline": "missing spatial illustration",
+      "disposition": "recreated",
+      "equivalent": "interface-topologies-figure",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p107-01",
+      "printedPage": 107,
+      "pdfPage": 113,
+      "description": "SCSI parallel width/rate comparison",
+      "kind": "table",
+      "section": "input-output",
+      "anchor": "interface-types-table",
+      "crop": [
+        62.0,
+        335.13,
+        538.0,
+        508.0
+      ],
+      "baseline": "text/table/partial visual",
+      "disposition": "existing-equivalent",
+      "equivalent": "interface-types-table",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p108-01",
+      "printedPage": 108,
+      "pdfPage": 114,
+      "description": "USB transfer modes and historical speeds",
+      "kind": "table",
+      "section": "input-output",
+      "anchor": "interface-types-table",
+      "crop": [
+        62.0,
+        62.0,
+        538.0,
+        343.0
+      ],
+      "baseline": "text/table/partial visual",
+      "disposition": "existing-equivalent",
+      "equivalent": "interface-types-table",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p108-02",
+      "printedPage": 108,
+      "pdfPage": 114,
+      "description": "Bus-power and hot-plug comparison",
+      "kind": "table",
+      "section": "input-output",
+      "anchor": "interface-types-table",
+      "crop": [
+        62.0,
+        468.63,
+        538.0,
+        658.0
+      ],
+      "baseline": "text/table/partial visual",
+      "disposition": "existing-equivalent",
+      "equivalent": "interface-types-table",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-p110-01",
+      "printedPage": 110,
+      "pdfPage": 116,
+      "description": "Bluetooth characteristics and historical distance-class table",
+      "kind": "table",
+      "section": "input-output",
+      "anchor": "interface-types-table",
+      "crop": [
+        62.0,
+        62.0,
+        538.0,
+        423.0
+      ],
+      "baseline": "text/table/partial visual",
+      "disposition": "existing-equivalent",
+      "equivalent": "interface-types-table",
+      "review": "Visually reviewed complete teaching region with caption/labels and connectors; supporting prose retained when needed. No severed word/image boxes. Equivalent uses new layout/examples; source artwork is not published."
+    },
+    {
+      "id": "hw-unnumbered-i2c",
+      "printedPage": null,
+      "pdfPage": 83,
+      "description": "Unnumbered inserted serial-interface exam screenshot and commentary",
+      "kind": "editorial-insertion",
+      "section": "input-output",
+      "anchor": "interface-types-table",
+      "crop": [
+        30.0,
+        55.0,
+        573.32,
+        790.0
+      ],
+      "baseline": "intentionally omitted",
+      "disposition": "editorial-only",
+      "equivalent": "",
+      "review": "Outside printed-page sequence; not assigned a printed reference or published. Existing serial interface explanation suffices."
+    }
+  ],
+  "pageReview": [
+    {
+      "printedPage": 13,
+      "pdfPage": 18,
+      "regions": [
+        "hw-p013-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 14,
+      "pdfPage": 19,
+      "regions": [
+        "hw-p014-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 15,
+      "pdfPage": 20,
+      "regions": [
+        "hw-p015-01",
+        "hw-p015-02"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 16,
+      "pdfPage": 21,
+      "regions": [
+        "hw-p016-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 17,
+      "pdfPage": 22,
+      "regions": [
+        "hw-p017-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 18,
+      "pdfPage": 23,
+      "regions": [
+        "hw-p018-01",
+        "hw-p018-02"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 19,
+      "pdfPage": 24,
+      "regions": [],
+      "result": "reviewed: prose only; no independent figure/table to recover"
+    },
+    {
+      "printedPage": 20,
+      "pdfPage": 25,
+      "regions": [
+        "hw-p020-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 21,
+      "pdfPage": 26,
+      "regions": [
+        "hw-p021-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 22,
+      "pdfPage": 27,
+      "regions": [
+        "hw-p022-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 23,
+      "pdfPage": 28,
+      "regions": [
+        "hw-p023-01",
+        "hw-p023-02"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 24,
+      "pdfPage": 29,
+      "regions": [
+        "hw-p024-01",
+        "hw-p024-02",
+        "hw-p024-03"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 25,
+      "pdfPage": 30,
+      "regions": [
+        "hw-p025-01",
+        "hw-p025-02"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 26,
+      "pdfPage": 31,
+      "regions": [
+        "hw-p026-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 27,
+      "pdfPage": 32,
+      "regions": [
+        "hw-p027-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 28,
+      "pdfPage": 33,
+      "regions": [
+        "hw-p028-01",
+        "hw-p028-02"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 29,
+      "pdfPage": 34,
+      "regions": [],
+      "result": "reviewed: prose only; no independent figure/table to recover"
+    },
+    {
+      "printedPage": 30,
+      "pdfPage": 35,
+      "regions": [
+        "hw-p030-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 31,
+      "pdfPage": 36,
+      "regions": [],
+      "result": "reviewed: prose only; no independent figure/table to recover"
+    },
+    {
+      "printedPage": 32,
+      "pdfPage": 37,
+      "regions": [
+        "hw-p032-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 33,
+      "pdfPage": 38,
+      "regions": [
+        "hw-p033-01",
+        "hw-p033-02"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 34,
+      "pdfPage": 39,
+      "regions": [
+        "hw-p034-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 35,
+      "pdfPage": 40,
+      "regions": [
+        "hw-p035-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 36,
+      "pdfPage": 41,
+      "regions": [
+        "hw-p036-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 37,
+      "pdfPage": 42,
+      "regions": [
+        "hw-p037-01",
+        "hw-p037-02"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 38,
+      "pdfPage": 43,
+      "regions": [
+        "hw-p038-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 39,
+      "pdfPage": 44,
+      "regions": [
+        "hw-p039-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 40,
+      "pdfPage": 45,
+      "regions": [
+        "hw-p040-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 41,
+      "pdfPage": 46,
+      "regions": [
+        "hw-p041-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 42,
+      "pdfPage": 47,
+      "regions": [
+        "hw-p042-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 43,
+      "pdfPage": 48,
+      "regions": [
+        "hw-p043-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 44,
+      "pdfPage": 49,
+      "regions": [
+        "hw-p044-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 45,
+      "pdfPage": 50,
+      "regions": [
+        "hw-p045-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 46,
+      "pdfPage": 51,
+      "regions": [
+        "hw-p046-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 47,
+      "pdfPage": 52,
+      "regions": [
+        "hw-p047-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 48,
+      "pdfPage": 53,
+      "regions": [
+        "hw-p048-01",
+        "hw-p048-02"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 49,
+      "pdfPage": 54,
+      "regions": [
+        "hw-p049-01",
+        "hw-p049-02"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 50,
+      "pdfPage": 55,
+      "regions": [
+        "hw-p050-01",
+        "hw-p050-02"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 51,
+      "pdfPage": 56,
+      "regions": [
+        "hw-p051-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 52,
+      "pdfPage": 57,
+      "regions": [
+        "hw-p052-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 53,
+      "pdfPage": 58,
+      "regions": [
+        "hw-p053-01",
+        "hw-p053-02"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 54,
+      "pdfPage": 59,
+      "regions": [
+        "hw-p054-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 55,
+      "pdfPage": 60,
+      "regions": [
+        "hw-p055-01",
+        "hw-p055-02"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 56,
+      "pdfPage": 61,
+      "regions": [
+        "hw-p056-01",
+        "hw-p056-02"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 57,
+      "pdfPage": 62,
+      "regions": [
+        "hw-p057-01",
+        "hw-p057-02"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 58,
+      "pdfPage": 63,
+      "regions": [
+        "hw-p058-01",
+        "hw-p058-02"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 59,
+      "pdfPage": 64,
+      "regions": [
+        "hw-p059-01",
+        "hw-p059-02"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 60,
+      "pdfPage": 65,
+      "regions": [
+        "hw-p060-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 61,
+      "pdfPage": 66,
+      "regions": [
+        "hw-p061-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 62,
+      "pdfPage": 67,
+      "regions": [
+        "hw-p062-01",
+        "hw-p062-02"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 63,
+      "pdfPage": 68,
+      "regions": [
+        "hw-p063-01",
+        "hw-p063-02",
+        "hw-p063-03",
+        "hw-p063-04"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 64,
+      "pdfPage": 69,
+      "regions": [
+        "hw-p064-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 65,
+      "pdfPage": 70,
+      "regions": [
+        "hw-p065-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 66,
+      "pdfPage": 71,
+      "regions": [
+        "hw-p066-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 67,
+      "pdfPage": 72,
+      "regions": [
+        "hw-p067-01",
+        "hw-p067-02"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 68,
+      "pdfPage": 73,
+      "regions": [
+        "hw-p068-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 69,
+      "pdfPage": 74,
+      "regions": [
+        "hw-p069-01",
+        "hw-p069-02"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 70,
+      "pdfPage": 75,
+      "regions": [
+        "hw-p070-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 71,
+      "pdfPage": 76,
+      "regions": [
+        "hw-p071-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 72,
+      "pdfPage": 77,
+      "regions": [
+        "hw-p072-01",
+        "hw-p072-02",
+        "hw-p072-03"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 73,
+      "pdfPage": 78,
+      "regions": [
+        "hw-p073-01",
+        "hw-p073-02"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 74,
+      "pdfPage": 79,
+      "regions": [],
+      "result": "reviewed: prose only; no independent figure/table to recover"
+    },
+    {
+      "printedPage": 75,
+      "pdfPage": 80,
+      "regions": [
+        "hw-p075-01",
+        "hw-p075-02"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 76,
+      "pdfPage": 81,
+      "regions": [
+        "hw-p076-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 77,
+      "pdfPage": 82,
+      "regions": [
+        "hw-p077-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 78,
+      "pdfPage": 84,
+      "regions": [
+        "hw-p078-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 79,
+      "pdfPage": 85,
+      "regions": [
+        "hw-p079-01",
+        "hw-p079-02"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 80,
+      "pdfPage": 86,
+      "regions": [
+        "hw-p080-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 81,
+      "pdfPage": 87,
+      "regions": [
+        "hw-p081-01",
+        "hw-p081-02"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 82,
+      "pdfPage": 88,
+      "regions": [
+        "hw-p082-01",
+        "hw-p082-02"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 83,
+      "pdfPage": 89,
+      "regions": [
+        "hw-p083-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 84,
+      "pdfPage": 90,
+      "regions": [
+        "hw-p084-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 85,
+      "pdfPage": 91,
+      "regions": [
+        "hw-p085-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 86,
+      "pdfPage": 92,
+      "regions": [
+        "hw-p086-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 87,
+      "pdfPage": 93,
+      "regions": [],
+      "result": "reviewed: prose only; no independent figure/table to recover"
+    },
+    {
+      "printedPage": 88,
+      "pdfPage": 94,
+      "regions": [
+        "hw-p088-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 89,
+      "pdfPage": 95,
+      "regions": [],
+      "result": "reviewed: prose only; no independent figure/table to recover"
+    },
+    {
+      "printedPage": 90,
+      "pdfPage": 96,
+      "regions": [],
+      "result": "reviewed: prose only; no independent figure/table to recover"
+    },
+    {
+      "printedPage": 91,
+      "pdfPage": 97,
+      "regions": [],
+      "result": "reviewed: prose only; no independent figure/table to recover"
+    },
+    {
+      "printedPage": 92,
+      "pdfPage": 98,
+      "regions": [
+        "hw-p092-01",
+        "hw-p092-02"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 93,
+      "pdfPage": 99,
+      "regions": [
+        "hw-p093-01",
+        "hw-p093-02",
+        "hw-p093-03"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 94,
+      "pdfPage": 100,
+      "regions": [
+        "hw-p094-01",
+        "hw-p094-02"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 95,
+      "pdfPage": 101,
+      "regions": [
+        "hw-p095-01",
+        "hw-p095-02"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 96,
+      "pdfPage": 102,
+      "regions": [
+        "hw-p096-01",
+        "hw-p096-02"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 97,
+      "pdfPage": 103,
+      "regions": [],
+      "result": "reviewed: prose only; no independent figure/table to recover"
+    },
+    {
+      "printedPage": 98,
+      "pdfPage": 104,
+      "regions": [
+        "hw-p098-01",
+        "hw-p098-02"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 99,
+      "pdfPage": 105,
+      "regions": [],
+      "result": "reviewed: prose only; no independent figure/table to recover"
+    },
+    {
+      "printedPage": 100,
+      "pdfPage": 106,
+      "regions": [
+        "hw-p100-01",
+        "hw-p100-02"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 101,
+      "pdfPage": 107,
+      "regions": [
+        "hw-p101-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 102,
+      "pdfPage": 108,
+      "regions": [
+        "hw-p102-01",
+        "hw-p102-02"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 103,
+      "pdfPage": 109,
+      "regions": [
+        "hw-p103-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 104,
+      "pdfPage": 110,
+      "regions": [
+        "hw-p104-01",
+        "hw-p104-02"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 105,
+      "pdfPage": 111,
+      "regions": [
+        "hw-p105-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 106,
+      "pdfPage": 112,
+      "regions": [
+        "hw-p106-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 107,
+      "pdfPage": 113,
+      "regions": [
+        "hw-p107-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 108,
+      "pdfPage": 114,
+      "regions": [
+        "hw-p108-01",
+        "hw-p108-02"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 109,
+      "pdfPage": 115,
+      "regions": [],
+      "result": "reviewed: prose only; no independent figure/table to recover"
+    },
+    {
+      "printedPage": 110,
+      "pdfPage": 116,
+      "regions": [
+        "hw-p110-01"
+      ],
+      "result": "catalogued"
+    },
+    {
+      "printedPage": 111,
+      "pdfPage": 117,
+      "regions": [],
+      "result": "reviewed: prose only; no independent figure/table to recover"
+    }
+  ]
+}

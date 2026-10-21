@@ -24,9 +24,9 @@ Information amount can also describe surprise. An event of probability *p* carri
 | Unit or prefix | Meaning | Example |
 |---|---|---|
 | B and bit | Bytes and bits are different units | 16 B = 128 bits |
-| k, M, G | Decimal powers 10³, 10⁶, 10⁹ | 1 MB = 1,000,000 B in decimal notation |
-| Ki, Mi, Gi | Binary powers 2¹⁰, 2²⁰, 2³⁰ | 1 MiB = 1,048,576 B |
-| ms, µs, ns | 10⁻³, 10⁻⁶, 10⁻⁹ seconds | 2 µs = 2,000 ns |
+| k, M, G, T, P | Decimal powers 10³, 10⁶, 10⁹, 10¹², 10¹⁵ | 1 MB = 1,000,000 B in decimal notation |
+| Ki, Mi, Gi, Ti, Pi | Binary powers 2¹⁰, 2²⁰, 2³⁰, 2⁴⁰, 2⁵⁰ | 1 MiB = 1,048,576 B |
+| ms, µs, ns, ps | 10⁻³, 10⁻⁶, 10⁻⁹, 10⁻¹² seconds | 2 µs = 2,000 ns |
 
 Older descriptions and exam problems sometimes use KB or MB for binary quantities. Always follow an explicit definition in the question. Never silently mix bits/s with bytes/s or milliseconds with seconds.
 

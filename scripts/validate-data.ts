@@ -4,6 +4,7 @@ import { digest, webpDimensions } from './question-importer';
 import { concepts, explanationMap, publishedQuestions, questionsForConcept } from '../src/lib/catalog';
 import { hardwareLessons, lessonPath } from '../src/lib/lessons';
 import sourceEvidence from '../docs/development/evidence/hardware-printed-pages.json';
+import { validateFigures } from './validate-figures';
 
 const root = path.resolve('.');
 const questions = await publishedQuestions();
@@ -50,3 +51,4 @@ for (const lesson of hardwareLessons) {
 const linkedIds = new Set(concepts.flatMap((concept) => concept.questionIds));
 if (explanationMap.size !== linkedIds.size) throw new Error('Unassociated or duplicate explanations');
 console.log(`Validated ${questions.length} published questions, ${imageNames.length} matching image hashes, ${hardwareLessons.length} lessons, and ${concepts.length} concepts linking ${linkedIds.size} distinct reviewed questions.`);
+await validateFigures();

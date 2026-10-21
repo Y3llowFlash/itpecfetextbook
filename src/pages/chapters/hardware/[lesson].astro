@@ -4,6 +4,7 @@ import SiteLayout from '../../../layouts/SiteLayout.astro';
 import SectionActions from '../../../components/SectionActions';
 import { concepts, publishedQuestions, questionsForConcept } from '../../../lib/catalog';
 import { annotateLesson, editionLabel, hardwareLessons, lessonPath, pageLabel } from '../../../lib/lessons';
+import { integrateFigures } from '../../../lib/figures';
 export function getStaticPaths() { return hardwareLessons.map((lesson) => ({ params: { lesson: lesson.slug }, props: { lesson } })); }
 const { lesson } = Astro.props;
 const modules = import.meta.glob<MarkdownInstance<Record<string, unknown>>>('../../../content/hardware/*.md', { eager: true });
@@ -13,7 +14,9 @@ const bank = await publishedQuestions();
 const counts = new Map(concepts.map((concept) => [concept.id, questionsForConcept(concept, bank).length]));
 const links = concepts.filter((concept) => concept.sectionId === lesson.id).map((concept) => ({ id: concept.id, title: concept.title, count: counts.get(concept.id)! }));
 const count = new Set(concepts.filter((concept) => concept.sectionId === lesson.id).flatMap((concept) => concept.questionIds)).size;
-const html = annotateLesson(await content.compiledContent(), lesson, counts);
+const artworkModules = import.meta.glob<string>('../../../assets/hardware/*.svg', { query: '?raw', import: 'default', eager: true });
+const artwork = Object.fromEntries(Object.entries(artworkModules).map(([key, value]) => [key.split('/').at(-1)!, value]));
+const html = integrateFigures(annotateLesson(await content.compiledContent(), lesson, counts), lesson.slug, artwork);
 const index = hardwareLessons.findIndex((entry) => entry.id === lesson.id);
 const previous = index > 0 && index < 5 ? hardwareLessons[index - 1] : null;
 const next = index < 4 ? hardwareLessons[index + 1] : null;

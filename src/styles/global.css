@@ -285,3 +285,10 @@ main:focus { outline: none; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+
+.technical-figure { margin: var(--space-xl) 0; padding: var(--space-md); border: 1px solid var(--color-rule); border-radius: 5px; background: var(--color-paper-2); }
+.technical-figure > svg { display: block; width: 100%; max-width: 400px; height: auto; margin-inline: auto; overflow: visible; }
+.technical-figure figcaption { font-family: var(--font-body); font-size: 0.86rem; line-height: 1.65; margin-top: var(--space-md); color: var(--color-muted); }
+.technical-figure figcaption strong { color: var(--color-ink); }
+.technical-figure figcaption .source-badge { display: block; margin-top: var(--space-sm); font-size: 0.74rem; }
+@media (max-width: 24rem) { .technical-figure { padding: var(--space-sm); } }
