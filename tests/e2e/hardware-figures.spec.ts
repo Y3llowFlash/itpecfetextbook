@@ -1,11 +1,13 @@
 import { test, expect } from '@playwright/test';
 import release from '../../src/content/hardware-source-release.json' with { type: 'json' };
+import crops from '../../src/content/hardware-spatial-crops.json' with { type: 'json' };
 
 for(const lesson of release.lessons.slice(0,5)){
   test(`${lesson.slug}: source visuals, readable scale, labels and mobile bounds`,async({page},info)=>{
     await page.setViewportSize({width:320,height:900});await page.goto(lesson.path);
     expect(await page.locator('.source-book svg').count()).toBe(0);
-    expect(await page.locator('.source-book figure').count()).toBe(lesson.pages.flatMap(p=>p.blocks).filter(b=>['figure','formula','table','source-visual'].includes(b.kind)).length);
+    const regions=crops.regions.filter(r=>r.path===lesson.path),covered=new Set(regions.flatMap(r=>r.sourceBlockIds));
+    expect(await page.locator('.source-book figure').count()).toBe(lesson.pages.flatMap(p=>p.blocks).filter(b=>['figure','formula','table','source-visual'].includes(b.kind)&&!covered.has(b.id)).length+regions.length);
     const images=page.locator('.source-book .source-visual-scroll img');
     for(const index of [...new Set([0,Math.floor(await images.count()/2),(await images.count())-1])]){
       const img=images.nth(index);await img.scrollIntoViewIfNeeded();

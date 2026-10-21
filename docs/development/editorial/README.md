@@ -1,5 +1,7 @@
 # Local source edition workflow
 
+**Crop-first correction layer:** the [Chapter 1 spatial fidelity report](../CHAPTER_1_CROP_FIRST_REVIEW.md) documents the reviewed whole-box crops, source coverage, local comparison gallery and reproduction commands. Prefer complete original-region crops for spatial examples; keep surrounding prose as native HTML. Run `npm.cmd run editorial:spatial -- build`, review `.local/crop-first/gallery.html`, then `verify` and `publish`. The immutable source release remains the input; `src/lib/source-spatial.ts` applies the reviewed repairs during static generation.
+
 This corrects the earlier summary-first architecture. Source characters, source terminology, original illustrations and original sequence are conversion inputs; existing study-guide prose and replacement SVGs are not. Only Chapter 1 is in scope. The owner has approved publication of the source edition, which now replaces the summarized public lessons.
 
 ## Reproduce and open

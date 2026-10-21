@@ -27,6 +27,11 @@ main{padding-top:1.5rem}.book-chapter-heading{margin:0 0 2rem}.book-chapter-head
 .source-book h3{font:600 1.1rem/1.4 var(--font-body);margin:2rem 0 1rem}.source-book h4{font:600 1rem/1.4 var(--font-body);margin:1.6rem 0 1rem}
 .source-book figure{background:transparent;border:0;padding:0;margin:1.8rem 0}.source-book figcaption{font-size:.75rem;margin-top:.6rem}
 .source-book .source-table th,.source-book .source-table td{padding:.65rem .8rem}.source-book .source-table{padding-bottom:.3rem}
+.source-book .source-crop-scroll{max-width:100%;overflow:auto;overscroll-behavior-x:contain;background:white}
+.source-book .source-crop-scroll>a{display:block;width:min(100%,var(--crop-width));min-width:min(var(--crop-width),560px)}
+.source-book .source-crop-scroll img{display:block;width:100%;max-width:none;height:auto}
+.source-book .source-crop-anchor{display:block;height:0;overflow:hidden}
+.source-book .source-crop figcaption{display:flex;gap:.3em;align-items:baseline}
 .source-book [data-source-kind="heading"]{scroll-margin-top:145px}.source-book [data-source-kind="heading"]:focus{outline-offset:6px}
 .section-actions{padding-top:1.5rem;margin-top:2rem}.section-actions h2{font:600 1rem var(--font-body);letter-spacing:0;margin-bottom:1rem}.section-actions .quiet-note:empty{display:none}
 .progress-dashboard h1,.practice-index h1{font-size:clamp(2rem,4vw,3rem);margin-bottom:1.25rem;max-width:none}.practice-index{max-width:730px;margin:auto}.practice-index h2{font:600 1.2rem/1.5 var(--font-body);letter-spacing:0;margin:2rem 0 .75rem}

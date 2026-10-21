@@ -22,6 +22,7 @@
     "editorial:validate": "python scripts/editorial_convert.py validate",
     "editorial:preview": "node scripts/editorial-server.mjs",
     "editorial:release": "python scripts/publish-source.py",
+    "editorial:spatial": "python scripts/spatial_crops.py",
     "test:editorial": "node scripts/test-editorial.mjs"
   },
   "dependencies": {

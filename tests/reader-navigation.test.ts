@@ -8,6 +8,7 @@ import {studyContext} from '../src/lib/study-context';
 import {publishedQuestions} from '../src/lib/catalog';
 import {presentSourceHTML} from '../src/lib/reader-presentation';
 import proseRepairs from '../src/content/hardware-prose-repairs.json';
+import crops from '../src/content/hardware-spatial-crops.json';
 import {canonicalReadingPosition,CPU_PATH,CACHE_HEADING} from '../src/lib/reading-routes';
 const {JSDOM}=createRequire(import.meta.url)('jsdom') as {JSDOM:new(html:string)=>{window:{document:Document;close():void}}};
 describe('original source navigation',()=>{
@@ -22,13 +23,15 @@ describe('original source navigation',()=>{
    if(node.depth>1)expect(contents.some(parent=>parent.number===node.number.split('-').slice(0,-1).join('-'))).toBe(true);
   }
  });
- it('changes only heading presentation and generated reference badges, preserving all source words and image paths',()=>{
+ it('preserves all source anchors, native words outside reviewed crops and untouched image paths',()=>{
+  const covered=new Set(crops.regions.flatMap(r=>r.sourceBlockIds));
   for(const lesson of release.lessons.slice(0,5))for(const chapterStart of [true,false]){
    const source=readFileSync(`src/content/source-hardware/${lesson.slug}.html`,'utf8');
    const before=new JSDOM(source),after=new JSDOM(presentSourceHTML(source,chapterStart));
    const blocks=(doc:Document)=>[...doc.querySelectorAll('[data-source-block]')].filter(el=>['heading','paragraph','list-item'].includes(el.getAttribute('data-source-kind')!)).map(el=>({id:el.id,text:el.textContent}));
-   expect(blocks(after.window.document)).toEqual(blocks(before.window.document));
-   expect([...after.window.document.images].map(img=>img.src)).toEqual([...before.window.document.images].map(img=>img.src));
+   expect(blocks(after.window.document)).toEqual(blocks(before.window.document).map(b=>covered.has(b.id)?{...b,text:''}:b));
+   const untouched=[...before.window.document.images].filter(img=>!covered.has(img.closest('[data-source-block]')!.id)).map(img=>img.src);
+   expect([...after.window.document.images].filter(img=>!img.closest('[data-spatial-crop]')).map(img=>img.src)).toEqual(untouched);
    expect(after.window.document.querySelector('.source-badge')?.textContent).toMatch(/^p\./);
    before.window.close();after.window.close();
   }

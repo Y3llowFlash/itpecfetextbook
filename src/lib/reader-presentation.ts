@@ -1,4 +1,5 @@
 import proseRepairs from '../content/hardware-prose-repairs.json';
+import {repairSpatialContent} from './source-spatial';
 
 /** Restore reviewed source paragraphs while retaining every original word anchor. */
 export function repairSourceParagraphs(html:string){
@@ -18,9 +19,10 @@ export function repairSourceParagraphs(html:string){
  return html;
 }
 
-/** Presentation only: source words, block IDs and asset paths stay exact. */
+/** Reviewed source presentation; original IDs also survive spatial crop repairs. */
 export function presentSourceHTML(html:string,chapterStart=false){
   html=repairSourceParagraphs(html);
+  html=repairSpatialContent(html);
   html=html.replace(/(<p class="source-badge"[^>]*>)Original textbook · /g,'$1')
     .replace(/aria-label="Original textbook · /g,'aria-label="')
     .replace(/(<figcaption>)Original textbook · /g,'$1');

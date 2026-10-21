@@ -1,0 +1,1223 @@
+{
+  "schemaVersion": 1,
+  "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+  "coordinateSystem": "PDF points, top-left origin",
+  "policy": "Complete original spatial units; no full-page reader screenshots, redraws or AI replacements. Surrounding prose stays selectable HTML.",
+  "regions": [
+    {
+      "id": "spatial-p18-01",
+      "pdfPage": 23,
+      "printedPage": 18,
+      "bbox": [
+        89.0,
+        384.0,
+        527.0,
+        710.0
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/basic-configuration/",
+      "alt": "Main and auxiliary memory: complete persistence comparison box with data-flow arrows",
+      "description": "Main and auxiliary memory: complete persistence comparison box with data-flow arrows"
+    },
+    {
+      "id": "spatial-p20-01",
+      "pdfPage": 25,
+      "printedPage": 20,
+      "bbox": [
+        89.0,
+        337.0,
+        426.0,
+        381.0
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Two electrical states: current flowing or not, and high or low voltage, connected by two-way arrows",
+      "description": "Two electrical states: current flowing or not, and high or low voltage, connected by two-way arrows"
+    },
+    {
+      "id": "spatial-p21-01",
+      "pdfPage": 26,
+      "printedPage": 21,
+      "bbox": [
+        77.22,
+        499.92,
+        528.24,
+        603.72
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Information amount: n bits, one byte, and a 16-bit word, with the original powers and bit patterns",
+      "description": "Information amount: n bits, one byte, and a 16-bit word, with the original powers and bit patterns"
+    },
+    {
+      "id": "spatial-p22-01",
+      "pdfPage": 27,
+      "printedPage": 22,
+      "bbox": [
+        68.0,
+        67.0,
+        527.0,
+        264.0
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Information theory: occurrence probability and information amount in the original complete callout",
+      "description": "Information theory: occurrence probability and information amount in the original complete callout"
+    },
+    {
+      "id": "spatial-p22-02",
+      "pdfPage": 27,
+      "printedPage": 22,
+      "bbox": [
+        68.92,
+        513.76,
+        417.934,
+        655.848
+      ],
+      "kind": "table",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Large-number prefixes: kilo, mega, giga, tera and peta, with decimal and binary powers",
+      "description": "Large-number prefixes: kilo, mega, giga, tera and peta, with decimal and binary powers"
+    },
+    {
+      "id": "spatial-p23-01",
+      "pdfPage": 28,
+      "printedPage": 23,
+      "bbox": [
+        68.92,
+        72.46,
+        324.373,
+        195.9
+      ],
+      "kind": "table",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Small-number prefixes: milli, micro, nano and pico, with their decimal powers",
+      "description": "Small-number prefixes: milli, micro, nano and pico, with their decimal powers"
+    },
+    {
+      "id": "spatial-p23-02",
+      "pdfPage": 28,
+      "printedPage": 23,
+      "bbox": [
+        77.22,
+        507.6,
+        528.24,
+        561.6
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Decimal place-value expansion of 362.9, including the original base notation and explanation",
+      "description": "Decimal place-value expansion of 362.9, including the original base notation and explanation"
+    },
+    {
+      "id": "spatial-p24-01",
+      "pdfPage": 29,
+      "printedPage": 24,
+      "bbox": [
+        77.22,
+        94.92,
+        528.24,
+        148.92
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Binary place-value expansion of 101.1 into decimal 5.5",
+      "description": "Binary place-value expansion of 101.1 into decimal 5.5"
+    },
+    {
+      "id": "spatial-p24-02",
+      "pdfPage": 29,
+      "printedPage": 24,
+      "bbox": [
+        77.22,
+        378.42,
+        528.24,
+        432.42
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Octal place-value expansion of 317.5 into decimal 207.625",
+      "description": "Octal place-value expansion of 317.5 into decimal 207.625"
+    },
+    {
+      "id": "spatial-p24-03",
+      "pdfPage": 29,
+      "printedPage": 24,
+      "bbox": [
+        77.22,
+        616.92,
+        528.24,
+        670.92
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Hexadecimal place-value expansion of 1A6.E into decimal 422.875",
+      "description": "Hexadecimal place-value expansion of 1A6.E into decimal 422.875"
+    },
+    {
+      "id": "spatial-p25-01",
+      "pdfPage": 30,
+      "printedPage": 25,
+      "bbox": [
+        87.24,
+        385.92,
+        528.24,
+        550.02
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Binary-to-octal grouping: aligned groups of three bits, arrows, padding zeros and the resulting octal digits",
+      "description": "Binary-to-octal grouping: aligned groups of three bits, arrows, padding zeros and the resulting octal digits"
+    },
+    {
+      "id": "spatial-p25-02",
+      "pdfPage": 30,
+      "printedPage": 25,
+      "bbox": [
+        87.24,
+        607.02,
+        528.24,
+        769.02
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Binary-to-hexadecimal grouping: aligned groups of four bits, arrows, padding zeros and the hexadecimal result",
+      "description": "Binary-to-hexadecimal grouping: aligned groups of four bits, arrows, padding zeros and the hexadecimal result"
+    },
+    {
+      "id": "spatial-p26-01",
+      "pdfPage": 31,
+      "printedPage": 26,
+      "bbox": [
+        107.34,
+        346.92,
+        528.24,
+        481.86
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Worked binary-to-decimal conversion of 1001101.101, with every digit aligned to its power and contribution",
+      "description": "Worked binary-to-decimal conversion of 1001101.101, with every digit aligned to its power and contribution"
+    },
+    {
+      "id": "spatial-p27-01",
+      "pdfPage": 32,
+      "printedPage": 27,
+      "bbox": [
+        107.34,
+        67.92,
+        528.24,
+        267.48
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Worked decimal-to-binary conversion of 77.625, including both division and multiplication columns and reading-order arrows",
+      "description": "Worked decimal-to-binary conversion of 77.625, including both division and multiplication columns and reading-order arrows"
+    },
+    {
+      "id": "spatial-p27-02",
+      "pdfPage": 32,
+      "printedPage": 27,
+      "bbox": [
+        87.24,
+        324.48,
+        528.24,
+        504.48
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Original radix-conversion procedures for integer and fractional parts, kept together in their complete box",
+      "description": "Original radix-conversion procedures for integer and fractional parts, kept together in their complete box"
+    },
+    {
+      "id": "spatial-p27-03",
+      "pdfPage": 32,
+      "printedPage": 27,
+      "bbox": [
+        87.24,
+        561.48,
+        528.24,
+        696.48
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Worked decimal-to-octal conversion of 67.6875, with division and multiplication columns and reading-order arrows",
+      "description": "Worked decimal-to-octal conversion of 67.6875, with division and multiplication columns and reading-order arrows"
+    },
+    {
+      "id": "spatial-p28-01",
+      "pdfPage": 33,
+      "printedPage": 28,
+      "bbox": [
+        87.24,
+        67.92,
+        528.24,
+        139.92
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Decimal, binary and octal representations of 67.6875 with the aligned three-bit groups",
+      "description": "Decimal, binary and octal representations of 67.6875 with the aligned three-bit groups"
+    },
+    {
+      "id": "spatial-p28-02",
+      "pdfPage": 33,
+      "printedPage": 28,
+      "bbox": [
+        68.0,
+        152.16,
+        527.0,
+        415.0
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Recurring binary fractions: complete explanation and repeated multiplication loop for decimal 0.2",
+      "description": "Recurring binary fractions: complete explanation and repeated multiplication loop for decimal 0.2"
+    },
+    {
+      "id": "spatial-p30-01",
+      "pdfPage": 35,
+      "printedPage": 30,
+      "bbox": [
+        107.34,
+        67.92,
+        528.24,
+        184.26
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "JIS character-code lookup for J, I and S: character, table position, binary code and hexadecimal code in aligned columns",
+      "description": "JIS character-code lookup for J, I and S: character, table position, binary code and hexadecimal code in aligned columns"
+    },
+    {
+      "id": "spatial-p32-01",
+      "pdfPage": 37,
+      "printedPage": 32,
+      "bbox": [
+        88.74,
+        67.92,
+        506.52,
+        180.78
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "BCD representation of decimal 2741: digits 2, 7, 4 and 1 align above four downward arrows and the groups 0010, 0111, 0100 and 0001. Complete original example box.",
+      "description": "BCD representation of decimal 2741: digits 2, 7, 4 and 1 align above four downward arrows and the groups 0010, 0111, 0100 and 0001. Complete original example box."
+    },
+    {
+      "id": "spatial-p32-02",
+      "pdfPage": 37,
+      "printedPage": 32,
+      "bbox": [
+        82.74,
+        399.78,
+        512.52,
+        558.42
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Zoned-decimal representation of positive 672 and negative 1905, including all zone bits, sign bits, digit labels and the example explanation",
+      "description": "Zoned-decimal representation of positive 672 and negative 1905, including all zone bits, sign bits, digit labels and the example explanation"
+    },
+    {
+      "id": "spatial-p33-01",
+      "pdfPage": 38,
+      "printedPage": 33,
+      "bbox": [
+        82.68,
+        67.92,
+        512.58,
+        212.76
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Packed-decimal representation of positive 672 and negative 1905, including digit groups, sign nibbles and the example explanation",
+      "description": "Packed-decimal representation of positive 672 and negative 1905, including digit groups, sign nibbles and the example explanation"
+    },
+    {
+      "id": "spatial-p34-01",
+      "pdfPage": 39,
+      "printedPage": 34,
+      "bbox": [
+        120.0,
+        144.0,
+        486.0,
+        195.0
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Fixed-point storage positions and the aligned radix-point indicator",
+      "description": "Fixed-point storage positions and the aligned radix-point indicator"
+    },
+    {
+      "id": "spatial-p34-02",
+      "pdfPage": 39,
+      "printedPage": 34,
+      "bbox": [
+        107.34,
+        250.92,
+        528.24,
+        362.52
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Representation of decimal 89 as an eight-bit fixed-point value: full example and register layout",
+      "description": "Representation of decimal 89 as an eight-bit fixed-point value: full example and register layout"
+    },
+    {
+      "id": "spatial-p34-03",
+      "pdfPage": 39,
+      "printedPage": 34,
+      "bbox": [
+        107.34,
+        509.52,
+        528.24,
+        667.32
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Signed-magnitude representation of positive and negative 89, including the highlighted sign bits and both aligned register rows",
+      "description": "Signed-magnitude representation of positive and negative 89, including the highlighted sign bits and both aligned register rows"
+    },
+    {
+      "id": "spatial-p35-01",
+      "pdfPage": 40,
+      "printedPage": 35,
+      "bbox": [
+        69.0,
+        68.0,
+        527.0,
+        501.0
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Complements: complete callout with the decimal 614 and binary 01101101 subtraction examples, reference values and results",
+      "description": "Complements: complete callout with the decimal 614 and binary 01101101 subtraction examples, reference values and results"
+    },
+    {
+      "id": "spatial-p35-02",
+      "pdfPage": 40,
+      "printedPage": 35,
+      "bbox": [
+        107.34,
+        512.7,
+        528.24,
+        705.54
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Twos-complement representation of positive and negative 89, including the subtraction and both signed register layouts",
+      "description": "Twos-complement representation of positive and negative 89, including the subtraction and both signed register layouts"
+    },
+    {
+      "id": "spatial-p36-01",
+      "pdfPage": 41,
+      "printedPage": 36,
+      "bbox": [
+        117.42,
+        166.92,
+        528.24,
+        517.98
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Worked subtraction of 10 from 15 using twos complement: both stages, carries, register rows and discarded carry annotation",
+      "description": "Worked subtraction of 10 from 15 using twos complement: both stages, carries, register rows and discarded carry annotation"
+    },
+    {
+      "id": "spatial-p37-01",
+      "pdfPage": 42,
+      "printedPage": 37,
+      "bbox": [
+        124.0,
+        64.0,
+        436.0,
+        251.0
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Eight-bit signed-magnitude and twos-complement ranges compared side by side, preserving positive and negative zero and both negative limits",
+      "description": "Eight-bit signed-magnitude and twos-complement ranges compared side by side, preserving positive and negative zero and both negative limits"
+    },
+    {
+      "id": "spatial-p37-02",
+      "pdfPage": 42,
+      "printedPage": 37,
+      "bbox": [
+        69.0,
+        256.343,
+        527.0,
+        324.0
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Range of signed values representable by n bits in twos-complement notation, with the original superscripts",
+      "description": "Range of signed values representable by n bits in twos-complement notation, with the original superscripts"
+    },
+    {
+      "id": "spatial-p37-03",
+      "pdfPage": 42,
+      "printedPage": 37,
+      "bbox": [
+        184.0,
+        627.0,
+        410.0,
+        656.0
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Thirteen storage positions for the sign and decimal digits of 456000000000",
+      "description": "Thirteen storage positions for the sign and decimal digits of 456000000000"
+    },
+    {
+      "id": "spatial-p37-04",
+      "pdfPage": 42,
+      "printedPage": 37,
+      "bbox": [
+        171.0,
+        719.0,
+        333.0,
+        773.0
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Scientific-notation conversion of 456000000000 to 0.456 times ten to the twelfth power",
+      "description": "Scientific-notation conversion of 456000000000 to 0.456 times ten to the twelfth power"
+    },
+    {
+      "id": "spatial-p38-01",
+      "pdfPage": 43,
+      "printedPage": 38,
+      "bbox": [
+        89.0,
+        65.0,
+        516.0,
+        204.0
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Floating-point sign, fraction and exponent aligned with their stored decimal digits and explanatory labels",
+      "description": "Floating-point sign, fraction and exponent aligned with their stored decimal digits and explanatory labels"
+    },
+    {
+      "id": "spatial-p38-02",
+      "pdfPage": 43,
+      "printedPage": 38,
+      "bbox": [
+        68.0,
+        331.0,
+        527.0,
+        389.0
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Original basic floating-point formula, preserving sign, fraction, radix and superscript exponent",
+      "description": "Original basic floating-point formula, preserving sign, fraction, radix and superscript exponent"
+    },
+    {
+      "id": "spatial-p38-03",
+      "pdfPage": 43,
+      "printedPage": 38,
+      "bbox": [
+        67.0,
+        510.0,
+        446.0,
+        594.0
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Single-precision 32-bit floating-point layout: sign 1 bit, exponent 8 bits and fraction 23 bits, with the complete source heading",
+      "description": "Single-precision 32-bit floating-point layout: sign 1 bit, exponent 8 bits and fraction 23 bits, with the complete source heading"
+    },
+    {
+      "id": "spatial-p38-04",
+      "pdfPage": 43,
+      "printedPage": 38,
+      "bbox": [
+        67.0,
+        602.0,
+        446.0,
+        686.0
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Double-precision 64-bit floating-point layout: sign 1 bit, exponent 11 bits and fraction 52 bits, with the complete source heading",
+      "description": "Double-precision 64-bit floating-point layout: sign 1 bit, exponent 11 bits and fraction 52 bits, with the complete source heading"
+    },
+    {
+      "id": "spatial-p39-01",
+      "pdfPage": 44,
+      "printedPage": 39,
+      "bbox": [
+        82.092,
+        329.04,
+        520.548,
+        427.18
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Exponent bias comparison table: Excess 127 for IEEE 754 and Excess 64 for IBM, including all grouped headers",
+      "description": "Exponent bias comparison table: Excess 127 for IEEE 754 and Excess 64 for IBM, including all grouped headers"
+    },
+    {
+      "id": "spatial-p39-02",
+      "pdfPage": 44,
+      "printedPage": 39,
+      "bbox": [
+        68.0,
+        565.62,
+        527.0,
+        748.0
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Normalization example: first source-page portion, with the seven stored fraction digits and its complete explanation",
+      "description": "Normalization example: first source-page portion, with the seven stored fraction digits and its complete explanation"
+    },
+    {
+      "id": "spatial-p40-01",
+      "pdfPage": 45,
+      "printedPage": 40,
+      "bbox": [
+        69.0,
+        67.0,
+        527.0,
+        238.0
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Normalization example: continuation on the next source page, with normalized form and aligned stored digits",
+      "description": "Normalization example: continuation on the next source page, with normalized form and aligned stored digits"
+    },
+    {
+      "id": "spatial-p40-02",
+      "pdfPage": 45,
+      "printedPage": 40,
+      "bbox": [
+        107.34,
+        249.6,
+        528.24,
+        700.62
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Complete worked IEEE 754 single-precision encoding of decimal 1234.625: conversion, normalization, biased exponent and final 32-bit layout",
+      "description": "Complete worked IEEE 754 single-precision encoding of decimal 1234.625: conversion, normalization, biased exponent and final 32-bit layout"
+    },
+    {
+      "id": "spatial-p41-01",
+      "pdfPage": 46,
+      "printedPage": 41,
+      "bbox": [
+        97.32,
+        636.9,
+        528.24,
+        753.9
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Loss of trailing digits: complete floating-point addition with aligned values, underlining and the ignored-value annotation",
+      "description": "Loss of trailing digits: complete floating-point addition with aligned values, underlining and the ignored-value annotation"
+    },
+    {
+      "id": "spatial-p42-01",
+      "pdfPage": 47,
+      "printedPage": 42,
+      "bbox": [
+        97.32,
+        238.92,
+        528.24,
+        369.36
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Cancellation of significant digits: complete binary subtraction example, aligned operands and unreliable-digit annotation",
+      "description": "Cancellation of significant digits: complete binary subtraction example, aligned operands and unreliable-digit annotation"
+    },
+    {
+      "id": "spatial-p42-02",
+      "pdfPage": 47,
+      "printedPage": 42,
+      "bbox": [
+        69.42,
+        536.0,
+        536.0,
+        629.0
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Overflow and underflow: minimum and maximum values, representable range, baseline and directional labels together",
+      "description": "Overflow and underflow: minimum and maximum values, representable range, baseline and directional labels together"
+    },
+    {
+      "id": "spatial-p42-03",
+      "pdfPage": 47,
+      "printedPage": 42,
+      "bbox": [
+        130.92,
+        739.86,
+        528.24,
+        762.66
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Absolute error: the complete original boxed formula with absolute-value bars",
+      "description": "Absolute error: the complete original boxed formula with absolute-value bars"
+    },
+    {
+      "id": "spatial-p43-01",
+      "pdfPage": 48,
+      "printedPage": 43,
+      "bbox": [
+        130.92,
+        130.92,
+        528.24,
+        179.82
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Relative error: the complete original boxed fraction, including numerator, denominator and absolute-value bars",
+      "description": "Relative error: the complete original boxed fraction, including numerator, denominator and absolute-value bars"
+    },
+    {
+      "id": "spatial-p43-02",
+      "pdfPage": 48,
+      "printedPage": 43,
+      "bbox": [
+        97.32,
+        503.16,
+        528.24,
+        671.16
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Arithmetic left shift by two bits: complete example with source and result registers, arrows, discarded bits and inserted zeros",
+      "description": "Arithmetic left shift by two bits: complete example with source and result registers, arrows, discarded bits and inserted zeros"
+    },
+    {
+      "id": "spatial-p44-01",
+      "pdfPage": 49,
+      "printedPage": 44,
+      "bbox": [
+        68.0,
+        95.16,
+        527.0,
+        200.0
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Computation rules of arithmetic shifts, including powers of two and the complete original callout",
+      "description": "Computation rules of arithmetic shifts, including powers of two and the complete original callout"
+    },
+    {
+      "id": "spatial-p44-02",
+      "pdfPage": 49,
+      "printedPage": 44,
+      "bbox": [
+        69.0,
+        292.02,
+        527.0,
+        385.0
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Logical-shift rules: complete original callout",
+      "description": "Logical-shift rules: complete original callout"
+    },
+    {
+      "id": "spatial-p44-03",
+      "pdfPage": 49,
+      "printedPage": 44,
+      "bbox": [
+        97.32,
+        394.14,
+        528.24,
+        722.64
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Comparison of arithmetic and logical right shifts by two bits: both register diagrams, arrows, sign extension, inserted zeros and results",
+      "description": "Comparison of arithmetic and logical right shifts by two bits: both register diagrams, arrows, sign extension, inserted zeros and results"
+    },
+    {
+      "id": "spatial-p45-01",
+      "pdfPage": 50,
+      "printedPage": 45,
+      "bbox": [
+        97.32,
+        112.92,
+        528.24,
+        243.36
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/data-representation/",
+      "alt": "Circular right shift by two bits: complete example box with the returning-bit arrows and explanation",
+      "description": "Circular right shift by two bits: complete example box with the returning-bit arrows and explanation"
+    },
+    {
+      "id": "spatial-p61-01",
+      "pdfPage": 66,
+      "printedPage": 61,
+      "bbox": [
+        90.446,
+        633.9,
+        504.934,
+        751.114
+      ],
+      "kind": "table",
+      "path": "/chapters/hardware/cpu-and-main-memory/",
+      "alt": "Logic-operation truth table: complete grouped input headers and AND, OR, NOT and XOR results",
+      "description": "Logic-operation truth table: complete grouped input headers and AND, OR, NOT and XOR results"
+    },
+    {
+      "id": "spatial-p65-01",
+      "pdfPage": 70,
+      "printedPage": 65,
+      "bbox": [
+        77.0,
+        71.46,
+        527.0,
+        616.0
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/cpu-and-main-memory/",
+      "alt": "Main logical laws: complete aligned expressions including associative, distributive, absorption and De Morgans laws",
+      "description": "Main logical laws: complete aligned expressions including associative, distributive, absorption and De Morgans laws"
+    },
+    {
+      "id": "spatial-p65-02",
+      "pdfPage": 70,
+      "printedPage": 65,
+      "bbox": [
+        77.22,
+        627.42,
+        528.24,
+        760.92
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/cpu-and-main-memory/",
+      "alt": "Logical design of an XOR circuit: first source-page portion of the derivation and explanation",
+      "description": "Logical design of an XOR circuit: first source-page portion of the derivation and explanation"
+    },
+    {
+      "id": "spatial-p66-01",
+      "pdfPage": 71,
+      "printedPage": 66,
+      "bbox": [
+        78.36,
+        67.92,
+        528.24,
+        259.2
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/cpu-and-main-memory/",
+      "alt": "Logical design of an XOR circuit: continuation with the original expression, circuit, connectors and output labels",
+      "description": "Logical design of an XOR circuit: continuation with the original expression, circuit, connectors and output labels"
+    },
+    {
+      "id": "spatial-p66-02",
+      "pdfPage": 71,
+      "printedPage": 66,
+      "bbox": [
+        77.22,
+        316.2,
+        528.24,
+        580.92
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/cpu-and-main-memory/",
+      "alt": "Alternative XOR circuit: complete original derivation, circuit diagram, crossover connectors and labels in one example box",
+      "description": "Alternative XOR circuit: complete original derivation, circuit diagram, crossover connectors and labels in one example box"
+    },
+    {
+      "id": "spatial-p67-01",
+      "pdfPage": 72,
+      "printedPage": 67,
+      "bbox": [
+        153.0,
+        146.0,
+        427.0,
+        214.0
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/cpu-and-main-memory/",
+      "alt": "Four aligned one-bit binary additions, including the X and Y labels, plus signs, horizontal rules and carry digits",
+      "description": "Four aligned one-bit binary additions, including the X and Y labels, plus signs, horizontal rules and carry digits"
+    },
+    {
+      "id": "spatial-p67-02",
+      "pdfPage": 72,
+      "printedPage": 67,
+      "bbox": [
+        96.506,
+        261.46,
+        413.794,
+        401.208
+      ],
+      "kind": "table",
+      "path": "/chapters/hardware/cpu-and-main-memory/",
+      "alt": "Half-adder truth table: complete original grouped input, carry and sum headers and all four rows",
+      "description": "Half-adder truth table: complete original grouped input, carry and sum headers and all four rows"
+    },
+    {
+      "id": "spatial-p68-01",
+      "pdfPage": 73,
+      "printedPage": 68,
+      "bbox": [
+        96.518,
+        72.46,
+        403.042,
+        286.18
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/cpu-and-main-memory/",
+      "alt": "Full-adder truth table: complete original grouped inputs X, Y and carry-in, with all eight carry and sum result rows",
+      "description": "Full-adder truth table: complete original grouped inputs X, Y and carry-in, with all eight carry and sum result rows"
+    },
+    {
+      "id": "spatial-p68-02",
+      "pdfPage": 73,
+      "printedPage": 68,
+      "bbox": [
+        77.22,
+        361.38,
+        528.24,
+        746.88
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/cpu-and-main-memory/",
+      "alt": "Full-adder carry and sum derivation: complete first source-page portion with the aligned terms and original operators",
+      "description": "Full-adder carry and sum derivation: complete first source-page portion with the aligned terms and original operators"
+    },
+    {
+      "id": "spatial-p69-01",
+      "pdfPage": 74,
+      "printedPage": 69,
+      "bbox": [
+        77.64,
+        67.92,
+        525.36,
+        102.42
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/cpu-and-main-memory/",
+      "alt": "Full-adder sum derivation: final expression continued from printed page 68",
+      "description": "Full-adder sum derivation: final expression continued from printed page 68"
+    },
+    {
+      "id": "spatial-p69-02",
+      "pdfPage": 74,
+      "printedPage": 69,
+      "bbox": [
+        77.22,
+        213.42,
+        528.24,
+        442.14
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/cpu-and-main-memory/",
+      "alt": "Dividing a three-bit addition into two two-bit additions: complete explanation, aligned sums, carry combination and arrows",
+      "description": "Dividing a three-bit addition into two two-bit additions: complete explanation, aligned sums, carry combination and arrows"
+    },
+    {
+      "id": "spatial-p71-01",
+      "pdfPage": 76,
+      "printedPage": 71,
+      "bbox": [
+        77.22,
+        202.92,
+        528.24,
+        429.9
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/cpu-and-main-memory/",
+      "alt": "Cache average-access-time example: complete input table, miss probability, weighted formula and original 95-nanosecond result",
+      "description": "Cache average-access-time example: complete input table, miss probability, weighted formula and original 95-nanosecond result"
+    },
+    {
+      "id": "spatial-p80-01",
+      "pdfPage": 86,
+      "printedPage": 80,
+      "bbox": [
+        77.22,
+        629.88,
+        528.24,
+        756.9
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/auxiliary-storage/",
+      "alt": "Disk storage-capacity example: complete first source-page portion with the specification table and introductory explanation",
+      "description": "Disk storage-capacity example: complete first source-page portion with the specification table and introductory explanation"
+    },
+    {
+      "id": "spatial-p81-01",
+      "pdfPage": 87,
+      "printedPage": 81,
+      "bbox": [
+        76.92,
+        85.92,
+        528.9,
+        354.42
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/auxiliary-storage/",
+      "alt": "Disk storage-capacity example: complete continuation with track, cylinder and drive calculations",
+      "description": "Disk storage-capacity example: complete continuation with track, cylinder and drive calculations"
+    },
+    {
+      "id": "spatial-p81-02",
+      "pdfPage": 87,
+      "printedPage": 81,
+      "bbox": [
+        69.0,
+        561.42,
+        527.0,
+        766.0
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/auxiliary-storage/",
+      "alt": "Variable-length recording: source explanation, records, blocks, inter-block gaps and aligned track layout together",
+      "description": "Variable-length recording: source explanation, records, blocks, inter-block gaps and aligned track layout together"
+    },
+    {
+      "id": "spatial-p82-01",
+      "pdfPage": 88,
+      "printedPage": 82,
+      "bbox": [
+        68.0,
+        67.0,
+        527.0,
+        208.0
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/auxiliary-storage/",
+      "alt": "Sector recording: source continuation with record blocks, sector boundaries and track layout together",
+      "description": "Sector recording: source continuation with record blocks, sector boundaries and track layout together"
+    },
+    {
+      "id": "spatial-p82-02",
+      "pdfPage": 88,
+      "printedPage": 82,
+      "bbox": [
+        77.22,
+        409.68,
+        528.24,
+        770.64
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/auxiliary-storage/",
+      "alt": "Disk recording-area example: complete first source-page portion with the specification table, block and sector calculations",
+      "description": "Disk recording-area example: complete first source-page portion with the specification table, block and sector calculations"
+    },
+    {
+      "id": "spatial-p83-01",
+      "pdfPage": 89,
+      "printedPage": 83,
+      "bbox": [
+        77.64,
+        67.92,
+        528.24,
+        480.42
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/auxiliary-storage/",
+      "alt": "Disk recording-area example: complete continuation through blocks, sectors, tracks and rounded cylinder count",
+      "description": "Disk recording-area example: complete continuation through blocks, sectors, tracks and rounded cylinder count"
+    },
+    {
+      "id": "spatial-p83-02",
+      "pdfPage": 89,
+      "printedPage": 83,
+      "bbox": [
+        87.24,
+        629.88,
+        528.24,
+        763.38
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/auxiliary-storage/",
+      "alt": "Disk reading sequence: seek and rotational search, first source-page portion of the original box",
+      "description": "Disk reading sequence: seek and rotational search, first source-page portion of the original box"
+    },
+    {
+      "id": "spatial-p84-01",
+      "pdfPage": 90,
+      "printedPage": 84,
+      "bbox": [
+        86.04,
+        67.92,
+        528.18,
+        138.42
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/auxiliary-storage/",
+      "alt": "Disk reading sequence: data-transfer explanation, continuation of the original box from printed page 83",
+      "description": "Disk reading sequence: data-transfer explanation, continuation of the original box from printed page 83"
+    },
+    {
+      "id": "spatial-p84-02",
+      "pdfPage": 90,
+      "printedPage": 84,
+      "bbox": [
+        68.0,
+        180.96,
+        527.0,
+        340.0
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/auxiliary-storage/",
+      "alt": "Disk access-time diagram: complete seek, rotational latency, transfer, waiting and total-access intervals",
+      "description": "Disk access-time diagram: complete seek, rotational latency, transfer, waiting and total-access intervals"
+    },
+    {
+      "id": "spatial-p84-03",
+      "pdfPage": 90,
+      "printedPage": 84,
+      "bbox": [
+        69.0,
+        462.24,
+        527.0,
+        541.0
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/auxiliary-storage/",
+      "alt": "Average disk access time: complete original boxed formula",
+      "description": "Average disk access time: complete original boxed formula"
+    },
+    {
+      "id": "spatial-p84-04",
+      "pdfPage": 90,
+      "printedPage": 84,
+      "bbox": [
+        77.22,
+        613.2,
+        528.24,
+        746.7
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/auxiliary-storage/",
+      "alt": "Average seek and rotational-latency explanation: first source-page portion of the original box",
+      "description": "Average seek and rotational-latency explanation: first source-page portion of the original box"
+    },
+    {
+      "id": "spatial-p85-01",
+      "pdfPage": 91,
+      "printedPage": 85,
+      "bbox": [
+        76.26,
+        67.92,
+        528.24,
+        476.04
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/auxiliary-storage/",
+      "alt": "Average rotational latency and data-transfer rate: complete source continuation with both original fractions and explanations",
+      "description": "Average rotational latency and data-transfer rate: complete source continuation with both original fractions and explanations"
+    },
+    {
+      "id": "spatial-p85-02",
+      "pdfPage": 91,
+      "printedPage": 85,
+      "bbox": [
+        77.22,
+        641.04,
+        528.24,
+        749.52
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/auxiliary-storage/",
+      "alt": "Worked disk access-time example: first source-page portion with the 2000-byte request and complete specification table",
+      "description": "Worked disk access-time example: first source-page portion with the 2000-byte request and complete specification table"
+    },
+    {
+      "id": "spatial-p86-01",
+      "pdfPage": 92,
+      "printedPage": 86,
+      "bbox": [
+        76.26,
+        67.92,
+        528.24,
+        498.42
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/auxiliary-storage/",
+      "alt": "Worked disk access-time example: complete continuation with rotation, latency, transfer and total-access-time calculations",
+      "description": "Worked disk access-time example: complete continuation with rotation, latency, transfer and total-access-time calculations"
+    },
+    {
+      "id": "spatial-p94-01",
+      "pdfPage": 100,
+      "printedPage": 94,
+      "bbox": [
+        68.0,
+        205.14,
+        527.0,
+        600.0
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/input-output/",
+      "alt": "One-dimensional barcode and two-dimensional QR-code comparison: full original box with both explanations, code illustrations and captions",
+      "description": "One-dimensional barcode and two-dimensional QR-code comparison: full original box with both explanations, code illustrations and captions"
+    },
+    {
+      "id": "spatial-p98-01",
+      "pdfPage": 104,
+      "printedPage": 98,
+      "bbox": [
+        214.4,
+        89.0,
+        506.32,
+        202.74
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/input-output/",
+      "alt": "Display-resolution standards: complete original caption, VGA, SVGA, XGA and SXGA table",
+      "description": "Display-resolution standards: complete original caption, VGA, SVGA, XGA and SXGA table"
+    },
+    {
+      "id": "spatial-p98-02",
+      "pdfPage": 104,
+      "printedPage": 98,
+      "bbox": [
+        77.22,
+        313.92,
+        528.24,
+        565.92
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/input-output/",
+      "alt": "Worked VRAM-capacity calculation for a 1280 by 1024 RGB display: complete example, explanation and intermediate equations",
+      "description": "Worked VRAM-capacity calculation for a 1280 by 1024 RGB display: complete example, explanation and intermediate equations"
+    },
+    {
+      "id": "spatial-p106-01",
+      "pdfPage": 112,
+      "printedPage": 106,
+      "bbox": [
+        68.0,
+        68.16,
+        527.0,
+        562.0
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/input-output/",
+      "alt": "Star, cascade and daisy-chain connections: full original box with all three explanations, device labels, hubs, connectors and terminator",
+      "description": "Star, cascade and daisy-chain connections: full original box with all three explanations, device labels, hubs, connectors and terminator"
+    },
+    {
+      "id": "spatial-p110-01",
+      "pdfPage": 116,
+      "printedPage": 110,
+      "bbox": [
+        68.0,
+        67.0,
+        527.0,
+        417.0
+      ],
+      "kind": "example",
+      "path": "/chapters/hardware/input-output/",
+      "alt": "Bluetooth standards: full original box with connection limits, speed, range explanation and class-distance table",
+      "description": "Bluetooth standards: full original box with connection limits, speed, range explanation and class-distance table"
+    }
+  ]
+}
