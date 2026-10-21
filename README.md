@@ -1,8 +1,10 @@
 # ITPEC FE Textbook
 
-A free, static textbook with real ITPEC FE question practice. **Chapter 1: Hardware is complete**: five main sections, 19 source subsections, deeper topics, and the retained Memory & cache focus lesson. Thirteen reviewed concepts link 23 published questions with explanations. Guest learning works locally; optional Google accounts back up progress.
+A free, static reading and practice application. The public Chapter 1 lessons are independently authored fallback material, not a complete reproduction of the textbook. A faithful source conversion now has a separate local editorial reader, original crop library and comparison gallery; reproduced material remains unpublished. Thirteen reviewed concepts link 23 published questions with explanations. Guest learning works locally; optional Google accounts back up progress.
 
-Built with **Astro, React and TypeScript**. Output is compatible with static Cloudflare Pages hosting. This repository does not provision or deploy infrastructure.
+Built with **Astro, React and TypeScript**. Cloudflare Pages publishes the validated static `dist/` output from `main`.
+
+The [source conversion report](docs/development/CHAPTER_1_SOURCE_CONVERSION.md) supersedes earlier claims of a completed textbook conversion. Follow the [editorial workflow](docs/development/editorial/README.md) to open or reproduce the local edition.
 
 ## Run locally
 
@@ -125,4 +127,4 @@ Incorrect answers show a relevant free memory-hierarchy lesson from the existing
 
 ## Scope
 
-Chapter 1 Hardware is complete; the other chapters and CET remain deferred. Cloudflare Pages is connected to `main`, using Node 24, `npm run build` and `dist`. A push can deploy automatically, so production validation must pass before pushing. The source/rules/account deployment details and editorial gaps are in the [Chapter 1 report](docs/development/CHAPTER_1_HARDWARE.md). Earlier milestone and investigation reports are historical records.
+Only Chapter 1 has been converted into the local source edition; semantic review and publication authorization remain outstanding. The other chapters and CET remain deferred. Cloudflare Pages is connected to `main`, using Node 24, `npm run build` and `dist`. A push can deploy automatically, so production validation must pass before pushing. Earlier milestone and investigation reports describe the independently authored fallback and are historical records.

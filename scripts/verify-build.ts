@@ -1,9 +1,10 @@
-import { readFile, readdir } from 'node:fs/promises';
+import { readFile, readdir, stat } from 'node:fs/promises';
 import path from 'node:path';
 import { digest } from './question-importer';
 import { hardwareLessons, pageLabel } from '../src/lib/lessons';
 import { concepts } from '../src/lib/catalog';
 import { hardwareFigures, figurePageLabel } from '../src/lib/figures';
+import { assertPublicationBoundary, assertApprovedPublicFile } from './publication-boundary';
 const root = path.resolve('dist');
 const source = await readFile('public/data/questions.json');
 const built = await readFile(path.join(root, 'data/questions.json'));
@@ -29,10 +30,16 @@ for (const concept of concepts) {
   for (const id of concept.questionIds) if (!html.includes(id)) throw new Error(`Missing reviewed practice question ${id}`);
 }
 const publicFiles = await readdir(root, { recursive: true });
+const allowedHtml=new Set(['index.html','404.html','progress/index.html','chapters/hardware/index.html',
+  ...hardwareLessons.map((lesson)=>`chapters/hardware/${lesson.slug}/index.html`),
+  ...concepts.map((concept)=>`practice/${concept.id}/index.html`)]);
 if (publicFiles.some((name) => /\.(?:pdf|env|py|mjs)$/.test(name) || name.includes('hardware-review'))) throw new Error('Source/editorial material leaked into public output');
 // Exact asset allowlist: new teaching figures are inline vectors; the existing
 // published exam images and favicon are the only public image files.
 for (const name of publicFiles) {
+  if((await stat(path.join(root,name))).isDirectory())continue;
+  assertApprovedPublicFile(name,allowedHtml,expected as Set<string>);
+  assertPublicationBoundary(name, /\.(?:html|json|js|css)$/.test(name)?await readFile(path.join(root,name),'utf8'):undefined,allowedHtml);
   if (/\.(?:webp|png|jpe?g|gif|avif|svg)$/i.test(name) && name !== 'favicon.svg' && !(name.startsWith(`questions${path.sep}`) && expected.has(path.basename(name)))) throw new Error(`Unapproved public illustration: ${name}`);
   if (/chapter1-inventory|gallery\.html|originals\.html|(?:^|[\\/])crops(?:[\\/]|$)|suggested-manifest/.test(name)) throw new Error('Editorial source material in public output');
 }

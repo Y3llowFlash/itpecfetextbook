@@ -1,0 +1,1799 @@
+{
+  "schemaVersion": 1,
+  "marker": "ITPEC_LOCAL_SOURCE_EDITION_V1",
+  "editionId": "new-fe-vol1-2015-04",
+  "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+  "publicationAuthorization": "not-established",
+  "physicalPages": 100,
+  "numberedPages": 99,
+  "unnumberedInsertions": 1,
+  "printedRange": [
+    13,
+    111
+  ],
+  "sourceTextLines": 5066,
+  "sourceGlyphs": 156493,
+  "semanticTextGlyphs": 138651,
+  "numberedFigures": 47,
+  "counts": {
+    "regions:figure": 77,
+    "regions:source-vector": 20,
+    "regions:formula": 152,
+    "regions:table": 29,
+    "tableCellAssets": 437,
+    "regions:source-fragment": 24,
+    "originalPdfAnnotations": 407,
+    "blocks:page-furniture": 1350,
+    "blocks:heading": 160,
+    "blocks:paragraph": 681,
+    "blocks:figure": 78,
+    "sourceImageObjects": 1986,
+    "sourceVectorObjects": 4929,
+    "blocks:list-item": 214,
+    "blocks:formula": 91,
+    "blocks:table": 15,
+    "blocks:source-visual": 15
+  },
+  "checks": {
+    "allSourcePagesInOrder": true,
+    "exactSourceCharactersAndFonts": true,
+    "everyGlyphOwnedExactlyOnce": true,
+    "nativeHTMLTextUnchanged": true,
+    "allImageObjectsAccountedFor": true,
+    "completeWordAndImageCropBoundaries": true,
+    "originalPdfAnnotationsRetained": true,
+    "losslessCropsMatchCanonicalPagePixels": true,
+    "freshSourceRenderWithinAntialiasTolerance": true,
+    "allNumberedFiguresPresent": true,
+    "allComparisonPagesPresent": true,
+    "publishedOnlyAnnotations": true
+  },
+  "reviewFlagCounts": {
+    "verify-complete-caption-and-boundary": 63,
+    "automatic-vector-boundary-requires-review": 20,
+    "verify-complete-boundary": 38,
+    "superscript-expression": 23,
+    "semantic-math-transcription-pending": 130,
+    "spatial-expression": 76,
+    "cell-reading-order-requires-review": 26,
+    "automatic-image-boundary-requires-review": 24,
+    "unmapped-special-font-glyph": 31,
+    "unnumbered-editorial-insertion": 1
+  },
+  "renderTolerance": {
+    "maxMeanChannelDifference": 0.1,
+    "maxFractionPixelsOver32": 0.002,
+    "observedMaxMean": 0.0
+  },
+  "unanchoredConcepts": [
+    {
+      "conceptId": "bit-masks",
+      "reason": "No exact reviewed source-phrase anchor selected; no source text invented or changed"
+    },
+    {
+      "conceptId": "three-dimensional-printing",
+      "reason": "No exact reviewed source-phrase anchor selected; no source text invented or changed"
+    }
+  ],
+  "fidelity": "Complete local source preservation, with responsive semantic text and original pixel-preserved complex regions. Paragraph/region classification and manual crop semantics remain reviewable; automated coverage does not certify a final publication-quality transcription.",
+  "semanticLimitations": [
+    "Raster-only tables retain the original cell contents visually; complete accessible cell transcription requires manual review.",
+    "Special-font and spatial mathematics use exact original renderings rather than guessed Unicode or invented MathML.",
+    "Automatic fragment/vector boundaries and paragraph segmentation are explicitly review candidates, not silently certified."
+  ],
+  "pageInventory": [
+    {
+      "pdfPage": 18,
+      "printedPage": 13,
+      "sourceLines": 35,
+      "sourceCharacters": 1695,
+      "blockCounts": {
+        "page-furniture": 11,
+        "heading": 3,
+        "paragraph": 4,
+        "figure": 1
+      },
+      "regionIds": [
+        "source-hw-p013-01",
+        "pdf-018-vector-01",
+        "pdf-018-vector-02",
+        "pdf-018-vector-03",
+        "pdf-018-vector-04"
+      ]
+    },
+    {
+      "pdfPage": 19,
+      "printedPage": 14,
+      "sourceLines": 43,
+      "sourceCharacters": 2155,
+      "blockCounts": {
+        "page-furniture": 7,
+        "heading": 3,
+        "paragraph": 3,
+        "figure": 1
+      },
+      "regionIds": [
+        "source-hw-p014-01",
+        "pdf-019-vector-01"
+      ]
+    },
+    {
+      "pdfPage": 20,
+      "printedPage": 15,
+      "sourceLines": 32,
+      "sourceCharacters": 1378,
+      "blockCounts": {
+        "page-furniture": 12,
+        "figure": 2,
+        "heading": 2,
+        "paragraph": 3
+      },
+      "regionIds": [
+        "source-hw-p015-01",
+        "source-hw-p015-02"
+      ]
+    },
+    {
+      "pdfPage": 21,
+      "printedPage": 16,
+      "sourceLines": 41,
+      "sourceCharacters": 1959,
+      "blockCounts": {
+        "page-furniture": 7,
+        "paragraph": 4,
+        "heading": 1,
+        "figure": 1
+      },
+      "regionIds": [
+        "figure-1-01",
+        "pdf-021-vector-01",
+        "pdf-021-vector-02"
+      ]
+    },
+    {
+      "pdfPage": 22,
+      "printedPage": 17,
+      "sourceLines": 43,
+      "sourceCharacters": 1553,
+      "blockCounts": {
+        "page-furniture": 6,
+        "list-item": 5,
+        "paragraph": 2,
+        "figure": 1
+      },
+      "regionIds": [
+        "figure-1-02"
+      ]
+    },
+    {
+      "pdfPage": 23,
+      "printedPage": 18,
+      "sourceLines": 29,
+      "sourceCharacters": 926,
+      "blockCounts": {
+        "page-furniture": 7,
+        "figure": 2,
+        "paragraph": 2,
+        "list-item": 2
+      },
+      "regionIds": [
+        "figure-1-03",
+        "source-memory-persistence"
+      ]
+    },
+    {
+      "pdfPage": 24,
+      "printedPage": 19,
+      "sourceLines": 19,
+      "sourceCharacters": 1223,
+      "blockCounts": {
+        "page-furniture": 4,
+        "paragraph": 1
+      },
+      "regionIds": []
+    },
+    {
+      "pdfPage": 25,
+      "printedPage": 20,
+      "sourceLines": 38,
+      "sourceCharacters": 1503,
+      "blockCounts": {
+        "page-furniture": 13,
+        "heading": 3,
+        "paragraph": 6,
+        "list-item": 2,
+        "figure": 1
+      },
+      "regionIds": [
+        "figure-1-04"
+      ]
+    },
+    {
+      "pdfPage": 26,
+      "printedPage": 21,
+      "sourceLines": 24,
+      "sourceCharacters": 1213,
+      "blockCounts": {
+        "page-furniture": 8,
+        "heading": 1,
+        "paragraph": 2,
+        "figure": 1,
+        "formula": 1
+      },
+      "regionIds": [
+        "figure-1-05",
+        "pdf-026-b005-l00-equation",
+        "pdf-026-b005-l01-equation",
+        "pdf-026-b005-l02-equation",
+        "pdf-026-b005-l03-equation",
+        "pdf-026-b005-l04-equation"
+      ]
+    },
+    {
+      "pdfPage": 27,
+      "printedPage": 22,
+      "sourceLines": 53,
+      "sourceCharacters": 1728,
+      "blockCounts": {
+        "page-furniture": 8,
+        "paragraph": 6,
+        "heading": 1,
+        "formula": 1,
+        "table": 1
+      },
+      "regionIds": [
+        "pdf-027-table-01",
+        "pdf-027-b004-l10-equation"
+      ]
+    },
+    {
+      "pdfPage": 28,
+      "printedPage": 23,
+      "sourceLines": 50,
+      "sourceCharacters": 1806,
+      "blockCounts": {
+        "page-furniture": 9,
+        "paragraph": 7,
+        "table": 1,
+        "formula": 3,
+        "heading": 2
+      },
+      "regionIds": [
+        "pdf-028-table-01",
+        "pdf-028-b008-l06-equation",
+        "pdf-028-b008-l08-equation",
+        "pdf-028-b011-l00-equation",
+        "pdf-028-b012-l00-equation"
+      ]
+    },
+    {
+      "pdfPage": 29,
+      "printedPage": 24,
+      "sourceLines": 79,
+      "sourceCharacters": 1238,
+      "blockCounts": {
+        "page-furniture": 9,
+        "paragraph": 4,
+        "formula": 3,
+        "figure": 2,
+        "heading": 2
+      },
+      "regionIds": [
+        "figure-1-06",
+        "figure-1-07",
+        "pdf-029-b003-l00-equation",
+        "pdf-029-b004-l00-equation",
+        "pdf-029-b009-l00-equation",
+        "pdf-029-b010-l00-equation",
+        "pdf-029-b015-l00-equation",
+        "pdf-029-b016-l00-equation",
+        "pdf-029-table-01",
+        "pdf-029-table-02"
+      ]
+    },
+    {
+      "pdfPage": 30,
+      "printedPage": 25,
+      "sourceLines": 111,
+      "sourceCharacters": 1506,
+      "blockCounts": {
+        "page-furniture": 25,
+        "figure": 1,
+        "heading": 1,
+        "paragraph": 3,
+        "formula": 3
+      },
+      "regionIds": [
+        "figure-1-08",
+        "source-octal-grouping",
+        "source-hex-grouping",
+        "pdf-030-b007-l10-equation",
+        "pdf-030-table-01",
+        "pdf-030-table-02"
+      ]
+    },
+    {
+      "pdfPage": 31,
+      "printedPage": 26,
+      "sourceLines": 29,
+      "sourceCharacters": 1593,
+      "blockCounts": {
+        "page-furniture": 6,
+        "heading": 1,
+        "paragraph": 3,
+        "list-item": 2,
+        "formula": 1
+      },
+      "regionIds": [
+        "source-binary-expansion"
+      ]
+    },
+    {
+      "pdfPage": 32,
+      "printedPage": 27,
+      "sourceLines": 27,
+      "sourceCharacters": 1139,
+      "blockCounts": {
+        "page-furniture": 8,
+        "paragraph": 5,
+        "formula": 2
+      },
+      "regionIds": [
+        "source-decimal-binary-division",
+        "source-decimal-octal-division"
+      ]
+    },
+    {
+      "pdfPage": 33,
+      "printedPage": 28,
+      "sourceLines": 30,
+      "sourceCharacters": 884,
+      "blockCounts": {
+        "page-furniture": 12,
+        "formula": 2,
+        "paragraph": 4,
+        "heading": 1,
+        "figure": 1
+      },
+      "regionIds": [
+        "figure-1-09",
+        "source-recurring-fraction",
+        "pdf-033-b002-l00-equation",
+        "pdf-033-b002-l02-equation",
+        "pdf-033-b002-l04-equation",
+        "pdf-033-vector-01",
+        "pdf-033-vector-02"
+      ]
+    },
+    {
+      "pdfPage": 34,
+      "printedPage": 29,
+      "sourceLines": 39,
+      "sourceCharacters": 2004,
+      "blockCounts": {
+        "page-furniture": 11,
+        "heading": 4,
+        "paragraph": 5,
+        "list-item": 1
+      },
+      "regionIds": []
+    },
+    {
+      "pdfPage": 35,
+      "printedPage": 30,
+      "sourceLines": 46,
+      "sourceCharacters": 999,
+      "blockCounts": {
+        "page-furniture": 10,
+        "table": 1,
+        "figure": 1,
+        "list-item": 2,
+        "heading": 1,
+        "paragraph": 1
+      },
+      "regionIds": [
+        "figure-1-10",
+        "source-jis-example"
+      ]
+    },
+    {
+      "pdfPage": 36,
+      "printedPage": 31,
+      "sourceLines": 39,
+      "sourceCharacters": 2054,
+      "blockCounts": {
+        "page-furniture": 11,
+        "heading": 4,
+        "paragraph": 5
+      },
+      "regionIds": []
+    },
+    {
+      "pdfPage": 37,
+      "printedPage": 32,
+      "sourceLines": 117,
+      "sourceCharacters": 1594,
+      "blockCounts": {
+        "page-furniture": 65,
+        "paragraph": 10,
+        "formula": 2,
+        "list-item": 2
+      },
+      "regionIds": [
+        "source-bcd-layout",
+        "source-zoned-layout"
+      ]
+    },
+    {
+      "pdfPage": 38,
+      "printedPage": 33,
+      "sourceLines": 80,
+      "sourceCharacters": 1592,
+      "blockCounts": {
+        "page-furniture": 46,
+        "paragraph": 3,
+        "formula": 1,
+        "figure": 1,
+        "heading": 1
+      },
+      "regionIds": [
+        "figure-1-11",
+        "source-packed-layout"
+      ]
+    },
+    {
+      "pdfPage": 39,
+      "printedPage": 34,
+      "sourceLines": 44,
+      "sourceCharacters": 1315,
+      "blockCounts": {
+        "page-furniture": 19,
+        "list-item": 1,
+        "source-visual": 7,
+        "paragraph": 7,
+        "formula": 2
+      },
+      "regionIds": [
+        "source-fixed-point-positive",
+        "source-sign-magnitude-layout",
+        "pdf-039-image-001",
+        "pdf-039-image-005",
+        "pdf-039-image-009",
+        "pdf-039-image-013",
+        "pdf-039-image-017",
+        "pdf-039-image-021",
+        "pdf-039-image-025"
+      ]
+    },
+    {
+      "pdfPage": 40,
+      "printedPage": 35,
+      "sourceLines": 53,
+      "sourceCharacters": 1141,
+      "blockCounts": {
+        "page-furniture": 17,
+        "paragraph": 7,
+        "list-item": 4,
+        "formula": 3
+      },
+      "regionIds": [
+        "source-complement-examples",
+        "source-twos-complement-layout"
+      ]
+    },
+    {
+      "pdfPage": 41,
+      "printedPage": 36,
+      "sourceLines": 46,
+      "sourceCharacters": 1493,
+      "blockCounts": {
+        "page-furniture": 9,
+        "paragraph": 5,
+        "formula": 1
+      },
+      "regionIds": [
+        "source-subtraction-example"
+      ]
+    },
+    {
+      "pdfPage": 42,
+      "printedPage": 37,
+      "sourceLines": 82,
+      "sourceCharacters": 1499,
+      "blockCounts": {
+        "page-furniture": 22,
+        "table": 2,
+        "paragraph": 6,
+        "formula": 2,
+        "list-item": 1
+      },
+      "regionIds": [
+        "source-signed-magnitude-range",
+        "source-twos-complement-range",
+        "pdf-042-b013-l00-equation",
+        "pdf-042-b016-l05-equation"
+      ]
+    },
+    {
+      "pdfPage": 43,
+      "printedPage": 38,
+      "sourceLines": 49,
+      "sourceCharacters": 1645,
+      "blockCounts": {
+        "page-furniture": 10,
+        "formula": 2,
+        "paragraph": 24
+      },
+      "regionIds": [
+        "pdf-043-b002-l00-equation",
+        "pdf-043-b009-l00-equation"
+      ]
+    },
+    {
+      "pdfPage": 44,
+      "printedPage": 39,
+      "sourceLines": 55,
+      "sourceCharacters": 1841,
+      "blockCounts": {
+        "page-furniture": 9,
+        "paragraph": 5,
+        "list-item": 4,
+        "table": 1,
+        "formula": 1
+      },
+      "regionIds": [
+        "source-normalization-small",
+        "pdf-044-table-01"
+      ]
+    },
+    {
+      "pdfPage": 45,
+      "printedPage": 40,
+      "sourceLines": 37,
+      "sourceCharacters": 1199,
+      "blockCounts": {
+        "page-furniture": 15,
+        "paragraph": 4,
+        "formula": 5,
+        "list-item": 4
+      },
+      "regionIds": [
+        "source-float-encoding-example",
+        "pdf-045-b002-l03-equation"
+      ]
+    },
+    {
+      "pdfPage": 46,
+      "printedPage": 41,
+      "sourceLines": 37,
+      "sourceCharacters": 1805,
+      "blockCounts": {
+        "page-furniture": 12,
+        "heading": 3,
+        "paragraph": 4,
+        "formula": 2
+      },
+      "regionIds": [
+        "source-trailing-digits-example",
+        "pdf-046-b003-l06-equation"
+      ]
+    },
+    {
+      "pdfPage": 47,
+      "printedPage": 42,
+      "sourceLines": 44,
+      "sourceCharacters": 1546,
+      "blockCounts": {
+        "page-furniture": 17,
+        "paragraph": 8,
+        "heading": 2,
+        "formula": 2,
+        "figure": 1,
+        "list-item": 1
+      },
+      "regionIds": [
+        "source-cancellation-example",
+        "source-numeric-range",
+        "pdf-047-b010-l00-equation"
+      ]
+    },
+    {
+      "pdfPage": 48,
+      "printedPage": 43,
+      "sourceLines": 35,
+      "sourceCharacters": 1237,
+      "blockCounts": {
+        "page-furniture": 12,
+        "list-item": 4,
+        "paragraph": 6,
+        "formula": 3,
+        "heading": 2
+      },
+      "regionIds": [
+        "source-arithmetic-left-shift",
+        "pdf-048-b003-l00-equation",
+        "pdf-048-b012-l03-equation",
+        "pdf-048-b012-l05-equation"
+      ]
+    },
+    {
+      "pdfPage": 49,
+      "printedPage": 44,
+      "sourceLines": 26,
+      "sourceCharacters": 1011,
+      "blockCounts": {
+        "page-furniture": 9,
+        "paragraph": 6,
+        "list-item": 5,
+        "formula": 3,
+        "heading": 1
+      },
+      "regionIds": [
+        "source-two-right-shifts",
+        "pdf-049-b004-l02-equation"
+      ]
+    },
+    {
+      "pdfPage": 50,
+      "printedPage": 45,
+      "sourceLines": 10,
+      "sourceCharacters": 226,
+      "blockCounts": {
+        "page-furniture": 7,
+        "paragraph": 2,
+        "formula": 1
+      },
+      "regionIds": [
+        "source-circular-shift"
+      ]
+    },
+    {
+      "pdfPage": 51,
+      "printedPage": 46,
+      "sourceLines": 31,
+      "sourceCharacters": 1342,
+      "blockCounts": {
+        "page-furniture": 11,
+        "heading": 4,
+        "paragraph": 4,
+        "figure": 1
+      },
+      "regionIds": [
+        "figure-1-12",
+        "pdf-051-vector-01"
+      ]
+    },
+    {
+      "pdfPage": 52,
+      "printedPage": 47,
+      "sourceLines": 40,
+      "sourceCharacters": 1820,
+      "blockCounts": {
+        "heading": 3,
+        "page-furniture": 6,
+        "paragraph": 3,
+        "list-item": 8
+      },
+      "regionIds": [
+        "pdf-052-vector-01"
+      ]
+    },
+    {
+      "pdfPage": 53,
+      "printedPage": 48,
+      "sourceLines": 40,
+      "sourceCharacters": 1757,
+      "blockCounts": {
+        "page-furniture": 11,
+        "figure": 1,
+        "heading": 1,
+        "paragraph": 5,
+        "list-item": 9
+      },
+      "regionIds": [
+        "figure-1-13"
+      ]
+    },
+    {
+      "pdfPage": 54,
+      "printedPage": 49,
+      "sourceLines": 41,
+      "sourceCharacters": 1764,
+      "blockCounts": {
+        "page-furniture": 11,
+        "list-item": 4,
+        "heading": 3,
+        "paragraph": 3,
+        "figure": 1
+      },
+      "regionIds": [
+        "source-ttl-nand-margin"
+      ]
+    },
+    {
+      "pdfPage": 55,
+      "printedPage": 50,
+      "sourceLines": 39,
+      "sourceCharacters": 2206,
+      "blockCounts": {
+        "figure": 1,
+        "page-furniture": 4,
+        "list-item": 7,
+        "source-visual": 1,
+        "heading": 1,
+        "paragraph": 2
+      },
+      "regionIds": [
+        "source-jk-margin",
+        "pdf-055-image-002",
+        "pdf-055-vector-01"
+      ]
+    },
+    {
+      "pdfPage": 56,
+      "printedPage": 51,
+      "sourceLines": 27,
+      "sourceCharacters": 827,
+      "blockCounts": {
+        "page-furniture": 11,
+        "list-item": 4,
+        "heading": 1,
+        "paragraph": 2,
+        "figure": 1
+      },
+      "regionIds": [
+        "figure-1-14"
+      ]
+    },
+    {
+      "pdfPage": 57,
+      "printedPage": 52,
+      "sourceLines": 40,
+      "sourceCharacters": 1881,
+      "blockCounts": {
+        "page-furniture": 9,
+        "paragraph": 4,
+        "list-item": 5,
+        "heading": 3
+      },
+      "regionIds": []
+    },
+    {
+      "pdfPage": 58,
+      "printedPage": 53,
+      "sourceLines": 39,
+      "sourceCharacters": 1805,
+      "blockCounts": {
+        "page-furniture": 6,
+        "paragraph": 3,
+        "list-item": 7,
+        "figure": 1
+      },
+      "regionIds": [
+        "figure-1-15"
+      ]
+    },
+    {
+      "pdfPage": 59,
+      "printedPage": 54,
+      "sourceLines": 13,
+      "sourceCharacters": 523,
+      "blockCounts": {
+        "page-furniture": 5,
+        "heading": 1,
+        "paragraph": 3,
+        "figure": 1
+      },
+      "regionIds": [
+        "figure-1-16"
+      ]
+    },
+    {
+      "pdfPage": 60,
+      "printedPage": 55,
+      "sourceLines": 20,
+      "sourceCharacters": 749,
+      "blockCounts": {
+        "page-furniture": 9,
+        "figure": 2,
+        "heading": 2,
+        "paragraph": 2
+      },
+      "regionIds": [
+        "figure-1-17",
+        "figure-1-18"
+      ]
+    },
+    {
+      "pdfPage": 61,
+      "printedPage": 56,
+      "sourceLines": 20,
+      "sourceCharacters": 826,
+      "blockCounts": {
+        "page-furniture": 8,
+        "figure": 2,
+        "heading": 2,
+        "paragraph": 2
+      },
+      "regionIds": [
+        "figure-1-19",
+        "figure-1-20"
+      ]
+    },
+    {
+      "pdfPage": 62,
+      "printedPage": 57,
+      "sourceLines": 27,
+      "sourceCharacters": 1156,
+      "blockCounts": {
+        "page-furniture": 10,
+        "paragraph": 2,
+        "figure": 2,
+        "heading": 2,
+        "list-item": 2
+      },
+      "regionIds": [
+        "figure-1-21",
+        "source-absolute-address"
+      ]
+    },
+    {
+      "pdfPage": 63,
+      "printedPage": 58,
+      "sourceLines": 21,
+      "sourceCharacters": 770,
+      "blockCounts": {
+        "page-furniture": 8,
+        "figure": 4,
+        "list-item": 3,
+        "heading": 1
+      },
+      "regionIds": [
+        "figure-1-22",
+        "source-indexed-address",
+        "source-base-address",
+        "source-relative-address"
+      ]
+    },
+    {
+      "pdfPage": 64,
+      "printedPage": 59,
+      "sourceLines": 24,
+      "sourceCharacters": 1082,
+      "blockCounts": {
+        "page-furniture": 8,
+        "list-item": 2,
+        "figure": 2,
+        "heading": 1,
+        "paragraph": 1
+      },
+      "regionIds": [
+        "figure-1-23",
+        "figure-1-24"
+      ]
+    },
+    {
+      "pdfPage": 65,
+      "printedPage": 60,
+      "sourceLines": 38,
+      "sourceCharacters": 1844,
+      "blockCounts": {
+        "page-furniture": 5,
+        "paragraph": 4,
+        "list-item": 14
+      },
+      "regionIds": []
+    },
+    {
+      "pdfPage": 66,
+      "printedPage": 61,
+      "sourceLines": 69,
+      "sourceCharacters": 1697,
+      "blockCounts": {
+        "page-furniture": 10,
+        "paragraph": 5,
+        "heading": 2,
+        "list-item": 4,
+        "table": 1
+      },
+      "regionIds": [
+        "pdf-066-table-01"
+      ]
+    },
+    {
+      "pdfPage": 67,
+      "printedPage": 62,
+      "sourceLines": 85,
+      "sourceCharacters": 1570,
+      "blockCounts": {
+        "page-furniture": 11,
+        "formula": 1,
+        "heading": 2,
+        "paragraph": 2,
+        "figure": 2,
+        "list-item": 2
+      },
+      "regionIds": [
+        "figure-1-25",
+        "figure-1-26",
+        "pdf-067-b002-l02-equation",
+        "pdf-067-b002-l06-equation",
+        "pdf-067-b002-l08-equation",
+        "pdf-067-table-01",
+        "pdf-067-table-02"
+      ]
+    },
+    {
+      "pdfPage": 68,
+      "printedPage": 63,
+      "sourceLines": 83,
+      "sourceCharacters": 1017,
+      "blockCounts": {
+        "page-furniture": 14,
+        "figure": 4,
+        "list-item": 3
+      },
+      "regionIds": [
+        "figure-1-27",
+        "figure-1-28",
+        "figure-1-29",
+        "figure-1-30",
+        "pdf-068-table-01",
+        "pdf-068-table-02",
+        "pdf-068-table-03",
+        "pdf-068-table-04"
+      ]
+    },
+    {
+      "pdfPage": 69,
+      "printedPage": 64,
+      "sourceLines": 32,
+      "sourceCharacters": 871,
+      "blockCounts": {
+        "page-furniture": 5,
+        "list-item": 1,
+        "figure": 1,
+        "paragraph": 2
+      },
+      "regionIds": [
+        "figure-1-31",
+        "pdf-069-table-01"
+      ]
+    },
+    {
+      "pdfPage": 70,
+      "printedPage": 65,
+      "sourceLines": 238,
+      "sourceCharacters": 935,
+      "blockCounts": {
+        "page-furniture": 28,
+        "paragraph": 3,
+        "formula": 10,
+        "list-item": 9
+      },
+      "regionIds": [
+        "pdf-070-b003-l01-equation",
+        "pdf-070-b004-l03-equation",
+        "pdf-070-b005-l03-equation",
+        "pdf-070-b006-l04-equation",
+        "pdf-070-b007-l04-equation",
+        "pdf-070-b007-l19-equation",
+        "pdf-070-b007-l35-equation",
+        "pdf-070-b007-l55-equation",
+        "pdf-070-b007-l75-equation",
+        "pdf-070-b007-l89-equation",
+        "pdf-070-b007-l99-equation",
+        "pdf-070-b007-l114-equation",
+        "pdf-070-b007-l131-equation",
+        "pdf-070-b008-l03-equation",
+        "pdf-070-b009-l03-equation",
+        "pdf-070-b010-l03-equation",
+        "pdf-070-b011-l03-equation",
+        "pdf-070-b011-l11-equation",
+        "pdf-070-b011-l20-equation",
+        "pdf-070-b011-l28-equation",
+        "pdf-070-b013-l03-equation",
+        "pdf-070-b013-l08-equation"
+      ]
+    },
+    {
+      "pdfPage": 71,
+      "printedPage": 66,
+      "sourceLines": 162,
+      "sourceCharacters": 1226,
+      "blockCounts": {
+        "page-furniture": 17,
+        "paragraph": 5,
+        "figure": 3,
+        "list-item": 1,
+        "formula": 1,
+        "heading": 1
+      },
+      "regionIds": [
+        "source-xor-circuits",
+        "source-xor-alternative",
+        "pdf-071-b005-l10-equation",
+        "pdf-071-b005-l29-equation",
+        "pdf-071-b005-l47-equation",
+        "pdf-071-b005-l61-equation",
+        "pdf-071-b005-l80-equation",
+        "pdf-071-b005-l107-equation"
+      ]
+    },
+    {
+      "pdfPage": 72,
+      "printedPage": 67,
+      "sourceLines": 50,
+      "sourceCharacters": 1434,
+      "blockCounts": {
+        "page-furniture": 11,
+        "paragraph": 6,
+        "source-visual": 2,
+        "table": 1,
+        "figure": 1
+      },
+      "regionIds": [
+        "figure-1-32",
+        "pdf-072-table-01",
+        "pdf-072-image-020",
+        "pdf-072-image-015",
+        "pdf-072-image-010",
+        "pdf-072-image-005",
+        "pdf-072-image-001"
+      ]
+    },
+    {
+      "pdfPage": 73,
+      "printedPage": 68,
+      "sourceLines": 208,
+      "sourceCharacters": 1305,
+      "blockCounts": {
+        "page-furniture": 15,
+        "paragraph": 4,
+        "table": 1,
+        "list-item": 4,
+        "formula": 4
+      },
+      "regionIds": [
+        "pdf-073-table-01",
+        "pdf-073-b014-l03-equation",
+        "pdf-073-b014-l12-equation",
+        "pdf-073-b014-l21-equation",
+        "pdf-073-b014-l30-equation",
+        "pdf-073-b014-l55-equation",
+        "pdf-073-b014-l76-equation",
+        "pdf-073-b014-l87-equation",
+        "pdf-073-b014-l97-equation",
+        "pdf-073-b014-l107-equation",
+        "pdf-073-b014-l117-equation",
+        "pdf-073-b015-l16-equation"
+      ]
+    },
+    {
+      "pdfPage": 74,
+      "printedPage": 69,
+      "sourceLines": 50,
+      "sourceCharacters": 1654,
+      "blockCounts": {
+        "page-furniture": 11,
+        "formula": 2,
+        "paragraph": 6,
+        "list-item": 3,
+        "figure": 1
+      },
+      "regionIds": [
+        "figure-1-33",
+        "source-three-bit-addition",
+        "pdf-074-b002-l12-equation"
+      ]
+    },
+    {
+      "pdfPage": 75,
+      "printedPage": 70,
+      "sourceLines": 35,
+      "sourceCharacters": 1882,
+      "blockCounts": {
+        "page-furniture": 10,
+        "paragraph": 5,
+        "heading": 3,
+        "figure": 1
+      },
+      "regionIds": [
+        "figure-1-34"
+      ]
+    },
+    {
+      "pdfPage": 76,
+      "printedPage": 71,
+      "sourceLines": 85,
+      "sourceCharacters": 1885,
+      "blockCounts": {
+        "page-furniture": 31,
+        "paragraph": 8,
+        "formula": 3,
+        "table": 1
+      },
+      "regionIds": [
+        "pdf-076-table-01",
+        "pdf-076-b002-l06-equation",
+        "pdf-076-b008-l01-equation",
+        "pdf-076-b008-l03-equation",
+        "pdf-076-b008-l04-equation"
+      ]
+    },
+    {
+      "pdfPage": 77,
+      "printedPage": 72,
+      "sourceLines": 33,
+      "sourceCharacters": 1616,
+      "blockCounts": {
+        "page-furniture": 9,
+        "paragraph": 6,
+        "list-item": 2,
+        "figure": 2
+      },
+      "regionIds": [
+        "figure-1-35",
+        "figure-1-36",
+        "pdf-077-vector-01"
+      ]
+    },
+    {
+      "pdfPage": 78,
+      "printedPage": 73,
+      "sourceLines": 30,
+      "sourceCharacters": 869,
+      "blockCounts": {
+        "page-furniture": 9,
+        "figure": 2,
+        "heading": 1,
+        "paragraph": 2
+      },
+      "regionIds": [
+        "figure-1-37",
+        "figure-1-38"
+      ]
+    },
+    {
+      "pdfPage": 79,
+      "printedPage": 74,
+      "sourceLines": 27,
+      "sourceCharacters": 1410,
+      "blockCounts": {
+        "page-furniture": 8,
+        "paragraph": 4,
+        "heading": 3
+      },
+      "regionIds": []
+    },
+    {
+      "pdfPage": 80,
+      "printedPage": 75,
+      "sourceLines": 23,
+      "sourceCharacters": 1059,
+      "blockCounts": {
+        "source-visual": 1,
+        "page-furniture": 9,
+        "figure": 2,
+        "paragraph": 3,
+        "list-item": 1
+      },
+      "regionIds": [
+        "figure-1-39",
+        "figure-1-40",
+        "pdf-080-image-129"
+      ]
+    },
+    {
+      "pdfPage": 81,
+      "printedPage": 76,
+      "sourceLines": 35,
+      "sourceCharacters": 1974,
+      "blockCounts": {
+        "page-furniture": 6,
+        "paragraph": 3,
+        "list-item": 3,
+        "figure": 1,
+        "heading": 1
+      },
+      "regionIds": [
+        "figure-1-41"
+      ]
+    },
+    {
+      "pdfPage": 82,
+      "printedPage": 77,
+      "sourceLines": 38,
+      "sourceCharacters": 2360,
+      "blockCounts": {
+        "page-furniture": 6,
+        "paragraph": 2,
+        "heading": 1,
+        "list-item": 4
+      },
+      "regionIds": []
+    },
+    {
+      "pdfPage": 83,
+      "printedPage": null,
+      "sourceLines": 465,
+      "sourceCharacters": 1664,
+      "blockCounts": {
+        "page-furniture": 230,
+        "figure": 1,
+        "paragraph": 235
+      },
+      "regionIds": [
+        "pdf-083-insertion-image-1"
+      ]
+    },
+    {
+      "pdfPage": 84,
+      "printedPage": 78,
+      "sourceLines": 28,
+      "sourceCharacters": 1537,
+      "blockCounts": {
+        "page-furniture": 7,
+        "heading": 2,
+        "paragraph": 3,
+        "figure": 1
+      },
+      "regionIds": [
+        "figure-1-42"
+      ]
+    },
+    {
+      "pdfPage": 85,
+      "printedPage": 79,
+      "sourceLines": 39,
+      "sourceCharacters": 1715,
+      "blockCounts": {
+        "page-furniture": 9,
+        "figure": 2,
+        "paragraph": 4,
+        "list-item": 2
+      },
+      "regionIds": [
+        "figure-1-43",
+        "figure-1-44",
+        "pdf-085-table-01",
+        "pdf-085-table-02"
+      ]
+    },
+    {
+      "pdfPage": 86,
+      "printedPage": 80,
+      "sourceLines": 46,
+      "sourceCharacters": 1972,
+      "blockCounts": {
+        "page-furniture": 10,
+        "paragraph": 5,
+        "list-item": 4,
+        "heading": 1,
+        "table": 1
+      },
+      "regionIds": [
+        "pdf-086-table-01"
+      ]
+    },
+    {
+      "pdfPage": 87,
+      "printedPage": 81,
+      "sourceLines": 39,
+      "sourceCharacters": 1557,
+      "blockCounts": {
+        "page-furniture": 11,
+        "list-item": 5,
+        "formula": 3,
+        "heading": 1,
+        "paragraph": 2,
+        "figure": 1
+      },
+      "regionIds": [
+        "source-variable-recording",
+        "pdf-087-b002-l03-equation",
+        "pdf-087-b002-l04-equation",
+        "pdf-087-b002-l05-equation",
+        "pdf-087-b002-l07-equation",
+        "pdf-087-b002-l08-equation",
+        "pdf-087-b002-l09-equation",
+        "pdf-087-b002-l13-equation",
+        "pdf-087-b002-l14-equation"
+      ]
+    },
+    {
+      "pdfPage": 88,
+      "printedPage": 82,
+      "sourceLines": 42,
+      "sourceCharacters": 1633,
+      "blockCounts": {
+        "page-furniture": 9,
+        "paragraph": 5,
+        "figure": 1,
+        "list-item": 6,
+        "table": 1,
+        "formula": 2
+      },
+      "regionIds": [
+        "source-sector-recording",
+        "pdf-088-table-01",
+        "pdf-088-b013-l02-equation",
+        "pdf-088-b013-l03-equation",
+        "pdf-088-b013-l04-equation",
+        "pdf-088-b013-l06-equation",
+        "pdf-088-b013-l07-equation",
+        "pdf-088-b013-l08-equation"
+      ]
+    },
+    {
+      "pdfPage": 89,
+      "printedPage": 83,
+      "sourceLines": 40,
+      "sourceCharacters": 1692,
+      "blockCounts": {
+        "page-furniture": 6,
+        "formula": 7,
+        "list-item": 5,
+        "paragraph": 6,
+        "heading": 1
+      },
+      "regionIds": [
+        "pdf-089-b002-l00-equation",
+        "pdf-089-b002-l01-equation",
+        "pdf-089-b002-l02-equation",
+        "pdf-089-b002-l04-equation",
+        "pdf-089-b002-l06-equation",
+        "pdf-089-b002-l07-equation",
+        "pdf-089-b002-l09-equation",
+        "pdf-089-b002-l11-equation",
+        "pdf-089-b002-l12-equation",
+        "pdf-089-b002-l14-equation",
+        "pdf-089-b002-l16-equation",
+        "pdf-089-b002-l17-equation"
+      ]
+    },
+    {
+      "pdfPage": 90,
+      "printedPage": 84,
+      "sourceLines": 36,
+      "sourceCharacters": 1550,
+      "blockCounts": {
+        "page-furniture": 12,
+        "list-item": 3,
+        "paragraph": 5,
+        "figure": 1,
+        "formula": 1
+      },
+      "regionIds": [
+        "source-disk-timing",
+        "pdf-090-b008-l00-equation"
+      ]
+    },
+    {
+      "pdfPage": 91,
+      "printedPage": 85,
+      "sourceLines": 44,
+      "sourceCharacters": 2284,
+      "blockCounts": {
+        "page-furniture": 6,
+        "paragraph": 8,
+        "formula": 2,
+        "list-item": 1,
+        "table": 1
+      },
+      "regionIds": [
+        "pdf-091-table-01",
+        "pdf-091-b003-l00-equation",
+        "pdf-091-b006-l00-equation"
+      ]
+    },
+    {
+      "pdfPage": 92,
+      "printedPage": 86,
+      "sourceLines": 40,
+      "sourceCharacters": 1941,
+      "blockCounts": {
+        "page-furniture": 5,
+        "list-item": 5,
+        "formula": 6,
+        "paragraph": 3,
+        "heading": 1
+      },
+      "regionIds": [
+        "pdf-092-b002-l01-equation",
+        "pdf-092-b002-l02-equation",
+        "pdf-092-b002-l03-equation",
+        "pdf-092-b002-l04-equation",
+        "pdf-092-b002-l05-equation",
+        "pdf-092-b002-l07-equation",
+        "pdf-092-b002-l08-equation",
+        "pdf-092-b002-l09-equation",
+        "pdf-092-b002-l11-equation",
+        "pdf-092-b002-l13-equation",
+        "pdf-092-b002-l14-equation",
+        "pdf-092-b002-l16-equation",
+        "pdf-092-b002-l17-equation",
+        "pdf-092-b002-l18-equation",
+        "pdf-092-b002-l20-equation",
+        "pdf-092-b002-l21-equation",
+        "pdf-092-b002-l22-equation"
+      ]
+    },
+    {
+      "pdfPage": 93,
+      "printedPage": 87,
+      "sourceLines": 40,
+      "sourceCharacters": 2468,
+      "blockCounts": {
+        "page-furniture": 9,
+        "paragraph": 4,
+        "heading": 2
+      },
+      "regionIds": []
+    },
+    {
+      "pdfPage": 94,
+      "printedPage": 88,
+      "sourceLines": 41,
+      "sourceCharacters": 2139,
+      "blockCounts": {
+        "page-furniture": 8,
+        "heading": 2,
+        "paragraph": 3,
+        "list-item": 5
+      },
+      "regionIds": []
+    },
+    {
+      "pdfPage": 95,
+      "printedPage": 89,
+      "sourceLines": 41,
+      "sourceCharacters": 2457,
+      "blockCounts": {
+        "page-furniture": 10,
+        "heading": 4,
+        "paragraph": 4
+      },
+      "regionIds": []
+    },
+    {
+      "pdfPage": 96,
+      "printedPage": 90,
+      "sourceLines": 40,
+      "sourceCharacters": 2677,
+      "blockCounts": {
+        "page-furniture": 7,
+        "paragraph": 3,
+        "heading": 3
+      },
+      "regionIds": []
+    },
+    {
+      "pdfPage": 97,
+      "printedPage": 91,
+      "sourceLines": 14,
+      "sourceCharacters": 542,
+      "blockCounts": {
+        "page-furniture": 7,
+        "heading": 1,
+        "paragraph": 1
+      },
+      "regionIds": []
+    },
+    {
+      "pdfPage": 98,
+      "printedPage": 92,
+      "sourceLines": 48,
+      "sourceCharacters": 1708,
+      "blockCounts": {
+        "page-furniture": 12,
+        "heading": 4,
+        "paragraph": 7,
+        "figure": 2
+      },
+      "regionIds": [
+        "figure-1-45",
+        "source-hw-p092-02",
+        "pdf-098-table-01"
+      ]
+    },
+    {
+      "pdfPage": 99,
+      "printedPage": 93,
+      "sourceLines": 47,
+      "sourceCharacters": 1793,
+      "blockCounts": {
+        "page-furniture": 11,
+        "heading": 4,
+        "paragraph": 21,
+        "figure": 3
+      },
+      "regionIds": [
+        "source-hw-p093-01",
+        "source-hw-p093-02",
+        "source-hw-p093-03"
+      ]
+    },
+    {
+      "pdfPage": 100,
+      "printedPage": 94,
+      "sourceLines": 37,
+      "sourceCharacters": 1390,
+      "blockCounts": {
+        "page-furniture": 12,
+        "heading": 1,
+        "figure": 2,
+        "paragraph": 5,
+        "list-item": 2
+      },
+      "regionIds": [
+        "source-hw-p094-01",
+        "source-hw-p094-02"
+      ]
+    },
+    {
+      "pdfPage": 101,
+      "printedPage": 95,
+      "sourceLines": 45,
+      "sourceCharacters": 1202,
+      "blockCounts": {
+        "page-furniture": 13,
+        "heading": 5,
+        "figure": 2,
+        "paragraph": 6
+      },
+      "regionIds": [
+        "source-hw-p095-01",
+        "source-hw-p095-02"
+      ]
+    },
+    {
+      "pdfPage": 102,
+      "printedPage": 96,
+      "sourceLines": 43,
+      "sourceCharacters": 1577,
+      "blockCounts": {
+        "page-furniture": 12,
+        "paragraph": 5,
+        "list-item": 4,
+        "heading": 4,
+        "figure": 1
+      },
+      "regionIds": [
+        "source-hw-p096-02"
+      ]
+    },
+    {
+      "pdfPage": 103,
+      "printedPage": 97,
+      "sourceLines": 41,
+      "sourceCharacters": 2025,
+      "blockCounts": {
+        "page-furniture": 13,
+        "paragraph": 6,
+        "heading": 5
+      },
+      "regionIds": []
+    },
+    {
+      "pdfPage": 104,
+      "printedPage": 98,
+      "sourceLines": 43,
+      "sourceCharacters": 1774,
+      "blockCounts": {
+        "page-furniture": 8,
+        "source-visual": 1,
+        "table": 1,
+        "paragraph": 3,
+        "list-item": 3,
+        "formula": 3
+      },
+      "regionIds": [
+        "pdf-104-table-01",
+        "pdf-104-image-001",
+        "pdf-104-b021-l00-equation",
+        "pdf-104-b023-l00-equation",
+        "pdf-104-b024-l00-equation",
+        "pdf-104-b026-l00-equation",
+        "pdf-104-b027-l00-equation",
+        "pdf-104-b028-l00-equation"
+      ]
+    },
+    {
+      "pdfPage": 105,
+      "printedPage": 99,
+      "sourceLines": 41,
+      "sourceCharacters": 2318,
+      "blockCounts": {
+        "page-furniture": 11,
+        "heading": 4,
+        "paragraph": 4
+      },
+      "regionIds": []
+    },
+    {
+      "pdfPage": 106,
+      "printedPage": 100,
+      "sourceLines": 28,
+      "sourceCharacters": 1376,
+      "blockCounts": {
+        "page-furniture": 8,
+        "heading": 2,
+        "paragraph": 2,
+        "figure": 2,
+        "list-item": 1
+      },
+      "regionIds": [
+        "figure-1-46",
+        "figure-1-47"
+      ]
+    },
+    {
+      "pdfPage": 107,
+      "printedPage": 101,
+      "sourceLines": 43,
+      "sourceCharacters": 1978,
+      "blockCounts": {
+        "page-furniture": 9,
+        "list-item": 7,
+        "paragraph": 7,
+        "heading": 1,
+        "figure": 1
+      },
+      "regionIds": [
+        "source-hw-p101-01"
+      ]
+    },
+    {
+      "pdfPage": 108,
+      "printedPage": 102,
+      "sourceLines": 44,
+      "sourceCharacters": 1787,
+      "blockCounts": {
+        "page-furniture": 13,
+        "paragraph": 11,
+        "heading": 5,
+        "figure": 2
+      },
+      "regionIds": [
+        "source-hw-p102-01",
+        "source-hw-p102-02"
+      ]
+    },
+    {
+      "pdfPage": 109,
+      "printedPage": 103,
+      "sourceLines": 39,
+      "sourceCharacters": 1982,
+      "blockCounts": {
+        "page-furniture": 12,
+        "paragraph": 6,
+        "heading": 3
+      },
+      "regionIds": []
+    },
+    {
+      "pdfPage": 110,
+      "printedPage": 104,
+      "sourceLines": 41,
+      "sourceCharacters": 2211,
+      "blockCounts": {
+        "page-furniture": 10,
+        "list-item": 1,
+        "heading": 4,
+        "paragraph": 4
+      },
+      "regionIds": []
+    },
+    {
+      "pdfPage": 111,
+      "printedPage": 105,
+      "sourceLines": 36,
+      "sourceCharacters": 1682,
+      "blockCounts": {
+        "page-furniture": 10,
+        "heading": 3,
+        "paragraph": 4,
+        "list-item": 4
+      },
+      "regionIds": []
+    },
+    {
+      "pdfPage": 112,
+      "printedPage": 106,
+      "sourceLines": 30,
+      "sourceCharacters": 1141,
+      "blockCounts": {
+        "page-furniture": 15,
+        "paragraph": 4,
+        "list-item": 3,
+        "source-visual": 3,
+        "heading": 2
+      },
+      "regionIds": [
+        "pdf-112-image-002",
+        "pdf-112-image-007",
+        "pdf-112-image-001",
+        "pdf-112-image-021",
+        "pdf-112-image-026",
+        "pdf-112-image-020",
+        "pdf-112-image-060",
+        "pdf-112-image-050",
+        "pdf-112-image-049",
+        "pdf-112-vector-01",
+        "pdf-112-vector-02",
+        "pdf-112-vector-03",
+        "pdf-112-vector-04",
+        "pdf-112-vector-05",
+        "pdf-112-vector-06",
+        "pdf-112-vector-07"
+      ]
+    },
+    {
+      "pdfPage": 113,
+      "printedPage": 107,
+      "sourceLines": 41,
+      "sourceCharacters": 1925,
+      "blockCounts": {
+        "page-furniture": 10,
+        "list-item": 3,
+        "heading": 6,
+        "paragraph": 7
+      },
+      "regionIds": []
+    },
+    {
+      "pdfPage": 114,
+      "printedPage": 108,
+      "sourceLines": 42,
+      "sourceCharacters": 1923,
+      "blockCounts": {
+        "page-furniture": 10,
+        "paragraph": 4,
+        "list-item": 5,
+        "heading": 2
+      },
+      "regionIds": []
+    },
+    {
+      "pdfPage": 115,
+      "printedPage": 109,
+      "sourceLines": 38,
+      "sourceCharacters": 2249,
+      "blockCounts": {
+        "page-furniture": 10,
+        "heading": 4,
+        "paragraph": 4
+      },
+      "regionIds": []
+    },
+    {
+      "pdfPage": 116,
+      "printedPage": 110,
+      "sourceLines": 46,
+      "sourceCharacters": 1889,
+      "blockCounts": {
+        "page-furniture": 11,
+        "paragraph": 3,
+        "list-item": 3,
+        "table": 1,
+        "heading": 3
+      },
+      "regionIds": [
+        "pdf-116-table-01"
+      ]
+    },
+    {
+      "pdfPage": 117,
+      "printedPage": 111,
+      "sourceLines": 33,
+      "sourceCharacters": 1919,
+      "blockCounts": {
+        "page-furniture": 9,
+        "paragraph": 4,
+        "heading": 2
+      },
+      "regionIds": []
+    }
+  ]
+}

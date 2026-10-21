@@ -1,0 +1,25 @@
+# Source edition and existing practice integration
+
+The source edition is an editorial conversion, not a rewritten lesson. It keeps its exact source text and region assets immutable. Learning features belong in a separate annotation/reading adapter.
+
+## Working local integration
+
+`scripts/editorial_preview.py` builds `annotations.json` independently of textbook text. Each annotation records edition/page, block ID, line ID, exact character range, exact source quote, existing concept ID, eligible question IDs and the existing practice URL. The HTML renderer wraps that original range in a yellow link without replacing the words. Added question counts are separately labeled and excluded from the source-text audit.
+
+Eleven exact source anchors link 21 distinct published questions. All 13 existing concepts and 23 reviewed Hardware questions remain available in the study companion. Bit masks and 3D printing have no reviewed exact source anchor, so the pipeline records them as unanchored instead of inserting new words into the book. Counts are recalculated using strict `is_published === true`; the question bank and publication flags are unchanged.
+
+Practice opens the existing dedicated public question screen in another tab. Original exam images, explanations, reviewed free-video recommendations, guest attempts/bookmarks/completion, optional Google accounts and Firestore synchronization continue to work there. The local source tab stays open and saves a separate source checkpoint before following a concept. It never loads Firebase or transmits reproduced textbook text.
+
+Local source checkpoints use `itpecTextbook:editorial:source:v1` with source SHA, physical page, block ID and viewport offset. They do not overwrite `itpecTextbook:guest:v1`, the public return pointer or account-specific progress. Comparison iframes do not change source reading history. This provides local resume, not cloud synchronization of the unreleased edition.
+
+## Approved-edition adapter, after authorization
+
+1. Record publication permission, source-edition fingerprint and approved asset/text scope. Resolve the flagged table cell order, special-font math, paragraph segmentation and visual boundary reviews. Do not enable a release merely because glyph/pixel coverage passes.
+2. Freeze reviewed source block IDs and a content revision. IDs derived from PDF extraction are useful provenance, but are not guaranteed to survive a new edition or changed extraction algorithm. Store source-edition/revision with checkpoints and provide an explicit migration map for renamed blocks. Never merge fallback and source positions just because their printed pages coincide.
+3. Add a source-content adapter to the existing Astro reader. It should expose approved block IDs to the existing `data-reading-block` restoration mechanism, and leave source prose, captions and visual relationships intact. Use the separate annotation ranges for concept links; fail on quote mismatch rather than changing textbook words. Keep the current three columns, printed badges and mobile visual scrolling.
+4. Reuse existing `/practice/{concept}/` screens, question data, answer explanations, video mapping and progress actions. Pass an edition-aware source return target and block offset. Dedicated screens must support explicit Return and browser Back, including delayed font/image loading. Do not copy or reimport question records.
+5. Extend the existing owner-scoped guest/account reading-record schema with approved source edition/revision and reviewed section/block allowlists. Update client validation and Firestore rules together; do not widen rules to arbitrary routes. Add migration, account-switch, offline conflict, sign-out and two-device restoration cases before enabling source checkpoints in production. Do not sync PDF text, crops, comment contents or raw scroll events.
+6. Retest strict publication filtering/counts, original images, question-screen return, local and Google account restoration, offline behavior, mobile, keyboard access, readable source labels, static reading without JavaScript, production build and deployment asset allowlists. Account and rules emulator suites remain part of this future adapter change.
+7. Replace the fallback only with the reviewed and authorized edition, through an explicit release change. Keep the local extraction and comparison tools excluded from public output. The current publication guard deliberately rejects reproduced source artifacts and must remain in place until that release changes the allowlists intentionally.
+
+No Firebase, security-rule or question-bank changes were made for the local conversion. This phase does not claim cloud reading-position synchronization for an unreleased edition.

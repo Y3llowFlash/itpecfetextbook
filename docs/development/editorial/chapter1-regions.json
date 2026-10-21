@@ -1,0 +1,1942 @@
+{
+  "schemaVersion": 1,
+  "editionId": "new-fe-vol1-2015-04",
+  "publicationAuthorization": "not-established",
+  "coordinateSystem": "PDF points, top-left origin",
+  "purpose": "Original source crop seeds; no public replacement-diagram metadata is used by conversion.",
+  "regions": [
+    {
+      "id": "source-hw-p013-01",
+      "pdfPage": 18,
+      "printedPage": 13,
+      "kind": "figure",
+      "bbox": [
+        62.0,
+        587.0,
+        538.0,
+        830.95
+      ],
+      "description": "ENIAC and vacuum-tube photographs",
+      "figureNumber": null,
+      "caption": null,
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "source-hw-p014-01",
+      "pdfPage": 19,
+      "printedPage": 14,
+      "kind": "figure",
+      "bbox": [
+        222.1,
+        652.0,
+        384.26,
+        788.0
+      ],
+      "description": "Discrete switching-device illustrations",
+      "figureNumber": null,
+      "caption": null,
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "source-hw-p015-01",
+      "pdfPage": 20,
+      "printedPage": 15,
+      "kind": "figure",
+      "bbox": [
+        186.58,
+        62.0,
+        443.0,
+        223.0
+      ],
+      "description": "Supercomputer photograph",
+      "figureNumber": null,
+      "caption": null,
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "source-hw-p015-02",
+      "pdfPage": 20,
+      "printedPage": 15,
+      "kind": "figure",
+      "bbox": [
+        62.0,
+        367.0,
+        538.0,
+        518.0
+      ],
+      "description": "Desktop, laptop and handheld computer photographs",
+      "figureNumber": null,
+      "caption": null,
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-01",
+      "pdfPage": 21,
+      "printedPage": 16,
+      "kind": "figure",
+      "bbox": [
+        67.42,
+        469.59,
+        538.0,
+        703.0
+      ],
+      "description": "Figure 1-1: human calculation analogy",
+      "figureNumber": 1,
+      "caption": {
+        "lineIds": [
+          "pdf-021-b006-l01",
+          "pdf-021-b006-l02"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-02",
+      "pdfPage": 22,
+      "printedPage": 17,
+      "kind": "figure",
+      "bbox": [
+        67.42,
+        353.13,
+        538.0,
+        693.0
+      ],
+      "description": "Figure 1-2: computer calculation analogy",
+      "figureNumber": 2,
+      "caption": {
+        "lineIds": [
+          "pdf-022-b006-l01",
+          "pdf-022-b006-l02"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-03",
+      "pdfPage": 23,
+      "printedPage": 18,
+      "kind": "figure",
+      "bbox": [
+        140.0,
+        75.0,
+        485.0,
+        310.0
+      ],
+      "description": "Figure 1-3: control and data paths between the five units",
+      "figureNumber": 3,
+      "caption": {
+        "lineIds": [
+          "pdf-023-b002-l01"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-04",
+      "pdfPage": 25,
+      "printedPage": 20,
+      "kind": "figure",
+      "bbox": [
+        151.66,
+        499.42,
+        458.0,
+        653.0
+      ],
+      "description": "Figure 1-4: one bit and an eight-bit byte",
+      "figureNumber": 4,
+      "caption": {
+        "lineIds": [
+          "pdf-025-b007-l00"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-05",
+      "pdfPage": 26,
+      "printedPage": 21,
+      "kind": "figure",
+      "bbox": [
+        137.0,
+        197.0,
+        436.62,
+        398.0
+      ],
+      "description": "Figure 1-5: binary-pattern branching and powers of two",
+      "figureNumber": 5,
+      "caption": {
+        "lineIds": [
+          "pdf-026-b004-l00"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-06",
+      "pdfPage": 29,
+      "printedPage": 24,
+      "kind": "figure",
+      "bbox": [
+        65.0,
+        222.0,
+        535.0,
+        286.35
+      ],
+      "description": "Figure 1-6: decimal and binary number correspondence",
+      "figureNumber": 6,
+      "caption": {
+        "lineIds": [
+          "pdf-029-b008-l00"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-07",
+      "pdfPage": 29,
+      "printedPage": 24,
+      "kind": "figure",
+      "bbox": [
+        65.0,
+        442.0,
+        535.0,
+        506.85
+      ],
+      "description": "Figure 1-7: decimal and octal number correspondence",
+      "figureNumber": 7,
+      "caption": {
+        "lineIds": [
+          "pdf-029-b014-l00"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-08",
+      "pdfPage": 30,
+      "printedPage": 25,
+      "kind": "figure",
+      "bbox": [
+        62.0,
+        62.0,
+        538.0,
+        193.0
+      ],
+      "description": "Figure 1-8: hexadecimal digit correspondence",
+      "figureNumber": 8,
+      "caption": {
+        "lineIds": [
+          "pdf-030-b007-l00"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-09",
+      "pdfPage": 33,
+      "printedPage": 28,
+      "kind": "figure",
+      "bbox": [
+        65.0,
+        526.6,
+        535.0,
+        715.0
+      ],
+      "description": "Figure 1-9: data representation classification tree",
+      "figureNumber": 9,
+      "caption": {
+        "lineIds": [
+          "pdf-033-b009-l00"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-10",
+      "pdfPage": 35,
+      "printedPage": 30,
+      "kind": "figure",
+      "bbox": [
+        129.04,
+        195.0,
+        480.0,
+        438.0
+      ],
+      "description": "Character encoding example and Figure 1-10: JIS code lookup grid",
+      "figureNumber": 10,
+      "caption": {
+        "lineIds": [
+          "pdf-035-b010-l00"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-11",
+      "pdfPage": 38,
+      "printedPage": 33,
+      "kind": "figure",
+      "bbox": [
+        62.0,
+        454.48,
+        538.0,
+        643.0
+      ],
+      "description": "Figure 1-11: input, decimal packing, ALU and output conversion",
+      "figureNumber": 11,
+      "caption": {
+        "lineIds": [
+          "pdf-038-b009-l00",
+          "pdf-038-b009-l01"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-12",
+      "pdfPage": 51,
+      "printedPage": 46,
+      "kind": "figure",
+      "bbox": [
+        125.0,
+        350.0,
+        500.0,
+        520.0
+      ],
+      "description": "Figure 1-12: CPU control, ALU, registers and clock",
+      "figureNumber": 12,
+      "caption": {
+        "lineIds": [
+          "pdf-051-b007-l01"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-13",
+      "pdfPage": 53,
+      "printedPage": 48,
+      "kind": "figure",
+      "bbox": [
+        147.0,
+        62.0,
+        448.0,
+        162.62
+      ],
+      "description": "Figure 1-13: clock waveform and one cycle",
+      "figureNumber": 13,
+      "caption": {
+        "lineIds": [
+          "pdf-053-b002-l01"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-14",
+      "pdfPage": 56,
+      "printedPage": 51,
+      "kind": "figure",
+      "bbox": [
+        110.0,
+        433.0,
+        485.0,
+        610.0
+      ],
+      "description": "Figure 1-14: address selection and read/write memory organization",
+      "figureNumber": 14,
+      "caption": {
+        "lineIds": [
+          "pdf-056-b009-l00"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-15",
+      "pdfPage": 58,
+      "printedPage": 53,
+      "kind": "figure",
+      "bbox": [
+        132.46,
+        577.0,
+        462.89,
+        658.0
+      ],
+      "description": "Figure 1-15: opcode and address/operand instruction fields",
+      "figureNumber": 15,
+      "caption": {
+        "lineIds": [
+          "pdf-058-b007-l00"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-16",
+      "pdfPage": 59,
+      "printedPage": 54,
+      "kind": "figure",
+      "bbox": [
+        70.42,
+        163.42,
+        508.0,
+        548.0
+      ],
+      "description": "Figure 1-16: fetch, decode, effective address, operand fetch and compute flow",
+      "figureNumber": 16,
+      "caption": {
+        "lineIds": [
+          "pdf-059-b003-l01"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-17",
+      "pdfPage": 60,
+      "printedPage": 55,
+      "kind": "figure",
+      "bbox": [
+        113.92,
+        67.0,
+        538.0,
+        298.0
+      ],
+      "description": "Figure 1-17: CPU and main memory baseline",
+      "figureNumber": 17,
+      "caption": {
+        "lineIds": [
+          "pdf-060-b003-l00"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-18",
+      "pdfPage": 60,
+      "printedPage": 55,
+      "kind": "figure",
+      "bbox": [
+        107.0,
+        437.0,
+        538.0,
+        659.85
+      ],
+      "description": "Figure 1-18: instruction fetching, PC increment and IR load",
+      "figureNumber": 18,
+      "caption": {
+        "lineIds": [
+          "pdf-060-b004-l01"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-19",
+      "pdfPage": 61,
+      "printedPage": 56,
+      "kind": "figure",
+      "bbox": [
+        107.0,
+        67.0,
+        538.0,
+        298.0
+      ],
+      "description": "Figure 1-19: instruction decoding path",
+      "figureNumber": 19,
+      "caption": {
+        "lineIds": [
+          "pdf-061-b003-l00"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-20",
+      "pdfPage": 61,
+      "printedPage": 56,
+      "kind": "figure",
+      "bbox": [
+        107.0,
+        467.0,
+        538.0,
+        703.0
+      ],
+      "description": "Figure 1-20: effective address and operand fetching",
+      "figureNumber": 20,
+      "caption": {
+        "lineIds": [
+          "pdf-061-b005-l00"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-21",
+      "pdfPage": 62,
+      "printedPage": 57,
+      "kind": "figure",
+      "bbox": [
+        107.0,
+        121.9,
+        538.0,
+        348.0
+      ],
+      "description": "Figure 1-21: ALU execution and result write-back",
+      "figureNumber": 21,
+      "caption": {
+        "lineIds": [
+          "pdf-062-b004-l00"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-22",
+      "pdfPage": 63,
+      "printedPage": 58,
+      "kind": "figure",
+      "bbox": [
+        105.88,
+        632.0,
+        513.0,
+        788.0
+      ],
+      "description": "Figure 1-22: immediate addressing",
+      "figureNumber": 22,
+      "caption": {
+        "lineIds": [
+          "pdf-063-b008-l01"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-23",
+      "pdfPage": 64,
+      "printedPage": 59,
+      "kind": "figure",
+      "bbox": [
+        128.2,
+        174.34,
+        503.0,
+        323.0
+      ],
+      "description": "Figure 1-23: direct addressing",
+      "figureNumber": 23,
+      "caption": {
+        "lineIds": [
+          "pdf-064-b004-l00"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-24",
+      "pdfPage": 64,
+      "printedPage": 59,
+      "kind": "figure",
+      "bbox": [
+        136.36,
+        409.42,
+        503.0,
+        558.0
+      ],
+      "description": "Figure 1-24: indirect addressing",
+      "figureNumber": 24,
+      "caption": {
+        "lineIds": [
+          "pdf-064-b004-l04"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-25",
+      "pdfPage": 67,
+      "printedPage": 62,
+      "kind": "figure",
+      "bbox": [
+        70.42,
+        271.96,
+        535.0,
+        423.86
+      ],
+      "description": "Figure 1-25: active-low NAND SR latch and state table",
+      "figureNumber": 25,
+      "caption": {
+        "lineIds": [
+          "pdf-067-b002-l20"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-26",
+      "pdfPage": 67,
+      "printedPage": 62,
+      "kind": "figure",
+      "bbox": [
+        91.54,
+        590.13,
+        458.0,
+        718.0
+      ],
+      "description": "Figure 1-26: AND gate and truth table",
+      "figureNumber": 26,
+      "caption": {
+        "lineIds": [
+          "pdf-067-b011-l01"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-27",
+      "pdfPage": 68,
+      "printedPage": 63,
+      "kind": "figure",
+      "bbox": [
+        91.54,
+        74.13,
+        458.0,
+        208.0
+      ],
+      "description": "Figure 1-27: OR gate and truth table",
+      "figureNumber": 27,
+      "caption": {
+        "lineIds": [
+          "pdf-068-b004-l01"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-28",
+      "pdfPage": 68,
+      "printedPage": 63,
+      "kind": "figure",
+      "bbox": [
+        102.0,
+        267.0,
+        458.0,
+        343.0
+      ],
+      "description": "Figure 1-28: NOT gate and truth table",
+      "figureNumber": 28,
+      "caption": {
+        "lineIds": [
+          "pdf-068-b011-l01"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-29",
+      "pdfPage": 68,
+      "printedPage": 63,
+      "kind": "figure",
+      "bbox": [
+        91.54,
+        421.11,
+        458.0,
+        558.0
+      ],
+      "description": "Figure 1-29: NAND gate and truth table",
+      "figureNumber": 29,
+      "caption": {
+        "lineIds": [
+          "pdf-068-b015-l01"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-30",
+      "pdfPage": 68,
+      "printedPage": 63,
+      "kind": "figure",
+      "bbox": [
+        102.0,
+        647.0,
+        458.0,
+        758.0
+      ],
+      "description": "Figure 1-30: NOR gate and truth table",
+      "figureNumber": 30,
+      "caption": {
+        "lineIds": [
+          "pdf-068-b022-l01"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-31",
+      "pdfPage": 69,
+      "printedPage": 64,
+      "kind": "figure",
+      "bbox": [
+        88.54,
+        107.13,
+        458.0,
+        238.0
+      ],
+      "description": "Figure 1-31: XOR gate and truth table",
+      "figureNumber": 31,
+      "caption": {
+        "lineIds": [
+          "pdf-069-b004-l01"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-32",
+      "pdfPage": 72,
+      "printedPage": 67,
+      "kind": "figure",
+      "bbox": [
+        67.42,
+        488.44,
+        505.54,
+        661.89
+      ],
+      "description": "Figure 1-32: half-adder XOR/AND connections",
+      "figureNumber": 32,
+      "caption": {
+        "lineIds": [
+          "pdf-072-b012-l00"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-33",
+      "pdfPage": 74,
+      "printedPage": 69,
+      "kind": "figure",
+      "bbox": [
+        67.42,
+        512.0,
+        527.89,
+        684.63
+      ],
+      "description": "Figure 1-33: full adder made from two half adders and OR",
+      "figureNumber": 33,
+      "caption": {
+        "lineIds": [
+          "pdf-074-b006-l01"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-34",
+      "pdfPage": 75,
+      "printedPage": 70,
+      "kind": "figure",
+      "bbox": [
+        94.15,
+        530.0,
+        512.69,
+        696.39
+      ],
+      "description": "Figure 1-34: register/cache/main-memory buffering",
+      "figureNumber": 34,
+      "caption": {
+        "lineIds": [
+          "pdf-075-b008-l01"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-35",
+      "pdfPage": 77,
+      "printedPage": 72,
+      "kind": "figure",
+      "bbox": [
+        124.36,
+        378.0,
+        535.0,
+        475.64
+      ],
+      "description": "Figure 1-35: multilevel cache path",
+      "figureNumber": 35,
+      "caption": {
+        "lineIds": [
+          "pdf-077-b008-l00"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-36",
+      "pdfPage": 77,
+      "printedPage": 72,
+      "kind": "figure",
+      "bbox": [
+        121.11,
+        544.18,
+        524.97,
+        701.91
+      ],
+      "description": "Figure 1-36: main-memory/disk buffering",
+      "figureNumber": 36,
+      "caption": {
+        "lineIds": [
+          "pdf-077-b010-l01"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-37",
+      "pdfPage": 78,
+      "printedPage": 73,
+      "kind": "figure",
+      "bbox": [
+        70.42,
+        73.96,
+        490.0,
+        310.0
+      ],
+      "description": "Figure 1-37: memory hierarchy pyramid",
+      "figureNumber": 37,
+      "caption": {
+        "lineIds": [
+          "pdf-078-b004-l00"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-38",
+      "pdfPage": 78,
+      "printedPage": 73,
+      "kind": "figure",
+      "bbox": [
+        95.0,
+        420.0,
+        535.0,
+        685.0
+      ],
+      "description": "Figure 1-38: sequential addresses distributed over memory banks",
+      "figureNumber": 38,
+      "caption": {
+        "lineIds": [
+          "pdf-078-b006-l00"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-39",
+      "pdfPage": 80,
+      "printedPage": 75,
+      "kind": "figure",
+      "bbox": [
+        65.0,
+        45.58,
+        535.0,
+        362.24
+      ],
+      "description": "Figure 1-39: overlapped instruction pipeline timing",
+      "figureNumber": 39,
+      "caption": {
+        "lineIds": [
+          "pdf-080-b003-l00"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-40",
+      "pdfPage": 80,
+      "printedPage": 75,
+      "kind": "figure",
+      "bbox": [
+        65.0,
+        414.22,
+        535.0,
+        605.0
+      ],
+      "description": "Figure 1-40: uneven stage duration and pipeline stalls",
+      "figureNumber": 40,
+      "caption": {
+        "lineIds": [
+          "pdf-080-b005-l00"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-41",
+      "pdfPage": 81,
+      "printedPage": 76,
+      "kind": "figure",
+      "bbox": [
+        100.0,
+        506.38,
+        530.0,
+        616.35
+      ],
+      "description": "Figure 1-41: pipeline versus super-pipeline timing",
+      "figureNumber": 41,
+      "caption": {
+        "lineIds": [
+          "pdf-081-b004-l01"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-42",
+      "pdfPage": 84,
+      "printedPage": 78,
+      "kind": "figure",
+      "bbox": [
+        65.0,
+        434.61,
+        535.0,
+        620.0
+      ],
+      "description": "Figure 1-42: tracks, sectors and magnetic recording orientations",
+      "figureNumber": 42,
+      "caption": {
+        "lineIds": [
+          "pdf-084-b007-l00"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-43",
+      "pdfPage": 85,
+      "printedPage": 79,
+      "kind": "figure",
+      "bbox": [
+        110.0,
+        65.0,
+        500.0,
+        190.0
+      ],
+      "description": "Figure 1-43: head, access arm and target track",
+      "figureNumber": 43,
+      "caption": {
+        "lineIds": [
+          "pdf-085-b007-l00"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-44",
+      "pdfPage": 85,
+      "printedPage": 79,
+      "kind": "figure",
+      "bbox": [
+        111.46,
+        386.02,
+        523.0,
+        538.0
+      ],
+      "description": "Figure 1-44: HDD photograph and platter/head/cylinder schematic",
+      "figureNumber": 44,
+      "caption": {
+        "lineIds": [
+          "pdf-085-b022-l01"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-45",
+      "pdfPage": 98,
+      "printedPage": 92,
+      "kind": "figure",
+      "bbox": [
+        107.16,
+        179.92,
+        453.0,
+        288.0
+      ],
+      "description": "Figure 1-45: input-processing-output data path",
+      "figureNumber": 45,
+      "caption": {
+        "lineIds": [
+          "pdf-098-b008-l00"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "source-hw-p092-02",
+      "pdfPage": 98,
+      "printedPage": 92,
+      "kind": "figure",
+      "bbox": [
+        70.42,
+        537.0,
+        533.0,
+        682.59
+      ],
+      "description": "Keyboard illustration",
+      "figureNumber": null,
+      "caption": null,
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "source-hw-p093-01",
+      "pdfPage": 99,
+      "printedPage": 93,
+      "kind": "figure",
+      "bbox": [
+        362.0,
+        167.0,
+        528.0,
+        323.0
+      ],
+      "description": "OCR device illustration",
+      "figureNumber": null,
+      "caption": null,
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "source-hw-p093-02",
+      "pdfPage": 99,
+      "printedPage": 93,
+      "kind": "figure",
+      "bbox": [
+        362.0,
+        377.0,
+        528.0,
+        538.0
+      ],
+      "description": "OMR response-sheet example",
+      "figureNumber": null,
+      "caption": null,
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "source-hw-p093-03",
+      "pdfPage": 99,
+      "printedPage": 93,
+      "kind": "figure",
+      "bbox": [
+        362.0,
+        607.0,
+        528.0,
+        738.0
+      ],
+      "description": "MICR document example",
+      "figureNumber": null,
+      "caption": null,
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "source-hw-p094-01",
+      "pdfPage": 100,
+      "printedPage": 94,
+      "kind": "figure",
+      "bbox": [
+        362.0,
+        97.0,
+        528.0,
+        213.0
+      ],
+      "description": "Barcode reader illustration",
+      "figureNumber": null,
+      "caption": null,
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "source-hw-p094-02",
+      "pdfPage": 100,
+      "printedPage": 94,
+      "kind": "figure",
+      "bbox": [
+        102.0,
+        465.81,
+        522.61,
+        588.57
+      ],
+      "description": "One-dimensional barcode and two-dimensional QR examples",
+      "figureNumber": null,
+      "caption": null,
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "source-hw-p095-01",
+      "pdfPage": 101,
+      "printedPage": 95,
+      "kind": "figure",
+      "bbox": [
+        70.42,
+        97.0,
+        528.0,
+        223.0
+      ],
+      "description": "Image scanner illustration",
+      "figureNumber": null,
+      "caption": null,
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "source-hw-p095-02",
+      "pdfPage": 101,
+      "printedPage": 95,
+      "kind": "figure",
+      "bbox": [
+        397.0,
+        292.0,
+        533.0,
+        428.0
+      ],
+      "description": "Mouse illustration",
+      "figureNumber": null,
+      "caption": null,
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "source-hw-p096-02",
+      "pdfPage": 102,
+      "printedPage": 96,
+      "kind": "figure",
+      "bbox": [
+        382.0,
+        527.0,
+        528.0,
+        668.0
+      ],
+      "description": "Digitizer/tablet illustration",
+      "figureNumber": null,
+      "caption": null,
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-46",
+      "pdfPage": 106,
+      "printedPage": 100,
+      "kind": "figure",
+      "bbox": [
+        121.12,
+        238.42,
+        450.0,
+        398.0
+      ],
+      "description": "Figure 1-46: character glyph as dots at different resolutions",
+      "figureNumber": 46,
+      "caption": {
+        "lineIds": [
+          "pdf-106-b005-l00"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "figure-1-47",
+      "pdfPage": 106,
+      "printedPage": 100,
+      "kind": "figure",
+      "bbox": [
+        147.98,
+        589.59,
+        455.0,
+        780.0
+      ],
+      "description": "Figure 1-47: impact print head, ink ribbon and paper",
+      "figureNumber": 47,
+      "caption": {
+        "lineIds": [
+          "pdf-106-b007-l00"
+        ]
+      },
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "source-hw-p101-01",
+      "pdfPage": 107,
+      "printedPage": 101,
+      "kind": "figure",
+      "bbox": [
+        367.0,
+        532.0,
+        538.0,
+        653.0
+      ],
+      "description": "Inkjet printer illustration",
+      "figureNumber": null,
+      "caption": null,
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "source-hw-p102-01",
+      "pdfPage": 108,
+      "printedPage": 102,
+      "kind": "figure",
+      "bbox": [
+        362.0,
+        222.0,
+        538.0,
+        350.73
+      ],
+      "description": "Plotter illustration",
+      "figureNumber": null,
+      "caption": null,
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "source-hw-p102-02",
+      "pdfPage": 108,
+      "printedPage": 102,
+      "kind": "figure",
+      "bbox": [
+        362.0,
+        382.0,
+        538.0,
+        509.31
+      ],
+      "description": "Projector illustration",
+      "figureNumber": null,
+      "caption": null,
+      "reviewFlags": [
+        "verify-complete-caption-and-boundary"
+      ]
+    },
+    {
+      "id": "source-memory-persistence",
+      "pdfPage": 23,
+      "printedPage": 18,
+      "kind": "figure",
+      "bbox": [
+        70.42,
+        535.0,
+        525.0,
+        744.08
+      ],
+      "description": "memory persistence",
+      "reviewFlags": [
+        "verify-complete-boundary"
+      ]
+    },
+    {
+      "id": "source-octal-grouping",
+      "pdfPage": 30,
+      "printedPage": 25,
+      "kind": "formula",
+      "bbox": [
+        70.42,
+        393.63,
+        535.0,
+        600.51
+      ],
+      "description": "octal grouping",
+      "reviewFlags": [
+        "verify-complete-boundary"
+      ]
+    },
+    {
+      "id": "source-hex-grouping",
+      "pdfPage": 30,
+      "printedPage": 25,
+      "kind": "formula",
+      "bbox": [
+        85.0,
+        615.0,
+        535.0,
+        797.0
+      ],
+      "description": "hex grouping",
+      "reviewFlags": [
+        "verify-complete-boundary"
+      ]
+    },
+    {
+      "id": "source-binary-expansion",
+      "pdfPage": 31,
+      "printedPage": 26,
+      "kind": "formula",
+      "bbox": [
+        85.0,
+        345.0,
+        535.0,
+        550.35
+      ],
+      "description": "binary expansion",
+      "reviewFlags": [
+        "verify-complete-boundary"
+      ]
+    },
+    {
+      "id": "source-decimal-binary-division",
+      "pdfPage": 32,
+      "printedPage": 27,
+      "kind": "formula",
+      "bbox": [
+        65.0,
+        65.0,
+        535.0,
+        320.0
+      ],
+      "description": "decimal binary division",
+      "reviewFlags": [
+        "verify-complete-boundary"
+      ]
+    },
+    {
+      "id": "source-decimal-octal-division",
+      "pdfPage": 32,
+      "printedPage": 27,
+      "kind": "formula",
+      "bbox": [
+        65.0,
+        500.0,
+        535.0,
+        764.97
+      ],
+      "description": "decimal octal division",
+      "reviewFlags": [
+        "verify-complete-boundary"
+      ]
+    },
+    {
+      "id": "source-recurring-fraction",
+      "pdfPage": 33,
+      "printedPage": 28,
+      "kind": "formula",
+      "bbox": [
+        75.82,
+        255.0,
+        515.0,
+        381.57
+      ],
+      "description": "recurring fraction",
+      "reviewFlags": [
+        "verify-complete-boundary"
+      ]
+    },
+    {
+      "id": "source-jis-example",
+      "pdfPage": 35,
+      "printedPage": 30,
+      "kind": "table",
+      "bbox": [
+        110.0,
+        70.0,
+        527.0,
+        182.0
+      ],
+      "description": "jis example",
+      "reviewFlags": [
+        "verify-complete-boundary"
+      ]
+    },
+    {
+      "id": "source-bcd-layout",
+      "pdfPage": 37,
+      "printedPage": 32,
+      "kind": "formula",
+      "bbox": [
+        97.42,
+        65.0,
+        535.0,
+        175.0
+      ],
+      "description": "bcd layout",
+      "reviewFlags": [
+        "verify-complete-boundary"
+      ]
+    },
+    {
+      "id": "source-zoned-layout",
+      "pdfPage": 37,
+      "printedPage": 32,
+      "kind": "formula",
+      "bbox": [
+        91.42,
+        378.99,
+        535.0,
+        540.0
+      ],
+      "description": "zoned layout",
+      "reviewFlags": [
+        "verify-complete-boundary"
+      ]
+    },
+    {
+      "id": "source-packed-layout",
+      "pdfPage": 38,
+      "printedPage": 33,
+      "kind": "formula",
+      "bbox": [
+        91.36,
+        65.0,
+        535.0,
+        215.0
+      ],
+      "description": "packed layout",
+      "reviewFlags": [
+        "verify-complete-boundary"
+      ]
+    },
+    {
+      "id": "source-fixed-point-positive",
+      "pdfPage": 39,
+      "printedPage": 34,
+      "kind": "formula",
+      "bbox": [
+        91.54,
+        294.63,
+        535.0,
+        448.95
+      ],
+      "description": "fixed point positive",
+      "reviewFlags": [
+        "verify-complete-boundary"
+      ]
+    },
+    {
+      "id": "source-sign-magnitude-layout",
+      "pdfPage": 39,
+      "printedPage": 34,
+      "kind": "formula",
+      "bbox": [
+        91.54,
+        517.06,
+        535.0,
+        745.0
+      ],
+      "description": "sign magnitude layout",
+      "reviewFlags": [
+        "verify-complete-boundary"
+      ]
+    },
+    {
+      "id": "source-complement-examples",
+      "pdfPage": 40,
+      "printedPage": 35,
+      "kind": "formula",
+      "bbox": [
+        75.82,
+        295.0,
+        535.0,
+        515.0
+      ],
+      "description": "complement examples",
+      "reviewFlags": [
+        "verify-complete-boundary"
+      ]
+    },
+    {
+      "id": "source-twos-complement-layout",
+      "pdfPage": 40,
+      "printedPage": 35,
+      "kind": "formula",
+      "bbox": [
+        70.42,
+        520.24,
+        535.0,
+        756.03
+      ],
+      "description": "twos complement layout",
+      "reviewFlags": [
+        "verify-complete-boundary"
+      ]
+    },
+    {
+      "id": "source-subtraction-example",
+      "pdfPage": 41,
+      "printedPage": 36,
+      "kind": "formula",
+      "bbox": [
+        108.8,
+        170.0,
+        535.0,
+        568.47
+      ],
+      "description": "subtraction example",
+      "reviewFlags": [
+        "verify-complete-boundary"
+      ]
+    },
+    {
+      "id": "source-signed-magnitude-range",
+      "pdfPage": 42,
+      "printedPage": 37,
+      "kind": "table",
+      "bbox": [
+        130.0,
+        65.0,
+        264.0,
+        248.0
+      ],
+      "description": "signed magnitude range",
+      "reviewFlags": [
+        "verify-complete-boundary"
+      ]
+    },
+    {
+      "id": "source-twos-complement-range",
+      "pdfPage": 42,
+      "printedPage": 37,
+      "kind": "table",
+      "bbox": [
+        300.0,
+        65.0,
+        430.0,
+        248.0
+      ],
+      "description": "twos complement range",
+      "reviewFlags": [
+        "verify-complete-boundary"
+      ]
+    },
+    {
+      "id": "source-normalization-small",
+      "pdfPage": 44,
+      "printedPage": 39,
+      "kind": "formula",
+      "bbox": [
+        102.2,
+        681.45,
+        290.0,
+        743.0
+      ],
+      "description": "normalization small",
+      "reviewFlags": [
+        "verify-complete-boundary"
+      ]
+    },
+    {
+      "id": "source-float-encoding-example",
+      "pdfPage": 45,
+      "printedPage": 40,
+      "kind": "formula",
+      "bbox": [
+        110.0,
+        245.0,
+        535.0,
+        708.0
+      ],
+      "description": "float encoding example",
+      "reviewFlags": [
+        "verify-complete-boundary"
+      ]
+    },
+    {
+      "id": "source-trailing-digits-example",
+      "pdfPage": 46,
+      "printedPage": 41,
+      "kind": "formula",
+      "bbox": [
+        100.0,
+        630.0,
+        535.0,
+        790.0
+      ],
+      "description": "trailing digits example",
+      "reviewFlags": [
+        "verify-complete-boundary"
+      ]
+    },
+    {
+      "id": "source-cancellation-example",
+      "pdfPage": 47,
+      "printedPage": 42,
+      "kind": "formula",
+      "bbox": [
+        96.69,
+        245.71,
+        535.0,
+        402.01
+      ],
+      "description": "cancellation example",
+      "reviewFlags": [
+        "verify-complete-boundary"
+      ]
+    },
+    {
+      "id": "source-numeric-range",
+      "pdfPage": 47,
+      "printedPage": 42,
+      "kind": "figure",
+      "bbox": [
+        70.42,
+        555.0,
+        535.0,
+        661.35
+      ],
+      "description": "numeric range",
+      "reviewFlags": [
+        "verify-complete-boundary"
+      ]
+    },
+    {
+      "id": "source-arithmetic-left-shift",
+      "pdfPage": 48,
+      "printedPage": 43,
+      "kind": "formula",
+      "bbox": [
+        70.42,
+        505.0,
+        535.0,
+        703.65
+      ],
+      "description": "arithmetic left shift",
+      "reviewFlags": [
+        "verify-complete-boundary"
+      ]
+    },
+    {
+      "id": "source-two-right-shifts",
+      "pdfPage": 49,
+      "printedPage": 44,
+      "kind": "formula",
+      "bbox": [
+        100.0,
+        420.0,
+        535.0,
+        760.0
+      ],
+      "description": "two right shifts",
+      "reviewFlags": [
+        "verify-complete-boundary"
+      ]
+    },
+    {
+      "id": "source-circular-shift",
+      "pdfPage": 50,
+      "printedPage": 45,
+      "kind": "formula",
+      "bbox": [
+        70.42,
+        92.13,
+        535.0,
+        257.72
+      ],
+      "description": "circular shift",
+      "reviewFlags": [
+        "verify-complete-boundary"
+      ]
+    },
+    {
+      "id": "source-ttl-nand-margin",
+      "pdfPage": 54,
+      "printedPage": 49,
+      "kind": "figure",
+      "bbox": [
+        422.77,
+        735.0,
+        595.2,
+        842.0
+      ],
+      "description": "ttl nand margin",
+      "reviewFlags": [
+        "verify-complete-boundary"
+      ]
+    },
+    {
+      "id": "source-jk-margin",
+      "pdfPage": 55,
+      "printedPage": 50,
+      "kind": "figure",
+      "bbox": [
+        430.0,
+        0.0,
+        595.2,
+        75.0
+      ],
+      "description": "jk margin",
+      "reviewFlags": [
+        "verify-complete-boundary"
+      ]
+    },
+    {
+      "id": "source-absolute-address",
+      "pdfPage": 62,
+      "printedPage": 57,
+      "kind": "figure",
+      "bbox": [
+        137.0,
+        596.0,
+        459.0,
+        649.0
+      ],
+      "description": "absolute address",
+      "reviewFlags": [
+        "verify-complete-boundary"
+      ]
+    },
+    {
+      "id": "source-indexed-address",
+      "pdfPage": 63,
+      "printedPage": 58,
+      "kind": "figure",
+      "bbox": [
+        126.0,
+        75.0,
+        469.0,
+        175.0
+      ],
+      "description": "indexed address",
+      "reviewFlags": [
+        "verify-complete-boundary"
+      ]
+    },
+    {
+      "id": "source-base-address",
+      "pdfPage": 63,
+      "printedPage": 58,
+      "kind": "figure",
+      "bbox": [
+        120.0,
+        261.0,
+        475.0,
+        349.0
+      ],
+      "description": "base address",
+      "reviewFlags": [
+        "verify-complete-boundary"
+      ]
+    },
+    {
+      "id": "source-relative-address",
+      "pdfPage": 63,
+      "printedPage": 58,
+      "kind": "figure",
+      "bbox": [
+        119.0,
+        434.0,
+        477.0,
+        518.0
+      ],
+      "description": "relative address",
+      "reviewFlags": [
+        "verify-complete-boundary"
+      ]
+    },
+    {
+      "id": "source-xor-circuits",
+      "pdfPage": 71,
+      "printedPage": 66,
+      "kind": "figure",
+      "bbox": [
+        70.42,
+        90.2,
+        525.0,
+        309.69
+      ],
+      "description": "xor circuits",
+      "reviewFlags": [
+        "verify-complete-boundary"
+      ]
+    },
+    {
+      "id": "source-xor-alternative",
+      "pdfPage": 71,
+      "printedPage": 66,
+      "kind": "figure",
+      "bbox": [
+        83.4,
+        467.91,
+        525.0,
+        631.41
+      ],
+      "description": "xor alternative",
+      "reviewFlags": [
+        "verify-complete-boundary"
+      ]
+    },
+    {
+      "id": "source-three-bit-addition",
+      "pdfPage": 74,
+      "printedPage": 69,
+      "kind": "formula",
+      "bbox": [
+        92.23,
+        325.0,
+        525.0,
+        492.63
+      ],
+      "description": "three bit addition",
+      "reviewFlags": [
+        "verify-complete-boundary"
+      ]
+    },
+    {
+      "id": "source-variable-recording",
+      "pdfPage": 87,
+      "printedPage": 81,
+      "kind": "figure",
+      "bbox": [
+        112.72,
+        645.0,
+        515.0,
+        760.89
+      ],
+      "description": "variable recording",
+      "reviewFlags": [
+        "verify-complete-boundary"
+      ]
+    },
+    {
+      "id": "source-sector-recording",
+      "pdfPage": 88,
+      "printedPage": 82,
+      "kind": "figure",
+      "bbox": [
+        135.94,
+        135.0,
+        524.92,
+        239.67
+      ],
+      "description": "sector recording",
+      "reviewFlags": [
+        "verify-complete-boundary"
+      ]
+    },
+    {
+      "id": "source-disk-timing",
+      "pdfPage": 90,
+      "printedPage": 84,
+      "kind": "figure",
+      "bbox": [
+        65.0,
+        156.63,
+        535.0,
+        335.0
+      ],
+      "description": "disk timing",
+      "reviewFlags": [
+        "verify-complete-boundary"
+      ]
+    }
+  ]
+}
