@@ -33,6 +33,7 @@ try{
  await page.screenshot({path:`${output}/landing-desktop.png`,fullPage:true});
  await page.getByRole('link',{name:'Open Textbook',exact:true}).click();
  assert.equal(new URL(page.url()).pathname,'/chapters/hardware/');
+ await page.getByRole('heading',{level:1,name:'Hardware',exact:true}).waitFor();
  assert.equal(await page.locator('.sidebar [data-toc-link]').count(),52);
  await page.screenshot({path:`${output}/desktop.png`});
  const source=await page.evaluate(async({release,bankHash,prose,crops,covers})=>{

@@ -2,6 +2,8 @@
 
 Implemented and reviewed on 22 October 2026, on `feature/level-selection-landing`. The new root page is a static three-level bookshelf based on the owner's approved reference. FE opens the existing `/chapters/hardware/` entry; IP and AP display “Coming soon” with disabled buttons and no links. The header retains the existing `fe.` mark and yellow dot. No About ITPEC link, waitlist, extra textbook route or account requirement was added.
 
+**Verified preview:** https://3c949026.itpecfetextbook.pages.dev. Implementation commit: `5206afe5e227c1c55653fc672999df3adcc1318c`. Cloudflare also built that commit successfully from GitHub at `https://9b758033.itpecfetextbook.pages.dev`. The manually uploaded feature preview was independently verified in Chromium. No production promotion was performed; production remains on main commit `e6992e71f436416b4610c23b5db2397e7c3afa8d`.
+
 ## Original assets
 
 All seven PNG attachments were recovered from the owner's previous message and saved without byte changes under `design-references/`. The three selected fronts are:
@@ -47,6 +49,8 @@ Tests verify FE entry, browser Back to level selection, the existing reader logo
 | `npm.cmd run test:e2e -- tests/e2e/landing.spec.ts --output=.local/landing/final-e2e` | All 10 landing checks passed again after final CSS spacing refinements; seven refreshed viewport screenshots |
 | `npm.cmd run test:e2e -- tests/e2e/landing.spec.ts -g 'returning home' --output=.local/landing/checkpoint-e2e` | Additional home/checkpoint/Back regression passed |
 | `npm.cmd run build` | 24 static pages; source, question, asset, landing structure and publication-boundary checks passed |
+| `node scripts/verify-reading-preview.mjs https://3c949026.itpecfetextbook.pages.dev` | Passed: root level selection, 6 FE readers, all 281 source asset hashes, all 6 cover asset hashes, 420 unchanged questions, 52 contents links, 81 crops, guest answer/bookmark/return flow, 375/768/1024/1440-pixel viewports; no browser errors |
+| `git diff --check` | Passed |
 
 Firebase emulator suites were not rerun for this milestone because authentication, account synchronization, progress schemas and rules were unchanged. Existing browser tests exercise the complete guest learning flow. Production retains the previously published FE reader until the owner approves this separate landing milestone.
 
@@ -61,5 +65,7 @@ Final screenshot examples:
 - Small desktop: `.local/landing/final-e2e/landing-level-bookshelf-or-5faa1-responsive-layout-at-1024px/landing-1024.png`
 - Tablet: `.local/landing/final-e2e/landing-level-bookshelf-or-668f0--responsive-layout-at-768px/landing-768.png`
 - Mobile: `.local/landing/final-e2e/landing-level-bookshelf-or-2c990--responsive-layout-at-375px/landing-375.png`
+
+Hosted screenshots and machine-readable results are in `.local/landing/hosted-review/`: `landing-desktop.png`, `landing-mobile.png`, `landing-tablet.png`, `landing-small-tablet.png` and `preview-check.json`. These were visually compared with the original reference and local screenshots. Additional BCD/UART/reader screenshots there verify the existing content on the same deployment.
 
 The result is ready for owner review. This milestone does not merge into `main`, publish to production, or begin IP/AP textbook development.
