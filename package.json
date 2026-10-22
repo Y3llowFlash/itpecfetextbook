@@ -24,6 +24,7 @@
     "questions:reconcile": "tsx scripts/reconcile-historical-questions.ts",
     "questions:qa": "python scripts/academic_qa.py",
     "test:academic": "python -m unittest discover -s tests -p test_academic_qa.py",
+    "test:academic-batch2": "python -m unittest discover -s tests -p test_academic_qa_batch2.py",
     "test:historical": "python -m unittest discover -s tests -p test_historical_questions.py",
     "test:question-promotion": "python -m unittest discover -s tests -p test_question_promotion.py",
     "validate:data": "tsx scripts/validate-data.ts",

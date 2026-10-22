@@ -3,6 +3,10 @@ import argparse
 import copy
 import itertools
 import json
+import csv
+import io
+import re
+from pathlib import Path
 import fitz
 from PIL import Image
 import historical_questions as h
@@ -10,25 +14,61 @@ import historical_questions as h
 QA=h.WORK/'qa-batch1'
 AUDIT='ITPEC_Chapter1_Academic_Audit_Batch01_With_Images.json'
 ADDENDUM='ITPEC_Chapter1_Image_QA_Addendum.json'
+AUDIT2='ITPEC_Chapter1_Academic_Audit_Batch02.json'
+TEXTBOOK=Path('D:/ITPEC Old Questions/database/raw/FE Vol 1.pdf')
 
 def object_hash(value):
     return h.digest(json.dumps(value,sort_keys=True,ensure_ascii=False,separators=(',',':')).encode())
 
 def validate_proposals(records,audit,addendum,source_sha):
-    if audit.get('schema')!='itpec-academic-audit-proposals-v1-with-image-addendum' or addendum.get('schema')!='itpec-academic-image-audit-addendum-v1':raise ValueError('Unsupported advisory schema')
+    batch2=audit.get('schema')=='itpec-academic-audit-proposals-v2' and audit.get('batch')==2
+    if not batch2 and (audit.get('schema')!='itpec-academic-audit-proposals-v1-with-image-addendum' or not addendum or addendum.get('schema')!='itpec-academic-image-audit-addendum-v1'):raise ValueError('Unsupported advisory schema')
     entries=audit.get('entries',[])
-    if len(entries)!=30 or audit.get('questionCount')!=30 or len({e['questionId'] for e in entries})!=30:raise ValueError('Batch must contain 30 unique canonical IDs')
+    count=audit.get('scope',{}).get('count') if batch2 else audit.get('questionCount')
+    if len(entries)!=30 or count!=30 or len({e['questionId'] for e in entries})!=30:raise ValueError('Batch must contain 30 unique canonical IDs')
     index={r['id']:r for r in records}
     for e in entries:
         r=index.get(e['questionId'])
         if not r or e['sourceSha256']!=source_sha or e['questionContentSha256']!=r['contentSha256'] or e['pdfPage'] not in [p['pdfPage'] for p in r['regions']]:raise ValueError(f'Stale or inconsistent proposal: {e["questionId"]}')
         if h.digest(r['rawText'].encode())!=r['contentSha256']:raise ValueError('Original transcript checksum changed')
-    for e in addendum['visualFindings']:
+        if batch2:
+            position=e.get('originalRecordIndex',0)
+            if not 1<=position<=len(records) or records[position-1]['id']!=r['id']:raise ValueError('Canonical record index changed')
+            if e.get('printedAnswer')!=r.get('printedAnswer') or e.get('originalExtractionQuality')!=r.get('extractionQuality'):raise ValueError('Advisory source fields disagree')
+            if e.get('reviewSnapshotSha256')!=audit['sourceSnapshot']['reviewFileSha256']:raise ValueError('Inconsistent review snapshot reference')
+            if e.get('sourceOriginalImageReferences')!=[a['path'] for a in r['images']]:raise ValueError('Advisory image identity changed')
+    if batch2 and audit['scope'].get('questionIndices')!=[e['originalRecordIndex'] for e in entries]:raise ValueError('Advisory scope indices disagree')
+    for e in (addendum or {}).get('visualFindings',[]):
         r=index.get(e['questionId'])
         if not r or e['pdfPage'] not in [p['pdfPage'] for p in r['regions']]:raise ValueError('Visual proposal identity mismatch')
         images=r['images']+[a for history in r.get('imageHistory',[]) for a in history['images']]
         if not any(a['path']==e['imageFile'] and a['sha256']==e['imageSha256'] for a in images):raise ValueError(f'Stale visual image: {e["questionId"]}')
     return index
+
+def validate_companions(audit,csv_text,markdown):
+    """Companion documents are consistency checks, never executable instructions."""
+    rows=list(csv.DictReader(io.StringIO(csv_text.lstrip('\ufeff'))));entries=audit['entries']
+    table=[line.split('|')[1:-1] for line in markdown.splitlines() if re.match(r'^\|\s*\d+\s*\|',line)]
+    if len(rows)!=30 or len(table)!=30:raise ValueError('Companion documents must cover all 30 proposals')
+    for e,row,md in zip(entries,rows,table,strict=True):
+        answer=e['independentProposedAnswer'] or 'UNRESOLVED'
+        expected=[str(e['pdfPage']),e['questionId'],answer,f'Vol 1 Chapter {e["targetChapter"]}',str(e['textbookLocation']['pdfPage']),e['answerStatus'],e['sourceVisualReview']['note']]
+        if [row.get(k) for k in ['PDF page','Question','Proposed answer','Classification','Textbook PDF page','Review status','Visual / academic note']]!=expected:raise ValueError('CSV disagrees with JSON advisory')
+        if md[0].strip()!=str(e['pdfPage']) or md[1].strip(' `')!=e['questionId'] or md[2].strip(' *').lower()!=answer.lower():raise ValueError('Markdown table disagrees with JSON advisory')
+        location=re.search(r'Vol 1 Ch\.(\d+), PDF p\.(\d+)',md[3])
+        if not location or [int(v) for v in location.groups()]!=[e['targetChapter'],e['textbookLocation']['pdfPage']]:raise ValueError('Markdown textbook location disagrees with JSON advisory')
+
+def snapshot_hashes(folder):
+    return {key:h.digest((folder/name).read_bytes()) for key,name in [('questionFileSha256','questions.json'),('reviewFileSha256','reviews.json'),('manifestFileSha256','manifest.json')]}
+
+def validate_batch2_snapshot(folder,audit,source_sha,book_sha,input_hashes):
+    expected={k:audit['sourceSnapshot'][k] for k in ['questionFileSha256','reviewFileSha256','manifestFileSha256']}
+    if snapshot_hashes(folder/'before')!=expected:raise ValueError('Preserved Batch 2 baseline does not match advisory snapshot')
+    if audit['sourceSnapshot']['historicalPdfSha256']!=source_sha or audit['sourceSnapshot']['textbookPdfSha256']!=book_sha:raise ValueError('Advisory source snapshot differs from original PDFs')
+    actual=snapshot_hashes(h.WORK);applied=h.read_json(folder/'applied-state.json',{})
+    if actual!=expected and (actual!=applied.get('snapshot') or input_hashes!=applied.get('inputs')):raise ValueError('Stale Batch 2 snapshot or changed reconciliation inputs')
+    baseline=h.read_json(folder/'before/reviews.json')
+    if any(baseline[e['questionId']]['verification']['status']!=e['originalVerificationStatus'] for e in audit['entries']):raise ValueError('Original verification status differs from advisory baseline')
 
 def boolean(expr,values):
     if isinstance(expr,str):return bool(values[expr])
@@ -46,24 +86,49 @@ def check_proof(proof):
     if any(r[-2]!=r[-1] for r in rows):raise ValueError('Independent truth table does not establish the claimed equality')
     return rows
 
+def check_choice_proof(proof):
+    """Compare every source option, so a matching key cannot hide duplicate answers."""
+    variables=proof['variables'];choices=proof['choices'];rows=[]
+    if set(choices)!=set('abcd'):raise ValueError('Choice proof must include all four original alternatives')
+    for bits in itertools.product([0,1],repeat=len(variables)):
+        values=dict(zip(variables,bits))
+        rows.append([*bits,int(boolean(proof['expression'],values)),*[int(boolean(choices[k],values)) for k in 'abcd']])
+    start=len(variables)
+    matches=[k for i,k in enumerate('abcd') if all(row[start]==row[start+1+i] for row in rows)]
+    if matches!=proof['expectedMatches']:raise ValueError(f'Source option truth tables disagree with claimed matches: {matches}')
+    return {'matches':matches,'rows':rows}
+
+def check_observations(proof):
+    variables=proof['variables']
+    for row in proof['rows']:
+        if len(row)!=len(variables)+1 or any(bit not in [0,1] for bit in row):raise ValueError('Invalid source observation table')
+        if int(boolean(proof['expression'],dict(zip(variables,row[:-1]))))!=row[-1]:raise ValueError('Source observation disagrees with independently evaluated expression')
+    return proof['rows']
+
 def extraction_binding(record):
     return {'contentSha256':record['contentSha256'],'images':[a['sha256'] for a in record['images']]}
 
-def merge_reviews(records,reviews,entries,decisions,batch_hash):
+def merge_reviews(records,reviews,entries,decisions,batch_hash,batch=1):
     result=copy.deepcopy(reviews);changes=[];conflicts=[];by_id={e['questionId']:e for e in entries}
-    if set(by_id)-set(decisions):raise ValueError('Every Batch 1 proposal requires a separate source-checked decision')
+    if set(by_id)-set(decisions):raise ValueError('Every proposal requires a separate source-checked decision')
+    if batch==2 and set(decisions)!=set(by_id):raise ValueError('Batch 2 decisions must match exactly the 30 advisory IDs')
     for r in records:
         old=copy.deepcopy(result.get(r['id'],{}));v=result.setdefault(r['id'],{})
         if v.get('contentSha256')!=r['contentSha256']:raise ValueError('Existing review content binding is stale')
-        meta=v.setdefault('metadata',{})
-        meta.update(examType='FE',examTypeStatus='owner-confirmed',examTypeEvidence={'kind':'owner-confirmation','reference':'Batch 1 integration request, 2026-10-22, section 7','sourceSha256':r['sourceReferences'][0]['sha256']})
-        # FE confirmation is not evidence of paper or subject. Keep the aggregate gate pending.
-        if not meta.get('paper') or not meta.get('subject'):meta['status']='needs-review'
+        if batch==1:
+            meta=v.setdefault('metadata',{})
+            meta.update(examType='FE',examTypeStatus='owner-confirmed',examTypeEvidence={'kind':'owner-confirmation','reference':'Batch 1 integration request, 2026-10-22, section 7','sourceSha256':r['sourceReferences'][0]['sha256']})
+            # FE confirmation is not evidence of paper or subject. Keep the aggregate gate pending.
+            if not meta.get('paper') or not meta.get('subject'):meta['status']='needs-review'
         d=decisions.get(r['id'])
         if d:
             if d.get('contentSha256')!=r['contentSha256'] or d.get('sourceChecked') is not True or d.get('imageHashes')!=[a['sha256'] for a in r['images']]:raise ValueError(f'Stale independent decision: {r["id"]}')
             if d.get('classification',{}).get('category','ch1') not in ['ch1','other-vol1','outside-vol1','uncertain']:raise ValueError('Unsupported textbook classification')
             for proof in d.get('booleanProofs',[]):check_proof(proof)
+            for proof in d.get('observationProofs',[]):check_observations(proof)
+            for proof in d.get('choiceProofs',[]):
+                matched=check_choice_proof(proof)['matches']
+                if d.get('verification',{}).get('status')=='verified' and matched!=[d['verification']['independentAnswer']]:raise ValueError('Verified answer must match exactly one original option')
             for dimension in ['verification','explanation','mapping','classification','extraction']:
                 if dimension not in d:continue
                 proposed=copy.deepcopy(d[dimension]);existing=v.get(dimension,{})
@@ -79,7 +144,8 @@ def merge_reviews(records,reviews,entries,decisions,batch_hash):
                     proposed['sourceBinding']=extraction_binding(r)
                     proposed['reviewedImages']=[a['sha256'] for a in r['images']]
                 v[dimension]=proposed
-            provenance={'batch':1,'advisorySha256':batch_hash,'decisionSha256':object_hash(d),'status':'source-reconciled-not-owner-approved'}
+            provenance={'batch':batch,'advisorySha256':batch_hash,'decisionSha256':object_hash(d),'status':'source-reconciled-not-owner-approved'}
+            if 'finding' in d:provenance['finding']=d['finding']
             if v.get('verification',{}).get('status')=='verified' and not h.valid_verification(r,v):raise ValueError(f'Incomplete independent verification: {r["id"]}')
             v.setdefault('academicReviews',[])
             if provenance not in v['academicReviews']:v['academicReviews'].append(provenance)
@@ -132,43 +198,61 @@ def validate_source_images(records,pdf):
                 if decoded.size!=(a['width'],a['height']) or decoded.convert('RGB').tobytes()!=original.tobytes() or h.digest(original.tobytes())!=a['pixelSha256']:raise ValueError('Source pixels or image metadata differ')
     return len(records)
 
-def reconcile(apply=False):
+def reconcile(apply=False,batch=1):
+    if batch not in [1,2]:raise ValueError('Unsupported academic batch')
+    folder=QA if batch==1 else h.WORK/'qa-batch2'
     records=h.read_json(h.WORK/'questions.json');reviews=h.read_json(h.WORK/'reviews.json');manifest=h.read_json(h.WORK/'manifest.json')
+    if manifest.get('qaReconciliation',{}).get('batch',1)>batch:raise ValueError('A later batch is already reconciled; older batch replay is blocked')
     source_sha=h.digest(h.SOURCE.read_bytes())
     if source_sha!=manifest['sourceSha256']:raise ValueError('Historical source changed')
     if manifest.get('recordsSha256') and manifest['recordsSha256']!=h.digest((h.WORK/'questions.json').read_bytes()):raise ValueError('Question snapshot changed since source validation')
     if any(s['sha256']!=source_sha for r in records for s in r['sourceReferences']):raise ValueError('Question source identity differs from authorized PDF')
-    audit=h.read_json(QA/AUDIT);addon=h.read_json(QA/ADDENDUM);validate_proposals(records,audit,addon,source_sha)
-    decisions=h.read_json(QA/'decisions.json')
+    audit_file=folder/(AUDIT if batch==1 else AUDIT2)
+    audit=h.read_json(audit_file);addon=h.read_json(folder/ADDENDUM) if batch==1 else None
+    validate_proposals(records,audit,addon,source_sha)
+    decisions=h.read_json(folder/'decisions.json')
     if decisions is None:raise ValueError('Source-checked decisions must be prepared independently before reconciliation')
+    inputs={'advisorySha256':h.digest(audit_file.read_bytes()),'decisionsSha256':object_hash(decisions)}
+    if batch==2:
+        h.verify_source()
+        companions=[folder/AUDIT2,folder/AUDIT2.replace('.json','.md'),folder/AUDIT2.replace('.json','.csv')]
+        inputs['advisoryFiles']={p.name:h.digest(p.read_bytes()) for p in companions}
+        validate_companions(audit,companions[2].read_text('utf-8-sig'),companions[1].read_text('utf8'))
+        validate_batch2_snapshot(folder,audit,source_sha,h.digest(TEXTBOOK.read_bytes()),inputs)
     proposed=copy.deepcopy(records)
     with fitz.open(h.SOURCE) as pdf:
         # Dry-run does not generate or overwrite a crop; use the previously prepared reviewed crop.
-        target=next(r for r in proposed if r['regions'][0]['pdfPage']==45)
-        prepared=h.read_json(QA/'corrected-page45.json')
-        if prepared is None:raise ValueError('Prepare and visually review the targeted page 45 crop first')
-        if prepared['id']!=target['id'] or prepared['contentSha256']!=target['contentSha256']:raise ValueError('Prepared crop identity changed')
-        target.update(images=prepared['images'],regions=prepared['regions'],imageHistory=prepared['imageHistory'])
+        if batch==1:
+            target=next(r for r in proposed if r['regions'][0]['pdfPage']==45)
+            prepared=h.read_json(folder/'corrected-page45.json')
+            if prepared is None:raise ValueError('Prepare and visually review the targeted page 45 crop first')
+            if prepared['id']!=target['id'] or prepared['contentSha256']!=target['contentSha256']:raise ValueError('Prepared crop identity changed')
+            target.update(images=prepared['images'],regions=prepared['regions'],imageHistory=prepared['imageHistory'])
         checked=validate_source_images(proposed,pdf)
-    for r in proposed:
-        r['examType']='FE';r['examTypeStatus']='owner-confirmed'
-        r['examTypeProvenance']={'kind':'owner-confirmation','reference':'Batch 1 integration request, 2026-10-22, section 7'}
-    updated,changes,conflicts=merge_reviews(proposed,reviews,audit['entries'],decisions,h.digest((QA/AUDIT).read_bytes()))
-    report={'batchQuestions':30,'sourcePixelComparisons':checked,'regeneratedCrops':sum(old['images']!=new['images'] for old,new in zip(records,proposed,strict=True)),'reviewChanges':len(changes),'academicConflicts':conflicts,'advisorySha256':h.digest((QA/AUDIT).read_bytes()),'decisionsSha256':object_hash(decisions),'changes':changes,'ownerApprovalsGranted':0}
+    if batch==1:
+        for r in proposed:
+            r['examType']='FE';r['examTypeStatus']='owner-confirmed'
+            r['examTypeProvenance']={'kind':'owner-confirmation','reference':'Batch 1 integration request, 2026-10-22, section 7'}
+    updated,changes,conflicts=merge_reviews(proposed,reviews,audit['entries'],decisions,inputs['advisorySha256'],batch)
+    report={'batch':batch,'batchQuestions':30,'sourcePixelComparisons':checked,'regeneratedCrops':sum(old['images']!=new['images'] for old,new in zip(records,proposed,strict=True)),'reviewChanges':len(changes),'academicConflicts':conflicts,**inputs,'changes':changes,'ownerApprovalsGranted':0}
     if apply:
         before={'questions':records,'reviews':reviews,'manifest':manifest};key=object_hash(before)
-        history=QA/'history'/key
+        history=folder/'history'/key
         if changes or records!=proposed:
             h.write_json(history/'snapshot.json',before);h.write_json(history/'changes.json',report)
             h.write_json(h.WORK/'questions.json',proposed);h.write_json(h.WORK/'reviews.json',updated)
         revised=h.manifest_for(proposed,source_sha,manifest['pdfPages'],manifest)
         revised['sourceHistory']=manifest.get('sourceHistory',[{'sourceSha256':source_sha,'importerFingerprint':manifest['importerFingerprint'],'kind':'original-extraction'}])
-        revised['qaReconciliation']={'batch':1,'kind':'targeted-source-validated-reconciliation','advisorySha256':report['advisorySha256'],'decisionsSha256':report['decisionsSha256'],'manualSourcePages':37,'sourcePixelComparisons':checked,'regeneratedCrops':1,'unchangedCrops':332}
+        prior=manifest.get('qaReconciliation',{});past=copy.deepcopy(prior.get('previousBatches',[]))
+        if prior and prior.get('batch')!=batch:past.append({k:v for k,v in prior.items() if k!='previousBatches'})
+        revised['qaReconciliation']={'batch':batch,'kind':'targeted-source-validated-reconciliation',**inputs,'manualSourcePages':37 if batch==1 else 30,'sourcePixelComparisons':checked,'regeneratedCrops':1 if batch==1 else 0,'unchangedCrops':332 if batch==1 else 333}
+        if past:revised['qaReconciliation']['previousBatches']=past
         revised['recordsSha256']=h.digest((h.WORK/'questions.json').read_bytes())
         h.write_json(h.WORK/'manifest.json',revised);h.write_review_gallery(proposed)
+        if batch==2:h.write_json(folder/'applied-state.json',{'snapshot':snapshot_hashes(h.WORK),'inputs':inputs})
         stable={k:v for k,v in report.items() if k not in ['changes','reviewChanges','regeneratedCrops']}
-        h.write_json(QA/'reconciliation-report.json',stable)
+        h.write_json(folder/'reconciliation-report.json',stable)
     print(json.dumps({**report,'changes':None,'dryRun':not apply},indent=2));return report
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--apply',action='store_true');args=parser.parse_args();reconcile(args.apply)
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--apply',action='store_true');parser.add_argument('--batch',type=int,choices=[1,2],default=1);args=parser.parse_args();reconcile(args.apply,args.batch)
