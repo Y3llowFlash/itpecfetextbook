@@ -33,6 +33,7 @@ test('BCD complete example supports keyboard panning, enlargement and old readin
  const enlarged=context.waitForEvent('page');await figure.locator('figcaption a').focus();await page.keyboard.press('Enter');
  const imagePage=await enlarged;await imagePage.waitForLoadState();expect(imagePage.url()).toContain(bcd.asset.path);await imagePage.close();
  // A previously saved text-fragment ID now restores to the complete source box.
+ await expect.poll(()=>page.evaluate(()=>localStorage.getItem('itpecTextbook:guest:v1'))).not.toBeNull();
  await page.evaluate(({id,path})=>{
   const key='itpecTextbook:guest:v1',saved=JSON.parse(localStorage.getItem(key)!);
   saved.reading={sectionId:'fe-v1-ch01-s02',path,blockId:id,offset:95,scrollY:1000,updatedAt:new Date().toISOString()};localStorage.setItem(key,JSON.stringify(saved));

@@ -52,6 +52,8 @@ Astro CLI telemetry is disabled by the local wrapper. Firebase's public web conf
 
 The [Chapter 1 question-integration report](docs/development/CHAPTER_1_QUESTION_INTEGRATION.md) covers private historical extraction/review, `questions:sync`, owner-approved promotion and the new Practice filters. Historical questions remain outside the public catalog until separately approved.
 
+The [Batch 1 academic QA report](docs/development/CHAPTER_1_ACADEMIC_QA_BATCH_1.md) updates that private queue to 222 verified / 111 unresolved, documents the targeted page-45 repair and 30-question classification table, and explains `questions:qa`. FE metadata is owner-confirmed; paper metadata and publication approval remain pending.
+
 The imported snapshot is committed, so ordinary development and builds **do not need the old repository**.
 
 To intentionally refresh it from a read-only source checkout:

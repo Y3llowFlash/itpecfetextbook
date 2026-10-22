@@ -62,7 +62,7 @@ class HistoricalImportTests(unittest.TestCase):
                 image=work/rows[0]['images'][0]['path'];image.write_bytes(b'changed')
                 self.assertRaises(ValueError,h.verify_assets,rows)
     def test_printed_answer_match_is_not_verification_or_approval(self):
-        r={'contentSha256':'sha','printedAnswer':'b','images':[{'sha256':'image'}]}
+        r={'contentSha256':'sha','printedAnswer':'b','extractionQuality':'complete','images':[{'sha256':'image'}]}
         v={'contentSha256':'sha','verification':{'status':'verified','independentAnswer':'b'}}
         self.assertFalse(h.valid_verification(r,v));self.assertFalse(h.valid_approval(r,v))
         v['verification'].update(method='calculation',evidence=['1+1=2'],reasoning='Count one and one')
