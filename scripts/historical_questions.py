@@ -41,6 +41,24 @@ def publication_fingerprint(record,review):
     # Approval is invalidated by any source, crop, metadata, mapping or explanation change.
     return digest(json.dumps({'question':record,'review':{k:v for k,v in review.items() if k!='approval'}},sort_keys=True,ensure_ascii=False).encode())
 
+def adjudication_fingerprint(record,decision):
+    binding={'id':record['id'],'contentSha256':record['contentSha256'],
+             'sources':record['sourceReferences'],'images':record['images']}
+    return digest(json.dumps({'record':binding,'decision':{k:v for k,v in decision.items() if k!='fingerprint'}},sort_keys=True,ensure_ascii=False).encode())
+
+def valid_adjudication(record,review):
+    """An owner-selected historical answer is neither independent verification nor approval."""
+    a=review.get('ownerAdjudication',{});p=a.get('provenance',{});binding=a.get('sourceBinding',{})
+    return bool(a.get('status')=='owner-adjudicated' and a.get('selectedAnswer') in list('abcd') and
+                a.get('originalPrintedAnswer')==record.get('printedAnswer') and
+                binding.get('contentSha256')==record['contentSha256'] and
+                binding.get('images')==[i['sha256'] for i in record.get('images',[])] and
+                binding.get('sourceSha256') in [s['sha256'] for s in record['sourceReferences']] and
+                p.get('kind')=='explicit-owner-instruction' and p.get('instructionsSha256') and
+                p.get('publicationApprovalGranted') is False and a.get('supportingEvidence') and
+                a.get('studentExplanation')==review.get('explanation') and
+                a.get('fingerprint')==adjudication_fingerprint(record,a))
+
 def describe_page(page,number):
     raw=page.get_text('dict');lines=[]
     for block in raw['blocks']:
@@ -141,7 +159,7 @@ def manifest_for(records,source_sha,page_count,previous=None):
     reviews=read_json(WORK/'reviews.json',{})
     verified=sum(valid_verification(r,reviews.get(r['id'],{})) for r in records)
     approved=sum(valid_approval(r,reviews.get(r['id'],{})) for r in records)
-    return {'schemaVersion':1,'sourceFilename':'Technology-01.pdf','sourceSha256':source_sha,'importerFingerprint':processing_fingerprint(),
+    result={'schemaVersion':1,'sourceFilename':'Technology-01.pdf','sourceSha256':source_sha,'importerFingerprint':processing_fingerprint(),
             'importedAt':(previous or {}).get('importedAt') or datetime.now(timezone.utc).isoformat(),'processingStatus':'review-in-progress' if verified else 'extracted-awaiting-review',
             'pdfPages':page_count,'totalExtracted':sum(len(r['sourceReferences']) for r in records),'duplicateQuestions':sum(len(r['sourceReferences'])-1 for r in records),'uniqueQuestions':len(records),
             'verifiedAnswers':verified,'approvedQuestions':approved,'unresolvedQuestions':len(records)-verified,'imageExtractionFailures':0,
@@ -152,6 +170,11 @@ def manifest_for(records,source_sha,page_count,previous=None):
             'mappingStatuses':dict(Counter(reviews.get(r['id'],{}).get('mapping',{}).get('status','needs-review') for r in records)),
             'completedExplanations':sum(valid_verification(r,reviews.get(r['id'],{})) and bool(reviews.get(r['id'],{}).get('explanation')) for r in records),
             'publicationPolicy':'Only a separate, fingerprint-bound owner approval can publish independently verified Chapter 1 records.'}
+    if any('ownerAdjudication' in reviews.get(r['id'],{}) for r in records):
+        result.update(ownerAdjudicatedAnswers=sum(valid_adjudication(r,reviews.get(r['id'],{})) for r in records),
+                      unadjudicatedQuestions=sum(not valid_verification(r,reviews.get(r['id'],{})) and not valid_adjudication(r,reviews.get(r['id'],{})) for r in records),
+                      adjudicatedPublicationBlocked=sum(bool(reviews.get(r['id'],{}).get('ownerAdjudication')) and bool(approval_errors(r,reviews.get(r['id'],{}))) for r in records))
+    return result
 
 def valid_verification(record,review):
     v=review.get('verification',{});ex=review.get('explanation',{})
@@ -181,6 +204,11 @@ def validate_review_statuses(records,reviews):
 
 def approval_errors(record,review):
     errors=[]
+    adjudication=review.get('ownerAdjudication')
+    if adjudication:
+        if not valid_adjudication(record,review):errors.append('Owner adjudication is stale or incomplete')
+        if adjudication.get('gradingEligibility',{}).get('status')!='eligible':errors.append('Owner-adjudicated grading remains blocked: '+adjudication.get('gradingEligibility',{}).get('reason','unreviewed grading policy'))
+        if adjudication.get('publicationReadiness',{}).get('status')!='ready':errors.append('Owner adjudication does not grant publication readiness or approval')
     if not authoritative_duplicate(record,review) and not valid_verification(record,review):errors.append('Independent answer evidence and worked explanation are incomplete or conflict with the printed key')
     mapping=review.get('mapping',{});quality=review.get('extraction',{});meta=review.get('metadata',{})
     if review.get('classification',{}).get('category','ch1')!='ch1':errors.append('This question is not classified for Chapter 1 publication')
@@ -210,7 +238,7 @@ def valid_approval(record,review):
 def refresh_review(records):
     validate_review_statuses(records,read_json(WORK/'reviews.json',{}))
     previous=read_json(WORK/'manifest.json');updated=manifest_for(records,previous['sourceSha256'],previous['pdfPages'],previous)
-    for key in ['sourceHistory','qaReconciliation','recordsSha256']:
+    for key in ['sourceHistory','qaReconciliation','recordsSha256','ownerAdjudication']:
         if key in previous:updated[key]=previous[key]
     write_json(WORK/'manifest.json',updated);write_review_gallery(records)
 
@@ -258,8 +286,11 @@ def write_review_gallery(records):
         review=reviews.get(r['id'],{});status=review.get('verification',{}).get('status','unverified')
         images=''.join(f'<a href="{a["path"]}"><img loading="lazy" src="{a["path"]}" alt="Original complete question, PDF page {a["pdfPage"]}"></a>' for a in r['images'])
         publication='approved' if valid_approval(r,review) else 'unapproved'
+        adjudication=review.get('ownerAdjudication');owner=''
+        if adjudication:
+            owner='<h3>Owner-selected historical answer (not publication approval)</h3><pre>'+html.escape(json.dumps(adjudication,indent=2,ensure_ascii=False))+'</pre>'
         status+=f' · Extraction (raw/effective): {r["extractionQuality"]}/{effective_extraction(r,review)}'
-        cards.append(f'<article id="{r["id"]}"><h2>{r["id"]}</h2><p>PDF pages {r["sourceReferences"][0]["pages"]} · Printed key: {r["printedAnswer"]} · Verification: {status} · Publication: {publication}</p>{images}<details><summary>Extracted text and layout flags</summary><pre>{html.escape(r["rawText"])}</pre><p>{html.escape(str(r["issues"]))}</p></details><h3>Independent review</h3><pre>{html.escape(json.dumps(review,indent=2,ensure_ascii=False))}</pre><p>Approval blockers: {html.escape("; ".join(approval_errors(r,review)))}</p></article>')
+        cards.append(f'<article id="{r["id"]}"><h2>{r["id"]}</h2><p>PDF pages {r["sourceReferences"][0]["pages"]} · Printed key: {r["printedAnswer"]} · Verification: {status} · Publication: {publication}</p>{images}<details><summary>Extracted text and layout flags</summary><pre>{html.escape(r["rawText"])}</pre><p>{html.escape(str(r["issues"]))}</p></details>{owner}<h3>Review record (academic verification is separate)</h3><pre>{html.escape(json.dumps(review,indent=2,ensure_ascii=False))}</pre><p>Approval blockers: {html.escape("; ".join(approval_errors(r,review)))}</p></article>')
     page='<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Technology-01 local review</title><style>body{font:16px/1.6 system-ui;background:#faf8f1;max-width:1100px;margin:auto;padding:24px}article{padding:32px 0;border-bottom:1px solid #aaa}img{width:100%;height:auto}pre{white-space:pre-wrap;overflow-wrap:anywhere}h2{font-size:20px}</style><h1>Technology-01 · private question review</h1><p>Original question crops omit the answer-key footer. The printed answer, independent reasoning, source mapping and owner approval are separate review dimensions. These records are not public.</p>'+''.join(cards)+'</html>'
     target=WORK/'index.html'
     if not target.exists() or target.read_text('utf8')!=page:target.write_text(page,'utf8')

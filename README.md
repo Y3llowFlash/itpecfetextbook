@@ -60,7 +60,9 @@ The [Batch 3 reconciliation report](docs/development/CHAPTER_1_ACADEMIC_QA_BATCH
 
 The [Batch 4 reconciliation report](docs/development/CHAPTER_1_ACADEMIC_QA_BATCH_4.md) records the **306 verified / 27 unresolved** checkpoint, with qualified SECDED evidence, DVD-RAM endurance evidence and source circuit/table checks.
 
-The [Batch 5 completion report](docs/development/CHAPTER_1_ACADEMIC_QA_BATCH_5.md) records the current **326 verified / 7 unresolved** private queue. All 306 earlier reviews and seven protected disputes remain unchanged. The final regular batch adds exact arithmetic/source-option checks while retaining tentative and unassigned classifications. Use `questions:qa -- --batch 5` and `test:academic-batch5`; earlier-batch replay is blocked. All historical questions remain unapproved and private.
+The [Batch 5 completion report](docs/development/CHAPTER_1_ACADEMIC_QA_BATCH_5.md) records the **326 verified / 7 unresolved** checkpoint. The final regular batch added exact arithmetic/source-option checks while retaining tentative and unassigned classifications.
+
+The [final owner-adjudication report](docs/development/CHAPTER_1_OWNER_ADJUDICATION.md) records **326 independently verified answers plus seven qualified owner selections**, with zero publication approvals. All 326 earlier review objects remain unchanged. Page 119 retains both A and D as mathematically valid and is blocked from single-answer grading. Use `questions:qa -- --owner-adjudication` for validation, `--apply` for idempotent private replay, and `test:owner-adjudication` for regressions. All five earlier academic batches are blocked from replay over this checkpoint. Historical questions remain private.
 
 The imported snapshot is committed, so ordinary development and builds **do not need the old repository**.
 

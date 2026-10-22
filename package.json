@@ -28,6 +28,7 @@
     "test:academic-batch3": "python -m unittest discover -s tests -p test_academic_qa_batch3.py",
     "test:academic-batch4": "python -m unittest discover -s tests -p test_academic_qa_batch4.py",
     "test:academic-batch5": "python -m unittest discover -s tests -p test_academic_qa_batch5.py",
+    "test:owner-adjudication": "python -m unittest discover -s tests -p test_owner_adjudication.py",
     "test:historical": "python -m unittest discover -s tests -p test_historical_questions.py",
     "test:question-promotion": "python -m unittest discover -s tests -p test_question_promotion.py",
     "validate:data": "tsx scripts/validate-data.ts",

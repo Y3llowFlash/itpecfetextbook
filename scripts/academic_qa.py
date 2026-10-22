@@ -22,6 +22,9 @@ AUDIT5='ITPEC_Chapter1_Academic_Audit_Batch05.json'
 PROTECTED_BATCH3_PAGES={110,112,119,180}
 PROTECTED_BATCH4_PAGES=PROTECTED_BATCH3_PAGES|{152,179,181}
 TEXTBOOK=Path('D:/ITPEC Old Questions/database/raw/FE Vol 1.pdf')
+OWNER_SCOPE={110:('HIST-TECH01-2012A-Q001','c'),112:('HIST-TECH01-2012A-Q013','b'),
+             119:('HIST-TECH01-2012A-Q030','a'),152:('HIST-TECH01-2010S-Q018','a'),
+             179:('HIST-TECH01-2008A-Q017','b'),180:('HIST-TECH01-2008A-Q018','b'),181:('HIST-TECH01-2008A-Q020','c')}
 
 def batch_size(batch):
     return 20 if batch==5 else 30
@@ -372,6 +375,7 @@ def reconcile(apply=False,batch=1):
     if batch not in [1,2,3,4,5]:raise ValueError('Unsupported academic batch')
     folder=QA if batch==1 else h.WORK/f'qa-batch{batch}'
     records=h.read_json(h.WORK/'questions.json');reviews=h.read_json(h.WORK/'reviews.json');manifest=h.read_json(h.WORK/'manifest.json')
+    if manifest.get('ownerAdjudication'):raise ValueError('Owner adjudication is already recorded; academic-batch replay is blocked')
     if manifest.get('qaReconciliation',{}).get('batch',1)>batch:raise ValueError('A later batch is already reconciled; older batch replay is blocked')
     source_sha=h.digest(h.SOURCE.read_bytes())
     if source_sha!=manifest['sourceSha256']:raise ValueError('Historical source changed')
@@ -433,5 +437,110 @@ def reconcile(apply=False,batch=1):
         h.write_json(folder/'reconciliation-report.json',stable)
     print(json.dumps({**report,'changes':None,'dryRun':not apply},indent=2));return report
 
+
+def merge_owner_decisions(records,reviews,package,instructions_sha):
+    """Apply exactly the explicit seven owner selections; academic verification stays intact."""
+    entries=package.get('entries',[]);scope={identity for identity,_ in OWNER_SCOPE.values()}
+    if len(entries)!=7 or {e['questionId'] for e in entries}!=scope:raise ValueError('Owner adjudication requires exactly the seven authorized IDs')
+    index={r['id']:r for r in records};updated=copy.deepcopy(reviews);changes=[]
+    for entry in entries:
+        identity=entry['questionId'];r=index[identity];old=reviews[identity]
+        page=entry['pdfPage'];a=copy.deepcopy(entry['ownerAdjudication'])
+        if OWNER_SCOPE.get(page)!=(identity,a.get('selectedAnswer')) or [p['pdfPage'] for p in r['regions']]!=[page]:raise ValueError('Owner answer or source-page identity differs from authorization')
+        provenance=a.get('provenance',{})
+        if provenance.get('instructionsSha256')!=instructions_sha or provenance.get('publicationApprovalGranted') is not False:raise ValueError('Owner instruction binding or publication restriction changed')
+        if a.get('priorReviewSha256')!=object_hash(old) and old.get('ownerAdjudication')!=a:raise ValueError('Stale prior review fingerprint')
+        if old.get('ownerAdjudication'):
+            if old['ownerAdjudication']!=a or not h.valid_adjudication(r,old):raise ValueError('Changed or stale applied owner decision')
+            continue
+        if old.get('verification',{}).get('status')!='needs-review':raise ValueError('Owner scope must retain its unresolved independent-verification state')
+        if a.get('gradingEligibility',{}).get('status')!='blocked' or a.get('publicationReadiness',{}).get('status')!='blocked':raise ValueError('This milestone does not enable grading or publication')
+        if a.get('originalPrintedAnswer')!=r['printedAnswer']:raise ValueError('Original printed key changed')
+        if page==119:
+            if a.get('additionalMathematicallyValidAnswers')!=['d'] or a['gradingEligibility'].get('acceptedOptions')!=['a','d']:raise ValueError('Option D equivalence and grading blocker must be retained')
+            if check_choice_proof(entry['choiceProof'])['matches']!=['a','d']:raise ValueError('Both A and D must match the source circuit')
+        elif a.get('additionalMathematicallyValidAnswers'):raise ValueError('Unexpected additional accepted answer')
+        corrections=a.get('editorialReconstructions',[])
+        if page==112:
+            if entry.get('reviewedOptions')!={'a':'1201','b':'1300','c':'2200','d':'2300'} or not any(c.get('status')=='owner-confirmed' and c.get('kind')=='missing-option-labels' for c in corrections):raise ValueError('Page 112 requires the owner-confirmed editorial option sequence')
+        if page==179 and not any(c.get('literalSource')=='Exclusive-' and c.get('proposedText')=='Exclusive-OR' and c.get('status')=='probable-owner-proposal' for c in corrections):raise ValueError('Page 179 reconstruction must remain a probable proposal')
+        for proof in entry.get('numericProofs',[]):check_numeric_choices(proof)
+        new=updated[identity];new['ownerAdjudication']=a;new['explanation']=copy.deepcopy(a['studentExplanation'])
+        if page==112:
+            new['extraction']['optionText']=copy.deepcopy(entry['reviewedOptions'])
+            new['extraction']['editorialTranscription']={'kind':'owner-confirmed-label-reconstruction','literalSourceLabels':['a'],
+                'sourceFormattingNote':'The original PDF prints a) only; B/C/D labels are editorial, confirmed by the owner. The original crop is unchanged.',
+                'instructionsSha256':instructions_sha}
+        if not h.valid_adjudication(r,new):raise ValueError('Stale source/content/image binding or incomplete owner adjudication')
+        # These dimensions are not an implicit grant of authority to owner selections.
+        for dimension in ['verification','approval','metadata','classification','mapping','academicReviews']:
+            if new.get(dimension)!=old.get(dimension):raise ValueError('Owner adjudication changed a protected review dimension')
+        changes.append({'questionId':identity,'beforeSha256':object_hash(old),'afterSha256':object_hash(new)})
+    for identity,old in reviews.items():
+        if identity not in scope and updated[identity]!=old:raise ValueError('Owner adjudication changed an earlier verified review')
+    h.validate_review_statuses(records,updated)
+    return updated,changes
+
+
+def validate_owner_snapshot(folder,package,inputs):
+    baseline=snapshot_hashes(folder/'before')
+    if baseline!=package.get('baselineSnapshot'):raise ValueError('Owner baseline snapshot checksum changed')
+    actual=snapshot_hashes(h.WORK);applied=h.read_json(folder/'applied-state.json',{})
+    if actual!=baseline and (actual!=applied.get('snapshot') or inputs!=applied.get('inputs')):raise ValueError('Stale owner-adjudication snapshot or changed inputs')
+    before=h.read_json(folder/'before/reviews.json')
+    if len(before)!=333 or sum(v['verification']['status']=='verified' for v in before.values())!=326:raise ValueError('Owner adjudication requires the 326-verified baseline')
+
+
+def reconcile_owner(apply=False):
+    folder=h.WORK/'owner-adjudication';package=h.read_json(folder/'decisions.json')
+    if not package or package.get('schema')!='itpec-owner-adjudication-v1':raise ValueError('Missing source-checked owner decisions')
+    if package.get('baselineCommit')!='b9f8829e7edc19ad8de6ec596e1844dc3f0ee1da':raise ValueError('Owner authorization baseline commit changed')
+    instructions_sha=h.digest((folder/'owner-instructions.txt').read_bytes())
+    if instructions_sha!=package.get('instructionsSha256'):raise ValueError('Owner instruction checksum changed')
+    source_sha=h.digest(h.SOURCE.read_bytes());book_sha=h.digest(TEXTBOOK.read_bytes())
+    if source_sha!=package['sourceSha256'] or book_sha!=package['textbookSha256']:raise ValueError('Owner source PDF checksum changed')
+    inputs={'instructionsSha256':instructions_sha,'decisionsSha256':object_hash(package),
+            'sourceSha256':source_sha,'textbookSha256':book_sha,
+            'reviewEngineFingerprint':h.digest(Path(__file__).read_bytes()+Path(h.__file__).read_bytes())}
+    validate_owner_snapshot(folder,package,inputs)
+    records=h.read_json(h.WORK/'questions.json');reviews=h.read_json(h.WORK/'reviews.json');manifest=h.read_json(h.WORK/'manifest.json')
+    baseline_records=h.read_json(folder/'before/questions.json');baseline_reviews=h.read_json(folder/'before/reviews.json')
+    if records!=baseline_records or h.digest((h.WORK/'questions.json').read_bytes())!=package['baselineSnapshot']['questionFileSha256']:raise ValueError('Immutable original question snapshot changed')
+    with fitz.open(h.SOURCE) as pdf:
+        checked=validate_source_images(records,pdf)
+        for page,(identity,_) in OWNER_SCOPE.items():
+            record=next(r for r in records if r['id']==identity);desc=h.describe_page(pdf[page-1],page)
+            if desc['answerKeys']!=[record['printedAnswer']] or desc['questionNumber']!=record['number']:raise ValueError('Owner source key or question number differs from original PDF')
+            if (str(record['year']),'October' if record['season']=='A' else 'April') not in desc['dates']:raise ValueError('Owner source examination occurrence changed')
+    evidence={e['questionId']:{'verification':{'evidence':e['ownerAdjudication']['supportingEvidence']}} for e in package['entries']}
+    with fitz.open(TEXTBOOK) as book:validate_batch3_book({'entries':[]},evidence,book)
+    updated,changes=merge_owner_decisions(records,reviews,package,instructions_sha)
+    for identity,old in baseline_reviews.items():
+        if old['verification']['status']=='verified' and updated[identity]!=old:raise ValueError('One of the 326 prior reviews changed')
+    if any(v.get('approval',{}).get('status')!='unapproved' for v in updated.values()):raise ValueError('Publication approval is outside this milestone')
+    if sum(h.valid_verification(r,updated[r['id']]) for r in records)!=326 or sum(h.valid_adjudication(r,updated[r['id']]) for r in records)!=7:raise ValueError('Independent and owner counts must remain separate')
+    report={'kind':'final-owner-adjudication','scope':7,'reviewChanges':len(changes),'independentlyVerified':326,'newIndependentlyVerified':0,
+            'ownerAdjudicated':7,'unadjudicated':0,'academicallyUnresolved':7,'publicationApprovals':0,'gradedPublicationBlocked':7,
+            'sourcePixelComparisons':checked,'regeneratedCrops':0,**inputs}
+    if apply and changes:
+        h.write_json(folder/'history/changes.json',{'changes':changes,'report':report})
+        h.write_json(h.WORK/'reviews.json',updated)
+        revised=h.manifest_for(records,source_sha,manifest['pdfPages'],manifest)
+        for key in ['sourceHistory','qaReconciliation','recordsSha256']:revised[key]=copy.deepcopy(manifest[key])
+        # Review-only code changes alter the legacy whole-module importer fingerprint.
+        # Revalidate all existing source pixels; record the migration without re-extracting.
+        revised['sourceHistory'].append({'kind':'review-only-code-revalidation','sourceSha256':source_sha,
+            'previousImporterFingerprint':manifest['importerFingerprint'],'validatedWithFingerprint':h.processing_fingerprint(),
+            'existingCropsCompared':checked,'regeneratedCrops':0})
+        revised['ownerAdjudication']={'kind':'owner-selected-historical-answers-not-publication-approval',**inputs,'questions':7}
+        h.write_json(h.WORK/'manifest.json',revised);h.write_review_gallery(records)
+        h.write_json(folder/'applied-state.json',{'snapshot':snapshot_hashes(h.WORK),'inputs':inputs})
+        h.write_json(folder/'completion.json',{k:v for k,v in report.items() if k!='reviewChanges'})
+    print(json.dumps({**report,'dryRun':not apply},indent=2));return report
+
 if __name__=='__main__':
-    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--apply',action='store_true');parser.add_argument('--batch',type=int,choices=[1,2,3,4,5],default=1);args=parser.parse_args();reconcile(args.apply,args.batch)
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--apply',action='store_true')
+    mode=parser.add_mutually_exclusive_group();mode.add_argument('--batch',type=int,choices=[1,2,3,4,5]);mode.add_argument('--owner-adjudication',action='store_true')
+    args=parser.parse_args()
+    if args.owner_adjudication:reconcile_owner(args.apply)
+    else:reconcile(args.apply,args.batch or 1)
