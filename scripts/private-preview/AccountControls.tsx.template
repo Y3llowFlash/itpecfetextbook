@@ -1,0 +1,7 @@
+export function useAccount() { return {user: null, busy: false, status: 'guest' as const}; }
+export default function AccountControls({compact = false}: {compact?: boolean}) {
+  return compact ? <a className="guest-pill" href="/progress/">Private preview · local progress</a> :
+    <section className="progress-section" id="account"><h2>Private preview progress</h2>
+      <p>Disposable progress stays in this preview only. Account sign-in and synchronization are disabled.</p>
+      <a href="/">Reset preview progress</a></section>;
+}

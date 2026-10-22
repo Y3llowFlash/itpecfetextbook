@@ -1,0 +1,12 @@
+import data from '../content/pilot-bank.json';
+import definitions from '../content/concepts.json';
+import answers from '../content/explanations.json';
+import type {Concept, Explanation, Question} from './models';
+// This adapter is copied ONLY into the ignored preview application.
+export const concepts = definitions as Concept[];
+export const explanationMap = new Map(answers.map(e => [e.questionId, e as Explanation]));
+export async function publishedQuestions(): Promise<Question[]> { return data as Question[]; }
+export function questionsForConcept(concept: Concept, bank: Question[]) {
+  return bank.filter(q => q.privatePreview === true && q.is_published === false && concept.questionIds.includes(q.id));
+}
+export function examTitle(q: Question) { return `FE · ${q.year} ${q.season === 'S' ? 'Spring' : 'Autumn'} · Paper/subject not established`; }

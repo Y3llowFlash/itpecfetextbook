@@ -66,6 +66,8 @@ The [final owner-adjudication report](docs/development/CHAPTER_1_OWNER_ADJUDICAT
 
 The [complete classification/readiness audit](docs/development/QUESTION_CLASSIFICATION_READINESS_AUDIT.md) recommends **292 Hardware candidates, 29 other-chapter questions, three provisionally outside Volume 1 and nine uncertain**. It preserves all existing academic and owner reviews. The private 333-row inventory, repair queue and readiness report are under `.local/historical/technology-01/catalog-audit/reports/`. Run `questions:audit -- --check` to validate their source bindings and deterministic output; `test:catalog-audit` uses synthetic fixtures. No historical question is publication-ready or approved by this audit.
 
+The [36-question private student preview](docs/development/PRIVATE_STUDENT_PREVIEW.md) reuses the reader and practice components in an isolated ignored build. Run `npm.cmd run questions:pilot:prepare`, then `npm.cmd run questions:pilot`, and open `http://127.0.0.1:4324/`. It uses original private images, truthful unknown paper/subject labels and disposable local progress; account/cloud synchronization is absent. No historical data or approval enters the production catalog. The [metadata-policy options](docs/development/PRIVATE_PILOT_METADATA_POLICY.md) remain proposals for owner review.
+
 The imported snapshot is committed, so ordinary development and builds **do not need the old repository**.
 
 To intentionally refresh it from a read-only source checkout:

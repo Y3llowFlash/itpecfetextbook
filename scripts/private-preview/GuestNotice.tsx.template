@@ -1,0 +1,6 @@
+import {useProgress} from '../lib/use-progress';
+export function StorageNotice() {
+  const {persistence} = useProgress();
+  return persistence === 'saved' ? null : <p className="storage-warning" role="status">Preview storage is unavailable; this attempt lasts for this visit only.</p>;
+}
+export default function GuestNotice() { return null; }

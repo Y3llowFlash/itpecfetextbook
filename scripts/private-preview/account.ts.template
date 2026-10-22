@@ -1,0 +1,6 @@
+// No production account module, authentication SDK, opt-in marker or transport.
+const snapshot = {user: null, busy: false, status: 'guest' as const};
+export const accountStore = {
+  start() {}, subscribe: (_callback: () => void) => () => {},
+  getSnapshot: () => snapshot, getServerSnapshot: () => snapshot,
+};

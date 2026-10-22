@@ -1,0 +1,2 @@
+// Deliberately contains no Firebase configuration, SDK import or network access.
+export async function getFirebaseAnalytics() { return undefined; }

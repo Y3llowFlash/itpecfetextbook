@@ -1,0 +1,20 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import {concepts, publishedQuestions, questionsForConcept} from '../lib/catalog';
+const bank=await publishedQuestions();
+---
+<SiteLayout title="Private student preview" description="36-question local review; no publication approval." companion={false} noindex>
+ <section class="chapter-overview"><p class="small-label">PRIVATE · LOCAL ONLY</p><h1>Chapter 1 student preview</h1>
+ <p>{bank.length} historical questions across seven existing concepts. Paper and subject are not established. Preview inclusion does not grant publication approval.</p>
+ <a class="button button-primary" href="/chapters/hardware/">Open Chapter 1 →</a>
+ <h2>Seven-concept walkthrough</h2><ul>{concepts.map(c=><li><a href={`${c.sectionUrl}#concept-${c.id}`}>{c.title}</a> · <a href={`/practice/${c.id}/`}>{questionsForConcept(c,bank).length} private questions</a></li>)}</ul>
+ <p>Attempts, bookmarks and reading checkpoints are disposable and isolated from genuine guest/account progress. Account synchronization is disabled.</p>
+ <button class="button button-secondary" id="reset-preview">Reset preview progress</button><p id="reset-status" role="status"/>
+ </section>
+</SiteLayout>
+<script>
+ document.getElementById('reset-preview')?.addEventListener('click',()=>{
+  for(const store of [localStorage,sessionStorage])for(const key of Object.keys(store))if(key.startsWith('itpecTextbook:privatePilot36:'))store.removeItem(key);
+  location.reload();
+ });
+</script>
