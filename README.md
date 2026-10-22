@@ -54,7 +54,9 @@ The [Chapter 1 question-integration report](docs/development/CHAPTER_1_QUESTION_
 
 The [Batch 1 academic QA report](docs/development/CHAPTER_1_ACADEMIC_QA_BATCH_1.md) updates that private queue to 222 verified / 111 unresolved, documents the targeted page-45 repair and 30-question classification table, and explains `questions:qa`. FE metadata is owner-confirmed; paper metadata and publication approval remain pending.
 
-The [Batch 2 reconciliation report](docs/development/CHAPTER_1_ACADEMIC_QA_BATCH_2.md) records the current **249 verified / 84 unresolved** private queue, including floating-point assumptions, duplicate equivalent options and the unresolved page-112 labels. Use `questions:qa -- --batch 2` for this batch. All historical questions remain unapproved and private.
+The [Batch 2 reconciliation report](docs/development/CHAPTER_1_ACADEMIC_QA_BATCH_2.md) records the **249 verified / 84 unresolved** checkpoint, including floating-point assumptions, duplicate equivalent options and the unresolved page-112 labels.
+
+The [Batch 3 reconciliation report](docs/development/CHAPTER_1_ACADEMIC_QA_BATCH_3.md) records the current **276 verified / 57 unresolved** private queue. Pages 152, 179 and 181 remain withheld; the 249 earlier verified answers and the protected unresolved pages are unchanged. Use `questions:qa -- --batch 3` and `test:academic-batch3`. Older-batch replay is blocked after this checkpoint. All historical questions remain unapproved and private.
 
 The imported snapshot is committed, so ordinary development and builds **do not need the old repository**.
 
