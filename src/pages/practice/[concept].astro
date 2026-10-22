@@ -2,12 +2,14 @@
 import SiteLayout from '../../layouts/SiteLayout.astro';
 import Practice from '../../components/Practice';
 import { concepts, explanationMap, publishedQuestions, questionsForConcept } from '../../lib/catalog';
+import { publishedYears } from '../../lib/question-policy';
 export async function getStaticPaths() { return concepts.map((concept) => ({ params: { concept: concept.id }, props: { concept } })); }
 const { concept } = Astro.props;
-const questions = questionsForConcept(concept, await publishedQuestions());
+const bank = await publishedQuestions();
+const questions = questionsForConcept(concept, bank);
 const explanations = questions.map((question) => explanationMap.get(question.id)!);
 ---
 <SiteLayout title={`${concept.title} practice`} description={concept.summary} active="practice" count={questions.length} practiceLinks={[{ id: concept.id, title: concept.title, count: questions.length }]}>
-  <Practice client:load concept={concept} questions={questions} explanations={explanations} />
+  <Practice client:load concept={concept} questions={questions} explanations={explanations} availableYears={publishedYears(bank)} />
   <noscript><p class="storage-warning">Answer checking needs JavaScript. You can still <a href={concept.sectionUrl}>read the complete textbook lesson</a>.</p></noscript>
 </SiteLayout>

@@ -16,6 +16,30 @@ beforeEach(() => { cleanup(); localStorage.clear(); guestStore.refresh(); histor
 afterEach(cleanup);
 
 describe('complete cache practice interaction', () => {
+  it('remembers filters, safely handles empty results, and preserves progress', async () => {
+    const user = userEvent.setup(); const view=render(<Practice {...props} />);
+    await user.click(screen.getByRole('button',{name:'◇ Bookmark'}));
+    await user.selectOptions(screen.getByRole('combobox',{name:'From year'}),'2025');
+    expect(screen.getByRole('heading',{name:'2025 Spring · Subject A · Q10'})).toBeTruthy();
+    await user.selectOptions(screen.getByRole('combobox',{name:'Question source'}),'historical-pdf');
+    expect(screen.getByRole('heading',{name:'No questions match these filters'})).toBeTruthy();
+    expect(guestStore.getSnapshot().progress.bookmarks).toHaveLength(1);
+    view.unmount(); render(<Practice {...props}/>);
+    expect(screen.getByRole('heading',{name:'No questions match these filters'})).toBeTruthy();
+    await user.click(screen.getByRole('button',{name:'Reset filters'}));
+    expect(screen.getAllByRole('button',{name:/Question \d, unanswered/})).toHaveLength(3);
+  });
+  it('keeps feedback visible in unanswered mode, then navigates to the remaining questions',async()=>{
+    const user=userEvent.setup(); render(<Practice {...props}/>);
+    await user.click(screen.getByRole('checkbox',{name:'Unanswered only'}));
+    await user.click(screen.getByRole('radio',{name:/Option B: 360 ns/}));
+    await user.click(screen.getByRole('button',{name:'Check answer'}));
+    expect(screen.getByText('✓ That’s correct.')).toBeTruthy();
+    expect(screen.getByText('Answer saved · 2 unanswered remain')).toBeTruthy();
+    await user.click(screen.getByRole('button',{name:'Next →'}));
+    expect(screen.getByRole('heading',{name:'2025 Spring · Subject A · Q10'})).toBeTruthy();
+    expect(guestStore.getSnapshot().progress.attempts).toHaveLength(1);
+  });
   it('records only submitted answers and shows the checked explanation', async () => {
     const user = userEvent.setup(); render(<Practice {...props} />);
     expect(screen.getByText('3 related published questions. Take them one at a time.')).toBeTruthy();

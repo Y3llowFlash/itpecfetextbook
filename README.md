@@ -50,18 +50,21 @@ Astro CLI telemetry is disabled by the local wrapper. Firebase's public web conf
 
 ## Published-question import
 
+The [Chapter 1 question-integration report](docs/development/CHAPTER_1_QUESTION_INTEGRATION.md) covers private historical extraction/review, `questions:sync`, owner-approved promotion and the new Practice filters. Historical questions remain outside the public catalog until separately approved.
+
 The imported snapshot is committed, so ordinary development and builds **do not need the old repository**.
 
 To intentionally refresh it from a read-only source checkout:
 
 ```powershell
-npm.cmd run import:questions -- --source "D:\ITPEC Old Questions"
+npm.cmd run questions:sync -- --dry-run
+npm.cmd run questions:sync
 npm.cmd run validate:data
 npm.cmd test
 npm.cmd run build
 ```
 
-Alternatively, set `ITPEC_SOURCE_DIR` and run `npm.cmd run import:questions`. The source must contain the processed `database/firebase_import/questions_subject*_firestore.json` files and referenced local images under `database/builder/output_images/`.
+`questions:sync` defaults to `D:\ITPEC Old Questions`; use `--source <path>` for another checkout. The legacy `import:questions` command now delegates to the same safe sync and still accepts `ITPEC_SOURCE_DIR`. The source must contain the processed `database/firebase_import/questions_subject*_firestore.json` files and referenced local images under `database/builder/output_images/`.
 
 The importer:
 
@@ -69,7 +72,7 @@ The importer:
 2. Preserves original IDs, dates, subject/paper, answer/options, chapter/section/topic mappings and PDF/page provenance.
 3. Copies only the selected records' local images, adding SHA-256 filenames and intrinsic dimensions.
 4. Deduplicates identical IDs and fails on conflicting records.
-5. Validates all inputs before replacing its own `public/questions/` directory and `public/data/` output files. Treat `public/questions/` as generated; do not put hand-authored files there.
+5. Validates inputs before staging changes, retains approved historical records/images and blocks changed published answers or uncertain occurrence matches for review. Treat `public/questions/` as generated; do not put hand-authored files there.
 6. Produces `public/data/import-manifest.json` with source hashes, included IDs, publication totals and image inventory. It never writes to the source checkout or connects to Firebase.
 
 Current snapshot: **420 published questions** (300 A + 100 dated B + 20 sample B); **160 unpublished records excluded**. There are exactly 420 public question images. All included IDs are listed in the import manifest. Chapter 1 exposes 23 directly reviewed Hardware questions across 13 concepts; the retained cache-memory set is:

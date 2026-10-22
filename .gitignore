@@ -13,3 +13,4 @@ tmp/
 **/__pycache__/
 *.pyc
 .DS_Store
+data-sources/historical-pdfs/*.pdf

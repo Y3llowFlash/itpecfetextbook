@@ -1,0 +1,38 @@
+import { test,expect } from '@playwright/test';
+test('year and source filters remember preferences without resetting guest answers',async({page})=>{
+  await page.goto('/practice/cache-memory/');
+  await page.getByRole('button',{name:'◇ Bookmark'}).click();
+  await page.getByRole('radio',{name:'Option B: 360 ns'}).check();
+  await page.getByRole('button',{name:'Check answer'}).click();
+  await page.getByRole('combobox',{name:'From year'}).selectOption('2025');
+  await page.getByRole('combobox',{name:'To year'}).selectOption('2025');
+  await expect(page.getByText('1 of 3 questions match.')).toBeVisible();
+  await expect(page.getByRole('heading',{name:'2025 Spring · Subject A · Q10'})).toBeVisible();
+  await expect(page.getByRole('button',{name:'Next →'})).toHaveCount(0);
+  await page.getByRole('combobox',{name:'Question source'}).selectOption('historical-pdf');
+  await expect(page.getByRole('heading',{name:'No questions match these filters'})).toBeVisible();
+  await page.reload();
+  await expect(page.getByRole('heading',{name:'No questions match these filters'})).toBeVisible();
+  await page.getByRole('button',{name:'Reset filters'}).click();
+  await page.getByRole('button',{name:'Question 1, correct'}).click();
+  await expect(page.getByText('✓ That’s correct.')).toBeVisible();
+  await expect(page.getByRole('button',{name:'◆ Bookmarked'})).toBeVisible();
+});
+test('unanswered filtering preserves feedback and navigation on a narrow screen',async({page},testInfo)=>{
+  await page.setViewportSize({width:320,height:900});
+  await page.goto('/practice/cache-memory/');
+  await page.getByRole('checkbox',{name:'Unanswered only'}).check();
+  await page.getByRole('radio',{name:'Option B: 360 ns'}).check();
+  await page.getByRole('button',{name:'Check answer'}).click();
+  await expect(page.getByText('Answer saved · 2 unanswered remain')).toBeVisible();
+  await expect(page.getByText('✓ That’s correct.')).toBeVisible();
+  await page.getByRole('button',{name:'Next →'}).click();
+  await expect(page.getByRole('heading',{name:'2025 Spring · Subject A · Q10'})).toBeVisible();
+  await page.getByRole('combobox',{name:'From year'}).selectOption('2026');
+  await page.getByRole('combobox',{name:'To year'}).selectOption('2024');
+  await expect(page.getByRole('alert')).toHaveText('From year must be no later than To year.');
+  await page.getByRole('button',{name:'All years'}).click();
+  await expect(page.getByText('2 of 3 questions match.')).toBeVisible();
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+  await page.screenshot({path:testInfo.outputPath('filters-320.png'),fullPage:true});
+});

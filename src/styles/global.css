@@ -314,3 +314,12 @@ main:focus { outline: none; }
 .source-book span[style*="color:#ff0000"] { color: #b02323 !important; }
 .source-book span[style*="color:#ff00ff"] { color: #8e267f !important; }
 @media(max-width: 40rem) { .source-book figure { padding: .5rem; } }
+/* Practice filters share the reader's restrained controls and remain usable on phones. */
+.practice-filters { display:flex; flex-wrap:wrap; align-items:end; gap:1rem; margin:1.5rem 0; padding:1rem; border:1px solid var(--border, #d6d2c8); border-radius:.5rem; }
+.practice-filters legend { padding:0 .4rem; font-weight:600; }
+.practice-filters label { display:flex; flex-direction:column; gap:.35rem; font-size:.9rem; }
+.practice-filters select { max-width:100%; min-height:44px; padding:.45rem .65rem; color:inherit; background:var(--surface,#fffdf8); border:1px solid #999; border-radius:.3rem; font:inherit; }
+.practice-filters .filter-checkbox { flex-direction:row; align-items:center; min-height:44px; }
+.practice-filters input[type=checkbox] { width:1.2rem; height:1.2rem; }
+.practice-filters p { flex-basis:100%; margin:0; }
+@media(max-width:480px) { .practice-filters label { flex:1 1 130px; } }

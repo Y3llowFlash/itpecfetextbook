@@ -1,3 +1,4 @@
+import type { QuestionReview } from './question-policy';
 export interface Question {
   id: string;
   examId: string;
@@ -18,6 +19,8 @@ export interface Question {
   mapping: Record<string, unknown>;
   image: { src: string; width: number; height: number; sha256: string };
   source: { dataset: string; questionPdf: string; pageStart: number; pageEnd: number; originalImagePath: string; documentPath: string };
+  /** Absent for legacy Practice records; their canonical IDs and progress stay unchanged. */
+  review?: QuestionReview;
 }
 
 export interface Explanation {
@@ -52,6 +55,8 @@ export interface Concept {
   summary: string;
   questionIds: string[];
   mappingEvidence: { questionId: string; reason: string; reviewedAgainst: string[] }[];
+  /** Added only through owner-approved question promotion after exact-passage review. */
+  sourceHighlight?: { headingNumber: string; passageId: string; fragmentSha256: string };
   videos: VideoLesson[];
 }
 

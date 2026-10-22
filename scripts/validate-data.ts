@@ -6,6 +6,8 @@ import { hardwareLessons, lessonPath } from '../src/lib/lessons';
 import sourceEvidence from '../docs/development/evidence/hardware-printed-pages.json';
 import { validateSourceRelease } from './source-release';
 import release from '../src/content/hardware-source-release.json';
+import { applyQuestionHighlights } from '../src/lib/question-highlights';
+import { presentSourceHTML } from '../src/lib/reader-presentation';
 
 const root = path.resolve('.');
 const questions = await publishedQuestions();
@@ -17,6 +19,7 @@ if (manifest.sources.reduce((sum: number, source: { published: number }) => sum 
 const imageNames = await readdir(path.join(root, 'public/questions'));
 if (imageNames.length !== questions.length) throw new Error('Unexpected images in the public question directory');
 for (const question of questions) {
+  if (question.review?.sources.some(source=>source.kind==='historical-pdf') && (question.review.reviewStatus!=='approved' || question.review.publicationStatus!=='published' || !question.review.approvalFingerprint || question.review.extractionQuality!=='complete')) throw new Error(`Unapproved historical record: ${question.id}`);
   if (!question.options.includes(question.correctAnswer) || !question.source.questionPdf || !question.source.pageStart) throw new Error(`Invalid published record ${question.id}`);
   const image = await readFile(path.join(root, 'public', question.image.src));
   const dimensions = webpDimensions(image);
@@ -25,7 +28,7 @@ for (const question of questions) {
 for (const concept of concepts) {
   if (!hardwareLessons.some((lesson) => lesson.id === concept.sectionId && lessonPath(lesson) === concept.sectionUrl)) throw new Error(`Invalid concept reading destination: ${concept.id}`);
   const lesson = hardwareLessons.find((lesson) => lesson.id === concept.sectionId)!;
-  if (!release.unanchoredConcepts.includes(concept.id) && !(await readFile(`src/content/source-hardware/${lesson.slug}.html`, 'utf8')).includes(`data-concept="${concept.id}"`)) throw new Error(`Concept lacks an exact source annotation: ${concept.id}`);
+  if (!release.unanchoredConcepts.includes(concept.id) && !applyQuestionHighlights(presentSourceHTML(await readFile(`src/content/source-hardware/${lesson.slug}.html`, 'utf8')),concepts,questions).includes(`data-concept="${concept.id}"`)) throw new Error(`Concept lacks an exact source annotation: ${concept.id}`);
   const linked = questionsForConcept(concept, questions);
   if (new Set(concept.questionIds).size !== concept.questionIds.length || linked.length !== concept.questionIds.length || !linked.length) throw new Error(`Missing/unpublished concept question: ${concept.id}`);
   for (const question of linked) {
