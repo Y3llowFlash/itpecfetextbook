@@ -1,8 +1,12 @@
 # Level selection landing page
 
+**Published 22 October 2026 after owner approval:** https://itpecfetextbook.pages.dev. The approved feature branch was fast-forwarded into `main` and pushed. Application release commit: `d593326f0525e92efe9b5238e5e96947842140bf`. Cloudflare's connected GitHub production build and deployment succeeded: `85d19c13-eb29-439d-a00e-8611f916b8fc` (`https://85d19c13.itpecfetextbook.pages.dev`).
+
+The production build passed all source, question, cover and publication-boundary checks. `node scripts/verify-reading-preview.mjs https://itpecfetextbook.pages.dev --production` passed against the canonical live domain: static level selection, three original covers with six verified derivatives, disabled IP/AP levels, FE entry, six readers, 281 source asset hashes, 420 unchanged questions, 52 contents links, all 81 repaired crops, and the existing guest answer/bookmark/return flow. The live site was checked at 375, 768, 1024 and 1440 pixels with no browser errors. Desktop and mobile landing screenshots were visually inspected. Results and screenshots are local in `.local/landing/production-review/`, including `production-check.json`, `landing-desktop.png` and `landing-mobile.png`.
+
 Implemented and reviewed on 22 October 2026, on `feature/level-selection-landing`. The new root page is a static three-level bookshelf based on the owner's approved reference. FE opens the existing `/chapters/hardware/` entry; IP and AP display “Coming soon” with disabled buttons and no links. The header retains the existing `fe.` mark and yellow dot. No About ITPEC link, waitlist, extra textbook route or account requirement was added.
 
-**Verified preview:** https://3c949026.itpecfetextbook.pages.dev. Implementation commit: `5206afe5e227c1c55653fc672999df3adcc1318c`. Cloudflare also built that commit successfully from GitHub at `https://9b758033.itpecfetextbook.pages.dev`. The manually uploaded feature preview was independently verified in Chromium. No production promotion was performed; production remains on main commit `e6992e71f436416b4610c23b5db2397e7c3afa8d`.
+**Verified preview:** https://3c949026.itpecfetextbook.pages.dev. Implementation commit: `5206afe5e227c1c55653fc672999df3adcc1318c`. Cloudflare also built that commit successfully from GitHub at `https://9b758033.itpecfetextbook.pages.dev`. The manually uploaded feature preview was independently verified in Chromium before the owner approved the production publication recorded above.
 
 ## Original assets
 
@@ -52,7 +56,7 @@ Tests verify FE entry, browser Back to level selection, the existing reader logo
 | `node scripts/verify-reading-preview.mjs https://3c949026.itpecfetextbook.pages.dev` | Passed: root level selection, 6 FE readers, all 281 source asset hashes, all 6 cover asset hashes, 420 unchanged questions, 52 contents links, 81 crops, guest answer/bookmark/return flow, 375/768/1024/1440-pixel viewports; no browser errors |
 | `git diff --check` | Passed |
 
-Firebase emulator suites were not rerun for this milestone because authentication, account synchronization, progress schemas and rules were unchanged. Existing browser tests exercise the complete guest learning flow. Production retains the previously published FE reader until the owner approves this separate landing milestone.
+Firebase emulator suites were not rerun for this milestone because authentication, account synchronization, progress schemas and rules were unchanged. Existing browser tests exercise the complete guest learning flow. The existing FE reader is preserved behind the newly published level-selection entry.
 
 ## Review locally
 
@@ -68,4 +72,4 @@ Final screenshot examples:
 
 Hosted screenshots and machine-readable results are in `.local/landing/hosted-review/`: `landing-desktop.png`, `landing-mobile.png`, `landing-tablet.png`, `landing-small-tablet.png` and `preview-check.json`. These were visually compared with the original reference and local screenshots. Additional BCD/UART/reader screenshots there verify the existing content on the same deployment.
 
-The result is ready for owner review. This milestone does not merge into `main`, publish to production, or begin IP/AP textbook development.
+The reviewed landing milestone is published following owner approval. No IP/AP textbook development was started.
