@@ -64,6 +64,8 @@ The [Batch 5 completion report](docs/development/CHAPTER_1_ACADEMIC_QA_BATCH_5.m
 
 The [final owner-adjudication report](docs/development/CHAPTER_1_OWNER_ADJUDICATION.md) records **326 independently verified answers plus seven qualified owner selections**, with zero publication approvals. All 326 earlier review objects remain unchanged. Page 119 retains both A and D as mathematically valid and is blocked from single-answer grading. Use `questions:qa -- --owner-adjudication` for validation, `--apply` for idempotent private replay, and `test:owner-adjudication` for regressions. All five earlier academic batches are blocked from replay over this checkpoint. Historical questions remain private.
 
+The [complete classification/readiness audit](docs/development/QUESTION_CLASSIFICATION_READINESS_AUDIT.md) recommends **292 Hardware candidates, 29 other-chapter questions, three provisionally outside Volume 1 and nine uncertain**. It preserves all existing academic and owner reviews. The private 333-row inventory, repair queue and readiness report are under `.local/historical/technology-01/catalog-audit/reports/`. Run `questions:audit -- --check` to validate their source bindings and deterministic output; `test:catalog-audit` uses synthetic fixtures. No historical question is publication-ready or approved by this audit.
+
 The imported snapshot is committed, so ordinary development and builds **do not need the old repository**.
 
 To intentionally refresh it from a read-only source checkout:

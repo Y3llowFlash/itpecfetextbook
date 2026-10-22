@@ -23,6 +23,8 @@
     "questions:publish": "tsx scripts/publish-historical-questions.ts",
     "questions:reconcile": "tsx scripts/reconcile-historical-questions.ts",
     "questions:qa": "python scripts/academic_qa.py",
+    "questions:audit": "python scripts/catalog_audit.py",
+    "test:catalog-audit": "python -m unittest discover -s tests -p test_catalog_audit.py",
     "test:academic": "python -m unittest discover -s tests -p test_academic_qa.py",
     "test:academic-batch2": "python -m unittest discover -s tests -p test_academic_qa_batch2.py",
     "test:academic-batch3": "python -m unittest discover -s tests -p test_academic_qa_batch3.py",
