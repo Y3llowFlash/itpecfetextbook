@@ -23,6 +23,7 @@
     "editorial:preview": "node scripts/editorial-server.mjs",
     "editorial:release": "python scripts/publish-source.py",
     "editorial:spatial": "python scripts/spatial_crops.py",
+    "prepare:covers": "python scripts/prepare_book_covers.py",
     "test:editorial": "node scripts/test-editorial.mjs"
   },
   "dependencies": {

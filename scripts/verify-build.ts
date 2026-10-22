@@ -6,6 +6,7 @@ import {CPU_PATH,CACHE_HEADING} from '../src/lib/reading-routes';
 import { concepts } from '../src/lib/catalog';
 import { validateSourceRelease, sourceAssets } from './source-release';
 import { assertPublicationBoundary, assertApprovedPublicFile } from './publication-boundary';
+import {coverAssets,validateLandingAssets,validateLandingPage} from './landing-assets';
 const root = path.resolve('dist');
 const source = await readFile('public/data/questions.json');
 const built = await readFile(path.join(root, 'data/questions.json'));
@@ -37,9 +38,9 @@ if (publicFiles.some((name) => /\.(?:pdf|env|py|mjs)$/.test(name) || name.includ
 // hash-verified source illustrations. Raw editorial exports remain excluded.
 for (const name of publicFiles) {
   if((await stat(path.join(root,name))).isDirectory())continue;
-  assertApprovedPublicFile(name,allowedHtml,expected as Set<string>,new Set(sourceAssets.keys()));
+  assertApprovedPublicFile(name,allowedHtml,expected as Set<string>,new Set(sourceAssets.keys()),new Set(coverAssets.keys()));
   assertPublicationBoundary(name, /\.(?:html|json|js|css)$/.test(name)?await readFile(path.join(root,name),'utf8'):undefined,allowedHtml);
-  if (/\.(?:webp|png|jpe?g|gif|avif|svg)$/i.test(name) && name !== 'favicon.svg' && !sourceAssets.has(name.replaceAll('\\','/')) && !(name.startsWith(`questions${path.sep}`) && expected.has(path.basename(name)))) throw new Error(`Unapproved public illustration: ${name}`);
+  if (/\.(?:webp|png|jpe?g|gif|avif|svg)$/i.test(name) && name !== 'favicon.svg' && !sourceAssets.has(name.replaceAll('\\','/')) && !coverAssets.has(name.replaceAll('\\','/')) && !(name.startsWith(`questions${path.sep}`) && expected.has(path.basename(name)))) throw new Error(`Unapproved public illustration: ${name}`);
   if (/chapter1-inventory|gallery\.html|originals\.html|(?:^|[\\/])crops(?:[\\/]|$)|suggested-manifest/.test(name)) throw new Error('Editorial source material in public output');
 }
 const progress = await readFile(path.join(root, 'progress/index.html'), 'utf8');
@@ -50,4 +51,5 @@ for (const name of await readdir(path.join(root, '_astro'))) {
   if (/itpec-fe-practice|demo-itpec-textbook|firebasestorage\.googleapis\.com|BEGIN (?:RSA )?PRIVATE KEY|free-video-/.test(content)) throw new Error(`Production dependency or credential/placeholder found: ${name}`);
 }
 await validateSourceRelease(root);
+await validateLandingAssets(root);await validateLandingPage(root);
 console.log(`Production verified: ${questions.length} published records; ${images.length} approved exam images; approved Chapter 1 source reader; private progress metadata.`);

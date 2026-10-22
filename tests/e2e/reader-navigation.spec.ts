@@ -5,7 +5,7 @@ const cache=contents.find(n=>n.number==='3-5-1')!;
 const gates=contents.find(n=>n.number==='3-4-1')!;
 
 test('chapter opens directly into unchanged source with one title and the complete original contents',async({page})=>{
- for(const path of ['/','/chapters/hardware/']){
+ for(const path of ['/chapters/hardware/']){
   await page.goto(path);
   await expect(page.getByRole('heading',{level:1})).toHaveText('Hardware');
   await expect(page.locator('.source-book [data-source-kind="heading"]').first()).toHaveText('1 Basic Configuration of Computers');

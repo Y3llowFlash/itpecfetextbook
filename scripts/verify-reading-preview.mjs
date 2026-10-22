@@ -12,8 +12,9 @@ const release=JSON.parse(await readFile('src/content/hardware-source-release.jso
 const toc=JSON.parse(await readFile('src/content/hardware-toc.json','utf8'));
 const prose=JSON.parse(await readFile('src/content/hardware-prose-repairs.json','utf8'));
 const crops=JSON.parse(await readFile('src/content/hardware-spatial-crops.json','utf8'));
+const covers=JSON.parse(await readFile('src/content/book-covers.json','utf8'));
 const bank=await readFile('public/data/questions.json');
-const output=production?'.local/crop-first/production-review':'.local/crop-first/hosted-review';await mkdir(output,{recursive:true});
+const output=production?'.local/landing/production-review':'.local/landing/hosted-review';await mkdir(output,{recursive:true});
 const browser=await chromium.launch();
 const errors=[];
 try{
@@ -21,15 +22,25 @@ try{
  page.on('pageerror',error=>errors.push(error.message));
  assert.equal((await page.goto(origin,{waitUntil:'domcontentloaded'})).status(),200);
  await page.evaluate(()=>document.fonts.ready);
- assert.equal(await page.locator('main h1').innerText(),'Hardware');
+ assert.equal(await page.locator('main h1').innerText(),'Exam Preparation Books');
+ assert.equal(await page.locator('[data-level]').count(),3);
+ assert.equal(await page.locator('[data-level="ip"] button:disabled,[data-level="ap"] button:disabled').count(),2);
+ assert.equal(await page.locator('astro-island,script[src]').count(),0);
+ for(const cover of covers){
+  const img=page.locator(`[data-level="${cover.level}"] img`);await img.evaluate(async el=>{el.loading='eager';await el.decode()});
+  assert.equal(await img.getAttribute('src'),'/'+cover.variants.at(-1).path);
+ }
+ await page.screenshot({path:`${output}/landing-desktop.png`,fullPage:true});
+ await page.getByRole('link',{name:'Open Textbook',exact:true}).click();
+ assert.equal(new URL(page.url()).pathname,'/chapters/hardware/');
  assert.equal(await page.locator('.sidebar [data-toc-link]').count(),52);
  await page.screenshot({path:`${output}/desktop.png`});
- const source=await page.evaluate(async({release,bankHash,prose,crops})=>{
+ const source=await page.evaluate(async({release,bankHash,prose,crops,covers})=>{
   const hash=async bytes=>[...new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))].map(v=>v.toString(16).padStart(2,'0')).join('');
-  let index=0,assets=0;const approved=[...release.assets,...crops.regions.map(r=>r.asset)];
+  let index=0,assets=0;const approved=[...release.assets,...crops.regions.map(r=>r.asset),...covers.flatMap(c=>c.variants)];
   const cropped=new Map(crops.regions.flatMap(r=>r.sourceBlockIds.map(id=>[id,r.id])));
   await Promise.all(Array.from({length:6},async()=>{while(index<approved.length){const asset=approved[index++],r=await fetch('/'+asset.path);if(!r.ok||await hash(await r.arrayBuffer())!==asset.sha256)throw new Error('Preview asset changed: '+asset.path);assets++;}}));
-  const readers=[...release.lessons.slice(0,5),{...release.lessons[0],path:'/'},{...release.lessons[0],path:'/chapters/hardware/'}];
+  const readers=[...release.lessons.slice(0,5),{...release.lessons[0],path:'/chapters/hardware/'}];
   for(const lesson of readers){
    const r=await fetch(lesson.path);if(!r.ok)throw new Error('Missing reader: '+lesson.path);
    const doc=new DOMParser().parseFromString(await r.text(),'text/html');
@@ -58,8 +69,9 @@ try{
    }
   }
   const published=await fetch('/data/questions.json');if(!published.ok||await hash(await published.arrayBuffer())!==bankHash)throw new Error('Published question bank changed');
-  return {readers:readers.length,sourceAssets:assets,publishedQuestions:420};
- },{release,bankHash:createHash('sha256').update(bank).digest('hex'),prose,crops});
+  const coverCount=covers.reduce((n,c)=>n+c.variants.length,0);
+  return {readers:readers.length,sourceAssets:assets-coverCount,coverAssets:coverCount,publishedQuestions:420};
+ },{release,bankHash:createHash('sha256').update(bank).digest('hex'),prose,crops,covers});
  const bcd=crops.regions.find(r=>r.id==='spatial-p32-01');
  const checkBCD=async(name)=>{
   await page.goto(origin+bcd.url);await page.evaluate(()=>document.fonts.ready);
@@ -90,6 +102,10 @@ try{
  await page.getByRole('link',{name:'← Return to textbook'}).click();
  await page.locator('#concept-cache-memory:focus').waitFor();
  for(const [name,width] of [['mobile',375],['tablet',768],['small-tablet',1024]]){
+  await page.setViewportSize({width,height:900});await page.goto(origin);await page.evaluate(()=>document.fonts.ready);
+  await page.locator('img').evaluateAll(async images=>{await Promise.all(images.map(async img=>{img.loading='eager';await img.decode()}))});
+  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+  await page.screenshot({path:`${output}/landing-${name}.png`,fullPage:true});
   await page.setViewportSize({width,height:900});await page.goto(origin+'/chapters/hardware/');await page.evaluate(()=>document.fonts.ready);
   await page.waitForFunction(()=>!document.querySelector('[data-study-tools]').open);
   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));

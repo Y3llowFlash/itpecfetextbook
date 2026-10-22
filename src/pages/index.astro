@@ -1,4 +1,36 @@
 ---
-import HardwareReader from '../components/HardwareReader.astro';
+import '@fontsource-variable/newsreader';
+import '@fontsource-variable/ibm-plex-sans';
+import '../styles/tokens.css';
+import '../styles/landing.css';
+import BookMockup from '../components/BookMockup.astro';
+import {landingBooks,FE_ENTRY} from '../lib/landing-books';
+const title='ITPEC Textbook · Exam Preparation Books';
+const description='Interactive digital textbooks for ITPEC examinations. Choose your level to get started.';
+const canonical=new URL('/',Astro.site);
+const fe=landingBooks[0];
 ---
-<HardwareReader slug="basic-configuration" chapterStart/>
+<!doctype html>
+<html lang="en"><head>
+ <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+ <title>{title}</title><meta name="description" content={description}/>
+ <link rel="canonical" href={canonical}/><link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+ <meta property="og:title" content={title}/><meta property="og:description" content={description}/><meta property="og:type" content="website"/><meta property="og:url" content={canonical}/>
+ <meta property="og:image" content={new URL('/'+fe.image.path,Astro.site)}/><meta property="og:image:alt" content={fe.title}/>
+</head><body class="level-selection">
+ <a class="landing-skip" href="#main">Skip to books</a>
+ <header class="landing-header"><a class="landing-wordmark" href="/" aria-label="ITPEC Textbook home"><span class="landing-brand" aria-hidden="true">fe<span>.</span></span><span>ITPEC<strong>Textbook</strong></span></a></header>
+ <main id="main" tabindex="-1">
+  <header class="landing-intro"><p class="landing-eyebrow">ITPEC</p><h1>Exam Preparation Books</h1><p class="landing-description">Interactive digital textbooks for ITPEC examinations.<br class="desktop-break"/> Choose your level to get started.</p></header>
+  <section class="bookshelf" aria-label="Choose your examination level">
+   {landingBooks.map(book=><article class:list={['level-book',`level-${book.level}`,{'is-available':book.available}]} data-level={book.level} aria-labelledby={`level-${book.level}`}>
+    {book.available?<a class="book-link" href={FE_ENTRY} aria-label="Open FE textbook: IT Fundamentals"><BookMockup book={book}/></a>:<div class="book-unavailable"><BookMockup book={book}/></div>}
+    <div class="book-details">
+     <p class:list={['availability',{'available':book.available}]}><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6">{book.available?<path d="m4 10 4 4 8-9"/>:<><circle cx="10" cy="10" r="7.5"/><path d="M10 5v5l3 2"/></>}</svg>{book.status}</p>
+     <h2 id={`level-${book.level}`}>{book.label}</h2><p class="book-subtitle">{book.subtitle}</p>
+     {book.available?<a class="book-action" href={FE_ENTRY}>Open Textbook <span aria-hidden="true">→</span></a>:<button class="book-action" type="button" disabled aria-label={`${book.label}: coming soon`}>Coming soon</button>}
+    </div>
+   </article>)}
+  </section>
+ </main>
+</body></html>

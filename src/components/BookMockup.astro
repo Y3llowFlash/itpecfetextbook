@@ -1,0 +1,12 @@
+---
+import type {landingBooks} from '../lib/landing-books';
+interface Props{book:typeof landingBooks[number]}
+const {book}=Astro.props;
+---
+<span class="book-stage"><span class="book-object" style={`aspect-ratio:${book.width}/${book.height}`}>
+ <span class="book-back" aria-hidden="true"></span><span class="book-pages" aria-hidden="true"></span><span class="book-spine" aria-hidden="true"></span>
+ <span class="book-front">
+  <img src={`/${book.image.path}`} srcset={book.srcset} sizes="(min-width: 1440px) 330px, (min-width: 1024px) 28vw, 280px" width={book.width} height={book.height} alt={`${book.title} — original cover`} loading={book.available?'eager':'lazy'} fetchpriority={book.available?'high':'auto'} decoding="async"/>
+  <span class="book-binding" aria-hidden="true"></span>
+ </span>
+</span></span>

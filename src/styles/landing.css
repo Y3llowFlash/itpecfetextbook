@@ -1,0 +1,48 @@
+/* Hallmark · genre: editorial · macrostructure: Catalogue · theme: existing Almanac, warm studio lighting
+ * audience: ITPEC students · use: choose FE textbook · nav: N9, wordmark only per brief · footer: omitted per reference
+ * enrichment: owner's original covers with CSS depth · motion: FE hover lift + button press
+ * The approved centered composition and three equal books take precedence over generic diversification rules.
+ * Hallmark · pre-emit critique: P5 H5 E4 S5 R5 V5
+ */
+:root {
+ --landing-paper:oklch(96.7% .018 82);--landing-light:oklch(99% .012 87);--landing-shade:oklch(88% .023 77);
+ --landing-shadow:oklch(32% .025 65 / .26);--landing-contact:oklch(25% .02 65 / .32);
+ --landing-cover-dark:oklch(15% .006 90);--landing-cover-light:oklch(98% .006 90);
+ --landing-spine-green:oklch(29% .045 130);--landing-spine-red:oklch(49% .07 25);--landing-spine-blue:oklch(39% .045 270);
+ --landing-edge:oklch(95% .014 85 / .75);--landing-gloss:oklch(99% .009 85 / .24);--landing-clear:oklch(99% .009 85 / 0);
+ --landing-spine-shadow:oklch(12% .008 90 / .55);--landing-spine-soft:oklch(12% .008 90 / .12);
+ --landing-available:oklch(43% .14 145);--landing-status:oklch(96% .008 80 / .92);
+ --landing-disabled:oklch(86% .014 78);--landing-disabled-ink:oklch(43% .012 75);
+ --landing-page-rule:oklch(76% .017 80);--landing-rotation:-7deg;--landing-depth:18px;
+}
+*{box-sizing:border-box}html{overflow-x:clip}body{margin:0;overflow-x:clip;color:var(--color-ink);font-family:var(--font-body);-webkit-font-smoothing:antialiased}
+.level-selection{min-height:100svh;background:radial-gradient(ellipse at 35% 5%,var(--landing-light),var(--landing-clear) 65%),linear-gradient(115deg,var(--landing-paper),var(--landing-shade))}
+a{color:inherit}a,button{-webkit-tap-highlight-color:transparent}a:focus-visible,button:focus-visible{outline:3px solid var(--color-focus);outline-offset:7px}
+.landing-skip{position:fixed;top:1rem;left:1rem;z-index:var(--z-modal);padding:.75rem 1rem;background:var(--color-ink);color:var(--landing-light);transform:translateY(-180%)}.landing-skip:focus{transform:none}
+.landing-header{max-width:1440px;margin:auto;padding:1.5rem clamp(1.25rem,5vw,4rem) 0}
+.landing-wordmark{display:inline-flex;align-items:center;gap:1.1rem;text-decoration:none;font-size:1rem;line-height:1.25;white-space:nowrap}.landing-wordmark>span:last-child{display:grid;gap:.15rem}.landing-wordmark strong{font-weight:500}
+.landing-brand{font-family:var(--font-display);font-weight:750;font-size:3.8rem;line-height:1;letter-spacing:-.1em}.landing-brand>span{color:var(--color-accent)}
+main{min-width:0}main:focus{outline:none}.landing-intro{text-align:center;padding:2.25rem 1.25rem 1.5rem}.landing-eyebrow{font-size:.85rem;font-weight:500;letter-spacing:.5em;margin:0 0 .85rem;padding-left:.5em}
+h1{font:500 clamp(2.6rem,4.6vw,4.2rem)/1.06 var(--font-display);letter-spacing:-.035em;margin:0;overflow-wrap:anywhere;min-width:0;font-style:normal}
+.landing-description{color:var(--color-muted);font-size:1rem;line-height:1.45;margin:1rem auto 0;max-width:45rem}.desktop-break{display:none}
+.bookshelf{position:relative;display:grid;grid-template-columns:minmax(0,1fr);gap:3rem;max-width:1360px;margin:auto;padding:1.5rem 1.5rem 3rem}
+.level-book{--spine-color:var(--landing-spine-green);position:relative;min-width:0;display:grid;grid-template-rows:auto 1fr;align-items:start}.level-ip{--spine-color:var(--landing-spine-red)}.level-ap{--spine-color:var(--landing-spine-blue)}
+.book-link,.book-unavailable{display:block;width:min(100%,280px);margin:auto;perspective:1600px;text-decoration:none;border-radius:4px}
+.book-stage{position:relative;display:block;padding:0 0 1rem 12px}.book-stage::after{content:'';position:absolute;left:4%;bottom:.55rem;width:98%;height:1.1rem;background:var(--landing-contact);border-radius:50%;filter:blur(10px);transform:skewX(-8deg)}
+.book-object{position:relative;display:block;width:100%;aspect-ratio:595/842;transform-style:preserve-3d;transform:rotateY(var(--landing-rotation));transition:transform 260ms var(--ease-out);z-index:1}
+.book-front{position:absolute;inset:0;display:block;transform:translateZ(var(--landing-depth));border-radius:3px 5px 5px 3px;background:var(--landing-cover-dark);box-shadow:5px 9px 19px var(--landing-shadow)}.level-ip .book-front{background:var(--landing-cover-light)}
+.book-front>img{display:block;width:100%;height:auto;aspect-ratio:auto;border-radius:inherit}
+.book-binding{position:absolute;inset:0;pointer-events:none;border-radius:inherit;background:linear-gradient(90deg,var(--landing-spine-shadow),var(--landing-gloss) 1.2%,var(--landing-spine-soft) 2.4%,var(--landing-clear) 5%,var(--landing-clear) 97.8%,var(--landing-edge));box-shadow:inset 0 1px 1px var(--landing-edge)}
+.book-spine{position:absolute;inset:0 auto 0 0;width:var(--landing-depth);background:linear-gradient(90deg,var(--landing-spine-shadow),var(--spine-color) 65%,var(--landing-gloss));transform-origin:left;transform:rotateY(-90deg);border-radius:2px}
+.book-back{position:absolute;inset:0;background:var(--spine-color);border-radius:3px;transform:translateZ(-2px)}
+.book-pages{position:absolute;top:1.1%;bottom:1.1%;right:0;width:var(--landing-depth);transform-origin:right;transform:rotateY(90deg);background:repeating-linear-gradient(90deg,var(--landing-cover-light) 0 1px,var(--landing-page-rule) 1px 2px);border-block:2px solid var(--spine-color)}
+.book-unavailable{filter:saturate(.52);opacity:.64}.book-details{text-align:center;display:grid;justify-items:center;align-content:start;margin:1rem auto 0;width:100%;max-width:350px}
+.availability{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;color:var(--color-ink);background:var(--landing-status);padding:.2rem .85rem;border-radius:2rem;font-size:.8rem;line-height:1.4;margin:0 0 .65rem;white-space:nowrap}.availability.available{background:var(--landing-available);color:var(--landing-light)}
+h2{font:600 1.8rem/1.15 var(--font-body);letter-spacing:-.035em;margin:0;min-width:0;font-style:normal}.book-subtitle{color:var(--color-muted);font-size:1rem;line-height:1.4;margin:.4rem 0 1rem;max-width:30rem;min-height:1.4em}
+.book-action{font:500 1rem var(--font-body);display:flex;align-items:center;justify-content:center;gap:.6rem;width:100%;min-height:52px;padding:.8rem 1rem;border:0;border-radius:10px;background:var(--color-ink);color:var(--landing-light);text-decoration:none;white-space:nowrap;transition:transform var(--dur-micro) var(--ease-out)}
+.book-action:disabled{background:var(--landing-disabled);color:var(--landing-disabled-ink);cursor:not-allowed;opacity:1}.book-action:not(:disabled):active{transform:translateY(1px)}
+@media(hover:hover) and (pointer:fine){.book-link:hover .book-object,.book-link:focus-visible .book-object{transform:rotateY(-3deg) translateY(-6px)}.book-action[href]:hover{transform:translateY(-2px)}}
+@media(min-width:40rem){.landing-intro{padding-top:2.5rem}.desktop-break{display:inline}.landing-description{font-size:1.125rem}.bookshelf{grid-template-columns:repeat(2,minmax(0,1fr));gap:2.5rem;padding-inline:3rem}.level-fe{grid-column:1/-1}.book-link,.book-unavailable{width:min(100%,300px)}.book-subtitle{min-height:2.8em}.level-fe .book-subtitle{min-height:1.4em}}
+@media(min-width:64rem){.landing-header{padding-top:1.75rem}.landing-intro{padding-top:0;padding-bottom:1.25rem}.landing-eyebrow{font-size:1rem}.landing-description{font-size:1.2rem;margin-top:1rem}.bookshelf{grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(2.5rem,4vw,4rem);padding:.5rem 4rem 3rem}.level-fe{grid-column:auto}.book-link,.book-unavailable{width:100%;max-width:350px}.book-details{margin-top:1rem}.book-subtitle,.level-fe .book-subtitle{min-height:2.8em}.availability{font-size:.875rem}.book-action{font-size:1.125rem}.bookshelf::before{content:'';position:absolute;left:calc((100% - 100vw)/2);right:calc((100% - 100vw)/2);top:clamp(320px,31vw,465px);bottom:0;z-index:-1;background:linear-gradient(var(--landing-paper),var(--landing-light) 30%,var(--landing-clear))}.level-selection{isolation:isolate}}
+@media(min-width:90rem){.landing-header{padding-top:2rem}.landing-intro{padding-top:.25rem}.book-subtitle,.level-fe .book-subtitle{font-size:1.05rem;min-height:1.4em}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.book-link:hover .book-object,.book-link:focus-visible .book-object{transform:rotateY(var(--landing-rotation))}.book-action[href]:hover,.book-action:not(:disabled):active{transform:none}}

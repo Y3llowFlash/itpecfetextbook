@@ -1,9 +1,9 @@
 /** Only the approved reader bundle may be public; raw editorial artifacts stay local. */
-export function assertApprovedPublicFile(filename:string,htmlRoutes:Set<string>,questionImages:Set<string>,approvedSourceAssets:Set<string>=new Set()){
+export function assertApprovedPublicFile(filename:string,htmlRoutes:Set<string>,questionImages:Set<string>,approvedSourceAssets:Set<string>=new Set(),approvedCoverAssets:Set<string>=new Set()){
   const name=filename.replaceAll('\\','/');
   const rootFiles=new Set(['favicon.svg','robots.txt','sitemap.xml','_headers','data/questions.json','data/import-manifest.json']);
   const question=name.startsWith('questions/')&&questionImages.has(name.slice('questions/'.length));
-  if(!htmlRoutes.has(name)&&!rootFiles.has(name)&&!question&&!approvedSourceAssets.has(name)&&!/^_astro\/[^/]+\.(?:js|css|woff2)$/.test(name))throw new Error(`Unapproved public file: ${name}`);
+  if(!htmlRoutes.has(name)&&!rootFiles.has(name)&&!question&&!approvedSourceAssets.has(name)&&!approvedCoverAssets.has(name)&&!/^_astro\/[^/]+\.(?:js|css|woff2)$/.test(name))throw new Error(`Unapproved public file: ${name}`);
 }
 
 export function assertPublicationBoundary(filename: string, content?: string, htmlRoutes?: Set<string>) {

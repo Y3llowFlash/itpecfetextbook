@@ -1,0 +1,74 @@
+[
+  {
+    "level": "fe",
+    "title": "New FE Textbook Vol. 1: IT Fundamentals",
+    "sourcePath": "design-references/fe-vol-1.png",
+    "sourceSha256": "e1fa138fe89bfef5faa7a76efcc3a9d9e9d5e67e94296f1799ac56a3145a724f",
+    "width": 595,
+    "height": 842,
+    "variants": [
+      {
+        "path": "covers/d3a800c117e2cfe0898ee8c065d74e89c8c8801f1bd0ce6067d17b46bcdcd986.webp",
+        "width": 320,
+        "height": 453,
+        "sha256": "d3a800c117e2cfe0898ee8c065d74e89c8c8801f1bd0ce6067d17b46bcdcd986",
+        "bytes": 46470
+      },
+      {
+        "path": "covers/01f4e46152c854af42aaf4828246b19d543957acdb7caf1e1ba8b20012393113.webp",
+        "width": 595,
+        "height": 842,
+        "sha256": "01f4e46152c854af42aaf4828246b19d543957acdb7caf1e1ba8b20012393113",
+        "bytes": 25252
+      }
+    ]
+  },
+  {
+    "level": "ip",
+    "title": "New IT Passport Examination Preparation Book, 2017",
+    "sourcePath": "design-references/ip-main-2017.png",
+    "sourceSha256": "1aaa2585e8477f12f5a51a7b9f204c5445e80cb852523e546861c478a84c76bd",
+    "width": 595,
+    "height": 840,
+    "variants": [
+      {
+        "path": "covers/c560067fee6700064e9cad815df0605adb4277e8601ddb485775515d5be0f2d3.webp",
+        "width": 320,
+        "height": 452,
+        "sha256": "c560067fee6700064e9cad815df0605adb4277e8601ddb485775515d5be0f2d3",
+        "bytes": 29970
+      },
+      {
+        "path": "covers/68b55d1a88aa4217ea16c57fb63c1bae10e851cbd16717b42a86c1c0c2e3a1eb.webp",
+        "width": 595,
+        "height": 840,
+        "sha256": "68b55d1a88aa4217ea16c57fb63c1bae10e851cbd16717b42a86c1c0c2e3a1eb",
+        "bytes": 14846
+      }
+    ]
+  },
+  {
+    "level": "ap",
+    "title": "AP Exam Preparation Book, Volume 1: Keywords and Exam Questions",
+    "sourcePath": "design-references/ap-vol-1.png",
+    "sourceSha256": "041764924b2a32dd503e52cee9093a742b3f38d9a3a8954b9e8b77186ce5bb4a",
+    "width": 595,
+    "height": 842,
+    "variants": [
+      {
+        "path": "covers/1c83aaebab8c6713a6e53013200377b40fbe11e8db20442fa4fbc40317ab29b4.webp",
+        "width": 320,
+        "height": 453,
+        "sha256": "1c83aaebab8c6713a6e53013200377b40fbe11e8db20442fa4fbc40317ab29b4",
+        "bytes": 24996
+      },
+      {
+        "path": "covers/e5bbc761aa0b58cc4cd64abd8e667decd633027e1524cf0aec348cc1977c4516.webp",
+        "width": 595,
+        "height": 842,
+        "sha256": "e5bbc761aa0b58cc4cd64abd8e667decd633027e1524cf0aec348cc1977c4516",
+        "bytes": 9880
+      }
+    ]
+  }
+]
