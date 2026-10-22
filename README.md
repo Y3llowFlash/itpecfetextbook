@@ -56,7 +56,9 @@ The [Batch 1 academic QA report](docs/development/CHAPTER_1_ACADEMIC_QA_BATCH_1.
 
 The [Batch 2 reconciliation report](docs/development/CHAPTER_1_ACADEMIC_QA_BATCH_2.md) records the **249 verified / 84 unresolved** checkpoint, including floating-point assumptions, duplicate equivalent options and the unresolved page-112 labels.
 
-The [Batch 3 reconciliation report](docs/development/CHAPTER_1_ACADEMIC_QA_BATCH_3.md) records the current **276 verified / 57 unresolved** private queue. Pages 152, 179 and 181 remain withheld; the 249 earlier verified answers and the protected unresolved pages are unchanged. Use `questions:qa -- --batch 3` and `test:academic-batch3`. Older-batch replay is blocked after this checkpoint. All historical questions remain unapproved and private.
+The [Batch 3 reconciliation report](docs/development/CHAPTER_1_ACADEMIC_QA_BATCH_3.md) records the **276 verified / 57 unresolved** checkpoint. Pages 152, 179 and 181 remain withheld; the 249 earlier verified answers and protected unresolved pages were preserved.
+
+The [Batch 4 reconciliation report](docs/development/CHAPTER_1_ACADEMIC_QA_BATCH_4.md) records the current **306 verified / 27 unresolved** private queue, with qualified SECDED evidence, DVD-RAM endurance evidence and source circuit/table checks. All 276 earlier answers and seven protected reviews remain unchanged. Use `questions:qa -- --batch 4` and `test:academic-batch4`; earlier-batch replay is blocked. All historical questions remain unapproved and private.
 
 The imported snapshot is committed, so ordinary development and builds **do not need the old repository**.
 

@@ -16,14 +16,16 @@ AUDIT='ITPEC_Chapter1_Academic_Audit_Batch01_With_Images.json'
 ADDENDUM='ITPEC_Chapter1_Image_QA_Addendum.json'
 AUDIT2='ITPEC_Chapter1_Academic_Audit_Batch02.json'
 AUDIT3='ITPEC_Chapter1_Academic_Audit_Batch03.json'
+AUDIT4='ITPEC_Chapter1_Academic_Audit_Batch04.json'
 PROTECTED_BATCH3_PAGES={110,112,119,180}
+PROTECTED_BATCH4_PAGES=PROTECTED_BATCH3_PAGES|{152,179,181}
 TEXTBOOK=Path('D:/ITPEC Old Questions/database/raw/FE Vol 1.pdf')
 
 def object_hash(value):
     return h.digest(json.dumps(value,sort_keys=True,ensure_ascii=False,separators=(',',':')).encode())
 
 def validate_proposals(records,audit,addendum,source_sha):
-    batch2=audit.get('schema')=='itpec-academic-audit-proposals-v2' and audit.get('batch') in [2,3]
+    batch2=audit.get('schema')=='itpec-academic-audit-proposals-v2' and audit.get('batch') in [2,3,4]
     if not batch2 and (audit.get('schema')!='itpec-academic-audit-proposals-v1-with-image-addendum' or not addendum or addendum.get('schema')!='itpec-academic-image-audit-addendum-v1'):raise ValueError('Unsupported advisory schema')
     entries=audit.get('entries',[])
     count=audit.get('scope',{}).get('count') if batch2 else audit.get('questionCount')
@@ -34,13 +36,16 @@ def validate_proposals(records,audit,addendum,source_sha):
         if not r or e['sourceSha256']!=source_sha or e['questionContentSha256']!=r['contentSha256'] or e['pdfPage'] not in [p['pdfPage'] for p in r['regions']]:raise ValueError(f'Stale or inconsistent proposal: {e["questionId"]}')
         if h.digest(r['rawText'].encode())!=r['contentSha256']:raise ValueError('Original transcript checksum changed')
         if batch2:
-            position=e.get('originalRecordIndex',0)
-            if not 1<=position<=len(records) or records[position-1]['id']!=r['id']:raise ValueError('Canonical record index changed')
+            # Batch 4's immutable advisory uses zero-based record indices; PDF pages stay one-based.
+            position=e.get('originalRecordIndex',-1 if audit['batch']==4 else 0)
+            offset=position if audit['batch']==4 else position-1
+            if not 0<=offset<len(records) or records[offset]['id']!=r['id']:raise ValueError('Canonical record index changed')
             if e.get('printedAnswer')!=r.get('printedAnswer') or e.get('originalExtractionQuality')!=r.get('extractionQuality'):raise ValueError('Advisory source fields disagree')
             if e.get('reviewSnapshotSha256')!=audit['sourceSnapshot']['reviewFileSha256']:raise ValueError('Inconsistent review snapshot reference')
             if e.get('sourceOriginalImageReferences')!=[a['path'] for a in r['images']]:raise ValueError('Advisory image identity changed')
-            if audit['batch']==3:
-                if e['pdfPage'] in PROTECTED_BATCH3_PAGES:raise ValueError('Protected unresolved page is outside Batch 3 authorization')
+            if audit['batch']>=3:
+                protected=PROTECTED_BATCH4_PAGES if audit['batch']==4 else PROTECTED_BATCH3_PAGES
+                if e['pdfPage'] in protected:raise ValueError(f'Protected unresolved page is outside Batch {audit["batch"]} authorization')
                 if e.get('sourceImageSha256')!=[a['sha256'] for a in r['images']]:raise ValueError('Advisory image checksum changed')
     if batch2 and audit['scope'].get('questionIndices')!=[e['originalRecordIndex'] for e in entries]:raise ValueError('Advisory scope indices disagree')
     for e in (addendum or {}).get('visualFindings',[]):
@@ -56,6 +61,14 @@ def validate_companions(audit,csv_text,markdown):
     table=[line.split('|')[1:-1] for line in markdown.splitlines() if re.match(r'^\|\s*\d+\s*\|',line)]
     if len(rows)!=30 or len(table)!=30:raise ValueError('Companion documents must cover all 30 proposals')
     for e,row,md in zip(entries,rows,table,strict=True):
+        if audit.get('batch')==4:
+            loc=e.get('textbookLocation') or {}
+            fields=['PDF page','Question ID','Printed key','Answer proposal','Classification','Vol 1 printed p.','Vol 1 PDF p.','Mapping proposal','Answer reasoning / verification evidence','QA flags']
+            values=[e['pdfPage'],e['questionId'],e['printedAnswer'].upper(),e['independentProposedAnswer'].upper(),e['classification'],loc.get('printedPage'),loc.get('pdfPage'),e['mappingStatusProposed'],' '.join(e['reasoning']),'; '.join(e['flags'])]
+            if [row.get(k) for k in fields]!=['' if v is None else str(v) for v in values]:raise ValueError('CSV disagrees with JSON advisory')
+            location=f'{loc["printedPage"]} / {loc["pdfPage"]}' if loc else 'Not established'
+            if [s.strip(' `*') for s in md]!=[str(e['pdfPage']),e['questionId'].removeprefix('HIST-TECH01-'),e['independentProposedAnswer'].upper(),e['classification'],location,e['mappingStatusProposed']]:raise ValueError('Markdown table disagrees with JSON advisory')
+            continue
         if audit.get('batch')==3:
             loc=e.get('textbookLocation') or {}
             fields=['PDF page','Canonical ID','Printed answer','Proposed answer','Answer audit','Volume1 classification','Target chapter','Textbook printed page','Textbook PDF page','Textbook section','Mapping proposed status','Flags']
@@ -84,8 +97,9 @@ def validate_batch2_snapshot(folder,audit,source_sha,book_sha,input_hashes):
     if actual!=expected and (actual!=applied.get('snapshot') or input_hashes!=applied.get('inputs')):raise ValueError(f'Stale Batch {batch} snapshot or changed reconciliation inputs')
     baseline=h.read_json(folder/'before/reviews.json')
     if any(baseline[e['questionId']]['verification']['status']!=e['originalVerificationStatus'] for e in audit['entries']):raise ValueError('Original verification status differs from advisory baseline')
-    if batch==3:
-        if len(baseline)!=333 or sum(v['verification']['status']=='verified' for v in baseline.values())!=249:raise ValueError('Batch 3 requires the preserved 249-answer baseline')
+    if batch>=3:
+        count={3:249,4:276}[batch]
+        if len(baseline)!=333 or sum(v['verification']['status']=='verified' for v in baseline.values())!=count:raise ValueError(f'Batch {batch} requires the preserved {count}-answer baseline')
 
 
 def validate_batch3_book(audit,decisions,book):
@@ -94,7 +108,7 @@ def validate_batch3_book(audit,decisions,book):
         loc=e.get('textbookLocation')
         if loc and (loc['sourceSha256']!=source_sha or h.digest(book[loc['pdfPage']-1].get_text().encode())!=loc['textPageSha256']):raise ValueError('Advisory textbook page checksum changed')
     for d in decisions.values():
-        if d.get('classification',{}).get('category')=='uncertain':
+        if d.get('classification',{}).get('category') in ['uncertain','outside-vol1']:
             if d['classification'].get('chapter') is not None or d.get('mapping',{}).get('status')!='needs-review':raise ValueError('Uncertain classification must remain unassigned')
         for dimension in ['verification','classification','mapping']:
             for ev in d.get(dimension,{}).get('evidence',[]):
@@ -149,7 +163,38 @@ def check_choice_proof(proof):
         rows.append([*bits,int(boolean(proof['expression'],values)),*[int(boolean(choices[k],values)) for k in 'abcd']])
     start=len(variables)
     matches=[k for i,k in enumerate('abcd') if all(row[start]==row[start+1+i] for row in rows)]
+    relation=proof.get('relation','equivalent')
+    if relation not in ['equivalent','not-equivalent']:raise ValueError('Unsupported source option relation')
+    if relation=='not-equivalent':matches=[k for k in 'abcd' if k not in matches]
     if matches!=proof['expectedMatches']:raise ValueError(f'Source option truth tables disagree with claimed matches: {matches}')
+    return {'matches':matches,'rows':rows}
+
+
+def check_table_choices(proof):
+    """Check every cell of a source multi-output truth-table alternative."""
+    variables=proof['variables'];outputs=proof['outputs'];rows=[]
+    for bits in itertools.product([0,1],repeat=len(variables)):
+        values=dict(zip(variables,bits));rows.append([int(boolean(expr,values)) for expr in outputs])
+    if set(proof['choices'])!=set('abcd'):raise ValueError('Table proof requires all four source choices')
+    matches=[k for k in 'abcd' if proof['choices'][k]==rows]
+    if matches!=proof['expectedMatches']:raise ValueError('Source table cells disagree with computed outputs')
+    return {'matches':matches,'rows':rows}
+
+
+def check_latch_choices(proof):
+    """Solve cross-coupled gate equations; classify forbidden noncomplementary states separately."""
+    if proof['gate'] not in ['nand','nor']:raise ValueError('Unsupported latch gate')
+    rows=[]
+    for s,r in itertools.product([0,1],repeat=2):
+        states=[]
+        for q,qbar in itertools.product([0,1],repeat=2):
+            top=not (s and qbar) if proof['gate']=='nand' else not (r or qbar)
+            bottom=not (r and q) if proof['gate']=='nand' else not (s or q)
+            if (q,qbar)==(int(top),int(bottom)):states.append([q,qbar])
+        rows.append('hold' if len(states)==2 else states[0] if len(states)==1 and states[0][0]!=states[0][1] else 'invalid')
+    if set(proof['choices'])!=set('abcd'):raise ValueError('Latch proof requires all four source tables')
+    matches=[k for k in 'abcd' if proof['choices'][k]==rows]
+    if matches!=proof['expectedMatches']:raise ValueError('Latch source tables disagree with gate equations')
     return {'matches':matches,'rows':rows}
 
 def check_observations(proof):
@@ -166,7 +211,9 @@ def merge_reviews(records,reviews,entries,decisions,batch_hash,batch=1):
     result=copy.deepcopy(reviews);changes=[];conflicts=[];by_id={e['questionId']:e for e in entries}
     if set(by_id)-set(decisions):raise ValueError('Every proposal requires a separate source-checked decision')
     if batch>=2 and set(decisions)!=set(by_id):raise ValueError(f'Batch {batch} decisions must match exactly the 30 advisory IDs')
-    if batch==3 and any(region['pdfPage'] in PROTECTED_BATCH3_PAGES for r in records if r['id'] in decisions for region in r['regions']):raise ValueError('Protected unresolved page is outside Batch 3 authorization')
+    if batch>=3:
+        protected=PROTECTED_BATCH4_PAGES if batch==4 else PROTECTED_BATCH3_PAGES
+        if any(region['pdfPage'] in protected for r in records if r['id'] in decisions for region in r['regions']):raise ValueError(f'Protected unresolved page is outside Batch {batch} authorization')
     for r in records:
         old=copy.deepcopy(result.get(r['id'],{}));v=result.setdefault(r['id'],{})
         if v.get('contentSha256')!=r['contentSha256']:raise ValueError('Existing review content binding is stale')
@@ -183,6 +230,10 @@ def merge_reviews(records,reviews,entries,decisions,batch_hash,batch=1):
             for proof in d.get('observationProofs',[]):check_observations(proof)
             for proof in d.get('dffProofs',[]):check_dff_trace(proof)
             for proof in d.get('pipelineProofs',[]):check_pipeline_schedules(proof)
+            for kind,checker in [('tableProofs',check_table_choices),('latchProofs',check_latch_choices)]:
+                for proof in d.get(kind,[]):
+                    matches=checker(proof)['matches']
+                    if d.get('verification',{}).get('status')=='verified' and matches!=[d['verification']['independentAnswer']]:raise ValueError('Verified answer must match exactly one original table')
             for proof in d.get('choiceProofs',[]):
                 matched=check_choice_proof(proof)['matches']
                 if d.get('verification',{}).get('status')=='verified' and matched!=[d['verification']['independentAnswer']]:raise ValueError('Verified answer must match exactly one original option')
@@ -256,7 +307,7 @@ def validate_source_images(records,pdf):
     return len(records)
 
 def reconcile(apply=False,batch=1):
-    if batch not in [1,2,3]:raise ValueError('Unsupported academic batch')
+    if batch not in [1,2,3,4]:raise ValueError('Unsupported academic batch')
     folder=QA if batch==1 else h.WORK/f'qa-batch{batch}'
     records=h.read_json(h.WORK/'questions.json');reviews=h.read_json(h.WORK/'reviews.json');manifest=h.read_json(h.WORK/'manifest.json')
     if manifest.get('qaReconciliation',{}).get('batch',1)>batch:raise ValueError('A later batch is already reconciled; older batch replay is blocked')
@@ -264,7 +315,7 @@ def reconcile(apply=False,batch=1):
     if source_sha!=manifest['sourceSha256']:raise ValueError('Historical source changed')
     if manifest.get('recordsSha256') and manifest['recordsSha256']!=h.digest((h.WORK/'questions.json').read_bytes()):raise ValueError('Question snapshot changed since source validation')
     if any(s['sha256']!=source_sha for r in records for s in r['sourceReferences']):raise ValueError('Question source identity differs from authorized PDF')
-    audit_file=folder/{1:AUDIT,2:AUDIT2,3:AUDIT3}[batch]
+    audit_file=folder/{1:AUDIT,2:AUDIT2,3:AUDIT3,4:AUDIT4}[batch]
     audit=h.read_json(audit_file);addon=h.read_json(folder/ADDENDUM) if batch==1 else None
     if batch>=2 and audit.get('batch')!=batch:raise ValueError('Advisory batch differs from selected reconciliation')
     validate_proposals(records,audit,addon,source_sha)
@@ -277,7 +328,7 @@ def reconcile(apply=False,batch=1):
         inputs['advisoryFiles']={p.name:h.digest(p.read_bytes()) for p in companions}
         validate_companions(audit,companions[2].read_text('utf-8-sig'),companions[1].read_text('utf8'))
         validate_batch2_snapshot(folder,audit,source_sha,h.digest(TEXTBOOK.read_bytes()),inputs)
-        if batch==3:
+        if batch>=3:
             with fitz.open(TEXTBOOK) as book:validate_batch3_book(audit,decisions,book)
     proposed=copy.deepcopy(records)
     with fitz.open(h.SOURCE) as pdf:
@@ -294,11 +345,11 @@ def reconcile(apply=False,batch=1):
             r['examType']='FE';r['examTypeStatus']='owner-confirmed'
             r['examTypeProvenance']={'kind':'owner-confirmation','reference':'Batch 1 integration request, 2026-10-22, section 7'}
     updated,changes,conflicts=merge_reviews(proposed,reviews,audit['entries'],decisions,inputs['advisorySha256'],batch)
-    if batch==3:
+    if batch>=3:
         baseline=h.read_json(folder/'before/reviews.json')
         scope={e['questionId'] for e in audit['entries']}
         for key,old in baseline.items():
-            if key not in scope and updated.get(key)!=old:raise ValueError('Batch 3 changed a review outside its scope')
+            if key not in scope and updated.get(key)!=old:raise ValueError(f'Batch {batch} changed a review outside its scope')
             if old['verification']['status']=='verified' and any(updated[key].get(k)!=old.get(k) for k in ['verification','explanation']):raise ValueError('Previously verified answer or explanation changed')
     report={'batch':batch,'batchQuestions':30,'sourcePixelComparisons':checked,'regeneratedCrops':sum(old['images']!=new['images'] for old,new in zip(records,proposed,strict=True)),'reviewChanges':len(changes),'academicConflicts':conflicts,**inputs,'changes':changes,'ownerApprovalsGranted':0}
     if apply:
@@ -321,4 +372,4 @@ def reconcile(apply=False,batch=1):
     print(json.dumps({**report,'changes':None,'dryRun':not apply},indent=2));return report
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--apply',action='store_true');parser.add_argument('--batch',type=int,choices=[1,2,3],default=1);args=parser.parse_args();reconcile(args.apply,args.batch)
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--apply',action='store_true');parser.add_argument('--batch',type=int,choices=[1,2,3,4],default=1);args=parser.parse_args();reconcile(args.apply,args.batch)
