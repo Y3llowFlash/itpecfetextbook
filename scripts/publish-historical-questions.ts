@@ -5,20 +5,24 @@ import path from 'node:path';
 import { digest, webpDimensions } from './question-importer';
 import { matchOccurrence } from '../src/lib/question-policy';
 import type { Question, Concept, Explanation } from '../src/lib/models';
-import { passageMatch } from '../src/lib/question-highlights';
 import { presentSourceHTML } from '../src/lib/reader-presentation';
 import { writeQuestionSnapshot } from './question-snapshot';
+import {validateNewHighlight} from './historical-highlight';
 
 const dryRun = process.argv.includes('--dry-run');
-if (process.argv.slice(2).some(a=>a!=='--dry-run')) throw Error('Only --dry-run is supported');
+const argumentsOnly=process.argv.slice(2),batchPosition=argumentsOnly.indexOf('--batch');
+const batch=batchPosition<0?1:Number(argumentsOnly[batchPosition+1]);
+const allowed=argumentsOnly.filter((_,i)=>i!==batchPosition&&i!==batchPosition+1);
+if(![1,2].includes(batch)||(batchPosition<0?argumentsOnly:allowed).some(a=>a!=='--dry-run')||argumentsOnly.filter(a=>a==='--batch').length>1)throw Error('Use --dry-run and optional --batch 1|2');
 const nativeManifest=JSON.parse(await readFile('.local/historical/technology-01/manifest.json','utf8'));
 // This reviewed source must pass the exact prepared candidate gate, even if its
 // optional editorial marker or package was accidentally removed. No fallback.
-const finalScope=nativeManifest.sourceSha256==='5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1'
-  ? new Set<string>(JSON.parse(execFileSync('python',['scripts/approval_candidates.py','check','--publisher-check'],{encoding:'utf8',maxBuffer:2_000_000})).questionIds)
-  : null;
+const finalPackage=nativeManifest.sourceSha256==='5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1'
+  ? JSON.parse(execFileSync('python',['scripts/approval_candidates.py','check','--publisher-check','--batch',String(batch)],{encoding:'utf8',maxBuffer:2_000_000})) : null;
+if(batch===2&&!finalPackage)throw Error('Batch 2 requires its exact source-bound candidate package');
+const finalScope=finalPackage?new Set<string>([...finalPackage.questionIds,...(finalPackage.releasedQuestionIds||[])]):null;
 const approved = JSON.parse(execFileSync('python',['scripts/historical_questions.py','export'],{encoding:'utf8',maxBuffer:20_000_000})) as {record:Record<string,any>;review:Record<string,any>}[];
-if(finalScope&&approved.some(e=>!finalScope.has(e.record.id)))throw Error('An approved record is outside the exact final 36-question scope');
+if(finalScope&&approved.some(e=>!finalScope.has(e.record.id)))throw Error('An approved record is outside the exact prepared and previously released scope');
 const read = async (file:string)=>JSON.parse(await readFile(file,'utf8'));
 const questions:Question[]=await read('public/data/questions.json');
 const concepts:Concept[]=await read('src/content/concepts.json');
@@ -47,13 +51,13 @@ for (const {record:r,review:v} of approved) {
   const node=toc.nodes.find((n:any)=>n.number===v.mapping.headingNumber);
   if (!node || v.mapping.sectionId!==node.sectionId || v.mapping.subsectionId!==node.id || !/^[a-z0-9-]+$/.test(v.mapping.conceptId)) {conflicts.push({id:r.id,reason:'An exact textbook heading mapping must be reviewed first'});continue;}
   if(!concept){
-    const highlight=v.mapping.sourceHighlight;
+    const definition=finalPackage?.conceptDefinitions.find((c:any)=>c.id===v.mapping.conceptId);
+    const highlight=v.mapping.sourceHighlight||definition?.sourceHighlight;
     const source=presentSourceHTML(await readFile(`src/content/source-hardware/${node.path.split('/').filter(Boolean).at(-1)}.html`,'utf8'));
-    const passage=highlight&&passageMatch(source,highlight.passageId);
-    const headingOffset=source.indexOf(`id="${node.id}"`),passageOffset=passage?source.indexOf(passage[0]):-1;
-    const between=source.slice(headingOffset,passageOffset);
-    if(!passage || digest(passage[2])!==highlight.fragmentSha256 || /<a\b/.test(passage[2]) || passageOffset<headingOffset || /<h[1-4]\b/.test(between.slice(between.indexOf('>')+1)) || !v.mapping.title || !v.mapping.summary){conflicts.push({id:r.id,reason:'New concept requires an unchanged, owner-reviewed paragraph immediately within its precise source heading; provide title and summary'});continue;}
-    concept={id:v.mapping.conceptId,title:v.mapping.title,summary:v.mapping.summary,sectionId:node.sectionId,sectionUrl:node.path,anchor:highlight.passageId,questionIds:[],mappingEvidence:[],videos:[],sourceHighlight:{headingNumber:node.number,passageId:highlight.passageId,fragmentSha256:highlight.fragmentSha256}};
+    const title=v.mapping.title||definition?.title,summary=v.mapping.summary||definition?.summary;
+    try{validateNewHighlight(source,{id:v.mapping.conceptId,title,summary,sectionId:node.sectionId,sectionUrl:node.path,sourceHighlight:{...highlight,headingNumber:highlight?.headingNumber??node.number}},node,toc.nodes,concepts);}
+    catch{conflicts.push({id:r.id,reason:'New concept requires an unchanged reviewed paragraph within its exact numbered textbook subsection and its bound title/summary'});continue;}
+    concept={id:v.mapping.conceptId,title,summary,sectionId:node.sectionId,sectionUrl:node.path,anchor:definition?.anchor||highlight.passageId,questionIds:[],mappingEvidence:[],videos:[],sourceHighlight:{headingNumber:node.number,passageId:highlight.passageId,fragmentSha256:highlight.fragmentSha256}};
     concepts.push(concept);
   }else if(node.sectionId!==concept.sectionId || (!node.conceptIds.includes(concept.id)&&concept.sourceHighlight?.headingNumber!==node.number)){conflicts.push({id:r.id,reason:'Concept and precise source heading disagree'});continue;}
   const file=path.resolve('.local/historical/technology-01',r.images[0].path);

@@ -5,10 +5,12 @@ import path from 'node:path';
 import {execFileSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
 const candidateMode=process.argv.includes('--approval-candidates');
-if(process.argv.slice(2).some(arg=>arg!=='--approval-candidates'))throw Error('Only --approval-candidates is supported');
-const candidates=candidateMode?JSON.parse(execFileSync('python',['scripts/approval_candidates.py','check'],{encoding:'utf8',maxBuffer:2_000_000})):null;
+const batch2=process.argv.includes('--batch2');
+if(process.argv.slice(2).some(arg=>!['--approval-candidates','--batch2'].includes(arg)) || (batch2&&!candidateMode))throw Error('Use --approval-candidates with optional --batch2');
+const candidates=candidateMode?JSON.parse(execFileSync('python',['scripts/approval_candidates.py','check',...(batch2?['--batch','2']:[])],{encoding:'utf8',maxBuffer:2_000_000})):null;
 const root = await realpath('.local/historical/technology-01');
-const port = Number(process.env.QUESTION_REVIEW_PORT || 4319);
+const port = Number(process.env.QUESTION_REVIEW_PORT || (batch2?4330:4319));
+if(!Number.isInteger(port)||port<1024||port>65535)throw Error('Invalid owner-review port');
 const server = createServer(async (req,res) => {
   try {
     if (req.method !== 'GET' && req.method !== 'HEAD') { res.writeHead(405); res.end(); return; }
@@ -35,4 +37,4 @@ const server = createServer(async (req,res) => {
     res.end(req.method === 'HEAD' ? undefined : bytes);
   } catch { res.writeHead(404); res.end('Not found'); }
 });
-server.listen(port,'127.0.0.1',()=>console.log(`Private ${candidateMode?'36-question owner':'question'} review: http://127.0.0.1:${port}/ — read-only`));
+server.listen(port,'127.0.0.1',()=>console.log(`Private ${candidateMode?`${candidates.candidates}-question owner`:'question'} review: http://127.0.0.1:${port}/ — read-only`));
