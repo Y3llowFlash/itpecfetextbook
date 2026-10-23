@@ -13,13 +13,14 @@ const dryRun = process.argv.includes('--dry-run');
 const argumentsOnly=process.argv.slice(2),batchPosition=argumentsOnly.indexOf('--batch');
 const batch=batchPosition<0?1:Number(argumentsOnly[batchPosition+1]);
 const allowed=argumentsOnly.filter((_,i)=>i!==batchPosition&&i!==batchPosition+1);
-if(![1,2].includes(batch)||(batchPosition<0?argumentsOnly:allowed).some(a=>a!=='--dry-run')||argumentsOnly.filter(a=>a==='--batch').length>1)throw Error('Use --dry-run and optional --batch 1|2');
+if(![1,2,3].includes(batch)||(batchPosition<0?argumentsOnly:allowed).some(a=>a!=='--dry-run')||argumentsOnly.filter(a=>a==='--batch').length>1)throw Error('Use --dry-run and optional --batch 1|2|3');
+if(batch===3&&!dryRun)throw Error('Batch 3 is preparation only; publication requires a separate owner-authorized milestone');
 const nativeManifest=JSON.parse(await readFile('.local/historical/technology-01/manifest.json','utf8'));
 // This reviewed source must pass the exact prepared candidate gate, even if its
 // optional editorial marker or package was accidentally removed. No fallback.
 const finalPackage=nativeManifest.sourceSha256==='5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1'
-  ? JSON.parse(execFileSync('python',['scripts/approval_candidates.py','check','--publisher-check','--batch',String(batch)],{encoding:'utf8',maxBuffer:2_000_000})) : null;
-if(batch===2&&!finalPackage)throw Error('Batch 2 requires its exact source-bound candidate package');
+  ? JSON.parse(execFileSync('python',batch===3?['scripts/hardware_batch03.py','publisher-check']:['scripts/approval_candidates.py','check','--publisher-check','--batch',String(batch)],{encoding:'utf8',maxBuffer:2_000_000})) : null;
+if((batch===2||batch===3)&&!finalPackage)throw Error('The selected batch requires its exact source-bound candidate package');
 const finalScope=finalPackage?new Set<string>([...finalPackage.questionIds,...(finalPackage.releasedQuestionIds||[])]):null;
 const approved = JSON.parse(execFileSync('python',['scripts/historical_questions.py','export'],{encoding:'utf8',maxBuffer:20_000_000})) as {record:Record<string,any>;review:Record<string,any>}[];
 if(finalScope&&approved.some(e=>!finalScope.has(e.record.id)))throw Error('An approved record is outside the exact prepared and previously released scope');

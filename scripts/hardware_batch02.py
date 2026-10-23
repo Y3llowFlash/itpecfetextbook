@@ -66,11 +66,13 @@ def validate_passages(evidence,pages):
     if not any(ev['role']=='direct' for ev in evidence):raise ValueError('Context alone does not establish an exact teaching placement')
 
 
-def validate_decisions(records,before,ledger,pages,published,concepts,nodes):
-    if ledger.get('schema')!='itpec-hardware-batch02-preparation-v1' or ledger.get('baseline')!=BASELINE or ledger.get('sourceSha256')!=audit.SOURCE_SHA or ledger.get('bookSha256')!=audit.BOOK_SHA:
+def validate_decisions(records,before,ledger,pages,published,concepts,nodes,*,spec=None):
+    # Later private batches reuse the same gates without changing the frozen Batch 2 defaults.
+    spec=spec or {'schema':'itpec-hardware-batch02-preparation-v1','baseline':BASELINE,'pages':PAGES}
+    if ledger.get('schema')!=spec['schema'] or ledger.get('baseline')!=spec['baseline'] or ledger.get('sourceSha256')!=audit.SOURCE_SHA or ledger.get('bookSha256')!=audit.BOOK_SHA:
         raise ValueError('Unrecognized preparation source/baseline')
     entries=ledger.get('entries',[]);ids=[e['id'] for e in entries];index={r['id']:r for r in records}
-    if len(entries)!=40 or len(set(ids))!=40 or {e.get('pdfPage') for e in entries}!=PAGES:raise ValueError('Exact 40-question scope required')
+    if len(entries)!=40 or len(set(ids))!=40 or {e.get('pdfPage') for e in entries}!=spec['pages']:raise ValueError('Exact 40-question scope required')
     concept_index={c['id']:c for c in concepts};node_index={n['id']:n for n in nodes}
     if len(concept_index)!=len(concepts):raise ValueError('Duplicate concept IDs')
     for e in entries:
@@ -100,7 +102,7 @@ def validate_decisions(records,before,ledger,pages,published,concepts,nodes):
     return entries
 
 
-def reconcile(records,before,entries,ledger_sha,draft_history=None):
+def reconcile(records,before,entries,ledger_sha,draft_history=None,*,milestone='technology01-hardware-batch02'):
     """Bounded editorial update of native review dimensions; no academic or approval edits."""
     result=deepcopy(before)
     for e in entries:
@@ -109,7 +111,7 @@ def reconcile(records,before,entries,ledger_sha,draft_history=None):
         previous={k:deepcopy(v.get(k)) for k in DIMENSIONS}
         for key in DIMENSIONS:v[key]=deepcopy(e[key])
         history=v.setdefault('preparationHistory',[])
-        history.append({'milestone':'technology01-hardware-batch02','decisionLedgerSha256':ledger_sha,
+        history.append({'milestone':milestone,'decisionLedgerSha256':ledger_sha,
             'decisionSha256':qa.object_hash(e),'beforeReviewSha256':e['beforeReviewSha256'],
             'sourceBinding':qa.extraction_binding(next(r for r in records if r['id']==e['id'])),
             'before':previous,'after':{k:deepcopy(v[k]) for k in DIMENSIONS},'note':e['editorialNote'],
@@ -118,7 +120,7 @@ def reconcile(records,before,entries,ledger_sha,draft_history=None):
     return result
 
 
-def validate_transition(records,before,current,expected,selected):
+def validate_transition(records,before,current,expected,selected,*,approved_count=36):
     if current not in [before,expected]:raise ValueError('Live reviews changed: reject stale input; do not rebind automatically')
     for r in records:
         old=before[r['id']];new=expected[r['id']]
@@ -126,7 +128,7 @@ def validate_transition(records,before,current,expected,selected):
         for key in set(old)|set(new):
             if key not in DIMENSIONS|{'preparationHistory'} and new.get(key)!=old.get(key):raise ValueError('Protected academic, metadata or approval object changed')
         if r['regions'][0]['pdfPage'] in PROTECTED and new!=old:raise ValueError('Protected owner case changed')
-    if sum(h.valid_verification(r,expected[r['id']]) for r in records)!=326 or sum(h.valid_approval(r,expected[r['id']]) for r in records)!=36:
+    if sum(h.valid_verification(r,expected[r['id']]) for r in records)!=326 or sum(h.valid_approval(r,expected[r['id']]) for r in records)!=approved_count:
         raise ValueError('Existing verification/approval totals changed')
     if any(expected[i]['approval']['status']!='unapproved' for i in selected):raise ValueError('New approval is forbidden')
 
