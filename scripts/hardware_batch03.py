@@ -77,11 +77,11 @@ def load_context():
     return ledger,records,before,current,expected,published
 
 
-def payload(ledger,records,reviews,published):
+def payload(ledger,records,reviews,published,*,collection='batch03',selection_count=40):
     selected=[{'id':e['id'],'currentMapping':e['mapping'],'auditClassification':e['classification']} for e in ledger['entries']]
     counts=Counter(e['mapping']['conceptId'] for e in ledger['entries'])
     bank,answers,_,links=pilot.project(selected,records,reviews,ledger['concepts'],associate=core.source_association,counts=counts)
-    for q in bank:q['previewCollection']='batch03'
+    for q in bank:q['previewCollection']=collection
     original_concepts=h.read_json(h.ROOT/'src/content/concepts.json');reference_ids={i for c in original_concepts for i in c['questionIds']}
     originals={r['id']:r for r in records};live_answers={e['questionId']:e for e in h.read_json(h.ROOT/'src/content/explanations.json')}
     for q in published:
@@ -91,12 +91,14 @@ def payload(ledger,records,reviews,published):
         else:reference['image']['src']=f"/__pilot/published-images/{q['image']['sha256']}.webp"
         bank.append(reference);answers.append(deepcopy(live_answers[q['id']]))
     concepts=deepcopy(ledger['concepts'])
-    for c in concepts:c.update(questionIds=[q['id'] for q in bank if q['id'] in c['questionIds'] or (q['previewCollection']=='batch03' and q['topic']==c['id'])],videos=[])
-    if len(bank)!=len({q['id'] for q in bank}) or any(q['id'] in reference_ids for q in bank[:40]):raise ValueError('Duplicate private/published occurrence')
+    for c in concepts:c.update(questionIds=[q['id'] for q in bank if q['id'] in c['questionIds'] or (q['previewCollection']==collection and q['topic']==c['id'])],videos=[])
+    if len(bank)!=len({q['id'] for q in bank}) or any(q['id'] in reference_ids for q in bank[:selection_count]):raise ValueError('Duplicate private/published occurrence')
     return bank,answers,concepts,links
 
 
-def preview_overlay(bank,concepts,published):
+def preview_overlay(bank,concepts,published,*,app=None,prefix=None,collection='batch03',label='Batch 3'):
+    APP=app or globals()['APP']
+    PREFIX=prefix or globals()['PREFIX']
     APP.mkdir(parents=True,exist_ok=True);pilot.overlay(APP,PREFIX)
     pilot.replace_checked(APP/'src/lib/models.ts','privatePreview: true;','privatePreview: true; previewCollection: "batch03" | "published";')
     practice=APP/'src/components/Practice.tsx'
@@ -146,9 +148,16 @@ import candidates from '../content/owner-review.json';
 </section></SiteLayout>
 '''
     (APP/'src/pages/review.astro').write_text(gallery,encoding='utf8')
+    # Later batches reuse exactly this disposable application adapter. Only the
+    # private generated files receive collection labels; production is untouched.
+    if collection!='batch03' or label!='Batch 3':
+        for relative in ['src/lib/models.ts','src/components/Practice.tsx','src/lib/question-highlights.ts','src/pages/index.astro','src/pages/review.astro']:
+            file=APP/relative
+            file.write_text(file.read_text('utf8').replace('batch03',collection).replace('Batch 3',label),encoding='utf8')
 
 
-def assets_for(bank):
+def assets_for(bank,*,app=None):
+    APP=app or globals()['APP']
     assets={'/'+p.relative_to(APP/'dist').as_posix():{'path':str(p),'sha256':h.digest(p.read_bytes())} for p in (APP/'dist').rglob('*') if p.is_file()}
     originals={r['id']:r for r in h.read_json(h.WORK/'questions.json')}
     for q in bank:
