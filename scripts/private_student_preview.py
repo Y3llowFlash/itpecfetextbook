@@ -165,11 +165,14 @@ def association(q, concept):
         'status':'private-preview-association-reviewed-not-publication-approved','reason':reason}
 
 
-def project(selected,records,reviews,concepts,repairs=()):
+def project(selected,records,reviews,concepts,repairs=(),*,associate=None,counts=None):
+    # Later private batches share this adapter without relaxing the original 36-ID selection.
+    associator=associate or association
+    scope=COUNTS if counts is None else counts
     index={r['id']:r for r in records};bank=[];explanations=[];links=[]
     for q in selected:
         r=index[q['id']];v=reviews[r['id']];m=v['mapping'];c=next(c for c in concepts if c['id']==m['conceptId'])
-        links.append(association(q,c));im=r['images'][0]
+        links.append(associator(q,c));im=r['images'][0]
         bank.append({'id':r['id'],'examId':f'private-{r["year"]}{r["season"]}-FE-{v["metadata"]["paper"]}','number':r['number'],'year':r['year'],'season':r['season'],
           'subject':v['metadata']['subject'],'paper':v['metadata']['paper'],'privatePreview':True,'is_published':False,'sourceKind':'past_paper','format':'multiple-choice','examLabel':'FE (owner-confirmed)',
           'correctAnswer':v['verification']['independentAnswer'],'options':list('abcd'),'chapter':'Hardware','section':m['sectionId'],'topic':m['conceptId'],'mapping':m,
@@ -192,7 +195,7 @@ def project(selected,records,reviews,concepts,repairs=()):
           'reviewedAgainst':['Existing immutable independently verified private review',academic_revision]})
     scoped=[]
     for c in concepts:
-        if c['id'] not in COUNTS:continue
+        if c['id'] not in scope:continue
         value=dict(c);value['questionIds']=[q['id'] for q in bank if q['topic']==c['id']];value['videos']=[];scoped.append(value)
     return bank,explanations,scoped,links
 
@@ -203,7 +206,16 @@ def replace_checked(file, before, after):
     file.write_text(text.replace(before,after),encoding='utf-8')
 
 
-def overlay():
+def namespace(text,prefix):
+    # Templates can already contain the first pilot's namespace (for reset).
+    # Rebind it before namespacing normal production keys, without doubling it.
+    text=text.replace(PREFIX,prefix)
+    return re.sub(r'itpecTextbook:(?!'+re.escape(prefix.removeprefix('itpecTextbook:'))+')',prefix,text)
+
+
+def overlay(app=None,prefix=None):
+    APP=app or globals()['APP']
+    PREFIX=prefix or globals()['PREFIX']
     # Copy the approved application, then adapt only this ignored private copy.
     shutil.copytree(ROOT/'src',APP/'src',dirs_exist_ok=True)
     for src in (ROOT/'public').rglob('*'):
@@ -219,7 +231,7 @@ def overlay():
     # Namespacing applies to filters, account caches, reading returns and guest keys.
     for p in (APP/'src').rglob('*'):
         if p.suffix in ['.ts','.tsx','.astro']:
-            text=p.read_text('utf-8');p.write_text(re.sub(r'itpecTextbook:(?!privatePilot36:)',PREFIX,text),encoding='utf-8')
+            text=p.read_text('utf-8');p.write_text(namespace(text,PREFIX),encoding='utf-8')
     for name in ['firestore-sync.ts','account-session.ts','sync-controller.ts']:
         (APP/'src/lib'/name).unlink(missing_ok=True)
     models=APP/'src/lib/models.ts'
