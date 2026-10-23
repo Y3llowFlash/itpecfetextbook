@@ -2,6 +2,7 @@ import { test,expect } from '@playwright/test';
 import { readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import receipt from '../../docs/development/evidence/historical-release-36.json' with {type:'json'};
+import expansion from '../../docs/development/evidence/historical-release-40.json' with {type:'json'};
 import explanations from '../../src/content/explanations.json' with {type:'json'};
 import concepts from '../../src/content/concepts.json' with {type:'json'};
 const bank=JSON.parse(readFileSync('public/data/questions.json','utf8'));
@@ -10,8 +11,8 @@ const sha=(b:Buffer)=>createHash('sha256').update(b).digest('hex');
 test('real served catalog and all 36 image bytes equal the reviewed release; private records are absent',async({request})=>{
   const response=await request.get('/data/questions.json');expect(response.ok()).toBe(true);
   expect(sha(await response.body())).toBe(sha(readFileSync('public/data/questions.json')));
-  const served=await response.json();expect(served).toHaveLength(456);
-  expect(served.filter((q:any)=>q.format==='historical').map((q:any)=>q.id).sort()).toEqual(receipt.records.map(r=>r.id).sort());
+  const served=await response.json();expect(served).toHaveLength(496);
+  expect(served.filter((q:any)=>q.format==='historical').map((q:any)=>q.id).sort()).toEqual([...receipt.records,...expansion.records].map(r=>r.id).sort());
   for(const entry of receipt.records){
     const q=served.find((q:any)=>q.id===entry.id),image=await request.get(q.image.src);
     expect(image.ok(),entry.id).toBe(true);expect(sha(await image.body()),entry.id).toBe(entry.imageSha256);

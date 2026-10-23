@@ -8,7 +8,11 @@ export function canonical(value: unknown): string {
 }
 export const checksum = (value: unknown) => createHash('sha256').update(canonical(value)).digest('hex');
 
-export function validateHistoricalRelease(questions: any[], explanations: any[], concepts: any[], receipt: any) {
+export function validateHistoricalRelease(questions: any[], explanations: any[], concepts: any[], receipt: any, expansion?: any) {
+  if (expansion) {
+    validateExpansion(questions, explanations, concepts, receipt, expansion);
+    return;
+  }
   if (receipt.schema !== 'itpec-historical-release-v1' || receipt.authorizedCount !== 36 || receipt.records.length !== 36 || receipt.excludedUnapproved !== 297) throw Error('Invalid first historical release authorization scope');
   const ids = new Set<string>(receipt.records.map((r: any) => r.id));
   const historical = questions.filter(q => q.format === 'historical' || q.review?.sources.some((s: any) => s.kind === 'historical-pdf'));
@@ -25,4 +29,33 @@ export function validateHistoricalRelease(questions: any[], explanations: any[],
     counts[approved.conceptId] = (counts[approved.conceptId] || 0) + 1;
   }
   if (checksum(counts) !== checksum(receipt.conceptCounts)) throw Error('Seven-concept authorization distribution changed');
+}
+
+/** Append-only Release 2: retain every Release 1 assertion and bind the new scope. */
+function validateExpansion(questions:any[], explanations:any[], concepts:any[], previous:any, receipt:any) {
+  if(receipt.schema!=='itpec-historical-release-2-v1'||receipt.authorizedCount!==40||receipt.records.length!==40||receipt.excludedUnapproved!==257||receipt.total!==496||receipt.historicalCount!==76||receipt.images!==496||receipt.candidateManifestSha256!=='39bcc7b8ca0488bccfe61e5a66ab5ff7e61fa7e7310ff2b3089cc3449b85cea3'||receipt.candidateSetFingerprint!=='4a887d4730c7c8e4f5a43ff7585bbb0081fa0b4fbb81463e7fb348e1c3853cf0')throw Error('Invalid Release 2 authorization');
+  const ids=new Set<string>(receipt.records.map((r:any)=>r.id));
+  if(ids.size!==40||previous.records.some((r:any)=>ids.has(r.id))||questions.length!==496||new Set(questions.map(q=>q.id)).size!==496)throw Error('Expanded or overlapping release scope');
+  const old=questions.filter(q=>!ids.has(q.id)),oldAnswers=explanations.filter(e=>!ids.has(e.questionId));
+  validateHistoricalRelease(old,oldAnswers,concepts,previous);
+  if(checksum(Object.fromEntries(old.map(q=>[q.id,q])))!==receipt.previousRecordsSha256||checksum(oldAnswers)!==receipt.previousExplanationsSha256)throw Error('Previously published content changed');
+  const counts:Record<string,number>={};
+  for(const entry of receipt.records){
+    const q=questions.find(q=>q.id===entry.id),e=explanations.find(e=>e.questionId===entry.id);
+    if(!q||!e||q.format!=='historical'||checksum(q)!==entry.questionSha256||checksum(e)!==entry.explanationSha256||checksum(q.review.mappings)!==entry.mappingSha256||q.review.approvalFingerprint!==entry.approvalFingerprint||q.image.sha256!==entry.imageSha256)throw Error(`Release 2 approved payload changed: ${entry.id}`);
+    if(q.correctAnswer!==e.answer||q.paper!=='AM'||q.subject!=='A'||q.review.examType!=='FE'||q.review.reviewStatus!=='approved'||q.review.publicationStatus!=='published')throw Error('Invalid Release 2 grading or metadata');
+    const links=concepts.filter(c=>c.questionIds.includes(q.id));
+    if(links.length!==1||links[0].id!==entry.conceptId||q.review.mappings[0].conceptId!==entry.conceptId)throw Error('Release 2 placement changed');
+    counts[entry.conceptId]=(counts[entry.conceptId]||0)+1;
+  }
+  if(Object.keys(counts).length!==21||checksum(counts)!==checksum(receipt.conceptCounts))throw Error('Release 2 concept distribution changed');
+  const newIds=new Set<string>(receipt.newHighlights.map((d:any)=>d.id));
+  if(receipt.newHighlights.length!==15||newIds.size!==15||concepts.length!==28)throw Error('Wrong new highlight scope');
+  for(const entry of receipt.newHighlights){
+    const c=concepts.find(c=>c.id===entry.id);
+    const definition=c&&Object.fromEntries(['id','title','summary','sectionId','sectionUrl','anchor','sourceHighlight'].filter(k=>k in c).map(k=>[k,c[k]]));
+    if(!c||checksum(definition)!==entry.definitionSha256||checksum(c.sourceHighlight)!==checksum(entry.sourceHighlight))throw Error('Owner-reviewed highlight changed');
+  }
+  const oldConcepts=concepts.filter(c=>!newIds.has(c.id)).map(c=>({...c,questionIds:c.questionIds.filter((id:string)=>!ids.has(id)),mappingEvidence:c.mappingEvidence.filter((e:any)=>!ids.has(e.questionId))}));
+  if(checksum(oldConcepts)!==receipt.previousConceptsSha256)throw Error('Previous concepts or placements changed');
 }

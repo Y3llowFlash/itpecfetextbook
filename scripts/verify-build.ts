@@ -9,12 +9,13 @@ import { assertPublicationBoundary, assertApprovedPublicFile } from './publicati
 import {coverAssets,validateLandingAssets,validateLandingPage} from './landing-assets';
 import { validateHistoricalRelease } from './historical-release-integrity';
 import historicalRelease from '../docs/development/evidence/historical-release-36.json';
+import expansion from '../docs/development/evidence/historical-release-40.json';
 const root = path.resolve('dist');
 const source = await readFile('public/data/questions.json');
 const built = await readFile(path.join(root, 'data/questions.json'));
 if (digest(source) !== digest(built)) throw new Error('Built question data differs from the validated snapshot');
 const questions = JSON.parse(built.toString());
-validateHistoricalRelease(questions, JSON.parse(await readFile('src/content/explanations.json','utf8')), concepts, historicalRelease);
+validateHistoricalRelease(questions, JSON.parse(await readFile('src/content/explanations.json','utf8')), concepts, historicalRelease, expansion);
 if (questions.some((q: { is_published: unknown }) => q.is_published !== true)) throw new Error('Unpublished record in production output');
 const expected = new Set(questions.map((q: { image: { src: string } }) => path.basename(q.image.src)));
 const images = await readdir(path.join(root, 'questions'));

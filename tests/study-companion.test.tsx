@@ -8,7 +8,7 @@ import {contents} from '../src/lib/toc';
 import type {Question} from '../src/lib/models';
 import {guestStore} from '../src/lib/progress';
 const bank=JSON.parse(readFileSync('public/data/questions.json','utf8')) as Question[];
-const contexts=['3-5-1','3-3-4','4-1-3','1'].map(number=>studyContext(contents.find(n=>n.number===number)!,bank));
+const contexts=['3-5-1','3-3-4','4-1-3','1-1'].map(number=>studyContext(contents.find(n=>n.number===number)!,bank));
 beforeEach(()=>{localStorage.clear();sessionStorage.clear();guestStore.refresh();delete document.documentElement.dataset.readingContext;});
 afterEach(cleanup);
 it('updates section, counts and mapped video as source context changes and omits unavailable controls',()=>{

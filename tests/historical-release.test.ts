@@ -2,7 +2,11 @@ import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { validateHistoricalRelease, checksum } from '../scripts/historical-release-integrity';
 const read = (p: string) => JSON.parse(readFileSync(p,'utf8'));
-const bank = read('public/data/questions.json'), answers = read('src/content/explanations.json'), concepts = read('src/content/concepts.json'), receipt = read('docs/development/evidence/historical-release-36.json');
+const expansion=read('docs/development/evidence/historical-release-40.json');
+const expandedBank=read('public/data/questions.json'),expandedAnswers=read('src/content/explanations.json');
+// Retain the first release's exact assertions on its unchanged original subset.
+const newIds=new Set(expansion.records.map((r:any)=>r.id));
+const bank = expandedBank.filter((q:any)=>!newIds.has(q.id)), answers = expandedAnswers.filter((e:any)=>!newIds.has(e.questionId)), concepts = read('src/content/concepts.json'), receipt = read('docs/development/evidence/historical-release-36.json');
 describe('exact owner-authorized historical release', () => {
   it('validates 36 approved payloads and preserves 420 authoritative Practice records', () => {
     expect(() => validateHistoricalRelease(bank, answers, concepts, receipt)).not.toThrow();
@@ -29,4 +33,21 @@ describe('exact owner-authorized historical release', () => {
   it('matches the cross-language canonical receipt encoding', () => {
     expect(checksum({b:2,a:['✓',1]})).toBe('fed87e4f3d71c8bd5e6d54f05f6d9a3319a71c55e21edf7159ef3321cd6ef780');
   });
+});
+
+describe('exact Release 2 append-only authorization',()=>{
+  const validate=(b=expandedBank,a=expandedAnswers,c=concepts,r=expansion)=>validateHistoricalRelease(b,a,c,receipt,r);
+  it('validates all 40 new questions, 15 highlights, and unchanged first 456',()=>{expect(()=>validate()).not.toThrow();expect(expansion.records).toHaveLength(40);expect(expansion.newHighlights).toHaveLength(15);});
+  it('rejects every academic, source, accessibility or approval mutation',()=>{
+    for(const entry of expansion.records){
+      const b=structuredClone(expandedBank);b.find((q:any)=>q.id===entry.id).correctAnswer='invalid';expect(()=>validate(b)).toThrow();
+      const a=structuredClone(expandedAnswers);a.find((e:any)=>e.questionId===entry.id).imageDescription='stale';expect(()=>validate(expandedBank,a)).toThrow();
+    }
+  },15000);
+  it('rejects altered highlights, extra questions and changed original concepts',()=>{
+    for(const entry of expansion.newHighlights){const c=structuredClone(concepts);c.find((c:any)=>c.id===entry.id).sourceHighlight.fragmentSha256='changed';expect(()=>validate(expandedBank,expandedAnswers,c)).toThrow();}
+    const c=structuredClone(concepts);c.find((c:any)=>c.id==='logic-gates').summary='changed';expect(()=>validate(expandedBank,expandedAnswers,c)).toThrow();
+    expect(()=>validate([...expandedBank,{...expandedBank[0],id:'HIST-UNAPPROVED'}])).toThrow();
+  });
+  it('rejects expanded or rebound approval receipts',()=>{for(const field of ['candidateManifestSha256','candidateSetFingerprint','authorizedCount','excludedUnapproved'])expect(()=>validate(expandedBank,expandedAnswers,concepts,{...expansion,[field]:'changed'})).toThrow();});
 });

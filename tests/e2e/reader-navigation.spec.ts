@@ -19,7 +19,8 @@ test('chapter opens directly into unchanged source with one title and the comple
    await expect(link).toHaveAttribute('href',contentsUrl(node));
    await expect(link).toContainText(node.number);await expect(link).toContainText(node.title);await expect(link).toContainText(`p. ${node.page}`);
   }
-  await expect(page.locator('.context-questions')).toHaveCount(0);
+  await expect(page.locator('.context-questions')).toHaveCount(1);
+  await expect(page.locator('.context-questions a')).toHaveAttribute('href','/practice/five-major-units/');
   await expect(page.locator('.companion-content h2')).toHaveText('1 Basic Configuration of Computers');
  }
 });
@@ -28,8 +29,9 @@ test('source subsection links, scrolling, keyboard focus and browser history sha
  await page.goto(`${CPU_PATH}#${CACHE_HEADING}`);
  const nav=page.locator('.sidebar nav');
  await expect(nav.locator('[aria-current="location"]')).toHaveAttribute('data-toc-link',cache.id);
- await expect(page.locator('.context-questions')).toContainText('4');
- await expect(page.locator('.companion-practice')).toHaveAttribute('href','/practice/cache-memory/');
+ await expect(page.locator('.context-questions .context-count')).toHaveText('8');
+ await expect(page.locator('.companion-practice[href="/practice/cache-memory/"]')).toContainText('7');
+ await expect(page.locator('.companion-practice[href="/practice/memory-interleaving/"]')).toContainText('1');
  await expect(page.getByRole('link',{name:'HDD, RAM, register & cache ↗'})).toHaveAttribute('href','https://t.me/itpecmm/101');
  // Use the original heading to simulate reading back through the section.
  await page.locator(`#${gates.id}`).evaluate(el=>scrollTo(0,scrollY+el.getBoundingClientRect().top-145));

@@ -1,6 +1,7 @@
 import { test, expect, type BrowserContext, type Page } from '@playwright/test';
 import release from '../../src/content/hardware-source-release.json' with { type: 'json' };
 import historicalRelease from '../../docs/development/evidence/historical-release-36.json' with {type:'json'};
+import expansion from '../../docs/development/evidence/historical-release-40.json' with {type:'json'};
 import explanations from '../../src/content/explanations.json' with {type:'json'};
 const diskFigureId=release.lessons.find(l=>l.slug==='auxiliary-storage')!.pages.flatMap(p=>p.blocks).find(b=>b.regionIds.includes('figure-1-42'))!.id;
 
@@ -33,10 +34,10 @@ async function emulatorTraffic(context: BrowserContext) {
   return blocked;
 }
 
-test('authorized historical answer and bookmark synchronize without changing existing progress identities',async({browser})=>{
+for(const [label,entry] of [['Release 1',historicalRelease.records.find(r=>r.id==='HIST-TECH01-2019A-Q012')!],['Release 2',expansion.records.find(r=>r.id==='HIST-TECH01-2021A-Q013')!]] as const)test(`${label}: authorized historical answer and bookmark synchronize without changing existing progress identities`,async({browser})=>{
   const a=await browser.newContext(),b=await browser.newContext();await emulatorTraffic(a);await emulatorTraffic(b);
   const first=await a.newPage(),second=await b.newPage(),email=`historical-${Date.now()}@example.test`;
-  const entry=historicalRelease.records.find(r=>r.id==='HIST-TECH01-2019A-Q012')!,e=explanations.find(e=>e.questionId===entry.id)!;
+  const e=explanations.find(e=>e.questionId===entry.id)!;
   await first.goto(`/practice/${entry.conceptId}/?question=${entry.id}`);
   await first.getByRole('radio',{name:new RegExp(`^Option ${e.answer.toUpperCase()}:`)}).check();await first.getByRole('button',{name:'Check answer'}).click();
   await expect(first.getByText('✓ That’s correct.')).toBeVisible();await first.getByRole('button',{name:'◇ Bookmark'}).click();

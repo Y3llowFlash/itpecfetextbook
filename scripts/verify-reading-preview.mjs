@@ -94,7 +94,7 @@ try{
  await page.goto(origin+'/chapters/hardware/memory-and-cache/');
  await page.waitForURL(new RegExp(`cpu-and-main-memory/.*#${cache.id}$`));
  await page.waitForFunction(id=>document.querySelector('[data-study-context]')?.getAttribute('data-study-context')===id,cache.id);
- assert.equal(await page.locator('.companion-practice').getAttribute('href'),'/practice/cache-memory/');
+ assert.equal(await page.locator('.companion-practice[href="/practice/cache-memory/"]').getAttribute('href'),'/practice/cache-memory/');
  await page.screenshot({path:`${output}/cache-desktop.png`});
  await page.locator('#concept-cache-memory').click();
  await page.getByRole('radio',{name:'Option B: 360 ns'}).check();await page.getByRole('button',{name:'Check answer'}).click();

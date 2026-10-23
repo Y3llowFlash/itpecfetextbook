@@ -30,7 +30,9 @@
       "depth": 2,
       "sectionId": "fe-v1-ch01-s01",
       "path": "/chapters/hardware/basic-configuration/",
-      "conceptIds": []
+      "conceptIds": [
+        "five-major-units"
+      ]
     },
     {
       "id": "fev1-201504-ch1-r1-pdf-025-b002-l00-text-0",
@@ -50,7 +52,9 @@
       "depth": 2,
       "sectionId": "fe-v1-ch01-s02",
       "path": "/chapters/hardware/data-representation/",
-      "conceptIds": []
+      "conceptIds": [
+        "data-representation"
+      ]
     },
     {
       "id": "fev1-201504-ch1-r1-pdf-028-b009-l00-text-0",
@@ -93,7 +97,8 @@
       "sectionId": "fe-v1-ch01-s02",
       "path": "/chapters/hardware/data-representation/",
       "conceptIds": [
-        "floating-point"
+        "floating-point",
+        "signed-integers"
       ]
     },
     {
@@ -139,7 +144,8 @@
       "path": "/chapters/hardware/cpu-and-main-memory/",
       "conceptIds": [
         "cpu-registers",
-        "bus-transfer"
+        "bus-transfer",
+        "stored-program"
       ]
     },
     {
@@ -160,7 +166,9 @@
       "depth": 3,
       "sectionId": "fe-v1-ch01-s03",
       "path": "/chapters/hardware/cpu-and-main-memory/",
-      "conceptIds": []
+      "conceptIds": [
+        "memory-devices"
+      ]
     },
     {
       "id": "fev1-201504-ch1-r1-pdf-056-b004-l00-text-0",
@@ -170,7 +178,9 @@
       "depth": 3,
       "sectionId": "fe-v1-ch01-s03",
       "path": "/chapters/hardware/cpu-and-main-memory/",
-      "conceptIds": []
+      "conceptIds": [
+        "memory-addressing"
+      ]
     },
     {
       "id": "fev1-201504-ch1-r1-pdf-057-b005-l00-text-0",
@@ -220,7 +230,9 @@
       "depth": 3,
       "sectionId": "fe-v1-ch01-s03",
       "path": "/chapters/hardware/cpu-and-main-memory/",
-      "conceptIds": []
+      "conceptIds": [
+        "addressing-modes"
+      ]
     },
     {
       "id": "fev1-201504-ch1-r1-pdf-064-b006-l00-text-0",
@@ -285,7 +297,8 @@
       "sectionId": "fe-v1-ch01-s03",
       "path": "/chapters/hardware/cpu-and-main-memory/",
       "conceptIds": [
-        "cache-memory"
+        "cache-memory",
+        "memory-interleaving"
       ]
     },
     {
@@ -296,7 +309,11 @@
       "depth": 3,
       "sectionId": "fe-v1-ch01-s03",
       "path": "/chapters/hardware/cpu-and-main-memory/",
-      "conceptIds": []
+      "conceptIds": [
+        "processor-pipeline",
+        "risc-cisc",
+        "parallel-processing"
+      ]
     },
     {
       "id": "fev1-201504-ch1-r1-pdf-084-b002-l00-text-0",
@@ -359,7 +376,9 @@
       "depth": 2,
       "sectionId": "fe-v1-ch01-s04",
       "path": "/chapters/hardware/auxiliary-storage/",
-      "conceptIds": []
+      "conceptIds": [
+        "optical-storage"
+      ]
     },
     {
       "id": "fev1-201504-ch1-r1-pdf-095-b002-l00-text-0",
@@ -459,7 +478,9 @@
       "depth": 3,
       "sectionId": "fe-v1-ch01-s05",
       "path": "/chapters/hardware/input-output/",
-      "conceptIds": []
+      "conceptIds": [
+        "display-types"
+      ]
     },
     {
       "id": "fev1-201504-ch1-r1-pdf-106-b002-l00-text-0",
@@ -470,7 +491,8 @@
       "sectionId": "fe-v1-ch01-s05",
       "path": "/chapters/hardware/input-output/",
       "conceptIds": [
-        "three-dimensional-printing"
+        "three-dimensional-printing",
+        "printer"
       ]
     },
     {
@@ -543,7 +565,9 @@
       "depth": 3,
       "sectionId": "fe-v1-ch01-s05",
       "path": "/chapters/hardware/input-output/",
-      "conceptIds": []
+      "conceptIds": [
+        "device-drivers"
+      ]
     }
   ]
 }

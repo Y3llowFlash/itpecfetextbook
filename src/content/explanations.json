@@ -1368,5 +1368,849 @@
       "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":29,\"printedPage\":24,\"heading\":\"2-2 Radix and Radix Conversion\",\"textSha256\":\"27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419\",\"checkedExcerpt\":\"ure 1-7 Decimal numbers and corresponding octal numbers (3) Hexadecimal numbers Hexadecimal numbers are numerical values that are represented by using sixteen numbers from 0 through 9, and A(10), B(11), C(12), D(13), E(14), and F(15) and that are carried over when 16 is reached. (1A6.E)16 = 1×162 + 10×161 + 6×160 + 14×16−1 = (422.875)10 * 16 in ( )16 shows that it is a hexadecimal number.\"}",
       "{\"kind\":\"computed-exact-source-options\",\"matches\":[\"d\"],\"rows\":[{\"values\":{},\"result\":\"73/512\",\"choices\":{\"a\":\"31/32\",\"b\":\"31/125\",\"c\":\"31/512\",\"d\":\"73/512\"},\"matches\":[\"d\"]}],\"units\":null}"
     ]
+  },
+  {
+    "questionId": "HIST-TECH01-2021A-Q011",
+    "revision": "d3e7f21d5cfa",
+    "answer": "c",
+    "summary": "The fetch unit needs the memory address of the next instruction, rather than the instruction bits or an arithmetic result.",
+    "steps": [
+      "The fetch unit needs the memory address of the next instruction, rather than the instruction bits or an arithmetic result.",
+      "The instruction address register is also called the program counter or program register. The instruction register holds the fetched instruction; an accumulator holds operands or results."
+    ],
+    "takeaway": "The PC identifies where to fetch the next instruction.",
+    "optionText": {
+      "a": "Accumulator",
+      "b": "Instruction register",
+      "c": "Program counter",
+      "d": "Status register"
+    },
+    "imageDescription": "Q11. Which of the following is an appropriate term for a special register that contains the address of the next instruction to be fetched?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":47,\"pdfPage\":52,\"lineIds\":[\"pdf-052-b004-l02\",\"pdf-052-b004-l03\",\"pdf-052-b004-l04\",\"pdf-052-b004-l05\",\"pdf-052-b004-l06\",\"pdf-052-b004-l07\"],\"textSha256\":\"d61112c8dfee5ff859e196add1a29d171c50c24dcdc2123520621985f26b3824\",\"checkedText\":\"address part. \\n• Instruction address register (program counter, program register) \\nIt stores the address (storing position in the main memory) of the instruction to be \\nexecuted next. \\n• General register \\nIt is used for various purposes such as storing the data to be processed. \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2021A-Q013",
+    "revision": "d5a84370475e",
+    "answer": "b",
+    "summary": "Divide each instruction into stages such as fetch, decode and execute.",
+    "steps": [
+      "Divide each instruction into stages such as fetch, decode and execute.",
+      "While one instruction executes a later stage, following instructions occupy earlier stages. This overlapping, staggered execution is pipelining; multicore uses separate cores and VLIW uses statically scheduled parallel operations."
+    ],
+    "takeaway": "Pipelining overlaps stages of successive instructions.",
+    "optionText": {
+      "a": "Multicore",
+      "b": "Pipeline",
+      "c": "RISC",
+      "d": "VLIW"
+    },
+    "imageDescription": "Q13. Which of the following is a computer architecture where each instruction is divided into multiple stages (e.g., fetch, decode, and execute) in the processor and multiple functional units execute two or more instructions in parallel by slightly shifting execution stages of the instructions?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":74,\"pdfPage\":79,\"lineIds\":[\"pdf-079-b004-l16\",\"pdf-079-b004-l17\",\"pdf-079-b004-l18\",\"pdf-079-b004-l19\",\"pdf-079-b004-l20\",\"pdf-079-b004-l21\"],\"textSha256\":\"fefc95019a2bcc0bd6be163af196c658af9144b81141806438117b5e63aa4e73\",\"checkedText\":\" \\n(2) Pipeline control \\n \\nPipeline control (or the pipeline processing) divides the execution cycle of each instruction \\ninto multiple stages, and by shifting each stage little by little and executing multiple stages \\nseparately, multiple instructions are executed simultaneously and in parallel. \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2021S-Q013",
+    "revision": "b5cd25373375",
+    "answer": "c",
+    "summary": "The program is stored as instructions in main memory and fetched by the CPU for execution.",
+    "steps": [
+      "The program is stored as instructions in main memory and fetched by the CPU for execution.",
+      "This is stored-program architecture. DMA describes I/O transfers and virtual memory describes address-space management."
+    ],
+    "takeaway": "This is stored-program architecture. DMA describes I/O transfers and virtual memory describes address-space management.",
+    "optionText": {
+      "a": "Addressing system",
+      "b": "DMA control architecture",
+      "c": "Stored program architecture",
+      "d": "Virtual memory system"
+    },
+    "imageDescription": "Q13. Which of the following is a computer system or architecture where the CPU sequentially reads and executes the programs that are stored in the main memory?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":51,\"printedPage\":46,\"heading\":\"3-1 Configuration of CPU\",\"textSha256\":\"3154c420b7fe7e581d71c2d41dd6e3cfde185d2c79e64079a187093359417e4c\",\"checkedExcerpt\":\"ed to the CPU. 3 - 1 Configuration of CPU In computers based on stored-program, programs (instructions) recorded in the main memory unit are read in the CPU one by one, and the control unit issues directions to each device on the basis of the contents of the instruction for processing. In order to carry out this operation, the CPU is composed of various devices and components. Figure 1-12 Components of CPU (1) Control unit Control unit is a unit that decodes the instruction to be executed and gives directions to each device. It is composed of a decoder (instruction decoder that interprets the instruction to be executed), e\"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2020A-Q011",
+    "revision": "427fcb5d1604",
+    "answer": "a",
+    "summary": "External interrupts arise from events independent of the instruction currently executing, including a timer, completed I/O or hardware malfunction.",
+    "steps": [
+      "External interrupts arise from events independent of the instruction currently executing, including a timer, completed I/O or hardware malfunction.",
+      "Internal interrupts arise from program execution, such as arithmetic exceptions or supervisor calls. The CPU assigns priorities when multiple interrupt causes can occur."
+    ],
+    "takeaway": "Classify the cause of an interrupt, rather than where its handler runs.",
+    "optionText": {
+      "a": "Notification of elapsed time by a timer",
+      "b": "The execution of a division-by-zero instruction",
+      "c": "The execution of a non-existent operation code",
+      "d": "The occurrence of a page fault"
+    },
+    "imageDescription": "Q11. Which of the following causes an external interrupt?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":60,\"pdfPage\":65,\"lineIds\":[\"pdf-065-b004-l01\",\"pdf-065-b004-l02\",\"pdf-065-b004-l03\",\"pdf-065-b004-l04\",\"pdf-065-b004-l05\",\"pdf-065-b004-l06\",\"pdf-065-b005-l00\",\"pdf-065-b005-l01\",\"pdf-065-b005-l02\",\"pdf-065-b005-l03\",\"pdf-065-b005-l04\",\"pdf-065-b005-l05\",\"pdf-065-b005-l06\",\"pdf-065-b005-l07\",\"pdf-065-b006-l00\"],\"textSha256\":\"d461088be15d6da916832fe2d76e803e03194fed0eb427c4523282d0e5ba25af\",\"checkedText\":\"According to conditions that an interrupt occurs, this can be classified described below. Here, \\nit is assumed that multiple interrupts may occur simultaneously, and therefore priority ranking \\nis assigned to each interrupt. \\n \\n1) External interrupt: This is an interrupt that occurs because of a reason not related to the \\nprocess being executed. \\n• Timer interrupt \\nThis is an interrupt that occurs when the time measured in the timer, such as \\ninterval timer and watchdog timer, has exceeded the specified time (i.e., the timer \\nhas been timed-out). \\n• Input/output interrupt (input/output completion interrupt) \\nThis is an interrupt that occurs when an input/output operation has been \\ncompleted. \\n• Machine check interrupt \\nThis is an interrupt that occurs because of a hardware malfunction, a power \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2020A-Q012",
+    "revision": "89938dad9adf",
+    "answer": "a",
+    "summary": "Applications request I/O through software that understands the specific peripheral hardware.",
+    "steps": [
+      "Applications request I/O through software that understands the specific peripheral hardware.",
+      "A device driver translates these requests into device control operations. Scheduling, command interpretation, application installation and window management are other software roles."
+    ],
+    "takeaway": "A device driver controls a particular peripheral device.",
+    "optionText": {
+      "a": "Software to control peripheral devices that are connected to a PC",
+      "b": "Software to install an application on a PC",
+      "c": "Software to invade another PC and cause damage",
+      "d": "Software to register the operation procedures for a keyboard or other devices and to automate this operation"
+    },
+    "imageDescription": "Q12. Which of the following is an appropriate explanation of a device driver?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":110,\"pdfPage\":116,\"lineIds\":[\"pdf-116-b012-l02\",\"pdf-116-b012-l03\"],\"textSha256\":\"6b4091f5b1ef5a045ef8ac0432d3375a37f29a2e0339735d946536d9a34565ff\",\"checkedText\":\" \\nDevice driver is software that controls peripheral devices. Device driver is specific software \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2020A-Q020",
+    "revision": "3efe52f301b7",
+    "answer": "a",
+    "summary": "A DRAM cell stores a bit as electrical charge on a capacitor.",
+    "steps": [
+      "A DRAM cell stores a bit as electrical charge on a capacitor.",
+      "Charge leaks, so periodic refresh is needed. Its simple dense cells suit main memory. Flip-flops describe SRAM, ultraviolet erasure describes UV-EPROM, and factory-fixed contents describe mask ROM."
+    ],
+    "takeaway": "DRAM uses capacitor charge and requires refresh.",
+    "optionText": {
+      "a": "It is memory that requires a refresh operation, and it is used as the main memory of a PC.",
+      "b": "It is non-volatile memory of a NAND type or a NOR type, and it is used as an SSD.",
+      "c": "It is non-volatile memory that is capable of erasing and writing data in byte units, and it is used when data need to be retained even when the power supply is turned off.",
+      "d": "Its memory cells consist of flip-flops, and it is used for cache memory."
+    },
+    "imageDescription": "Q20. Which of the following is an appropriate description of DRAM?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":50,\"pdfPage\":55,\"lineIds\":[\"pdf-055-b002-l05\",\"pdf-055-b002-l06\",\"pdf-055-b002-l07\",\"pdf-055-b002-l08\",\"pdf-055-b002-l09\",\"pdf-055-b002-l10\",\"pdf-055-b002-l11\",\"pdf-055-b002-l12\",\"pdf-055-b002-l13\",\"pdf-055-b002-l14\",\"pdf-055-b003-l00\",\"pdf-055-b003-l01\",\"pdf-055-b003-l02\",\"pdf-055-b003-l03\"],\"textSha256\":\"9327bf8e3012f9fa96619aa89880398e94579ab7d77cbcc3c8f299c789fba543\",\"checkedText\":\"integration because of complex configuration of the circuit, and storage capacity that is \\nsmaller compared with DRAM. It is mainly used in registers or other memory devices.\\n• DRAM (Dynamic RAM) \\nWhile its operating speed is somewhat slow, it uses a simple circuit where electrical \\ncharge is retained by condenser or capacitor. Therefore, the degree of integration is \\nhigh, and large capacity memory can be easily created at low cost. However, electrical \\ncharge that records information is lost over time, and therefore it is necessary to \\nrewrite (refresh) the information. Examples include SDRAM (Synchronous DRAM) \\nor DDR SDRAM (Double Data Rate SDRAM) used in main memory, and RDRAM \\n(Rambus DRAM) that uses Rambus technology in the external bus interface. \\n \\n(2) ROM (Read Only Memory) \\n \\nROM is IC memory that can be used only for reading data. It has a property (non-volatility) \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2020S-Q009",
+    "revision": "e299d88c6146",
+    "answer": "b",
+    "summary": "A regular fixed instruction length simplifies fetching and decoding instructions.",
+    "steps": [
+      "A regular fixed instruction length simplifies fetching and decoding instructions.",
+      "This regularity suits pipeline stages. Variable-length and complex instructions are the distractors describing conventional CISC characteristics."
+    ],
+    "takeaway": "The textbook contrasts regular fixed-length RISC instructions with CISC.",
+    "optionText": {
+      "a": "The RISC processor uses a micro-code architecture.",
+      "b": "The RISC processor uses a uniform instruction length to process tasks in a pipeline.",
+      "c": "The RISC processor uses a variable instruction length to optimize task process capability.",
+      "d": "The RISC processor uses complex instructions to process various tasks with few instructions."
+    },
+    "imageDescription": "Q9. Which of the following is a characteristic of a RISC processor when it is compared with a CISC processor?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":75,\"pdfPage\":80,\"lineIds\":[\"pdf-080-b007-l02\",\"pdf-080-b007-l03\"],\"textSha256\":\"512c0bce55a256ab2b72ba13944d2e70fdcf7aba5424fb2e08fc4f77db605bf6\",\"checkedText\":\"instruction set (collection of instructions) to the basic instructions with high \\nfrequency of use in order to fix the instruction word length, the execution time for a \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2020S-Q010",
+    "revision": "c7160c2e4301",
+    "answer": "b",
+    "summary": "Division by zero is caused by executing an invalid arithmetic operation in the running program.",
+    "steps": [
+      "Division by zero is caused by executing an invalid arithmetic operation in the running program.",
+      "It is therefore an internal program exception. Power failures, I/O completion and hardware parity failures are external causes in the textbook classification."
+    ],
+    "takeaway": "A divide-by-zero exception is an internal interrupt.",
+    "optionText": {
+      "a": "An interrupt due to an abnormal power condition, such as a momentary loss of the commercial power supply",
+      "b": "An interrupt due to having performed division by zero",
+      "c": "An interrupt due to the completion of input or output",
+      "d": "An interrupt due to the occurrence of a memory parity error"
+    },
+    "imageDescription": "Q10. Which of the following is classified as an internal interrupt?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":60,\"pdfPage\":65,\"lineIds\":[\"pdf-065-b007-l00\",\"pdf-065-b007-l01\",\"pdf-065-b007-l02\",\"pdf-065-b008-l00\",\"pdf-065-b008-l01\",\"pdf-065-b009-l00\"],\"textSha256\":\"6855047c640c38965678af49c7813d62748636a3d501c22cb8b0c71303fe7bba\",\"checkedText\":\" \\n2) Internal interrupt: This is an interrupt that occurs because of the process being executed. \\nThis is also referred to as a trap. \\n• SVC (SuperVisor Call) interrupt \\nThis is an interrupt that occurs when supervisor (program that offers basic \\nfunctions) is requested to invoke a process, such as when input/output instruction \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2020S-Q011",
+    "revision": "b176313719bf",
+    "answer": "c",
+    "summary": "SRAM uses a bistable flip-flop circuit, needing more transistors per stored bit; DRAM uses a simpler capacitor-based cell.",
+    "steps": [
+      "SRAM uses a bistable flip-flop circuit, needing more transistors per stored bit; DRAM uses a simpler capacitor-based cell.",
+      "SRAM is fast and needs no periodic refresh while powered. DRAM has greater density and lower cost per bit but needs refresh. Both are volatile; the exact relevant feature is selected from the question options."
+    ],
+    "takeaway": "Compare cell structure, refresh, density and speed separately.",
+    "optionText": {
+      "a": "Compared with DRAM, SRAM consumes more power while it is idle.",
+      "b": "Compared with DRAM, SRAM needs a fewer number of transistors to store one bit of data.",
+      "c": "SRAM does not need to be refreshed periodically as flips flops retain data, and DRAM needs to be refreshed at fixed intervals to retain data.",
+      "d": "SRAM stores data in a combination of capacitors and transistors, and DRAM stores data in a set of transistors called flip-flops."
+    },
+    "imageDescription": "Q11. Which of the following is an appropriate characteristic of SRAM compared with DRAM?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":50,\"pdfPage\":55,\"lineIds\":[\"pdf-055-b001-l00\",\"pdf-055-b002-l00\",\"pdf-055-b002-l01\",\"pdf-055-b002-l02\",\"pdf-055-b002-l03\",\"pdf-055-b002-l04\",\"pdf-055-b002-l05\",\"pdf-055-b002-l06\",\"pdf-055-b002-l07\",\"pdf-055-b002-l08\",\"pdf-055-b002-l09\",\"pdf-055-b002-l10\",\"pdf-055-b002-l11\",\"pdf-055-b002-l12\",\"pdf-055-b002-l13\",\"pdf-055-b002-l14\",\"pdf-055-b003-l00\",\"pdf-055-b003-l01\",\"pdf-055-b003-l02\",\"pdf-055-b003-l03\"],\"textSha256\":\"7dd7a60dd9696ca4c155df14e1e29c7b79aa770bd4b16170c83a731c77fab6e6\",\"checkedText\":\"50 \\n• SRAM (Static RAM) \\nWhile its operating speed is high, it is expensive and it also has high power \\nconsumption. As for its memory mechanism, it uses a flip-flop circuit that continues to \\nretain the preceding status, and electrical charge that records information can be \\nretained as long as power is supplied. However, its disadvantages are a low degree of \\nintegration because of complex configuration of the circuit, and storage capacity that is \\nsmaller compared with DRAM. It is mainly used in registers or other memory devices.\\n• DRAM (Dynamic RAM) \\nWhile its operating speed is somewhat slow, it uses a simple circuit where electrical \\ncharge is retained by condenser or capacitor. Therefore, the degree of integration is \\nhigh, and large capacity memory can be easily created at low cost. However, electrical \\ncharge that records information is lost over time, and therefore it is necessary to \\nrewrite (refresh) the information. Examples include SDRAM (Synchronous DRAM) \\nor DDR SDRAM (Double Data Rate SDRAM) used in main memory, and RDRAM \\n(Rambus DRAM) that uses Rambus technology in the external bus interface. \\n \\n(2) ROM (Read Only Memory) \\n \\nROM is IC memory that can be used only for reading data. It has a property (non-volatility) \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2020S-Q021",
+    "revision": "532827b124e5",
+    "answer": "c",
+    "summary": "Flash is nonvolatile electrically programmable memory.",
+    "steps": [
+      "Flash is nonvolatile electrically programmable memory.",
+      "Its erase operation is electrical and normally works in blocks. Periodic refresh identifies DRAM, ultraviolet erasure identifies UV-EPROM, and high-speed flip-flop cache identifies SRAM."
+    ],
+    "takeaway": "Flash retains data without power and erases electrically in blocks.",
+    "optionText": {
+      "a": "Data must be rewritten periodically.",
+      "b": "Flash memory can be rewritten at high speed and is used in the cache memory of the CPU.",
+      "c": "The content can be erased electrically in units of blocks.",
+      "d": "The entire content can be erased by ultraviolet rays."
+    },
+    "imageDescription": "Q21. Which of the following is an appropriate description of flash memory?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":51,\"pdfPage\":56,\"lineIds\":[\"pdf-056-b002-l00\",\"pdf-056-b002-l01\",\"pdf-056-b002-l02\",\"pdf-056-b002-l03\",\"pdf-056-b002-l04\",\"pdf-056-b002-l05\",\"pdf-056-b002-l06\",\"pdf-056-b003-l00\"],\"textSha256\":\"a885525206481939efbdf24ee6ce81a55736995a4bde71461e8c8acec38126d5\",\"checkedText\":\" \\n• Flash memory: \\nThis is semiconductor memory where data can be rewritten after data is \\nerased in units of blocks through electrical operations. Flash memory is a \\ntype of EEPROM. Therefore, the number of rewritable timesis limited. \\nHowever, it is used for various applications as a portable and convenient \\nstorage medium. \\n \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2019A-Q013",
+    "revision": "eb70b9b913f9",
+    "answer": "d",
+    "summary": "Write-through updates both cache and main memory for a write.",
+    "steps": [
+      "Write-through updates both cache and main memory for a write.",
+      "Write-back initially changes the cached block and writes the dirty block to main memory when it is replaced. Neither policy supplies virtual-memory capacity or requires a program-managed interrupt on every cache miss."
+    ],
+    "takeaway": "Distinguish immediate write-through from deferred write-back.",
+    "optionText": {
+      "a": "Cache memory is used to fill a gap in memory capacity between the physical memory and the virtual memory.",
+      "b": "Due to significant improvements in the access speed of semiconductor memory, the need for cache memory is decreasing.",
+      "c": "If a cache miss occurs, an interrupt is generated, and data is transferred from the main memory to the cache memory by the program.",
+      "d": "When the write instruction is executed, the cache memory is rewritten in two ways. In one, both the cache memory and the main memory are rewritten, and in the other, only the cache memory is rewritten, and the main memory is rewritten when the relevant data is removed from the cache memory."
+    },
+    "imageDescription": "Q13. Which of the following is an appropriate description of cache memory?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":72,\"pdfPage\":77,\"lineIds\":[\"pdf-077-b002-l02\",\"pdf-077-b003-l00\",\"pdf-077-b004-l00\",\"pdf-077-b004-l01\",\"pdf-077-b004-l02\",\"pdf-077-b004-l03\",\"pdf-077-b005-l00\",\"pdf-077-b005-l01\",\"pdf-077-b005-l02\",\"pdf-077-b005-l03\"],\"textSha256\":\"bedbe0bc218f54571646bc3113986c7ef0992c306d5dfcc7d757bd0b353004d7\",\"checkedText\":\" \\n1) Write-through method \\nThat  method  reflects  the update  in main  memory  whenever  data is updated . \\nWhile certainty is high, main memory needs to be accessed for every process, so \\noperating speed is somewhat slow. \\n2) Write-back method \\nIn this method, data is not updated in main memory while data is updated in cache \\nmemory. Data is updated in main memory only when data from cache memory is \\nremoved. While its operating speed is fast, inconsistency in the data of main \\nmemory may occur at some point in time. \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2019S-Q011",
+    "revision": "241933199d09",
+    "answer": "b",
+    "summary": "A cache hit uses fast cache; a miss requires slower memory access.",
+    "steps": [
+      "A cache hit uses fast cache; a miss requires slower memory access.",
+      "A lower hit rate therefore raises average access time. Grouping frequently executed instruction code improves locality and the instruction-cache hit rate; data work-area locality is a different issue."
+    ],
+    "takeaway": "Better instruction locality and higher hit rates reduce average access time.",
+    "optionText": {
+      "a": "A decrease in the access time to the cache memory",
+      "b": "A decrease in the cache hit rate",
+      "c": "A decrease in the cache miss penalty",
+      "d": "A decrease in the cache miss rate"
+    },
+    "imageDescription": "Q11. In a memory system that has a cache memory, which of the following causes an increase in the average memory access time?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":71,\"pdfPage\":76,\"lineIds\":[\"pdf-076-b009-l00\",\"pdf-076-b009-l01\",\"pdf-076-b009-l02\",\"pdf-076-b009-l03\",\"pdf-076-b009-l04\",\"pdf-076-b009-l05\",\"pdf-076-b009-l13\",\"pdf-076-b009-l14\",\"pdf-076-b009-l15\",\"pdf-076-b009-l16\",\"pdf-076-b009-l17\",\"pdf-076-b009-l18\"],\"textSha256\":\"f8f7f0860b2062930cfd39cc93ff929c24626e44c27cbfcb2ddbc3d4cd3407f5\",\"checkedText\":\" \\nFrom this example, it is clear that the higher the hit ratio is, the shorter the average access \\ntime is because  of  increased  access  to  cache  memory .  When  \\n \\nHavard architecture , which \\nindependently loads instructions and data , is used , cache memory is also separated  into  \\n \\nfrequently\\n \\nexecuted\\n \\nwill\"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2018A-Q010",
+    "revision": "25b96dc6100d",
+    "answer": "b",
+    "summary": "A comparison or arithmetic operation produces status information such as zero, sign or carry.",
+    "steps": [
+      "A comparison or arithmetic operation produces status information such as zero, sign or carry.",
+      "The flags register retains this status for conditional decisions. The accumulator holds data; the instruction register holds an instruction; the program counter holds an address."
+    ],
+    "takeaway": "Flags describe the outcome of an operation.",
+    "optionText": {
+      "a": "Accumulator",
+      "b": "Flags register",
+      "c": "Instruction register",
+      "d": "Program counter"
+    },
+    "imageDescription": "Q10. Which of the following is a special purpose register that stores the result of a comparison or the sign of the result of an arithmetic operation?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":47,\"pdfPage\":52,\"lineIds\":[\"pdf-052-b004-l14\",\"pdf-052-b004-l15\",\"pdf-052-b005-l00\",\"pdf-052-b005-l01\",\"pdf-052-b005-l02\",\"pdf-052-b005-l03\"],\"textSha256\":\"e9192879de3e4903490cdc3966a96e3112705024ccb6ee2b22b0e6771f114047\",\"checkedText\":\"It stores the index for address modification. \\n• Flag register \\nIt stores the information of a certain status (whether the results of computations are \\npositive or negative, etc.). Depending on the status of this register, the next action, such \\nas branch destination of the condition branch instruction, is decided. \\n• PSW (Program Status Word) \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2018A-Q011",
+    "revision": "4be78204eaec",
+    "answer": "c",
+    "summary": "The instruction address field supplies 20. Memory location 20 contains 25, and memory location 25 contains the operand.",
+    "steps": [
+      "The instruction address field supplies 20. Memory location 20 contains 25, and memory location 25 contains the operand.",
+      "Following an address stored in memory before reading the operand is indirect addressing, option C."
+    ],
+    "takeaway": "Following an address stored in memory before reading the operand is indirect addressing, option C.",
+    "optionText": {
+      "a": "Direct addressing",
+      "b": "Indexed addressing",
+      "c": "Indirect addressing",
+      "d": "Relative addressing"
+    },
+    "imageDescription": "Q11. Which of the following is the addressing mode that references data in main memory as shown in the figure below? Diagram: The instruction has an instruction part and an address part containing 20. An arrow leads from 20 to main-memory address 20, whose contents are 25. Another arrow leads from those contents to main-memory address 25, whose contents are labeled Data. The memory column continues above and below these entries.",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":64,\"printedPage\":59,\"heading\":\"3-3-3 Addressing Mode\",\"textSha256\":\"3ccf13e4b15d65e8f2f44687262569836e8962342ee82a9796255c5fd0356f02\",\"checkedExcerpt\":\"g when only address modification is specified. Figure 1-23 Direct addressing 3) Indirect addressing In this method, the content (value) of main memory referenced by the effective address is used as the address of operand. Double (in the example shown in Figure 1-24, data stored in address 120 is fetched as operand), and triple indirect addressing is also possible. Figure 1-24 Indirect addressing 3-3-4 Interrupt Interrupt means executing a separate process (instruction) while a series of processes (instructions) are being executed. Instead of user mode (mode where there are restrictions on the use of CPU), which is normally\"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2018S-Q009",
+    "revision": "74961810fb96",
+    "answer": "d",
+    "summary": "The address field supplies an offset rather than the complete effective address.",
+    "steps": [
+      "The address field supplies an offset rather than the complete effective address.",
+      "Adding that offset to the program counter is PC-relative addressing. Index and base addressing use different registers; immediate addressing supplies the operand itself."
+    ],
+    "takeaway": "PC plus instruction offset gives a relative effective address.",
+    "optionText": {
+      "a": "Absolute addressing",
+      "b": "Base addressing",
+      "c": "Indexed addressing",
+      "d": "Relative addressing"
+    },
+    "imageDescription": "Q9. Which of the following addressing modes determines the effective address by adding the value of the instruction address register (program counter) to the value recorded in the address part of the instruction?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":58,\"pdfPage\":63,\"lineIds\":[\"pdf-063-b004-l00\",\"pdf-063-b005-l00\",\"pdf-063-b005-l01\",\"pdf-063-b005-l02\",\"pdf-063-b005-l03\",\"pdf-063-b006-l00\"],\"textSha256\":\"dd528eb08dd682b8a99b292bf3d3c537bd1579f58627a0ccae20c945666a0813\",\"checkedText\":\" \\n4) Relative addressing \\nIn this method, the effective address is determined by adding the value of the instruction \\naddress register (program counter) to the value of the address part. This means the \\nrelative position from the instruction being executed. \\n \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2018S-Q011",
+    "revision": "5cfbb07e2c5f",
+    "answer": "c",
+    "summary": "A printer produces an output from computer data.",
+    "steps": [
+      "A printer produces an output from computer data.",
+      "A camera, mouse and scanner feed information into the computer, so they are input devices."
+    ],
+    "takeaway": "A camera, mouse and scanner feed information into the computer, so they are input devices.",
+    "optionText": {
+      "a": "Camera",
+      "b": "Mouse",
+      "c": "Printer",
+      "d": "Scanner"
+    },
+    "imageDescription": "Q11. Which of the following is an output device for the computer?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":106,\"printedPage\":100,\"heading\":\"5-2-2 Printer\",\"textSha256\":\"f3f64ead7ef4ebec42ed128380a1fbf81ebddaeaf736277462f36af7b07a1745\",\"checkedExcerpt\":\"100 5-2-2 Printer Printer is a device for color printing by using three primary colors known as CMY (Cyan [bright light blue color], Magenta [bright red-purple color], and Yellow). However, proper black color cannot be formed even if these three colors are mixed. Therefore, in most cases, four colors of CMYK are used where black is added as the key. Most printers print characters and drawings as an aggregation of points (dots). Therefore, the higher the number of dots per unit area, the higher the printing quality. This is referred to as the resolution of a prin\"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2017A-Q011",
+    "revision": "6694f664c2b1",
+    "answer": "c",
+    "summary": "Mask ROM has its contents fixed during manufacture.",
+    "steps": [
+      "Mask ROM has its contents fixed during manufacture.",
+      "Users cannot rewrite it after shipment, so it suits a factory-programmed read-only program. DRAM, SRAM and flash do not provide this factory-fixed restriction."
+    ],
+    "takeaway": "Mask ROM contents are fixed at manufacture.",
+    "optionText": {
+      "a": "DRAM",
+      "b": "Flash memory",
+      "c": "Mask ROM",
+      "d": "SRAM"
+    },
+    "imageDescription": "Q11. Which of the following is a memory device that stores programs or data in factories, and only has the read operation for the stored programs or data?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":50,\"pdfPage\":55,\"lineIds\":[\"pdf-055-b003-l04\",\"pdf-055-b004-l00\",\"pdf-055-b004-l01\",\"pdf-055-b004-l02\",\"pdf-055-b004-l03\",\"pdf-055-b004-l04\"],\"textSha256\":\"f2e0b0fe72825073e973bb131d9150fa84d84ec1ac526e04226fd6c5fa30a6b1\",\"checkedText\":\"where data is not lost even when the power is off. \\n• Mask ROM \\nThis is a type of ROM where users cannot write data. This memory is used to store \\nprograms or data in factories, and the information is used only for the purpose of \\nreference. \\n• User programmable ROM \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2017S-Q012",
+    "revision": "30ad6373f44b",
+    "answer": "a",
+    "summary": "Split main memory into banks that can operate independently.",
+    "steps": [
+      "Split main memory into banks that can operate independently.",
+      "Overlapping accesses to these banks improves access throughput. This is distinct from a cache buffer, DMA I/O transfers or widening a data bus."
+    ],
+    "takeaway": "Interleaving overlaps accesses to independent memory banks.",
+    "optionText": {
+      "a": "It allows CPU to access different banks of the main memory simultaneously.",
+      "b": "It improves CPU performance by connecting I/O interface directly to the main memory.",
+      "c": "It makes use of a fast memory between the CPU and the main memory, which serves as a buffer for frequently accessed data.",
+      "d": "It widens the data bus to read or write several bytes between the CPU and the main memory in a single process."
+    },
+    "imageDescription": "Q12. Which of the following is an appropriate explanation of memory interleaving?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":73,\"pdfPage\":78,\"lineIds\":[\"pdf-078-b004-l01\",\"pdf-078-b004-l02\",\"pdf-078-b004-l03\",\"pdf-078-b004-l04\",\"pdf-078-b004-l05\",\"pdf-078-b004-l06\",\"pdf-078-b005-l00\",\"pdf-078-b006-l00\",\"pdf-078-b006-l01\",\"pdf-078-b006-l02\",\"pdf-078-b006-l03\",\"pdf-078-b006-l04\",\"pdf-078-b006-l05\",\"pdf-078-b007-l00\"],\"textSha256\":\"f2b7d353b6d2e323e1df9aac63967bda1783eb0d4fdec81635c15c3010ce8996\",\"checkedText\":\" \\n(2) Memory interleave \\n \\nMemory interleave is a method where main memory is divided into several sections (bank) \\nthat are simultaneously and independently accessed in order to improve the average access \\ntime of main memory. \\n \\nFigure 1-38  Memory interleave method \\n \\nMemory interleave is a method of reading the data in advance, and it is useful for the \\nprocessing of data that is located in the contiguous area of main memory. However, data may \\nnot be referenced in the sequence of storage area at all times, and the average access time may \\nnot be always proportionate to the number of banks (even if there are 4 banks, the average \\n \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2017S-Q013",
+    "revision": "78533bb692e3",
+    "answer": "b",
+    "summary": "The question asks which software controls hardware on requests from an application.",
+    "steps": [
+      "The question asks which software controls hardware on requests from an application.",
+      "A device driver supplies that hardware-specific control; scheduling, command interpretation and window management are different roles."
+    ],
+    "takeaway": "A device driver supplies that hardware-specific control; scheduling, command interpretation and window management are different roles.",
+    "optionText": {
+      "a": "It decides the next task to be executed from tasks waiting for execution.",
+      "b": "It directly controls hardware according to requests from an application program.",
+      "c": "It interprets command strings that are entered by the user, and starts the applicable program.",
+      "d": "It manages the display status on the screen in multiple windows. Q13. Which of the following is an appropriate role for a device driver?"
+    },
+    "imageDescription": "Q13. Which of the following is an appropriate role for a device driver?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":116,\"printedPage\":110,\"heading\":\"5-5-3 Device Driver\",\"textSha256\":\"48e2aa7df9a30eece779c5bc1dfe1486df4f3a6feea5cf8d2d46c25a36a19d4b\",\"checkedExcerpt\":\"s of three primary colors (RGB) of light. 5-5-3 Device Driver (1) Device driver Device driver is software that controls peripheral devices. Device driver is specific software\"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2016S-Q012",
+    "revision": "84c6dcc4c686",
+    "answer": "c",
+    "summary": "Count the independent instruction streams and data streams in the wording.",
+    "steps": [
+      "Count the independent instruction streams and data streams in the wording.",
+      "MIMD means multiple instruction and multiple data streams. SIMD means a single instruction stream acting on multiple data items; MISD and SISD have different stream counts."
+    ],
+    "takeaway": "Expand each letter of the architecture abbreviation.",
+    "optionText": {
+      "a": "MIMD",
+      "b": "MISD",
+      "c": "SIMD",
+      "d": "SISD"
+    },
+    "imageDescription": "Q12. Which of the following is the computer architecture where a processor executes the same instruction on multiple data?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":77,\"pdfPage\":82,\"lineIds\":[\"pdf-082-b003-l02\",\"pdf-082-b003-l03\",\"pdf-082-b003-l04\",\"pdf-082-b003-l05\",\"pdf-082-b003-l06\",\"pdf-082-b003-l07\",\"pdf-082-b003-l10\",\"pdf-082-b003-l11\",\"pdf-082-b003-l12\",\"pdf-082-b003-l13\",\"pdf-082-b003-l14\",\"pdf-082-b004-l00\"],\"textSha256\":\"bb274334fc1ead6cbd7cf944b62423327308863aad0189cf3173f4432988736f\",\"checkedText\":\"do not have parallelized processors correspond to this architecture. \\n• SIMD (Single Instruction stream Multiple Data stream) \\nThis computer processes multiple units of data with one instruction. Vector \\ncomputers equipped with a vector processor (array processor) that simultaneously \\ncomputes multiple data in array with one instruction correspond to this architecture. \\n• MISD (Multiple Instruction stream Single Data stream) \\ncontrol, strictly speaking, they are different). \\n• MIMD (Multiple Instruction stream Multiple Data stream) \\nThis computer processes multiple units of data with multiple instructions. \\nMultiprocessors where multiple processors are multiplexed correspond to this \\narchitecture. \\n \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2013A-Q016",
+    "revision": "62a977478de0",
+    "answer": "a",
+    "summary": "A plasma display produces light from gas discharges between glass panels.",
+    "steps": [
+      "A plasma display produces light from gas discharges between glass panels.",
+      "OLED emits light from an organic layer and does not require an LCD-style backlight. CRT uses an electron beam; LCD modulates light from another source. Match the emission mechanism in the question."
+    ],
+    "takeaway": "Identify a display by how it produces or controls light.",
+    "optionText": {
+      "a": "It consists of many tiny cells between two glass panels containing a mixture of noble gases with a phosphor coating, and displays images by using a gas discharge.",
+      "b": "It displays images by making an electron beam discharged from an electron gun hit against the fluorescent material on the surface of the tube to emit light.",
+      "c": "It displays images by making use of the fact that light is emitted when a voltage is applied to an organic compound sandwiched between electrodes.",
+      "d": "It does not emit light by itself, so the backlight is used to enhance the visibility of images to be displayed."
+    },
+    "imageDescription": "Q16. Which of the following is an appropriate explanation of a plasma display?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":99,\"pdfPage\":105,\"lineIds\":[\"pdf-105-b002-l21\",\"pdf-105-b002-l22\",\"pdf-105-b002-l23\",\"pdf-105-b002-l24\",\"pdf-105-b002-l25\",\"pdf-105-b002-l26\",\"pdf-105-b002-l27\",\"pdf-105-b002-l28\",\"pdf-105-b002-l29\",\"pdf-105-b002-l30\",\"pdf-105-b002-l31\",\"pdf-105-b002-l32\",\"pdf-105-b002-l33\",\"pdf-105-b002-l34\",\"pdf-105-b002-l35\"],\"textSha256\":\"00b19816fc2e301ca8e76a5f21e6a7a8a6bbd6bf672a125e97f00ac3d2c8715d\",\"checkedText\":\" \\n(3) PDP (Plasma Display Panel) \\n \\nPDP (Plasma Display) is an output device where gas is sealed between two panels of glass \\nand light is emitted by applying voltage. While it has higher luminance and wider viewing \\nangle in comparison with other methods, power consumption is also large because high \\nvoltage is required. \\n \\n(4) OLED (Organic Light Emitting Diode) display \\n \\nOLED (Organic Light Emitting Diode) display is an output device that uses organic \\ncompounds that emit light when voltage is applied. Unlike a liquid crystal display, it emits \\nlight on its own on a glass substrate. Its response speed is fast, image quality is of high \\nluminance because of high contrast, and the viewing angle is also wide. In addition, power \\nconsumption is small, so it has potential to become the next-generation display. However, its \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2011S-Q013",
+    "revision": "c17159ae9f8b",
+    "answer": "b",
+    "summary": "Trace the control arrows from A to the other four units: A is the control unit.",
+    "steps": [
+      "Trace the control arrows from A to the other four units: A is the control unit.",
+      "B performs operations; C stores the data exchanged by input, output and the operation unit. Thus A=Control, B=Operation, C=Memory, option B."
+    ],
+    "takeaway": "B performs operations; C stores the data exchanged by input, output and the operation unit. Thus A=Control, B=Operation, C=Memory, option B.",
+    "optionText": {
+      "a": "A: Control unit; B: Memory; C: Operation unit",
+      "b": "A: Control unit; B: Operation unit; C: Memory",
+      "c": "A: Memory; B: Control unit; C: Operation unit",
+      "d": "A: Operation unit; B: Control unit; C: Memory"
+    },
+    "imageDescription": "Q13. The basic configuration of a computer, which includes five major units (or sometimes called five major functions), is shown in the figure below. Which of the following is the appropriate combination of configuration elements to be inserted in blanks A through C? A dashed CPU boundary encloses A and B. C is below that boundary; Input unit is on the left and Output unit is on the right. Dashed control arrows run from A to Input unit, B, C and Output unit. Solid data arrows run from Input unit to C, C to Output unit, C to A, and in both directions between B and C. Each choice lists A, B and C in that order.",
+    "reviewedAgainst": [
+      "{\"kind\":\"original-question\",\"sourceSha256\":\"5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1\",\"pdfPage\":137,\"imageSha256\":[\"3d9a37c2d50de64049b731125225af1843d00337b479ca1ffed2eaaf88237008\"],\"manualVisualReview\":\"Original source render independently inspected in Batch 3, 2026-10-22; printed key was visible, not a blind solve.\"}",
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":22,\"printedPage\":17,\"heading\":\"1-2 Five Major Units of Computers\",\"textSha256\":\"da5be49dd5ac8106c00028ddbf1bba376f7ae32294ce041c7ff8c003c7c6d7d5\",\"checkedExcerpt\":\"age unit or makes a decision as per the instructions of the control unit. 5) Control unit This is a unit that interprets a command and gives instructions to the remaining four units. Below is an explanation of these units by using a specific example. When the arithmetic operation “3+6= ” is performed by a computer, a summary of the operation of each unit is as follows: 1) Enter “3+6” from the input unit, and store it in the storage unit. ↓ 2) Control unit decodes the meaning of “+”. As a result of decoding, it knows that “+” is a command for making addition. Therefore, it gives an instruction to the arithmetic and logical unit. ↓ 3) The arithmetic and \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2010S-Q017",
+    "revision": "e7dbbfd40ab6",
+    "answer": "a",
+    "summary": "CD-R records data using a laser to alter an organic dye layer.",
+    "steps": [
+      "CD-R records data using a laser to alter an organic dye layer.",
+      "The changed marks cannot be restored, so this is write-once storage. Rewritable optical media use another recording mechanism; magnetic disks use magnetization."
+    ],
+    "takeaway": "CD-R uses a permanently changed organic recording layer.",
+    "optionText": {
+      "a": "CD-R",
+      "b": "CD-RW",
+      "c": "DVD-RAM",
+      "d": "DVD-ROM"
+    },
+    "imageDescription": "Q17. Which of the following is an optical disc that uses organic dye for the recording layer of the storage media and makes the traces of burning by laser light called pits to record the data?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":87,\"pdfPage\":93,\"lineIds\":[\"pdf-093-b002-l31\",\"pdf-093-b002-l32\",\"pdf-093-b002-l33\",\"pdf-093-b002-l34\",\"pdf-093-b002-l35\",\"pdf-093-b002-l36\"],\"textSha256\":\"6080be3e92e35a3981c41238b0b319a117cd9c74ae8c8a09a073549cf27a45b3\",\"checkedText\":\"data can be added (recorded) by creating a section where data can be recorded. Data can be \\nwritten by making a pit, by burning an organic coloring matter that is coated on the disc with \\na strong laser beam. However, the burned organic coloring matter cannot be restored to its \\noriginal state, and therefore, it is not possible to rewrite even the added data (WO (Write \\nOnce)). Typical examples are CD-R (CD-Recordable), DVD-R, and DVD+R. \\n \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2009A-Q003",
+    "revision": "96d7b2d35821",
+    "answer": "b",
+    "summary": "Shifting the significand until its leading significant digit occupies the defined position removes unused leading zeros.",
+    "steps": [
+      "Shifting the significand until its leading significant digit occupies the defined position removes unused leading zeros.",
+      "Adjust the exponent in the opposite direction to preserve the value. This normalization uses the available significand digits efficiently, improving significant-digit precision."
+    ],
+    "takeaway": "Normalization preserves value while using the significand efficiently.",
+    "optionText": {
+      "a": "The arithmetic operation algorithm can be simplified.",
+      "b": "The maximum number of significant digits can be maintained.",
+      "c": "The range of representable values can be expanded.",
+      "d": "The relative size relationships can be investigated as if in fixed point numbers."
+    },
+    "imageDescription": "Q3. Which of the following is the appropriate reason why the mantissa is normalized in the floating point representation?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":40,\"pdfPage\":45,\"lineIds\":[\"pdf-045-b001-l00\",\"pdf-045-b002-l00\",\"pdf-045-b002-l01\",\"pdf-045-b002-l02\",\"pdf-045-b002-l03\",\"pdf-045-b002-l04\",\"pdf-045-b003-l00\",\"pdf-045-b003-l01\",\"pdf-045-b003-l02\",\"pdf-045-b003-l03\",\"pdf-045-b004-l00\",\"pdf-045-b005-l00\",\"pdf-045-b005-l01\",\"pdf-045-b005-l03\",\"pdf-045-b005-l04\",\"pdf-045-b005-l05\",\"pdf-045-b005-l06\",\"pdf-045-b005-l07\",\"pdf-045-b005-l08\",\"pdf-045-b005-l11\",\"pdf-045-b005-l12\",\"pdf-045-b005-l13\",\"pdf-045-b005-l14\",\"pdf-045-b005-l15\",\"pdf-045-b005-l16\"],\"textSha256\":\"74746621ba4d8b1a1b87bbe25b9512403e3dc1aeabb3da68c7297fa634e45b9f\",\"checkedText\":\"40 \\nIn contrast, if the 7-digit fraction is registered in fraction (mantissa) after normalization, \\nthe following result is obtained. \\n \\nNormalized form: 0.123456789×10−3 \\n \\n1 2 3 4 5 6 7\\n \\nIn other words, more digits can be represented if normalization is performed (the number \\nof significant digits increases). Therefore, the precision of numerical values becomes high.\\n \\nExample: Express the decimal number (1234.625)10 with the single-precision \\nfloating point number (32 bits) of IEEE 754 format shown below. \\nExponent (8 bits): Show with excess 127 where radix is 2. \\nFraction (23 bits): Show with normalized expression where integer part is 1. \\n \\n1) Convert the decimal number (1234.625)10 into a binary number. \\n \\n(1234.625)10 = (10011010010.101)2 \\n \\nNormalized form: +(1.0011010010101)2×210 \\n \\n3) Show exponent as a binary number (8 bits) of excess 127. \\n \\nPower of 10 → 10 + 127 = 137 → (10001001)2 \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2009S-Q021",
+    "revision": "059b3c529160",
+    "answer": "b",
+    "summary": "The instruction specifies register 2, containing 50, and address constant 100. The diagram adds them to access memory address 150.",
+    "steps": [
+      "The instruction specifies register 2, containing 50, and address constant 100. The diagram adds them to access memory address 150.",
+      "Effective address = address constant + index-register contents = 100+50=150. That is indexed addressing, B; register indirect omits the addition and relative addressing adds the PC instead."
+    ],
+    "takeaway": "Effective address = address constant + index-register contents = 100+50=150. That is indexed addressing, B; register indirect omits the addition and relative addressing adds the PC instead.",
+    "optionText": {
+      "a": "Direct addressing mode",
+      "b": "Indexed addressing mode",
+      "c": "Register indirect addressing mode",
+      "d": "Relative addressing mode"
+    },
+    "imageDescription": "Q21. Which of the following addressing modes is shown in the figure below? The instruction has an instruction part, register number 2 and address constant 100. A dashed selection line identifies register 2, which contains 50, in a register column labeled 0, 1, 2, 3 and continuing entries. Solid arrows carry 50 and 100 into a plus sign. The result points to main-memory address 150, labeled Data to be processed. The memory column also shows addresses 0, 1, 2, 3 and an ellipsis before address 150.",
+    "reviewedAgainst": [
+      "{\"kind\":\"original-question\",\"sourceSha256\":\"5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1\",\"pdfPage\":174,\"imageSha256\":[\"82ceb6feb8ab2d1e9e8da9f4135f2ce9f4ebc2c25b6ea67e91d4807c392e0eae\"],\"manualVisualReview\":\"Original source render independently inspected in Batch 3, 2026-10-22; printed key was visible, not a blind solve.\"}",
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":62,\"printedPage\":57,\"heading\":\"3-3-3 Addressing Mode / Index addressing\",\"textSha256\":\"b22721484223170521d3471fde4744f2f5297a5c361e63e68d74ef0f396b7723\",\"checkedExcerpt\":\" address part is used as the effective address as it is. 2) Index addressing In this method, the effective address is determined by adding the value of the index register to the value of the address part. A general register is also used as the index register, and it is necessary to specify which general register to use in such cases.\"}",
+      "{\"kind\":\"integer-calculation\",\"registerNumber\":2,\"registerValue\":50,\"addressConstant\":100,\"effectiveAddress\":150}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2008S-Q003",
+    "revision": "1639b10034db",
+    "answer": "c",
+    "summary": "The most significant bit has weight -2^(n-1).",
+    "steps": [
+      "The most significant bit has weight -2^(n-1).",
+      "All other bits sum to 2^(n-1)-1, giving the range -2^(n-1) through 2^(n-1)-1."
+    ],
+    "takeaway": "All other bits sum to 2^(n-1)-1, giving the range -2^(n-1) through 2^(n-1)-1.",
+    "optionText": {
+      "a": "−2^n through 2^(n−1)",
+      "b": "−2^(n−1) − 1 through 2^(n−1)",
+      "c": "−2^(n−1) through 2^(n−1) − 1",
+      "d": "−2^(n−1) through 2^(n−1)"
+    },
+    "imageDescription": "Q3. In fixed-point representation that expresses negative numbers by two’s complement, which range of integers can be expressed with n bits? Here, the position of the binary point is to the right of the least significant bit.",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":\"[-2^(n-1), 2^(n-1)-1]\",\"derivation\":[\"The most significant bit has weight -2^(n-1).\",\"All other bits sum to 2^(n-1)-1, giving the range -2^(n-1) through 2^(n-1)-1.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2008S-Q021",
+    "revision": "dc09ffdf4801",
+    "answer": "d",
+    "summary": "Divide each instruction into stages such as fetch, decode and execute.",
+    "steps": [
+      "Divide each instruction into stages such as fetch, decode and execute.",
+      "While one instruction executes a later stage, following instructions occupy earlier stages. This overlapping, staggered execution is pipelining; multicore uses separate cores and VLIW uses statically scheduled parallel operations."
+    ],
+    "takeaway": "Pipelining overlaps stages of successive instructions.",
+    "optionText": {
+      "a": "Method whereby each of the multiple processors executes different instructions with its own data while communicating with each other",
+      "b": "Method whereby each of the multiple processors executes the same single instruction with its own data in a parallel way while synchronizing with the other processors",
+      "c": "Method whereby one processor reduces its execution time of a single instruction as much as possible",
+      "d": "Method whereby one processor simultaneously executes multiple instructions with slight delays in time"
+    },
+    "imageDescription": "Q21. Which of the following appropriately explains the pipeline processing method of processors?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":74,\"pdfPage\":79,\"lineIds\":[\"pdf-079-b004-l16\",\"pdf-079-b004-l17\",\"pdf-079-b004-l18\",\"pdf-079-b004-l19\",\"pdf-079-b004-l20\",\"pdf-079-b004-l21\"],\"textSha256\":\"fefc95019a2bcc0bd6be163af196c658af9144b81141806438117b5e63aa4e73\",\"checkedText\":\" \\n(2) Pipeline control \\n \\nPipeline control (or the pipeline processing) divides the execution cycle of each instruction \\ninto multiple stages, and by shifting each stage little by little and executing multiple stages \\nseparately, multiple instructions are executed simultaneously and in parallel. \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2007S-Q028",
+    "revision": "ac119654caa0",
+    "answer": "b",
+    "summary": "Process-color printing uses subtractive cyan,magenta,yellow with key/black, CMYK, as the book states explicitly.",
+    "steps": [
+      "Process-color printing uses subtractive cyan,magenta,yellow with key/black, CMYK, as the book states explicitly.",
+      "B lists these four inks. RGB is an additive-light set and is not the conventional four-process-color printer ink combination."
+    ],
+    "takeaway": "B lists these four inks. RGB is an additive-light set and is not the conventional four-process-color printer ink combination.",
+    "optionText": {
+      "a": "Aqua, Orange, Brown, and Black",
+      "b": "Cyan, Magenta, Yellow, and Black",
+      "c": "Red, Green, Blue, and Black",
+      "d": "Red, Green, Blue, and Gray"
+    },
+    "imageDescription": "Q28. Which of the following is the appropriate combination of 4 color inks or toners for a full-color printer?",
+    "reviewedAgainst": [
+      "{\"kind\":\"original-question\",\"sourceSha256\":\"5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1\",\"pdfPage\":214,\"imageSha256\":[\"12dbe0c8d525ce3db66be174ffa83100616073fcb1b11416d3c165c3b44d862d\"],\"manualVisualReview\":\"Original source render independently inspected in Batch 4, 2026-10-22; printed key was visible, not a blind solve.\"}",
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":106,\"printedPage\":100,\"heading\":\"5-2-2 Printer / CMYK\",\"textSha256\":\"f3f64ead7ef4ebec42ed128380a1fbf81ebddaeaf736277462f36af7b07a1745\",\"checkedExcerpt\":\" colors are mixed. Therefore, in most cases, four colors of CMYK are used where black is added as the key. Most printers print characters and drawings as an aggregation of points (dots). Therefore, the higher the number of dots per unit area, the higher the printing quality. This is referred to as the resolution of a printer, and it is expressed in the same unit as for displays, namely, dpi (dots per inch). Figure 1-46 Characters are an aggregation of dots (1) Impact printer Impact printer is a device that prints by mechanically striking ink ribbon on paper with a print head. Although it generates noise, it is possible to simultaneously print multiple \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2022S-Q012",
+    "revision": "5188c8dde3d0",
+    "answer": "b",
+    "summary": "One revolution takes 60000/7200 = 8.3333 ms; the average rotational wait is half, 4.1667 ms.",
+    "steps": [
+      "One revolution takes 60000/7200 = 8.3333 ms; the average rotational wait is half, 4.1667 ms.",
+      "The question explicitly includes track-to-track seek: 7.5 + 1.2 + 4.1667 = 12.8667 ms."
+    ],
+    "takeaway": "The question explicitly includes track-to-track seek: 7.5 + 1.2 + 4.1667 = 12.8667 ms.",
+    "optionText": {
+      "a": "11.67",
+      "b": "12.87",
+      "c": "15.83",
+      "d": "25."
+    },
+    "imageDescription": "Q12. What is the approximate average access time in milliseconds (ms) of a magnetic disk with the specifications shown in the table below? Approximate average access time is the sum of average seek time, track-to-track seek time, and average rotational delay. Here, the controller overhead can be ignored. Table: Average seek time — 7.5 ms; Track to track seek time — 1.2 ms; Rotational speed — 7,200 rpm.",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":12.8666666667,\"derivation\":[\"One revolution takes 60000/7200 = 8.3333 ms; the average rotational wait is half, 4.1667 ms.\",\"The question explicitly includes track-to-track seek: 7.5 + 1.2 + 4.1667 = 12.8667 ms.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2019S-Q001",
+    "revision": "164c172df2b4",
+    "answer": "b",
+    "summary": "A left shift of two bits multiplies x by 4 when overflow is ignored.",
+    "steps": [
+      "A left shift of two bits multiplies x by 4 when overflow is ignored.",
+      "Add the original x to get 4x+x=5x."
+    ],
+    "takeaway": "Add the original x to get 4x+x=5x.",
+    "optionText": {
+      "a": "Shift x to the left by 1 bit, then add the initial value of x to it.",
+      "b": "Shift x to the left by 2 bits, then add the initial value of x to it.",
+      "c": "Shift x to the right arithmetically by 1 bit, then subtract the initial value of x from it.",
+      "d": "Shift x to the right arithmetically by 2 bits, then subtract the initial value of x from it."
+    },
+    "imageDescription": "Q1. For an eight-bit integer x represented in two’s complement format, which of the following yields the value of 5x? Here, the overflow or underflow can be ignored in this multiplication.",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":\"5x\",\"derivation\":[\"A left shift of two bits multiplies x by 4 when overflow is ignored.\",\"Add the original x to get 4x+x=5x.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2018A-Q012",
+    "revision": "76be3659cee0",
+    "answer": "c",
+    "summary": "One MiB has 1024×1024=2^20 byte locations.",
+    "steps": [
+      "One MiB has 1024×1024=2^20 byte locations.",
+      "Byte addressing requires one distinct address per location; therefore 20 address lines are needed."
+    ],
+    "takeaway": "Byte addressing requires one distinct address per location; therefore 20 address lines are needed.",
+    "optionText": {
+      "a": "18",
+      "b": "19",
+      "c": "20",
+      "d": "21"
+    },
+    "imageDescription": "Q12. When a 1-megabyte memory is connected to the MPU as shown in the figure below, what is the minimum number of signal lines (represented as n) required by address buses? Here, the memory is accessed in units of bytes. In addition, 1 megabyte = 1,024 kilobytes and 1 kilobyte = 1,024 bytes. Diagram: MPU on the left, Memory on the right. Parallel address lines from MPU to Memory are labeled A(n−1), A(n−2), A(n−3), an ellipsis, A2, A1 and A0; a brace groups the address lines. A separate data bus is labeled D0 through D7.",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":20,\"derivation\":[\"One MiB has 1024×1024=2^20 byte locations.\",\"Byte addressing requires one distinct address per location; therefore 20 address lines are needed.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2018S-Q012",
+    "revision": "800fc7fad169",
+    "answer": "b",
+    "summary": "A full turn at 2000 rpm takes 60000/2000=30 ms.",
+    "steps": [
+      "A full turn at 2000 rpm takes 60000/2000=30 ms.",
+      "A random request waits half a revolution on average: 15 ms."
+    ],
+    "takeaway": "A random request waits half a revolution on average: 15 ms.",
+    "optionText": {
+      "a": "10",
+      "b": "15",
+      "c": "25",
+      "d": "30"
+    },
+    "imageDescription": "Q12. What is the average rotational latency of a hard disk drive in milliseconds when its rotation speed is 2000 rotations per minute?",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":15,\"derivation\":[\"A full turn at 2000 rpm takes 60000/2000=30 ms.\",\"A random request waits half a revolution on average: 15 ms.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2016A-Q002",
+    "revision": "3b7d82ed1b72",
+    "answer": "c",
+    "summary": "Four-bit two's complement ranges from -8 through 7.",
+    "steps": [
+      "Four-bit two's complement ranges from -8 through 7.",
+      "The four calculations are 6+(-1)=5, -2+6=4, 7-(-6)=13 and -1-(-1)=0. Only 13 is outside the range."
+    ],
+    "takeaway": "The four calculations are 6+(-1)=5, -2+6=4, 7-(-6)=13 and -1-(-1)=0. Only 13 is outside the range.",
+    "optionText": {
+      "a": "Add B to A when A is 0110 and B is 1111.",
+      "b": "Add B to A when A is 1110 and B is 0110.",
+      "c": "Subtract B from A when A is 0111 and B is 1010.",
+      "d": "Subtract B from A when A is 1111 and B is 1111."
+    },
+    "imageDescription": "Q2. When 4-bit signed numbers in 2's complement are used, which of the following operations will cause either an overflow or an underflow?",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":[5,4,13,0],\"derivation\":[\"Four-bit two's complement ranges from -8 through 7.\",\"The four calculations are 6+(-1)=5, -2+6=4, 7-(-6)=13 and -1-(-1)=0. Only 13 is outside the range.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2014S-Q004",
+    "revision": "8636d29e5e27",
+    "answer": "b",
+    "summary": "There are 26+10=36 distinct characters.",
+    "steps": [
+      "There are 26+10=36 distinct characters.",
+      "Five bits encode only 32 values; six bits encode 64, so six is the minimum."
+    ],
+    "takeaway": "Five bits encode only 32 values; six bits encode 64, so six is the minimum.",
+    "optionText": {
+      "a": "5",
+      "b": "6",
+      "c": "7",
+      "d": "8"
+    },
+    "imageDescription": "Q4. What is the minimum number of bits required to uniquely encode upper-case alphabetic characters (i.e., A through Z) and numeric characters (i.e., 0 through 9) in the same number of bits?",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":6,\"derivation\":[\"There are 26+10=36 distinct characters.\",\"Five bits encode only 32 values; six bits encode 64, so six is the minimum.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2013A-Q001",
+    "revision": "af0545259067",
+    "answer": "c",
+    "summary": "2A hexadecimal is 42 decimal. A three-bit left shift gives 336 before truncation.",
+    "steps": [
+      "2A hexadecimal is 42 decimal. A three-bit left shift gives 336 before truncation.",
+      "Discarding bits outside eight positions gives 336 mod 256 = 80."
+    ],
+    "takeaway": "Discarding bits outside eight positions gives 336 mod 256 = 80.",
+    "optionText": {
+      "a": "2",
+      "b": "5",
+      "c": "80",
+      "d": "160"
+    },
+    "imageDescription": "Q1. When the hexadecimal value 2A is stored in an 8-bit register and is logically shifted left three bits, which of the following is the resulting value in decimal? Here, the bit positions vacated on the right are filled with zeros, and bits shifted out on the left are discarded.",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":80,\"derivation\":[\"2A hexadecimal is 42 decimal. A three-bit left shift gives 336 before truncation.\",\"Discarding bits outside eight positions gives 336 mod 256 = 80.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2010A-Q001",
+    "revision": "bd52c6c80e46",
+    "answer": "c",
+    "summary": "Arithmetic right shift preserves the sign bit.",
+    "steps": [
+      "Arithmetic right shift preserves the sign bit.",
+      "-24 divided by 2^2 is exactly -6, so no rounding question arises."
+    ],
+    "takeaway": "-24 divided by 2^2 is exactly -6, so no rounding question arises.",
+    "optionText": {
+      "a": "–102",
+      "b": "–96",
+      "c": "–6",
+      "d": "58"
+    },
+    "imageDescription": "Q1. There is an 8-bit register where integers are represented in binary by using 2’s complement for negative numbers. When the decimal integer “–24” is stored in the register and then arithmetically shifted 2 bits right, what is the resulting value in decimal? Here, the leftmost bit of the register is used as a sign bit.",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":-6,\"derivation\":[\"Arithmetic right shift preserves the sign bit.\",\"-24 divided by 2^2 is exactly -6, so no rounding question arises.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2010S-Q016",
+    "revision": "843a12256de3",
+    "answer": "c",
+    "summary": "Nine address lines select 2^9=512 locations.",
+    "steps": [
+      "Nine address lines select 2^9=512 locations.",
+      "Each location has eight data bits, or one byte, so capacity is 512 bytes."
+    ],
+    "takeaway": "Each location has eight data bits, or one byte, so capacity is 512 bytes.",
+    "optionText": {
+      "a": "128",
+      "b": "256",
+      "c": "512",
+      "d": "1024"
+    },
+    "imageDescription": "Q16. When a memory chip has 8 data lines and 9 address lines, what is the maximum number of bytes that can be stored in the chip? Here, chip select signals are implemented independent of those address lines, and no parity bit is considered.",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":512,\"derivation\":[\"Nine address lines select 2^9=512 locations.\",\"Each location has eight data bits, or one byte, so capacity is 512 bytes.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2009A-Q028",
+    "revision": "214bd61b8211",
+    "answer": "d",
+    "summary": "Weighted times are A=20.8, B=17.6, C=16, D=14 ns.",
+    "steps": [
+      "Weighted times are A=20.8, B=17.6, C=16, D=14 ns.",
+      "D is shortest. Counting the cache lookup again on misses also leaves D shortest (16 ns)."
+    ],
+    "takeaway": "D is shortest. Counting the cache lookup again on misses also leaves D shortest (16 ns).",
+    "optionText": {
+      "a": "cache 8 ns; hit ratio 60%; main memory 40 ns",
+      "b": "cache 8 ns; hit ratio 70%; main memory 40 ns",
+      "c": "cache 10 ns; hit ratio 70%; main memory 30 ns",
+      "d": "cache 10 ns; hit ratio 80%; main memory 30 ns"
+    },
+    "imageDescription": "Q28. Which of the following combinations of access time and hit ratio for cache memory and access time for main memory results in the shortest effective access time to main memory? Table column groups: Cache memory — Access time (nanoseconds), Hit ratio (%); Main memory — Access time (nanoseconds). The four original rows are transcribed as choices A through D below.",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":[20.8,17.6,16,14],\"derivation\":[\"Weighted times are A=20.8, B=17.6, C=16, D=14 ns.\",\"D is shortest. Counting the cache lookup again on misses also leaves D shortest (16 ns).\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2009S-Q004",
+    "revision": "3306b09448f4",
+    "answer": "c",
+    "summary": "An eight-bit two's-complement encoding of a negative x has unsigned value 256+x.",
+    "steps": [
+      "An eight-bit two's-complement encoding of a negative x has unsigned value 256+x.",
+      "For -100 the unchanged bit pattern has unsigned value 156."
+    ],
+    "takeaway": "For -100 the unchanged bit pattern has unsigned value 156.",
+    "optionText": {
+      "a": "28",
+      "b": "100",
+      "c": "156",
+      "d": "228"
+    },
+    "imageDescription": "Q4. There is an 8-bit numerical value, where a negative number is represented in two’s complement. When this value is represented in decimal, it becomes -100. When this value is regarded as an unsigned number, which of the following is the correct value in decimal?",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":156,\"derivation\":[\"An eight-bit two's-complement encoding of a negative x has unsigned value 256+x.\",\"For -100 the unchanged bit pattern has unsigned value 156.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2008A-Q004",
+    "revision": "642d1fda4f81",
+    "answer": "c",
+    "summary": "C1E00000 has sign=1, exponent=131 and fraction=0.75.",
+    "steps": [
+      "C1E00000 has sign=1, exponent=131 and fraction=0.75.",
+      "Using the supplied formula: -1×2^(131-127)×1.75 = -28."
+    ],
+    "takeaway": "Using the supplied formula: -1×2^(131-127)×1.75 = -28.",
+    "optionText": {
+      "a": "–59",
+      "b": "–44",
+      "c": "–28",
+      "d": "26"
+    },
+    "imageDescription": "Q4. In the single precision of “IEEE Standard for Binary Floating-Point Arithmetic” (IEEE 754), the value “V” is represented as follows: S: Sign (1 bit); E: Exponent (8 bits); F: Fraction (23 bits). If 0 < E < 255 then V = (−1)^S × 2^(E−127) × (1.F), where “1.F” is intended to represent the binary number created by prefixing F with an implicit leading 1 and a binary point. When the hexadecimal value C1E00000 is represented in IEEE 754, what is the correct value converted to decimal?",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":-28,\"derivation\":[\"C1E00000 has sign=1, exponent=131 and fraction=0.75.\",\"Using the supplied formula: -1×2^(131-127)×1.75 = -28.\"]}"
+    ]
   }
 ]

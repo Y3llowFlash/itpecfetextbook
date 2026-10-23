@@ -10,7 +10,10 @@
       "2024A-A-Q009",
       "2025S-A-Q010",
       "2026S-A-Q010",
-      "HIST-TECH01-2015A-Q011"
+      "HIST-TECH01-2015A-Q011",
+      "HIST-TECH01-2019A-Q013",
+      "HIST-TECH01-2019S-Q011",
+      "HIST-TECH01-2009A-Q028"
     ],
     "mappingEvidence": [
       {
@@ -54,6 +57,60 @@
               "heading": "3-5-1 High Speed Memory Access / buffer memory",
               "textSha256": "ae201b64c9e624c0b66d395c28ecb9fd1da89d75a057ba2ce14677dc9cf79597",
               "checkedExcerpt": "on the basis of the directions of hardware or OS (software for controlling the computer), the data is loaded from main memory into the corresponding block of cache"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2019A-Q013",
+        "reason": "Original question and bounded textbook passages independently rechecked for cache-memory; this is preparation, not publication approval.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 77,
+              "printedPage": 72,
+              "textSha256": "bcd00e2a51a63797a2917746e44fed627b7e95b09f1aeb4ee74181bd4a6a5443",
+              "checkedExcerpt": "1) Write-through method That method reflects the update in main memory whenever data is updated . While certainty is high, main memory needs to be accessed for every process, so operating speed is somewhat slow. 2) Write-back method In this method, data is not updated in main memory while data is updated in cache memory. Data is updated in main memory only when data from cache memory is removed. While its operating speed is fast, inconsistency in the data of main memory may occur at some point in time.",
+              "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2019S-Q011",
+        "reason": "Original question and bounded textbook passages independently rechecked for cache-memory; this is preparation, not publication approval.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 76,
+              "printedPage": 71,
+              "textSha256": "16642cba08a2bb57f7761c6f5bf389c157c2c9a4f16ffd1abe7b6cf36e65cc89",
+              "checkedExcerpt": "In other words, average access time (effective access time) as seen from the processor is decided on the basis of the extent to which the required data is found in cache memory. Therefore, it is determined by weighted average of access time of cache memory and access time of main memory. Here, the access time is determined by considering both the probability (hit ratio) that the required data is available in cache memory and the probability (NFP (Not Found Probability)) that the required data is not available in cache memory. “Hit ratio+NFP=1” always holds true.",
+              "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2009A-Q028",
+        "reason": "Original question and bounded textbook passages independently rechecked for cache-memory; this is preparation, not publication approval.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 76,
+              "printedPage": 71,
+              "textSha256": "16642cba08a2bb57f7761c6f5bf389c157c2c9a4f16ffd1abe7b6cf36e65cc89",
+              "checkedExcerpt": "In other words, average access time (effective access time) as seen from the processor is decided on the basis of the extent to which the required data is found in cache memory. Therefore, it is determined by weighted average of access time of cache memory and access time of main memory. Here, the access time is determined by considering both the probability (hit ratio) that the required data is available in cache memory and the probability (NFP (Not Found Probability)) that the required data is not available in cache memory. “Hit ratio+NFP=1” always holds true.",
+              "role": "direct"
             }
           ]
         ]
@@ -262,7 +319,9 @@
     "anchor": "numeric-data",
     "summary": "Separate sign, biased exponent and fraction in an IEEE 754 normal number.",
     "questionIds": [
-      "2025A-A-Q001"
+      "2025A-A-Q001",
+      "HIST-TECH01-2009A-Q003",
+      "HIST-TECH01-2008A-Q004"
     ],
     "mappingEvidence": [
       {
@@ -272,6 +331,51 @@
           "original question image",
           "2025A_FE-A_Answers.pdf Q1",
           "independent calculation or truth-table review"
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2009A-Q003",
+        "reason": "Original question and bounded textbook passages independently rechecked for floating-point; this is preparation, not publication approval.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 44,
+              "printedPage": 39,
+              "textSha256": "b2f678d1f63412457b5a533dc430aaf4f07f91f2f4b0950baf9c656a1d2fccde",
+              "checkedExcerpt": "[Normalization] This operation is for maintaining the precision of numerical values by increasing digits that can be used in fraction (mantissa). In most cases, this is done by reducing extra 0s after the radix point. For example, in the case of the decimal number (0.000123456789)10 represented by using a 7-digit fraction (mantissa), if the 7-digit fraction is registered in fraction (mantissa) as is, the following result is obtained. 0 0 0 1 2 3 4",
+              "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2008A-Q004",
+        "reason": "Original question and bounded textbook passages independently rechecked for floating-point; this is preparation, not publication approval.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 43,
+              "printedPage": 38,
+              "textSha256": "4fde32b45f28bc167945106c6dad9ebc63591be2bf74ef4362ebad60c8836426",
+              "checkedExcerpt": "[Single-precision floating point number (32-bit format)] Sign (1 bit) Exponent (8 bits) Fraction (mantissa) (23 bits)",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 44,
+              "printedPage": 39,
+              "textSha256": "b2f678d1f63412457b5a533dc430aaf4f07f91f2f4b0950baf9c656a1d2fccde",
+              "checkedExcerpt": "This is used for representing the sign of a numerical value. It is 0 for positive values, and 1 for negative values. B: Exponent (E) This is used for representing exponent with respect to radix. The two main representation methods below are used. • 2’s complement: In this method, exponent is recorded as a binary number, and 2’s complement is used if it is negative (−). • Excess method: This method records a value (i.e., biased value) that is obtained by adding a certain value to the exponent. The value (i.e., bias value) to be added is decided according to the number of bits of exponent. Below is an example of the excess method used with single-precision floating point numbers. Method name Intended format (Typical example) Format of exponent Bias value Number of bits Information amount Excess 127 IEEE 754 format 8 bits 256 types 127 Excess 64 IBM format 7 bits 128 types 64 C: Fraction (mantissa) (M) This is used for representing a numerical value after the radix point. In order to represent the part after the radix point, it is common to perform normalization. In this case, the integer part is either set to 0 or 1 (storing after the omission of 1 from the integer part). • When the integer part is set to 0: 0.101101 → Store “101101” in fraction (mantissa) • When the integer part is set to 1: 1.011010 → Store “011010” in fraction (mantissa)",
+              "role": "secondary"
+            }
+          ]
         ]
       }
     ],
@@ -285,7 +389,10 @@
     "anchor": "shift-operation",
     "summary": "Relate binary shifts to multiplication by powers of two, checking for overflow.",
     "questionIds": [
-      "2025A-A-Q002"
+      "2025A-A-Q002",
+      "HIST-TECH01-2019S-Q001",
+      "HIST-TECH01-2013A-Q001",
+      "HIST-TECH01-2010A-Q001"
     ],
     "mappingEvidence": [
       {
@@ -295,6 +402,60 @@
           "original question image",
           "2025A_FE-A_Answers.pdf Q2",
           "independent calculation or truth-table review"
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2019S-Q001",
+        "reason": "Original question and bounded textbook passages independently rechecked for signed-shifts; this is preparation, not publication approval.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 49,
+              "printedPage": 44,
+              "textSha256": "842c04587b857023fdf8cdf66df09a3f066a700c8383fbd99d9bb384efb686b7",
+              "checkedExcerpt": "[Computation rules of arithmetic shift] • With an arithmetic shift to left by n bits, the value becomes 2n times of the original number. • With an arithmetic shift to right by n bits, the value becomes 2−n times of the original number. (It is the value that is obtained by dividing the original number by 2n)",
+              "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2013A-Q001",
+        "reason": "Original question and bounded textbook passages independently rechecked for signed-shifts; this is preparation, not publication approval.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 49,
+              "printedPage": 44,
+              "textSha256": "842c04587b857023fdf8cdf66df09a3f066a700c8383fbd99d9bb384efb686b7",
+              "checkedExcerpt": "Logical shift is the shift operation used when the position of bits are changed. Its main difference from the arithmetic shift is that it does not treat the sign bit in a special manner. [Rules of logical shift] • Shift (move) the sign bit as well. • Truncate extra bits that are shifted out as a result of the shift. • Store 0 in the empty bit position that is created as a result of shift.",
+              "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2010A-Q001",
+        "reason": "Original question and bounded textbook passages independently rechecked for signed-shifts; this is preparation, not publication approval.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 48,
+              "printedPage": 43,
+              "textSha256": "05af903946668a3a0a51a01fb2bde859354fceb9c7d7c0814db77155fd76f928",
+              "checkedExcerpt": "[Rules of arithmetic shift] • Do not shift the sign bit. • Truncate extra bits that are shifted out as a result of the shift. • Store the following bit in the empty bit position that is created as a result of the shift. In the case of left shift: 0 In the case of right shift: Same as the sign bit Example: Shift (22)10=(00010110)2 arithmetically left by 2 bits. Binary numbers have weight of power of 2 in each digit. Therefore, even for the same numeral 1, 1 as the second digit and 1 as the third digit have different meanings. 1 as second digit: (10)2 → 21 = 2 1 as third digit: (100)2 → 22 = 4",
+              "role": "direct"
+            }
+          ]
         ]
       }
     ],
@@ -333,7 +494,9 @@
     "questionIds": [
       "2025S-A-Q009",
       "2026S-A-Q009",
-      "HIST-TECH01-2019A-Q012"
+      "HIST-TECH01-2019A-Q012",
+      "HIST-TECH01-2021A-Q011",
+      "HIST-TECH01-2018A-Q010"
     ],
     "mappingEvidence": [
       {
@@ -371,6 +534,42 @@
             }
           ]
         ]
+      },
+      {
+        "questionId": "HIST-TECH01-2021A-Q011",
+        "reason": "Original question and bounded textbook passages independently rechecked for cpu-registers; this is preparation, not publication approval.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 52,
+              "printedPage": 47,
+              "textSha256": "97daacc48a2f1d7065a3797a62a0b4b6c3c2156c8a7a712b4c516a22df80c5ba",
+              "checkedExcerpt": "Instruction address register (program counter, program register) It stores the address (storing position in the main memory) of the instruction to be executed next.",
+              "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2018A-Q010",
+        "reason": "Original question and bounded textbook passages independently rechecked for cpu-registers; this is preparation, not publication approval.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 52,
+              "printedPage": 47,
+              "textSha256": "97daacc48a2f1d7065a3797a62a0b4b6c3c2156c8a7a712b4c516a22df80c5ba",
+              "checkedExcerpt": "Flag register It stores the information of a certain status (whether the results of computations are positive or negative, etc.). Depending on the status of this register, the next action, such as branch destination of the condition branch instruction, is decided.",
+              "role": "direct"
+            }
+          ]
+        ]
       }
     ],
     "videos": [
@@ -395,7 +594,9 @@
     "anchor": "interrupts",
     "summary": "Trace preemption, handler completion and resumption on a CPU timeline.",
     "questionIds": [
-      "2025A-A-Q008"
+      "2025A-A-Q008",
+      "HIST-TECH01-2020A-Q011",
+      "HIST-TECH01-2020S-Q010"
     ],
     "mappingEvidence": [
       {
@@ -405,6 +606,51 @@
           "original question image",
           "2025A_FE-A_Answers.pdf Q8",
           "independent calculation or truth-table review"
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2020A-Q011",
+        "reason": "Original question and bounded textbook passages independently rechecked for interrupts; this is preparation, not publication approval.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 65,
+              "printedPage": 60,
+              "textSha256": "b668a0efaa1f8b55cb59357fddc547f8d106ad6af9e262e39cf1e1156e3e46d5",
+              "checkedExcerpt": "1) External interrupt: This is an interrupt that occurs because of a reason not related to the process being executed. • Timer interrupt This is an interrupt that occurs when the time measured in the timer, such as interval timer and watchdog timer, has exceeded the specified time (i.e., the timer has been timed-out).",
+              "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2020S-Q010",
+        "reason": "Original question and bounded textbook passages independently rechecked for interrupts; this is preparation, not publication approval.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 65,
+              "printedPage": 60,
+              "textSha256": "b668a0efaa1f8b55cb59357fddc547f8d106ad6af9e262e39cf1e1156e3e46d5",
+              "checkedExcerpt": "2) Internal interrupt: This is an interrupt that occurs because of the process being executed. This is also referred to as a trap.",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "This is an interrupt that occurs by the error of a running program (e.g., divide-by-zero or overflow)",
+              "role": "secondary"
+            }
+          ]
         ]
       }
     ],
@@ -1318,7 +1564,9 @@
     "questionIds": [
       "2024S-A-Q009",
       "2025A-A-Q009",
-      "HIST-TECH01-2010A-Q016"
+      "HIST-TECH01-2010A-Q016",
+      "HIST-TECH01-2022S-Q012",
+      "HIST-TECH01-2018S-Q012"
     ],
     "mappingEvidence": [
       {
@@ -1353,6 +1601,51 @@
               "heading": "4-1-3 Average Access Time of Magnetic Disk Drive",
               "textSha256": "0970994f39041976e4dce49cc427e99737273794a379fca451b3902a96cf73ae",
               "checkedExcerpt": "e will become longer. Therefore, it is necessary to perform defragmentation in order to eliminate fragmentation. Example: Calculate the average access time for reading a data block of 2,000 bytes recorded in a magnetic disk drive having the following specifications. Rotational speed 3,000 rotations/minute Bytes/track 10,000 bytes Average seek time 30 milliseconds"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2022S-Q012",
+        "reason": "Original question and bounded textbook passages independently rechecked for disk-access; this is preparation, not publication approval.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 90,
+              "printedPage": 84,
+              "textSha256": "d9a8475099617a68f300355222bda384fc6843387f0b3f9ca639eb129ac31694",
+              "checkedExcerpt": "Access time = seek time + rotational latency + data transfer time On the other hand, average access time is the average value of access time for reading (or writing) data of one unit of input/output. In this case, since the amount of data of one unit of input/output is the same, data transfer time is the same on each occasion. However, seek time and rotational latency are different on each occasion. Therefore, their respective average values (average seek time, average rotational latency) are used. [Average access time of magnetic disk drive] Average access time = average seek time + average rotational latency + data transfer time",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 91,
+              "printedPage": 85,
+              "textSha256": "0970994f39041976e4dce49cc427e99737273794a379fca451b3902a96cf73ae",
+              "checkedExcerpt": "Since the magnetic disk rotates at a constant speed, in some cases there may not be any latency when the head of data is positioned directly underneath from the beginning (minimum rotational latency). On the other hand, it may be necessary to wait until the disk completes one rotation when the head of data has just passed (maximum rotational latency). Therefore, the average of minimum rotational latency and maximum rotation latency, which is 1/2 of the time required for the magnetic disk to complete one rotation, is used.",
+              "role": "secondary"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2018S-Q012",
+        "reason": "Original question and bounded textbook passages independently rechecked for disk-access; this is preparation, not publication approval.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 91,
+              "printedPage": 85,
+              "textSha256": "0970994f39041976e4dce49cc427e99737273794a379fca451b3902a96cf73ae",
+              "checkedExcerpt": "Since the magnetic disk rotates at a constant speed, in some cases there may not be any latency when the head of data is positioned directly underneath from the beginning (minimum rotational latency). On the other hand, it may be necessary to wait until the disk completes one rotation when the head of data has just passed (maximum rotational latency). Therefore, the average of minimum rotational latency and maximum rotation latency, which is 1/2 of the time required for the magnetic disk to complete one rotation, is used.",
+              "role": "direct"
             }
           ]
         ]
@@ -1506,5 +1799,832 @@
       }
     ],
     "videos": []
+  },
+  {
+    "id": "processor-pipeline",
+    "title": "Instruction pipelining",
+    "summary": "Overlap the stages of successive instructions to execute several instructions in parallel.",
+    "sectionId": "fe-v1-ch01-s03",
+    "sectionUrl": "/chapters/hardware/cpu-and-main-memory/",
+    "anchor": "concept-processor-pipeline",
+    "questionIds": [
+      "HIST-TECH01-2021A-Q013",
+      "HIST-TECH01-2008S-Q021"
+    ],
+    "mappingEvidence": [
+      {
+        "questionId": "HIST-TECH01-2021A-Q013",
+        "reason": "Original question and bounded textbook passages independently rechecked for processor-pipeline; this is preparation, not publication approval.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 79,
+              "printedPage": 74,
+              "textSha256": "43e5268e1ad8127dce9376794ed8fcbff11fb38c272846ee59191dd800b9f312",
+              "checkedExcerpt": "Pipeline control (or the pipeline processing) divides the execution cycle of each instruction into multiple stages, and by shifting each stage little by little and executing multiple stages separately, multiple instructions are executed simultaneously and in parallel.",
+              "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2008S-Q021",
+        "reason": "Original question and bounded textbook passages independently rechecked for processor-pipeline; this is preparation, not publication approval.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 79,
+              "printedPage": 74,
+              "textSha256": "43e5268e1ad8127dce9376794ed8fcbff11fb38c272846ee59191dd800b9f312",
+              "checkedExcerpt": "Pipeline control (or the pipeline processing) divides the execution cycle of each instruction into multiple stages, and by shifting each stage little by little and executing multiple stages separately, multiple instructions are executed simultaneously and in parallel.",
+              "role": "direct"
+            }
+          ]
+        ]
+      }
+    ],
+    "videos": [],
+    "sourceHighlight": {
+      "headingNumber": "3-5-2",
+      "passageId": "fev1-201504-ch1-r1-pdf-079-b004-l19-text-0",
+      "fragmentSha256": "308f10ca976ad98a808203d0b9fb9ad82c01f6a01b6f2691fa09a5d62d569e22"
+    }
+  },
+  {
+    "id": "stored-program",
+    "title": "Stored-program operation",
+    "summary": "Read instructions stored in main memory into the CPU for decoding and execution.",
+    "sectionId": "fe-v1-ch01-s03",
+    "sectionUrl": "/chapters/hardware/cpu-and-main-memory/",
+    "anchor": "concept-stored-program",
+    "questionIds": [
+      "HIST-TECH01-2021S-Q013"
+    ],
+    "mappingEvidence": [
+      {
+        "questionId": "HIST-TECH01-2021S-Q013",
+        "reason": "Original question and bounded textbook passages independently rechecked for stored-program; this is preparation, not publication approval.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 51,
+              "printedPage": 46,
+              "textSha256": "3154c420b7fe7e581d71c2d41dd6e3cfde185d2c79e64079a187093359417e4c",
+              "checkedExcerpt": "In computers based on stored-program, programs (instructions) recorded in the main memory unit are read in the CPU one by one, and the control unit issues directions to each device on the basis of the contents of the instruction for processing. In order to carry out this operation, the CPU is composed of various devices and components.",
+              "role": "direct"
+            }
+          ]
+        ]
+      }
+    ],
+    "videos": [],
+    "sourceHighlight": {
+      "headingNumber": "3-1",
+      "passageId": "fev1-201504-ch1-r1-pdf-051-b005-l01-text-0",
+      "fragmentSha256": "9cc6349b11579bc5ba583fd59a14de962d53bd73b7c8860a760584b04e3b290d"
+    }
+  },
+  {
+    "id": "device-drivers",
+    "title": "Device drivers",
+    "summary": "Use device-specific software to control and communicate with peripheral devices.",
+    "sectionId": "fe-v1-ch01-s05",
+    "sectionUrl": "/chapters/hardware/input-output/",
+    "anchor": "concept-device-drivers",
+    "questionIds": [
+      "HIST-TECH01-2020A-Q012",
+      "HIST-TECH01-2017S-Q013"
+    ],
+    "mappingEvidence": [
+      {
+        "questionId": "HIST-TECH01-2020A-Q012",
+        "reason": "Original question and bounded textbook passages independently rechecked for device-drivers; this is preparation, not publication approval.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 116,
+              "printedPage": 110,
+              "textSha256": "48e2aa7df9a30eece779c5bc1dfe1486df4f3a6feea5cf8d2d46c25a36a19d4b",
+              "checkedExcerpt": "Device driver is software that controls peripheral devices. Device driver is specific software",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 117,
+              "printedPage": 111,
+              "textSha256": "b12585797ee24953162c80135c814d7f7e800fa46ef21c1b4285607cbb29e2fb",
+              "checkedExcerpt": "that is required for each peripheral device, and peripheral devices cannot be used without device drivers. For example, in order to use a printer, a device driver (printer driver) for the printer is required. Moreover, software that manages the device drivers is called a device manager. When multiple devices are connected, the device driver has another role to play in synchronizing with each device (aligning the timing of operation). While each device driver for basic peripheral devices is provided in advance, we need to obtain a device driver for the other peripheral device (e.g., a newly purchased peripheral device) from the Internet or CD-ROM that is supplied with the device and then install it separately (i.e., install software in the computer).",
+              "role": "secondary"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2017S-Q013",
+        "reason": "Original question and bounded textbook passages independently rechecked for device-drivers; this is preparation, not publication approval.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 116,
+              "printedPage": 110,
+              "textSha256": "48e2aa7df9a30eece779c5bc1dfe1486df4f3a6feea5cf8d2d46c25a36a19d4b",
+              "checkedExcerpt": "Device driver is software that controls peripheral devices. Device driver is specific software",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 117,
+              "printedPage": 111,
+              "textSha256": "b12585797ee24953162c80135c814d7f7e800fa46ef21c1b4285607cbb29e2fb",
+              "checkedExcerpt": "that is required for each peripheral device, and peripheral devices cannot be used without device drivers. For example, in order to use a printer, a device driver (printer driver) for the printer is required. Moreover, software that manages the device drivers is called a device manager. When multiple devices are connected, the device driver has another role to play in synchronizing with each device (aligning the timing of operation). While each device driver for basic peripheral devices is provided in advance, we need to obtain a device driver for the other peripheral device (e.g., a newly purchased peripheral device) from the Internet or CD-ROM that is supplied with the device and then install it separately (i.e., install software in the computer).",
+              "role": "secondary"
+            }
+          ]
+        ]
+      }
+    ],
+    "videos": [],
+    "sourceHighlight": {
+      "headingNumber": "5-5-3",
+      "passageId": "fev1-201504-ch1-r1-pdf-116-b012-l03-text-0",
+      "fragmentSha256": "cfd64e35b9312e85920aa3609e9b88ebb1f066eab693c8ffcbae2a504dc3b934"
+    }
+  },
+  {
+    "id": "memory-devices",
+    "title": "RAM, ROM and flash memory",
+    "summary": "Compare volatile SRAM and DRAM with mask ROM and electrically rewritten flash memory.",
+    "sectionId": "fe-v1-ch01-s03",
+    "sectionUrl": "/chapters/hardware/cpu-and-main-memory/",
+    "anchor": "concept-memory-devices",
+    "questionIds": [
+      "HIST-TECH01-2020A-Q020",
+      "HIST-TECH01-2020S-Q011",
+      "HIST-TECH01-2020S-Q021",
+      "HIST-TECH01-2017A-Q011"
+    ],
+    "mappingEvidence": [
+      {
+        "questionId": "HIST-TECH01-2020A-Q020",
+        "reason": "Original question and bounded textbook passages independently rechecked for memory-devices; this is preparation, not publication approval.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 55,
+              "printedPage": 50,
+              "textSha256": "cff41ce38db0a47f6283af34b5223088ef2d7dfc65ad32c1c1e59626ff05b526",
+              "checkedExcerpt": "• DRAM (Dynamic RAM) While its operating speed is somewhat slow, it uses a simple circuit where electrical charge is retained by condenser or capacitor. Therefore, the degree of integration is high, and large capacity memory can be easily created at low cost. However, electrical charge that records information is lost over time, and therefore it is necessary to rewrite (refresh) the information. Examples include SDRAM (Synchronous DRAM) or DDR SDRAM (Double Data Rate SDRAM) used in main memory, and RDRAM (Rambus DRAM) that uses Rambus technology in the external bus interface. (2) ROM (Read Only Memory) ROM is IC memory that can be used only for reading data. It has a property (non-volatility) where data is not lost even when the power is off.",
+              "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2020S-Q011",
+        "reason": "Original question and bounded textbook passages independently rechecked for memory-devices; this is preparation, not publication approval.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 55,
+              "printedPage": 50,
+              "textSha256": "cff41ce38db0a47f6283af34b5223088ef2d7dfc65ad32c1c1e59626ff05b526",
+              "checkedExcerpt": "• SRAM (Static RAM) While its operating speed is high, it is expensive and it also has high power consumption. As for its memory mechanism, it uses a flip-flop circuit that continues to retain the preceding status, and electrical charge that records information can be retained as long as power is supplied. However, its disadvantages are a low degree of integration because of complex configuration of the circuit, and storage capacity that is smaller compared with DRAM. It is mainly used in registers or other memory devices. • DRAM (Dynamic RAM) While its operating speed is somewhat slow, it uses a simple circuit where electrical charge is retained by condenser or capacitor. Therefore, the degree of integration is high, and large capacity memory can be easily created at low cost. However, electrical charge that records information is lost over time, and therefore it is necessary to rewrite (refresh) the information. Examples include SDRAM (Synchronous DRAM) or DDR SDRAM (Double Data Rate SDRAM) used in main memory, and RDRAM (Rambus DRAM) that uses Rambus technology in the external bus interface. (2) ROM (Read Only Memory) ROM is IC memory that can be used only for reading data. It has a property (non-volatility) where data is not lost even when the power is off.",
+              "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2020S-Q021",
+        "reason": "Original question and bounded textbook passages independently rechecked for memory-devices; this is preparation, not publication approval.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 56,
+              "printedPage": 51,
+              "textSha256": "160f7f81f75d39ed89036a247b39dde4e9fd12a488160bde9ee082925a267902",
+              "checkedExcerpt": "• Flash memory: This is semiconductor memory where data can be rewritten after data is erased in units of blocks through electrical operations. Flash memory is a type of EEPROM. Therefore, the number of rewritable timesis limited. However, it is used for various applications as a portable and convenient storage medium.",
+              "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2017A-Q011",
+        "reason": "Original question and bounded textbook passages independently rechecked for memory-devices; this is preparation, not publication approval.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 55,
+              "printedPage": 50,
+              "textSha256": "cff41ce38db0a47f6283af34b5223088ef2d7dfc65ad32c1c1e59626ff05b526",
+              "checkedExcerpt": "• Mask ROM This is a type of ROM where users cannot write data. This memory is used to store programs or data in factories, and the information is used only for the purpose of reference.",
+              "role": "direct"
+            }
+          ]
+        ]
+      }
+    ],
+    "videos": [],
+    "sourceHighlight": {
+      "headingNumber": "3-2-1",
+      "passageId": "fev1-201504-ch1-r1-pdf-054-b006-l01-text-0",
+      "fragmentSha256": "3874f13c8517013cce16d8e3ddb23c66020d6eafdd112f40a55231bcf57e3ed3"
+    }
+  },
+  {
+    "id": "risc-cisc",
+    "title": "RISC and CISC",
+    "summary": "Relate reduced instruction sets and fixed instruction lengths to efficient pipeline execution.",
+    "sectionId": "fe-v1-ch01-s03",
+    "sectionUrl": "/chapters/hardware/cpu-and-main-memory/",
+    "anchor": "concept-risc-cisc",
+    "questionIds": [
+      "HIST-TECH01-2020S-Q009"
+    ],
+    "mappingEvidence": [
+      {
+        "questionId": "HIST-TECH01-2020S-Q009",
+        "reason": "Original question and bounded textbook passages independently rechecked for risc-cisc; this is preparation, not publication approval.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 80,
+              "printedPage": 75,
+              "textSha256": "af2abb85be02f4e30285b0a3a5670cf1fe5386a9ca908c0d972c3651fa6748a9",
+              "checkedExcerpt": "1) RISC (Reduced Instruction Set Computer) Reduced instruction set computer - this is a computer where, by reducing the instruction set (collection of instructions) to the basic instructions with high frequency of use in order to fix the instruction word length, the execution time for a",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 81,
+              "printedPage": 76,
+              "textSha256": "a9ba8efc92b4bdfd8523de03790469556594c17843e2312e89118f0c6ad17fc0",
+              "checkedExcerpt": "76 single instruction is shortened and unified as much as possible. Instructions are executed by hardware (wired logic). • Wired logic control: Instruction is executed by passing signals through a logic circuit having a certain function. Since logic is formed by connecting signal lines for transmitting signals, it is also called hard-wired logic control.",
+              "role": "secondary"
+            }
+          ]
+        ]
+      }
+    ],
+    "videos": [],
+    "sourceHighlight": {
+      "headingNumber": "3-5-2",
+      "passageId": "fev1-201504-ch1-r1-pdf-080-b005-l02-text-0",
+      "fragmentSha256": "67a41465eedde9ca696540c615dff64ec5be50fe6e0c6bdf36f83102b644b113"
+    }
+  },
+  {
+    "id": "addressing-modes",
+    "title": "Instruction addressing modes",
+    "summary": "Trace how an instruction field, a register or a memory reference determines the effective address.",
+    "sectionId": "fe-v1-ch01-s03",
+    "sectionUrl": "/chapters/hardware/cpu-and-main-memory/",
+    "anchor": "concept-addressing-modes",
+    "questionIds": [
+      "HIST-TECH01-2018A-Q011",
+      "HIST-TECH01-2018S-Q009",
+      "HIST-TECH01-2009S-Q021"
+    ],
+    "mappingEvidence": [
+      {
+        "questionId": "HIST-TECH01-2018A-Q011",
+        "reason": "Original question and bounded textbook passages independently rechecked for addressing-modes; this is preparation, not publication approval.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 64,
+              "printedPage": 59,
+              "textSha256": "3ccf13e4b15d65e8f2f44687262569836e8962342ee82a9796255c5fd0356f02",
+              "checkedExcerpt": "3) Indirect addressing In this method, the content (value) of main memory referenced by the effective address is used as the address of operand. Double (in the example shown in",
+              "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2018S-Q009",
+        "reason": "Original question and bounded textbook passages independently rechecked for addressing-modes; this is preparation, not publication approval.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 63,
+              "printedPage": 58,
+              "textSha256": "df93596937a7d7bf65098945f79c27f2c427a9e2ba65478aae17a0a9cf842222",
+              "checkedExcerpt": "4) Relative addressing In this method, the effective address is determined by adding the value of the instruction address register (program counter) to the value of the address part. This means the relative position from the instruction being executed.",
+              "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2009S-Q021",
+        "reason": "Original question and bounded textbook passages independently rechecked for addressing-modes; this is preparation, not publication approval.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 62,
+              "printedPage": 57,
+              "textSha256": "b22721484223170521d3471fde4744f2f5297a5c361e63e68d74ef0f396b7723",
+              "checkedExcerpt": "2) Index addressing In this method, the effective address is determined by adding the value of the index register to the value of the address part. A general register is also used as the index register, and it is necessary to specify which general register to use in such cases.",
+              "role": "direct"
+            }
+          ]
+        ]
+      }
+    ],
+    "videos": [],
+    "sourceHighlight": {
+      "headingNumber": "3-3-3",
+      "passageId": "fev1-201504-ch1-r1-pdf-062-b006-l01-text-0",
+      "fragmentSha256": "3650ad038d69a29d5b4967952970388596ce852dd81257a54f05f978c31dd8d8"
+    }
+  },
+  {
+    "id": "printer",
+    "title": "Printers and process colors",
+    "summary": "Recognize printed output and the cyan, magenta, yellow and black process-color set.",
+    "sectionId": "fe-v1-ch01-s05",
+    "sectionUrl": "/chapters/hardware/input-output/",
+    "anchor": "concept-printer",
+    "questionIds": [
+      "HIST-TECH01-2018S-Q011",
+      "HIST-TECH01-2007S-Q028"
+    ],
+    "mappingEvidence": [
+      {
+        "questionId": "HIST-TECH01-2018S-Q011",
+        "reason": "Original question and bounded textbook passages independently rechecked for printer; this is preparation, not publication approval.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 22,
+              "printedPage": 17,
+              "textSha256": "da5be49dd5ac8106c00028ddbf1bba376f7ae32294ce041c7ff8c003c7c6d7d5",
+              "checkedExcerpt": "2) Output unit This is a unit that writes the processing results in a form that can be understood by humans.",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 106,
+              "printedPage": 100,
+              "textSha256": "f3f64ead7ef4ebec42ed128380a1fbf81ebddaeaf736277462f36af7b07a1745",
+              "checkedExcerpt": "Printer is a device for color printing by using three primary colors known as CMY (Cyan [bright light blue color], Magenta [bright red-purple color], and Yellow). However, proper black color cannot be formed even if these three colors are mixed. Therefore, in most cases, four colors of CMYK are used where black is added as the key. Most printers print characters and drawings as an aggregation of points (dots). Therefore, the higher the number of dots per unit area, the higher the printing quality. This is referred to as the resolution of a printer, and it is expressed in the same unit as for displays, namely, dpi (dots per inch). Figure 1-46 Characters are an aggregation of dots",
+              "role": "secondary"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2007S-Q028",
+        "reason": "Original question and bounded textbook passages independently rechecked for printer; this is preparation, not publication approval.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 106,
+              "printedPage": 100,
+              "textSha256": "f3f64ead7ef4ebec42ed128380a1fbf81ebddaeaf736277462f36af7b07a1745",
+              "checkedExcerpt": "Printer is a device for color printing by using three primary colors known as CMY (Cyan [bright light blue color], Magenta [bright red-purple color], and Yellow). However, proper black color cannot be formed even if these three colors are mixed. Therefore, in most cases, four colors of CMYK are used where black is added as the key. Most printers print characters and drawings as an aggregation of points (dots). Therefore, the higher the number of dots per unit area, the higher the printing quality. This is referred to as the resolution of a printer, and it is expressed in the same unit as for displays, namely, dpi (dots per inch). Figure 1-46 Characters are an aggregation of dots",
+              "role": "direct"
+            }
+          ]
+        ]
+      }
+    ],
+    "videos": [],
+    "sourceHighlight": {
+      "headingNumber": "5-2-2",
+      "passageId": "fev1-201504-ch1-r1-pdf-106-b003-l01-text-0",
+      "fragmentSha256": "ff83f35e931d6f567e33c3283df4bb9d998af4fb2f93431134304859a88b5923"
+    }
+  },
+  {
+    "id": "memory-interleaving",
+    "title": "Memory interleaving",
+    "summary": "Divide main memory into independently accessed banks to improve access performance.",
+    "sectionId": "fe-v1-ch01-s03",
+    "sectionUrl": "/chapters/hardware/cpu-and-main-memory/",
+    "anchor": "concept-memory-interleaving",
+    "questionIds": [
+      "HIST-TECH01-2017S-Q012"
+    ],
+    "mappingEvidence": [
+      {
+        "questionId": "HIST-TECH01-2017S-Q012",
+        "reason": "Original question and bounded textbook passages independently rechecked for memory-interleaving; this is preparation, not publication approval.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 78,
+              "printedPage": 73,
+              "textSha256": "92a5c6015e2691151bfd3c8c2a1ae0e5d4d8760151fc90ce62200211526e0da0",
+              "checkedExcerpt": "Memory interleave is a method where main memory is divided into several sections (bank) that are simultaneously and independently accessed in order to improve the average access time of main memory.",
+              "role": "direct"
+            }
+          ]
+        ]
+      }
+    ],
+    "videos": [],
+    "sourceHighlight": {
+      "headingNumber": "3-5-1",
+      "passageId": "fev1-201504-ch1-r1-pdf-078-b004-l04-text-0",
+      "fragmentSha256": "d749b92549ababfdb51e091d9dd4175c57d62631233a732b78eb97799b4dfdc4"
+    }
+  },
+  {
+    "id": "parallel-processing",
+    "title": "Instruction and data streams",
+    "summary": "Distinguish architectures by their instruction streams and data streams.",
+    "sectionId": "fe-v1-ch01-s03",
+    "sectionUrl": "/chapters/hardware/cpu-and-main-memory/",
+    "anchor": "concept-parallel-processing",
+    "questionIds": [
+      "HIST-TECH01-2016S-Q012"
+    ],
+    "mappingEvidence": [
+      {
+        "questionId": "HIST-TECH01-2016S-Q012",
+        "reason": "Original question and bounded textbook passages independently rechecked for parallel-processing; this is preparation, not publication approval.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 82,
+              "printedPage": 77,
+              "textSha256": "ad223c26866e4cee9d0109ec3c40b5b05cc5de401cf9205d80fd30c78e53b6b1",
+              "checkedExcerpt": "• SIMD (Single Instruction stream Multiple Data stream) This computer processes multiple units of data with one instruction. Vector computers equipped with a vector processor (array processor) that simultaneously computes multiple data in array with one instruction correspond to this architecture.",
+              "role": "direct"
+            }
+          ]
+        ]
+      }
+    ],
+    "videos": [],
+    "sourceHighlight": {
+      "headingNumber": "3-5-2",
+      "passageId": "fev1-201504-ch1-r1-pdf-082-b002-l14-text-0",
+      "fragmentSha256": "95681e72b037c8b8d1ce21b3fa48dde3df4a20c7272e8552183c60df2f737d48"
+    }
+  },
+  {
+    "id": "display-types",
+    "title": "Display technologies",
+    "summary": "Compare the light-producing mechanisms of CRT, liquid-crystal, plasma and organic displays.",
+    "sectionId": "fe-v1-ch01-s05",
+    "sectionUrl": "/chapters/hardware/input-output/",
+    "anchor": "concept-display-types",
+    "questionIds": [
+      "HIST-TECH01-2013A-Q016"
+    ],
+    "mappingEvidence": [
+      {
+        "questionId": "HIST-TECH01-2013A-Q016",
+        "reason": "Original question and bounded textbook passages independently rechecked for display-types; this is preparation, not publication approval.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 105,
+              "printedPage": 99,
+              "textSha256": "ed55227749f87b41fe1b50b6d1923a5886c81a3eef76166911302f018a8abc7a",
+              "checkedExcerpt": "PDP (Plasma Display) is an output device where gas is sealed between two panels of glass and light is emitted by applying voltage. While it has higher luminance and wider viewing angle in comparison with other methods, power consumption is also large because high voltage is required.",
+              "role": "direct"
+            }
+          ]
+        ]
+      }
+    ],
+    "videos": [],
+    "sourceHighlight": {
+      "headingNumber": "5-2-1",
+      "passageId": "fev1-201504-ch1-r1-pdf-103-b006-l01-text-0",
+      "fragmentSha256": "b7f46c9fa846f5b409755fbd5ecedeb81c3d929793779d1331f74104649a34e3"
+    }
+  },
+  {
+    "id": "five-major-units",
+    "title": "Five major computer units",
+    "summary": "Identify control, operation, memory, input and output from their roles and connections.",
+    "sectionId": "fe-v1-ch01-s01",
+    "sectionUrl": "/chapters/hardware/basic-configuration/",
+    "anchor": "concept-five-major-units",
+    "questionIds": [
+      "HIST-TECH01-2011S-Q013"
+    ],
+    "mappingEvidence": [
+      {
+        "questionId": "HIST-TECH01-2011S-Q013",
+        "reason": "Original question and bounded textbook passages independently rechecked for five-major-units; this is preparation, not publication approval.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 22,
+              "printedPage": 17,
+              "textSha256": "da5be49dd5ac8106c00028ddbf1bba376f7ae32294ce041c7ff8c003c7c6d7d5",
+              "checkedExcerpt": "1) Input unit This is a unit that reads data to be processed by computer. 2) Output unit This is a unit that writes the processing results in a form that can be understood by humans. 3) Storage unit This is a unit that records data. There are main memory and auxiliary storage. 4) Arithmetic and logical unit This is a unit that performs arithmetic operations on data that is stored in the storage unit or makes a decision as per the instructions of the control unit. 5) Control unit This is a unit that interprets a command and gives instructions to the remaining four units.",
+              "role": "direct"
+            }
+          ]
+        ]
+      }
+    ],
+    "videos": [],
+    "sourceHighlight": {
+      "headingNumber": "1-2",
+      "passageId": "fev1-201504-ch1-r1-pdf-021-b007-l01-text-0",
+      "fragmentSha256": "0334783eba73d11dc348839167aa14c1192ba695196d244735cba74477769c84"
+    }
+  },
+  {
+    "id": "optical-storage",
+    "title": "Optical recording media",
+    "summary": "Distinguish write-once dye recording from rewritable and read-only optical media.",
+    "sectionId": "fe-v1-ch01-s04",
+    "sectionUrl": "/chapters/hardware/auxiliary-storage/",
+    "anchor": "concept-optical-storage",
+    "questionIds": [
+      "HIST-TECH01-2010S-Q017"
+    ],
+    "mappingEvidence": [
+      {
+        "questionId": "HIST-TECH01-2010S-Q017",
+        "reason": "Original question and bounded textbook passages independently rechecked for optical-storage; this is preparation, not publication approval.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 93,
+              "printedPage": 87,
+              "textSha256": "3c6818af97726601b247ba29aa8e631ea03caea3ce5005c4babb4a31df5db2aa",
+              "checkedExcerpt": "In write-once optical discs, while data written at the factory cannot be deleted or modified, data can be added (recorded) by creating a section where data can be recorded. Data can be written by making a pit, by burning an organic coloring matter that is coated on the disc with a strong laser beam. However, the burned organic coloring matter cannot be restored to its original state, and therefore, it is not possible to rewrite even the added data (WO (Write Once)). Typical examples are CD-R (CD-Recordable), DVD-R, and DVD+R.",
+              "role": "direct"
+            }
+          ]
+        ]
+      }
+    ],
+    "videos": [],
+    "sourceHighlight": {
+      "headingNumber": "4-2",
+      "passageId": "fev1-201504-ch1-r1-pdf-093-b002-l30-text-0",
+      "fragmentSha256": "058c8692fb7f3dc4ec370b3b101b39d4ab3c0ab88ea07bbb6ee4df8a02564856"
+    }
+  },
+  {
+    "id": "signed-integers",
+    "title": "Two’s-complement integers",
+    "summary": "Use two’s-complement representation, its signed range and overflow limits.",
+    "sectionId": "fe-v1-ch01-s02",
+    "sectionUrl": "/chapters/hardware/data-representation/",
+    "anchor": "concept-signed-integers",
+    "questionIds": [
+      "HIST-TECH01-2008S-Q003",
+      "HIST-TECH01-2016A-Q002",
+      "HIST-TECH01-2009S-Q004"
+    ],
+    "mappingEvidence": [
+      {
+        "questionId": "HIST-TECH01-2008S-Q003",
+        "reason": "Original question and bounded textbook passages independently rechecked for signed-integers; this is preparation, not publication approval.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 42,
+              "printedPage": 37,
+              "textSha256": "718cb51354c6920803d3e804c3aea117901e6e009c8530368dd23982ea2b7927",
+              "checkedExcerpt": "[Range of numerical values that can be represented with n bits (2’s complement)] From −2n−1 through +2n−1−1",
+              "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2016A-Q002",
+        "reason": "Original question and bounded textbook passages independently rechecked for signed-integers; this is preparation, not publication approval.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 42,
+              "printedPage": 37,
+              "textSha256": "718cb51354c6920803d3e804c3aea117901e6e009c8530368dd23982ea2b7927",
+              "checkedExcerpt": "[Range of numerical values that can be represented with n bits (2’s complement)] From −2n−1 through +2n−1−1",
+              "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2009S-Q004",
+        "reason": "Original question and bounded textbook passages independently rechecked for signed-integers; this is preparation, not publication approval.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 40,
+              "printedPage": 35,
+              "textSha256": "cb08d6e0e7d24577cf917f94e10d9aaaed3d6c215936caae1d33b5c8322fdd60",
+              "checkedExcerpt": "Chapter 1 Hardware 35 [Complement] By using a certain number as the reference value, the shortfall is shown with respect to this reference value. In n-adic number, there is a complement of n and a complement of n−1. • Complement of n−1 ... Reference value is the maximum value that has the same number of digits. • Complement of n ... Reference value is the minimum value that has one more additional digit. The complement can be determined by subtracting from the reference value the number for which the complement is to be determined. Example 1: Determine the complement of decimal number (614)10 • 9’s complement • 10’s complement 999 1000 − 614 − 614 385 386 Example 2: Determine the complement of binary number (01101101)2 • 1’s complement • 2’s complement 11111111 100000000 − 01101101 − 01101101 10010010 10010011 Example: Represent (+89)10 and (−89)10 with an 8-bit fixed point number (2’s complement). (89)10 = (1011001)2 → 100000000 − 01011001 10100111 (+89)10: 0 1 0 1 1 0 0 1 (−89)10: 1 0 1 0 0 1 1 1 Generally, 2’s complement notation is often used in fixed point numbers for the following reasons.",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 42,
+              "printedPage": 37,
+              "textSha256": "718cb51354c6920803d3e804c3aea117901e6e009c8530368dd23982ea2b7927",
+              "checkedExcerpt": "[Range of numerical values that can be represented with n bits (2’s complement)] From −2n−1 through +2n−1−1",
+              "role": "secondary"
+            }
+          ]
+        ]
+      }
+    ],
+    "videos": [],
+    "sourceHighlight": {
+      "headingNumber": "2-3-2",
+      "passageId": "fev1-201504-ch1-r1-pdf-039-b008-l01-text-0",
+      "fragmentSha256": "bd433c04e2647ff99c7e41d0d96ca33e7b174ac67210517f31b622b6b19afb0b"
+    }
+  },
+  {
+    "id": "memory-addressing",
+    "title": "Memory addresses and bus lines",
+    "summary": "Relate address selection and data-bus width to the number of addressable locations.",
+    "sectionId": "fe-v1-ch01-s03",
+    "sectionUrl": "/chapters/hardware/cpu-and-main-memory/",
+    "anchor": "concept-memory-addressing",
+    "questionIds": [
+      "HIST-TECH01-2018A-Q012",
+      "HIST-TECH01-2010S-Q016"
+    ],
+    "mappingEvidence": [
+      {
+        "questionId": "HIST-TECH01-2018A-Q012",
+        "reason": "Original question and bounded textbook passages independently rechecked for memory-addressing; this is preparation, not publication approval.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 57,
+              "printedPage": 52,
+              "textSha256": "952276357b5088ea6f791c2a38c8c03e44c8a25094d9a4d9e1c04a2823a319ef",
+              "checkedExcerpt": "[Access operation to main memory] 1) Through address bus, the specified address is handed over to the address selection feature. 2) The address selection feature decodes the specified address by using the address decoder, and selects the recording area to be accessed. (address selection operation) 3) The read/write feature reads and writes data in the selected recording area. When data is read, data that is read from the recording area is passed on to the CPU via data bus. When data is written, data that is transferred from the CPU via data bus is written in the recording area.",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 26,
+              "printedPage": 21,
+              "textSha256": "ec4b3ea5335f0bcd568d6d6d1b14de254afc4f996f2922fbde0e9d5081865c2f",
+              "checkedExcerpt": "There are two types (0, 1) of information that can be represented with 1 bit, and the number of bit combinations is referred to as the information amount. The information amount that can be represented with 2 bits is of 4 types (00, 01, 10, 11), the information amount that can be represented with 3 bits is of 8 types (000, 001, 010, 011, 100, 101, 110, 111), ... and so on. Figure1-5 Number of bits and information amount As shown in Figure 1-5, branches increase with the increase of every one bit used, and the information amount that can be represented keeps on doubling. In other words, the information amount that can be represented with n bits is of 2n types (2n shows the power of 2, and means multiplying 2 by itself n times). Using this concept, a summary of the information amount that can be represented with byte and word (16 bits) is given below. * Information amount of n bits = 2n types • Information amount that can be represented with 1 byte (=8 bits) = 28 types = 256 types (00000000 through 11111111) • Information amount that can be represented with 1 word (=16 bits) = 216 types = 65,536 types (0000000000000000 through 1111111111111111)",
+              "role": "secondary"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2010S-Q016",
+        "reason": "Original question and bounded textbook passages independently rechecked for memory-addressing; this is preparation, not publication approval.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 57,
+              "printedPage": 52,
+              "textSha256": "952276357b5088ea6f791c2a38c8c03e44c8a25094d9a4d9e1c04a2823a319ef",
+              "checkedExcerpt": "[Access operation to main memory] 1) Through address bus, the specified address is handed over to the address selection feature. 2) The address selection feature decodes the specified address by using the address decoder, and selects the recording area to be accessed. (address selection operation) 3) The read/write feature reads and writes data in the selected recording area. When data is read, data that is read from the recording area is passed on to the CPU via data bus. When data is written, data that is transferred from the CPU via data bus is written in the recording area.",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 26,
+              "printedPage": 21,
+              "textSha256": "ec4b3ea5335f0bcd568d6d6d1b14de254afc4f996f2922fbde0e9d5081865c2f",
+              "checkedExcerpt": "There are two types (0, 1) of information that can be represented with 1 bit, and the number of bit combinations is referred to as the information amount. The information amount that can be represented with 2 bits is of 4 types (00, 01, 10, 11), the information amount that can be represented with 3 bits is of 8 types (000, 001, 010, 011, 100, 101, 110, 111), ... and so on. Figure1-5 Number of bits and information amount As shown in Figure 1-5, branches increase with the increase of every one bit used, and the information amount that can be represented keeps on doubling. In other words, the information amount that can be represented with n bits is of 2n types (2n shows the power of 2, and means multiplying 2 by itself n times). Using this concept, a summary of the information amount that can be represented with byte and word (16 bits) is given below. * Information amount of n bits = 2n types • Information amount that can be represented with 1 byte (=8 bits) = 28 types = 256 types (00000000 through 11111111) • Information amount that can be represented with 1 word (=16 bits) = 216 types = 65,536 types (0000000000000000 through 1111111111111111)",
+              "role": "secondary"
+            }
+          ]
+        ]
+      }
+    ],
+    "videos": [],
+    "sourceHighlight": {
+      "headingNumber": "3-2-2",
+      "passageId": "fev1-201504-ch1-r1-pdf-056-b005-l01-text-0",
+      "fragmentSha256": "6f29f659fff73f5eec4d65f71b6c15383866b61ba57dfeb51cf208f9377bb5cf"
+    }
+  },
+  {
+    "id": "data-representation",
+    "title": "Bits and distinct values",
+    "summary": "Count the distinct values represented by a group of binary digits.",
+    "sectionId": "fe-v1-ch01-s02",
+    "sectionUrl": "/chapters/hardware/data-representation/",
+    "anchor": "concept-data-representation",
+    "questionIds": [
+      "HIST-TECH01-2014S-Q004"
+    ],
+    "mappingEvidence": [
+      {
+        "questionId": "HIST-TECH01-2014S-Q004",
+        "reason": "Original question and bounded textbook passages independently rechecked for data-representation; this is preparation, not publication approval.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 26,
+              "printedPage": 21,
+              "textSha256": "ec4b3ea5335f0bcd568d6d6d1b14de254afc4f996f2922fbde0e9d5081865c2f",
+              "checkedExcerpt": "There are two types (0, 1) of information that can be represented with 1 bit, and the number of bit combinations is referred to as the information amount. The information amount that can be represented with 2 bits is of 4 types (00, 01, 10, 11), the information amount that can be represented with 3 bits is of 8 types (000, 001, 010, 011, 100, 101, 110, 111), ... and so on. Figure1-5 Number of bits and information amount As shown in Figure 1-5, branches increase with the increase of every one bit used, and the information amount that can be represented keeps on doubling. In other words, the information amount that can be represented with n bits is of 2n types (2n shows the power of 2, and means multiplying 2 by itself n times). Using this concept, a summary of the information amount that can be represented with byte and word (16 bits) is given below. * Information amount of n bits = 2n types • Information amount that can be represented with 1 byte (=8 bits) = 28 types = 256 types (00000000 through 11111111) • Information amount that can be represented with 1 word (=16 bits) = 216 types = 65,536 types (0000000000000000 through 1111111111111111)",
+              "role": "direct"
+            }
+          ]
+        ]
+      }
+    ],
+    "videos": [],
+    "sourceHighlight": {
+      "headingNumber": "2-1",
+      "passageId": "fev1-201504-ch1-r1-pdf-026-b002-l03-text-0",
+      "fragmentSha256": "6ca8da16c0d7dfaf5a3c11ca567e7b8c68a7e171392b265b420d53f719260c6b"
+    }
   }
 ]

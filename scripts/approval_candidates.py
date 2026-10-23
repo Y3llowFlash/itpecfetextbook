@@ -411,6 +411,11 @@ def validate_batch02_approvals(manifest,records,reviews,manifest_sha):
 
 
 def check_batch02(publisher=False):
+    # A later explicit owner authorization permits only the frozen approval
+    # transition. Keep the original read-only preparation gate unchanged.
+    if publisher and (h.ROOT/'.local/releases/historical-40/state.json').exists():
+        import release_40
+        return release_40.publisher_check()
     root=batch02_folder();context,records,reviews,frozen=batch02_inputs(publisher);manifest=h.read_json(root/'manifest.json')
     concepts=batch02_concepts(context);highlight_report=validate_batch02_highlights(concepts)
     entries=batch02_entries(context,records,reviews,concepts,highlight_report)
