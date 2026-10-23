@@ -11,11 +11,12 @@ import { presentSourceHTML } from '../src/lib/reader-presentation';
 import { validateHistoricalRelease } from './historical-release-integrity';
 import historicalRelease from '../docs/development/evidence/historical-release-36.json';
 import expansion from '../docs/development/evidence/historical-release-40.json';
+import third from '../docs/development/evidence/historical-release-3.json';
 
 const root = path.resolve('.');
 const questions = await publishedQuestions();
 const raw = JSON.parse(await readFile(path.join(root, 'public/data/questions.json'), 'utf8'));
-validateHistoricalRelease(raw, [...explanationMap.values()], concepts, historicalRelease, expansion);
+validateHistoricalRelease(raw, [...explanationMap.values()], concepts, historicalRelease, expansion, third);
 if (questions.length !== raw.length || new Set(questions.map((q) => q.id)).size !== questions.length) throw new Error('All published records must be unique and explicitly is_published === true');
 const manifest = JSON.parse(await readFile(path.join(root, 'public/data/import-manifest.json'), 'utf8'));
 if (manifest.policy !== 'is_published === true' || manifest.total !== questions.length || manifest.datasetHash !== digest(JSON.stringify(questions))) throw new Error('Import manifest does not match the published snapshot');

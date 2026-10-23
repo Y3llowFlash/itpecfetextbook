@@ -6,7 +6,7 @@ import { safeYoutubeId } from '../src/components/VideoRecommendation';
 describe('published pilot catalog', () => {
   it('resolves exactly the reviewed real question IDs and never includes unpublished duplicates', async () => {
     const questions = await publishedQuestions();
-    expect(questions).toHaveLength(496);
+    expect(questions).toHaveLength(536);
     const real = questionsForConcept(concepts[0], questions);
     expect(real.map((q) => q.id)).toEqual(['2024A-A-Q009', '2025S-A-Q010', '2026S-A-Q010','HIST-TECH01-2009A-Q028','HIST-TECH01-2015A-Q011','HIST-TECH01-2019A-Q013','HIST-TECH01-2019S-Q011']);
     expect(questionsForConcept(concepts[0], [...questions, real[0]])).toHaveLength(7);

@@ -6,6 +6,8 @@ from pathlib import Path
 from test_hardware_batch02 import fixture
 import hardware_batch03 as b
 import hardware_batch02 as core
+import release_3 as release
+from contextlib import nullcontext
 
 
 def batch_fixture():
@@ -80,22 +82,23 @@ class Batch03Tests(unittest.TestCase):
 
     @unittest.skipUnless((b.WORK/'decisions.json').exists(),'private source fixtures intentionally absent in fresh clones')
     def test_actual_source_reviewed_selection_preservation_and_preview_equality(self):
-        manifest=b.check();ledger,records,before,current,expected,published=b.load_context()
-        self.assertEqual({e['pdfPage'] for e in ledger['entries']},b.PAGES)
-        self.assertEqual(len(manifest['questionIds']),40);self.assertEqual(len(published),496)
-        self.assertTrue(all(current[e['id']]['approval']['status']=='unapproved' for e in ledger['entries']))
-        bank,answers,concepts,links=b.payload(ledger,records,current,published)
-        self.assertEqual(len(bank),139);self.assertEqual(len(links),40)
-        live={e['questionId']:e for e in b.h.read_json(b.h.ROOT/'src/content/explanations.json')}
-        for e in answers:
-            if e['questionId'] in live:self.assertEqual(e,live[e['questionId']])
-        page={e['pdfPage']:e['extraction'] for e in ledger['entries']}
-        self.assertEqual(page[299]['optionText'],dict(zip('abcd',['1/4','1/2','2','4'])))
-        self.assertIn('2⁻¹⁶',page[157]['optionText']['a']);self.assertEqual(page[317]['optionText']['d'],'2²⁴ × 16')
-        self.assertIn('cash memory',page[75]['optionText']['b'])
-        for n in [9,108,155,157]:self.assertNotRegex(page[n]['imageDescription'],r'checked|must not|correct answer|A=XOR')
-        for r in records:
-            for key in ['verification','explanation','approval','metadata','ownerAdjudication']:self.assertEqual(before[r['id']].get(key),current[r['id']].get(key))
+        with release.preparation_fixture() if (release.FOLDER/'state.json').exists() else nullcontext():
+            manifest=b.check();ledger,records,before,current,expected,published=b.load_context()
+            self.assertEqual({e['pdfPage'] for e in ledger['entries']},b.PAGES)
+            self.assertEqual(len(manifest['questionIds']),40);self.assertEqual(len(published),496)
+            self.assertTrue(all(current[e['id']]['approval']['status']=='unapproved' for e in ledger['entries']))
+            bank,answers,concepts,links=b.payload(ledger,records,current,published)
+            self.assertEqual(len(bank),139);self.assertEqual(len(links),40)
+            live={e['questionId']:e for e in b.h.read_json(b.h.ROOT/'src/content/explanations.json')}
+            for e in answers:
+                if e['questionId'] in live:self.assertEqual(e,live[e['questionId']])
+            page={e['pdfPage']:e['extraction'] for e in ledger['entries']}
+            self.assertEqual(page[299]['optionText'],dict(zip('abcd',['1/4','1/2','2','4'])))
+            self.assertIn('2⁻¹⁶',page[157]['optionText']['a']);self.assertEqual(page[317]['optionText']['d'],'2²⁴ × 16')
+            self.assertIn('cash memory',page[75]['optionText']['b'])
+            for n in [9,108,155,157]:self.assertNotRegex(page[n]['imageDescription'],r'checked|must not|correct answer|A=XOR')
+            for r in records:
+                for key in ['verification','explanation','approval','metadata','ownerAdjudication']:self.assertEqual(before[r['id']].get(key),current[r['id']].get(key))
 
 
 if __name__=='__main__':unittest.main()

@@ -8,6 +8,10 @@ import unittest
 from unittest.mock import patch
 from test_approval_candidates_batch02 import package_fixture
 import approval_candidates as c
+import release_3 as release
+
+def released():return (release.FOLDER/'state.json').exists()
+def inputs():return release.archived_inputs() if released() else c.batch03_inputs()
 
 
 def fixture(source_status='source-rechecked',highlight_status='source-validated-pending-owner-editorial-approval'):
@@ -83,9 +87,9 @@ class FinalBatch03Tests(unittest.TestCase):
 
     @unittest.skipUnless((c.batch03_folder()/'manifest.json').exists(),'private final package intentionally absent from Git')
     def test_actual_40_28_14_package_equality_preservation_and_source_bindings(self):
-        m=c.check_batch03();self.assertEqual(len(m['candidates']),40);self.assertEqual(len(m['conceptDefinitions']),28);self.assertEqual(len(m['highlightIntegration']),14)
+        m=release.validate_package() if released() else c.check_batch03();self.assertEqual(len(m['candidates']),40);self.assertEqual(len(m['conceptDefinitions']),28);self.assertEqual(len(m['highlightIntegration']),14)
         self.assertTrue(all(e['technicalEligibility'] for e in m['candidates']));self.assertTrue(all(e['review']['approval']['status']=='unapproved' for e in m['candidates']))
-        context,records,reviews,frozen=c.batch03_inputs();self.assertEqual(reviews,frozen);self.assertEqual(len(context['releasedQuestionIds']),76)
+        context,records,reviews,frozen=inputs();self.assertEqual(reviews,frozen);self.assertEqual(len(context['releasedQuestionIds']),76)
         self.assertEqual(m['sourceSha256'],c.h.digest(c.h.SOURCE.read_bytes()));self.assertEqual(m['textbookSha256'],c.h.digest(c.qa.TEXTBOOK.read_bytes()))
         self.assertEqual(sum(c.h.valid_approval(r,reviews[r['id']]) for r in records),76)
         for r in m['highlightIntegration']:self.assertFalse(r['ownerEditorialApprovalGranted']);self.assertEqual(r['editorialReview']['status'],'source-rechecked')
@@ -94,7 +98,7 @@ class FinalBatch03Tests(unittest.TestCase):
 
     @unittest.skipUnless((c.batch03_folder()/'manifest.json').exists(),'private final package intentionally absent from Git')
     def test_actual_review_missing_stale_or_unvalidated_rejected(self):
-        context,records,reviews,_=c.batch03_inputs();concepts=c.batch03_concepts(context);links=c.batch03_associations(context,records,reviews,concepts)
+        context,records,reviews,_=inputs();concepts=release.context()[1]['conceptDefinitions'] if released() else c.batch03_concepts(context);links=c.batch03_associations(context,records,reviews,concepts)
         original_read=c.h.read_json;ledger=original_read(c.batch03_folder()/'source-review.json')
         structural=[{k:r[k] for k in ['conceptId','status']} for r in original_read(c.batch03_folder()/'manifest.json')['highlightIntegration']]
         changes=[None,dict(ledger,ownerApprovalGranted=True)]
@@ -112,13 +116,18 @@ class FinalBatch03Tests(unittest.TestCase):
     def test_actual_repreparation_is_byte_idempotent_and_does_not_touch_reviews(self):
         root=c.batch03_folder();files=['manifest.json','index.html','completion-report.md','highlight-integration-report.json','equality-report.json','owner-review-checklist.json']
         before={f:(root/f).read_bytes() for f in files};native=c.qa.snapshot_hashes(c.h.WORK)
-        with contextlib.redirect_stdout(io.StringIO()):c.prepare_batch03()
+        if released():
+            # Repreparation must refuse to rebind an owner-authorized snapshot.
+            self.assertRaises(ValueError,c.prepare_batch03)
+            release.validate_package();release.validate_package()
+        else:
+            with contextlib.redirect_stdout(io.StringIO()):c.prepare_batch03()
         self.assertEqual(before,{f:(root/f).read_bytes() for f in files});self.assertEqual(native,c.qa.snapshot_hashes(c.h.WORK))
 
     def test_batch3_without_dry_run_is_rejected_before_publication(self):
         root=c.h.ROOT;before=(root/'public/data/questions.json').read_bytes()
         result=subprocess.run(['node','node_modules/tsx/dist/cli.mjs','scripts/publish-historical-questions.ts','--batch','3'],cwd=root,capture_output=True,text=True)
-        self.assertNotEqual(result.returncode,0);self.assertIn('Batch 3 is preparation only',result.stderr);self.assertEqual(before,(root/'public/data/questions.json').read_bytes())
+        self.assertNotEqual(result.returncode,0);self.assertIn('publication-gate',result.stderr);self.assertEqual(before,(root/'public/data/questions.json').read_bytes())
 
 
 if __name__=='__main__':unittest.main()

@@ -2212,5 +2212,860 @@
     "reviewedAgainst": [
       "{\"kind\":\"calculation\",\"result\":-28,\"derivation\":[\"C1E00000 has sign=1, exponent=131 and fraction=0.75.\",\"Using the supplied formula: -1×2^(131-127)×1.75 = -28.\"]}"
     ]
+  },
+  {
+    "questionId": "HIST-TECH01-2021S-Q021",
+    "revision": "f29710949437",
+    "answer": "a",
+    "summary": "The sum output is the low bit of x+y, so it is x XOR y; the carry is x AND y.",
+    "steps": [
+      "The sum output is the low bit of x+y, so it is x XOR y; the carry is x AND y.",
+      "The diagram sends A to sum z and B to carry c. Therefore A=XOR and B=AND, option A."
+    ],
+    "takeaway": "The diagram sends A to sum z and B to carry c. Therefore A=XOR and B=AND, option A.",
+    "optionText": {
+      "a": "A: Exclusive logical sum (XOR); B: Logical product (AND)",
+      "b": "A: Logical product (AND); B: Logical sum (OR)",
+      "c": "A: Negative logical product (NAND); B: Negative logical sum (NOR)",
+      "d": "A: Negative logical sum (NOR); B: Exclusive logical sum (XOR)"
+    },
+    "imageDescription": "Q21. The half adder in the diagram below adds two (2) single-digit binary numbers, x and y, and produces z (the first digit of the sum) and c (the carry bit) as outputs. Which of the following is the appropriate combination of gate devices A and B? In the diagram, inputs x and y each branch to both unlabeled gate boxes. A feeds output z (the first digit of the sum); B feeds output c (carry). Crossing wires without junction dots are not connections. The answer table columns are A, then B.",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":72,\"printedPage\":67,\"heading\":\"3-4-2 Arithmetic Operation Circuit\",\"textSha256\":\"3014194254dd63e5fd16b50b29c6a4c896990b9f8c36beecdc7e121c554188d0\",\"checkedExcerpt\":\"rcuit diagram with the configuration below is derived. This circuit is called a half adder. Figure 1-32 Circuit diagram of half adder Adder circuit of a computer is configured with this half adder as the basis. However, in half adder, carry from low order is not taken into account. Therefore, arithmetic operation of numerical values represented with multiple bits cannot be performed. Because of that, another adder circuit of 3 bits including carry from low order becomes necessary. The table below summarizes the results of arithmetic operation of 3-bit addition considering carry (c0) from low order.\"}",
+      "{\"kind\":\"computed-truth-table\",\"variables\":[\"x\",\"y\"],\"rows\":[[0,0,0,0],[0,1,1,1],[1,0,1,1],[1,1,0,0]]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2020A-Q004",
+    "revision": "c048497ada54",
+    "answer": "b",
+    "summary": "7F hexadecimal is 01111111 binary.",
+    "steps": [
+      "7F hexadecimal is 01111111 binary.",
+      "AND clears bit 7 while every lower bit is ANDed with 1 and retained."
+    ],
+    "takeaway": "AND clears bit 7 while every lower bit is ANDed with 1 and retained.",
+    "optionText": {
+      "a": "Perform a bitwise AND operation with 0F in hexadecimal",
+      "b": "Perform a bitwise AND operation with 7F in hexadecimal",
+      "c": "Perform a bitwise OR operation with 0F in hexadecimal",
+      "d": "Perform a bitwise XOR (exclusive OR) operation with FF in hexadecimal"
+    },
+    "imageDescription": "Q4. For an 8-bit code with the most significant bit as its parity bit, which of the following is used to obtain the lower seven (7) bits other than parity?",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":\"01111111\",\"derivation\":[\"7F hexadecimal is 01111111 binary.\",\"AND clears bit 7 while every lower bit is ANDed with 1 and retained.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2017A-Q010",
+    "revision": "596b8bc9fa97",
+    "answer": "a",
+    "summary": "If the address field is used unchanged as the effective address, the mode is absolute/direct addressing.",
+    "steps": [
+      "If the address field is used unchanged as the effective address, the mode is absolute/direct addressing.",
+      "If a register value modifies that field, the indexed form adds the index register to obtain the effective address. Match whether the question describes modification or direct use."
+    ],
+    "takeaway": "Direct uses the field itself; indexed modifies it using a register.",
+    "optionText": {
+      "a": "Absolute addressing",
+      "b": "Base plus index addressing",
+      "c": "Indexed addressing",
+      "d": "PC relative addressing"
+    },
+    "imageDescription": "Q10. To determine an effective address from the value recorded in the address part of instruction, various addressing modes are used. Which of the following modes uses the value of the address part as an effective address?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":57,\"pdfPage\":62,\"lineIds\":[\"pdf-062-b006-l09\",\"pdf-062-b006-l10\",\"pdf-062-b006-l11\",\"pdf-062-b007-l00\",\"pdf-062-b007-l01\",\"pdf-062-b007-l02\",\"pdf-062-b007-l03\",\"pdf-062-b007-l04\",\"pdf-062-b007-l05\"],\"textSha256\":\"bb13d5c1e37f8dd3e54c8146965e8482e9a1f17af151f051a1a185d88edbdbdf\",\"checkedText\":\" \\n1) Absolute addressing \\nIn this method, the value of the address part is used as the effective address as it is. \\n \\n \\n2) Index addressing \\nIn this method, the effective address is determined by adding the value of the index \\nregister to the value of the address part.  A general register is also used as the index \\nregister, and it is necessary to specify which general register to use in such cases. \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2017A-Q012",
+    "revision": "b870d4e79a9f",
+    "answer": "b",
+    "summary": "Applications request I/O through software that understands the specific peripheral hardware.",
+    "steps": [
+      "Applications request I/O through software that understands the specific peripheral hardware.",
+      "A device driver translates these requests into device control operations. Scheduling, command interpretation, application installation and window management are other software roles."
+    ],
+    "takeaway": "A device driver controls a particular peripheral device.",
+    "optionText": {
+      "a": "It decides the next task to be executed from tasks queued up for execution.",
+      "b": "It directly controls the hardware according to requests from an application program.",
+      "c": "It interprets the command strings that are entered by the user, and starts the applicable program.",
+      "d": "It manages the display status on the screen in multiple windows."
+    },
+    "imageDescription": "Q12. Which of the following is an appropriate role of a device driver?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":110,\"pdfPage\":116,\"lineIds\":[\"pdf-116-b012-l02\",\"pdf-116-b012-l03\"],\"textSha256\":\"6b4091f5b1ef5a045ef8ac0432d3375a37f29a2e0339735d946536d9a34565ff\",\"checkedText\":\" \\nDevice driver is software that controls peripheral devices. Device driver is specific software \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2017S-Q011",
+    "revision": "9edb161ca359",
+    "answer": "a",
+    "summary": "Count the independent instruction streams and data streams in the wording.",
+    "steps": [
+      "Count the independent instruction streams and data streams in the wording.",
+      "MIMD means multiple instruction and multiple data streams. SIMD means a single instruction stream acting on multiple data items; MISD and SISD have different stream counts."
+    ],
+    "takeaway": "Expand each letter of the architecture abbreviation.",
+    "optionText": {
+      "a": "MIMD",
+      "b": "MISD",
+      "c": "SIMD",
+      "d": "SISD"
+    },
+    "imageDescription": "Q11. Which of the following is the computer architecture where processors execute multiple instruction streams on multiple data streams in parallel?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":77,\"pdfPage\":82,\"lineIds\":[\"pdf-082-b003-l02\",\"pdf-082-b003-l03\",\"pdf-082-b003-l04\",\"pdf-082-b003-l05\",\"pdf-082-b003-l06\",\"pdf-082-b003-l07\",\"pdf-082-b003-l10\",\"pdf-082-b003-l11\",\"pdf-082-b003-l12\",\"pdf-082-b003-l13\",\"pdf-082-b003-l14\",\"pdf-082-b004-l00\"],\"textSha256\":\"bb274334fc1ead6cbd7cf944b62423327308863aad0189cf3173f4432988736f\",\"checkedText\":\"do not have parallelized processors correspond to this architecture. \\n• SIMD (Single Instruction stream Multiple Data stream) \\nThis computer processes multiple units of data with one instruction. Vector \\ncomputers equipped with a vector processor (array processor) that simultaneously \\ncomputes multiple data in array with one instruction correspond to this architecture. \\n• MISD (Multiple Instruction stream Single Data stream) \\ncontrol, strictly speaking, they are different). \\n• MIMD (Multiple Instruction stream Multiple Data stream) \\nThis computer processes multiple units of data with multiple instructions. \\nMultiprocessors where multiple processors are multiplexed correspond to this \\narchitecture. \\n \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2016A-Q010",
+    "revision": "4c942a55d2a0",
+    "answer": "b",
+    "summary": "Division by zero is caused by executing an invalid arithmetic operation in the running program.",
+    "steps": [
+      "Division by zero is caused by executing an invalid arithmetic operation in the running program.",
+      "It is therefore an internal program exception. Power failures, I/O completion and hardware parity failures are external causes in the textbook classification."
+    ],
+    "takeaway": "A divide-by-zero exception is an internal interrupt.",
+    "optionText": {
+      "a": "An interrupt because of the occurrence of a memory parity error",
+      "b": "An interrupt because of the operation of division by zero (0)",
+      "c": "An interrupt caused by a power failure, such as an instantaneous failure of the commercial power supply",
+      "d": "An interrupt caused by the completion of I/O"
+    },
+    "imageDescription": "Q10. Which of the following is classified as an internal interrupt?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":60,\"pdfPage\":65,\"lineIds\":[\"pdf-065-b007-l00\",\"pdf-065-b007-l01\",\"pdf-065-b007-l02\",\"pdf-065-b008-l00\",\"pdf-065-b008-l01\",\"pdf-065-b009-l00\"],\"textSha256\":\"6855047c640c38965678af49c7813d62748636a3d501c22cb8b0c71303fe7bba\",\"checkedText\":\" \\n2) Internal interrupt: This is an interrupt that occurs because of the process being executed. \\nThis is also referred to as a trap. \\n• SVC (SuperVisor Call) interrupt \\nThis is an interrupt that occurs when supervisor (program that offers basic \\nfunctions) is requested to invoke a process, such as when input/output instruction \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2016A-Q023",
+    "revision": "99871a600310",
+    "answer": "b",
+    "summary": "A mechanical switch contact can bounce several times after it is pressed.",
+    "steps": [
+      "A mechanical switch contact can bounce several times after it is pressed.",
+      "These extra ON/OFF transitions within milliseconds are chattering. Waiting until the contact stabilizes is a debounce measure."
+    ],
+    "takeaway": "One physical press can produce several electrical transitions.",
+    "optionText": {
+      "a": "Buffering",
+      "b": "Chattering",
+      "c": "Sampling",
+      "d": "Sharing"
+    },
+    "imageDescription": "Q23. Which of the following is the name of a phenomenon where multiple ON/OFF signals are generated within a few milliseconds after a push-button switch with a mechanical contact is pressed once?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":104,\"pdfPage\":110,\"lineIds\":[\"pdf-110-b001-l00\",\"pdf-110-b002-l00\",\"pdf-110-b002-l01\",\"pdf-110-b002-l02\",\"pdf-110-b002-l03\",\"pdf-110-b002-l04\",\"pdf-110-b003-l00\"],\"textSha256\":\"565c4d15a52a74c00c74e9d6b1e74ec46176e6503dc7305ad19c7f4eb0211581\",\"checkedText\":\"104 \\n• Chattering \\nChattering is a phenomenon where in response to pressing the push button switch of a \\nmechanical contact once, a series of “on” and “off” signals is generated during a few \\nmilliseconds of pressing the switch. As a measure for preventing false operation, there \\nis a method of waiting for the “on” and “off” signals to become stable.  \\n \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2015A-Q012",
+    "revision": "52cf6d4c50b5",
+    "answer": "a",
+    "summary": "The DMA controller transfers data between an I/O device and main memory without the CPU moving each data unit.",
+    "steps": [
+      "The DMA controller transfers data between an I/O device and main memory without the CPU moving each data unit.",
+      "The CPU can perform other work while the controller handles the transfer. It is not a cache-transfer mechanism and does not route every byte through the CPU."
+    ],
+    "takeaway": "DMA moves I/O data without CPU intervention for every byte.",
+    "optionText": {
+      "a": "DMA controller enables data transfer directly between input/output devices and the memory while the CPU can perform some other operations.",
+      "b": "DMA controller enables data transfer directly between the cash memory and the main memory while the processor is at the waiting state.",
+      "c": "DMA controller enables input/output devices to read from and write to the main memory through CPU and system bus.",
+      "d": "DMA controller enables the CPU to access the main memory directly while input/output devices communicate among themselves at the same time."
+    },
+    "imageDescription": "Q12. Which of the following statement is true for DMA Controller?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":104,\"pdfPage\":110,\"lineIds\":[\"pdf-110-b006-l05\",\"pdf-110-b006-l06\",\"pdf-110-b006-l07\",\"pdf-110-b006-l08\",\"pdf-110-b006-l09\",\"pdf-110-b006-l10\",\"pdf-110-b006-l11\",\"pdf-110-b006-l12\",\"pdf-110-b006-l13\",\"pdf-110-b006-l14\"],\"textSha256\":\"74c91ca2e5e70b0c46b34342595c23f0feec4e3ca80ad2979217b70387becf8f\",\"checkedText\":\" \\n(2) DMA (Direct Memory Access) method \\n \\nIn the DMA method (Direct Memory Access method), data is directly exchanged between \\nthe input/output units and the main memory unit without going through the CPU, because \\ninput/output control is performed by a special device called a DMAC (DMA Controller). \\nWhen a DMA request (input/output request) is given to DMAC by the CPU, DMAC \\nindependently controls input/output, and in the meantime the CPU can execute another \\nprocess, which improves its efficiency of utilization. It is widely used, mainly as the \\ninput/output control of PCs. \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2015S-Q014",
+    "revision": "1daaba0493a8",
+    "answer": "a",
+    "summary": "A capacitive panel senses the electrical charge change caused by touching its surface.",
+    "steps": [
+      "A capacitive panel senses the electrical charge change caused by touching its surface.",
+      "Resistance-film, infrared shielding and switch-matrix sensing describe other panel technologies."
+    ],
+    "takeaway": "Capacitive touch sensing detects a surface-charge change.",
+    "optionText": {
+      "a": "An electric field is formed on the surface, and the touched position is detected on the basis of the change in the surface electric charge.",
+      "b": "Electrode switches are aligned in a matrix shape, and the touched position is detected by the electronically conducted electrode.",
+      "c": "The touched position is detected on the basis of the change in the reflection of the infrared ray that is blocked by touching the panel.",
+      "d": "Voltage is applied to an electrically resistant film, and the touched position is detected on the basis of the change in resistance."
+    },
+    "imageDescription": "Q14. Which of the following is an appropriate explanation of a capacitive touch panel?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":96,\"pdfPage\":102,\"lineIds\":[\"pdf-102-b003-l02\",\"pdf-102-b003-l03\",\"pdf-102-b003-l04\",\"pdf-102-b003-l05\",\"pdf-102-b003-l06\",\"pdf-102-b003-l07\"],\"textSha256\":\"2591936efd948a8e31f39966616ecbfc53a84e93445af833cd2fec4da6f264c0\",\"checkedText\":\"infrared ray beam is shielded. \\n• Capacitance method \\nIt detects the position from the changes in electrical charge on the surface which is \\ncaused by the static electricity in the portion that is touched. \\n• Analog resistive film method (Resistive film method) \\nIt detects the position from the changes in the resistance values of the resistive film in \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2014A-Q009",
+    "revision": "0853b338f0e6",
+    "answer": "c",
+    "summary": "Hardware dynamically selects independent instructions and dispatches them to several arithmetic units.",
+    "steps": [
+      "Hardware dynamically selects independent instructions and dispatches them to several arithmetic units.",
+      "This is superscalar execution. Ordinary pipelining overlaps stages; super-pipelining deepens those stages; VLIW assigns parallel operations statically during compilation."
+    ],
+    "takeaway": "Dynamic instruction dispatch to several execution units is superscalar.",
+    "optionText": {
+      "a": "Pipeline",
+      "b": "Super-pipeline",
+      "c": "Superscalar",
+      "d": "VLIW"
+    },
+    "imageDescription": "Q9. Which of the following is a computer architecture that enables the processor to execute instructions in parallel by using hardware to dynamically allocate the arithmetic units that execute multiple instructions at the same time?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":76,\"pdfPage\":81,\"lineIds\":[\"pdf-081-b004-l02\",\"pdf-081-b004-l03\",\"pdf-081-b004-l04\",\"pdf-081-b004-l05\",\"pdf-081-b004-l06\",\"pdf-081-b004-l07\",\"pdf-081-b004-l08\",\"pdf-081-b004-l09\"],\"textSha256\":\"f46e7d958ccd61891601ddb8edb8148e375598df54624804bb41894f0cb77929\",\"checkedText\":\" \\n(3) Superscalar/VLIW (Very Long Instruction Word) \\n \\nSuperscalar and VLIW aim to enhance performance of the processor by simultaneously \\nexecuting multiple instructions. \\nAt the stage of executing a program, superscalar extracts multiple instructions that can be \\nexecuted simultaneously, and executes them in parallel while the arithmetic unit to be used is \\ndynamically decided. Therefore, the sequence of instructions written in a program may differ \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2014A-Q012",
+    "revision": "0992ecab6343",
+    "answer": "c",
+    "summary": "Within the historical question and textbook context, Bluetooth is short-range radio communication for voice and data, not infrared line-of-sight signaling.",
+    "steps": [
+      "Within the historical question and textbook context, Bluetooth is short-range radio communication for voice and data, not infrared line-of-sight signaling.",
+      "The book lists approximate class ranges of 100 m,10 m,1 m. C fits this context. Do not turn that historical class table into a universal maximum for all Bluetooth versions or environments."
+    ],
+    "takeaway": "The book lists approximate class ranges of 100 m,10 m,1 m. C fits this context. Do not turn that historical class table into a universal maximum for all Bluetooth versions or environments.",
+    "optionText": {
+      "a": "A maximum of 127 devices can be connected to a single host.",
+      "b": "The communication ports must be positioned in a straight line facing each other.",
+      "c": "The short range (up to about 100 m) of wireless voice/data communication is defined.",
+      "d": "The standard allows communication to be performed at a distance of 1,000 m or more."
+    },
+    "imageDescription": "Q12. Which of the following is an appropriate characteristic of Bluetooth?",
+    "reviewedAgainst": [
+      "{\"kind\":\"original-question\",\"sourceSha256\":\"5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1\",\"pdfPage\":84,\"imageSha256\":[\"fc014285a5c9c135b99724c76b0f5e0cf1fd1b6c1922c847e9d987d14f1ccad8\"],\"manualVisualReview\":\"Original source render independently inspected in Batch 2, 2026-10-22\"}",
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":115,\"printedPage\":109,\"heading\":\"5-5-2 Types of Input/Output Interface / Bluetooth\",\"textSha256\":\"1cc8eacb1edb05aa6151d68b77c3e8a74cd4839752f313c408b0d1fbed1d126c\",\"checkedExcerpt\":\"erminals, and for data exchange between personal digital assistants and notebook PCs. (9) Bluetooth Bluetooth is a wireless technology standard that connects devices such as cell phones and PCs, and is an interface for exchanging data and voice by using the frequency band of 2.4GHz (2.402 to 2.480 GHz), which can be used all over the world. Unlike infrared rays, communication is possible even if there is a block or an obstacle between devices. Therefore, it allows the transfer of data between devices that are separated with low partitions.\"}",
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":116,\"printedPage\":110,\"heading\":\"5-5-2 Bluetooth standards / communication distance\",\"textSha256\":\"48e2aa7df9a30eece779c5bc1dfe1486df4f3a6feea5cf8d2d46c25a36a19d4b\",\"checkedExcerpt\":\" approximate values of communication distance of each class. Class Communication distance Class 1 About 100m Class 2 About 10m Class 3 About 1m (10) HDMI (High-Definition Multimedia Interface) HDMI is a standard of communication interface that transmits voice and video as digital signals. It was jointly created by Hitachi Ltd., Panasonic Corporation, Phillips, Thomson Multimedia, Sony Corporation, and Toshiba Corporation, with Silicon Image of the United States taking the lead. With a single cable where voice, video, and control signals are integrated, wiring of AV devices can be simplified to just one wire. While it was mainly developed as an input/output interface for home appliances and AV devices, at present it is widely used in PCs as well. The base of HDMI is the serial int\"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2014S-Q014",
+    "revision": "e4155156a4c1",
+    "answer": "d",
+    "summary": "Split main memory into banks that can operate independently.",
+    "steps": [
+      "Split main memory into banks that can operate independently.",
+      "Overlapping accesses to these banks improves access throughput. This is distinct from a cache buffer, DMA I/O transfers or widening a data bus."
+    ],
+    "takeaway": "Interleaving overlaps accesses to independent memory banks.",
+    "optionText": {
+      "a": "Cache memory is divided into two segments: one for instructions and the other for data, in order to remove factors which disturb pipeline processing.",
+      "b": "Data is written to both cache memory and main memory at the same time in order to accelerate access from the CPU to main memory.",
+      "c": "High-speed and low-capacity memory is allocated in order to remove a bottleneck caused by the gap in access speed between the CPU and main memory.",
+      "d": "Main memory is divided into multiple banks, and each bank is concurrently accessed in order to accelerate access from the CPU to main memory."
+    },
+    "imageDescription": "Q14. Which of the following is an appropriate explanation of memory interleaving?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":73,\"pdfPage\":78,\"lineIds\":[\"pdf-078-b004-l01\",\"pdf-078-b004-l02\",\"pdf-078-b004-l03\",\"pdf-078-b004-l04\",\"pdf-078-b004-l05\",\"pdf-078-b004-l06\",\"pdf-078-b005-l00\",\"pdf-078-b006-l00\",\"pdf-078-b006-l01\",\"pdf-078-b006-l02\",\"pdf-078-b006-l03\",\"pdf-078-b006-l04\",\"pdf-078-b006-l05\",\"pdf-078-b007-l00\"],\"textSha256\":\"f2b7d353b6d2e323e1df9aac63967bda1783eb0d4fdec81635c15c3010ce8996\",\"checkedText\":\" \\n(2) Memory interleave \\n \\nMemory interleave is a method where main memory is divided into several sections (bank) \\nthat are simultaneously and independently accessed in order to improve the average access \\ntime of main memory. \\n \\nFigure 1-38  Memory interleave method \\n \\nMemory interleave is a method of reading the data in advance, and it is useful for the \\nprocessing of data that is located in the contiguous area of main memory. However, data may \\nnot be referenced in the sequence of storage area at all times, and the average access time may \\nnot be always proportionate to the number of banks (even if there are 4 banks, the average \\n \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2014S-Q016",
+    "revision": "4589cb19aad4",
+    "answer": "b",
+    "summary": "A portable camera or music player needs rewritable storage that survives power removal.",
+    "steps": [
+      "A portable camera or music player needs rewritable storage that survives power removal.",
+      "Flash meets both requirements. DRAM and SRAM lose contents without power, while mask ROM cannot be rewritten by the device."
+    ],
+    "takeaway": "Use nonvolatile rewritable flash for portable storage.",
+    "optionText": {
+      "a": "DRAM",
+      "b": "Flash memory",
+      "c": "Mask ROM",
+      "d": "SRAM"
+    },
+    "imageDescription": "Q16. Which of the following is widely used as storage media for image data in digital cameras or for music data in portable music players?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":89,\"pdfPage\":95,\"lineIds\":[\"pdf-095-b003-l01\",\"pdf-095-b003-l02\",\"pdf-095-b003-l03\",\"pdf-095-b003-l04\",\"pdf-095-b003-l05\",\"pdf-095-b003-l06\",\"pdf-095-b003-l07\",\"pdf-095-b003-l08\",\"pdf-095-b003-l09\",\"pdf-095-b003-l10\",\"pdf-095-b003-l11\",\"pdf-095-b003-l12\",\"pdf-095-b003-l13\",\"pdf-095-b003-l33\",\"pdf-095-b003-l34\",\"pdf-095-b003-l35\",\"pdf-095-b003-l36\"],\"textSha256\":\"d42e92686e67f88858071ee9808956636508d536d7c5eb8b385ef65b50bdd1f9\",\"checkedText\":\"Semiconductor memory (IC memory) is a storage device that uses IC such as RAM, ROM, \\nand flash memory. In addition to being used as storage devices that constitute main memory \\nand registers, it is also used as the recording medium of auxiliary storage devices. \\n \\n(1) SSD (Solid State Drive) \\n \\nSSD (Solid State Drive) is a flash memory-based auxiliary storage device that is expected to \\nreplace the HDD (Hard Disk Drive). In SSD, information is electrically read and written using \\nflash memory. Therefore, unlike a hard disk drive, it does not require any drives (e.g., disk, \\naccess arm). For that reason, it has shorter access time because of no physical location seeking \\nor rotational latency. Moreover, it has faster direct access (random access) that reads and \\nwrites data irrespective of the recording sequence of data. Additionally, it can be compact and \\nlightweight, consumes less power, and is also resilient to vibrations or impact. However, there \\nUSB memory is an auxiliary storage device that can easily be connected to and removed \\nfrom the computer by equipping flash memory with a USB connector. On the other hand, SD \\ncard (SD memory card) is an auxiliary storage medium where flash memory is put on a chip, \\nand it is used by insertion into the SD slot of computers or other devices such as digital \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2013S-Q027",
+    "revision": "56ec81e3a8b7",
+    "answer": "c",
+    "summary": "The full adder receives x=1,y=0,z=1, totaling 2 decimal (binary 10).",
+    "steps": [
+      "The full adder receives x=1,y=0,z=1, totaling 2 decimal (binary 10).",
+      "Its high output carry is 1 and low output sum is 0. The source table orders columns carry then sum, making C the correct pair."
+    ],
+    "takeaway": "Its high output carry is 1 and low output sum is 0. The source table orders columns carry then sum, making C the correct pair.",
+    "optionText": {
+      "a": "c: 0; s: 0",
+      "b": "c: 0; s: 1",
+      "c": "c: 1; s: 0",
+      "d": "c: 1; s: 1"
+    },
+    "imageDescription": "Q27. The figure below shows a logic circuit representing a full adder. When 1, 0, and 1 are entered into x, y, and z respectively, which of the following is the appropriate combination of the output values of c (carry) and s (sum)? The full-adder block has three inputs on the left, x, y and z, and two outputs on the right, c (carry) above s (sum). The answer table columns are c, then s.",
+    "reviewedAgainst": [
+      "{\"kind\":\"original-question\",\"sourceSha256\":\"5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1\",\"pdfPage\":108,\"imageSha256\":[\"8396958f6220e0e0c6f6af3bdea79cdb95597ae837aedb9b1a1275ec3c85845f\"],\"manualVisualReview\":\"Original source render independently inspected in Batch 2, 2026-10-22\"}",
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":73,\"printedPage\":68,\"heading\":\"3-4-2 Arithmetic Operation Circuit\",\"textSha256\":\"7a91f6b4fff987e3838c98edbf51b73a349e18435f6a7ab44083ce8c53f39907\",\"checkedExcerpt\":\"68 [Results of arithmetic operation of 3-bit addition] Values to be added Operation result X Y c0 Carry (c1) Sum (s) 0 0 0 0 0 0 0 1 0 1 0 1 0 0 1 1 0 0 0 1 0 1 1 1 0 1 0 1 1 0 1 1 0 1 0 1 1 1 1 1 In order to derive circuit configuration from this table, we will get the following if we think about logical expression F1 for determining carry (c1) and logical expression F2 for determining sum (s). [Logical expression F1 for determining carry] 1) With the input for which the output of truth table will become 1, determine AND operations where the result will be 1. • When (X=0, Y=1, c0=1): 0 c Y X    • When (X=1, Y=0, c0=1): 0 c Y X    • When (X=1, Y=1, c0=0): 0 c Y X    • When (X=1, Y=1, c0=1): 0 c Y X   2) Determine logic\"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2011A-Q014",
+    "revision": "0296e99f2ec0",
+    "answer": "c",
+    "summary": "A plasma display produces light from gas discharges between glass panels.",
+    "steps": [
+      "A plasma display produces light from gas discharges between glass panels.",
+      "OLED emits light from an organic layer and does not require an LCD-style backlight. CRT uses an electron beam; LCD modulates light from another source. Match the emission mechanism in the question."
+    ],
+    "takeaway": "Identify a display by how it produces or controls light.",
+    "optionText": {
+      "a": "CRT display",
+      "b": "Liquid crystal display",
+      "c": "OLED display",
+      "d": "Plasma display"
+    },
+    "imageDescription": "Q14. Which of the following is a self-luminous display that is classified as a kind of light-emitting diode technology?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":99,\"pdfPage\":105,\"lineIds\":[\"pdf-105-b002-l21\",\"pdf-105-b002-l22\",\"pdf-105-b002-l23\",\"pdf-105-b002-l24\",\"pdf-105-b002-l25\",\"pdf-105-b002-l26\",\"pdf-105-b002-l27\",\"pdf-105-b002-l28\",\"pdf-105-b002-l29\",\"pdf-105-b002-l30\",\"pdf-105-b002-l31\",\"pdf-105-b002-l32\",\"pdf-105-b002-l33\",\"pdf-105-b002-l34\",\"pdf-105-b002-l35\"],\"textSha256\":\"00b19816fc2e301ca8e76a5f21e6a7a8a6bbd6bf672a125e97f00ac3d2c8715d\",\"checkedText\":\" \\n(3) PDP (Plasma Display Panel) \\n \\nPDP (Plasma Display) is an output device where gas is sealed between two panels of glass \\nand light is emitted by applying voltage. While it has higher luminance and wider viewing \\nangle in comparison with other methods, power consumption is also large because high \\nvoltage is required. \\n \\n(4) OLED (Organic Light Emitting Diode) display \\n \\nOLED (Organic Light Emitting Diode) display is an output device that uses organic \\ncompounds that emit light when voltage is applied. Unlike a liquid crystal display, it emits \\nlight on its own on a glass substrate. Its response speed is fast, image quality is of high \\nluminance because of high contrast, and the viewing angle is also wide. In addition, power \\nconsumption is small, so it has potential to become the next-generation display. However, its \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2010S-Q014",
+    "revision": "8020e754e3fd",
+    "answer": "c",
+    "summary": "Count the independent instruction streams and data streams in the wording.",
+    "steps": [
+      "Count the independent instruction streams and data streams in the wording.",
+      "MIMD means multiple instruction and multiple data streams. SIMD means a single instruction stream acting on multiple data items; MISD and SISD have different stream counts."
+    ],
+    "takeaway": "Expand each letter of the architecture abbreviation.",
+    "optionText": {
+      "a": "MIMD",
+      "b": "MISD",
+      "c": "SIMD",
+      "d": "SISD"
+    },
+    "imageDescription": "Q14. Which of the following stands for the processor architecture in which a single stream of instructions can operate on multiple pieces of data in parallel?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":77,\"pdfPage\":82,\"lineIds\":[\"pdf-082-b003-l02\",\"pdf-082-b003-l03\",\"pdf-082-b003-l04\",\"pdf-082-b003-l05\",\"pdf-082-b003-l06\",\"pdf-082-b003-l07\",\"pdf-082-b003-l10\",\"pdf-082-b003-l11\",\"pdf-082-b003-l12\",\"pdf-082-b003-l13\",\"pdf-082-b003-l14\",\"pdf-082-b004-l00\"],\"textSha256\":\"bb274334fc1ead6cbd7cf944b62423327308863aad0189cf3173f4432988736f\",\"checkedText\":\"do not have parallelized processors correspond to this architecture. \\n• SIMD (Single Instruction stream Multiple Data stream) \\nThis computer processes multiple units of data with one instruction. Vector \\ncomputers equipped with a vector processor (array processor) that simultaneously \\ncomputes multiple data in array with one instruction correspond to this architecture. \\n• MISD (Multiple Instruction stream Single Data stream) \\ncontrol, strictly speaking, they are different). \\n• MIMD (Multiple Instruction stream Multiple Data stream) \\nThis computer processes multiple units of data with multiple instructions. \\nMultiprocessors where multiple processors are multiplexed correspond to this \\narchitecture. \\n \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2010S-Q031",
+    "revision": "823db0e199ca",
+    "answer": "a",
+    "summary": "For two one-bit inputs, the half-adder sum is 1 exactly when the inputs differ; its carry is 1 exactly when both inputs are 1.",
+    "steps": [
+      "For two one-bit inputs, the half-adder sum is 1 exactly when the inputs differ; its carry is 1 exactly when both inputs are 1.",
+      "A in the diagram is the sum output and needs exclusive logical sum (XOR); B is carry and needs logical product (AND). Table row A alone has that ordered pair."
+    ],
+    "takeaway": "A in the diagram is the sum output and needs exclusive logical sum (XOR); B is carry and needs logical product (AND). Table row A alone has that ordered pair.",
+    "optionText": {
+      "a": "A: Exclusive logical sum (XOR); B: Logical product (AND)",
+      "b": "A: Logical product (AND); B: Logical sum (OR)",
+      "c": "A: Negative logical product (NAND); B: Negative logical sum (NOR)",
+      "d": "A: Negative logical sum (NOR); B: Exclusive logical sum (XOR)"
+    },
+    "imageDescription": "Q31. The half adder in the diagram below adds one-digit binary numbers x and y, and produces z (the first digit of the sum) and c (carry) as output. Which of the following is the appropriate combination of elements A and B? In the diagram, inputs x and y each branch to both unlabeled gate boxes. A feeds output z (the first digit of the sum); B feeds output c (carry). Crossing wires without junction dots are not connections. The answer table columns are A, then B.",
+    "reviewedAgainst": [
+      "{\"kind\":\"original-question\",\"sourceSha256\":\"5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1\",\"pdfPage\":155,\"imageSha256\":[\"634dccd0fad6f0fe4bbef22ec5719d425c0fbc2ae1de849c5dd324a3d52fdfa7\"],\"manualVisualReview\":\"Original source render independently inspected in Batch 3, 2026-10-22; printed key was visible, not a blind solve.\"}",
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":72,\"printedPage\":67,\"heading\":\"3-4-2 Arithmetic Operation Circuit\",\"textSha256\":\"3014194254dd63e5fd16b50b29c6a4c896990b9f8c36beecdc7e121c554188d0\",\"checkedExcerpt\":\"he configuration below is derived. This circuit is called a half adder. Figure 1-32 Circuit diagram of half adder Adder circuit of a computer is configured with this half adder as the basis. However, in half adder, carry from low order is not taken into account. Therefore, arithmetic operation of numerical values represented with multiple bits cannot be performed. Because of that, another adder circuit of 3 bits including carry from low order becomes necessary. The table below summarizes the results of arithmetic operation of 3-bit addition considering carry (c0) from low order.\"}",
+      "{\"kind\":\"computed-source-option-truth-tables\",\"variables\":[\"x1\",\"x2\",\"column\"],\"matches\":[\"a\"],\"rows\":[[0,0,0,0,0,0,1,1],[0,0,1,0,0,0,1,0],[0,1,0,1,1,0,1,0],[0,1,1,0,0,1,0,1],[1,0,0,1,1,0,1,0],[1,0,1,0,0,1,0,1],[1,1,0,0,0,1,0,0],[1,1,1,1,1,1,0,0]]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2009A-Q007",
+    "revision": "d80841064ea7",
+    "answer": "c",
+    "summary": "Normalize both operands before comparing precision. In C, (1.01)2*2^-5 is shifted 23 places relative to (1.01)2*2^18. Its bits occupy fraction positions 23 and 25, beyond a 23-significant-bit mantissa.",
+    "steps": [
+      "Normalize both operands before comparing precision. In C, (1.01)2*2^-5 is shifted 23 places relative to (1.01)2*2^18. Its bits occupy fraction positions 23 and 25, beyond a 23-significant-bit mantissa.",
+      "The exact result is 327680 + 5/128 = 41943045/128. With 23 significant bits the local spacing is 1/16; truncation drops the small term, while nearest rounding retains 1/16 instead of 5/128. With 23 stored fraction bits (24 significant bits), spacing is 1/32 and nearest rounding gives +1/32. In every convention some trailing information is lost; do not claim the whole addend always vanishes.",
+      "A and B are exact subtractions of short binary fractions after normalization; D adds exponents 20 and 21 and fits easily. C alone requires more than 23 or 24 significant bits."
+    ],
+    "takeaway": "A and B are exact subtractions of short binary fractions after normalization; D adds exponents 20 and 21 and fits easily. C alone requires more than 23 or 24 significant bits.",
+    "optionText": {
+      "a": "(10.101)₂ × 2⁻¹⁶ − (1.001)₂ × 2⁻¹⁵",
+      "b": "(10.101)₂ × 2¹⁶ − (1.001)₂ × 2¹⁶",
+      "c": "(1.01)₂ × 2¹⁸ + (1.01)₂ × 2⁻⁵",
+      "d": "(1.001)₂ × 2²⁰ + (1.1111)₂ × 2²¹"
+    },
+    "imageDescription": "Q7. Which of the following expressions results in a loss of trailing digits when calculated by a computer whose floating-point representation has a 23-bit mantissa? Here, the numbers in “( )2” are represented in binary.",
+    "reviewedAgainst": [
+      "{\"kind\":\"original-question\",\"sourceSha256\":\"5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1\",\"pdfPage\":157,\"imageSha256\":[\"3ac614c02e08e302da9b6e7d8b4f49ad4b4be1e6482358531bbbf7066dce44c4\"],\"manualVisualReview\":\"Original source render independently inspected in Batch 3, 2026-10-22; printed key was visible, not a blind solve.\"}",
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":46,\"printedPage\":41,\"heading\":\"2-3-3 Error / Loss of trailing digits\",\"textSha256\":\"4731a28c868fccd0b7cffd87e735788379ec76e1c00e39dbc6d972501d6a440d\",\"checkedExcerpt\":\"le precision (32 bits) into double precision (64 bits). (2) Loss of trailing digits Loss of trailing digits is the error that occurs when an extremely small value is ignored at the time of computing two values: one absolute value is extremely large and the other is extremely small. Example: Calculate (0.10110011)2 × 210 + (0.11010001)2 × 2−10.\"}",
+      "{\"kind\":\"exact-rational-calculation\",\"sourceExpressions\":{\"a\":\"(10.101)2*2^-16 - (1.001)2*2^-15\",\"b\":\"(10.101)2*2^16 - (1.001)2*2^16\",\"c\":\"(1.01)2*2^18 + (1.01)2*2^-5\",\"d\":\"(1.001)2*2^20 + (1.1111)2*2^21\"},\"results\":{\"a\":\"3/524288\",\"b\":\"98304\",\"c\":\"41943045/128\",\"d\":\"5242880\"},\"requiredSignificantBits\":{\"a\":2,\"b\":2,\"c\":26,\"d\":3}}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2009A-Q020",
+    "revision": "2d99e613aed9",
+    "answer": "c",
+    "summary": "Hardware dynamically selects independent instructions and dispatches them to several arithmetic units.",
+    "steps": [
+      "Hardware dynamically selects independent instructions and dispatches them to several arithmetic units.",
+      "This is superscalar execution. Ordinary pipelining overlaps stages; super-pipelining deepens those stages; VLIW assigns parallel operations statically during compilation."
+    ],
+    "takeaway": "Dynamic instruction dispatch to several execution units is superscalar.",
+    "optionText": {
+      "a": "Pipeline",
+      "b": "Super-pipeline",
+      "c": "Superscalar",
+      "d": "VLIW"
+    },
+    "imageDescription": "Q20. Which of the following architectures in a uniprocessor requires multiple functional units that can execute two or more instructions in parallel during a clock cycle by simultaneously dispatching the instructions to the functional units?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":76,\"pdfPage\":81,\"lineIds\":[\"pdf-081-b004-l02\",\"pdf-081-b004-l03\",\"pdf-081-b004-l04\",\"pdf-081-b004-l05\",\"pdf-081-b004-l06\",\"pdf-081-b004-l07\",\"pdf-081-b004-l08\",\"pdf-081-b004-l09\"],\"textSha256\":\"f46e7d958ccd61891601ddb8edb8148e375598df54624804bb41894f0cb77929\",\"checkedText\":\" \\n(3) Superscalar/VLIW (Very Long Instruction Word) \\n \\nSuperscalar and VLIW aim to enhance performance of the processor by simultaneously \\nexecuting multiple instructions. \\nAt the stage of executing a program, superscalar extracts multiple instructions that can be \\nexecuted simultaneously, and executes them in parallel while the arithmetic unit to be used is \\ndynamically decided. Therefore, the sequence of instructions written in a program may differ \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2009A-Q027",
+    "revision": "e6d77e9de6e4",
+    "answer": "d",
+    "summary": "Graphical input in CAD requires position coordinates rather than character recognition.",
+    "steps": [
+      "Graphical input in CAD requires position coordinates rather than character recognition.",
+      "A digitizer/tablet captures these positions. OCR reads characters, OMR reads marks, and a scanner captures an existing image."
+    ],
+    "takeaway": "A graphics tablet inputs coordinates for drawing.",
+    "optionText": {
+      "a": "Image scanner",
+      "b": "OCR",
+      "c": "OMR",
+      "d": "Tablet"
+    },
+    "imageDescription": "Q27. Which of the following input devices is classified as a pointing device and used for graphics input in a CAD system?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":96,\"pdfPage\":102,\"lineIds\":[\"pdf-102-b006-l00\",\"pdf-102-b006-l01\",\"pdf-102-b006-l02\",\"pdf-102-b006-l03\",\"pdf-102-b006-l04\",\"pdf-102-b006-l05\"],\"textSha256\":\"33f348031353f8343993a3278d9e55be2e436a9799bdcd30e71b9af48fd00dd5\",\"checkedText\":\" \\n(1) Digitizer/tablet \\n \\nDigitizer is an input device that feeds two-dimensional \\nand three-dimensional drawing information as coordinate \\ninformation by tracing a drawing on the panel. A compact \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2009S-Q005",
+    "revision": "303a27d9a64c",
+    "answer": "b",
+    "summary": "Adding a very small value directly to a very large partial sum can discard the small contribution when the significand is rounded.",
+    "steps": [
+      "Adding a very small value directly to a very large partial sum can discard the small contribution when the significand is rounded.",
+      "Accumulate smaller absolute values first so their sum is large enough to survive later addition. This reduces loss of trailing digits, not cancellation between nearly equal values."
+    ],
+    "takeaway": "Add small magnitudes first to reduce loss of their trailing digits.",
+    "optionText": {
+      "a": "Cancellation of significant digits",
+      "b": "Loss of trailing digits",
+      "c": "Truncation error",
+      "d": "Underflow"
+    },
+    "imageDescription": "Q5. When multiple values are added arithmetically, it is recommended that the values be added sequentially, starting from the number whose absolute value is the smallest. Which of the following errors can be reduced by means of this method?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":42,\"pdfPage\":47,\"lineIds\":[\"pdf-047-b002-l01\",\"pdf-047-b002-l02\",\"pdf-047-b002-l03\",\"pdf-047-b002-l04\",\"pdf-047-b002-l05\",\"pdf-047-b002-l06\"],\"textSha256\":\"7a3100e8b9f426c6acfa7a337daaebd3fcee52ac2fe2aa68fdab9bf3aed68b36\",\"checkedText\":\"floating point radix numbers, it is necessary to take steps such as arranging all data in the \\nascending order of absolute value, and adding them in sequence from the top (smaller value). \\n \\n(3) Cancellation of significant digit \\n \\nCancellation of significant digit is the error that occurs because of decline in the number of \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2008A-Q021",
+    "revision": "9ca4abf83fb3",
+    "answer": "b",
+    "summary": "A CPU clock synchronizes internal operation timing; increasing cycles per second can accelerate the same CPU executing the same workload.",
+    "steps": [
+      "A CPU clock synchronizes internal operation timing; increasing cycles per second can accelerate the same CPU executing the same workload.",
+      "B is the relevant clock/CPU relation. CPU clock does not set LAN link speed, disk RPM or arbitrary real-time interrupt periods. Across CPUs, CPI and architecture also matter, so frequency alone is not a universal performance ranking."
+    ],
+    "takeaway": "B is the relevant clock/CPU relation. CPU clock does not set LAN link speed, disk RPM or arbitrary real-time interrupt periods. Across CPUs, CPI and architecture also matter, so frequency alone is not a universal performance ranking.",
+    "optionText": {
+      "a": "LAN communication speed changes depending on the clock frequency. The higher the frequency, the faster the communication speed on the LAN gets.",
+      "b": "The instruction execution timing in a CPU varies depending on the clock frequency. The higher the frequency, the faster the instruction execution speed gets.",
+      "c": "The interrupt interval of real-time processes changes depending on the clock frequency. The higher the clock frequency, the higher the frequency of interrupt processing gets, increasing the processing speed of real-time processes.",
+      "d": "The revolution speed of the hard disk varies depending on the clock frequency. The higher the frequency, the faster the revolution speed gets, increasing the transfer speed of the hard disk."
+    },
+    "imageDescription": "Q21. Which of the following is the appropriate description of CPU clock frequencies for PCs?",
+    "reviewedAgainst": [
+      "{\"kind\":\"original-question\",\"sourceSha256\":\"5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1\",\"pdfPage\":182,\"imageSha256\":[\"d6def3990eb25eda42816977ddb32f5086ad01778ff4097908014ad6e0eece61\"],\"manualVisualReview\":\"Original source render independently inspected in Batch 4, 2026-10-22; printed key was visible, not a blind solve.\"}",
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":52,\"printedPage\":47,\"heading\":\"3-1 Configuration of CPU / Clock generator\",\"textSha256\":\"97daacc48a2f1d7065a3797a62a0b4b6c3c2156c8a7a712b4c516a22df80c5ba\",\"checkedExcerpt\":\"value of program counter, value of flag register, etc.) (4) Clock generator Clock generator is a device for generating signals (clock signals) in order to synchronize and control the timing of operations between various devices inside computers. The speed of generating clock signals is shown with clock frequency, and MHz (Mega Hertz) (1 Million times in 1 second) is used as the unit. Usually, either the rising or falling edge of a signal is used as synchronization timing, and there is a technique called DDR (Double Data Rate) that uses both. RISC\"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2008A-Q026",
+    "revision": "5f69a2858b46",
+    "answer": "b",
+    "summary": "The memory hierarchy places registers at its high-speed, low-capacity end, ahead of cache, main memory and disk.",
+    "steps": [
+      "The memory hierarchy places registers at its high-speed, low-capacity end, ahead of cache, main memory and disk.",
+      "A CPU register is therefore the fastest among the listed storage locations."
+    ],
+    "takeaway": "Registers are the fastest, smallest storage at the top of the textbook hierarchy.",
+    "optionText": {
+      "a": "CPU L2 cache memory",
+      "b": "CPU register",
+      "c": "Hard disk",
+      "d": "Main memory"
+    },
+    "imageDescription": "Q26. Which of the following storage devices has the fastest access time?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":73,\"pdfPage\":78,\"lineIds\":[\"pdf-078-b009-l00\",\"pdf-078-b010-l00\",\"pdf-078-b011-l00\",\"pdf-078-b012-l00\",\"pdf-078-b013-l00\",\"pdf-078-b014-l00\",\"pdf-078-b015-l00\",\"pdf-078-b016-l00\"],\"textSha256\":\"ed14b842318fce1992ee7f38562d771cf86433d7dff40b1b19b974e6a4119caa\",\"checkedText\":\"Disk cache\\nRegister \\nLow-speed, high-capacity\\nMain memory \\nSecondary cache \\nPrimary cache\\nHigh-speed, low-capacity \\nCache memory \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2008A-Q027",
+    "revision": "8791c26c566e",
+    "answer": "d",
+    "summary": "In the historical PC/modem context, RS-232C is the serial interface connecting communication equipment such as modems.",
+    "steps": [
+      "In the historical PC/modem context, RS-232C is the serial interface connecting communication equipment such as modems.",
+      "D is serial port. IEEE1394, parallel printer ports and SCSI are not the conventional dial-up modem interface described."
+    ],
+    "takeaway": "D is serial port. IEEE1394, parallel printer ports and SCSI are not the conventional dial-up modem interface described.",
+    "optionText": {
+      "a": "IEEE 1394 port",
+      "b": "Parallel port",
+      "c": "SCSI port",
+      "d": "Serial port"
+    },
+    "imageDescription": "Q27. Which of the following is widely used as a computer port for a modem connection?",
+    "reviewedAgainst": [
+      "{\"kind\":\"original-question\",\"sourceSha256\":\"5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1\",\"pdfPage\":185,\"imageSha256\":[\"b2abd16459dbe22fe29bfa9b8696052d14d06a6dd20f2d2f77a567148c9a9665\"],\"manualVisualReview\":\"Original source render independently inspected in Batch 4, 2026-10-22; printed key was visible, not a blind solve.\"}",
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":112,\"printedPage\":106,\"heading\":\"5-5-2 Types of Input/Output Interfaces / RS-232C\",\"textSha256\":\"7fbf62f027c5181048225e3f2ea122fbf5ce083df0dc90127263baa4f7d19190\",\"checkedExcerpt\":\"unication devices (data circuit-terminating equipment) like modems. It is standardized by EIA (Electronic Industries Association), and it allows two-way transmission of data. These days it is also used for connecting to input/output devices such as a mouse.\"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2007A-Q031",
+    "revision": "f9c2d5f25ea7",
+    "answer": "c",
+    "summary": "CD-R records data using a laser to alter an organic dye layer.",
+    "steps": [
+      "CD-R records data using a laser to alter an organic dye layer.",
+      "The changed marks cannot be restored, so this is write-once storage. Rewritable optical media use another recording mechanism; magnetic disks use magnetization."
+    ],
+    "takeaway": "CD-R uses a permanently changed organic recording layer.",
+    "optionText": {
+      "a": "A two-layer structure is provided in which two disks are bonded together. The recording layer is subjected to phase changes by means of laser beams, thereby recording the data.",
+      "b": "Laser beams are radiated on the magnetized disk recording film to heat the film and to change the magnetization direction by means of a magnetic head, thereby recording the data.",
+      "c": "Laser beams are radiated onto an organic dye layer in a disk. As a result, a series of burned spots called pits are created on that layer, thereby recording the data.",
+      "d": "The magnetization direction of the magnetic substance applied to a disk is changed by means of a magnetic head, thereby recording the data."
+    },
+    "imageDescription": "Q31. Which of the following appropriately describes a method of recording data on CD-R?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":87,\"pdfPage\":93,\"lineIds\":[\"pdf-093-b002-l31\",\"pdf-093-b002-l32\",\"pdf-093-b002-l33\",\"pdf-093-b002-l34\",\"pdf-093-b002-l35\",\"pdf-093-b002-l36\"],\"textSha256\":\"6080be3e92e35a3981c41238b0b319a117cd9c74ae8c8a09a073549cf27a45b3\",\"checkedText\":\"data can be added (recorded) by creating a section where data can be recorded. Data can be \\nwritten by making a pit, by burning an organic coloring matter that is coated on the disc with \\na strong laser beam. However, the burned organic coloring matter cannot be restored to its \\noriginal state, and therefore, it is not possible to rewrite even the added data (WO (Write \\nOnce)). Typical examples are CD-R (CD-Recordable), DVD-R, and DVD+R. \\n \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2007S-Q017",
+    "revision": "c452fc0d6fc8",
+    "answer": "b",
+    "summary": "A portable camera or music player needs rewritable storage that survives power removal.",
+    "steps": [
+      "A portable camera or music player needs rewritable storage that survives power removal.",
+      "Flash meets both requirements. DRAM and SRAM lose contents without power, while mask ROM cannot be rewritten by the device."
+    ],
+    "takeaway": "Use nonvolatile rewritable flash for portable storage.",
+    "optionText": {
+      "a": "DRAM",
+      "b": "Flash memory",
+      "c": "Mask ROM",
+      "d": "SRAM"
+    },
+    "imageDescription": "Q17. Which of the following is a re-writable, erasable memory, using electrical signals, which is widely used for various devices such as digital cameras and digital music players and can maintain the data even after the power is turned off?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":89,\"pdfPage\":95,\"lineIds\":[\"pdf-095-b003-l01\",\"pdf-095-b003-l02\",\"pdf-095-b003-l03\",\"pdf-095-b003-l04\",\"pdf-095-b003-l05\",\"pdf-095-b003-l06\",\"pdf-095-b003-l07\",\"pdf-095-b003-l08\",\"pdf-095-b003-l09\",\"pdf-095-b003-l10\",\"pdf-095-b003-l11\",\"pdf-095-b003-l12\",\"pdf-095-b003-l13\",\"pdf-095-b003-l33\",\"pdf-095-b003-l34\",\"pdf-095-b003-l35\",\"pdf-095-b003-l36\"],\"textSha256\":\"d42e92686e67f88858071ee9808956636508d536d7c5eb8b385ef65b50bdd1f9\",\"checkedText\":\"Semiconductor memory (IC memory) is a storage device that uses IC such as RAM, ROM, \\nand flash memory. In addition to being used as storage devices that constitute main memory \\nand registers, it is also used as the recording medium of auxiliary storage devices. \\n \\n(1) SSD (Solid State Drive) \\n \\nSSD (Solid State Drive) is a flash memory-based auxiliary storage device that is expected to \\nreplace the HDD (Hard Disk Drive). In SSD, information is electrically read and written using \\nflash memory. Therefore, unlike a hard disk drive, it does not require any drives (e.g., disk, \\naccess arm). For that reason, it has shorter access time because of no physical location seeking \\nor rotational latency. Moreover, it has faster direct access (random access) that reads and \\nwrites data irrespective of the recording sequence of data. Additionally, it can be compact and \\nlightweight, consumes less power, and is also resilient to vibrations or impact. However, there \\nUSB memory is an auxiliary storage device that can easily be connected to and removed \\nfrom the computer by equipping flash memory with a USB connector. On the other hand, SD \\ncard (SD memory card) is an auxiliary storage medium where flash memory is put on a chip, \\nand it is used by insertion into the SD slot of computers or other devices such as digital \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2007S-Q029",
+    "revision": "b16acc02dfe8",
+    "answer": "a",
+    "summary": "The laser/page-printer performance passage specifies resolution in dots per inch and output speed in pages per minute.",
+    "steps": [
+      "The laser/page-printer performance passage specifies resolution in dots per inch and output speed in pages per minute.",
+      "A pairs dpi and ppm. Character rate, character-dot dimensions and line rates belong to different descriptions. Physical108 begins with the end of the printer passage before Other Output Devices; retain the correct 5-2-2 context."
+    ],
+    "takeaway": "A pairs dpi and ppm. Character rate, character-dot dimensions and line rates belong to different descriptions. Physical108 begins with the end of the printer passage before Other Output Devices; retain the correct 5-2-2 context.",
+    "optionText": {
+      "a": "Number of dots per inch (2.54 cm) and number of pages that can be printed per minute",
+      "b": "Number of horizontal dots and number of vertical dots used to print a character and number of characters that can be printed per second",
+      "c": "Spacing of printed lines and number of lines that can be printed per second",
+      "d": "Types of characters printed and number of characters that can be printed per second"
+    },
+    "imageDescription": "Q29. Which of the following is the most appropriate index indicating the performance of a laser printer?",
+    "reviewedAgainst": [
+      "{\"kind\":\"original-question\",\"sourceSha256\":\"5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1\",\"pdfPage\":215,\"imageSha256\":[\"5f086a668930129376f563694a58957b42e85d22a31e28ce4dc1933fbc6cab46\"],\"manualVisualReview\":\"Original source render independently inspected in Batch 4, 2026-10-22; printed key was visible, not a blind solve.\"}",
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":108,\"printedPage\":102,\"heading\":\"5-2-2 Printer / laser performance\",\"textSha256\":\"609a8fea2265697aae97aa24d087ebfb446acd9f69d6fa8c2c36625c200e5ad2\",\"checkedExcerpt\":\"ch), the number of pages that can be printed in one minute (ppm (pages per minute)) is used. 5-2-3 Other Output Devices (1) Plotter Plotter is a device that prints graphics and is used for printing drawings that are created with CAD, etc. There is the flatbed plotter, which moves the pen in X axis and Y axis by fixing the paper (this is referred to as an XY plotter), and there is the drum plotter, which moves the pen only in the Y axis direction while the paper wrapped on the drum is moved in the X axis direction. Plotter (2) Projector Projector is an output device that projects the data that is inside the computer. It is generally used for enlarged pr\"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2021A-Q001",
+    "revision": "57da0f1e9e4a",
+    "answer": "b",
+    "summary": "7B5 hexadecimal = 7×256+11×16+5 = 1973 decimal.",
+    "steps": [
+      "7B5 hexadecimal = 7×256+11×16+5 = 1973 decimal.",
+      "Group binary 011110110101 in triples: 011 110 110 101 = 3665 octal."
+    ],
+    "takeaway": "Group binary 011110110101 in triples: 011 110 110 101 = 3665 octal.",
+    "optionText": {
+      "a": "735",
+      "b": "3665",
+      "c": "7551",
+      "d": "7561"
+    },
+    "imageDescription": "Q1. What is the octal equivalent value of the hexadecimal number 7B5?",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":\"0o3665\",\"derivation\":[\"7B5 hexadecimal = 7×256+11×16+5 = 1973 decimal.\",\"Group binary 011110110101 in triples: 011 110 110 101 = 3665 octal.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2020S-Q001",
+    "revision": "7034d941e97e",
+    "answer": "b",
+    "summary": "Eight-bit signed integers range from -128 through 127.",
+    "steps": [
+      "Eight-bit signed integers range from -128 through 127.",
+      "Option B adds 127+126=253, outside the range. Other sums are 125, -16 and -2, which fit."
+    ],
+    "takeaway": "Option B adds 127+126=253, outside the range. Other sums are 125, -16 and -2, which fit.",
+    "optionText": {
+      "a": "A: 0111 1111; B: 1111 1110",
+      "b": "A: 0111 1111; B: 0111 1110",
+      "c": "A: 1000 0000; B: 0111 0000",
+      "d": "A: 1111 1111; B: 1111 1111"
+    },
+    "imageDescription": "Q1. For two 8-bit signed integers A and B in 2’s complement format, which of the following will cause an overflow when the addition of A and B is executed? The answer table columns are A, then B, with each value shown as eight bits.",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":[125,253,-16,-2],\"derivation\":[\"Eight-bit signed integers range from -128 through 127.\",\"Option B adds 127+126=253, outside the range. Other sums are 125, -16 and -2, which fit.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2019S-Q012",
+    "revision": "f542e8ab498d",
+    "answer": "d",
+    "summary": "A block holds 8×500=4000 bytes. The files need ceil(2000/4000)=1 and ceil(9000/4000)=3 blocks.",
+    "steps": [
+      "A block holds 8×500=4000 bytes. The files need ceil(2000/4000)=1 and ceil(9000/4000)=3 blocks.",
+      "Four blocks each use eight sectors, giving 32 sectors."
+    ],
+    "takeaway": "Four blocks each use eight sectors, giving 32 sectors.",
+    "optionText": {
+      "a": "22",
+      "b": "26",
+      "c": "28",
+      "d": "32"
+    },
+    "imageDescription": "Q12. There exists a storage system in which one (1) block is composed of eight (8) sectors of 500 bytes each, and the storage area is block-wise allocated to the files. When a 2,000-byte file and 9,000-byte file are to be saved, what is the total number of sectors that is allocated to these two (2) files? Here, the sectors that are occupied by the directory information and other such management information can be ignored.",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":32,\"derivation\":[\"A block holds 8×500=4000 bytes. The files need ceil(2000/4000)=1 and ceil(9000/4000)=3 blocks.\",\"Four blocks each use eight sectors, giving 32 sectors.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2016S-Q011",
+    "revision": "4bc0d1d16d01",
+    "answer": "c",
+    "summary": "The pipeline stage clock must accommodate its slowest stage: max(10,6,8,8)=10 ns.",
+    "steps": [
+      "The pipeline stage clock must accommodate its slowest stage: max(10,6,8,8)=10 ns.",
+      "For many instructions, fill/drain time is negligible and one instruction completes every 10 ns."
+    ],
+    "takeaway": "For many instructions, fill/drain time is negligible and one instruction completes every 10 ns.",
+    "optionText": {
+      "a": "6",
+      "b": "8",
+      "c": "10",
+      "d": "32"
+    },
+    "imageDescription": "Q11. In a CPU with a four (4)-stage pipeline composed of fetch, decode, execute, and write back, each stage takes 10, 6, 8, and 8 ns, respectively. Which of the following is an approximate average instruction execution time in nanoseconds (ns) in the CPU? Here, the number of instructions to be executed is sufficiently large. In addition, the overhead for the pipelining process is negligible, and the latency impact from all hazards is ignored.",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":10,\"derivation\":[\"The pipeline stage clock must accommodate its slowest stage: max(10,6,8,8)=10 ns.\",\"For many instructions, fill/drain time is negligible and one instruction completes every 10 ns.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2015A-Q013",
+    "revision": "ccde74dc8e1a",
+    "answer": "c",
+    "summary": "Five double-sided platters give ten surfaces, each containing 10000×200 sectors.",
+    "steps": [
+      "Five double-sided platters give ten surfaces, each containing 10000×200 sectors.",
+      "8×10^9 bytes divided by (10×10000×200) sectors = 400 bytes/sector."
+    ],
+    "takeaway": "8×10^9 bytes divided by (10×10000×200) sectors = 400 bytes/sector.",
+    "optionText": {
+      "a": "100",
+      "b": "200",
+      "c": "400",
+      "d": "800"
+    },
+    "imageDescription": "Q13. Consider a disk drive that has a capacity of 8 GB. The drive has 5 platters with two surfaces, 10,000 tracks per surface and 200 sectors per track. How many bytes are in each sector? Here, 1GB is 1,000,000,000 bytes.",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":400,\"derivation\":[\"Five double-sided platters give ten surfaces, each containing 10000×200 sectors.\",\"8×10^9 bytes divided by (10×10000×200) sectors = 400 bytes/sector.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2015S-Q001",
+    "revision": "a9578e4204cd",
+    "answer": "d",
+    "summary": "19 decimal is 00010011 binary. Invert all eight bits to get one's complement 11101100.",
+    "steps": [
+      "19 decimal is 00010011 binary. Invert all eight bits to get one's complement 11101100.",
+      "Add 1 to get two's complement 11101101."
+    ],
+    "takeaway": "Add 1 to get two's complement 11101101.",
+    "optionText": {
+      "a": "One’s complement: 00010011; two’s complement: 11101100",
+      "b": "One’s complement: 00010011; two’s complement: 11101101",
+      "c": "One’s complement: 11101100; two’s complement: 11101100",
+      "d": "One’s complement: 11101100; two’s complement: 11101101"
+    },
+    "imageDescription": "Q1. Which of the following is the appropriate combination that represents the decimal number “–19” in 8-bit one’s complement binary and 8-bit two’s complement binary? One’s complement binary Two’s complement binary",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":[\"11101100\",\"11101101\"],\"derivation\":[\"19 decimal is 00010011 binary. Invert all eight bits to get one's complement 11101100.\",\"Add 1 to get two's complement 11101101.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2011S-Q003",
+    "revision": "c8301fb5e185",
+    "answer": "c",
+    "summary": "The textbook defines relative error from the absolute error magnitude.",
+    "steps": [
+      "The textbook defines relative error from the absolute error magnitude.",
+      "|1.744-1.720|/1.744×100 = 1.3761%, approximately 1.4%."
+    ],
+    "takeaway": "|1.744-1.720|/1.744×100 = 1.3761%, approximately 1.4%.",
+    "optionText": {
+      "a": "– 2.4",
+      "b": "– 1.4",
+      "c": "1.4",
+      "d": "2.4"
+    },
+    "imageDescription": "Q3. When the true and measured values are 1.744 and 1.720 respectively, what is the approximate relative error in percentage?",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":1.376146788990827,\"derivation\":[\"The textbook defines relative error from the absolute error magnitude.\",\"|1.744-1.720|/1.744×100 = 1.3761%, approximately 1.4%.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2009A-Q026",
+    "revision": "fb26b7a12dc7",
+    "answer": "d",
+    "summary": "The same pixel count printed at 300 dpi instead of scanned at 600 dpi doubles each linear dimension.",
+    "steps": [
+      "The same pixel count printed at 300 dpi instead of scanned at 600 dpi doubles each linear dimension.",
+      "Area scales as the square: 2×2=4."
+    ],
+    "takeaway": "Area scales as the square: 2×2=4.",
+    "optionText": {
+      "a": "1/4",
+      "b": "1/2",
+      "c": "2",
+      "d": "4"
+    },
+    "imageDescription": "Q26. When an image is read with a scanner at a resolution of 600 dpi and printed with a printer at a resolution of 300 dpi, how many times as large as the area of the original image is the area of the printed image?",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":4,\"derivation\":[\"The same pixel count printed at 300 dpi instead of scanned at 600 dpi doubles each linear dimension.\",\"Area scales as the square: 2×2=4.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2009S-Q007",
+    "revision": "df9c71571fe7",
+    "answer": "a",
+    "summary": "0F hexadecimal is 00001111 binary.",
+    "steps": [
+      "0F hexadecimal is 00001111 binary.",
+      "AND with low-bit ones retains those four input bits. OR forces them to ones; NAND and XOR change them."
+    ],
+    "takeaway": "AND with low-bit ones retains those four input bits. OR forces them to ones; NAND and XOR change them.",
+    "optionText": {
+      "a": "A logical product (i.e. AND) with a bit string 0F in hexadecimal",
+      "b": "A logical sum (i.e. OR) with a bit string 0F in hexadecimal",
+      "c": "A negative logical product (i.e. NAND) with a bit string 0F in hexadecimal",
+      "d": "An exclusive logical sum (i.e. exclusive OR) with a bit string 0F in hexadecimal"
+    },
+    "imageDescription": "Q7. Which of the following operations does not change the lower 4 bits of an 8-bit string?",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":\"AND 0F\",\"derivation\":[\"0F hexadecimal is 00001111 binary.\",\"AND with low-bit ones retains those four input bits. OR forces them to ones; NAND and XOR change them.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2009S-Q023",
+    "revision": "4ba22f10360e",
+    "answer": "c",
+    "summary": "1024 cylinders × 10 surfaces gives 10240 tracks.",
+    "steps": [
+      "1024 cylinders × 10 surfaces gives 10240 tracks.",
+      "512×10^9 /10240 = 50×10^6 bytes per track, or 50 MB."
+    ],
+    "takeaway": "512×10^9 /10240 = 50×10^6 bytes per track, or 50 MB.",
+    "optionText": {
+      "a": "50 Kbytes",
+      "b": "100 Kbytes",
+      "c": "50 Mbytes",
+      "d": "100 Mbytes"
+    },
+    "imageDescription": "Q23. There is a hard disk drive that has the following specifications. [Specifications] Capacity: 512 GBytes Number of cylinders: 1024 Number of platters: 5 (10 surfaces) Number of heads: 2 per platter How many bytes can be stored in one track of this hard disk drive? Here, each track has the same capacity. 1 GByte is 10⁹ bytes, and 1 Mbyte is 10⁶ bytes.",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":50000000,\"derivation\":[\"1024 cylinders × 10 surfaces gives 10240 tracks.\",\"512×10^9 /10240 = 50×10^6 bytes per track, or 50 MB.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2008S-Q017",
+    "revision": "01e69ac43d85",
+    "answer": "d",
+    "summary": "24 address lines select 2^24 words.",
+    "steps": [
+      "24 address lines select 2^24 words.",
+      "Each word has 16 bits, so the chip contains 2^24×16 one-bit cells."
+    ],
+    "takeaway": "Each word has 16 bits, so the chip contains 2^24×16 one-bit cells.",
+    "optionText": {
+      "a": "2¹⁶",
+      "b": "2²⁴",
+      "c": "24 × 16",
+      "d": "2²⁴ × 16"
+    },
+    "imageDescription": "Q17. How many memory cells (or latches for holding 1 bit each) are implemented in SRAM with 24 address lines and 16 data lines?",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":268435456,\"derivation\":[\"24 address lines select 2^24 words.\",\"Each word has 16 bits, so the chip contains 2^24×16 one-bit cells.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2007A-Q028",
+    "revision": "8bb975622791",
+    "answer": "d",
+    "summary": "A block contains20*300=6000 data bytes, and its inter-block-gap footprint is6400 bytes. A30000-byte track holds floor(30000/6400)=4 whole blocks.",
+    "steps": [
+      "A block contains20*300=6000 data bytes, and its inter-block-gap footprint is6400 bytes. A30000-byte track holds floor(30000/6400)=4 whole blocks.",
+      "10000/20=500 blocks are required; ceil(500/4)=125 tracks, D. Rounding only a global byte total would incorrectly allow blocks to cross tracks. Even counting only gaps between four blocks rather than a trailing gap does not allow a fifth6000-byte block."
+    ],
+    "takeaway": "10000/20=500 blocks are required; ceil(500/4)=125 tracks, D. Rounding only a global byte total would incorrectly allow blocks to cross tracks. Even counting only gaps between four blocks rather than a trailing gap does not allow a fifth6000-byte block.",
+    "optionText": {
+      "a": "100",
+      "b": "106",
+      "c": "107",
+      "d": "125"
+    },
+    "imageDescription": "Q28. How many tracks are required to store a sequentially organized data file including a total of 10,000 records on the hard disk drive under the following conditions? Here, each track can contain multiple blocks, but each block cannot be stored across multiple tracks. [Conditions] Record length: 300 bytes/record Track capacity: 30,000 bytes/track Inter-block gap: 400 bytes Blocking factor: 20 records/block",
+    "reviewedAgainst": [
+      "{\"kind\":\"original-question\",\"sourceSha256\":\"5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1\",\"pdfPage\":325,\"imageSha256\":[\"1c67489de3c0652dba6482dddacfe2d50520118620b4ad40fafae516152ffe4f\"],\"manualVisualReview\":\"Original source render independently inspected in Batch 5, 2026-10-22; printed key was visible, not a blind solve.\"}",
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":87,\"printedPage\":81,\"heading\":\"4-1-2 Recording Area in Magnetic Disk Drive / blocking and IBG\",\"textSha256\":\"25750396faa74c79af089f7b30191ecf8cf22a99204c642f45f4b2575f3e12b2\",\"checkedExcerpt\":\" of records consolidated into a block is referred to as the blocking factor. [Methods of recording data] 1) Variable method This method reads and writes data in units of blocks. When data is recorded on a track, an IBG (InterBlock Gap) is inserted between two blocks so as to separate them. 2) Sector method\"}",
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":88,\"printedPage\":82,\"heading\":\"4-1-2 Recording area / allocation and rounding\",\"textSha256\":\"64b35db129e07643a9ddfc4596f00478e110330d88b5359d29ea1966043e572e\",\"checkedExcerpt\":\"5 ··· sectors/block * Since 5 sectors do not suffice, it is rounded up to 6 sectors/block 3) Number of blocks to be recorded\"}",
+      "{\"kind\":\"computed-exact-source-options\",\"matches\":[\"d\"],\"rows\":[{\"values\":{},\"result\":\"125\",\"choices\":{\"a\":\"100\",\"b\":\"106\",\"c\":\"107\",\"d\":\"125\"},\"matches\":[\"d\"]}],\"units\":\"tracks\"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2007S-Q005",
+    "revision": "088d610fa0bc",
+    "answer": "b",
+    "summary": "The exponent occupies eight bits immediately after the sign: bit positions 30 through 23.",
+    "steps": [
+      "The exponent occupies eight bits immediately after the sign: bit positions 30 through 23.",
+      "Set exactly those mask bits: 0xFF << 23 = 0x7F800000."
+    ],
+    "takeaway": "Set exactly those mask bits: 0xFF << 23 = 0x7F800000.",
+    "optionText": {
+      "a": "107FFFFF",
+      "b": "7F800000",
+      "c": "FF100000",
+      "d": "FF800000"
+    },
+    "imageDescription": "Q5. By definition of the IEEE754 standard, 32-bit floating point numbers are represented as follows: The diagram is a single 32-bit row, from left to right: S (1 bit), E (8 bits), M (23 bits). S: Sign bit E: Exponent M: Mantissa Which of the following is the correct “mask bits” in hexadecimal to be used for extracting only the exponent part of the above format? Here, “mask bits” means a bit pattern which is logically ANDed with the 32-bit floating point value.",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":\"0x7f800000\",\"derivation\":[\"The exponent occupies eight bits immediately after the sign: bit positions 30 through 23.\",\"Set exactly those mask bits: 0xFF << 23 = 0x7F800000.\"]}"
+    ]
   }
 ]

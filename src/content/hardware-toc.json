@@ -109,7 +109,9 @@
       "depth": 3,
       "sectionId": "fe-v1-ch01-s02",
       "path": "/chapters/hardware/data-representation/",
-      "conceptIds": []
+      "conceptIds": [
+        "numerical-errors"
+      ]
     },
     {
       "id": "fev1-201504-ch1-r1-pdf-048-b005-l01-text-0",
@@ -145,7 +147,8 @@
       "conceptIds": [
         "cpu-registers",
         "bus-transfer",
-        "stored-program"
+        "stored-program",
+        "cpu-clock"
       ]
     },
     {
@@ -276,7 +279,9 @@
       "depth": 3,
       "sectionId": "fe-v1-ch01-s03",
       "path": "/chapters/hardware/cpu-and-main-memory/",
-      "conceptIds": []
+      "conceptIds": [
+        "arithmetic-circuits"
+      ]
     },
     {
       "id": "fev1-201504-ch1-r1-pdf-075-b003-l00-text-0",
@@ -298,7 +303,8 @@
       "path": "/chapters/hardware/cpu-and-main-memory/",
       "conceptIds": [
         "cache-memory",
-        "memory-interleaving"
+        "memory-interleaving",
+        "memory-hierarchy"
       ]
     },
     {
@@ -312,7 +318,8 @@
       "conceptIds": [
         "processor-pipeline",
         "risc-cisc",
-        "parallel-processing"
+        "parallel-processing",
+        "superscalar"
       ]
     },
     {
@@ -343,7 +350,9 @@
       "depth": 3,
       "sectionId": "fe-v1-ch01-s04",
       "path": "/chapters/hardware/auxiliary-storage/",
-      "conceptIds": []
+      "conceptIds": [
+        "disk-capacity"
+      ]
     },
     {
       "id": "fev1-201504-ch1-r1-pdf-087-b004-l00-text-0",
@@ -353,7 +362,9 @@
       "depth": 3,
       "sectionId": "fe-v1-ch01-s04",
       "path": "/chapters/hardware/auxiliary-storage/",
-      "conceptIds": []
+      "conceptIds": [
+        "disk-recording"
+      ]
     },
     {
       "id": "fev1-201504-ch1-r1-pdf-089-b004-l00-text-0",
@@ -388,7 +399,9 @@
       "depth": 2,
       "sectionId": "fe-v1-ch01-s04",
       "path": "/chapters/hardware/auxiliary-storage/",
-      "conceptIds": []
+      "conceptIds": [
+        "flash-storage"
+      ]
     },
     {
       "id": "fev1-201504-ch1-r1-pdf-096-b003-l00-text-0",
@@ -428,7 +441,9 @@
       "depth": 3,
       "sectionId": "fe-v1-ch01-s05",
       "path": "/chapters/hardware/input-output/",
-      "conceptIds": []
+      "conceptIds": [
+        "switch-chattering"
+      ]
     },
     {
       "id": "fev1-201504-ch1-r1-pdf-099-b002-l00-text-0",
@@ -448,7 +463,9 @@
       "depth": 3,
       "sectionId": "fe-v1-ch01-s05",
       "path": "/chapters/hardware/input-output/",
-      "conceptIds": []
+      "conceptIds": [
+        "touch-panels"
+      ]
     },
     {
       "id": "fev1-201504-ch1-r1-pdf-102-b005-l00-text-0",
@@ -458,7 +475,9 @@
       "depth": 3,
       "sectionId": "fe-v1-ch01-s05",
       "path": "/chapters/hardware/input-output/",
-      "conceptIds": []
+      "conceptIds": [
+        "digitizer-tablet"
+      ]
     },
     {
       "id": "fev1-201504-ch1-r1-pdf-103-b003-l00-text-0",
@@ -523,7 +542,9 @@
       "depth": 2,
       "sectionId": "fe-v1-ch01-s05",
       "path": "/chapters/hardware/input-output/",
-      "conceptIds": []
+      "conceptIds": [
+        "io-control"
+      ]
     },
     {
       "id": "fev1-201504-ch1-r1-pdf-111-b006-l00-text-0",
@@ -554,7 +575,9 @@
       "sectionId": "fe-v1-ch01-s05",
       "path": "/chapters/hardware/input-output/",
       "conceptIds": [
-        "usb-interface"
+        "usb-interface",
+        "bluetooth-interface",
+        "serial-interface"
       ]
     },
     {

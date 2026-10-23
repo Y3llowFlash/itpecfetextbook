@@ -8,7 +8,8 @@ export function canonical(value: unknown): string {
 }
 export const checksum = (value: unknown) => createHash('sha256').update(canonical(value)).digest('hex');
 
-export function validateHistoricalRelease(questions: any[], explanations: any[], concepts: any[], receipt: any, expansion?: any) {
+export function validateHistoricalRelease(questions: any[], explanations: any[], concepts: any[], receipt: any, expansion?: any, third?: any) {
+  if (third) { validateThird(questions, explanations, concepts, receipt, expansion, third); return; }
   if (expansion) {
     validateExpansion(questions, explanations, concepts, receipt, expansion);
     return;
@@ -58,4 +59,29 @@ function validateExpansion(questions:any[], explanations:any[], concepts:any[], 
   }
   const oldConcepts=concepts.filter(c=>!newIds.has(c.id)).map(c=>({...c,questionIds:c.questionIds.filter((id:string)=>!ids.has(id)),mappingEvidence:c.mappingEvidence.filter((e:any)=>!ids.has(e.questionId))}));
   if(checksum(oldConcepts)!==receipt.previousConceptsSha256)throw Error('Previous concepts or placements changed');
+}
+
+/** Release 3 recursively verifies the exact unchanged Release 2 subset. */
+function validateThird(questions:any[], explanations:any[], concepts:any[], first:any, second:any, receipt:any) {
+  if(receipt.schema!=='itpec-historical-release-3-v1'||receipt.authorizedCount!==40||receipt.records.length!==40||receipt.excludedUnapproved!==217||receipt.total!==536||receipt.historicalCount!==116||receipt.images!==536||receipt.candidateManifestSha256!=='3d260fec5224408e642b1a405501097d423011a0e317b73e0224c302887e3721'||receipt.candidateSetFingerprint!=='94f7afb532d4aaeb6eb367fcfe0fc8f03e77699121bd5883a4a82bf18f2ca6f2')throw Error('Invalid Release 3 authorization');
+  const ids=new Set<string>(receipt.records.map((r:any)=>r.id)),newConcepts=new Set<string>(receipt.newHighlights.map((r:any)=>r.id));
+  if(ids.size!==40||newConcepts.size!==14||receipt.newHighlights.length!==14||questions.length!==536||new Set(questions.map(q=>q.id)).size!==536||concepts.length!==42||[...first.records,...second.records].some((r:any)=>ids.has(r.id)))throw Error('Expanded or overlapping Release 3 scope');
+  const old=questions.filter(q=>!ids.has(q.id)),oldAnswers=explanations.filter(e=>!ids.has(e.questionId));
+  const oldConcepts=concepts.filter(c=>!newConcepts.has(c.id)).map(c=>({...c,questionIds:c.questionIds.filter((id:string)=>!ids.has(id)),mappingEvidence:c.mappingEvidence.filter((e:any)=>!ids.has(e.questionId))}));
+  validateHistoricalRelease(old,oldAnswers,oldConcepts,first,second);
+  if(checksum(Object.fromEntries(old.map(q=>[q.id,q])))!==receipt.previousRecordsSha256||checksum(oldAnswers)!==receipt.previousExplanationsSha256||checksum(oldConcepts)!==receipt.previousConceptsSha256)throw Error('Previous release content changed');
+  const counts:Record<string,number>={};
+  for(const entry of receipt.records){
+    const q=questions.find(q=>q.id===entry.id),e=explanations.find(e=>e.questionId===entry.id);
+    if(!q||!e||q.format!=='historical'||checksum(q)!==entry.questionSha256||checksum(e)!==entry.explanationSha256||checksum(q.review.mappings)!==entry.mappingSha256||q.review.approvalFingerprint!==entry.approvalFingerprint||q.image.sha256!==entry.imageSha256)throw Error('Release 3 approved payload changed: '+entry.id);
+    if(q.correctAnswer!==e.answer||q.paper!=='AM'||q.subject!=='A'||q.review.examType!=='FE'||q.review.reviewStatus!=='approved'||q.review.publicationStatus!=='published')throw Error('Invalid Release 3 grading or metadata');
+    const links=concepts.filter(c=>c.questionIds.includes(q.id));
+    if(links.length!==1||links[0].id!==entry.conceptId||q.review.mappings[0].conceptId!==entry.conceptId)throw Error('Release 3 placement changed');
+    counts[entry.conceptId]=(counts[entry.conceptId]||0)+1;
+  }
+  if(Object.keys(counts).length!==28||checksum(counts)!==checksum(receipt.conceptCounts))throw Error('Release 3 concept distribution changed');
+  for(const entry of receipt.newHighlights){
+    const c=concepts.find(c=>c.id===entry.id),definition=c&&Object.fromEntries(['id','title','summary','sectionId','sectionUrl','anchor','sourceHighlight'].filter(k=>k in c).map(k=>[k,c[k]]));
+    if(!c||checksum(definition)!==entry.definitionSha256||checksum(c.sourceHighlight)!==checksum(entry.sourceHighlight))throw Error('Release 3 owner-reviewed highlight changed');
+  }
 }

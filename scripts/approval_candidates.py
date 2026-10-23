@@ -594,7 +594,7 @@ def batch03_associations(context,records,reviews,concepts):
     return result
 
 
-def validate_batch03_reviews(context,records,reviews,concepts,associations,*,prepare=False):
+def validate_batch03_reviews(context,records,reviews,concepts,associations,*,prepare=False,existing_concepts=None):
     """Combine the existing structural highlight gate with explicit source review.
 
     Missing/stale review evidence fails closed. A genuine recorded source finding
@@ -603,7 +603,7 @@ def validate_batch03_reviews(context,records,reviews,concepts,associations,*,pre
     root=batch03_folder();plan=root/'concept-plan.json'
     if prepare:save(plan,concepts)
     elif h.read_json(plan)!=concepts:raise ValueError('Final concept plan changed')
-    run=subprocess.run(['node',str(h.ROOT/'node_modules/tsx/dist/cli.mjs'),'scripts/historical-highlight.ts',str(plan)],cwd=h.ROOT,capture_output=True,text=True,encoding='utf8')
+    run=subprocess.run(['node',str(h.ROOT/'node_modules/tsx/dist/cli.mjs'),'scripts/historical-highlight.ts',str(plan),*([str(existing_concepts)] if existing_concepts else [])],cwd=h.ROOT,capture_output=True,text=True,encoding='utf8')
     if run.returncode:raise ValueError('Existing highlight gate failed: '+run.stderr)
     structural=json.loads(run.stdout);new=[c for c in concepts if c['newConcept']]
     if len(structural)!=14 or {r['conceptId'] for r in structural}!={c['id'] for c in new}:raise ValueError('Exact 14 highlight gate results required')
@@ -692,7 +692,10 @@ def prepare_batch03():
 
 
 def check_batch03(publisher=False):
-    # Publisher mode is read-only too. This milestone permits no approval transition.
+    if publisher:
+        import release_3
+        if (release_3.FOLDER/'state.json').exists():return release_3.publisher_check()
+    # Preparation checks remain strict; a release never rewrites this snapshot.
     root=batch03_folder();context,records,reviews,_=batch03_inputs();manifest=h.read_json(root/'manifest.json')
     concepts=batch03_concepts(context);associations=batch03_associations(context,records,reviews,concepts)
     rows,report=validate_batch03_reviews(context,records,reviews,concepts,associations)

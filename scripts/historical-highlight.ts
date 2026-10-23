@@ -29,7 +29,10 @@ export function validateNewHighlight(source:string,definition:any,node:any,nodes
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
  const plan=JSON.parse(await readFile(process.argv[2],'utf8'));
  const toc=JSON.parse(await readFile('src/content/hardware-toc.json','utf8'));
- const existing=JSON.parse(await readFile('src/content/concepts.json','utf8'));
+ // An explicit immutable baseline supports rechecking a completed release;
+ // the publisher itself always supplies the actual current concept list.
+ if(process.argv.length>4)throw Error('Use a plan and optional archived existing-concept baseline');
+ const existing=JSON.parse(await readFile(process.argv[3]||'src/content/concepts.json','utf8'));
  const results=[];
  for(const definition of plan.filter((c:any)=>c.newConcept)){
   try{

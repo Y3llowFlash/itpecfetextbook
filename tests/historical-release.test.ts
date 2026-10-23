@@ -3,10 +3,13 @@ import { readFileSync } from 'node:fs';
 import { validateHistoricalRelease, checksum } from '../scripts/historical-release-integrity';
 const read = (p: string) => JSON.parse(readFileSync(p,'utf8'));
 const expansion=read('docs/development/evidence/historical-release-40.json');
-const expandedBank=read('public/data/questions.json'),expandedAnswers=read('src/content/explanations.json');
+const third=read('docs/development/evidence/historical-release-3.json'),fullBank=read('public/data/questions.json'),fullAnswers=read('src/content/explanations.json'),fullConcepts=read('src/content/concepts.json');
+const thirdIds=new Set(third.records.map((r:any)=>r.id)),thirdConcepts=new Set(third.newHighlights.map((r:any)=>r.id));
+const expandedBank=fullBank.filter((q:any)=>!thirdIds.has(q.id)),expandedAnswers=fullAnswers.filter((e:any)=>!thirdIds.has(e.questionId));
+const previousConcepts=fullConcepts.filter((c:any)=>!thirdConcepts.has(c.id)).map((c:any)=>({...c,questionIds:c.questionIds.filter((id:string)=>!thirdIds.has(id)),mappingEvidence:c.mappingEvidence.filter((e:any)=>!thirdIds.has(e.questionId))}));
 // Retain the first release's exact assertions on its unchanged original subset.
 const newIds=new Set(expansion.records.map((r:any)=>r.id));
-const bank = expandedBank.filter((q:any)=>!newIds.has(q.id)), answers = expandedAnswers.filter((e:any)=>!newIds.has(e.questionId)), concepts = read('src/content/concepts.json'), receipt = read('docs/development/evidence/historical-release-36.json');
+const bank = expandedBank.filter((q:any)=>!newIds.has(q.id)), answers = expandedAnswers.filter((e:any)=>!newIds.has(e.questionId)), concepts = previousConcepts, receipt = read('docs/development/evidence/historical-release-36.json');
 describe('exact owner-authorized historical release', () => {
   it('validates 36 approved payloads and preserves 420 authoritative Practice records', () => {
     expect(() => validateHistoricalRelease(bank, answers, concepts, receipt)).not.toThrow();
@@ -50,4 +53,18 @@ describe('exact Release 2 append-only authorization',()=>{
     expect(()=>validate([...expandedBank,{...expandedBank[0],id:'HIST-UNAPPROVED'}])).toThrow();
   });
   it('rejects expanded or rebound approval receipts',()=>{for(const field of ['candidateManifestSha256','candidateSetFingerprint','authorizedCount','excludedUnapproved'])expect(()=>validate(expandedBank,expandedAnswers,concepts,{...expansion,[field]:'changed'})).toThrow();});
+});
+
+describe('exact Release 3 append-only authorization',()=>{
+  const validate=(b=fullBank,a=fullAnswers,c=fullConcepts,r=third)=>validateHistoricalRelease(b,a,c,receipt,expansion,r);
+  it('validates all 536 records, unchanged prior releases, 40 additions and 14 highlights',()=>{expect(()=>validate()).not.toThrow();expect(third.records).toHaveLength(40);expect(third.newHighlights).toHaveLength(14);});
+  it('rejects every new answer, accessible description, and source highlight mutation',()=>{
+    for(const entry of third.records){const b=structuredClone(fullBank);b.find((q:any)=>q.id===entry.id).correctAnswer='invalid';expect(()=>validate(b)).toThrow();const a=structuredClone(fullAnswers);a.find((e:any)=>e.questionId===entry.id).imageDescription='stale';expect(()=>validate(fullBank,a)).toThrow();}
+    for(const entry of third.newHighlights){const c=structuredClone(fullConcepts);c.find((c:any)=>c.id===entry.id).sourceHighlight.fragmentSha256='changed';expect(()=>validate(fullBank,fullAnswers,c)).toThrow();}
+  },30000);
+  it('rejects expanded, rebound or overlapping authorization and previous-record changes',()=>{
+    for(const field of ['candidateManifestSha256','candidateSetFingerprint','authorizedCount','excludedUnapproved'])expect(()=>validate(fullBank,fullAnswers,fullConcepts,{...third,[field]:'changed'})).toThrow();
+    const b=structuredClone(fullBank);b.find((q:any)=>q.format!=='historical').correctAnswer='changed';expect(()=>validate(b)).toThrow();
+    expect(()=>validate([...fullBank,{...fullBank[0],id:'HIST-UNAPPROVED'}])).toThrow();
+  });
 });

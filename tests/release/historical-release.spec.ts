@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import receipt from '../../docs/development/evidence/historical-release-36.json' with {type:'json'};
 import expansion from '../../docs/development/evidence/historical-release-40.json' with {type:'json'};
+import third from '../../docs/development/evidence/historical-release-3.json' with {type:'json'};
 import explanations from '../../src/content/explanations.json' with {type:'json'};
 import concepts from '../../src/content/concepts.json' with {type:'json'};
 const bank=JSON.parse(readFileSync('public/data/questions.json','utf8'));
@@ -11,8 +12,8 @@ const sha=(b:Buffer)=>createHash('sha256').update(b).digest('hex');
 test('real served catalog and all 36 image bytes equal the reviewed release; private records are absent',async({request})=>{
   const response=await request.get('/data/questions.json');expect(response.ok()).toBe(true);
   expect(sha(await response.body())).toBe(sha(readFileSync('public/data/questions.json')));
-  const served=await response.json();expect(served).toHaveLength(496);
-  expect(served.filter((q:any)=>q.format==='historical').map((q:any)=>q.id).sort()).toEqual([...receipt.records,...expansion.records].map(r=>r.id).sort());
+  const served=await response.json();expect(served).toHaveLength(536);
+  expect(served.filter((q:any)=>q.format==='historical').map((q:any)=>q.id).sort()).toEqual([...receipt.records,...expansion.records,...third.records].map(r=>r.id).sort());
   for(const entry of receipt.records){
     const q=served.find((q:any)=>q.id===entry.id),image=await request.get(q.image.src);
     expect(image.ok(),entry.id).toBe(true);expect(sha(await image.body()),entry.id).toBe(entry.imageSha256);
@@ -60,10 +61,10 @@ for(const [id,width] of [['HIST-TECH01-2019A-Q012',375],['HIST-TECH01-2019S-Q023
 
 test('historical source filtering and unanswered navigation preserve submitted feedback',async({page})=>{
  await page.goto('/practice/logic-gates/');await page.getByRole('combobox',{name:'Question source'}).selectOption('historical-pdf');
- await expect(page.locator('.practice-filters')).toContainText('24 of 29 questions match.');
+ await expect(page.locator('.practice-filters')).toContainText('26 of 31 questions match.');
  await page.getByRole('checkbox',{name:'Unanswered only'}).check();
  const first=receipt.records.filter(r=>r.conceptId==='logic-gates').map(r=>bank.find((q:any)=>q.id===r.id)).sort((a,b)=>a.id.localeCompare(b.id))[0];
  await page.getByRole('radio',{name:new RegExp(`^Option ${first.correctAnswer.toUpperCase()}:`)}).check();await page.getByRole('button',{name:'Check answer'}).click();
- await expect(page.getByText('✓ That’s correct.')).toBeVisible();await expect(page.getByText('Answer saved · 23 unanswered remain')).toBeVisible();
+ await expect(page.getByText('✓ That’s correct.')).toBeVisible();await expect(page.getByText('Answer saved · 25 unanswered remain')).toBeVisible();
  await page.getByRole('button',{name:'Next →'}).click();await expect(page.getByText('✓ That’s correct.')).toHaveCount(0);
 });
