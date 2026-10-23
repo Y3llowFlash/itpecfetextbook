@@ -540,7 +540,10 @@ def reconcile_owner(apply=False):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--apply',action='store_true')
-    mode=parser.add_mutually_exclusive_group();mode.add_argument('--batch',type=int,choices=[1,2,3,4,5]);mode.add_argument('--owner-adjudication',action='store_true')
+    mode=parser.add_mutually_exclusive_group();mode.add_argument('--batch',type=int,choices=[1,2,3,4,5]);mode.add_argument('--owner-adjudication',action='store_true');mode.add_argument('--metadata',action='store_true')
     args=parser.parse_args()
-    if args.owner_adjudication:reconcile_owner(args.apply)
+    if args.metadata:
+        from metadata_integration import reconcile as reconcile_metadata
+        reconcile_metadata(args.apply)
+    elif args.owner_adjudication:reconcile_owner(args.apply)
     else:reconcile(args.apply,args.batch or 1)

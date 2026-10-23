@@ -1,4 +1,16 @@
-# Paper/subject policy options — owner decision required
+# Confirmed historical FE paper/subject policy
+
+The owner's explicit **Morning / Subject A Metadata Integration** instruction of 23 October 2026 supersedes the earlier unknown-metadata proposal below. All 333 imported `Technology-01.pdf` questions are FE / Morning / Subject A. This is owner-confirmed information, not independently extracted paper/subject text.
+
+The existing historical schema uses `examType: FE`, `paper: AM`, `subject: A`, `status: verified`, with owner-confirmation evidence. Existing Practice records retain their original paper values. Future explicitly declared Subject B uses the existing `B` paper/subject values and displays Evening / Subject B in the private header. No current historical record is Subject B.
+
+New approved historical imports default to FE / Morning / Subject A. Explicit Subject B or source-specific metadata is preserved; contradictory declarations stop reconciliation. Year, season, filename and topic never select a subject. Initial reviews distinguish owner defaults, explicit owner declarations and source-specific evidence. Raw source fields remain separate.
+
+The confirmation is bound to instruction SHA-256 `7789861b24ca233e1c0a22264029f9d7ff066eebf46e2edb6650425ab31da928`, the Technology-01 source checksum, all 333 canonical IDs and the `deccd08` snapshot. Prior metadata remains in history. No academic verification, grading eligibility, placement approval or publication approval is conferred.
+
+All seven qualified owner decisions retain their restrictions, including both valid answers on page 119. Practice synchronization and authoritative-answer rules remain unchanged. See [metadata integration completion report](MORNING_METADATA_INTEGRATION.md).
+
+## Earlier proposal, retained as superseded history
 
 This proposal changes no metadata or publication rule. The 36-question local preview preserves `paper: null`, `subject: null`, FE owner-confirmation provenance, year, season, question number and source bindings. The live gate still requires evidenced paper and subject values plus separate owner publication approval.
 

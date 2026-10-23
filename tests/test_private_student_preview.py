@@ -11,7 +11,7 @@ def fixture():
     for concept,count in p.COUNTS.items():
         for _ in range(count):
             i+=1;r=record(i);r.update(year=2019,season='A',number=i)
-            v=review(r,True);v.update(metadata={'status':'needs-review','paper':None,'subject':None},
+            v=review(r,True);v.update(metadata={'status':'verified','examType':'FE','paper':'AM','subject':'A','evidence':['owner-confirmed synthetic fixture']},
                 mapping={'status':'verified','conceptId':concept,'headingNumber':'3-4-1','sectionId':'s03','subsectionId':'anchor'},
                 extraction={**decision(r)['extraction'],'sourceBinding':qa.extraction_binding(r),'reviewedImages':[r['images'][0]['sha256']]})
             r['images'][0].update(width=600,height=400)
@@ -63,10 +63,10 @@ class PrivatePreviewTests(unittest.TestCase):
             self.inventory[0][dimension][key]=original
     def test_no_approval_or_guessed_paper_subject_values(self):
         v=self.reviews[self.records[0]['id']]
-        for key,value in [('paper','AM'),('subject','A')]:
+        for key,value in [('paper','B'),('subject','B')]:
             v['metadata'][key]=value;self.rebind()
-            with self.assertRaisesRegex(ValueError,'unknown-metadata'):self.select()
-            v['metadata'][key]=None
+            with self.assertRaisesRegex(ValueError,'owner-confirmed'):self.select()
+            v['metadata'][key]='AM' if key=='paper' else 'A'
         v['approval']['status']='approved';self.rebind()
         self.assertRaisesRegex(ValueError,'approval',self.select)
     def test_advisory_dates_source_pages_sections_and_metadata_must_match(self):
@@ -85,7 +85,7 @@ class PrivatePreviewTests(unittest.TestCase):
         self.assertEqual(len(bank),36);self.assertEqual(len(answers),36);self.assertEqual(len(links),36)
         for q,e in zip(bank,answers):
             self.assertFalse(q['is_published']);self.assertTrue(q['privatePreview'])
-            self.assertIsNone(q['paper']);self.assertIsNone(q['subject'])
+            self.assertEqual(q['paper'],'AM');self.assertEqual(q['subject'],'A')
             self.assertEqual(q['review']['publicationStatus'],'unapproved')
             original=self.reviews[q['id']]['explanation']
             for key in ['summary','steps','takeaway']:self.assertEqual(e[key],original[key])
@@ -114,6 +114,7 @@ class AccessibilityRepairTests(unittest.TestCase):
             r=record(page);r.update(id=qid,year=2019,season='A',number=page)
             r['images'][0].update(width=600,height=400)
             v=review(r,True);v['extraction']=decision(r)['extraction']
+            v['metadata']={'status':'verified','examType':'FE','paper':'AM','subject':'A','evidence':['owner fixture']}
             v['mapping']={'sectionId':'s03','conceptId':'logic-gates'}
             before=copy.deepcopy({key:v['extraction'][key] for key in ['imageDescription','optionText']})
             after=copy.deepcopy(before);after['imageDescription']='Source-checked neutral diagram description'

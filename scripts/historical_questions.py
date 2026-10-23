@@ -238,7 +238,7 @@ def valid_approval(record,review):
 def refresh_review(records):
     validate_review_statuses(records,read_json(WORK/'reviews.json',{}))
     previous=read_json(WORK/'manifest.json');updated=manifest_for(records,previous['sourceSha256'],previous['pdfPages'],previous)
-    for key in ['sourceHistory','qaReconciliation','recordsSha256','ownerAdjudication']:
+    for key in ['sourceHistory','qaReconciliation','recordsSha256','ownerAdjudication','metadataReconciliation']:
         if key in previous:updated[key]=previous[key]
     write_json(WORK/'manifest.json',updated);write_review_gallery(records)
 
@@ -252,11 +252,14 @@ def approve(records,identity,reviewer):
     review['approval']={'status':'approved','reviewer':reviewer,'at':datetime.now(timezone.utc).isoformat(),'fingerprint':publication_fingerprint(record,review)}
     reviews[identity]=review;write_json(WORK/'reviews.json',reviews);refresh_review(records)
 
-def extract(source=SOURCE,force=False):
+def extract(source=SOURCE,force=False,subject=None):
     source=Path(source)
     if source.name!='Technology-01.pdf':raise ValueError('Only Technology-01.pdf is authorized in this milestone')
     if not source.is_file():raise FileNotFoundError(f'Missing authorized source: {source}')
     sha=digest(source.read_bytes());previous=read_json(WORK/'manifest.json',{})
+    if subject is not None:
+        from historical_metadata import normalize_metadata
+        for v in read_json(WORK/'reviews.json',{}).values():normalize_metadata(v.get('metadata'),subject=subject)
     if not force and previous.get('sourceSha256')==sha and previous.get('importerFingerprint')==processing_fingerprint() and (WORK/'questions.json').exists():
         records=read_json(WORK/'questions.json');verify_assets(records);print('Unchanged previously processed source: no records or files duplicated.');return previous
     WORK.mkdir(parents=True,exist_ok=True)
@@ -265,6 +268,11 @@ def extract(source=SOURCE,force=False):
         pages=[describe_page(page,i+1) for i,page in enumerate(pdf)]
         records=assemble_questions(pages,sha);render_crops(pdf,records)
         write_json(WORK/'pages.json',pages);write_json(WORK/'questions.json',records)
+        # Raw source fields stay literal; owner policy belongs to separate reviews.
+        # Existing confirmed metadata (including Subject B) is never overwritten.
+        if not (WORK/'reviews.json').exists():
+            from historical_metadata import initial_reviews
+            write_json(WORK/'reviews.json',initial_reviews(records,subject=subject))
         manifest=manifest_for(records,sha,len(pdf),previous if previous.get('sourceSha256')==sha else None);write_json(WORK/'manifest.json',manifest)
     write_review_gallery(records);print(json.dumps(manifest,indent=2));return manifest
 
@@ -296,8 +304,8 @@ def write_review_gallery(records):
     if not target.exists() or target.read_text('utf8')!=page:target.write_text(page,'utf8')
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('command',choices=['extract','verify','gallery','approve','export']);parser.add_argument('--source',type=Path,default=SOURCE);parser.add_argument('--force',action='store_true');parser.add_argument('--id');parser.add_argument('--reviewer');args=parser.parse_args()
-    if args.command=='extract':extract(args.source,args.force)
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('command',choices=['extract','verify','gallery','approve','export']);parser.add_argument('--source',type=Path,default=SOURCE);parser.add_argument('--force',action='store_true');parser.add_argument('--subject',choices=['A','B']);parser.add_argument('--id');parser.add_argument('--reviewer');args=parser.parse_args()
+    if args.command=='extract':extract(args.source,args.force,args.subject)
     else:
         records=read_json(WORK/'questions.json')
         if records is None:raise ValueError('Run extraction first')

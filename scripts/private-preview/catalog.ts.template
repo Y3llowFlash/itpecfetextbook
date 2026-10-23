@@ -9,4 +9,4 @@ export async function publishedQuestions(): Promise<Question[]> { return data as
 export function questionsForConcept(concept: Concept, bank: Question[]) {
   return bank.filter(q => q.privatePreview === true && q.is_published === false && concept.questionIds.includes(q.id));
 }
-export function examTitle(q: Question) { return `FE · ${q.year} ${q.season === 'S' ? 'Spring' : 'Autumn'} · Paper/subject not established`; }
+export function examTitle(q: Question) { return `FE · ${q.paper === 'AM' || q.paper === 'A' ? 'Morning' : q.paper === 'B' ? 'Evening' : q.paper} · Subject ${q.subject} · ${q.year} ${q.season === 'S' ? 'Spring' : 'Autumn'}`; }

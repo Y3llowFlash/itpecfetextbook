@@ -11,6 +11,7 @@ const guestKey=prefix+'guest:v1';
 test('exact scope and truthful metadata; no public/historical extras',async({request})=>{
  expect(bank).toHaveLength(36);expect(new Set(bank.map(q=>q.id)).size).toBe(36);
  const home=await request.get('/');expect(await home.text()).toContain('36 historical questions');
+ expect(await home.text()).toContain('FE · Morning · Subject A');expect(await home.text()).not.toContain('not established');
  expect(home.headers()['x-robots-tag']).toContain('noindex');
  for(const path of ['/data/questions.json','/questions.json','/reviews.json','/manifest.json','/review-findings.json','/accessibility-repairs.json','/accessibility-review/findings-before.json','/Technology-01.pdf','/FE%20Vol%201.pdf','/.local/historical/technology-01/questions.json','/__pilot/images/not-selected.webp','/practice/floating-point/'])expect((await request.get(path)).status()).toBe(404);
  const originalCatalog=JSON.parse(readFileSync('.local/historical/technology-01/questions.json','utf8')) as Array<{id:string;images:Array<{sha256:string}>}>;
@@ -23,9 +24,9 @@ test('exact scope and truthful metadata; no public/historical extras',async({req
 
 for(const q of bank)test(`original image, verified answer and worked explanation: ${q.id}`,async({page,request})=>{
  await page.goto(`/practice/${q.topic}/?question=${q.id}`);
- await expect(page.locator('.question-meta h2')).toContainText(`FE · ${q.year}`);
+ await expect(page.locator('.question-meta h2')).toContainText(`FE · Morning · Subject A · ${q.year}`);
  await expect(page.locator('.question-meta h2')).toContainText(`Q${q.number}`);
- await expect(page.locator('.question-meta h2')).toContainText('Paper/subject not established');
+ await expect(page.locator('.question-meta h2')).not.toContainText('Paper/subject not established');
  await expect(page.locator('.source-note').filter({hasText:'ID:'})).toContainText(q.id);
  await expect(page.locator('[aria-label="Private editorial review"]')).toHaveCount(0);
  expect(await page.content()).not.toMatch(/previewNotices|Editorial review pending|Diagram accessibility review pending/);

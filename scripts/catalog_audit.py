@@ -23,6 +23,11 @@ SOURCE_SHA = '5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1'
 CHAPTERS = [(17, 1), (126, 2), (193, 3), (256, 4), (298, 5), (361, 6), (412, 7)]
 
 
+def report_folder():
+    from metadata_integration import FOLDER as metadata_folder
+    return FOLDER/('metadata-reports' if (metadata_folder/'applied-state.json').exists() else 'reports')
+
+
 def dump(value):
     return json.dumps(value, ensure_ascii=False, sort_keys=True, indent=2) + '\n'
 
@@ -260,7 +265,8 @@ def artifacts(rows, ledger, coverage):
     for r in rows:
         if r['mapping']['issues'] and (r['currentMapping'].get('chapterId') == 'fe-v1-ch01' and not r['chapter1Candidate'] or r['auditClassification'].get('specialFinding')):
             report += f"- PDF {r['sourcePdfPages'][0]} — {r['id']}: {r['auditClassification']['reason']} {'; '.join(r['mapping']['issues'])}.\n"
-    report += '\n## Reliable metadata and grading\n\nYear, April/October season and question number match the original PDF on every record. FE is owner-confirmed provenance, not printed evidence. Paper and subject remain unknown; neither can be inferred from season, topic, filename or a similar occurrence. Distinct pages 275 and 326 retain distinct canonical occurrence IDs. Zero reliable published Practice matches have been established under the existing strict matching rule; no Practice answer is overridden. All seven qualified owner selections retain their grading/publication blockers, including multiple valid choices on p.119 and editorial option labels on p.112.\n\n'
+    metadata_note = 'Morning / Subject A is now separately owner-confirmed for all 333 questions; it was not extracted from the PDF. The original unknown fields remain in the immutable source records and prior review history.' if all(r['metadata']['publicationMetadataComplete'] for r in rows) else 'Paper and subject remain unknown; neither can be inferred from season, topic, filename or a similar occurrence.'
+    report += '\n## Reliable metadata and grading\n\nYear, April/October season and question number match the original PDF on every record. FE is owner-confirmed provenance, not printed evidence. '+metadata_note+' Distinct pages 275 and 326 retain distinct canonical occurrence IDs. Published Practice authority still requires the existing strict occurrence and image matching rule; no Practice answer is overridden. All seven qualified owner selections retain their grading/publication blockers, including multiple valid choices on p.119 and editorial option labels on p.112.\n\n'
     report += '## Next milestone plan (requires owner review)\n\n1. Review the private decision ledger and accept/correct chapter recommendations, especially cross-chapter and uncertain cases. Apply only classification/mapping annotations in a separate source-bound, stale-snapshot-checked change; preserve answers and IDs.\n2. Replace legacy heading citations with the actual bounded passages and page bindings in this inventory. Correct contradictory mappings before considering any Hardware highlight. Retain future-chapter questions privately; do not manufacture routes for unavailable chapters.\n3. Repair the 12 extraction reviews using the listed source defects and editorial boundaries. Five require accessible transcription/provenance completion, seven retain literal-source/editorial defects. Keep original source images; no blanket recropping.\n4. For Hardware candidates, reuse matching existing concepts where appropriate. Review each specific question-to-highlight link; new concepts require an owner-reviewed source paragraph, fragment binding, title and summary. Context-only topics remain unmapped until an exact suitable placement is justified.\n5. Establish paper/subject evidence without guessing; preserve FE owner provenance. Recheck published Practice occurrence/image matches before grading or eventual promotion.\n6. Resolve grading policy for the seven owner-adjudicated records separately; do not turn selected answers into independent verification or approval.\n7. Run dry-run promotion and all publication-boundary/progress/browser checks. Request explicit per-record publication approval only after a concrete, reviewable eligible set exists. No approval is granted by this audit.\n\n'
     report += '## Complete per-question readiness table\n\n' + table(rows)
     outputs['publication-readiness-report.md'] = report
@@ -311,6 +317,9 @@ def run(check=False, textbook=qa.TEXTBOOK):
     before = h.read_json(FOLDER / 'before-files.json')
     if not before:
         raise ValueError('A pre-audit preservation snapshot is required')
+    ledger = h.read_json(FOLDER/'decisions.json')
+    from metadata_integration import FOLDER as metadata_folder,rebind_audit
+    if (metadata_folder/'applied-state.json').exists():ledger,before=rebind_audit(ledger,before)
     verify_preservation(before)
     h.verify_source()
     records = h.read_json(h.WORK/'questions.json'); reviews = h.read_json(h.WORK/'reviews.json')
@@ -327,7 +336,6 @@ def run(check=False, textbook=qa.TEXTBOOK):
             # Page labels must be checked, never derived with a single PDF offset.
             labels = [int(s.strip()) for s in text.splitlines()[:8] if re.fullmatch(r'\d{1,3}', s.strip())]
             pages.append({'pdfPage': i+1, 'text': text, 'textSha256': h.digest(text.encode()), 'printedPage': labels[0] if labels else None})
-    ledger = h.read_json(FOLDER/'decisions.json')
     decisions = validate_ledger(records, reviews, ledger, qa.snapshot_hashes(h.WORK), pages, source_sha, book_sha)
     expected_sheets = [f'visual-review/book-overview-{s:03}-{min(s+35,487):03}.jpg' for s in range(1,488,36)]
     if ledger['bookReview'].get('overviewSheets') != expected_sheets:
@@ -359,7 +367,7 @@ def run(check=False, textbook=qa.TEXTBOOK):
         raise ValueError('Protected academic/mapping/approval baseline differs')
     if {r['sourcePdfPages'][0] for r in rows if r['extraction']['effective'] == 'partial'} != {e['sourcePages'][0] for e in decisions.values() if e.get('partialExtraction')}:
         raise ValueError('Partial extraction repair queue must match all 12 current defects')
-    write_outputs(FOLDER/'reports', artifacts(rows, ledger, coverage), check)
+    write_outputs(report_folder(), artifacts(rows, ledger, coverage), check)
     verify_preservation(before)
     print(dump({'checkOnly': check, 'protectedFilesUnchanged': len(before), **result}))
     return result

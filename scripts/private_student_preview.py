@@ -33,7 +33,7 @@ def save(path, value):
 
 
 def fingerprint():
-    files = [Path(__file__), ROOT/'scripts/private-student-preview-server.mjs', ROOT/'astro.config.mjs', ROOT/'package.json', ROOT/'package-lock.json']
+    files = [Path(__file__), ROOT/'scripts/historical_metadata.py', ROOT/'scripts/metadata_integration.py', ROOT/'scripts/private-student-preview-server.mjs', ROOT/'astro.config.mjs', ROOT/'package.json', ROOT/'package-lock.json']
     files += [p for folder in [ROOT/'src', ROOT/'public', TEMPLATES] for p in folder.rglob('*') if p.is_file()]
     return {str(p.relative_to(ROOT)).replace('\\','/'):h.digest(p.read_bytes()) for p in sorted(files)}
 
@@ -50,8 +50,9 @@ def select_questions(inventory, records, reviews, csv_rows):
             raise ValueError('Stale pilot question/review/image snapshot')
         if c['category']!='ch1' or c['chapter']!=1 or c['placement']!='exact' or not h.valid_verification(r,v) or v.get('ownerAdjudication') or h.effective_extraction(r,v)!='complete' or not q['extraction']['accessibleReviewComplete'] or m.get('status')!='verified' or q['mapping']['issues'] or not q['mapping']['existingConceptReusableInPrinciple']:
             raise ValueError('Pilot requires independent answers, complete accessibility and issue-free existing concept mappings')
-        if v['approval']['status']!='unapproved' or v.get('metadata',{}).get('paper') is not None or v.get('metadata',{}).get('subject') is not None:
-            raise ValueError('Pilot approval/unknown-metadata baseline changed; no gate bypass is allowed')
+        meta=v.get('metadata',{})
+        if v['approval']['status']!='unapproved' or meta.get('status')!='verified' or meta.get('examType')!='FE' or meta.get('paper')!='AM' or meta.get('subject')!='A' or not meta.get('evidence'):
+            raise ValueError('Pilot requires owner-confirmed Morning/Subject A metadata and no publication approval')
         expected = {'historical_pdf_page':r['regions'][0]['pdfPage'],'exam_year':r['year'],'exam_season':r['season'],'exam_question_number':r['number'],
             'book_heading':m['headingNumber'],'concept_id':m['conceptId'],'book_printed_page':c['evidence'][0]['printedPage'],'book_physical_page':c['evidence'][0]['pdfPage'],
             'existing_section_id':m['sectionId'],'existing_subsection_id':m['subsectionId'],'priority_status':'private-pilot-candidate-only',
@@ -68,13 +69,13 @@ def validated_inputs():
         raise ValueError('The completed audit commit must be an ancestor; do not compare it to the older input baseline')
     with contextlib.redirect_stdout(io.StringIO()):audit.run(check=True)
     records=h.read_json(h.WORK/'questions.json');reviews=h.read_json(h.WORK/'reviews.json')
-    inventory=h.read_json(audit.FOLDER/'reports/classification-inventory.json')['questions']
-    candidates=h.read_json(audit.FOLDER/'reports/chapter1-candidates.json')['questions']
-    queue=h.read_json(audit.FOLDER/'reports/mapping-extraction-repair-queue.json')['repairs']
+    inventory=h.read_json(audit.report_folder()/'classification-inventory.json')['questions']
+    candidates=h.read_json(audit.report_folder()/'chapter1-candidates.json')['questions']
+    queue=h.read_json(audit.report_folder()/'mapping-extraction-repair-queue.json')['repairs']
     # These companion audit artifacts must describe the same live snapshot.
     if [r for r in inventory if r['chapter1Candidate']]!=candidates or len({r['id'] for r in queue})!=len(queue):
         raise ValueError('Audit companion inventories disagree')
-    with (audit.FOLDER/'reports/classification-inventory.csv').open(encoding='utf-8',newline='') as f:
+    with (audit.report_folder()/'classification-inventory.csv').open(encoding='utf-8',newline='') as f:
         if [r['id'] for r in csv.DictReader(f)]!=[r['id'] for r in inventory]:raise ValueError('Audit CSV scope differs')
     with (WORK/'inputs'/SHORTLIST).open(encoding='utf-8-sig',newline='') as f:rows=list(csv.DictReader(f))
     selected=select_questions(inventory,records,reviews,rows)
@@ -165,8 +166,8 @@ def project(selected,records,reviews,concepts,repairs=()):
     for q in selected:
         r=index[q['id']];v=reviews[r['id']];m=v['mapping'];c=next(c for c in concepts if c['id']==m['conceptId'])
         links.append(association(q,c));im=r['images'][0]
-        bank.append({'id':r['id'],'examId':f'private-{r["year"]}{r["season"]}-paper-unestablished','number':r['number'],'year':r['year'],'season':r['season'],
-          'subject':None,'paper':None,'privatePreview':True,'is_published':False,'sourceKind':'past_paper','format':'multiple-choice','examLabel':'FE (owner-confirmed)',
+        bank.append({'id':r['id'],'examId':f'private-{r["year"]}{r["season"]}-FE-{v["metadata"]["paper"]}','number':r['number'],'year':r['year'],'season':r['season'],
+          'subject':v['metadata']['subject'],'paper':v['metadata']['paper'],'privatePreview':True,'is_published':False,'sourceKind':'past_paper','format':'multiple-choice','examLabel':'FE (owner-confirmed)',
           'correctAnswer':v['verification']['independentAnswer'],'options':list('abcd'),'chapter':'Hardware','section':m['sectionId'],'topic':m['conceptId'],'mapping':m,
           'image':{'src':f'/__pilot/images/{im["sha256"]}.webp','width':im['width'],'height':im['height'],'sha256':im['sha256']},
           'source':{'dataset':'private-technology-01','questionPdf':'Technology-01.pdf','pageStart':r['regions'][0]['pdfPage'],'pageEnd':r['regions'][-1]['pdfPage'],
@@ -174,9 +175,12 @@ def project(selected,records,reviews,concepts,repairs=()):
           'review':{'examType':'FE','sources':[{'kind':'historical-pdf','filename':'Technology-01.pdf','sha256':audit.SOURCE_SHA,'pages':[p['pdfPage'] for p in r['regions']]}],
                     'answerVerification':'verified','mappingStatus':'verified','extractionQuality':'complete','reviewStatus':'needs-review','publicationStatus':'unapproved','mappings':[m]}})
         e=v['explanation'];x=next((repair['after'] for repair in repairs if repair['questionId']==r['id']),v['extraction'])
-        explanations.append({'questionId':r['id'],'revision':f'private-{q["reviewSha256"][:16]}','answer':v['verification']['independentAnswer'],
+        # Metadata-only rebinding must not change the academic revision of saved attempts.
+        prior_meta=v['metadata'].get('history',[v['metadata']])[0]
+        academic_revision=qa.object_hash({**v,'metadata':prior_meta})
+        explanations.append({'questionId':r['id'],'revision':f'private-{academic_revision[:16]}','answer':v['verification']['independentAnswer'],
           'summary':e['summary'],'steps':e['steps'],'takeaway':e['takeaway'],'optionText':x['optionText'],'imageDescription':x['imageDescription'],
-          'reviewedAgainst':['Existing immutable independently verified private review',q['reviewSha256']]})
+          'reviewedAgainst':['Existing immutable independently verified private review',academic_revision]})
     scoped=[]
     for c in concepts:
         if c['id'] not in COUNTS:continue
@@ -210,13 +214,11 @@ def overlay():
     for name in ['firestore-sync.ts','account-session.ts','sync-controller.ts']:
         (APP/'src/lib'/name).unlink(missing_ok=True)
     models=APP/'src/lib/models.ts'
-    replace_checked(models,"subject: 'A' | 'B';",'subject: null;')
-    replace_checked(models,'paper: string;','paper: null;')
     replace_checked(models,'is_published: true;','is_published: false; privatePreview: true;')
     policy=APP/'src/lib/question-policy.ts'
     replace_checked(policy,'q.is_published === true','q.privatePreview === true && q.is_published === false')
     text=policy.read_text('utf-8');start=text.index('export function questionLabel(');end=text.index('\nexport interface MatchCandidate',start)
-    policy.write_text(text[:start]+"export function questionLabel(q: Question) { return `FE · ${q.year} ${q.season === 'S' ? 'Spring' : 'Autumn'} · Paper/subject not established`; }\n"+text[end:],encoding='utf-8')
+    policy.write_text(text[:start]+"export function questionLabel(q: Question) { return `FE · ${q.paper === 'AM' || q.paper === 'A' ? 'Morning' : q.paper === 'B' ? 'Evening' : q.paper} · Subject ${q.subject} · ${q.year} ${q.season === 'S' ? 'Spring' : 'Autumn'}`; }\n"+text[end:],encoding='utf-8')
     replace_checked(APP/'src/lib/question-highlights.ts','q.is_published===true','q.privatePreview===true&&q.is_published===false')
     replace_checked(APP/'src/lib/question-highlights.ts','published questions','private preview questions')
     # Remove only unavailable exam-link overlays, preserving their native wording.
@@ -262,7 +264,7 @@ def prepare():
       'implementation':fingerprint(),'inputHashes':{name:h.digest((WORK/'inputs'/name).read_bytes()) for name in [SHORTLIST,NOTES]},
       'sourceSha256':audit.SOURCE_SHA,'bookSha256':audit.BOOK_SHA,'auditBaseline':audit.BASELINE,'completedAuditCommit':PILOT_BASELINE,
       'questionIds':[q['id'] for q in bank],'counts':COUNTS,'associations':links,'assets':assets,
-      'imagesComparedToOriginalPixels':36,'excludedAssociations':[],'editorialFindings':findings,'accessibilityRepairs':repairs,'progressPrefix':PREFIX,'paper':None,'subject':None}
+      'imagesComparedToOriginalPixels':36,'excludedAssociations':[],'editorialFindings':findings,'accessibilityRepairs':repairs,'progressPrefix':PREFIX,'paper':'AM','subject':'A'}
     save(WORK/'manifest.json',manifest)
     save(WORK/'walkthrough.json',[{'conceptId':c['id'],'questionId':c['questionIds'][0],'readingUrl':f'{c["sectionUrl"]}#concept-{c["id"]}',
         'practiceUrl':f'/practice/{c["id"]}/?question={c["questionIds"][0]}'} for c in scoped])
