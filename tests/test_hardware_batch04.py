@@ -6,6 +6,8 @@ import subprocess
 import unittest
 from test_hardware_batch02 import fixture
 import hardware_batch04 as b
+import release_4 as release
+from contextlib import nullcontext
 
 
 def batch_fixture():
@@ -85,25 +87,26 @@ class Batch04Tests(unittest.TestCase):
 
     def test_publisher_rejects_non_dry_run_before_loading_any_source(self):
         result=subprocess.run(['node','node_modules/tsx/dist/cli.mjs','scripts/publish-historical-questions.ts','--batch','4'],cwd=b.h.ROOT,capture_output=True,text=True)
-        self.assertNotEqual(result.returncode,0);self.assertIn('publication is forbidden',result.stderr)
+        self.assertNotEqual(result.returncode,0);self.assertIn('publication-gate',result.stderr)
 
     @unittest.skipUnless((b.WORK/'preview/manifest.json').exists(),'Private local source package intentionally absent from clones')
     def test_actual_selection_images_public_baseline_and_preview_equality(self):
-        m=b.check();ledger,records,before,current,expected,published=b.load_context()
-        self.assertEqual({e['pdfPage'] for e in ledger['entries']},b.PAGES);self.assertEqual(len(m['questionIds']),40)
-        self.assertEqual(len(published),536);self.assertEqual(sum(q['id'].startswith('HIST-') for q in published),116)
-        self.assertFalse(set(m['questionIds'])&{q['id'] for q in published})
-        self.assertEqual(set(ledger['newHighlights']),{'display-memory','cache-write-policies'})
-        for r in records:
-            for key in ['verification','explanation','approval','metadata','ownerAdjudication','academicReviews']:
-                self.assertEqual(before[r['id']].get(key),current[r['id']].get(key))
-        bypage={e['pdfPage']:e for e in ledger['entries']}
-        self.assertEqual(bypage[127]['mapping']['headingNumber'],'5-1-1')
-        self.assertIn('A: Control unit; B: Memory; C: ALU',bypage[216]['extraction']['optionText']['c'])
-        self.assertIn('x₀',bypage[111]['extraction']['imageDescription']);self.assertIn('10⁶',bypage[287]['extraction']['imageDescription'])
-        self.assertIn('CPU boundary',bypage[265]['extraction']['imageDescription'])
-        for e in ledger['entries']:
-            self.assertNotRegex(e['extraction']['imageDescription'],r'correct answer|Select [A-D]|option [A-D] is correct')
+        with release.preparation_fixture() if (release.FOLDER/'state.json').exists() else nullcontext():
+            m=b.check();ledger,records,before,current,expected,published=b.load_context()
+            self.assertEqual({e['pdfPage'] for e in ledger['entries']},b.PAGES);self.assertEqual(len(m['questionIds']),40)
+            self.assertEqual(len(published),536);self.assertEqual(sum(q['id'].startswith('HIST-') for q in published),116)
+            self.assertFalse(set(m['questionIds'])&{q['id'] for q in published})
+            self.assertEqual(set(ledger['newHighlights']),{'display-memory','cache-write-policies'})
+            for r in records:
+                for key in ['verification','explanation','approval','metadata','ownerAdjudication','academicReviews']:
+                    self.assertEqual(before[r['id']].get(key),current[r['id']].get(key))
+            bypage={e['pdfPage']:e for e in ledger['entries']}
+            self.assertEqual(bypage[127]['mapping']['headingNumber'],'5-1-1')
+            self.assertIn('A: Control unit; B: Memory; C: ALU',bypage[216]['extraction']['optionText']['c'])
+            self.assertIn('x₀',bypage[111]['extraction']['imageDescription']);self.assertIn('10⁶',bypage[287]['extraction']['imageDescription'])
+            self.assertIn('CPU boundary',bypage[265]['extraction']['imageDescription'])
+            for e in ledger['entries']:
+                self.assertNotRegex(e['extraction']['imageDescription'],r'correct answer|Select [A-D]|option [A-D] is correct')
 
 
 if __name__=='__main__':unittest.main()

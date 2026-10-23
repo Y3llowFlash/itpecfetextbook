@@ -304,7 +304,8 @@
       "conceptIds": [
         "cache-memory",
         "memory-interleaving",
-        "memory-hierarchy"
+        "memory-hierarchy",
+        "cache-write-policies"
       ]
     },
     {
@@ -498,7 +499,8 @@
       "sectionId": "fe-v1-ch01-s05",
       "path": "/chapters/hardware/input-output/",
       "conceptIds": [
-        "display-types"
+        "display-types",
+        "display-memory"
       ]
     },
     {

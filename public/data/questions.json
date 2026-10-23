@@ -20740,6 +20740,90 @@
     }
   },
   {
+    "id": "HIST-TECH01-2007A-Q005",
+    "examId": "2007A_FE_AM",
+    "number": 5,
+    "year": 2007,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "d",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Arithmetic Operation Circuit",
+    "topic": "Half and full adders",
+    "mapping": {
+      "headingNumber": "3-4-2",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-071-b008-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2007A-Q005.fa37306d27d6.webp",
+      "width": 1945,
+      "height": 552,
+      "sha256": "fa37306d27d6f30d4a20226d050d34949d427421ee461012d152544e410f0c55"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 196,
+      "pageEnd": 196,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2007A-Q005"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            196
+          ],
+          "printedAnswer": "d"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "arithmetic-circuits",
+          "evidence": [
+            {
+              "checkedExcerpt": "In a computer, subtraction can be performed with addition using complement notation. Similarly, the four basic arithmetic operations can be implemented with addition only. This is because multiplication can be performed with repeated addition, and division can be performed with repeated subtraction (i.e. repeated addition). Therefore, in order to implement the four basic arithmetic operations in a computer, only an adder circuit and a complement",
+              "kind": "textbook-source",
+              "pdfPage": 71,
+              "printedPage": 66,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "0394048d8333196d8278259f1a961582643278579073a662942361306eaae59f"
+            }
+          ],
+          "headingNumber": "3-4-2",
+          "reason": "Original question image and actual 3-4-2 teaching re-read; arithmetic-circuits is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-071-b008-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "57d9752147a15d50519de485bdf2d268a3b4867127456da182efc100cdef0929"
+    }
+  },
+  {
     "id": "HIST-TECH01-2007A-Q019",
     "examId": "2007A_FE_AM",
     "number": 19,
@@ -20821,6 +20905,99 @@
         }
       ],
       "approvalFingerprint": "f5dd0df33456df750794b73e7b8deba49e5a9b91d8c2415c20919dfc6f152eee"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2007A-Q022",
+    "examId": "2007A_FE_AM",
+    "number": 22,
+    "year": 2007,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Speeding-up of Processor",
+    "topic": "Instruction pipelining",
+    "mapping": {
+      "headingNumber": "3-5-2",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-079-b003-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2007A-Q022.5e6102cd0702.webp",
+      "width": 1945,
+      "height": 702,
+      "sha256": "5e6102cd07026b042b7eccf1a1859c392a8130b52ba9d951e8b85bc295ec8cb8"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 323,
+      "pageEnd": 323,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2007A-Q022"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            323
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "processor-pipeline",
+          "evidence": [
+            {
+              "checkedExcerpt": "Pipeline control (or the pipeline processing) divides the execution cycle of each instruction into multiple stages, and by shifting each stage little by little and executing multiple stages separately, multiple instructions are executed simultaneously and in parallel.",
+              "kind": "textbook-source",
+              "pdfPage": 79,
+              "printedPage": 74,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "43e5268e1ad8127dce9376794ed8fcbff11fb38c272846ee59191dd800b9f312"
+            },
+            {
+              "checkedExcerpt": "Pipeline control is a method of advanced control of instructions. Therefore, efficiency will decline if there are instructions (jump instructions) that change the execution sequence of instruction. Moreover, if the execution time of each instruction is different, the waiting time may be required before starting the execution of a stage, and efficiency will decline. Figure 1-40 Pipeline control with poor efficiency For efficient pipeline control, it is necessary that the execution time of all instructions be almost the same. Among the different architectures of processors (computers), RISC architecture is suitable for this concept, while CISC architecture is not very suitable.",
+              "kind": "textbook-source",
+              "pdfPage": 80,
+              "printedPage": 75,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "af2abb85be02f4e30285b0a3a5670cf1fe5386a9ca908c0d972c3651fa6748a9"
+            }
+          ],
+          "headingNumber": "3-5-2",
+          "reason": "Original question image and actual 3-5-2 teaching re-read; processor-pipeline is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-079-b003-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "0fbe595002e6806d9d21b69f684e494a1958d9e2f06f47d18a5329fdbcc89e68"
     }
   },
   {
@@ -21087,6 +21264,174 @@
     }
   },
   {
+    "id": "HIST-TECH01-2007S-Q003",
+    "examId": "2007S_FE_AM",
+    "number": 3,
+    "year": 2007,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Numeric Data",
+    "topic": "Floating-point representation",
+    "mapping": {
+      "headingNumber": "2-3-2",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-036-b002-l22-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2007S-Q003.963c8ce7e372.webp",
+      "width": 1945,
+      "height": 403,
+      "sha256": "963c8ce7e37218ba2e8914951c39dfae7f7c9eb698c3dba59dfa9cad1399bd14"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 205,
+      "pageEnd": 205,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2007S-Q003"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            205
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "floating-point",
+          "evidence": [
+            {
+              "checkedExcerpt": "C: Fraction (mantissa) (M) This is used for representing a numerical value after the radix point. In order to represent the part after the radix point, it is common to perform normalization. In this case, the integer part is either set to 0 or 1 (storing after the omission of 1 from the integer part). • When the integer part is set to 0: 0.101101 → Store “101101” in fraction (mantissa) • When the integer part is set to 1: 1.011010 → Store “011010” in fraction (mantissa) [Normalization] This operation is for maintaining the precision of numerical values by increasing digits that can be used in fraction (mantissa). In most cases, this is done by reducing extra 0s after the radix point.",
+              "kind": "textbook-source",
+              "pdfPage": 44,
+              "printedPage": 39,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "b2f678d1f63412457b5a533dc430aaf4f07f91f2f4b0950baf9c656a1d2fccde"
+            }
+          ],
+          "headingNumber": "2-3-2",
+          "reason": "Original question image and actual 2-3-2 teaching re-read; floating-point is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s02",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-036-b002-l22-text-0"
+        }
+      ],
+      "approvalFingerprint": "d78af762093d7dab5340e3afac539203a5cd96e2abe75a0f525df575e8479b71"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2007S-Q004",
+    "examId": "2007S_FE_AM",
+    "number": 4,
+    "year": 2007,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "d",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Shift Operation",
+    "topic": "Signed integers and shifts",
+    "mapping": {
+      "headingNumber": "2-3-4",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-048-b005-l01-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2007S-Q004.22cf37257b86.webp",
+      "width": 1944,
+      "height": 404,
+      "sha256": "22cf37257b866aa8ebb394abd2887ff1e60d63df9f847e7be3e0fd5d4eec87c6"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 329,
+      "pageEnd": 329,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2007S-Q004"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            329
+          ],
+          "printedAnswer": "d"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "signed-shifts",
+          "evidence": [
+            {
+              "checkedExcerpt": "Because of this, computation rules of arithmetic shift can be summarized as follows: [Computation rules of arithmetic shift] • With an arithmetic shift to left by n bits, the value becomes 2n times of the original number. • With an arithmetic shift to right by n bits, the value becomes 2−n times of the original number. (It is the value that is obtained by dividing the original number by 2n) (2) Logical shift Logical shift is the shift operation used when the position of bits are changed. Its main difference from the arithmetic shift is that it does not treat the sign bit in a special manner. [Rules of logical shift] • Shift (move) the sign bit as well. • Truncate extra bits that are shifted out as a result of the shift. • Store 0 in the empty bit position that is created as a result of shift.",
+              "kind": "textbook-source",
+              "pdfPage": 49,
+              "printedPage": 44,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "842c04587b857023fdf8cdf66df09a3f066a700c8383fbd99d9bb384efb686b7"
+            }
+          ],
+          "headingNumber": "2-3-4",
+          "reason": "Original question image and actual 2-3-4 teaching re-read; signed-shifts is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s02",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-048-b005-l01-text-0"
+        }
+      ],
+      "approvalFingerprint": "649f02d26869150c8d0a50363f9a73b0d8830d0cb95e1d81784415c1ce307d26"
+    }
+  },
+  {
     "id": "HIST-TECH01-2007S-Q005",
     "examId": "2007S_FE_AM",
     "number": 5,
@@ -21293,6 +21638,99 @@
     }
   },
   {
+    "id": "HIST-TECH01-2007S-Q025",
+    "examId": "2007S_FE_AM",
+    "number": 25,
+    "year": 2007,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Average Access Time of Magnetic Disk Drive",
+    "topic": "Disk access time",
+    "mapping": {
+      "headingNumber": "4-1-3",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-089-b004-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2007S-Q025.cc375d3ec2b4.webp",
+      "width": 1945,
+      "height": 777,
+      "sha256": "cc375d3ec2b4303e1c4b07ab248b3bd94be263193dccb48a5948e85e2e6d2f22"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 333,
+      "pageEnd": 333,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2007S-Q025"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            333
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "disk-access",
+          "evidence": [
+            {
+              "checkedExcerpt": "3) Data transfer The magnetic head will read (or write) the data. The time required for this process is called data transfer time. Therefore, access time is a summation of these times. [Access time of magnetic disk drive] Access time = seek time + rotational latency + data transfer time On the other hand, average access time is the average value of access time for reading (or writing) data of one unit of input/output. In this case, since the amount of data of one unit of input/output is the same, data transfer time is the same on each occasion. However, seek time and rotational latency are different on each occasion. Therefore, their respective average values (average seek time, average rotational latency) are used. [Average access time of magnetic disk drive] Average access time = average seek time + average rotational latency + data transfer time In order to calculate average access time, the values to be used as average seek time, average rotational latency, and data transfer time are shown below. Here, when average latency is used, it can be calculated as “average seek time + average rotational latency.” 1) Average seek time This is the time required for the magnetic head to move up to the target track (cylinder). Therefore, seek time differs on the basis of both the position of the magnetic head when the access is started and the position of the target track. Usually, therefore, the average seek time stated in the specifications of magnetic disk is used. 2) Average rotational latency (average search time)",
+              "kind": "textbook-source",
+              "pdfPage": 90,
+              "printedPage": 84,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "d9a8475099617a68f300355222bda384fc6843387f0b3f9ca639eb129ac31694"
+            },
+            {
+              "checkedExcerpt": "Since the magnetic disk rotates at a constant speed, in some cases there may not be any latency when the head of data is positioned directly underneath from the beginning (minimum rotational latency). On the other hand, it may be necessary to wait until the disk completes one rotation when the head of data has just passed (maximum rotational latency). Therefore, the average of minimum rotational latency and maximum rotation latency, which is 1/2 of the time required for the magnetic disk to complete one rotation, is used. Average rotational latency = Time required for magnetic disk to complete one rotation 2 3) Data transfer time Data is read (or written) when the target data passes underneath the magnetic head. In other words, when the magnetic disk completes one rotation, the track will complete one rotation underneath the magnetic head, and therefore data recorded in one track will be read (or written). Therefore, the data transfer rate of the magnetic disk can be calculated as follows: Data transfer rate = Storage capacity of one track Time required for magnetic disk to complete one rotation Also, calculate data transfer time by dividing the amount of data (amount of transferred data) of one unit of input/output (data to be read or written) by the data transfer rate.",
+              "kind": "textbook-source",
+              "pdfPage": 91,
+              "printedPage": 85,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "0970994f39041976e4dce49cc427e99737273794a379fca451b3902a96cf73ae"
+            }
+          ],
+          "headingNumber": "4-1-3",
+          "reason": "Original question image and actual 4-1-3 teaching re-read; disk-access is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s04",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-089-b004-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "5b125464a0698f5380e3cb4c4bb5346ef39b6408579c80d0f187e063e13591df"
+    }
+  },
+  {
     "id": "HIST-TECH01-2007S-Q028",
     "examId": "2007S_FE_AM",
     "number": 28,
@@ -21470,6 +21908,267 @@
         }
       ],
       "approvalFingerprint": "b16acc02dfe88edf40c85eee6929475b9ad73268d7f00b52ecaf9fc37f1d1ead"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2007S-Q031",
+    "examId": "2007S_FE_AM",
+    "number": 31,
+    "year": 2007,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Five Major Units of Computers",
+    "topic": "Five major computer units",
+    "mapping": {
+      "headingNumber": "1-2",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-021-b003-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2007S-Q031.e854b75eda41.webp",
+      "width": 1944,
+      "height": 1197,
+      "sha256": "e854b75eda416d83e5d33a83a5c9af54cff917c9c78d85234d181c429c1627ff"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 216,
+      "pageEnd": 216,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2007S-Q031"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            216
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "five-major-units",
+          "evidence": [
+            {
+              "checkedExcerpt": "1) Input unit This is a unit that reads data to be processed by computer. 2) Output unit This is a unit that writes the processing results in a form that can be understood by humans. 3) Storage unit This is a unit that records data. There are main memory and auxiliary storage. 4) Arithmetic and logical unit This is a unit that performs arithmetic operations on data that is stored in the storage unit or makes a decision as per the instructions of the control unit. 5) Control unit This is a unit that interprets a command and gives instructions to the remaining four units. Below is an explanation of these units by using a specific example. When the arithmetic operation “3+6= ” is performed by a computer, a summary of the operation of each unit is as follows: 1) Enter “3+6” from the input unit, and store it in the storage unit. ↓ 2) Control unit decodes the meaning of “+”. As a result of decoding, it knows that “+” is a command for making addition. Therefore, it gives an instruction to the arithmetic and logical unit. ↓ 3) The arithmetic and logical unit fetches “3” and “6” from the storage unit, and performs the calculation. The result “9” is stored in the storage unit. ↓ 4) “9” is written from the storage unit to the output unit. Figure 1-2 Functioning of a computer",
+              "kind": "textbook-source",
+              "pdfPage": 22,
+              "printedPage": 17,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "da5be49dd5ac8106c00028ddbf1bba376f7ae32294ce041c7ff8c003c7c6d7d5"
+            },
+            {
+              "checkedExcerpt": "In the storage unit, there is main memory and auxiliary storage. (In Figure 1-3, what is mentioned as the storage unit is main memory.) The differences between these two are described below. • Main memory This unit can directly exchange data with the control unit and the arithmetic and logical unit, and it has a volatility characteristic (contents are lost if power supply is turned off). • Auxiliary storage This unit stores data that cannot be accommodated in main memory, and it has a non-volatility characteristic (contents are not lost even if power supply is turned off).",
+              "kind": "textbook-source",
+              "pdfPage": 23,
+              "printedPage": 18,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "206bbb529d465e1a9ee1536383107e0339ccb5a6e6a825bea6c4f98bc7b33935"
+            }
+          ],
+          "headingNumber": "1-2",
+          "reason": "Original question image and actual 1-2 teaching re-read; five-major-units is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s01",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-021-b003-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "03affe795c54d65519e941beeae895f79207f59477e198dff239155e9b11eb2a"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2007S-Q032",
+    "examId": "2007S_FE_AM",
+    "number": 32,
+    "year": 2007,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "d",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Other Input Devices",
+    "topic": "Digitizers and tablets",
+    "mapping": {
+      "headingNumber": "5-1-4",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-102-b005-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2007S-Q032.d48b84023ac0.webp",
+      "width": 1945,
+      "height": 328,
+      "sha256": "d48b84023ac0676bbce7abe629e46eea88a1d50b36fed8fcb6ee633091090cb8"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 217,
+      "pageEnd": 217,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2007S-Q032"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            217
+          ],
+          "printedAnswer": "d"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "digitizer-tablet",
+          "evidence": [
+            {
+              "checkedExcerpt": "(1) Digitizer/tablet Digitizer is an input device that feeds two-dimensional and three-dimensional drawing information as coordinate information by tracing a drawing on the panel. A compact size digitizer that can be used on a desk is specifically referred to as a tablet. It is used for entering drawings in a design support system called CAD and creating data of an NC (Numeric Control) machine tool. Digitizer",
+              "kind": "textbook-source",
+              "pdfPage": 102,
+              "printedPage": 96,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "99d404576f6d42a62345446be4ccc8ed8041ad616f89e473341cd5c78baabbe8"
+            }
+          ],
+          "headingNumber": "5-1-4",
+          "reason": "Original question image and actual 5-1-4 teaching re-read; digitizer-tablet is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s05",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-102-b005-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "19ce3b6ae7fb591a460cccab55d65ed31376824fec13521aae502c242d10ccaa"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2007S-Q033",
+    "examId": "2007S_FE_AM",
+    "number": 33,
+    "year": 2007,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Display",
+    "topic": "Display technologies",
+    "mapping": {
+      "headingNumber": "5-2-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-103-b005-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2007S-Q033.fa2b881da8c6.webp",
+      "width": 1945,
+      "height": 403,
+      "sha256": "fa2b881da8c6129d8957dda1a20727615222121b2b806ae34d18a2ddb4b889e7"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 218,
+      "pageEnd": 218,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2007S-Q033"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            218
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "display-types",
+          "evidence": [
+            {
+              "checkedExcerpt": "(1) CRT display CRT display is an output device that uses a cathode-ray tube just like television. Light is emitted by applying electron beams onto a phosphor screen, and any character or image can be drawn depending on the beam strength. While it has advantages in that the screen is easy to see and display speed is also fast, it suffers from disadvantages in that the device is large (because of depth) and power consumption is also high. Furthermore, there is another problem of burning the image on the display when the same image is displayed for a long time. In order to prevent this burning, software called a screen saver is used. (2) LCD (Liquid Crystal Display) LCD (Liquid Crystal Display) is an output device that uses liquid crystals whose permeation rate of light varies depending on voltage. As compared with CRT displays, it is thin and lightweight, and consumes less power. Therefore, it is mostly used in a notebook PC; however, these days it is also used in a desktop PC. Since liquid crystals themselves do not emit any light, either a reflection board is embedded or a back-light method is used where light is thrown from the rear. As compared with an STN liquid crystal display, which controls multiple pixels with one semiconductor, the response speed of a TFT liquid crystal display, which controls one pixel with one transistor, is faster and its viewing angle is also broad. Therefore, TFT LCDs are more widely used these days. (3) PDP (Plasma Display Panel) PDP (Plasma Display) is an output device where gas is sealed between two panels of glass and light is emitted by applying voltage. While it has higher luminance and wider viewing angle in comparison with other methods, power consumption is also large because high voltage is required. (4) OLED (Organic Light Emitting Diode) display OLED (Organic Light Emitting Diode) display is an output device that uses organic compounds that emit light when voltage is applied. Unlike a liquid crystal display, it emits light on its own on a glass substrate. Its response speed is fast, image quality is of high luminance because of high contrast, and the viewing angle is also wide. In addition, power consumption is small, so it has potential to become the next-generation display. However, its life is short.",
+              "kind": "textbook-source",
+              "pdfPage": 105,
+              "printedPage": 99,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "ed55227749f87b41fe1b50b6d1923a5886c81a3eef76166911302f018a8abc7a"
+            }
+          ],
+          "headingNumber": "5-2-1",
+          "reason": "Original question image and actual 5-2-1 teaching re-read; display-types is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s05",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-103-b005-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "3d9499930f102f235ecbdf2ea78e03a2cd246b617061484386faa390370e8f40"
     }
   },
   {
@@ -22452,6 +23151,192 @@
     }
   },
   {
+    "id": "HIST-TECH01-2008S-Q025",
+    "examId": "2008S_FE_AM",
+    "number": 25,
+    "year": 2008,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "a",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Types of Input/Output Interfaces and their Characteristics",
+    "topic": "USB interfaces",
+    "mapping": {
+      "headingNumber": "5-5-2",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-112-b008-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2008S-Q025.7e2aa11ec737.webp",
+      "width": 1940,
+      "height": 848,
+      "sha256": "7e2aa11ec737d3a19863ee4ba0c9bbda7ea05036afa5d78267684fae951afe14"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 194,
+      "pageEnd": 194,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2008S-Q025"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            194
+          ],
+          "printedAnswer": "a"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "usb-interface",
+          "evidence": [
+            {
+              "checkedExcerpt": "(3) USB (Universal Serial Bus) USB is a serial interface standardized in 1996, and it can connect various peripheral devices such as a keyboard, a mouse, and a modem. By using a USB hub, up to 127 devices can be connected in the tree configuration. Multiple standards for the shape of connectors are defined according to the device to be used.",
+              "kind": "textbook-source",
+              "pdfPage": 113,
+              "printedPage": 107,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "dc0ac94224ac349601fb4e55d1b2f368c14b9df6990bed8566415f31dba58cca"
+            },
+            {
+              "checkedExcerpt": "[Data transfer modes of USB] • USB1.1 It is available in low-speed mode (1.5 Mbps) that is used for connecting low-speed peripheral devices such as a keyboard and a mouse, and full-speed mode (12 Mbps) used for connecting somewhat high-speed peripheral devices such as a printer and a scanner. • USB2.0 There are three types of data transfer modes. A mode is added to two data transfer modes of USB1.1. This third mode is called high-speed mode (480 Mbps) and is used for connecting high-speed peripheral devices such as external hard disks. • USB3.0 In addition to the three types of data transfer modes of USB 2.0, SuperSpeed mode (5,120Mbps) is added. Also power management is improved in the standard.",
+              "kind": "textbook-source",
+              "pdfPage": 114,
+              "printedPage": 108,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "28d8db735ce9cb3b4b91def979f363b7ee8c78b397f21ebad31de5ce1e179a49"
+            }
+          ],
+          "headingNumber": "5-5-2",
+          "reason": "Original question image and actual 5-5-2 teaching re-read; usb-interface is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s05",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-112-b008-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "856b02641823d18c0ca03fb60aa8a900037938dad478f9c53adc881992f00b70"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2008S-Q026",
+    "examId": "2008S_FE_AM",
+    "number": 26,
+    "year": 2008,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "d",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Five Major Units of Computers",
+    "topic": "Five major computer units",
+    "mapping": {
+      "headingNumber": "1-2",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-021-b003-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2008S-Q026.40472aa81c5d.webp",
+      "width": 1940,
+      "height": 750,
+      "sha256": "40472aa81c5d72da4cdc92f52633d44b3c31d7692b510802dd5da6c23e103adc"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 195,
+      "pageEnd": 195,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2008S-Q026"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            195
+          ],
+          "printedAnswer": "d"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "five-major-units",
+          "evidence": [
+            {
+              "checkedExcerpt": "1) Input unit This is a unit that reads data to be processed by computer. 2) Output unit This is a unit that writes the processing results in a form that can be understood by humans. 3) Storage unit This is a unit that records data. There are main memory and auxiliary storage. 4) Arithmetic and logical unit This is a unit that performs arithmetic operations on data that is stored in the storage unit or makes a decision as per the instructions of the control unit. 5) Control unit This is a unit that interprets a command and gives instructions to the remaining four units. Below is an explanation of these units by using a specific example. When the arithmetic operation “3+6= ” is performed by a computer, a summary of the operation of each unit is as follows: 1) Enter “3+6” from the input unit, and store it in the storage unit. ↓ 2) Control unit decodes the meaning of “+”. As a result of decoding, it knows that “+” is a command for making addition. Therefore, it gives an instruction to the arithmetic and logical unit. ↓ 3) The arithmetic and logical unit fetches “3” and “6” from the storage unit, and performs the calculation. The result “9” is stored in the storage unit. ↓ 4) “9” is written from the storage unit to the output unit. Figure 1-2 Functioning of a computer",
+              "kind": "textbook-source",
+              "pdfPage": 22,
+              "printedPage": 17,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "da5be49dd5ac8106c00028ddbf1bba376f7ae32294ce041c7ff8c003c7c6d7d5"
+            },
+            {
+              "checkedExcerpt": "In computers based on stored-program, programs (instructions) recorded in the main memory unit are read in the CPU one by one, and the control unit issues directions to each device on the basis of the contents of the instruction for processing. In order to carry out this operation, the CPU is composed of various devices and components.",
+              "kind": "textbook-source",
+              "pdfPage": 51,
+              "printedPage": 46,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "3154c420b7fe7e581d71c2d41dd6e3cfde185d2c79e64079a187093359417e4c"
+            }
+          ],
+          "headingNumber": "1-2",
+          "reason": "Original question image and actual 1-2 teaching re-read; five-major-units is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s01",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-021-b003-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "7b2f19e3ac7d27f1003516a9f38d53ce9b0182311583ebe059f00b00615aae9a"
+    }
+  },
+  {
     "id": "HIST-TECH01-2009A-Q001",
     "examId": "2009A_FE_AM",
     "number": 1,
@@ -22890,6 +23775,99 @@
         }
       ],
       "approvalFingerprint": "bf1a84883898df2aaadeb90872f95dc3f901df73c4c9fd88ddcc6a44e4da9517"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2009A-Q018",
+    "examId": "2009A_FE_AM",
+    "number": 18,
+    "year": 2009,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Speeding-up of Processor",
+    "topic": "Instruction pipelining",
+    "mapping": {
+      "headingNumber": "3-5-2",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-079-b003-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2009A-Q018.a1b22d1d0198.webp",
+      "width": 1945,
+      "height": 549,
+      "sha256": "a1b22d1d0198190884b74c121d9d2f235aff6ab173dc1e149a8fce40278df551"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 297,
+      "pageEnd": 297,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2009A-Q018"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            297
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "processor-pipeline",
+          "evidence": [
+            {
+              "checkedExcerpt": "Pipeline control (or the pipeline processing) divides the execution cycle of each instruction into multiple stages, and by shifting each stage little by little and executing multiple stages separately, multiple instructions are executed simultaneously and in parallel.",
+              "kind": "textbook-source",
+              "pdfPage": 79,
+              "printedPage": 74,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "43e5268e1ad8127dce9376794ed8fcbff11fb38c272846ee59191dd800b9f312"
+            },
+            {
+              "checkedExcerpt": "Pipeline control is a method of advanced control of instructions. Therefore, efficiency will decline if there are instructions (jump instructions) that change the execution sequence of instruction. Moreover, if the execution time of each instruction is different, the waiting time may be required before starting the execution of a stage, and efficiency will decline. Figure 1-40 Pipeline control with poor efficiency For efficient pipeline control, it is necessary that the execution time of all instructions be almost the same. Among the different architectures of processors (computers), RISC architecture is suitable for this concept, while CISC architecture is not very suitable.",
+              "kind": "textbook-source",
+              "pdfPage": 80,
+              "printedPage": 75,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "af2abb85be02f4e30285b0a3a5670cf1fe5386a9ca908c0d972c3651fa6748a9"
+            }
+          ],
+          "headingNumber": "3-5-2",
+          "reason": "Original question image and actual 3-5-2 teaching re-read; processor-pipeline is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-079-b003-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "ea2e83754bb1432e7d881a3585fce12eb35a044e3a763bc0a6075cbc1b61e611"
     }
   },
   {
@@ -23688,6 +24666,90 @@
     }
   },
   {
+    "id": "HIST-TECH01-2009S-Q026",
+    "examId": "2009S_FE_AM",
+    "number": 26,
+    "year": 2009,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "a",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Types of Input/Output Interfaces and their Characteristics",
+    "topic": "Bluetooth interfaces",
+    "mapping": {
+      "headingNumber": "5-5-2",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-112-b008-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2009S-Q026.7f81d9157564.webp",
+      "width": 1945,
+      "height": 324,
+      "sha256": "7f81d91575646f938bc05bdef6f975ffff9aea72cfc93352a7b2fe85f944d9df"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 176,
+      "pageEnd": 176,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2009S-Q026"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            176
+          ],
+          "printedAnswer": "a"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "bluetooth-interface",
+          "evidence": [
+            {
+              "checkedExcerpt": "(9) Bluetooth Bluetooth is a wireless technology standard that connects devices such as cell phones and PCs, and is an interface for exchanging data and voice by using the frequency band of 2.4GHz (2.402 to 2.480 GHz), which can be used all over the world. Unlike infrared rays, communication is possible even if there is a block or an obstacle between devices. Therefore, it allows the transfer of data between devices that are separated with low partitions.",
+              "kind": "textbook-source",
+              "pdfPage": 115,
+              "printedPage": 109,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "1cc8eacb1edb05aa6151d68b77c3e8a74cd4839752f313c408b0d1fbed1d126c"
+            }
+          ],
+          "headingNumber": "5-5-2",
+          "reason": "Original question image and actual 5-5-2 teaching re-read; bluetooth-interface is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s05",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-112-b008-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "bd7913511cfb69a56b1008d6fe4d52c90c24095d7cd08b5c81f4e62a18ec7ca7"
+    }
+  },
+  {
     "id": "HIST-TECH01-2010A-Q001",
     "examId": "2010A_FE_AM",
     "number": 1,
@@ -23774,6 +24836,183 @@
     }
   },
   {
+    "id": "HIST-TECH01-2010A-Q013",
+    "examId": "2010A_FE_AM",
+    "number": 13,
+    "year": 2010,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Display",
+    "topic": "Display memory capacity",
+    "mapping": {
+      "headingNumber": "5-2-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-103-b005-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2010A-Q013.7e7cfd8eab3d.webp",
+      "width": 1945,
+      "height": 398,
+      "sha256": "7e7cfd8eab3d261f4c77b21ea31b52a301d534e0d9e25952496d105cac15aa9f"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 287,
+      "pageEnd": 287,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2010A-Q013"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            287
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "display-memory",
+          "evidence": [
+            {
+              "checkedExcerpt": "Displays of present-day PCs mostly use a multiscan method that can support various resolutions. However, for supporting high resolution, graphic memory (VRAM (Video RAM)) that supports high resolution is required. Storage capacity required for VRAM is decided by the screen resolution and the number of colors per one bit (the number of bits that is required for displaying a color). Example: On a display that has the resolution of 1,280×1,024, calculate the storage capacity of VRAM that is required for displaying about 16,000,000 colors by assigning 256 grades of intensity to each color of RGB. 1) Number of bits required for displaying one color 256 = 28, therefore 8 bits/color 2) Number of bits required for displaying color information of 1 dot = 8 bits/color × 3 colors/dot = 24 bits/dot 3) Number of bits required for one screen = Number of bits required for one dot × Number of dots on one screen = 24 bits/dot × (1,280×1,024) dots/screen = 31,457,280 bits/screen ··· About 4 Mbytes/screen",
+              "kind": "textbook-source",
+              "pdfPage": 104,
+              "printedPage": 98,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "0ca6260335a89cb3ab3ce54f1b80340541a4a45532a31e56cc55c6e4499e0377"
+            }
+          ],
+          "headingNumber": "5-2-1",
+          "reason": "Original question image and actual 5-2-1 teaching re-read; display-memory is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s05",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-103-b005-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "6147b5172176a8b927eabe577882de96c86444cc579fc020ae43958f6f0fef64"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2010A-Q015",
+    "examId": "2010A_FE_AM",
+    "number": 15,
+    "year": 2010,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "d",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Average Access Time of Magnetic Disk Drive",
+    "topic": "Disk access time",
+    "mapping": {
+      "headingNumber": "4-1-3",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-089-b004-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2010A-Q015.78a8b8b9fa89.webp",
+      "width": 1945,
+      "height": 872,
+      "sha256": "78a8b8b9fa8996503a90e20a41113d7f9e9dea4c82cf1001d9bc872fc5615d36"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 289,
+      "pageEnd": 289,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2010A-Q015"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            289
+          ],
+          "printedAnswer": "d"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "disk-access",
+          "evidence": [
+            {
+              "checkedExcerpt": "3) Data transfer The magnetic head will read (or write) the data. The time required for this process is called data transfer time. Therefore, access time is a summation of these times. [Access time of magnetic disk drive] Access time = seek time + rotational latency + data transfer time On the other hand, average access time is the average value of access time for reading (or writing) data of one unit of input/output. In this case, since the amount of data of one unit of input/output is the same, data transfer time is the same on each occasion. However, seek time and rotational latency are different on each occasion. Therefore, their respective average values (average seek time, average rotational latency) are used. [Average access time of magnetic disk drive] Average access time = average seek time + average rotational latency + data transfer time In order to calculate average access time, the values to be used as average seek time, average rotational latency, and data transfer time are shown below. Here, when average latency is used, it can be calculated as “average seek time + average rotational latency.” 1) Average seek time This is the time required for the magnetic head to move up to the target track (cylinder). Therefore, seek time differs on the basis of both the position of the magnetic head when the access is started and the position of the target track. Usually, therefore, the average seek time stated in the specifications of magnetic disk is used. 2) Average rotational latency (average search time)",
+              "kind": "textbook-source",
+              "pdfPage": 90,
+              "printedPage": 84,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "d9a8475099617a68f300355222bda384fc6843387f0b3f9ca639eb129ac31694"
+            },
+            {
+              "checkedExcerpt": "Since the magnetic disk rotates at a constant speed, in some cases there may not be any latency when the head of data is positioned directly underneath from the beginning (minimum rotational latency). On the other hand, it may be necessary to wait until the disk completes one rotation when the head of data has just passed (maximum rotational latency). Therefore, the average of minimum rotational latency and maximum rotation latency, which is 1/2 of the time required for the magnetic disk to complete one rotation, is used. Average rotational latency = Time required for magnetic disk to complete one rotation 2 3) Data transfer time Data is read (or written) when the target data passes underneath the magnetic head. In other words, when the magnetic disk completes one rotation, the track will complete one rotation underneath the magnetic head, and therefore data recorded in one track will be read (or written). Therefore, the data transfer rate of the magnetic disk can be calculated as follows: Data transfer rate = Storage capacity of one track Time required for magnetic disk to complete one rotation Also, calculate data transfer time by dividing the amount of data (amount of transferred data) of one unit of input/output (data to be read or written) by the data transfer rate.",
+              "kind": "textbook-source",
+              "pdfPage": 91,
+              "printedPage": 85,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "0970994f39041976e4dce49cc427e99737273794a379fca451b3902a96cf73ae"
+            }
+          ],
+          "headingNumber": "4-1-3",
+          "reason": "Original question image and actual 4-1-3 teaching re-read; disk-access is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s04",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-089-b004-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "a533d9ac969440dc0fd62d49615d023064926680632102ceb65f9357acac44f0"
+    }
+  },
+  {
     "id": "HIST-TECH01-2010A-Q016",
     "examId": "2010A_FE_AM",
     "number": 16,
@@ -23855,6 +25094,99 @@
         }
       ],
       "approvalFingerprint": "35f8546de133880c0807f04d3980dcf5705ee23348d86def076ccd330b11dc1e"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2010A-Q027",
+    "examId": "2010A_FE_AM",
+    "number": 27,
+    "year": 2010,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Arithmetic Operation Circuit",
+    "topic": "Half and full adders",
+    "mapping": {
+      "headingNumber": "3-4-2",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-071-b008-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2010A-Q027.41f1cbe0ac11.webp",
+      "width": 1944,
+      "height": 1064,
+      "sha256": "41f1cbe0ac11b23ff4df40c8b85f3a74542f4a8158e345e48e6c2c3bda7047b9"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 147,
+      "pageEnd": 147,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2010A-Q027"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            147
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "arithmetic-circuits",
+          "evidence": [
+            {
+              "checkedExcerpt": "[Results of arithmetic operation of 3-bit addition] Values to be added Operation result X Y c0 Carry (c1) Sum (s) 0 0 0 0 0 0 0 1 0 1 0 1 0 0 1 1 0 0 0 1 0 1 1 1 0 1 0 1 1 0 1 1 0 1 0 1 1 1 1 1",
+              "kind": "textbook-source",
+              "pdfPage": 73,
+              "printedPage": 68,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "7a91f6b4fff987e3838c98edbf51b73a349e18435f6a7ab44083ce8c53f39907"
+            },
+            {
+              "checkedExcerpt": "By expanding (simplifying) these logical expressions F1 and F2 by using logical laws, we can derive the configuration of a 3-bit adder circuit. However, even expansion of logical expression with this method is difficult, and it can be anticipated that configuration of the circuit will become complicated. Therefore, we will use half adders after 3-bit addition is divided into 2-bit addition. [Dividing 3-bit addition into 2-bit addition] 1) Add X and Y, and determine carry (c’) and sum (s’). 2) Add s’ and c0, and determine carry (c’’) and sum (s’’). s’’ determined here will be sum (s) in overall arithmetic operation. 3) If there is any carry in this addition, then carry will occur for overall arithmetic operation. Therefore, carry (c1) in overall arithmetic operation is determined with OR operation of c’ and c’’. (Carry will never be 1 in both the operations) Full adder shown in",
+              "kind": "textbook-source",
+              "pdfPage": 74,
+              "printedPage": 69,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "0be8e2dbf739ecf4cda89571330efdc812335c768d15cc7aa39e2a8183102781"
+            }
+          ],
+          "headingNumber": "3-4-2",
+          "reason": "Original question image and actual 3-4-2 teaching re-read; arithmetic-circuits is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-071-b008-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "648d8f5587c0c6a3d0ea4004ee38711a85ad93c33ae0130feb14e829407ae658"
     }
   },
   {
@@ -24302,6 +25634,174 @@
     }
   },
   {
+    "id": "HIST-TECH01-2011A-Q011",
+    "examId": "2011A_FE_AM",
+    "number": 11,
+    "year": 2011,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "a",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "High Speed Memory Access",
+    "topic": "Cache memory",
+    "mapping": {
+      "headingNumber": "3-5-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-075-b005-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2011A-Q011.3acb6ed99b5d.webp",
+      "width": 1945,
+      "height": 548,
+      "sha256": "3acb6ed99b5d1d389f5a82d54fd0dc9e563b4d9f6e493bff68be772f33cc42f4"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 131,
+      "pageEnd": 131,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2011A-Q011"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            131
+          ],
+          "printedAnswer": "a"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "cache-memory",
+          "evidence": [
+            {
+              "checkedExcerpt": "memory). In other words, average access time (effective access time) as seen from the processor is decided on the basis of the extent to which the required data is found in cache memory. Therefore, it is determined by weighted average of access time of cache memory and access time of main memory. Here, the access time is determined by considering both the probability (hit ratio) that the required data is available in cache memory and the probability (NFP (Not Found Probability)) that the required data is not available in cache memory. “Hit ratio+NFP=1” always holds true. Example: Calculate the average access time of the following processor. NFP (probability that the required data is not available in cache memory) is 0.1. Access destination Access time (nanosecond) Cache memory 50 Main memory 500 Average access time of processor = Access time of cache memory × hit ratio + Access time of main memory × NFP = 50 nanoseconds × (1 − 0.1) + 500 nanoseconds × 0.1 = 95 nanoseconds From this example, it is clear that the higher the hit ratio is, the shorter the average access time is because of increased access to cache memory . When Havard architecture , which independently loads instructions and data , is used , cache memory is also separated into instruction cache and data cache . In this case , creating a program consolidating process ( instruction ) sections that are frequently executed will increase the hit ratio of instruction cache, which may shorten the average access time (access speed will improve).",
+              "kind": "textbook-source",
+              "pdfPage": 76,
+              "printedPage": 71,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "16642cba08a2bb57f7761c6f5bf389c157c2c9a4f16ffd1abe7b6cf36e65cc89"
+            }
+          ],
+          "headingNumber": "3-5-1",
+          "reason": "Original question image and actual 3-5-1 teaching re-read; cache-memory is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-075-b005-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "bd826e07b765fe188bb8e1f05c98021e9480dbcac5b19c3e0c964ffc1c98d1b8"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2011A-Q013",
+    "examId": "2011A_FE_AM",
+    "number": 13,
+    "year": 2011,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Display",
+    "topic": "Display memory capacity",
+    "mapping": {
+      "headingNumber": "5-2-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-103-b005-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2011A-Q013.34f1ecbf7fba.webp",
+      "width": 1945,
+      "height": 403,
+      "sha256": "34f1ecbf7fba35e45474cd931edeacf259520425e9fa922314061344c4fbf0b8"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 283,
+      "pageEnd": 283,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2011A-Q013"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            283
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "display-memory",
+          "evidence": [
+            {
+              "checkedExcerpt": "Displays of present-day PCs mostly use a multiscan method that can support various resolutions. However, for supporting high resolution, graphic memory (VRAM (Video RAM)) that supports high resolution is required. Storage capacity required for VRAM is decided by the screen resolution and the number of colors per one bit (the number of bits that is required for displaying a color). Example: On a display that has the resolution of 1,280×1,024, calculate the storage capacity of VRAM that is required for displaying about 16,000,000 colors by assigning 256 grades of intensity to each color of RGB. 1) Number of bits required for displaying one color 256 = 28, therefore 8 bits/color 2) Number of bits required for displaying color information of 1 dot = 8 bits/color × 3 colors/dot = 24 bits/dot 3) Number of bits required for one screen = Number of bits required for one dot × Number of dots on one screen = 24 bits/dot × (1,280×1,024) dots/screen = 31,457,280 bits/screen ··· About 4 Mbytes/screen",
+              "kind": "textbook-source",
+              "pdfPage": 104,
+              "printedPage": 98,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "0ca6260335a89cb3ab3ce54f1b80340541a4a45532a31e56cc55c6e4499e0377"
+            }
+          ],
+          "headingNumber": "5-2-1",
+          "reason": "Original question image and actual 5-2-1 teaching re-read; display-memory is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s05",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-103-b005-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "30b88240710223c3fda2fc19ba5b70980a5a08f3f3372952e22d157b6501e712"
+    }
+  },
+  {
     "id": "HIST-TECH01-2011A-Q014",
     "examId": "2011A_FE_AM",
     "number": 14,
@@ -24384,6 +25884,90 @@
         }
       ],
       "approvalFingerprint": "0296e99f2ec01e1490c7e26fcb3d1bd9a70356cc6e5580922454a12c8b6178cc"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2011A-Q027",
+    "examId": "2011A_FE_AM",
+    "number": 27,
+    "year": 2011,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "d",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Memory Devices",
+    "topic": "RAM, ROM and flash memory",
+    "mapping": {
+      "headingNumber": "3-2-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-054-b005-l01-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2011A-Q027.c2f0c20c386b.webp",
+      "width": 1788,
+      "height": 474,
+      "sha256": "c2f0c20c386bda0521923bc4645ff6cdb86f925c6e44b9f8c1420f1b607dd031"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 135,
+      "pageEnd": 135,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2011A-Q027"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            135
+          ],
+          "printedAnswer": "d"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "memory-devices",
+          "evidence": [
+            {
+              "checkedExcerpt": "• Flash memory: This is semiconductor memory where data can be rewritten after data is erased in units of blocks through electrical operations. Flash memory is a type of EEPROM. Therefore, the number of rewritable timesis limited. However, it is used for various applications as a portable and convenient storage medium.",
+              "kind": "textbook-source",
+              "pdfPage": 56,
+              "printedPage": 51,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "160f7f81f75d39ed89036a247b39dde4e9fd12a488160bde9ee082925a267902"
+            }
+          ],
+          "headingNumber": "3-2-1",
+          "reason": "Original question image and actual 3-2-1 teaching re-read; memory-devices is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-054-b005-l01-text-0"
+        }
+      ],
+      "approvalFingerprint": "d949cbbcd5d2b98f214e5a22b84dceee706d4675004ed91c01e82a0bb9b1d8be"
     }
   },
   {
@@ -24558,6 +26142,612 @@
     }
   },
   {
+    "id": "HIST-TECH01-2011S-Q014",
+    "examId": "2011S_FE_AM",
+    "number": 14,
+    "year": 2011,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "d",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "High Speed Memory Access",
+    "topic": "Cache write policies",
+    "mapping": {
+      "headingNumber": "3-5-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-075-b005-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2011S-Q014.f916370fe6b2.webp",
+      "width": 1945,
+      "height": 849,
+      "sha256": "f916370fe6b25da1121b1c707f186fe7f8fb529d7bef6e2ff420a2a540b01a6e"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 138,
+      "pageEnd": 138,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2011S-Q014"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            138
+          ],
+          "printedAnswer": "d"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "cache-write-policies",
+          "evidence": [
+            {
+              "checkedExcerpt": "[Writing methods from cache memory] 1) Write-through method That method reflects the update in main memory whenever data is updated . While certainty is high, main memory needs to be accessed for every process, so operating speed is somewhat slow. 2) Write-back method In this method, data is not updated in main memory while data is updated in cache memory. Data is updated in main memory only when data from cache memory is removed. While its operating speed is fast, inconsistency in the data of main memory may occur at some point in time.",
+              "kind": "textbook-source",
+              "pdfPage": 77,
+              "printedPage": 72,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "bcd00e2a51a63797a2917746e44fed627b7e95b09f1aeb4ee74181bd4a6a5443"
+            }
+          ],
+          "headingNumber": "3-5-1",
+          "reason": "Original question image and actual 3-5-1 teaching re-read; cache-write-policies is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-075-b005-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "d7e55d8642b9fa68232791077a5d78b92d7bd25bd3458d24c70f30f31def028a"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2011S-Q017",
+    "examId": "2011S_FE_AM",
+    "number": 17,
+    "year": 2011,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "a",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Display",
+    "topic": "Display technologies",
+    "mapping": {
+      "headingNumber": "5-2-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-103-b005-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2011S-Q017.1f542ae0bfaa.webp",
+      "width": 1933,
+      "height": 623,
+      "sha256": "1f542ae0bfaa8956bb65d72dd702ce21bcd4b58e90dcb2627699e25d8e243ba6"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 141,
+      "pageEnd": 141,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2011S-Q017"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            141
+          ],
+          "printedAnswer": "a"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "display-types",
+          "evidence": [
+            {
+              "checkedExcerpt": "(1) CRT display CRT display is an output device that uses a cathode-ray tube just like television. Light is emitted by applying electron beams onto a phosphor screen, and any character or image can be drawn depending on the beam strength. While it has advantages in that the screen is easy to see and display speed is also fast, it suffers from disadvantages in that the device is large (because of depth) and power consumption is also high. Furthermore, there is another problem of burning the image on the display when the same image is displayed for a long time. In order to prevent this burning, software called a screen saver is used. (2) LCD (Liquid Crystal Display) LCD (Liquid Crystal Display) is an output device that uses liquid crystals whose permeation rate of light varies depending on voltage. As compared with CRT displays, it is thin and lightweight, and consumes less power. Therefore, it is mostly used in a notebook PC; however, these days it is also used in a desktop PC. Since liquid crystals themselves do not emit any light, either a reflection board is embedded or a back-light method is used where light is thrown from the rear. As compared with an STN liquid crystal display, which controls multiple pixels with one semiconductor, the response speed of a TFT liquid crystal display, which controls one pixel with one transistor, is faster and its viewing angle is also broad. Therefore, TFT LCDs are more widely used these days. (3) PDP (Plasma Display Panel) PDP (Plasma Display) is an output device where gas is sealed between two panels of glass and light is emitted by applying voltage. While it has higher luminance and wider viewing angle in comparison with other methods, power consumption is also large because high voltage is required. (4) OLED (Organic Light Emitting Diode) display OLED (Organic Light Emitting Diode) display is an output device that uses organic compounds that emit light when voltage is applied. Unlike a liquid crystal display, it emits light on its own on a glass substrate. Its response speed is fast, image quality is of high luminance because of high contrast, and the viewing angle is also wide. In addition, power consumption is small, so it has potential to become the next-generation display. However, its life is short.",
+              "kind": "textbook-source",
+              "pdfPage": 105,
+              "printedPage": 99,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "ed55227749f87b41fe1b50b6d1923a5886c81a3eef76166911302f018a8abc7a"
+            }
+          ],
+          "headingNumber": "5-2-1",
+          "reason": "Original question image and actual 5-2-1 teaching re-read; display-types is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s05",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-103-b005-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "2594789bdddd58dee56bb58ae5b4db859ba8b81fd5fe9250d139715d83ffb33c"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2012A-Q002",
+    "examId": "2012A_FE_AM",
+    "number": 2,
+    "year": 2012,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "a",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Arithmetic Operation Circuit",
+    "topic": "Half and full adders",
+    "mapping": {
+      "headingNumber": "3-4-2",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-071-b008-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2012A-Q002.7c37eba47ac9.webp",
+      "width": 1944,
+      "height": 848,
+      "sha256": "7c37eba47ac999e8aec4c999446c4ed0a8405021747198ee55618859d0e39894"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 111,
+      "pageEnd": 111,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2012A-Q002"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            111
+          ],
+          "printedAnswer": "a"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "arithmetic-circuits",
+          "evidence": [
+            {
+              "checkedExcerpt": "From this table, it is clear that carry is 1 only when two entered values are both 1, this is a logical product operation (AND). It is also clear that sum is 0 when two entered values are the same and 1 when they are different, and therefore, this is an exclusive logical sum operation (XOR). Therefore, a circuit diagram with the configuration below is derived. This circuit is called a half adder. Figure 1-32 Circuit diagram of half adder",
+              "kind": "textbook-source",
+              "pdfPage": 72,
+              "printedPage": 67,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "3014194254dd63e5fd16b50b29c6a4c896990b9f8c36beecdc7e121c554188d0"
+            },
+            {
+              "checkedExcerpt": "[Results of arithmetic operation of 3-bit addition] Values to be added Operation result X Y c0 Carry (c1) Sum (s) 0 0 0 0 0 0 0 1 0 1 0 1 0 0 1 1 0 0 0 1 0 1 1 1 0 1 0 1 1 0 1 1 0 1 0 1 1 1 1 1",
+              "kind": "textbook-source",
+              "pdfPage": 73,
+              "printedPage": 68,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "7a91f6b4fff987e3838c98edbf51b73a349e18435f6a7ab44083ce8c53f39907"
+            },
+            {
+              "checkedExcerpt": "By expanding (simplifying) these logical expressions F1 and F2 by using logical laws, we can derive the configuration of a 3-bit adder circuit. However, even expansion of logical expression with this method is difficult, and it can be anticipated that configuration of the circuit will become complicated. Therefore, we will use half adders after 3-bit addition is divided into 2-bit addition. [Dividing 3-bit addition into 2-bit addition] 1) Add X and Y, and determine carry (c’) and sum (s’). 2) Add s’ and c0, and determine carry (c’’) and sum (s’’). s’’ determined here will be sum (s) in overall arithmetic operation. 3) If there is any carry in this addition, then carry will occur for overall arithmetic operation. Therefore, carry (c1) in overall arithmetic operation is determined with OR operation of c’ and c’’. (Carry will never be 1 in both the operations) Full adder shown in",
+              "kind": "textbook-source",
+              "pdfPage": 74,
+              "printedPage": 69,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "0be8e2dbf739ecf4cda89571330efdc812335c768d15cc7aa39e2a8183102781"
+            }
+          ],
+          "headingNumber": "3-4-2",
+          "reason": "Original question image and actual 3-4-2 teaching re-read; arithmetic-circuits is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-071-b008-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "0c925efa615a5049628391f97b49ccfe8590b8f57817e90d5c554a8026d18ef3"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2012A-Q017",
+    "examId": "2012A_FE_AM",
+    "number": 17,
+    "year": 2012,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "High Speed Memory Access",
+    "topic": "Memory interleaving",
+    "mapping": {
+      "headingNumber": "3-5-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-075-b005-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2012A-Q017.eebd662f1005.webp",
+      "width": 1933,
+      "height": 849,
+      "sha256": "eebd662f10053e5482bbe5574109330ab8735dc20d1f76f5206cc9a99046d264"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 115,
+      "pageEnd": 115,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2012A-Q017"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            115
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "memory-interleaving",
+          "evidence": [
+            {
+              "checkedExcerpt": "Memory interleave is a method where main memory is divided into several sections (bank) that are simultaneously and independently accessed in order to improve the average access time of main memory.",
+              "kind": "textbook-source",
+              "pdfPage": 78,
+              "printedPage": 73,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "92a5c6015e2691151bfd3c8c2a1ae0e5d4d8760151fc90ce62200211526e0da0"
+            }
+          ],
+          "headingNumber": "3-5-1",
+          "reason": "Original question image and actual 3-5-1 teaching re-read; memory-interleaving is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-075-b005-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "b8b2e62b315f659424aad31ae63d20666933760ccd21c0d9425261f88daf04a3"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2012A-Q018",
+    "examId": "2012A_FE_AM",
+    "number": 18,
+    "year": 2012,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Memory Devices",
+    "topic": "RAM, ROM and flash memory",
+    "mapping": {
+      "headingNumber": "3-2-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-054-b005-l01-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2012A-Q018.bf94c98b5e58.webp",
+      "width": 1945,
+      "height": 774,
+      "sha256": "bf94c98b5e58f371a07951e8b052c36f1a2057dbeb686783b3884fd5576a865c"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 116,
+      "pageEnd": 116,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2012A-Q018"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            116
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "memory-devices",
+          "evidence": [
+            {
+              "checkedExcerpt": "• SRAM (Static RAM) While its operating speed is high, it is expensive and it also has high power consumption. As for its memory mechanism, it uses a flip-flop circuit that continues to retain the preceding status, and electrical charge that records information can be retained as long as power is supplied. However, its disadvantages are a low degree of integration because of complex configuration of the circuit, and storage capacity that is smaller compared with DRAM. It is mainly used in registers or other memory devices. • DRAM (Dynamic RAM) While its operating speed is somewhat slow, it uses a simple circuit where electrical charge is retained by condenser or capacitor. Therefore, the degree of integration is high, and large capacity memory can be easily created at low cost. However, electrical charge that records information is lost over time, and therefore it is necessary to rewrite (refresh) the information. Examples include SDRAM (Synchronous DRAM) or DDR SDRAM (Double Data Rate SDRAM) used in main memory, and RDRAM (Rambus DRAM) that uses Rambus technology in the external bus interface. (2) ROM (Read Only Memory) ROM is IC memory that can be used only for reading data. It has a property (non-volatility) where data is not lost even when the power is off. • Mask ROM This is a type of ROM where users cannot write data. This memory is used to store programs or data in factories, and the information is used only for the purpose of reference.",
+              "kind": "textbook-source",
+              "pdfPage": 55,
+              "printedPage": 50,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "cff41ce38db0a47f6283af34b5223088ef2d7dfc65ad32c1c1e59626ff05b526"
+            }
+          ],
+          "headingNumber": "3-2-1",
+          "reason": "Original question image and actual 3-2-1 teaching re-read; memory-devices is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-054-b005-l01-text-0"
+        }
+      ],
+      "approvalFingerprint": "34b8e3d94c6d8ccc8a21610928f678c97482c0cf96ce506b6b3e96905a8b7887"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2012A-Q019",
+    "examId": "2012A_FE_AM",
+    "number": 19,
+    "year": 2012,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "a",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Pointing Device",
+    "topic": "Touch panels",
+    "mapping": {
+      "headingNumber": "5-1-3",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-101-b005-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2012A-Q019.b26579fc2649.webp",
+      "width": 1933,
+      "height": 774,
+      "sha256": "b26579fc264984c4d9f2eaf024a61bb7363352e94f3c9e3999713429d804f2c8"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 117,
+      "pageEnd": 117,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2012A-Q019"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            117
+          ],
+          "printedAnswer": "a"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "touch-panels",
+          "evidence": [
+            {
+              "checkedExcerpt": "[Input method of touch screen] • Infrared shielding method (Infrared method) It detects the position from the changes in infrared ray reflection that occurs when an infrared ray beam is shielded. • Capacitance method It detects the position from the changes in electrical charge on the surface which is caused by the static electricity in the portion that is touched. • Analog resistive film method (Resistive film method) It detects the position from the changes in the resistance values of the resistive film in the portion that is touched. • Matrix switching method It detects the position where the electrode switches that are arranged on the matrix are pressed.",
+              "kind": "textbook-source",
+              "pdfPage": 102,
+              "printedPage": 96,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "99d404576f6d42a62345446be4ccc8ed8041ad616f89e473341cd5c78baabbe8"
+            }
+          ],
+          "headingNumber": "5-1-3",
+          "reason": "Original question image and actual 5-1-3 teaching re-read; touch-panels is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s05",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-101-b005-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "e1983fe1d6dd7a07bc910f946f7a3bd7a397d4552f07669126614710da83e816"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2012S-Q028",
+    "examId": "2012S_FE_AM",
+    "number": 28,
+    "year": 2012,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Devices for Entering Characters and Numbers by Using Signals",
+    "topic": "Switch chattering",
+    "mapping": {
+      "headingNumber": "5-1-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-098-b019-l01-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2012S-Q028.354670c20ec4.webp",
+      "width": 1945,
+      "height": 469,
+      "sha256": "354670c20ec4893bcf9a66d532f704acacec6295a45451b3f4d5db39316c8952"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 127,
+      "pageEnd": 127,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2012S-Q028"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            127
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "switch-chattering",
+          "evidence": [
+            {
+              "checkedExcerpt": "This is sometimes referred to as chattering. However, chattering is originally a phenomenon in which multiple ON/OFF signals occur within a short period of time (a few milliseconds after pressing a push button), in response to pressing the button with a mechanical connection once. Therefore, strictly speaking, the above-mentioned behavior is not the same as chattering.",
+              "kind": "textbook-source",
+              "pdfPage": 98,
+              "printedPage": 92,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "880e6b7a15df2cfd966c69b2740f6ffb3250f9d53eabf67884186f22a9df2b1e"
+            }
+          ],
+          "headingNumber": "5-1-1",
+          "reason": "Original question image and actual 5-1-1 teaching re-read; switch-chattering is directly supported by the exact quoted passage(s), not inferred from a heading. Repaired legacy 5-3 placement to the existing 5-1-1 highlight, whose note explicitly defines mechanical-contact chattering; the keyboard repeat warning is retained.",
+          "sectionId": "fe-v1-ch01-s05",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-098-b019-l01-text-0"
+        }
+      ],
+      "approvalFingerprint": "f1131d1f760bfbe48888e9d59e33bef2816612a197f7a2a99bc78660624656d2"
+    }
+  },
+  {
     "id": "HIST-TECH01-2013A-Q001",
     "examId": "2013A_FE_AM",
     "number": 1,
@@ -24725,6 +26915,99 @@
         }
       ],
       "approvalFingerprint": "74865cdd44b75a068e7ed212315482ee29fc2d5f5f5f859032f75876ae795902"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2013A-Q013",
+    "examId": "2013A_FE_AM",
+    "number": 13,
+    "year": 2013,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Memory Devices",
+    "topic": "RAM, ROM and flash memory",
+    "mapping": {
+      "headingNumber": "3-2-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-054-b005-l01-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2013A-Q013.8ba77c6a6f2f.webp",
+      "width": 1944,
+      "height": 768,
+      "sha256": "8ba77c6a6f2ff1aafb18d8798a922bedba6334145b197cb35566099da02500c5"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 97,
+      "pageEnd": 97,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2013A-Q013"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            97
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "memory-devices",
+          "evidence": [
+            {
+              "checkedExcerpt": "• SRAM (Static RAM) While its operating speed is high, it is expensive and it also has high power consumption. As for its memory mechanism, it uses a flip-flop circuit that continues to retain the preceding status, and electrical charge that records information can be retained as long as power is supplied. However, its disadvantages are a low degree of integration because of complex configuration of the circuit, and storage capacity that is smaller compared with DRAM. It is mainly used in registers or other memory devices. • DRAM (Dynamic RAM) While its operating speed is somewhat slow, it uses a simple circuit where electrical charge is retained by condenser or capacitor. Therefore, the degree of integration is high, and large capacity memory can be easily created at low cost. However, electrical charge that records information is lost over time, and therefore it is necessary to rewrite (refresh) the information. Examples include SDRAM (Synchronous DRAM) or DDR SDRAM (Double Data Rate SDRAM) used in main memory, and RDRAM (Rambus DRAM) that uses Rambus technology in the external bus interface. (2) ROM (Read Only Memory) ROM is IC memory that can be used only for reading data. It has a property (non-volatility) where data is not lost even when the power is off. • Mask ROM This is a type of ROM where users cannot write data. This memory is used to store programs or data in factories, and the information is used only for the purpose of reference.",
+              "kind": "textbook-source",
+              "pdfPage": 55,
+              "printedPage": 50,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "cff41ce38db0a47f6283af34b5223088ef2d7dfc65ad32c1c1e59626ff05b526"
+            },
+            {
+              "checkedExcerpt": "Cache memory, which is a buffer memory, is the medium-speed storage composed of SRAM and installed between high-speed register and low-speed main memory.",
+              "kind": "textbook-source",
+              "pdfPage": 75,
+              "printedPage": 70,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "ae201b64c9e624c0b66d395c28ecb9fd1da89d75a057ba2ce14677dc9cf79597"
+            }
+          ],
+          "headingNumber": "3-2-1",
+          "reason": "Original question image and actual 3-2-1 teaching re-read; memory-devices is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-054-b005-l01-text-0"
+        }
+      ],
+      "approvalFingerprint": "4bb506f28779ee0db365fbd18f7e6705896009e84651c01760a5ee6895f88d8b"
     }
   },
   {
@@ -24990,6 +27273,90 @@
         }
       ],
       "approvalFingerprint": "0853b338f0e6cb52d6ca7203bbe66af4226d3722759cd19fb16092df38866257"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2014A-Q011",
+    "examId": "2014A_FE_AM",
+    "number": 11,
+    "year": 2014,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Addressing Mode",
+    "topic": "Instruction addressing modes",
+    "mapping": {
+      "headingNumber": "3-3-3",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-062-b005-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2014A-Q011.470a22785192.webp",
+      "width": 1993,
+      "height": 484,
+      "sha256": "470a22785192c92507fca6b0c7640eedb5148ce2195f44e6a6296137897a9e5a"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 83,
+      "pageEnd": 83,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2014A-Q011"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            83
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "addressing-modes",
+          "evidence": [
+            {
+              "checkedExcerpt": "2) Direct addressing In this method, the content (value) of main memory referenced by the effective address is used as operand. Generally, direct addressing where there is no description concerning address modification can be considered as absolute addressing, and it can be considered as direct addressing when only address modification is specified. Figure 1-23 Direct addressing 3) Indirect addressing In this method, the content (value) of main memory referenced by the effective address is used as the address of operand. Double (in the example shown in Figure 1-24, data stored in address 120 is fetched as operand), and triple indirect addressing is also possible. Figure 1-24 Indirect addressing",
+              "kind": "textbook-source",
+              "pdfPage": 64,
+              "printedPage": 59,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "3ccf13e4b15d65e8f2f44687262569836e8962342ee82a9796255c5fd0356f02"
+            }
+          ],
+          "headingNumber": "3-3-3",
+          "reason": "Original question image and actual 3-3-3 teaching re-read; addressing-modes is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-062-b005-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "63044d9225f481caa279d6d5b7ee262d6cb70ebc172af1b7fc749a8ae0b45b52"
     }
   },
   {
@@ -25263,6 +27630,99 @@
     }
   },
   {
+    "id": "HIST-TECH01-2014S-Q013",
+    "examId": "2014S_FE_AM",
+    "number": 13,
+    "year": 2014,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Speeding-up of Processor",
+    "topic": "Instruction pipelining",
+    "mapping": {
+      "headingNumber": "3-5-2",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-079-b003-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2014S-Q013.4ad7a8044256.webp",
+      "width": 1992,
+      "height": 474,
+      "sha256": "4ad7a804425681014056d61c134dd92bae65a2ed423a51e9d2c631fdae59faf8"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 88,
+      "pageEnd": 88,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2014S-Q013"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            88
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "processor-pipeline",
+          "evidence": [
+            {
+              "checkedExcerpt": "Pipeline control (or the pipeline processing) divides the execution cycle of each instruction into multiple stages, and by shifting each stage little by little and executing multiple stages separately, multiple instructions are executed simultaneously and in parallel.",
+              "kind": "textbook-source",
+              "pdfPage": 79,
+              "printedPage": 74,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "43e5268e1ad8127dce9376794ed8fcbff11fb38c272846ee59191dd800b9f312"
+            },
+            {
+              "checkedExcerpt": "Pipeline control is a method of advanced control of instructions. Therefore, efficiency will decline if there are instructions (jump instructions) that change the execution sequence of instruction. Moreover, if the execution time of each instruction is different, the waiting time may be required before starting the execution of a stage, and efficiency will decline. Figure 1-40 Pipeline control with poor efficiency For efficient pipeline control, it is necessary that the execution time of all instructions be almost the same. Among the different architectures of processors (computers), RISC architecture is suitable for this concept, while CISC architecture is not very suitable.",
+              "kind": "textbook-source",
+              "pdfPage": 80,
+              "printedPage": 75,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "af2abb85be02f4e30285b0a3a5670cf1fe5386a9ca908c0d972c3651fa6748a9"
+            }
+          ],
+          "headingNumber": "3-5-2",
+          "reason": "Original question image and actual 3-5-2 teaching re-read; processor-pipeline is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-079-b003-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "c5a23e4ac34bd6264c3871a671305e2700b1e581c2a5700ca6bdcd1cddecd703"
+    }
+  },
+  {
     "id": "HIST-TECH01-2014S-Q014",
     "examId": "2014S_FE_AM",
     "number": 14,
@@ -25439,6 +27899,90 @@
         }
       ],
       "approvalFingerprint": "4589cb19aad4950322fdfca4029ea0bfbf5d28db0d3759440a2708f4113dc0fb"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2014S-Q017",
+    "examId": "2014S_FE_AM",
+    "number": 17,
+    "year": 2014,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "d",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Display",
+    "topic": "Display technologies",
+    "mapping": {
+      "headingNumber": "5-2-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-103-b005-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2014S-Q017.1a6e2d02d351.webp",
+      "width": 1992,
+      "height": 323,
+      "sha256": "1a6e2d02d3518cc0714fb262b692f726ee6765ca183986a975a1105396e349a5"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 91,
+      "pageEnd": 91,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2014S-Q017"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            91
+          ],
+          "printedAnswer": "d"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "display-types",
+          "evidence": [
+            {
+              "checkedExcerpt": "Display is a device that displays images in color by combining three primary colors of light, namely RGB (Red, Green, Blue). Screen is an aggregation of points (dots), and the higher the density of dots, the higher the display quality of images. This is also called the resolution of the screen, and dpi (dots per inch) is used as a unit of resolution.",
+              "kind": "textbook-source",
+              "pdfPage": 103,
+              "printedPage": 97,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "8fd4f1c7e89ea6048c99f9903e30871936b8f4c88327c70027d2ce6bddbf6ce1"
+            }
+          ],
+          "headingNumber": "5-2-1",
+          "reason": "Original question image and actual 5-2-1 teaching re-read; display-types is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s05",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-103-b005-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "afcef2de9d98a29b71b28aff70fd0d9adb912ad7af387e217b317d53734cd425"
     }
   },
   {
@@ -25790,6 +28334,90 @@
     }
   },
   {
+    "id": "HIST-TECH01-2015S-Q011",
+    "examId": "2015S_FE_AM",
+    "number": 11,
+    "year": 2015,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "High Speed Memory Access",
+    "topic": "Cache memory",
+    "mapping": {
+      "headingNumber": "3-5-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-075-b005-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2015S-Q011.4d3cff79e97c.webp",
+      "width": 1992,
+      "height": 1243,
+      "sha256": "4d3cff79e97cb9ae5531ce5e8266b718f0416e4152a2b5660728b12c669a090e"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 265,
+      "pageEnd": 265,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2015S-Q011"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            265
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "cache-memory",
+          "evidence": [
+            {
+              "checkedExcerpt": "memory). In other words, average access time (effective access time) as seen from the processor is decided on the basis of the extent to which the required data is found in cache memory. Therefore, it is determined by weighted average of access time of cache memory and access time of main memory. Here, the access time is determined by considering both the probability (hit ratio) that the required data is available in cache memory and the probability (NFP (Not Found Probability)) that the required data is not available in cache memory. “Hit ratio+NFP=1” always holds true. Example: Calculate the average access time of the following processor. NFP (probability that the required data is not available in cache memory) is 0.1. Access destination Access time (nanosecond) Cache memory 50 Main memory 500 Average access time of processor = Access time of cache memory × hit ratio + Access time of main memory × NFP = 50 nanoseconds × (1 − 0.1) + 500 nanoseconds × 0.1 = 95 nanoseconds From this example, it is clear that the higher the hit ratio is, the shorter the average access time is because of increased access to cache memory . When Havard architecture , which independently loads instructions and data , is used , cache memory is also separated into instruction cache and data cache . In this case , creating a program consolidating process ( instruction ) sections that are frequently executed will increase the hit ratio of instruction cache, which may shorten the average access time (access speed will improve).",
+              "kind": "textbook-source",
+              "pdfPage": 76,
+              "printedPage": 71,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "16642cba08a2bb57f7761c6f5bf389c157c2c9a4f16ffd1abe7b6cf36e65cc89"
+            }
+          ],
+          "headingNumber": "3-5-1",
+          "reason": "Original question image and actual 3-5-1 teaching re-read; cache-memory is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-075-b005-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "7420923ff8b3e24916805384f5e9bd6a773d08f6afcda1ac0e348a97ef07b448"
+    }
+  },
+  {
     "id": "HIST-TECH01-2015S-Q014",
     "examId": "2015S_FE_AM",
     "number": 14,
@@ -25967,6 +28595,90 @@
         }
       ],
       "approvalFingerprint": "3b7d82ed1b726cf53a10d4dbb0e9be078853f369e0c0010d33cf25bfcb4fc24d"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2016A-Q009",
+    "examId": "2016A_FE_AM",
+    "number": 9,
+    "year": 2016,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Addressing Mode",
+    "topic": "Instruction addressing modes",
+    "mapping": {
+      "headingNumber": "3-3-3",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-062-b005-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2016A-Q009.3c64dc15940b.webp",
+      "width": 1993,
+      "height": 1074,
+      "sha256": "3c64dc15940ba57ac569874b0adbd505d4a2f81f06431856f8925f5ca15a3862"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 58,
+      "pageEnd": 58,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2016A-Q009"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            58
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "addressing-modes",
+          "evidence": [
+            {
+              "checkedExcerpt": "2) Direct addressing In this method, the content (value) of main memory referenced by the effective address is used as operand. Generally, direct addressing where there is no description concerning address modification can be considered as absolute addressing, and it can be considered as direct addressing when only address modification is specified. Figure 1-23 Direct addressing 3) Indirect addressing In this method, the content (value) of main memory referenced by the effective address is used as the address of operand. Double (in the example shown in Figure 1-24, data stored in address 120 is fetched as operand), and triple indirect addressing is also possible. Figure 1-24 Indirect addressing",
+              "kind": "textbook-source",
+              "pdfPage": 64,
+              "printedPage": 59,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "3ccf13e4b15d65e8f2f44687262569836e8962342ee82a9796255c5fd0356f02"
+            }
+          ],
+          "headingNumber": "3-3-3",
+          "reason": "Original question image and actual 3-3-3 teaching re-read; addressing-modes is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-062-b005-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "17bbe7f421124dee947918ea0f850e6fd5882b1256d7f68dc6676d07f3d56a4d"
     }
   },
   {
@@ -26689,6 +29401,90 @@
     }
   },
   {
+    "id": "HIST-TECH01-2016S-Q013",
+    "examId": "2016S_FE_AM",
+    "number": 13,
+    "year": 2016,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "d",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Addressing Mode",
+    "topic": "Instruction addressing modes",
+    "mapping": {
+      "headingNumber": "3-3-3",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-062-b005-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2016S-Q013.7721ebc03071.webp",
+      "width": 1992,
+      "height": 399,
+      "sha256": "7721ebc03071f22563848bb6eff24f1c2b5b70bc05f446d9c3b113ab08aaf13d"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 65,
+      "pageEnd": 65,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2016S-Q013"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            65
+          ],
+          "printedAnswer": "d"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "addressing-modes",
+          "evidence": [
+            {
+              "checkedExcerpt": "4) Relative addressing In this method, the effective address is determined by adding the value of the instruction address register (program counter) to the value of the address part. This means the relative position from the instruction being executed.",
+              "kind": "textbook-source",
+              "pdfPage": 63,
+              "printedPage": 58,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "df93596937a7d7bf65098945f79c27f2c427a9e2ba65478aae17a0a9cf842222"
+            }
+          ],
+          "headingNumber": "3-3-3",
+          "reason": "Original question image and actual 3-3-3 teaching re-read; addressing-modes is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-062-b005-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "c4975fbde822a415d5429e2bbbe3b438e0ed5427afc6f5f223fa1fded82c4d81"
+    }
+  },
+  {
     "id": "HIST-TECH01-2017A-Q010",
     "examId": "2017A_FE_AM",
     "number": 10,
@@ -27068,6 +29864,183 @@
         }
       ],
       "approvalFingerprint": "49316977fca2507d2612c759127c6e12203e0ebc31cc00ce5637fb71d4e674be"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2017S-Q001",
+    "examId": "2017S_FE_AM",
+    "number": 1,
+    "year": 2017,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2017S-Q001.19d1123910ea.webp",
+      "width": 1993,
+      "height": 553,
+      "sha256": "19d1123910ea6f648380f2b85bc4b553aa392849d353deaee530d0ac85bf2806"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 48,
+      "pageEnd": 48,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2017S-Q001"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            48
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "logic-gates",
+          "evidence": [
+            {
+              "checkedExcerpt": "1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False (0) when both input values are False (0), or else the output is True (1) (when either one is True (1)). 3) Negation operation (NOT) The output becomes False (0) when the input value is True (1), and the output is True (1) when the input value is False (0). 4) Exclusive logical sum (Exclusive OR) operation (XOR or EOR) The output becomes False (0) when both input values are the same, and the output is True (1) when both input values are different.",
+              "kind": "textbook-source",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed"
+            },
+            {
+              "checkedExcerpt": "4) NAND circuit This circuit performs negative logical product (negative AND) operation (NAND). NAND operation is the arithmetic operation that negates the results of AND operation. The truth table and MIL symbol of NAND circuit are as shown below. NAND circuit is formed by combining AND circuit and NOT circuit. X Y X NAND Y Figure 1-29 NAND circuit 0 0 1 0 1 1 1 0 1 1 1 0",
+              "kind": "textbook-source",
+              "pdfPage": 68,
+              "printedPage": 63,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "0d4b63b814973a25037c28e66d92f6e2f65667d47f397e9e8a6a794d9e6f12bd"
+            }
+          ],
+          "headingNumber": "3-4-1",
+          "reason": "Original question image and actual 3-4-1 teaching re-read; logic-gates is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "b6f0ba53c32747b4214c01bc80c50be83a68d7711645a5949a1a4509bcef8fe6"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2017S-Q010",
+    "examId": "2017S_FE_AM",
+    "number": 10,
+    "year": 2017,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Addressing Mode",
+    "topic": "Instruction addressing modes",
+    "mapping": {
+      "headingNumber": "3-3-3",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-062-b005-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2017S-Q010.aca5a3f21521.webp",
+      "width": 1992,
+      "height": 399,
+      "sha256": "aca5a3f215216429d5bd9a90fedec156f3fccae4f39b876eadf38ffb0f1f188e"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 50,
+      "pageEnd": 50,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2017S-Q010"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            50
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "addressing-modes",
+          "evidence": [
+            {
+              "checkedExcerpt": "3-3-3 Addressing Mode Addressing mode is the method of determining the effective address from the value recorded in the address part of instruction, and then fetching the operand. The addressing mode is classified into two methods: one is the method (address modification) of determining the effective address from the value of the address part of instruction and the other is the method of determining the operand from the effective address. (1) Method of determining effective address from the value of the address part (address modification) 1) Absolute addressing In this method, the value of the address part is used as the effective address as it is. 2) Index addressing In this method, the effective address is determined by adding the value of the index register to the value of the address part. A general register is also used as the index register, and it is necessary to specify which general register to use in such cases.",
+              "kind": "textbook-source",
+              "pdfPage": 62,
+              "printedPage": 57,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "b22721484223170521d3471fde4744f2f5297a5c361e63e68d74ef0f396b7723"
+            }
+          ],
+          "headingNumber": "3-3-3",
+          "reason": "Original question image and actual 3-3-3 teaching re-read; addressing-modes is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-062-b005-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "4470ccfd1461fb8ff6076bdb8612d34dbccea60027195a286b39875a1f4590ac"
     }
   },
   {
@@ -28105,6 +31078,90 @@
     }
   },
   {
+    "id": "HIST-TECH01-2018S-Q001",
+    "examId": "2018S_FE_AM",
+    "number": 1,
+    "year": 2018,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Shift Operation",
+    "topic": "Signed integers and shifts",
+    "mapping": {
+      "headingNumber": "2-3-4",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-048-b005-l01-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2018S-Q001.9b3f27aae955.webp",
+      "width": 1992,
+      "height": 640,
+      "sha256": "9b3f27aae955a82f22a68c970f2b8b5949ca920f65487bee0d354042cfbec5aa"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 251,
+      "pageEnd": 251,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2018S-Q001"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            251
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "signed-shifts",
+          "evidence": [
+            {
+              "checkedExcerpt": "Because of this, computation rules of arithmetic shift can be summarized as follows: [Computation rules of arithmetic shift] • With an arithmetic shift to left by n bits, the value becomes 2n times of the original number. • With an arithmetic shift to right by n bits, the value becomes 2−n times of the original number. (It is the value that is obtained by dividing the original number by 2n) (2) Logical shift Logical shift is the shift operation used when the position of bits are changed. Its main difference from the arithmetic shift is that it does not treat the sign bit in a special manner. [Rules of logical shift] • Shift (move) the sign bit as well. • Truncate extra bits that are shifted out as a result of the shift. • Store 0 in the empty bit position that is created as a result of shift.",
+              "kind": "textbook-source",
+              "pdfPage": 49,
+              "printedPage": 44,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "842c04587b857023fdf8cdf66df09a3f066a700c8383fbd99d9bb384efb686b7"
+            }
+          ],
+          "headingNumber": "2-3-4",
+          "reason": "Original question image and actual 2-3-4 teaching re-read; signed-shifts is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s02",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-048-b005-l01-text-0"
+        }
+      ],
+      "approvalFingerprint": "4d876aafb4c37897a4ca361320b4768dc51165259f52ca523d6b5a8873b1147c"
+    }
+  },
+  {
     "id": "HIST-TECH01-2018S-Q009",
     "examId": "2018S_FE_AM",
     "number": 9,
@@ -28369,6 +31426,90 @@
         }
       ],
       "approvalFingerprint": "800fc7fad1697362fd11fffbd58cbfcde99bb353d3f77f62dd861a4fe60ee9f5"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2018S-Q022",
+    "examId": "2018S_FE_AM",
+    "number": 22,
+    "year": 2018,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "a",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Arithmetic Operation Circuit",
+    "topic": "Half and full adders",
+    "mapping": {
+      "headingNumber": "3-4-2",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-071-b008-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2018S-Q022.60bf8d93394c.webp",
+      "width": 1993,
+      "height": 1158,
+      "sha256": "60bf8d93394c6dc04621c3aae9410f06ef31db5711fe9eb02b3583880d663220"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 40,
+      "pageEnd": 40,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2018S-Q022"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            40
+          ],
+          "printedAnswer": "a"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "arithmetic-circuits",
+          "evidence": [
+            {
+              "checkedExcerpt": "From this table, it is clear that carry is 1 only when two entered values are both 1, this is a logical product operation (AND). It is also clear that sum is 0 when two entered values are the same and 1 when they are different, and therefore, this is an exclusive logical sum operation (XOR). Therefore, a circuit diagram with the configuration below is derived. This circuit is called a half adder. Figure 1-32 Circuit diagram of half adder",
+              "kind": "textbook-source",
+              "pdfPage": 72,
+              "printedPage": 67,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "3014194254dd63e5fd16b50b29c6a4c896990b9f8c36beecdc7e121c554188d0"
+            }
+          ],
+          "headingNumber": "3-4-2",
+          "reason": "Original question image and actual 3-4-2 teaching re-read; arithmetic-circuits is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-071-b008-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "e02b65885d29c53d7005921717a890bd24bea6c5c8665a36afa23760cf054a5f"
     }
   },
   {
@@ -28776,6 +31917,90 @@
     }
   },
   {
+    "id": "HIST-TECH01-2019A-Q023",
+    "examId": "2019A_FE_AM",
+    "number": 23,
+    "year": 2019,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Memory Devices",
+    "topic": "RAM, ROM and flash memory",
+    "mapping": {
+      "headingNumber": "3-2-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-054-b005-l01-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2019A-Q023.853bc04f00c3.webp",
+      "width": 1769,
+      "height": 478,
+      "sha256": "853bc04f00c32b0c84b241a00811b396ba74b962b7852fb9a56180b63a119fd2"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2019A-Q023"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            25
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "memory-devices",
+          "evidence": [
+            {
+              "checkedExcerpt": "• Flash memory: This is semiconductor memory where data can be rewritten after data is erased in units of blocks through electrical operations. Flash memory is a type of EEPROM. Therefore, the number of rewritable timesis limited. However, it is used for various applications as a portable and convenient storage medium.",
+              "kind": "textbook-source",
+              "pdfPage": 56,
+              "printedPage": 51,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "160f7f81f75d39ed89036a247b39dde4e9fd12a488160bde9ee082925a267902"
+            }
+          ],
+          "headingNumber": "3-2-1",
+          "reason": "Original question image and actual 3-2-1 teaching re-read; memory-devices is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-054-b005-l01-text-0"
+        }
+      ],
+      "approvalFingerprint": "b6794dd015b82022a36710ac5485c4f4fe2e8521d19e6be997a7fc6325f67605"
+    }
+  },
+  {
     "id": "HIST-TECH01-2019S-Q001",
     "examId": "2019S_FE_AM",
     "number": 1,
@@ -28859,6 +32084,90 @@
         }
       ],
       "approvalFingerprint": "164c172df2b49d5a2b5d7625f1df6f5eb5e8ec64d29295d01312c18a67839704"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2019S-Q010",
+    "examId": "2019S_FE_AM",
+    "number": 10,
+    "year": 2019,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "d",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Memory Devices",
+    "topic": "RAM, ROM and flash memory",
+    "mapping": {
+      "headingNumber": "3-2-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-054-b005-l01-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2019S-Q010.fd310522eacb.webp",
+      "width": 1992,
+      "height": 624,
+      "sha256": "fd310522eacbd6728296f17d96a3bc0eeac71faca62678299337e3284e447372"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2019S-Q010"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            26
+          ],
+          "printedAnswer": "d"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "memory-devices",
+          "evidence": [
+            {
+              "checkedExcerpt": "• SRAM (Static RAM) While its operating speed is high, it is expensive and it also has high power consumption. As for its memory mechanism, it uses a flip-flop circuit that continues to retain the preceding status, and electrical charge that records information can be retained as long as power is supplied. However, its disadvantages are a low degree of integration because of complex configuration of the circuit, and storage capacity that is smaller compared with DRAM. It is mainly used in registers or other memory devices. • DRAM (Dynamic RAM) While its operating speed is somewhat slow, it uses a simple circuit where electrical charge is retained by condenser or capacitor. Therefore, the degree of integration is high, and large capacity memory can be easily created at low cost. However, electrical charge that records information is lost over time, and therefore it is necessary to rewrite (refresh) the information. Examples include SDRAM (Synchronous DRAM) or DDR SDRAM (Double Data Rate SDRAM) used in main memory, and RDRAM (Rambus DRAM) that uses Rambus technology in the external bus interface. (2) ROM (Read Only Memory) ROM is IC memory that can be used only for reading data. It has a property (non-volatility) where data is not lost even when the power is off. • Mask ROM This is a type of ROM where users cannot write data. This memory is used to store programs or data in factories, and the information is used only for the purpose of reference.",
+              "kind": "textbook-source",
+              "pdfPage": 55,
+              "printedPage": 50,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "cff41ce38db0a47f6283af34b5223088ef2d7dfc65ad32c1c1e59626ff05b526"
+            }
+          ],
+          "headingNumber": "3-2-1",
+          "reason": "Original question image and actual 3-2-1 teaching re-read; memory-devices is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-054-b005-l01-text-0"
+        }
+      ],
+      "approvalFingerprint": "01a436b4dc74fdd2b1b49da51028a9d5933ba2155d93743ce3cd812788c8d7fa"
     }
   },
   {
@@ -30764,6 +34073,90 @@
     }
   },
   {
+    "id": "HIST-TECH01-2021S-Q011",
+    "examId": "2021S_FE_AM",
+    "number": 11,
+    "year": 2021,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Configuration of CPU",
+    "topic": "CPU registers",
+    "mapping": {
+      "headingNumber": "3-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-051-b004-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2021S-Q011.e927c13ce869.webp",
+      "width": 1993,
+      "height": 403,
+      "sha256": "e927c13ce86910611f7b01f83b6f6e3053d42d5824beb7f8d231f56987b2a5bd"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2021S-Q011"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            6
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "cpu-registers",
+          "evidence": [
+            {
+              "checkedExcerpt": "• Instruction register It stores the instructions to be executed. It is composed of an instruction part and an address part. • Instruction address register (program counter, program register) It stores the address (storing position in the main memory) of the instruction to be executed next.",
+              "kind": "textbook-source",
+              "pdfPage": 52,
+              "printedPage": 47,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "97daacc48a2f1d7065a3797a62a0b4b6c3c2156c8a7a712b4c516a22df80c5ba"
+            }
+          ],
+          "headingNumber": "3-1",
+          "reason": "Original question image and actual 3-1 teaching re-read; cpu-registers is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-051-b004-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "1304c45d8c7f2a5826daa989fce85f10c105e0d47bf18a56414b23c2fe31ffc7"
+    }
+  },
+  {
     "id": "HIST-TECH01-2021S-Q013",
     "examId": "2021S_FE_AM",
     "number": 13,
@@ -31303,6 +34696,90 @@
         }
       ],
       "approvalFingerprint": "5188c8dde3d0d72fad45171f524a3a6fca555226f375bea712021028a6f732e6"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2022S-Q013",
+    "examId": "2022S_FE_AM",
+    "number": 13,
+    "year": 2022,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "High Speed Memory Access",
+    "topic": "Cache memory",
+    "mapping": {
+      "headingNumber": "3-5-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-075-b005-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2022S-Q013.8c48adcaae29.webp",
+      "width": 1890,
+      "height": 1125,
+      "sha256": "8c48adcaae29a90d735b367d9672af90b0026973347033bbf12dd7ccbb715287"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 222,
+      "pageEnd": 222,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2022S-Q013"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            222
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "cache-memory",
+          "evidence": [
+            {
+              "checkedExcerpt": "memory). In other words, average access time (effective access time) as seen from the processor is decided on the basis of the extent to which the required data is found in cache memory. Therefore, it is determined by weighted average of access time of cache memory and access time of main memory. Here, the access time is determined by considering both the probability (hit ratio) that the required data is available in cache memory and the probability (NFP (Not Found Probability)) that the required data is not available in cache memory. “Hit ratio+NFP=1” always holds true. Example: Calculate the average access time of the following processor. NFP (probability that the required data is not available in cache memory) is 0.1. Access destination Access time (nanosecond) Cache memory 50 Main memory 500 Average access time of processor = Access time of cache memory × hit ratio + Access time of main memory × NFP = 50 nanoseconds × (1 − 0.1) + 500 nanoseconds × 0.1 = 95 nanoseconds From this example, it is clear that the higher the hit ratio is, the shorter the average access time is because of increased access to cache memory . When Havard architecture , which independently loads instructions and data , is used , cache memory is also separated into instruction cache and data cache . In this case , creating a program consolidating process ( instruction ) sections that are frequently executed will increase the hit ratio of instruction cache, which may shorten the average access time (access speed will improve).",
+              "kind": "textbook-source",
+              "pdfPage": 76,
+              "printedPage": 71,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "16642cba08a2bb57f7761c6f5bf389c157c2c9a4f16ffd1abe7b6cf36e65cc89"
+            }
+          ],
+          "headingNumber": "3-5-1",
+          "reason": "Original question image and actual 3-5-1 teaching re-read; cache-memory is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-075-b005-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "6191f55001cbdb86575927690f508f89559d1f7b3eb5b7ab91df20aa2566fd38"
     }
   },
   {

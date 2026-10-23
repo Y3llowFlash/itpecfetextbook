@@ -3,6 +3,7 @@ import release from '../../src/content/hardware-source-release.json' with { type
 import historicalRelease from '../../docs/development/evidence/historical-release-36.json' with {type:'json'};
 import expansion from '../../docs/development/evidence/historical-release-40.json' with {type:'json'};
 import third from '../../docs/development/evidence/historical-release-3.json' with {type:'json'};
+import fourth from '../../docs/development/evidence/historical-release-4.json' with {type:'json'};
 import explanations from '../../src/content/explanations.json' with {type:'json'};
 const diskFigureId=release.lessons.find(l=>l.slug==='auxiliary-storage')!.pages.flatMap(p=>p.blocks).find(b=>b.regionIds.includes('figure-1-42'))!.id;
 
@@ -35,7 +36,7 @@ async function emulatorTraffic(context: BrowserContext) {
   return blocked;
 }
 
-for(const [label,entry] of [['Release 1',historicalRelease.records.find(r=>r.id==='HIST-TECH01-2019A-Q012')!],['Release 2',expansion.records.find(r=>r.id==='HIST-TECH01-2021A-Q013')!],['Release 3',third.records[0]]] as const)test(`${label}: authorized historical answer and bookmark synchronize without changing existing progress identities`,async({browser})=>{
+for(const [label,entry] of [['Release 1',historicalRelease.records.find(r=>r.id==='HIST-TECH01-2019A-Q012')!],['Release 2',expansion.records.find(r=>r.id==='HIST-TECH01-2021A-Q013')!],['Release 3',third.records[0]],['Release 4',fourth.records[0]]] as const)test(`${label}: authorized historical answer and bookmark synchronize without changing existing progress identities`,async({browser})=>{
   const a=await browser.newContext(),b=await browser.newContext();await emulatorTraffic(a);await emulatorTraffic(b);
   const first=await a.newPage(),second=await b.newPage(),email=`historical-${Date.now()}@example.test`;
   const e=explanations.find(e=>e.questionId===entry.id)!;

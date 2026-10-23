@@ -3,7 +3,11 @@ import { readFileSync } from 'node:fs';
 import { validateHistoricalRelease, checksum } from '../scripts/historical-release-integrity';
 const read = (p: string) => JSON.parse(readFileSync(p,'utf8'));
 const expansion=read('docs/development/evidence/historical-release-40.json');
-const third=read('docs/development/evidence/historical-release-3.json'),fullBank=read('public/data/questions.json'),fullAnswers=read('src/content/explanations.json'),fullConcepts=read('src/content/concepts.json');
+const third=read('docs/development/evidence/historical-release-3.json'),fourth=read('docs/development/evidence/historical-release-4.json');
+const latestBank=read('public/data/questions.json'),latestAnswers=read('src/content/explanations.json'),latestConcepts=read('src/content/concepts.json');
+const fourthIds=new Set(fourth.records.map((r:any)=>r.id)),fourthConcepts=new Set(fourth.newHighlights.map((r:any)=>r.id));
+const fullBank=latestBank.filter((q:any)=>!fourthIds.has(q.id)),fullAnswers=latestAnswers.filter((e:any)=>!fourthIds.has(e.questionId));
+const fullConcepts=latestConcepts.filter((c:any)=>!fourthConcepts.has(c.id)).map((c:any)=>({...c,questionIds:c.questionIds.filter((id:string)=>!fourthIds.has(id)),mappingEvidence:c.mappingEvidence.filter((e:any)=>!fourthIds.has(e.questionId))}));
 const thirdIds=new Set(third.records.map((r:any)=>r.id)),thirdConcepts=new Set(third.newHighlights.map((r:any)=>r.id));
 const expandedBank=fullBank.filter((q:any)=>!thirdIds.has(q.id)),expandedAnswers=fullAnswers.filter((e:any)=>!thirdIds.has(e.questionId));
 const previousConcepts=fullConcepts.filter((c:any)=>!thirdConcepts.has(c.id)).map((c:any)=>({...c,questionIds:c.questionIds.filter((id:string)=>!thirdIds.has(id)),mappingEvidence:c.mappingEvidence.filter((e:any)=>!thirdIds.has(e.questionId))}));
@@ -67,4 +71,22 @@ describe('exact Release 3 append-only authorization',()=>{
     const b=structuredClone(fullBank);b.find((q:any)=>q.format!=='historical').correctAnswer='changed';expect(()=>validate(b)).toThrow();
     expect(()=>validate([...fullBank,{...fullBank[0],id:'HIST-UNAPPROVED'}])).toThrow();
   });
+});
+
+describe('exact Release 4 append-only authorization',()=>{
+ const validate=(b=latestBank,a=latestAnswers,c=latestConcepts,r=fourth)=>validateHistoricalRelease(b,a,c,receipt,expansion,third,r);
+ it('validates 576 records, 40 exact additions, two new highlights and unchanged 536',()=>{expect(()=>validate()).not.toThrow();expect(fourth.records).toHaveLength(40);expect(fourth.newHighlights.map((r:any)=>r.id).sort()).toEqual(['cache-write-policies','display-memory']);});
+ it('rejects every new answer, accessible description, mapping and highlight mutation',()=>{
+  for(const entry of fourth.records){
+   const b=structuredClone(latestBank);b.find((q:any)=>q.id===entry.id).correctAnswer='invalid';expect(()=>validate(b)).toThrow();
+   const a=structuredClone(latestAnswers);a.find((e:any)=>e.questionId===entry.id).imageDescription='changed';expect(()=>validate(latestBank,a)).toThrow();
+   const mapped=structuredClone(latestBank);mapped.find((q:any)=>q.id===entry.id).review.mappings[0].conceptId='wrong';expect(()=>validate(mapped)).toThrow();
+  }
+  for(const entry of fourth.newHighlights){const c=structuredClone(latestConcepts);c.find((c:any)=>c.id===entry.id).sourceHighlight.fragmentSha256='stale';expect(()=>validate(latestBank,latestAnswers,c)).toThrow();}
+ },30000);
+ it('rejects changed scope, old content and approval receipt bindings',()=>{
+  for(const field of ['candidateManifestSha256','candidateSetFingerprint','authorizedCount','excludedUnapproved'])expect(()=>validate(latestBank,latestAnswers,latestConcepts,{...fourth,[field]:'changed'})).toThrow();
+  const b=structuredClone(latestBank);b.find((q:any)=>thirdIds.has(q.id)).correctAnswer='changed';expect(()=>validate(b)).toThrow();
+  expect(()=>validate([...latestBank,{...latestBank[0],id:'HIST-UNAPPROVED'}])).toThrow();
+ });
 });

@@ -14,7 +14,7 @@ const argumentsOnly=process.argv.slice(2),batchPosition=argumentsOnly.indexOf('-
 const batch=batchPosition<0?1:Number(argumentsOnly[batchPosition+1]);
 const allowed=argumentsOnly.filter((_,i)=>i!==batchPosition&&i!==batchPosition+1);
 if(![1,2,3,4].includes(batch)||(batchPosition<0?argumentsOnly:allowed).some(a=>a!=='--dry-run')||argumentsOnly.filter(a=>a==='--batch').length>1)throw Error('Use --dry-run and optional --batch 1|2|3|4');
-if(batch===4&&!dryRun)throw Error('Batch 4 is private preparation only; publication is forbidden');
+if(batch===4&&!dryRun)execFileSync('python',['scripts/release_4.py','publication-gate'],{stdio:'pipe'});
 if(batch===3&&!dryRun)execFileSync('python',['scripts/release_3.py','publication-gate'],{stdio:'pipe'});
 const nativeManifest=JSON.parse(await readFile('.local/historical/technology-01/manifest.json','utf8'));
 // This reviewed source must pass the exact prepared candidate gate, even if its

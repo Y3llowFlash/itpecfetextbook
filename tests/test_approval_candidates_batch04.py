@@ -9,6 +9,10 @@ from unittest.mock import patch
 from test_approval_candidates_batch03 import fixture
 import approval_candidates as c
 import hardware_batch04 as b
+import release_4 as release
+
+def released():return (release.FOLDER/'state.json').exists()
+def inputs():return release.archived_inputs() if released() else c.batch04_inputs()
 
 
 class FinalBatch04Tests(unittest.TestCase):
@@ -41,18 +45,18 @@ class FinalBatch04Tests(unittest.TestCase):
 
     def test_batch4_cannot_publish_without_separate_release_implementation(self):
         result=subprocess.run(['node','node_modules/tsx/dist/cli.mjs','scripts/publish-historical-questions.ts','--batch','4'],cwd=c.h.ROOT,capture_output=True,text=True)
-        self.assertNotEqual(result.returncode,0);self.assertIn('publication is forbidden',result.stderr)
+        self.assertNotEqual(result.returncode,0);self.assertIn('publication-gate',result.stderr)
 
     @unittest.skipUnless((c.batch04_folder()/'manifest.json').exists(),'Private source package is intentionally not committed')
     def test_actual_frozen_40_20_two_highlights_and_18_reused_definitions(self):
-        manifest=c.check_batch04();context,records,reviews,frozen=c.batch04_inputs()
+        manifest=release.validate_package() if released() else c.check_batch04();context,records,reviews,frozen=inputs()
         self.assertEqual(manifest['questionIds'],c.h.read_json(c.batch04_folder()/'before/batch/preview/manifest.json')['questionIds'])
         self.assertEqual(len(manifest['candidates']),40);self.assertEqual(len(manifest['conceptDefinitions']),20)
         self.assertEqual({r['conceptId'] for r in manifest['highlightIntegration']},{'display-memory','cache-write-policies'})
         public={d['id']:d for d in c.h.read_json(c.h.ROOT/'src/content/concepts.json')}
         reused=[d for d in manifest['conceptDefinitions'] if not d['newConcept']];self.assertEqual(len(reused),18)
         for d in reused:self.assertEqual(c.concept_view(d),c.concept_view(public[d['id']]))
-        self.assertEqual(len(c.h.read_json(c.h.ROOT/'public/data/questions.json')),536)
+        self.assertEqual(len(c.h.read_json(release.FOLDER/'before-public-questions.json') if released() else c.h.read_json(c.h.ROOT/'public/data/questions.json')),536)
         self.assertEqual(len(context['releasedQuestionIds']),116);self.assertEqual(reviews,frozen)
         self.assertEqual(sum(c.h.valid_approval(r,reviews[r['id']]) for r in records),116)
         self.assertEqual(sum(c.h.valid_verification(r,reviews[r['id']]) for r in records),326)
@@ -69,7 +73,7 @@ class FinalBatch04Tests(unittest.TestCase):
 
     @unittest.skipUnless((c.batch04_folder()/'manifest.json').exists(),'Private source package intentionally absent from Git')
     def test_actual_stale_missing_or_unvalidated_source_ledger_rejected(self):
-        context,records,reviews,_=c.batch04_inputs();concepts=c.batch04_concepts(context);links=c.batch04_associations(context,records,reviews,concepts)
+        context,records,reviews,_=inputs();concepts=release.context()[1]['conceptDefinitions'] if released() else c.batch04_concepts(context);links=c.batch04_associations(context,records,reviews,concepts)
         read=c.h.read_json;ledger=read(c.batch04_folder()/'source-review.json');structural=[{k:r[k] for k in ['conceptId','status']} for r in read(c.batch04_folder()/'manifest.json')['highlightIntegration']]
         variants=[None,{**ledger,'ownerApprovalGranted':True}]
         for key,value in [('sourceBinding',{}),('reviewSha256','stale'),('visibleSha256','stale')]:
@@ -84,7 +88,11 @@ class FinalBatch04Tests(unittest.TestCase):
     def test_actual_repreparation_is_byte_idempotent_and_preserves_native_history(self):
         root=c.batch04_folder();names=['manifest.json','index.html','completion-report.md','equality-report.json','highlight-integration-report.json','owner-review-checklist.json']
         original={name:(root/name).read_bytes() for name in names};snapshot=c.qa.snapshot_hashes(c.h.WORK)
-        with contextlib.redirect_stdout(io.StringIO()):c.prepare_batch04()
+        if released():
+            self.assertRaises(ValueError,c.prepare_batch04)
+            release.validate_package();release.validate_package()
+        else:
+            with contextlib.redirect_stdout(io.StringIO()):c.prepare_batch04()
         self.assertEqual(original,{name:(root/name).read_bytes() for name in names});self.assertEqual(snapshot,c.qa.snapshot_hashes(c.h.WORK))
 
 

@@ -911,7 +911,10 @@ def prepare_batch04():
 
 
 def check_batch04(publisher=False):
-    # No approval transition is accepted, even for a publisher dry run.
+    if publisher:
+        import release_4
+        if (release_4.FOLDER/'state.json').exists():return release_4.publisher_check()
+    # Keep read-only preparation strict; authorization is a separate transition.
     root=batch04_folder();context,records,reviews,_=batch04_inputs();manifest=h.read_json(root/'manifest.json')
     concepts=batch04_concepts(context);associations=batch04_associations(context,records,reviews,concepts)
     rows,report=batch04_reviews(context,records,reviews,concepts,associations)
