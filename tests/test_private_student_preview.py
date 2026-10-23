@@ -107,4 +107,64 @@ class PrivatePreviewTests(unittest.TestCase):
             self.assertRaisesRegex(ValueError,'editorial findings input',p.validated_findings,selected,self.records,self.reviews)
 
 
+class AccessibilityRepairTests(unittest.TestCase):
+    def setUp(self):
+        self.records=[];self.reviews={};self.selected=[];repairs=[]
+        for qid,page in p.REPAIR_SCOPE.items():
+            r=record(page);r.update(id=qid,year=2019,season='A',number=page)
+            r['images'][0].update(width=600,height=400)
+            v=review(r,True);v['extraction']=decision(r)['extraction']
+            v['mapping']={'sectionId':'s03','conceptId':'logic-gates'}
+            before=copy.deepcopy({key:v['extraction'][key] for key in ['imageDescription','optionText']})
+            after=copy.deepcopy(before);after['imageDescription']='Source-checked neutral diagram description'
+            if page==28:after['optionText']['d']='B AND (A OR B)'
+            repairs.append({'questionId':qid,'pdfPage':page,'contentSha256':r['contentSha256'],'reviewSha256':qa.object_hash(v),
+                'imageSha256':r['images'][0]['sha256'],'before':before,'after':after,'status':'source-validated',
+                'validationMethod':'visual-comparison-with-original-pdf-and-pixel-matched-crop','sourceDiagramEvidence':{'connections':['source-checked']}})
+            self.records.append(r);self.reviews[qid]=v;self.selected.append({'id':qid,'reviewSha256':qa.object_hash(v)})
+        self.ledger={'schema':'itpec-accessibility-repairs-v1','sourceSha256':p.audit.SOURCE_SHA,'repairs':repairs}
+    def validate(self):return p.validated_repairs(self.records,self.reviews,self.ledger)
+    def test_exact_scope_and_original_source_checksum_required(self):
+        self.assertEqual(len(self.validate()),2)
+        for key,value in [('sourceSha256','stale'),('repairs',self.ledger['repairs'][:1]),('repairs',[self.ledger['repairs'][0]]*2)]:
+            with self.subTest(key=key),self.assertRaises(ValueError):
+                p.validated_repairs(self.records,self.reviews,{**self.ledger,key:value})
+    def test_stale_text_record_review_image_or_page_cannot_resolve(self):
+        for key in ['contentSha256','reviewSha256','imageSha256','pdfPage','before']:
+            ledger=copy.deepcopy(self.ledger);ledger['repairs'][0][key]='stale'
+            with self.subTest(key=key),self.assertRaises(ValueError):p.validated_repairs(self.records,self.reviews,ledger)
+    def test_only_authorized_accessible_fields_and_choice_d_can_change(self):
+        for change in ['answer','summary','option-a','page22-option-d']:
+            ledger=copy.deepcopy(self.ledger);after=ledger['repairs'][0]['after']
+            if change.startswith('option'):after['optionText']['a']='Changed'
+            elif change=='page22-option-d':after['optionText']['d']='Changed'
+            else:after[change]='Changed'
+            with self.subTest(change=change),self.assertRaises(ValueError):p.validated_repairs(self.records,self.reviews,ledger)
+    def test_unvalidated_repairs_or_unbound_resolution_are_rejected(self):
+        self.ledger['repairs'][0]['status']='pending'
+        self.assertRaisesRegex(ValueError,'completed original-diagram',self.validate)
+        self.ledger['repairs'][0]['status']='source-validated';repairs=self.validate()
+        findings=[{key:r[key] for key in ['questionId','contentSha256','reviewSha256','imageSha256']}|
+                  {'finding':'Original issue','status':'resolved-accessibility','resolutionSha256':qa.object_hash(r)} for r in repairs]
+        self.assertEqual(p.validated_findings(self.selected,self.records,self.reviews,findings,repairs),findings)
+        with self.assertRaisesRegex(ValueError,'Cannot clear'):p.validated_findings(self.selected,self.records,self.reviews,findings)
+        findings[0]['resolutionSha256']='stale'
+        with self.assertRaisesRegex(ValueError,'Cannot clear'):p.validated_findings(self.selected,self.records,self.reviews,findings,repairs)
+    def test_projection_applies_corrections_without_academic_changes_or_qa_notices(self):
+        repairs=self.validate();before=copy.deepcopy((self.records,self.reviews,self.ledger))
+        concepts=[{'id':'logic-gates'}]
+        with patch.object(p,'association',return_value={}):
+            result=p.project(self.selected,self.records,self.reviews,concepts,repairs)
+            self.assertEqual(result,p.project(self.selected,self.records,self.reviews,concepts,repairs))
+            bank,answers,_,_=result
+        for q,e,repair in zip(bank,answers,repairs):
+            v=self.reviews[q['id']]
+            self.assertNotIn('previewNotices',q);self.assertFalse(q['is_published'])
+            self.assertEqual(q['correctAnswer'],v['verification']['independentAnswer'])
+            self.assertEqual(q['image']['sha256'],repair['imageSha256'])
+            for key in ['summary','steps','takeaway']:self.assertEqual(e[key],v['explanation'][key])
+            for key in ['imageDescription','optionText']:self.assertEqual(e[key],repair['after'][key])
+        self.assertEqual((self.records,self.reviews,self.ledger),before)
+
+
 if __name__=='__main__':unittest.main()

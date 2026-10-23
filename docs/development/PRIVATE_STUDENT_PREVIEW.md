@@ -38,16 +38,17 @@ The private `.local/private-student-preview/` workspace contains:
 - `review-gallery.html`: local visual gallery with full-size screenshot links, including seven concepts and mobile Boolean/radix views.
 - `seven-concept-contact-sheet.jpg`: compact overview; use the full screenshots to inspect text and figures.
 - `generation-integrity.json`: repeated-build byte comparison and preservation results.
+- `accessibility-repairs.json`: validated before/after transcriptions for historical pages 22 and 28, bound to the original content, review, image and PDF checksums.
 - `app/`: ignored source copy and static build; never used by the production build.
 - `handoff.json`: final commit, branch, readiness state and owner-inspection URL.
 
 Full private question tables, screenshots, source data and generated preview files are not committed or placed in production assets.
 
-### Two private accessibility findings
+### Two resolved private accessibility findings
 
-Visual inspection identified two issues despite the earlier accessible-review-complete status. Historical **p.28** has trailing diagram labels `A` and `B` appended to accessible option D. Historical **p.22** lists diagram labels without describing the arrow direction/processor-box relationship. The original images and verified answer explanations are intact. Both records remain reachable with an explicit private editorial-review notice; neither original extraction review nor academic answer was silently changed. Source-bound details and future repair actions are in `.local/private-student-preview/review-findings.json`. These two accessibility issues need editorial follow-up before publication; no mapping association needs exclusion.
+Fresh visual comparison with the original PDF and pixel-matched crops resolved both findings. Historical **p.22** now describes the arrow sequence and processor boundary. Historical **p.28** now describes the complete gate wiring, branch dots and unconnected crossing; the stray input labels were removed from accessible option D. Images, canonical IDs, grading answers and every verified explanation remain unchanged.
 
-Preserve `review-findings.json` with the private inputs. Preparation fails if it is absent, so a fresh generation cannot silently omit the notices.
+Corrections are a private, source-bound accessibility overlay; the original academic review objects and audit snapshots remain byte-for-byte intact. Preserve both `accessibility-repairs.json` and `review-findings.json` with the private inputs. Preparation rejects missing/stale repair evidence, changes outside the two accessible fields, unrelated choice edits, and resolutions without matching validated repairs. The manifest retains the resolved findings and correction history for editors. Internal QA notices and findings are not serialized into student props or rendered in practice screens. See [repair validation report](PRIVATE_ACCESSIBILITY_REPAIRS.md).
 
 ## Source placement review
 
@@ -57,7 +58,7 @@ Each association checks actual TOC subsection membership, section ID, concept ID
 
 The disk-access pilot asks why defragmentation improves file access. Its established access-time entry remains in 4-1-3, with explicit supporting defragmentation teaching at **printed p.85 / physical p.91**. This is a qualitative access-performance question; it is not mislabeled as a numeric seek/latency calculation. The separate defragmentation concept retains its own existing question and original highlight. No duplicate highlight or reclassification is introduced.
 
-Other placements retain their existing passages: register definitions at physical p.52, cache miss handling at p.75, logic/truth-table laws within 3-4-1, radix conversion within 2-2, and USB teaching at pp.113–114. All actual original diagrams, tables, mathematical layouts and symbols remain in the exact source images. Alt text, accessible options and worked explanations come from the existing complete private reviews.
+Other placements retain their existing passages: register definitions at physical p.52, cache miss handling at p.75, logic/truth-table laws within 3-4-1, radix conversion within 2-2, and USB teaching at pp.113–114. All actual original diagrams, tables, mathematical layouts and symbols remain in the exact source images. Accessible text uses the existing private reviews plus the two validated accessibility corrections; worked explanations remain exactly as verified.
 
 ## Isolation and unchanged production behavior
 
@@ -102,6 +103,6 @@ Eight initial private browser assertions failed because tests counted both sourc
 
 See [paper/subject policy options](PRIVATE_PILOT_METADATA_POLICY.md) for the separate owner decision. **Option A** retains independently evidenced paper/subject values; **Option B** would require an explicitly approved, provenance-aware unknown-metadata policy and related matching/schema/UI/validator work. Neither option has been newly applied; the existing strict publication gate remains intact.
 
-Every pilot record still needs reliable paper/subject evidence and separate final owner publication approval. The two flagged accessibility cases also need editorial repair. Preview inclusion and answer submission grant no approval. All seven qualified owner disputes and the 41 other/outside/uncertain catalog records remain outside this preview. Published ITPEC Practice authority remains unchanged for reliably matched occurrences.
+Every pilot record still needs reliable paper/subject evidence and separate final owner publication approval. Both flagged accessibility cases are resolved in the private projection. Any future publication preparation must explicitly carry these source-bound corrections forward; this milestone does not promote them into the public catalog. Preview inclusion and answer submission grant no approval. All seven qualified owner disputes and the 41 other/outside/uncertain catalog records remain outside this preview. Published ITPEC Practice authority remains unchanged for reliably matched occurrences.
 
 Tracked implementation: `scripts/private_student_preview.py`, `scripts/private-student-preview-server.mjs`, six non-public build templates in `scripts/private-preview/`, focused Python/browser tests, `playwright.pilot.config.ts`, package commands, README and the two preview/policy reports. Only validated implementation changes are committed/pushed to `feature/chapter1-question-integration`. No main merge, deployment, publication, owner approval or bulk application of the 333 audit proposals is performed. Final commit details are supplied in the handoff; work stops for owner inspection.

@@ -2,7 +2,7 @@ import {test,expect} from '@playwright/test';
 import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 const read=(p:string)=>JSON.parse(readFileSync(`.local/private-student-preview/${p}`,'utf8'));
-const bank=read('app/src/content/pilot-bank.json') as Array<{id:string;topic:string;number:number;year:number;correctAnswer:string;previewNotices:string[];image:{src:string;sha256:string;width:number;height:number}}>;
+const bank=read('app/src/content/pilot-bank.json') as Array<{id:string;topic:string;number:number;year:number;correctAnswer:string;image:{src:string;sha256:string;width:number;height:number}}>;
 const answers=read('app/src/content/explanations.json') as Array<{questionId:string;summary:string;steps:string[]}>;
 const walkthrough=read('walkthrough.json') as Array<{conceptId:string;questionId:string;readingUrl:string;practiceUrl:string}>;
 const prefix='itpecTextbook:privatePilot36:';
@@ -12,7 +12,7 @@ test('exact scope and truthful metadata; no public/historical extras',async({req
  expect(bank).toHaveLength(36);expect(new Set(bank.map(q=>q.id)).size).toBe(36);
  const home=await request.get('/');expect(await home.text()).toContain('36 historical questions');
  expect(home.headers()['x-robots-tag']).toContain('noindex');
- for(const path of ['/data/questions.json','/questions.json','/reviews.json','/manifest.json','/Technology-01.pdf','/FE%20Vol%201.pdf','/.local/historical/technology-01/questions.json','/__pilot/images/not-selected.webp','/practice/floating-point/'])expect((await request.get(path)).status()).toBe(404);
+ for(const path of ['/data/questions.json','/questions.json','/reviews.json','/manifest.json','/review-findings.json','/accessibility-repairs.json','/accessibility-review/findings-before.json','/Technology-01.pdf','/FE%20Vol%201.pdf','/.local/historical/technology-01/questions.json','/__pilot/images/not-selected.webp','/practice/floating-point/'])expect((await request.get(path)).status()).toBe(404);
  const originalCatalog=JSON.parse(readFileSync('.local/historical/technology-01/questions.json','utf8')) as Array<{id:string;images:Array<{sha256:string}>}>;
  const excluded=originalCatalog.find(q=>!bank.some(selected=>selected.id===q.id))!;
  expect((await request.get(`/__pilot/images/${excluded.images[0].sha256}.webp`)).status()).toBe(404);
@@ -27,7 +27,8 @@ for(const q of bank)test(`original image, verified answer and worked explanation
  await expect(page.locator('.question-meta h2')).toContainText(`Q${q.number}`);
  await expect(page.locator('.question-meta h2')).toContainText('Paper/subject not established');
  await expect(page.locator('.source-note').filter({hasText:'ID:'})).toContainText(q.id);
- await expect(page.locator('[aria-label="Private editorial review"]')).toHaveText(q.previewNotices);
+ await expect(page.locator('[aria-label="Private editorial review"]')).toHaveCount(0);
+ expect(await page.content()).not.toMatch(/previewNotices|Editorial review pending|Diagram accessibility review pending/);
  const image=page.locator('.exam-image-figure img');await expect(image).toHaveAttribute('src',q.image.src);
  await image.evaluate(async(el:HTMLImageElement)=>{await el.decode();});
  expect(await image.evaluate((el:HTMLImageElement)=>[el.naturalWidth,el.naturalHeight])).toEqual([q.image.width,q.image.height]);
@@ -39,6 +40,28 @@ for(const q of bank)test(`original image, verified answer and worked explanation
  await expect(page.locator('.answer-feedback ol li')).toHaveText(e.steps);
  const saved=await page.evaluate(key=>JSON.parse(localStorage.getItem(key)!),guestKey);
  expect(saved.attempts.at(-1).questionId).toBe(q.id);expect(saved.attempts.at(-1).correct).toBe(true);
+});
+
+for(const [id,fragments] of [
+ ['HIST-TECH01-2019A-Q012',['Main memory is outside the box labeled Processor','right-pointing arrow leads from Main memory','right-pointing arrow leads from a to the Instruction decoder']],
+ ['HIST-TECH01-2019S-Q023',['upper AND gate and a lower OR gate','crossing without a dot is not a junction','upper input of a final OR gate','There are no inversion bubbles']],
+] as const)test(`corrected source-diagram transcription: ${id}`,async({page},info)=>{
+ const q=bank.find(q=>q.id===id)!;
+ const original=JSON.parse(readFileSync('.local/historical/technology-01/reviews.json','utf8'))[id];
+ await page.goto(`/practice/${q.topic}/?question=${id}`);
+ await page.getByText('Read the question as text',{exact:true}).click();
+ const transcript=page.locator('.question-transcript');
+ for(const fragment of fragments)await expect(transcript).toContainText(fragment);
+ if(id==='HIST-TECH01-2019S-Q023')await expect(page.getByRole('radio',{name:'Option D: B AND (A OR B)',exact:true})).toBeVisible();
+ expect(q.correctAnswer).toBe(original.verification.independentAnswer);
+ const e=answers.find(e=>e.questionId===id)!;
+ expect(e.summary).toBe(original.explanation.summary);expect(e.steps).toEqual(original.explanation.steps);
+ await page.getByRole('button',{name:`Enlarge original question ${id}`}).click();
+ const zoom=page.getByRole('dialog').getByRole('img');
+ for(const fragment of fragments)await expect(zoom).toHaveAttribute('alt',new RegExp(fragment.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')));
+ await page.keyboard.press('Escape');
+ await page.setViewportSize({width:375,height:900});
+ await page.screenshot({path:info.outputPath(`${id}-accessible-mobile.png`),fullPage:true});
 });
 
 for(const entry of walkthrough)test(`reading, existing highlight, practice and exact return: ${entry.conceptId}`,async({page},info)=>{

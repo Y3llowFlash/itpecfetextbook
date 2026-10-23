@@ -23,6 +23,7 @@ NOTES = 'ITPEC_Chapter1_36_Pilot_Review_Notes.md'
 COUNTS = {'logic-gates':24,'radix-conversion':6,'usb-interface':2,'cpu-registers':1,'cache-memory':1,'disk-access':1,'defragmentation':1}
 PREFIX = 'itpecTextbook:privatePilot36:'
 PILOT_BASELINE = '0d28d36f0a206caf899c337c4d26d059bfdf7e4a'
+REPAIR_SCOPE = {'HIST-TECH01-2019A-Q012':22, 'HIST-TECH01-2019S-Q023':28}
 
 
 def save(path, value):
@@ -80,17 +81,49 @@ def validated_inputs():
     return records,reviews,selected
 
 
-def validated_findings(selected, records, reviews, findings=None):
+def validated_repairs(records, reviews, ledger=None):
+    """Read an editorial overlay, never rewrite the preserved academic reviews."""
+    ledger=h.read_json(WORK/'accessibility-repairs.json') if ledger is None else ledger
+    if not isinstance(ledger,dict) or ledger.get('schema')!='itpec-accessibility-repairs-v1' or ledger.get('sourceSha256')!=audit.SOURCE_SHA:
+        raise ValueError('Source-bound accessibility repair ledger is required')
+    repairs=ledger.get('repairs',[]);source={r['id']:r for r in records}
+    if len(repairs)!=2 or {r['questionId'] for r in repairs}!=set(REPAIR_SCOPE):
+        raise ValueError('Accessibility repair scope must be exactly historical pages 22 and 28')
+    for repair in repairs:
+        r=source.get(repair['questionId']);v=reviews.get(repair['questionId'])
+        if not r or not v or repair.get('contentSha256')!=r['contentSha256'] or repair.get('reviewSha256')!=qa.object_hash(v) or repair.get('imageSha256')!=r['images'][0]['sha256'] or repair.get('pdfPage')!=REPAIR_SCOPE[r['id']] or r['regions'][0]['pdfPage']!=repair['pdfPage']:
+            raise ValueError('Stale accessibility source/review/image/page binding')
+        before={key:v['extraction'][key] for key in ['imageDescription','optionText']}
+        after=repair.get('after',{})
+        if repair.get('before')!=before or set(after)!=set(before) or not isinstance(after['imageDescription'],str) or not after['imageDescription'].strip() or after['imageDescription']==before['imageDescription']:
+            raise ValueError('Accessibility repair must bind original text and change only accessible fields')
+        expected_options=dict(before['optionText'])
+        if repair['pdfPage']==28:expected_options['d']='B AND (A OR B)'
+        if after['optionText']!=expected_options:
+            raise ValueError('Accessibility repair changed an unrelated answer choice')
+        if repair.get('status')!='source-validated' or not repair.get('sourceDiagramEvidence') or repair.get('validationMethod')!='visual-comparison-with-original-pdf-and-pixel-matched-crop':
+            raise ValueError('Accessibility repair needs completed original-diagram validation')
+    return repairs
+
+
+def validated_findings(selected, records, reviews, findings=None, repairs=()):
     findings=h.read_json(WORK/'review-findings.json') if findings is None else findings
-    if findings is None:raise ValueError('Preserved private editorial findings input is required; notices must not silently disappear')
+    if findings is None:raise ValueError('Preserved private editorial findings input is required; findings must not silently disappear')
     source={r['id']:r for r in records};ids={q['id'] for q in selected}
     if not isinstance(findings,list) or len({f['questionId'] for f in findings})!=len(findings):raise ValueError('Editorial findings must be unique per selected question')
     for f in findings:
         r=source.get(f['questionId'])
         if f['questionId'] not in ids or f.get('contentSha256')!=r['contentSha256'] or f.get('reviewSha256')!=qa.object_hash(reviews[r['id']]) or f.get('imageSha256')!=r['images'][0]['sha256']:
             raise ValueError('Editorial finding has an unselected or stale source/review binding')
-        if f.get('status')!='editorial-review-pending' or not f.get('studentNotice') or not f.get('finding'):
-            raise ValueError('Editorial notices must stay separate, explicit and pending review')
+        if not f.get('finding'):raise ValueError('Editorial findings must retain their original issue')
+        if f.get('status')=='resolved-accessibility':
+            repair=next((x for x in repairs if x['questionId']==f['questionId']),None)
+            if not repair or f.get('resolutionSha256')!=qa.object_hash(repair):
+                raise ValueError('Cannot clear an editorial finding without its validated accessibility repair')
+        elif f.get('status')!='editorial-review-pending':
+            raise ValueError('Editorial finding has an unknown review status')
+    if repairs and {r['questionId'] for r in repairs}!={f['questionId'] for f in findings if f['status']=='resolved-accessibility'}:
+        raise ValueError('Each validated accessibility repair needs its preserved resolved finding')
     return findings
 
 
@@ -127,21 +160,20 @@ def association(q, concept):
         'status':'private-preview-association-reviewed-not-publication-approved','reason':reason}
 
 
-def project(selected,records,reviews,concepts,findings=()):
+def project(selected,records,reviews,concepts,repairs=()):
     index={r['id']:r for r in records};bank=[];explanations=[];links=[]
     for q in selected:
         r=index[q['id']];v=reviews[r['id']];m=v['mapping'];c=next(c for c in concepts if c['id']==m['conceptId'])
         links.append(association(q,c));im=r['images'][0]
         bank.append({'id':r['id'],'examId':f'private-{r["year"]}{r["season"]}-paper-unestablished','number':r['number'],'year':r['year'],'season':r['season'],
           'subject':None,'paper':None,'privatePreview':True,'is_published':False,'sourceKind':'past_paper','format':'multiple-choice','examLabel':'FE (owner-confirmed)',
-          'previewNotices':[f['studentNotice'] for f in findings if f['questionId']==r['id']],
           'correctAnswer':v['verification']['independentAnswer'],'options':list('abcd'),'chapter':'Hardware','section':m['sectionId'],'topic':m['conceptId'],'mapping':m,
           'image':{'src':f'/__pilot/images/{im["sha256"]}.webp','width':im['width'],'height':im['height'],'sha256':im['sha256']},
           'source':{'dataset':'private-technology-01','questionPdf':'Technology-01.pdf','pageStart':r['regions'][0]['pdfPage'],'pageEnd':r['regions'][-1]['pdfPage'],
                     'originalImagePath':im['path'],'documentPath':'Technology-01.pdf'},
           'review':{'examType':'FE','sources':[{'kind':'historical-pdf','filename':'Technology-01.pdf','sha256':audit.SOURCE_SHA,'pages':[p['pdfPage'] for p in r['regions']]}],
                     'answerVerification':'verified','mappingStatus':'verified','extractionQuality':'complete','reviewStatus':'needs-review','publicationStatus':'unapproved','mappings':[m]}})
-        e=v['explanation'];x=v['extraction']
+        e=v['explanation'];x=next((repair['after'] for repair in repairs if repair['questionId']==r['id']),v['extraction'])
         explanations.append({'questionId':r['id'],'revision':f'private-{q["reviewSha256"][:16]}','answer':v['verification']['independentAnswer'],
           'summary':e['summary'],'steps':e['steps'],'takeaway':e['takeaway'],'optionText':x['optionText'],'imageDescription':x['imageDescription'],
           'reviewedAgainst':['Existing immutable independently verified private review',q['reviewSha256']]})
@@ -180,7 +212,7 @@ def overlay():
     models=APP/'src/lib/models.ts'
     replace_checked(models,"subject: 'A' | 'B';",'subject: null;')
     replace_checked(models,'paper: string;','paper: null;')
-    replace_checked(models,'is_published: true;','is_published: false; privatePreview: true; previewNotices?: string[];')
+    replace_checked(models,'is_published: true;','is_published: false; privatePreview: true;')
     policy=APP/'src/lib/question-policy.ts'
     replace_checked(policy,'q.is_published === true','q.privatePreview === true && q.is_published === false')
     text=policy.read_text('utf-8');start=text.index('export function questionLabel(');end=text.index('\nexport interface MatchCandidate',start)
@@ -192,7 +224,6 @@ def overlay():
     replace_checked(high,'  return html;',"""  return html.replace(/<a\\b([^>]*data-concept=\"([^\"]+)\"[^>]*)>([\\s\\S]*?)<\\/a>/g,(whole,_attrs,id,body)=>concepts.some(c=>c.id===id)?whole:body.replace(/<span class=\"concept-count\"[^>]*>[\\s\\S]*?<\\/span>/g,''));""")
     replace_checked(APP/'src/components/Practice.tsx','related published questions','related private preview questions')
     replace_checked(APP/'src/components/Practice.tsx','complete published question set','complete private preview question set')
-    replace_checked(APP/'src/components/Practice.tsx','<details className="question-transcript">','{question.previewNotices?.map(notice=><aside key={notice} className="storage-warning" aria-label="Private editorial review">{notice}</aside>)}\n    <details className="question-transcript">')
     layout=APP/'src/layouts/SiteLayout.astro'
     replace_checked(layout,'noindex = false','noindex = true')
     replace_checked(layout,'<body>','<body><p class="source-note" role="note">Private student preview · Not approved for publication · Disposable local progress</p>')
@@ -208,8 +239,9 @@ def prepare():
         if not destination.exists():shutil.copyfile(Path('C:/Users/lenovo/Downloads')/name,destination)
     records,reviews,selected=validated_inputs()
     concepts=h.read_json(ROOT/'src/content/concepts.json')
-    findings=validated_findings(selected,records,reviews)
-    bank,answers,scoped,links=project(selected,records,reviews,concepts,findings)
+    repairs=validated_repairs(records,reviews)
+    findings=validated_findings(selected,records,reviews,repairs=repairs)
+    bank,answers,scoped,links=project(selected,records,reviews,concepts,repairs)
     # Independently compare all 36 active crops to the original PDF at recorded DPI.
     with fitz.open(h.SOURCE) as source:
         qa.validate_source_images([r for r in records if r['id'] in {q['id'] for q in selected}],source)
@@ -230,7 +262,7 @@ def prepare():
       'implementation':fingerprint(),'inputHashes':{name:h.digest((WORK/'inputs'/name).read_bytes()) for name in [SHORTLIST,NOTES]},
       'sourceSha256':audit.SOURCE_SHA,'bookSha256':audit.BOOK_SHA,'auditBaseline':audit.BASELINE,'completedAuditCommit':PILOT_BASELINE,
       'questionIds':[q['id'] for q in bank],'counts':COUNTS,'associations':links,'assets':assets,
-      'imagesComparedToOriginalPixels':36,'excludedAssociations':[],'editorialFindings':findings,'progressPrefix':PREFIX,'paper':None,'subject':None}
+      'imagesComparedToOriginalPixels':36,'excludedAssociations':[],'editorialFindings':findings,'accessibilityRepairs':repairs,'progressPrefix':PREFIX,'paper':None,'subject':None}
     save(WORK/'manifest.json',manifest)
     save(WORK/'walkthrough.json',[{'conceptId':c['id'],'questionId':c['questionIds'][0],'readingUrl':f'{c["sectionUrl"]}#concept-{c["id"]}',
         'practiceUrl':f'/practice/{c["id"]}/?question={c["questionIds"][0]}'} for c in scoped])
@@ -251,9 +283,10 @@ def check():
         raise ValueError('Private preview is stale; rebuild without editing the original review objects')
     if manifest['inputHashes']!={name:h.digest((WORK/'inputs'/name).read_bytes()) for name in [SHORTLIST,NOTES]}:
         raise ValueError('Private shortlist/review-note inputs changed')
-    findings=validated_findings(selected,records,reviews)
-    bank,answers,concepts,links=project(selected,records,reviews,h.read_json(ROOT/'src/content/concepts.json'),findings)
-    if manifest.get('editorialFindings')!=findings:raise ValueError('Private editorial findings changed; rebuild to display the pending review notices')
+    repairs=validated_repairs(records,reviews)
+    findings=validated_findings(selected,records,reviews,repairs=repairs)
+    bank,answers,concepts,links=project(selected,records,reviews,h.read_json(ROOT/'src/content/concepts.json'),repairs)
+    if manifest.get('editorialFindings')!=findings or manifest.get('accessibilityRepairs')!=repairs:raise ValueError('Private editorial evidence changed; rebuild from validated corrections')
     if links!=manifest['associations'] or h.read_json(APP/'src/content/pilot-bank.json')!=bank or h.read_json(APP/'src/content/explanations.json')!=answers or h.read_json(APP/'src/content/concepts.json')!=concepts:
         raise ValueError('Generated private data or source associations changed')
     expected_assets={'/'+p.relative_to(APP/'dist').as_posix():{'path':str(p),'sha256':h.digest(p.read_bytes())} for p in (APP/'dist').rglob('*') if p.is_file()}
@@ -269,6 +302,12 @@ def check():
         text=p.read_text('utf-8')
         if any(marker in text for marker in ['firestore.googleapis.com','identitytoolkit.googleapis.com','itpec-textbook.firebaseapp.com','AIzaSyBE9']):
             raise ValueError('Private preview must not include production Firebase runtime/configuration')
+    # QA history stays in the private editorial manifest, never in student props/UI.
+    for p in (APP/'dist').rglob('*'):
+        if p.is_file() and p.suffix in ['.html','.js','.json']:
+            text=p.read_text('utf-8')
+            if any(marker in text for marker in ['previewNotices','Private editorial review','editorial-review-pending','resolved-accessibility']+[f['finding'] for f in findings]+[f['studentNotice'] for f in findings if f.get('studentNotice')]):
+                raise ValueError('Internal editorial notices leaked into the student build')
     print('Private preview integrity: 36 questions, 7 existing concepts, 0 approvals, 0 public catalog changes.')
     return manifest
 
