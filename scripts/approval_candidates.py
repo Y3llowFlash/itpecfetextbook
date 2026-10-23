@@ -174,6 +174,9 @@ def prepare():
 def check(publisher=False,batch=1):
     if batch==2:return check_batch02(publisher)
     if batch==3:return check_batch03(publisher)
+    if batch==5:
+        from approval_batch05 import check
+        return check(publisher)
     if batch==4:return check_batch04(publisher)
     root=editorial.folder();context=editorial.inputs();manifest=h.read_json(root/'manifest.json')
     if not manifest or manifest.get('schema')!='itpec-final-approval-candidates-v1' or manifest.get('questionIds')!=context['questionIds'] or manifest.get('conceptCounts')!=context['conceptCounts'] or len(manifest.get('candidates',[]))!=36 or manifest.get('privateOnly') is not True or manifest.get('readOnly') is not True or manifest.get('publicationApprovalGranted') is not False:
@@ -959,13 +962,16 @@ def write_batch04_report(manifest):
 
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('command',choices=['prepare','check']);parser.add_argument('--publisher-check',action='store_true');parser.add_argument('--batch',type=int,choices=[1,2,3,4],default=1);args=parser.parse_args()
-    if args.command=='prepare':prepare_batch04() if args.batch==4 else prepare_batch03() if args.batch==3 else prepare_batch02() if args.batch==2 else prepare()
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('command',choices=['prepare','check']);parser.add_argument('--publisher-check',action='store_true');parser.add_argument('--batch',type=int,choices=[1,2,3,4,5],default=1);args=parser.parse_args()
+    if args.command=='prepare' and args.batch==5:
+        from approval_batch05 import prepare
+        prepare()
+    elif args.command=='prepare':prepare_batch04() if args.batch==4 else prepare_batch03() if args.batch==3 else prepare_batch02() if args.batch==2 else prepare()
     else:
         manifest=check(args.publisher_check,args.batch)
         live=h.read_json(h.WORK/'reviews.json')
-        folder=batch04_folder() if args.batch==4 else batch03_folder() if args.batch==3 else batch02_folder() if args.batch==2 else editorial.folder()
-        released=h.read_json(folder/'preparation-inputs.json')['releasedQuestionIds'] if args.batch in [2,3,4] else []
+        folder=__import__('approval_batch05').folder() if args.batch==5 else batch04_folder() if args.batch==4 else batch03_folder() if args.batch==3 else batch02_folder() if args.batch==2 else editorial.folder()
+        released=h.read_json(folder/'preparation-inputs.json')['releasedQuestionIds'] if args.batch in [2,3,4,5] else []
         print(json.dumps({'questionIds':manifest['questionIds'],'candidates':len(manifest['candidates']),'unapproved':sum(live[qid]['approval']['status']=='unapproved' for qid in manifest['questionIds']),'publicationApprovalGranted':False,
             'releasedQuestionIds':released,'conceptDefinitions':manifest.get('conceptDefinitions',[]) if args.publisher_check else None,
             'galleryAssets':manifest['galleryAssets'] if not args.publisher_check else None,'directory':str(folder)},ensure_ascii=False))
