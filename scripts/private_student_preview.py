@@ -94,6 +94,10 @@ def validated_repairs(records, reviews, ledger=None):
         r=source.get(repair['questionId']);v=reviews.get(repair['questionId'])
         if not r or not v or repair.get('contentSha256')!=r['contentSha256'] or repair.get('reviewSha256')!=qa.object_hash(v) or repair.get('imageSha256')!=r['images'][0]['sha256'] or repair.get('pdfPage')!=REPAIR_SCOPE[r['id']] or r['regions'][0]['pdfPage']!=repair['pdfPage']:
             raise ValueError('Stale accessibility source/review/image/page binding')
+        if v['extraction'].get('editorialProvenance'):
+            from approval_editorial import validate_rebound_repair
+            validate_rebound_repair(r,v,repair)
+            continue
         before={key:v['extraction'][key] for key in ['imageDescription','optionText']}
         after=repair.get('after',{})
         if repair.get('before')!=before or set(after)!=set(before) or not isinstance(after['imageDescription'],str) or not after['imageDescription'].strip() or after['imageDescription']==before['imageDescription']:
@@ -177,7 +181,12 @@ def project(selected,records,reviews,concepts,repairs=()):
         e=v['explanation'];x=next((repair['after'] for repair in repairs if repair['questionId']==r['id']),v['extraction'])
         # Metadata-only rebinding must not change the academic revision of saved attempts.
         prior_meta=v['metadata'].get('history',[v['metadata']])[0]
-        academic_revision=qa.object_hash({**v,'metadata':prior_meta})
+        academic_view={**v,'metadata':prior_meta}
+        if v['extraction'].get('editorialProvenance'):
+            original=next(repair['before'] for repair in repairs if repair['questionId']==r['id'])
+            academic_view['extraction']={**v['extraction'],**original}
+            academic_view['extraction'].pop('editorialProvenance')
+        academic_revision=qa.object_hash(academic_view)
         explanations.append({'questionId':r['id'],'revision':f'private-{academic_revision[:16]}','answer':v['verification']['independentAnswer'],
           'summary':e['summary'],'steps':e['steps'],'takeaway':e['takeaway'],'optionText':x['optionText'],'imageDescription':x['imageDescription'],
           'reviewedAgainst':['Existing immutable independently verified private review',academic_revision]})

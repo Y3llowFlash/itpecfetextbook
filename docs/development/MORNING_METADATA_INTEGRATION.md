@@ -1,5 +1,7 @@
 # Morning / Subject A integration completion report
 
+Historical metadata checkpoint. The subsequent [final approval preparation](FINAL_36_APPROVAL_PREPARATION.md) has integrated both validated accessibility transcriptions into native publication reviews. The overlay handoff prerequisite described below is therefore resolved; final owner publication approval is still absent.
+
 Owner metadata confirmation is applied to **333 private historical reviews**: 333 Morning / Subject A, zero Evening / Subject B, zero unresolved metadata and zero conflicts. Evidence records explicit owner confirmation, the original instruction checksum, source checksum and exact scope. It does not claim paper/subject extraction from PDF pages.
 
 All 333 immutable question records, canonical IDs, raw text, images, examination years/seasons/numbers and original source fields are unchanged. All 326 independent verification records and explanations, seven qualified owner-adjudication objects, classifications, mappings and academic histories are preserved exactly. The 420 published Practice records/images and production reader assets are unchanged. Preview progress continues to use the same question IDs, storage namespace and academic explanation revisions; no progress migration is required.

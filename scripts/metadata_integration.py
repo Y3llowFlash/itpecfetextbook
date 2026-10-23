@@ -47,12 +47,17 @@ def validate_transition():
     if h.digest((h.WORK/'questions.json').read_bytes())!=policy['baselineSnapshot']['questionFileSha256']:
         raise ValueError('Metadata reconciliation changed original questions')
     expected,_=merge_metadata(records,old,policy)
+    if state.get('editorialReconciliation'):
+        from approval_editorial import reconciled_reviews
+        expected=reconciled_reviews(expected,state)
     if h.read_json(h.WORK/'reviews.json')!=expected:
         raise ValueError('Non-metadata review changes or stale owner confirmation')
     original=h.read_json(FOLDER/'before/manifest.json');current=h.read_json(h.WORK/'manifest.json')
-    mutable={'importerFingerprint','sourceHistory','metadataReconciliation'}
+    mutable={'importerFingerprint','sourceHistory','metadataReconciliation','editorialReconciliation'}
     if {k:v for k,v in original.items() if k not in mutable}!={k:v for k,v in current.items() if k not in mutable} or current.get('metadataReconciliation')!=binding:
         raise ValueError('Protected manifest evidence changed during metadata migration')
+    if current.get('editorialReconciliation')!=state.get('editorialReconciliation'):
+        raise ValueError('Editorial manifest and reconciliation receipt disagree')
     expected_history=[*original['sourceHistory'],{'kind':'owner-metadata-only-revalidation','sourceSha256':policy['sourceSha256'],
         'previousImporterFingerprint':original['importerFingerprint'],'validatedWithFingerprint':h.processing_fingerprint(),
         'existingCropsCompared':333,'regeneratedCrops':0}]
@@ -109,6 +114,9 @@ def reconcile(apply=False):
         validate_transition()
     records=h.read_json(FOLDER/'before/questions.json');old=h.read_json(FOLDER/'before/reviews.json')
     updated,changes=merge_metadata(records,old,policy)
+    if state and state.get('editorialReconciliation'):
+        from approval_editorial import reconciled_reviews
+        updated=reconciled_reviews(updated,state)
     if state and h.read_json(h.WORK/'reviews.json')!=updated:raise ValueError('Applied metadata no longer matches deterministic reconciliation')
     if sum(h.valid_verification(r,updated[r['id']]) for r in records)!=326 or sum(h.valid_adjudication(r,updated[r['id']]) for r in records)!=7 or any(h.valid_approval(r,updated[r['id']]) for r in records):
         raise ValueError('Academic evidence, adjudications or approval baseline changed')

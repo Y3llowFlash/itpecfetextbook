@@ -1,5 +1,7 @@
 # Private accessibility corrections: historical PDF pages 22 and 28
 
+Current status: [final approval preparation](FINAL_36_APPROVAL_PREPARATION.md) has transferred these exact validated descriptions into the two native extraction reviews, recording editorial provenance and revised fingerprints. Original images, raw transcripts and academic evidence remain unchanged. The overlay-only state described below is preserved as historical context.
+
 Both descriptions were checked visually against freshly rendered original `Technology-01.pdf` pages and the unchanged question crops. Only accessible diagram descriptions and the defective option transcription are corrected. Academic answers, summaries, worked steps, takeaways, image bytes, canonical IDs, progress keys and publication statuses are preserved.
 
 | Physical PDF page | Corrected accessible content | Validation |

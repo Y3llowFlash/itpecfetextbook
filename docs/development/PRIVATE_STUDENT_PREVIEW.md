@@ -1,5 +1,7 @@
 # 36-question private student preview
 
+Current checkpoint: [final 36-question approval preparation](FINAL_36_APPROVAL_PREPARATION.md). The two validated accessibility corrections are now native extraction reviews with editorial provenance; the publisher reads them directly. The original overlay evidence remains frozen and source-bound. All 36 remain unapproved and their student-visible content, canonical IDs and private academic revisions are unchanged.
+
 23 October 2026. Branch: `feature/chapter1-question-integration`. Completed audit checkpoint: `0d28d36`; accessibility checkpoint: `deccd08`. The subsequent owner metadata reconciliation preserves these snapshots and explicitly rebinds their review hashes; original audit decisions remain frozen.
 
 Implemented a student-facing, **loopback-only preview of exactly 36 historical questions**. All 36 original images render, each existing verified answer can be submitted, all existing worked explanations match their private reviews, and all 36 associations reuse seven existing reviewed concepts. No question, source explanation or academic/classification record was rewritten. There are no excluded associations or newly created source highlights in this selected set.

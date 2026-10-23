@@ -32,6 +32,12 @@ def run(check=False):
     bank=h.read_json(p.APP/'src/content/pilot-bank.json');answers={e['questionId']:e for e in h.read_json(p.APP/'src/content/explanations.json')}
     repairs=p.validated_repairs(records,reviews)
     old=h.read_json(metadata.FOLDER/'before/reviews.json')
+    state=metadata.validate_transition()
+    if state.get('editorialReconciliation'):
+        from approval_editorial import reconciled_reviews
+        from historical_metadata import merge_metadata
+        baseline,_=merge_metadata(records,old,metadata.inputs()[0])
+        old=reconciled_reviews(baseline,state)
     for qid,v in reviews.items():
         if {k:v for k,v in v.items() if k!='metadata'}!={k:v for k,v in old[qid].items() if k!='metadata'}:
             raise ValueError('Academic/mapping/extraction/owner evidence changed')
@@ -44,7 +50,7 @@ def run(check=False):
         if any(e[key]!=v['explanation'][key] for key in ['summary','steps','takeaway']) or e['answer']!=v['verification']['independentAnswer']:
             raise ValueError('Worked explanation or grading answer changed')
         blockers=sorted(set([b for b in audit['blockers'] if b!='owner-publication-approval-absent']+h.approval_errors(r,view)))
-        transfer=any(repair['questionId']==q['id'] for repair in repairs)
+        transfer=any(repair['questionId']==q['id'] for repair in repairs) and not bool(v['extraction'].get('editorialProvenance'))
         rows.append({'id':q['id'],'pdfPage':q['source']['pageStart'],'year':q['year'],'season':q['season'],'questionNumber':q['number'],
             'examType':v['metadata']['examType'],'paper':q['paper'],'subject':q['subject'],
             'metadataProvenance':v['metadata']['evidence'],'metadataBlockers':[],
@@ -66,7 +72,7 @@ def run(check=False):
     lines=['# Private 36-question metadata and publication-readiness report','',
         'All 333 historical reviews now carry owner-confirmed FE / Morning (`AM`) / Subject A metadata. The original PDF/source fields remain separate and unchanged. This is not independently extracted paper/subject evidence and grants no publication approval.','',
         '```json',json.dumps(report['totals'],indent=2),'```','',
-        'The private corrected projection is ready for owner review for all 36 questions. No further content defect was found in this selected set. Final owner publication approval is absent for every record. The two validated accessibility overlays (PDF pp.22/28) are resolved, but the eventual approved publication payload must explicitly carry those corrected transcriptions: the current publisher reads original review fields and does not automatically merge preview overlays. They are a publication integration prerequisite, not newly unresolved diagram defects. No approval or promotion was attempted.','',
+        ('All 36 native publication payloads are ready for owner review. Both source-validated accessibility corrections are integrated into native extraction reviews with editorial provenance; the publisher reads the corrected fields directly. The exact candidate package is checked before publication. Final owner publication approval is absent for every record.' if not any(r['finalPublicationPayloadMustCarryAccessibilityOverlay'] for r in rows) else 'The private projection is ready for owner review; two validated accessibility overlays still need native publication integration. All records remain unapproved.'),'',
         '| ID | PDF | Occurrence | Metadata | Academic / accessible / mapping | Owner approval | Other content blockers | Final payload accessibility overlay |',
         '|---|---:|---|---|---|---|---|---|']
     for r in rows:
