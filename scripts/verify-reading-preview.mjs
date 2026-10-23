@@ -36,7 +36,7 @@ try{
  await page.getByRole('heading',{level:1,name:'Hardware',exact:true}).waitFor();
  assert.equal(await page.locator('.sidebar [data-toc-link]').count(),52);
  await page.screenshot({path:`${output}/desktop.png`});
- const source=await page.evaluate(async({release,bankHash,prose,crops,covers})=>{
+ const source=await page.evaluate(async({release,bankHash,bankCount,prose,crops,covers})=>{
   const hash=async bytes=>[...new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))].map(v=>v.toString(16).padStart(2,'0')).join('');
   let index=0,assets=0;const approved=[...release.assets,...crops.regions.map(r=>r.asset),...covers.flatMap(c=>c.variants)];
   const cropped=new Map(crops.regions.flatMap(r=>r.sourceBlockIds.map(id=>[id,r.id])));
@@ -71,8 +71,8 @@ try{
   }
   const published=await fetch('/data/questions.json');if(!published.ok||await hash(await published.arrayBuffer())!==bankHash)throw new Error('Published question bank changed');
   const coverCount=covers.reduce((n,c)=>n+c.variants.length,0);
-  return {readers:readers.length,sourceAssets:assets-coverCount,coverAssets:coverCount,publishedQuestions:420};
- },{release,bankHash:createHash('sha256').update(bank).digest('hex'),prose,crops,covers});
+  return {readers:readers.length,sourceAssets:assets-coverCount,coverAssets:coverCount,publishedQuestions:bankCount};
+ },{release,bankHash:createHash('sha256').update(bank).digest('hex'),bankCount:JSON.parse(bank.toString()).length,prose,crops,covers});
  const bcd=crops.regions.find(r=>r.id==='spatial-p32-01');
  const checkBCD=async(name)=>{
   await page.goto(origin+bcd.url);await page.evaluate(()=>document.fonts.ready);

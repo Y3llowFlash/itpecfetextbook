@@ -9,6 +9,8 @@ import { validReading } from '../src/lib/progress';
 import { returnUrl, savedReturnPosition } from '../src/lib/reading';
 import release from '../src/content/hardware-source-release.json';
 import {canonicalReadingPosition} from '../src/lib/reading-routes';
+import historicalRelease from '../docs/development/evidence/historical-release-36.json';
+import { checksum } from '../scripts/historical-release-integrity';
 
 describe('completed Hardware chapter', () => {
   it('preserves all five sections, 19 source subsections, deeper topics and the old cache ID', () => {
@@ -34,10 +36,10 @@ describe('completed Hardware chapter', () => {
       for (const reference of [lesson, ...lesson.headings]) for (let p = reference.pages[0]; p <= reference.pages[1]; p++) expect(physical(p)).toBeDefined();
     }
   });
-  it('links exactly 23 reviewed published questions with complete matching explanations', async () => {
+  it('links 23 original plus 36 owner-approved questions with complete matching explanations', async () => {
     const bank = await publishedQuestions();
     const linked = new Set(concepts.flatMap((concept) => concept.questionIds));
-    expect(concepts).toHaveLength(13); expect(linked.size).toBe(23);
+    expect(concepts).toHaveLength(13); expect(linked.size).toBe(59);
     expect([...linked].sort()).toEqual(bank.filter((question) => question.chapter === 'Chapter 1 Hardware').map((question) => question.id).sort());
     for (const concept of concepts) {
       const questions = questionsForConcept(concept, bank);
@@ -46,9 +48,13 @@ describe('completed Hardware chapter', () => {
       for (const question of questions) {
         const explanation = explanationMap.get(question.id)!;
         expect(explanation.answer).toBe(question.correctAnswer);
-        expect(explanation.steps.length).toBeGreaterThanOrEqual(3);
+        if(question.format==='historical') {
+          // Preserve the exact approved worked reasoning, including valid
+          // two-step explanations; never pad it to satisfy an older fixture.
+          expect(checksum(explanation)).toBe(historicalRelease.records.find(r=>r.id===question.id)!.explanationSha256);
+        } else expect(explanation.steps.length).toBeGreaterThanOrEqual(3);
         expect(Object.keys(explanation.optionText)).toEqual(question.options);
-        expect(explanation.reviewedAgainst.some((item) => /original.*image/.test(item))).toBe(true);
+        if(question.format!=='historical')expect(explanation.reviewedAgainst.some((item) => /original.*image/.test(item))).toBe(true);
       }
     }
   });

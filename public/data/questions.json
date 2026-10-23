@@ -20740,6 +20740,3408 @@
     }
   },
   {
+    "id": "HIST-TECH01-2007A-Q019",
+    "examId": "2007A_FE_AM",
+    "number": 19,
+    "year": 2007,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2007A-Q019.66b49a035203.webp",
+      "width": 1945,
+      "height": 1360,
+      "sha256": "66b49a0352036c9edfd5a630ba6e6c598af2e44b9e050ee5c4e44cdf5fb11e76"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 198,
+      "pageEnd": 198,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2007A-Q019"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            198
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "logic-gates",
+          "reason": "Reference X=(A AND B) OR NOT B = (A OR NOT B) AND (B OR NOT B) = A OR NOT B.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "heading": "3-4-1 Logic Circuit / Main logical laws",
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8",
+              "checkedExcerpt": "  • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determi"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "f5dd0df33456df750794b73e7b8deba49e5a9b91d8c2415c20919dfc6f152eee"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2007S-Q001",
+    "examId": "2007S_FE_AM",
+    "number": 1,
+    "year": 2007,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "d",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Radix and Radix Conversion",
+    "topic": "Radix conversion",
+    "mapping": {
+      "headingNumber": "2-2",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-028-b009-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2007S-Q001.b72733f75c20.webp",
+      "width": 1945,
+      "height": 384,
+      "sha256": "b72733f75c20fad19b22e7a846b78946d18cc6aa89ba9a3a7922bbd9d3b03671"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 327,
+      "pageEnd": 327,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2007S-Q001"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            327
+          ],
+          "printedAnswer": "d"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s02",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-028-b009-l00-text-0",
+          "headingNumber": "2-2",
+          "conceptId": "radix-conversion",
+          "reason": "0.248 base16 =2/16+4/256+8/4096 =1/8+1/64+1/512=73/512.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 29,
+              "printedPage": 24,
+              "heading": "2-2 Radix and Radix Conversion",
+              "textSha256": "27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419",
+              "checkedExcerpt": "ure 1-7 Decimal numbers and corresponding octal numbers (3) Hexadecimal numbers Hexadecimal numbers are numerical values that are represented by using sixteen numbers from 0 through 9, and A(10), B(11), C(12), D(13), E(14), and F(15) and that are carried over when 16 is reached. (1A6.E)16 = 1×162 + 10×161 + 6×160 + 14×16−1 = (422.875)10 * 16 in ( )16 shows that it is a hexadecimal number."
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "48dcb174bb571b096748f9e5a0a87454bfa471267e028b64895bc086b2f10ebf"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2008A-Q009",
+    "examId": "2008A_FE_AM",
+    "number": 9,
+    "year": 2008,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "a",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2008A-Q009.910be97003df.webp",
+      "width": 1945,
+      "height": 703,
+      "sha256": "910be97003df15cdfaf8c4bada87eac15deb00e40c2fbde9f1d9ddb14d54e141"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 177,
+      "pageEnd": 177,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2008A-Q009"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            177
+          ],
+          "printedAnswer": "a"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "logic-gates",
+          "reason": "Distribute (X OR Y) AND (X OR Z) to obtain X OR (Y AND Z). The extra XY and XZ terms are absorbed by X.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "heading": "3-4-1 Logic Circuit / Main logical laws",
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8",
+              "checkedExcerpt": "  • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determi"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "c91d39e4c4af3a4e56692ad96d6ab4b5552a06afae774e189228f18758b70534"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2008A-Q010",
+    "examId": "2008A_FE_AM",
+    "number": 10,
+    "year": 2008,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "d",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2008A-Q010.3c830673a294.webp",
+      "width": 1945,
+      "height": 863,
+      "sha256": "3c830673a2941dfc20916ea4eb125e0478192efcd00c883c8dd164ccea4722c0"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 178,
+      "pageEnd": 178,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2008A-Q010"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            178
+          ],
+          "printedAnswer": "d"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "logic-gates",
+          "reason": "At least two of three inputs must be 1. Every such assignment has a true pairwise product.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "heading": "3-4-1 Logic Circuit / Main logical laws",
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8",
+              "checkedExcerpt": "  • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determi"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "574c66852ab08031b1ff3ec9b566b67f500bd02468991c41994cc18246cc6a3e"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2008S-Q001",
+    "examId": "2008S_FE_AM",
+    "number": 1,
+    "year": 2008,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "a",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Radix and Radix Conversion",
+    "topic": "Radix conversion",
+    "mapping": {
+      "headingNumber": "2-2",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-028-b009-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2008S-Q001.b0c64f79cb54.webp",
+      "width": 1565,
+      "height": 324,
+      "sha256": "b0c64f79cb5436514fdbc06a06afb0d52910129021aaf64d66f149867443a7ed"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 315,
+      "pageEnd": 315,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2008S-Q001"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            315
+          ],
+          "printedAnswer": "a"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s02",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-028-b009-l00-text-0",
+          "headingNumber": "2-2",
+          "conceptId": "radix-conversion",
+          "reason": "2A.4C base16 has binary0010 1010.0100 1100, so positive powers are5,3,1 and negative powers-2,-5,-6.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 29,
+              "printedPage": 24,
+              "heading": "2-2 Radix and Radix Conversion",
+              "textSha256": "27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419",
+              "checkedExcerpt": "ure 1-7 Decimal numbers and corresponding octal numbers (3) Hexadecimal numbers Hexadecimal numbers are numerical values that are represented by using sixteen numbers from 0 through 9, and A(10), B(11), C(12), D(13), E(14), and F(15) and that are carried over when 16 is reached. (1A6.E)16 = 1×162 + 10×161 + 6×160 + 14×16−1 = (422.875)10 * 16 in ( )16 shows that it is a hexadecimal number."
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 30,
+              "printedPage": 25,
+              "heading": "2-2 Radix and Radix Conversion / grouping binary digits",
+              "textSha256": "752f89c392b5b641578b5750dc2e3f2550795c32361c897ee87ca9ffed6828d9",
+              "checkedExcerpt": " the weight of each digit, and therefore the information of 4 digits of binary numbers corresponds to 1 digit of hexadecimal numbers. Binary number: (1011100.11101)2 ↓ (0101 1100 . 11100 1000)2 ↓ ... Separate after every 4 digits with radix point as reference. (0 is supplemented in the parts that fall short of 4 digits.) Hexadecimal number: ( 5 C . E 8 )16 ... Convert every 4 digits"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "c187e1588f85c2b40d6deff9bbd901929e23ab3f2b12c8c8f6adcdb50606a3c7"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2008S-Q018",
+    "examId": "2008S_FE_AM",
+    "number": 18,
+    "year": 2008,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2008S-Q018.e3f5db9f810a.webp",
+      "width": 1899,
+      "height": 2267,
+      "sha256": "e3f5db9f810a6bc952937fae81e3e084529903d9418f54feb6b9287c1a033a74"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 189,
+      "pageEnd": 189,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2008S-Q018"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            189
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "logic-gates",
+          "reason": "Trace both input rails and all connection dots. W=NOT A AND NOT B, X=A AND NOT B, Y=NOT A AND B, Z=A AND B.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "heading": "3-4-1 Logic Circuit / Main logical operations",
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "ues of True (1) and False (0). [Main logical operations] 1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False (0) when both input values are False (0), or else the output is True (1) (when either one is True (1)). 3) Negation operation (NOT) The output becomes False (0) when the input value is True (1), and the output is True (1) when the input value is False (0). 4) Exclusive logical sum (Exclusive OR) operation (XOR or EOR) The output becomes False (0) when both input values are the same"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "1e678c5a94f0580a48f4188d196b6de5b6a8e71deb2379190002fad0529e6ba7"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2009A-Q001",
+    "examId": "2009A_FE_AM",
+    "number": 1,
+    "year": 2009,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Radix and Radix Conversion",
+    "topic": "Radix conversion",
+    "mapping": {
+      "headingNumber": "2-2",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-028-b009-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2009A-Q001.264e63fd47e3.webp",
+      "width": 1945,
+      "height": 384,
+      "sha256": "264e63fd47e32f40d814a67ca1e0644f0cdf0fd065bc2db8e9acf231fcf5f74a"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 294,
+      "pageEnd": 294,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2009A-Q001"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            294
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s02",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-028-b009-l00-text-0",
+          "headingNumber": "2-2",
+          "conceptId": "radix-conversion",
+          "reason": "3A.5C base16 =3*16+10+5/16+12/256=3735/64=58.359375.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 29,
+              "printedPage": 24,
+              "heading": "2-2 Radix and Radix Conversion",
+              "textSha256": "27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419",
+              "checkedExcerpt": "ure 1-7 Decimal numbers and corresponding octal numbers (3) Hexadecimal numbers Hexadecimal numbers are numerical values that are represented by using sixteen numbers from 0 through 9, and A(10), B(11), C(12), D(13), E(14), and F(15) and that are carried over when 16 is reached. (1A6.E)16 = 1×162 + 10×161 + 6×160 + 14×16−1 = (422.875)10 * 16 in ( )16 shows that it is a hexadecimal number."
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "5882f62aee9798fd443312e5a7ebfd0e1e223da929cd14a0e9f33f780326c272"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2009A-Q008",
+    "examId": "2009A_FE_AM",
+    "number": 8,
+    "year": 2009,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "d",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2009A-Q008.e0d2628cd9b4.webp",
+      "width": 1946,
+      "height": 924,
+      "sha256": "e0d2628cd9b4f932ceff5829cc35e7e6f0d5d33ccbefa2f6c9e69bca01cd3e3b"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 296,
+      "pageEnd": 296,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2009A-Q008"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            296
+          ],
+          "printedAnswer": "d"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "logic-gates",
+          "reason": "The original units occur A,B,C left to right, each XORing its incoming four-bit word with its stored key. Input1101, keys0001,0101,1101 produce0100.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "heading": "3-4-1 Logic Circuit / Exclusive OR",
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "he output is True (1) when the input value is False (0). 4) Exclusive logical sum (Exclusive OR) operation (XOR or EOR) The output becomes False (0) when both input values are the same, and the output is True (1) when both input values are different. The table below summarizes the relations between input and output of the respective logical operation. This kind of table is referred to as a truth table. Input AND OR NOT XOR X Y (X AND Y) (X OR Y) (NOT X) (X XOR Y) True (1) True (1) True (1) True (1) False (0) False (0) True (1) False (0) False (0) True (1) False (0) True (1) False (0) True (1) False (0) True (1) True (1) True (1) False (0) False (0) Fal"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 69,
+              "printedPage": 64,
+              "heading": "3-4-1 XOR circuit",
+              "textSha256": "b26e0590632468a146244504ce22b38c51e1c61bfd1a94cd92adb3789271befd",
+              "checkedExcerpt": "64 6) XOR circuit This circuit performs exclusive logical sum operation (XOR). The truth table and MIL symbol of XOR circuit are as shown below. X Y X XOR Y Figure 1-31 XOR circuit 0 0 0 0 1 1 1 0 1 1 1 0 XOR circuit is also formed by combining the basic circuits. However, it cannot be formed with a combination of simple circuits as in the case of NAND circuits and NOR circuits. In such cases, it is called logical design (or circuit design) to think about the combination of basic circuits for achieving the targeted results (truth values). In logical design, logical expressions (logical functions) ob"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "c7e5c33854449b02a25cb4534827d41b806d9d99995c662814d37095679c63ab"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2009A-Q017",
+    "examId": "2009A_FE_AM",
+    "number": 17,
+    "year": 2009,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2009A-Q017.3c4a6cc68cf1.webp",
+      "width": 1945,
+      "height": 849,
+      "sha256": "3c4a6cc68cf16d960fcc0d83896c8a939103ba382df614a36d90d97c3ba56ea7"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 160,
+      "pageEnd": 160,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2009A-Q017"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            160
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "logic-gates",
+          "reason": "Each self-connected NAND inverts its input. The last NAND receives NOT X and NOT Y.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "heading": "3-4-1 Logic Circuit / Main logical laws",
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8",
+              "checkedExcerpt": "  • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determi"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "bf1a84883898df2aaadeb90872f95dc3f901df73c4c9fd88ddcc6a44e4da9517"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2010A-Q016",
+    "examId": "2010A_FE_AM",
+    "number": 16,
+    "year": 2010,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "a",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Average Access Time of Magnetic Disk Drive",
+    "topic": "Disk access time",
+    "mapping": {
+      "headingNumber": "4-1-3",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-089-b004-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2010A-Q016.a17f4914062b.webp",
+      "width": 1877,
+      "height": 474,
+      "sha256": "a17f4914062b7539f56105045cf2e90cd42ead710232f22b538d59b9c4f143b0"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 145,
+      "pageEnd": 145,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2010A-Q016"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            145
+          ],
+          "printedAnswer": "a"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s04",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-089-b004-l00-text-0",
+          "headingNumber": "4-1-3",
+          "conceptId": "disk-access",
+          "reason": "Fragmented files require additional disk-head movement across separated areas. Defragmentation reorganizes them into consecutive areas to reduce access time.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 91,
+              "printedPage": 85,
+              "heading": "4-1-3 Average Access Time of Magnetic Disk Drive",
+              "textSha256": "0970994f39041976e4dce49cc427e99737273794a379fca451b3902a96cf73ae",
+              "checkedExcerpt": "e will become longer. Therefore, it is necessary to perform defragmentation in order to eliminate fragmentation. Example: Calculate the average access time for reading a data block of 2,000 bytes recorded in a magnetic disk drive having the following specifications. Rotational speed 3,000 rotations/minute Bytes/track 10,000 bytes Average seek time 30 milliseconds"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "35f8546de133880c0807f04d3980dcf5705ee23348d86def076ccd330b11dc1e"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2011A-Q001",
+    "examId": "2011A_FE_AM",
+    "number": 1,
+    "year": 2011,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Radix and Radix Conversion",
+    "topic": "Radix conversion",
+    "mapping": {
+      "headingNumber": "2-2",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-028-b009-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2011A-Q001.3a2e11f7e007.webp",
+      "width": 1945,
+      "height": 401,
+      "sha256": "3a2e11f7e007097a198281b9d0939cca89fabc585db65a5402771debefa3135e"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 280,
+      "pageEnd": 280,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2011A-Q001"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            280
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s02",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-028-b009-l00-text-0",
+          "headingNumber": "2-2",
+          "conceptId": "radix-conversion",
+          "reason": "Read the source subscripts:753 base8 minus A6 base16. They are491 and166 in decimal, giving325.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 29,
+              "printedPage": 24,
+              "heading": "2-2 Radix and Radix Conversion",
+              "textSha256": "27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419",
+              "checkedExcerpt": "ure 1-7 Decimal numbers and corresponding octal numbers (3) Hexadecimal numbers Hexadecimal numbers are numerical values that are represented by using sixteen numbers from 0 through 9, and A(10), B(11), C(12), D(13), E(14), and F(15) and that are carried over when 16 is reached. (1A6.E)16 = 1×162 + 10×161 + 6×160 + 14×16−1 = (422.875)10 * 16 in ( )16 shows that it is a hexadecimal number."
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "0175554a515645b85f9923ad16bb44a954a92686403ad4f4ea60e4aed875a71a"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2013A-Q002",
+    "examId": "2013A_FE_AM",
+    "number": 2,
+    "year": 2013,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2013A-Q002.9367f869f015.webp",
+      "width": 1945,
+      "height": 473,
+      "sha256": "9367f869f01506beec43f77b4b40666d55bde36a7916b4a18449563a9b8be9cb"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 95,
+      "pageEnd": 95,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2013A-Q002"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            95
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "logic-gates",
+          "reason": "XOR accepts exactly 01 and 10.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 69,
+              "printedPage": 64,
+              "heading": "3-4-1 Logic Circuit / XOR and logical design",
+              "textSha256": "b26e0590632468a146244504ce22b38c51e1c61bfd1a94cd92adb3789271befd",
+              "checkedExcerpt": "le circuits as in the case of NAND circuits and NOR circuits. In such cases, it is called logical design (or circuit design) to think about the combination of basic circuits for achieving the targeted results (truth values). In logical design, logical expressions (logical functions) obtained from the truth tables are simplified using the rules of logical operations (logical laws), and the optimum combination of basic circuits is determined. (“Optimum” means that the design is performed in consideration of performance, efficiency, and cost."
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "74865cdd44b75a068e7ed212315482ee29fc2d5f5f5f859032f75876ae795902"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2014S-Q001",
+    "examId": "2014S_FE_AM",
+    "number": 1,
+    "year": 2014,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "d",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Radix and Radix Conversion",
+    "topic": "Radix conversion",
+    "mapping": {
+      "headingNumber": "2-2",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-028-b009-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2014S-Q001.a5499fe56b81.webp",
+      "width": 1993,
+      "height": 514,
+      "sha256": "a5499fe56b817fe5ea7f0143daa4a8005c8363cfde7b95131b1886e8f1e43e0d"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 268,
+      "pageEnd": 268,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2014S-Q001"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            268
+          ],
+          "printedAnswer": "d"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s02",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-028-b009-l00-text-0",
+          "headingNumber": "2-2",
+          "conceptId": "radix-conversion",
+          "reason": "Read the original subscripts: 6140 base 8 + 10011100 base 2 - C46 base 16.",
+          "evidence": [
+            {
+              "kind": "calculation",
+              "operands": [
+                3168,
+                156,
+                3142
+              ],
+              "result": 182,
+              "optionsDecimal": {
+                "a": 181,
+                "b": 174,
+                "c": 180,
+                "d": 182
+              }
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "ca52dcd12234ac1621f9bdc204782116c341898d719f0ab0a3534526fecd79b2"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2015A-Q011",
+    "examId": "2015A_FE_AM",
+    "number": 11,
+    "year": 2015,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "High Speed Memory Access",
+    "topic": "Cache memory",
+    "mapping": {
+      "headingNumber": "3-5-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-075-b005-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2015A-Q011.e7ce7cdb406e.webp",
+      "width": 1993,
+      "height": 849,
+      "sha256": "e7ce7cdb406e94efff56df321c2de9cf8112365db02a71726cd455cf2fd4864a"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 74,
+      "pageEnd": 74,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2015A-Q011"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            74
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-075-b005-l00-text-0",
+          "headingNumber": "3-5-1",
+          "conceptId": "cache-memory",
+          "reason": "A cache miss means the required block is absent from cache but available in the next memory level.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 75,
+              "printedPage": 70,
+              "heading": "3-5-1 High Speed Memory Access / buffer memory",
+              "textSha256": "ae201b64c9e624c0b66d395c28ecb9fd1da89d75a057ba2ce14677dc9cf79597",
+              "checkedExcerpt": "on the basis of the directions of hardware or OS (software for controlling the computer), the data is loaded from main memory into the corresponding block of cache"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "cad184a98524ce8e54dad946b7cf4e50d707913b623b6c8fdc231c4cf3834a48"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2016A-Q022",
+    "examId": "2016A_FE_AM",
+    "number": 22,
+    "year": 2016,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2016A-Q022.f2fc39a3cbe0.webp",
+      "width": 1992,
+      "height": 932,
+      "sha256": "f2fc39a3cbe00077b0c28ed7b670612e835acb08622d7dfc1427526897045869"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 61,
+      "pageEnd": 61,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2016A-Q022"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            61
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "logic-gates",
+          "reason": "The middle OR produces NOT A OR NOT B. ANDing that with A gives A AND NOT B; ANDing it with B gives NOT A AND B.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "heading": "3-4-1 Logic Circuit",
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "(Arithmetic and Logical Unit) is a unit that performs arithmetic operations and logical operations. This unit is composed of various circuits. 3-4-1 Logic Circuit Logic circuit is a circuit that performs logical operations for logical processing of instructions by computers. Logical operations refer to arithmetic operations that have only two truth values of True (1) and False (0). [Main logical operations] 1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False "
+            },
+            {
+              "kind": "computed-truth-table",
+              "variables": [
+                "A",
+                "B"
+              ],
+              "rows": [
+                [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0,
+                  0
+                ]
+              ]
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "e51552e80e6d9d66f3ee612ee863a3a199fd1295bfad62fe324d8892fbb2798a"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2016S-Q001",
+    "examId": "2016S_FE_AM",
+    "number": 1,
+    "year": 2016,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "d",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Radix and Radix Conversion",
+    "topic": "Radix conversion",
+    "mapping": {
+      "headingNumber": "2-2",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-028-b009-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2016S-Q001.2cdc8e721dfe.webp",
+      "width": 1882,
+      "height": 328,
+      "sha256": "2cdc8e721dfe5f83867f002b2c0cdbb6930f33478a21fec7de082f4b2a3d61f2"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 259,
+      "pageEnd": 259,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2016S-Q001"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            259
+          ],
+          "printedAnswer": "d"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s02",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-028-b009-l00-text-0",
+          "headingNumber": "2-2",
+          "conceptId": "radix-conversion",
+          "reason": "0.B1 base16 = 11/16 +1/256 =177/256. Each hex digit corresponds to four bits, giving 0.10110001 base2.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 29,
+              "printedPage": 24,
+              "heading": "2-2 Radix and Radix Conversion",
+              "textSha256": "27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419",
+              "checkedExcerpt": "ure 1-7 Decimal numbers and corresponding octal numbers (3) Hexadecimal numbers Hexadecimal numbers are numerical values that are represented by using sixteen numbers from 0 through 9, and A(10), B(11), C(12), D(13), E(14), and F(15) and that are carried over when 16 is reached. (1A6.E)16 = 1×162 + 10×161 + 6×160 + 14×16−1 = (422.875)10 * 16 in ( )16 shows that it is a hexadecimal number."
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 30,
+              "printedPage": 25,
+              "heading": "2-2 Radix and Radix Conversion / grouping binary digits",
+              "textSha256": "752f89c392b5b641578b5750dc2e3f2550795c32361c897ee87ca9ffed6828d9",
+              "checkedExcerpt": " the weight of each digit, and therefore the information of 4 digits of binary numbers corresponds to 1 digit of hexadecimal numbers. Binary number: (1011100.11101)2 ↓ (0101 1100 . 11100 1000)2 ↓ ... Separate after every 4 digits with radix point as reference. (0 is supplemented in the parts that fall short of 4 digits.) Hexadecimal number: ( 5 C . E 8 )16 ... Convert every 4 digits"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "b7b2afd6e758a179237fc5946410181699900a85cff4911c19864f10fc5e0c10"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2016S-Q002",
+    "examId": "2016S_FE_AM",
+    "number": 2,
+    "year": 2016,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "d",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2016S-Q002.cc602293de85.webp",
+      "width": 2004,
+      "height": 578,
+      "sha256": "cc602293de85430552899ffd04549703b17bd5013e77801516bf836d9293b25d"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 63,
+      "pageEnd": 63,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2016S-Q002"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            63
+          ],
+          "printedAnswer": "d"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "logic-gates",
+          "reason": "The original equation is (A AND B) OR X OR (B AND C) = (A AND B) OR (NOT A AND C).",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "heading": "3-4-1 Logic Circuit",
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "(Arithmetic and Logical Unit) is a unit that performs arithmetic operations and logical operations. This unit is composed of various circuits. 3-4-1 Logic Circuit Logic circuit is a circuit that performs logical operations for logical processing of instructions by computers. Logical operations refer to arithmetic operations that have only two truth values of True (1) and False (0). [Main logical operations] 1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False "
+            },
+            {
+              "kind": "computed-truth-table",
+              "variables": [
+                "A",
+                "B",
+                "C"
+              ],
+              "rows": [
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  1,
+                  1,
+                  1
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ]
+              ]
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "34b35c43be357663ca402ac664f44478fc8b5e4f4d1cfecb0266eb64b02613b2"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2017A-Q021",
+    "examId": "2017A_FE_AM",
+    "number": 21,
+    "year": 2017,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "d",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2017A-Q021.a5e3ef392a5e.webp",
+      "width": 1968,
+      "height": 1386,
+      "sha256": "a5e3ef392a5e7b3ec2655ecc4c11c1907f5db2c06e39e306e09d608573d912e1"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 45,
+      "pageEnd": 45,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2017A-Q021"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            45
+          ],
+          "printedAnswer": "d"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "logic-gates",
+          "reason": "Trace the source circuit as Z = NOT(NOT X OR NOT(X OR NOT Y)).",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "heading": "3-4-1 Logic Circuit",
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "(Arithmetic and Logical Unit) is a unit that performs arithmetic operations and logical operations. This unit is composed of various circuits. 3-4-1 Logic Circuit Logic circuit is a circuit that performs logical operations for logical processing of instructions by computers. Logical operations refer to arithmetic operations that have only two truth values of True (1) and False (0). [Main logical operations] 1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False "
+            },
+            {
+              "kind": "computed-truth-table",
+              "variables": [
+                "X",
+                "Y"
+              ],
+              "rows": [
+                [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  1,
+                  1
+                ]
+              ]
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "49316977fca2507d2612c759127c6e12203e0ebc31cc00ce5637fb71d4e674be"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2017S-Q014",
+    "examId": "2017S_FE_AM",
+    "number": 14,
+    "year": 2017,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Average Access Time of Magnetic Disk Drive",
+    "topic": "Disk defragmentation",
+    "mapping": {
+      "headingNumber": "4-1-3",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-089-b004-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2017S-Q014.0f186ac4a2e2.webp",
+      "width": 1992,
+      "height": 399,
+      "sha256": "0f186ac4a2e253a37c6900b9c9aecc4afc92b46e20346712bccae68b12c618d7"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 54,
+      "pageEnd": 54,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2017S-Q014"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            54
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s04",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-089-b004-l00-text-0",
+          "headingNumber": "4-1-3",
+          "conceptId": "defragmentation",
+          "reason": "Scattering parts of a saved file into non-contiguous disk clusters is fragmentation.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 91,
+              "printedPage": 85,
+              "heading": "4-1-3 Access Time of Magnetic Disk Drive",
+              "textSha256": "0970994f39041976e4dce49cc427e99737273794a379fca451b3902a96cf73ae",
+              "checkedExcerpt": "the average access time. Moreover, when data is recorded in a piecemeal manner (fragmentation), the average access time will become longer. Therefore, it is necessary to perform defragmentation in order to eliminate fragmentation. Example: Calculate the average access time for reading a data block of 2,000 bytes recorded in a magnetic disk drive having the following specifications. Rotational speed 3,000 rotations/minute Bytes/track 10,000 bytes Average seek time 30 milliseconds"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 195,
+              "printedPage": 185,
+              "heading": "1-1 Systematic Classification / Service programs",
+              "textSha256": "b2ca21b1bbe5588659cd3c9789f617b5dfa9d6b2b23db1990b644b00314cb615",
+              "checkedExcerpt": "store it to their original multiple files, and a disk management utility (e.g., disk defragmentation of Windows) that provide functions for the effective use of a hard disk."
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "dc3db071a3c03c1c827574d474999c5e329d11db02ef6ff308e7674c780d44a1"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2017S-Q024",
+    "examId": "2017S_FE_AM",
+    "number": 24,
+    "year": 2017,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2017S-Q024.86356e6d534b.webp",
+      "width": 1993,
+      "height": 1651,
+      "sha256": "86356e6d534bbd546f176db14207a6fa996e5c72e8486f599a24eb6c4235a068"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 56,
+      "pageEnd": 56,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2017S-Q024"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            56
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "logic-gates",
+          "reason": "Equality of two input bits is XNOR: true for 00 and 11, false for 01 and 10.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "heading": "3-4-1 Logic Circuit",
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "(Arithmetic and Logical Unit) is a unit that performs arithmetic operations and logical operations. This unit is composed of various circuits. 3-4-1 Logic Circuit Logic circuit is a circuit that performs logical operations for logical processing of instructions by computers. Logical operations refer to arithmetic operations that have only two truth values of True (1) and False (0). [Main logical operations] 1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False "
+            },
+            {
+              "kind": "computed-truth-table",
+              "variables": [
+                "X",
+                "Y"
+              ],
+              "rows": [
+                [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1,
+                  1
+                ]
+              ]
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "c69a0afa49cdd9fd29f0a9615cb9b139901c0fe65ffc239adce4b5c52e9e04da"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2018A-Q001",
+    "examId": "2018A_FE_AM",
+    "number": 1,
+    "year": 2018,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2018A-Q001.2b10485711cc.webp",
+      "width": 1993,
+      "height": 478,
+      "sha256": "2b10485711cc21306d6073df8ea3a991288808e3662be72ccdb1ab178589e559"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2018A-Q001"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            29
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "logic-gates",
+          "reason": "XOR is true for exactly one true input.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "heading": "3-4-1 Logic Circuit",
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "(Arithmetic and Logical Unit) is a unit that performs arithmetic operations and logical operations. This unit is composed of various circuits. 3-4-1 Logic Circuit Logic circuit is a circuit that performs logical operations for logical processing of instructions by computers. Logical operations refer to arithmetic operations that have only two truth values of True (1) and False (0). [Main logical operations] 1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False "
+            },
+            {
+              "kind": "computed-truth-table",
+              "variables": [
+                "p",
+                "q"
+              ],
+              "rows": [
+                [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0,
+                  0
+                ]
+              ]
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "030e9e47f0fab736c6b2f2d3eb2390c41ae1b250250cf113879cfaada76c92a1"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2018A-Q013",
+    "examId": "2018A_FE_AM",
+    "number": 13,
+    "year": 2018,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "a",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Types of Input/Output Interfaces and their Characteristics",
+    "topic": "USB interfaces",
+    "mapping": {
+      "headingNumber": "5-5-2",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-112-b008-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2018A-Q013.12767ddbb04e.webp",
+      "width": 1974,
+      "height": 699,
+      "sha256": "12767ddbb04ec6c1b974401d398178d1cef363b85e342115fa375151ca6fab21"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 33,
+      "pageEnd": 33,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2018A-Q013"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            33
+          ],
+          "printedAnswer": "a"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s05",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-112-b008-l00-text-0",
+          "headingNumber": "5-5-2",
+          "conceptId": "usb-interface",
+          "reason": "USB 3.0 SuperSpeed has a nominal signaling rate of 5 Gbit/s.",
+          "evidence": [
+            {
+              "kind": "primary-source",
+              "url": "https://usb.org/document-library/inter-chip-supplement-usb-revision-30-specification-revision-102",
+              "finding": "USB-IF specifies that USB 3.0 adds 5 Gbps transfer support.",
+              "checkedAt": "2026-10-22"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 114,
+              "printedPage": 108,
+              "heading": "5-5-2 Types of Input/Output Interface",
+              "textSha256": "28d8db735ce9cb3b4b91def979f363b7ee8c78b397f21ebad31de5ce1e179a49",
+              "checkedExcerpt": "addition to the three types of data transfer modes of USB 2.0, SuperSpeed mode (5,120Mbps) is added. Also power management is improved in the standard. (4) IEEE 1394 IEEE 1394 is a serial interface that allows high-speed transfer of data and is used for connecting multimedia-related devices such as digital cameras. It is available in three types of data transfer modes (100 Mbps, 200 Mbps, and 400 Mbps), and its main characteristic is that devices can be connected even without going through a PC. This standard is owned by IEEE (Institute of Electrical and Electronics Engineers), and Apple’s FireWire and Sony’s i.Link are tr"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "b063ffd4d5a97dc968ea53fc86d56341e0dead60d0bc09e82d28872ad4d4381d"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2018A-Q022",
+    "examId": "2018A_FE_AM",
+    "number": 22,
+    "year": 2018,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "d",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2018A-Q022.1c8949078df1.webp",
+      "width": 1992,
+      "height": 674,
+      "sha256": "1c8949078df1bfdcee1e03ca537486fefdbb1bfd641f340e5e159f0ccac6e921"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 35,
+      "pageEnd": 35,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2018A-Q022"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            35
+          ],
+          "printedAnswer": "d"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "logic-gates",
+          "reason": "E is the XOR of A=1 and B=0, so E=1.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "heading": "3-4-1 Logic Circuit",
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "(Arithmetic and Logical Unit) is a unit that performs arithmetic operations and logical operations. This unit is composed of various circuits. 3-4-1 Logic Circuit Logic circuit is a circuit that performs logical operations for logical processing of instructions by computers. Logical operations refer to arithmetic operations that have only two truth values of True (1) and False (0). [Main logical operations] 1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False "
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "678e9e164566d0254e4f34bb9d9af9e46af12907faecb1abb1001dc6e04dccf1"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2018S-Q023",
+    "examId": "2018S_FE_AM",
+    "number": 23,
+    "year": 2018,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2018S-Q023.d87b94e21819.webp",
+      "width": 1642,
+      "height": 1000,
+      "sha256": "d87b94e218195c60b6b94c039f48613c56b2eed0e5e5cdc4e3e032cf26092244"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 41,
+      "pageEnd": 41,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2018S-Q023"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            41
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "logic-gates",
+          "reason": "The lower NAND gives NOT(B AND C); the final NOR negates its OR with A.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "heading": "3-4-1 Logic Circuit",
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "(Arithmetic and Logical Unit) is a unit that performs arithmetic operations and logical operations. This unit is composed of various circuits. 3-4-1 Logic Circuit Logic circuit is a circuit that performs logical operations for logical processing of instructions by computers. Logical operations refer to arithmetic operations that have only two truth values of True (1) and False (0). [Main logical operations] 1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False "
+            },
+            {
+              "kind": "computed-truth-table",
+              "variables": [
+                "A",
+                "B",
+                "C"
+              ],
+              "rows": [
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1,
+                  0,
+                  0
+                ]
+              ]
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "ce134dfb56d12bb86de45b46e013012660f0a4726a1b758de09d30d930350d9b"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2019A-Q001",
+    "examId": "2019A_FE_AM",
+    "number": 1,
+    "year": 2019,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2019A-Q001.9336dfda814b.webp",
+      "width": 1988,
+      "height": 399,
+      "sha256": "9336dfda814ba061466cdb955e99b476d8e504373857df686c85a1644ab35dce"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 242,
+      "pageEnd": 242,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2019A-Q001"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            242
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "logic-gates",
+          "reason": "B = pq OR NOT p OR p NOT q = p(q OR NOT q) OR NOT p = 1.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "heading": "3-4-1 Logic Circuit / Main logical laws",
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8",
+              "checkedExcerpt": "  • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determi"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "e11ce0832ee58f54ca71e185dae949434bbb29720bc0db2d12f5f81cc76f92bb"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2019A-Q012",
+    "examId": "2019A_FE_AM",
+    "number": 12,
+    "year": 2019,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Configuration of CPU",
+    "topic": "CPU registers",
+    "mapping": {
+      "headingNumber": "3-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-051-b004-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2019A-Q012.384b85bf3969.webp",
+      "width": 1919,
+      "height": 782,
+      "sha256": "384b85bf3969e7c9dfec7abf76e2bc99b3534233acaa8afdbb8951783cf41e76"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2019A-Q012"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            22
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-051-b004-l00-text-0",
+          "headingNumber": "3-1",
+          "conceptId": "cpu-registers",
+          "reason": "The arrows carry the fetched instruction from main memory into a register, then to the instruction decoder.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 52,
+              "printedPage": 47,
+              "heading": "3-1 Configuration of CPU",
+              "textSha256": "97daacc48a2f1d7065a3797a62a0b4b6c3c2156c8a7a712b4c516a22df80c5ba",
+              "checkedExcerpt": "main registers (details of each register are explained later) are as follows: • Instruction register It stores the instructions to be executed. It is composed of an instruction part and an address part. • Instruction address register (program counter, program register) It stores the address (storing position in the main memory) of the instruction to be executed next. • General register It is used for various purposes such as storing the data to be processed. • Accumulator It stores the data for performing computations. It is sometimes also substituted with a general register. • Base address register It stores the beginning"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "6f7f32fbdaf56a2c58b3bf9377e9e493c53ad788a53352f5c97423716373a9d9"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2019S-Q023",
+    "examId": "2019S_FE_AM",
+    "number": 23,
+    "year": 2019,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2019S-Q023.4e5dd337f1d8.webp",
+      "width": 1992,
+      "height": 704,
+      "sha256": "4e5dd337f1d8bac4b4715f48cf514815cd07ae52aaf859a147727e6643c7d60e"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 28,
+      "pageEnd": 28,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2019S-Q023"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            28
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "logic-gates",
+          "reason": "Trace the first gate as A AND B and the second as A OR B, followed by an OR of both results.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "heading": "3-4-1 Logic Circuit",
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "(Arithmetic and Logical Unit) is a unit that performs arithmetic operations and logical operations. This unit is composed of various circuits. 3-4-1 Logic Circuit Logic circuit is a circuit that performs logical operations for logical processing of instructions by computers. Logical operations refer to arithmetic operations that have only two truth values of True (1) and False (0). [Main logical operations] 1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False "
+            },
+            {
+              "kind": "computed-truth-table",
+              "variables": [
+                "A",
+                "B"
+              ],
+              "rows": [
+                [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  1,
+                  1
+                ]
+              ]
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "e1b3350c625bfc60677d4040eb875d3d622da486da2881d8379ecb0b5a0ff920"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2020A-Q002",
+    "examId": "2020A_FE_AM",
+    "number": 2,
+    "year": 2020,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "a",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2020A-Q002.44a5a708c416.webp",
+      "width": 1992,
+      "height": 474,
+      "sha256": "44a5a708c4164db2d70c9c6dc146f44f848093e8eb21918456618f20129ea54e"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 234,
+      "pageEnd": 234,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2020A-Q002"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            234
+          ],
+          "printedAnswer": "a"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "logic-gates",
+          "reason": "A = p AND (NOT p OR q) AND NOT q = (p AND NOT p AND NOT q) OR (p AND q AND NOT q) = 0.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "heading": "3-4-1 Logic Circuit / Main logical laws",
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8",
+              "checkedExcerpt": "  • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determi"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "e3512eba20be7fdec32b6c683db76b2001b8e68f0538b77ca9c89025bd34ecd5"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2020A-Q022",
+    "examId": "2020A_FE_AM",
+    "number": 22,
+    "year": 2020,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2020A-Q022.5d6ab3b8f060.webp",
+      "width": 1993,
+      "height": 774,
+      "sha256": "5d6ab3b8f060dcbc436c0aab3e44714349fe57e4649d42103bae27a55b6debcc"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 237,
+      "pageEnd": 237,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2020A-Q022"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            237
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "logic-gates",
+          "reason": "Negate each input of the existing OR: NOT X OR NOT Y = NOT(X AND Y), NAND.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 68,
+              "printedPage": 63,
+              "heading": "3-4-1 Logic Circuit / NOT and NAND",
+              "textSha256": "0d4b63b814973a25037c28e66d92f6e2f65667d47f397e9e8a6a794d9e6f12bd",
+              "checkedExcerpt": " Y X OR Y Figure 1-27 OR circuit 0 0 0 0 1 1 1 0 1 1 1 1 3) NOT circuit This circuit performs negation operation (NOT). The truth table and MIL symbol of NOT circuit are as shown below. X NOT X Figure 1-28 NOT circuit 0 1 1 0 4) NAND circuit This circuit performs negative logical product (negative AND) operation (NAND). NAND operation is the arithmetic operation that negates the results of AND operation. The truth table and MIL symbol of NAND circuit are as shown below. NAND circuit is formed by combining AND circuit and NOT circuit. X Y X NAND Y Figure 1-29 NAND circuit 0 0 1 0 1 1 1 0 1 1 1 0 5) NOR circuit This circuit performs negative logical sum "
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "heading": "3-4-1 Logic Circuit / Main logical laws",
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8",
+              "checkedExcerpt": "  • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determi"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "8c5c627f0cc92aa52773dbc687fac9dcae37486c43fff148419f0edee8aa6ebe"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2020S-Q022",
+    "examId": "2020S_FE_AM",
+    "number": 22,
+    "year": 2020,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "d",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2020S-Q022.128fceab16e7.webp",
+      "width": 1461,
+      "height": 1961,
+      "sha256": "128fceab16e7fca9151ea2a3fd50089b6eb50119c3d6a213da6df1b7a6b340df"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 240,
+      "pageEnd": 240,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2020S-Q022"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            240
+          ],
+          "printedAnswer": "d"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "logic-gates",
+          "reason": "The reference NANDs x,y and ORs the result with NOT z (bubble on the lower OR input).",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "heading": "3-4-1 Logic Circuit / Main logical laws",
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8",
+              "checkedExcerpt": "  • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determi"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "22170cf7b2064bdfe7318b2fc1966c221ac3aacd25ef36e90aaa2276bf2cb9e4"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2020S-Q023",
+    "examId": "2020S_FE_AM",
+    "number": 23,
+    "year": 2020,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2020S-Q023.43de7a6dca16.webp",
+      "width": 1993,
+      "height": 474,
+      "sha256": "43de7a6dca160fd7c6d75b1a82c90d82d22afb3d07b3e062b0b9e44c0680f1b6"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 241,
+      "pageEnd": 241,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2020S-Q023"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            241
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "logic-gates",
+          "reason": "XOR requires at least one input true but not both: (A OR B) AND NOT(A AND B).",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "heading": "3-4-1 Logic Circuit / Main logical laws",
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8",
+              "checkedExcerpt": "  • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determi"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 69,
+              "printedPage": 64,
+              "heading": "3-4-1 Logic Circuit / XOR",
+              "textSha256": "b26e0590632468a146244504ce22b38c51e1c61bfd1a94cd92adb3789271befd",
+              "checkedExcerpt": "64 6) XOR circuit This circuit performs exclusive logical sum operation (XOR). The truth table and MIL symbol of XOR circuit are as shown below. X Y X XOR Y Figure 1-31 XOR circuit 0 0 0 0 1 1 1 0 1 1 1 0 XOR circuit is also formed by combining the basic circuits. However, it cannot be formed with a combination of simple circuits as in the case of NAND circuits and NOR circuits. In such cases, it is called logical design (or circuit design) to think about the combination of basic circuits for achieving the targeted results (truth values). In logical design, logical expressions (logical functions) obtained from the truth tables are s"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "177ab6653b767f54b89b8338c274fa5b90b30436d27cd14d486f64c797187cae"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2021A-Q021",
+    "examId": "2021A_FE_AM",
+    "number": 21,
+    "year": 2021,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2021A-Q021.b2ae2c8b3d63.webp",
+      "width": 1992,
+      "height": 705,
+      "sha256": "b2ae2c8b3d636a4b28d76af5b4d853b4e960ee05297f71fa1b7dd9d6ecfe0ae3"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 228,
+      "pageEnd": 228,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2021A-Q021"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            228
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "logic-gates",
+          "reason": "The diagram ORs the AND(A,B) result with OR(A,B). Its output is (AB) OR A OR B = A OR B.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "heading": "3-4-1 Logic Circuit / Main logical laws",
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8",
+              "checkedExcerpt": "  • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determi"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "8b487ec3ed89006d8565c0a6d4f825825dda4214417d06bf75c2db4df936b928"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2021S-Q001",
+    "examId": "2021S_FE_AM",
+    "number": 1,
+    "year": 2021,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2021S-Q001.12647d8863a0.webp",
+      "width": 1993,
+      "height": 661,
+      "sha256": "12647d8863a00ce3921ade82828afc1b14008ac854c68b39f27a557b0830466a"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 230,
+      "pageEnd": 230,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2021S-Q001"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            230
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "logic-gates",
+          "reason": "Distribute (x OR y) AND (x OR z): x OR xy OR xz OR yz. Absorb xy and xz into x.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "heading": "3-4-1 Logic Circuit / Main logical laws",
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8",
+              "checkedExcerpt": "  • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determi"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "6f9b534030170a4419b292f85dee754f0baec0835b90802660f0601fdb7078f5"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2021S-Q014",
+    "examId": "2021S_FE_AM",
+    "number": 14,
+    "year": 2021,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Types of Input/Output Interfaces and their Characteristics",
+    "topic": "USB interfaces",
+    "mapping": {
+      "headingNumber": "5-5-2",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-112-b008-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2021S-Q014.be0dda0dd6d9.webp",
+      "width": 1915,
+      "height": 707,
+      "sha256": "be0dda0dd6d91ffe1a85abbcf3b782ff090f0ab04cf8d9b523906f17409c6add"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2021S-Q014"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            8
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s05",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-112-b008-l00-text-0",
+          "headingNumber": "5-5-2",
+          "conceptId": "usb-interface",
+          "reason": "USB 3.0 SuperSpeed has a nominal signaling rate of 5 Gbit/s.",
+          "evidence": [
+            {
+              "kind": "primary-source",
+              "url": "https://usb.org/document-library/inter-chip-supplement-usb-revision-30-specification-revision-102",
+              "finding": "USB-IF specifies that USB 3.0 adds 5 Gbps transfer support.",
+              "checkedAt": "2026-10-22"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 114,
+              "printedPage": 108,
+              "heading": "5-5-2 Types of Input/Output Interface",
+              "textSha256": "28d8db735ce9cb3b4b91def979f363b7ee8c78b397f21ebad31de5ce1e179a49",
+              "checkedExcerpt": "addition to the three types of data transfer modes of USB 2.0, SuperSpeed mode (5,120Mbps) is added. Also power management is improved in the standard. (4) IEEE 1394 IEEE 1394 is a serial interface that allows high-speed transfer of data and is used for connecting multimedia-related devices such as digital cameras. It is available in three types of data transfer modes (100 Mbps, 200 Mbps, and 400 Mbps), and its main characteristic is that devices can be connected even without going through a PC. This standard is owned by IEEE (Institute of Electrical and Electronics Engineers), and Apple’s FireWire and Sony’s i.Link are tr"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "3a09271b8912ab1f60faf077d89f388e8be01beca74f7368ff45ee22dcdeea91"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2021S-Q022",
+    "examId": "2021S_FE_AM",
+    "number": 22,
+    "year": 2021,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2021S-Q022.834293c75591.webp",
+      "width": 1993,
+      "height": 1025,
+      "sha256": "834293c75591bb10f8384ef9585ea9f8940866893229f0cf41f61bb54eadafad"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 232,
+      "pageEnd": 232,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2021S-Q022"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            232
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "logic-gates",
+          "reason": "The stem asks which circuit is NOT an implementation of AB OR CD. A directly ORs products; B applies De Morgan to NAND products; D inverts both NAND outputs at OR inputs. All three implement AB OR CD.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 68,
+              "printedPage": 63,
+              "heading": "3-4-1 Logic Circuit / NAND and NOR",
+              "textSha256": "0d4b63b814973a25037c28e66d92f6e2f65667d47f397e9e8a6a794d9e6f12bd",
+              "checkedExcerpt": " as shown below. X NOT X Figure 1-28 NOT circuit 0 1 1 0 4) NAND circuit This circuit performs negative logical product (negative AND) operation (NAND). NAND operation is the arithmetic operation that negates the results of AND operation. The truth table and MIL symbol of NAND circuit are as shown below. NAND circuit is formed by combining AND circuit and NOT circuit. X Y X NAND Y Figure 1-29 NAND circuit 0 0 1 0 1 1 1 0 1 1 1 0 5) NOR circuit This circuit performs negative logical sum operation (NOR). NOR operation is the arithmetic operation that negates the results of OR operation. The truth table and MIL symbol of NOR circuit are as shown below. NO"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "heading": "3-4-1 Logic Circuit / Main logical laws",
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8",
+              "checkedExcerpt": "  • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determi"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "9e23eaaf7fafad5c99b5e06b7d4fc3865f7e3d475aa2cbb876b52ffe6fbb14e3"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2022S-Q001",
+    "examId": "2022S_FE_AM",
+    "number": 1,
+    "year": 2022,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "a",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2022S-Q001.e4e9031dea96.webp",
+      "width": 1980,
+      "height": 408,
+      "sha256": "e4e9031dea96a0297c0cb4430c08eb8f802ff7a8539af734ade373ca47f1203a"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 219,
+      "pageEnd": 219,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2022S-Q001"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            219
+          ],
+          "printedAnswer": "a"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "logic-gates",
+          "reason": "NOR(A,B)=NOT A AND NOT B. A gives NOT A AND (A OR NOT B), which reduces to this function.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "heading": "3-4-1 Logic Circuit / Main logical laws",
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8",
+              "checkedExcerpt": "  • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determi"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "a13457993b5475a14d1fb91de3ad608a95eb6c840813f36d4746dc1cf810f6e9"
+    }
+  },
+  {
     "id": "SAMPLE-B-Q001",
     "examId": "FE_B_SAMPLE",
     "number": 1,

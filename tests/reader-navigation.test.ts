@@ -66,9 +66,9 @@ describe('original source navigation',()=>{
  it('derives only contextual published questions and mapped videos, with no default cache recommendation',async()=>{
   const bank=await publishedQuestions();
   const cache=studyContext(contents.find(n=>n.number==='3-5-1')!,[...bank,{...bank.find(q=>q.id==='2024A-A-Q009')!,id:'unpublished',is_published:false} as never]);
-  expect(cache.questionIds).toEqual(['2024A-A-Q009','2025S-A-Q010','2026S-A-Q010']);expect(cache.videos[0].url).toBe('https://t.me/itpecmm/101');
+  expect(cache.questionIds).toEqual(['2024A-A-Q009','2025S-A-Q010','2026S-A-Q010','HIST-TECH01-2015A-Q011']);expect(cache.videos[0].url).toBe('https://t.me/itpecmm/101');
   const basic=studyContext(mainContents[0],bank);expect(basic.links).toEqual([]);expect(basic.videos).toEqual([]);
-  const disk=studyContext(contents.find(n=>n.number==='4-1-3')!,bank);expect(disk.questionIds).toHaveLength(3);expect(disk.links.map(l=>l.id)).toEqual(['disk-access','defragmentation']);
-  expect(new Set(mainContents.flatMap(node=>studyContext(node,bank).questionIds)).size).toBe(23);
+  const disk=studyContext(contents.find(n=>n.number==='4-1-3')!,bank);expect(disk.questionIds).toHaveLength(5);expect(disk.links.map(l=>l.id)).toEqual(['disk-access','defragmentation']);
+  expect(new Set(mainContents.flatMap(node=>studyContext(node,bank).questionIds)).size).toBe(59);
  });
 });

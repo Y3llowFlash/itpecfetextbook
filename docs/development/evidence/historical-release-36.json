@@ -1,0 +1,385 @@
+{
+  "schema": "itpec-historical-release-v1",
+  "preparationCommit": "7f5545a58488c09a75779eb2fddbb7a58fc4f414",
+  "candidateManifestSha256": "fdbbeeff0924f75508ca3336c714e8a17aa35bd820af1dfad3137615cf02c147",
+  "authorizationSha256": "b9c7a23cd9bca0b6ddbabef64157bfbd183d07898c906a836cbfbbda1813a8b9",
+  "scope": "first 36-question ITPEC Textbook release",
+  "authorizedCount": 36,
+  "excludedUnapproved": 297,
+  "practiceCount": 420,
+  "historicalCount": 36,
+  "total": 456,
+  "images": 456,
+  "conceptCounts": {
+    "cache-memory": 1,
+    "cpu-registers": 1,
+    "defragmentation": 1,
+    "disk-access": 1,
+    "logic-gates": 24,
+    "radix-conversion": 6,
+    "usb-interface": 2
+  },
+  "practiceRecordsSha256": "9a16f1562f07bacc426fca270d189b82232f5fcf3b71341019673e5f0cff9c07",
+  "records": [
+    {
+      "id": "HIST-TECH01-2021S-Q014",
+      "approvalFingerprint": "3a09271b8912ab1f60faf077d89f388e8be01beca74f7368ff45ee22dcdeea91",
+      "imageSha256": "be0dda0dd6d91ffe1a85abbcf3b782ff090f0ab04cf8d9b523906f17409c6add",
+      "contentSha256": "09f268b3c1151d55bc82dedadcaaab3ee4b40ea51b79ca9ed5497e4b7a379df2",
+      "conceptId": "usb-interface",
+      "questionSha256": "0592ad5bbae5ac0adfa311c2a203c61288d5a75c1350725799c325ade7cc411d",
+      "explanationSha256": "cd28cb9ad547cc1023901b87a58287e1efab202cda051d9e850e2fc04fd5672b",
+      "mappingSha256": "729daea7a9046c645bf8fb1e96772160843c81ce0b754da44c6b6354c5b5abe8"
+    },
+    {
+      "id": "HIST-TECH01-2019A-Q012",
+      "approvalFingerprint": "6f7f32fbdaf56a2c58b3bf9377e9e493c53ad788a53352f5c97423716373a9d9",
+      "imageSha256": "384b85bf3969e7c9dfec7abf76e2bc99b3534233acaa8afdbb8951783cf41e76",
+      "contentSha256": "522827023e001d80739070f1bd5f1cdd5fae5078e12a146155e5d4f7fbcf8e1a",
+      "conceptId": "cpu-registers",
+      "questionSha256": "af513e5d83e7ae113c47bdf080098646daa12e3c15e7f1b485803299ec5daf18",
+      "explanationSha256": "87589381812922779bc246ff4774d3fceebc3114fffd4bace53441cf5487cb45",
+      "mappingSha256": "1d6126c3c3052b2e0cfb326d0e7d2ba18f0cff74e8260a6aed462ccfe6666e80"
+    },
+    {
+      "id": "HIST-TECH01-2019S-Q023",
+      "approvalFingerprint": "e1b3350c625bfc60677d4040eb875d3d622da486da2881d8379ecb0b5a0ff920",
+      "imageSha256": "4e5dd337f1d8bac4b4715f48cf514815cd07ae52aaf859a147727e6643c7d60e",
+      "contentSha256": "b182f3ce72cf579323b24cc911acbc3434b138452a9ca10439c889c5f6486f61",
+      "conceptId": "logic-gates",
+      "questionSha256": "f9a4b098fb5889cbea201c4759e0d7b7e1d8dea876876a5bd1fae93c822e5b25",
+      "explanationSha256": "e48f370dbb63b39bed9951be05cad287a7c88d9be4e5603f469973a1dc9c46a0",
+      "mappingSha256": "c8ff696f502a2ec077fba9601639fee7eab9d2310af3bf96631976406f368cdc"
+    },
+    {
+      "id": "HIST-TECH01-2018A-Q001",
+      "approvalFingerprint": "030e9e47f0fab736c6b2f2d3eb2390c41ae1b250250cf113879cfaada76c92a1",
+      "imageSha256": "2b10485711cc21306d6073df8ea3a991288808e3662be72ccdb1ab178589e559",
+      "contentSha256": "2a6ef0c83a7b9e213749144192669f54640bd22c20d1c8f05c9e222144ede91d",
+      "conceptId": "logic-gates",
+      "questionSha256": "0f9abe7a0589e32326902b43c826f64b59db3f2cda426fe974f23bfcd5e20c86",
+      "explanationSha256": "b3bfe23536194ac8778a3b0b18b18bca6898e2007da5e7fd9c5c9cc96d6ce7fd",
+      "mappingSha256": "79d7168a563972da3acc2153086df483ab7f02a285f4f75d1b18d1a051911c87"
+    },
+    {
+      "id": "HIST-TECH01-2018A-Q013",
+      "approvalFingerprint": "b063ffd4d5a97dc968ea53fc86d56341e0dead60d0bc09e82d28872ad4d4381d",
+      "imageSha256": "12767ddbb04ec6c1b974401d398178d1cef363b85e342115fa375151ca6fab21",
+      "contentSha256": "1047e87fcce32cffb0433953197decb039d0abd82ba5ded601275ebb099c7f27",
+      "conceptId": "usb-interface",
+      "questionSha256": "5f5121d55949df77a5707393fa4b78da301dd36630af06afb11f9705bb294ee9",
+      "explanationSha256": "afcd6e871083e017310c9880d3e0404c2f3be3c51324662abc26c5054e67ded2",
+      "mappingSha256": "729daea7a9046c645bf8fb1e96772160843c81ce0b754da44c6b6354c5b5abe8"
+    },
+    {
+      "id": "HIST-TECH01-2018A-Q022",
+      "approvalFingerprint": "678e9e164566d0254e4f34bb9d9af9e46af12907faecb1abb1001dc6e04dccf1",
+      "imageSha256": "1c8949078df1bfdcee1e03ca537486fefdbb1bfd641f340e5e159f0ccac6e921",
+      "contentSha256": "1ec20cd78cb37a13092abe7f69a0309a2239ff2f2cd02c8614448fdfe5872ac8",
+      "conceptId": "logic-gates",
+      "questionSha256": "60ffc1779e62e515d193154114f0f8ce31981e0ddd0ece3107de2ad6e8e26c82",
+      "explanationSha256": "a54dce5d3b1bf24ed39dced429a8c9138be4e84179deb1cf57450bd7acd3b2ae",
+      "mappingSha256": "84f95ce9a5e11b44d9bc5ca95eaa5cc8506f1b4dc24635afc6fd4af31f71f8f6"
+    },
+    {
+      "id": "HIST-TECH01-2018S-Q023",
+      "approvalFingerprint": "ce134dfb56d12bb86de45b46e013012660f0a4726a1b758de09d30d930350d9b",
+      "imageSha256": "d87b94e218195c60b6b94c039f48613c56b2eed0e5e5cdc4e3e032cf26092244",
+      "contentSha256": "a4943687a9e9829465bb01f9b64006911038e292265764a3149398a747446fb9",
+      "conceptId": "logic-gates",
+      "questionSha256": "6e8a198696987bc53a1b66e08841e246e69c5f69aed84359bcf44e88125d5b3f",
+      "explanationSha256": "c23e3fe5c1d2ac8ba4af4e10f8a7df6548a0d8dede18bc574d6e4f231da0ba08",
+      "mappingSha256": "ac470f4b1629f3303a7cc452026d2a295b0688b88820162df831cc1a3970c490"
+    },
+    {
+      "id": "HIST-TECH01-2017A-Q021",
+      "approvalFingerprint": "49316977fca2507d2612c759127c6e12203e0ebc31cc00ce5637fb71d4e674be",
+      "imageSha256": "a5e3ef392a5e7b3ec2655ecc4c11c1907f5db2c06e39e306e09d608573d912e1",
+      "contentSha256": "311c051101d86bfbf3ff18dd2dd4f77ab1c00da65804391945bdbe6f4053c934",
+      "conceptId": "logic-gates",
+      "questionSha256": "b403da0c6621957b52ff706a5626eb7eeb03faeb863653e48ee54b78c82d12c7",
+      "explanationSha256": "e45c72efc0b83d0908c06ba4d9630185200ae49bcee24d8bacf4b9fa541053d3",
+      "mappingSha256": "c722742635eaf1222e36fcf197e2166f3d52bd6292b8b676ec90275f9bdb8a9f"
+    },
+    {
+      "id": "HIST-TECH01-2017S-Q014",
+      "approvalFingerprint": "dc3db071a3c03c1c827574d474999c5e329d11db02ef6ff308e7674c780d44a1",
+      "imageSha256": "0f186ac4a2e253a37c6900b9c9aecc4afc92b46e20346712bccae68b12c618d7",
+      "contentSha256": "c67367e078bb280e9a356a5572d5db1fdfd5275a84837bc25981d121ba815f2c",
+      "conceptId": "defragmentation",
+      "questionSha256": "3312ab0e1ece3412f91aa5f2555cf0716fb633ab8eaf3ed0139a47cf0916f1d1",
+      "explanationSha256": "57d9ba51ea1df0068b430f8ebb708119103b6690f52d1742017ef19a64251aba",
+      "mappingSha256": "9c0baf3bacc02fbaf98619546e1b4a3d7f8e58f2543c26cc979a19d413214dd7"
+    },
+    {
+      "id": "HIST-TECH01-2017S-Q024",
+      "approvalFingerprint": "c69a0afa49cdd9fd29f0a9615cb9b139901c0fe65ffc239adce4b5c52e9e04da",
+      "imageSha256": "86356e6d534bbd546f176db14207a6fa996e5c72e8486f599a24eb6c4235a068",
+      "contentSha256": "993e1e95c1efee5c52c56372f384d72b9174b25b300b89ed4f6a4d8470cc3c37",
+      "conceptId": "logic-gates",
+      "questionSha256": "7b1f468a887951942642533374ac9de19b8290bac434bed1f0e5627e46ccff41",
+      "explanationSha256": "fcd64e03aef161a68b53d1ff58169ed647affe2615421725ab5b3cb1db09a9eb",
+      "mappingSha256": "674d5909ebefe65a11cd98499c2e04b269aebe023f277fb1bd7ae4ccef224b89"
+    },
+    {
+      "id": "HIST-TECH01-2016A-Q022",
+      "approvalFingerprint": "e51552e80e6d9d66f3ee612ee863a3a199fd1295bfad62fe324d8892fbb2798a",
+      "imageSha256": "f2fc39a3cbe00077b0c28ed7b670612e835acb08622d7dfc1427526897045869",
+      "contentSha256": "69b0c61052a8f0783faa0f8b4624355d2a3f8ba792ed25c78a7fc24c6a4e66f5",
+      "conceptId": "logic-gates",
+      "questionSha256": "1cdc5c4f4ed1adb53f090acaf2dab41d85c53cafe8e85e31e2fa2fa8f66f302e",
+      "explanationSha256": "4272ba4cb7548ffce9d4858c31925da3befb3be256cbcf63f66ff14acb786e4f",
+      "mappingSha256": "5061641d114620846612ffcf671f17d1452450eab9c485c8f37002e701ae2046"
+    },
+    {
+      "id": "HIST-TECH01-2016S-Q002",
+      "approvalFingerprint": "34b35c43be357663ca402ac664f44478fc8b5e4f4d1cfecb0266eb64b02613b2",
+      "imageSha256": "cc602293de85430552899ffd04549703b17bd5013e77801516bf836d9293b25d",
+      "contentSha256": "4c87a08c93fc6802defa477a04b14aef47353ac33dfc3a470bafc8353ea5c8e5",
+      "conceptId": "logic-gates",
+      "questionSha256": "7f5ea1e68c7fc2f85e81469d0fce1e3971ff3b6de1ae7224d6db8c8fc7358be2",
+      "explanationSha256": "e52d431756d886b01a5b34ffbbc92ce199965f2df290dcc18541261a9b9fc5a8",
+      "mappingSha256": "178824f7be65649105e8f74b4f19ecf90352575296898c67863f0eec76462e19"
+    },
+    {
+      "id": "HIST-TECH01-2015A-Q011",
+      "approvalFingerprint": "cad184a98524ce8e54dad946b7cf4e50d707913b623b6c8fdc231c4cf3834a48",
+      "imageSha256": "e7ce7cdb406e94efff56df321c2de9cf8112365db02a71726cd455cf2fd4864a",
+      "contentSha256": "3772911237064ee05397791870819da5c409862cbae3add5fee8fbe82a52a937",
+      "conceptId": "cache-memory",
+      "questionSha256": "1c34ea740314e8532e27778166634e81278e41474dfc3bc25386d2b8967483ca",
+      "explanationSha256": "475e5969a414285e3afb7ab6aa6b66674e26cd63d0c6868ccd8e75e50d1eee09",
+      "mappingSha256": "0943d464119c1c8d45f2c6f3e3d7f9a4d83b4cb2de5693ef7ac6eda58e122897"
+    },
+    {
+      "id": "HIST-TECH01-2013A-Q002",
+      "approvalFingerprint": "74865cdd44b75a068e7ed212315482ee29fc2d5f5f5f859032f75876ae795902",
+      "imageSha256": "9367f869f01506beec43f77b4b40666d55bde36a7916b4a18449563a9b8be9cb",
+      "contentSha256": "6df2484ff51d7ae32430ebf9d13f1f0bec1348fa640b8d8553225e1cd60bf504",
+      "conceptId": "logic-gates",
+      "questionSha256": "908efb4672b45098365a0b8b825dd920fe9359db65cf24d4f154c89054f578fb",
+      "explanationSha256": "b722747f6c7b50bfa9f69081df1f155f3bd75c99d1f2f8cfe503e177ba321f4e",
+      "mappingSha256": "33c4ed66315204bd7c6182c2605b11c0147433d937ce2d16f7c51622739d4628"
+    },
+    {
+      "id": "HIST-TECH01-2010A-Q016",
+      "approvalFingerprint": "35f8546de133880c0807f04d3980dcf5705ee23348d86def076ccd330b11dc1e",
+      "imageSha256": "a17f4914062b7539f56105045cf2e90cd42ead710232f22b538d59b9c4f143b0",
+      "contentSha256": "d670181cd181816aa9933262535197664ea898487ae38e8b6596509d447a6c03",
+      "conceptId": "disk-access",
+      "questionSha256": "90af0570c7539a91446e3d0634af1436da518bdc79da42692ce37d50290b8940",
+      "explanationSha256": "2422c0c2b3446153494c9b2112eb89f575786102901ce18c9ddb3a3b65376bc0",
+      "mappingSha256": "8cf07721b9570d6dce42b186c0e334fd3811fe750dcde3ede607ebd12b85704e"
+    },
+    {
+      "id": "HIST-TECH01-2009A-Q017",
+      "approvalFingerprint": "bf1a84883898df2aaadeb90872f95dc3f901df73c4c9fd88ddcc6a44e4da9517",
+      "imageSha256": "3c4a6cc68cf16d960fcc0d83896c8a939103ba382df614a36d90d97c3ba56ea7",
+      "contentSha256": "97e1604137c475a51026272855ca5ed968606dea94b844bad77ee6ee8f285580",
+      "conceptId": "logic-gates",
+      "questionSha256": "0ef8de68fe5527ab1c5de406b41e6c31d32d5537975da4c98e55815ececd72c0",
+      "explanationSha256": "730aba8147444849099352dac8cbbbaf894be7d20e596d1f04ad56eca15a342e",
+      "mappingSha256": "5650c8cd9026e8a0dbfe45f48698d4eab5974b74be699e47ed4b07eeeaa75218"
+    },
+    {
+      "id": "HIST-TECH01-2008A-Q009",
+      "approvalFingerprint": "c91d39e4c4af3a4e56692ad96d6ab4b5552a06afae774e189228f18758b70534",
+      "imageSha256": "910be97003df15cdfaf8c4bada87eac15deb00e40c2fbde9f1d9ddb14d54e141",
+      "contentSha256": "9d8725f380926cdda6385a9564d6476a1ea315afd8fc61f0b6a1eabd805c41f2",
+      "conceptId": "logic-gates",
+      "questionSha256": "a2a730ea7d364d023708589f562cdbc6d7eff362299bc4e53b43f59ee60a27e4",
+      "explanationSha256": "0a1764d93b85ce2b08280c8ae225d3193c6a9d68eed18af302da6b0e6dc52887",
+      "mappingSha256": "465c875ec7d28ea6d458839a5ea962c6804213171a1e5c948d4facad51d68358"
+    },
+    {
+      "id": "HIST-TECH01-2008A-Q010",
+      "approvalFingerprint": "574c66852ab08031b1ff3ec9b566b67f500bd02468991c41994cc18246cc6a3e",
+      "imageSha256": "3c830673a2941dfc20916ea4eb125e0478192efcd00c883c8dd164ccea4722c0",
+      "contentSha256": "b172d80c59a9d76b451df950bc5ebf2533d3cf6af7465bd760713fc19c8279ab",
+      "conceptId": "logic-gates",
+      "questionSha256": "eb0199b268d9ba67da237b706a53694a949bd2dd5898a9fb5442cbad1296d0e2",
+      "explanationSha256": "32001a92ddeac630d3c7dd34177250e8cfebf3718d8c71042e0e70022e3ce5b5",
+      "mappingSha256": "24da89dd616f3c94bdbf302953760cc6f2b197897408b1917f64bf1ac28fed60"
+    },
+    {
+      "id": "HIST-TECH01-2008S-Q018",
+      "approvalFingerprint": "1e678c5a94f0580a48f4188d196b6de5b6a8e71deb2379190002fad0529e6ba7",
+      "imageSha256": "e3f5db9f810a6bc952937fae81e3e084529903d9418f54feb6b9287c1a033a74",
+      "contentSha256": "98fa014829ccd2b2a988c352ddcf0a451edf0d783332f2a630011ae162e5d57d",
+      "conceptId": "logic-gates",
+      "questionSha256": "e8cb0b343147a929beadf16db945fb4887f208f2fb2b276b047b5c12ff5792ea",
+      "explanationSha256": "dc0ab67a1d686ba8cd34e0afb8d671720be66272dcd649a740386db4e948cd64",
+      "mappingSha256": "5a2723aeb42e8874317f51de2383751f93b944431914a491e02c1d04c70897a2"
+    },
+    {
+      "id": "HIST-TECH01-2007A-Q019",
+      "approvalFingerprint": "f5dd0df33456df750794b73e7b8deba49e5a9b91d8c2415c20919dfc6f152eee",
+      "imageSha256": "66b49a0352036c9edfd5a630ba6e6c598af2e44b9e050ee5c4e44cdf5fb11e76",
+      "contentSha256": "b475106cf1119bd82dded42a764c2f4b07ee3a686051a938ee46001891fe5c61",
+      "conceptId": "logic-gates",
+      "questionSha256": "3d813d2beda26d71a17faee02376b66b47db9594b3d58b6e82d1a11c6de7345c",
+      "explanationSha256": "0fe9d6408ae6a41881aaa1a653b2a2f36cec3f668e8a50a9faf4c33a0d16d25e",
+      "mappingSha256": "53b7d387c42164ab51661ad9264fff4365d5ee6eeedc2e3371c8e718575f6a4e"
+    },
+    {
+      "id": "HIST-TECH01-2022S-Q001",
+      "approvalFingerprint": "a13457993b5475a14d1fb91de3ad608a95eb6c840813f36d4746dc1cf810f6e9",
+      "imageSha256": "e4e9031dea96a0297c0cb4430c08eb8f802ff7a8539af734ade373ca47f1203a",
+      "contentSha256": "7926ba311368ccb65d4a84cc0be7015eceb5a005d124f8d3574a33e8a2803715",
+      "conceptId": "logic-gates",
+      "questionSha256": "1b0af4116ccc1a42dae9bb9a27927522baaa5915a2ab70af8493ce2deca6ae0a",
+      "explanationSha256": "861d5ae8d293e41acaea7b23aee1a4f9138a7c08f608467a12463a46b5ffa26a",
+      "mappingSha256": "f437f4f5bc9c4fffb80c4538391a7fe2d540465cc9f2f498a4c4464ccbc7620d"
+    },
+    {
+      "id": "HIST-TECH01-2021A-Q021",
+      "approvalFingerprint": "8b487ec3ed89006d8565c0a6d4f825825dda4214417d06bf75c2db4df936b928",
+      "imageSha256": "b2ae2c8b3d636a4b28d76af5b4d853b4e960ee05297f71fa1b7dd9d6ecfe0ae3",
+      "contentSha256": "9052113a80fd6e825de6aa99078d4ac8ed35dd0e4c5664866b1468f708d118a5",
+      "conceptId": "logic-gates",
+      "questionSha256": "2dd1e8c17885714d67f01ace0a3487811820bf9c65410d31fcd14c46679c56d3",
+      "explanationSha256": "12303fa67e874740e004d40624899877b589d22b66d94d4d20aa1aab3dbd15ff",
+      "mappingSha256": "9188b55466347dce04e4f5a050864fb184fd758cd78dc712b62bb49ceddb592b"
+    },
+    {
+      "id": "HIST-TECH01-2021S-Q001",
+      "approvalFingerprint": "6f9b534030170a4419b292f85dee754f0baec0835b90802660f0601fdb7078f5",
+      "imageSha256": "12647d8863a00ce3921ade82828afc1b14008ac854c68b39f27a557b0830466a",
+      "contentSha256": "745e21bad940eb7d7de1632d91b0aefb30aa72129a5aaa81a2d69bafc8a039d6",
+      "conceptId": "logic-gates",
+      "questionSha256": "00fae1cf0559bcac34630f91b6d5796e4f774fd8cce96daa558eb4d849fd5200",
+      "explanationSha256": "b20e366f6f89c06afbf996b44bd9cf75e2dd46b9431e628cf98091d5ed0d9608",
+      "mappingSha256": "547fcecf008e8862e2f4d8c0f6e9feb35ed7164f5a3f91a0f5da749ab71eabd0"
+    },
+    {
+      "id": "HIST-TECH01-2021S-Q022",
+      "approvalFingerprint": "9e23eaaf7fafad5c99b5e06b7d4fc3865f7e3d475aa2cbb876b52ffe6fbb14e3",
+      "imageSha256": "834293c75591bb10f8384ef9585ea9f8940866893229f0cf41f61bb54eadafad",
+      "contentSha256": "912fde802a69322fc0d4fe5acb32a0253ec5886d4a8bbb97b957e276c815683f",
+      "conceptId": "logic-gates",
+      "questionSha256": "dba9eb424c0e272b92ceec126166455b8dc2335738a19c0980d8a5505ddcee6e",
+      "explanationSha256": "fe07b86c24fcd41be5b30cc60377e1203069656d91f81cbc2c866669b4f7130c",
+      "mappingSha256": "ebc075b9ee25c499cb5b66dbc818da27f8563f5b4ad2113165fb0515d16e797c"
+    },
+    {
+      "id": "HIST-TECH01-2020A-Q002",
+      "approvalFingerprint": "e3512eba20be7fdec32b6c683db76b2001b8e68f0538b77ca9c89025bd34ecd5",
+      "imageSha256": "44a5a708c4164db2d70c9c6dc146f44f848093e8eb21918456618f20129ea54e",
+      "contentSha256": "6d1956fc720b359d4642b85569afcf77ebbbe96463fd2da16392b2d31dd3205a",
+      "conceptId": "logic-gates",
+      "questionSha256": "e8dd55757cec77df7dff2e8f58c17385e9c61e8773aca420020afb1411bc7622",
+      "explanationSha256": "c26c6c7bcf916726881a4c483ccc4ec13bded40f339cabf3cd52c389526a7ed7",
+      "mappingSha256": "8e825bf5769ec1f4aabc7d112de4e1453bea51c1edae17c58c61ac84e3ae87b4"
+    },
+    {
+      "id": "HIST-TECH01-2020A-Q022",
+      "approvalFingerprint": "8c5c627f0cc92aa52773dbc687fac9dcae37486c43fff148419f0edee8aa6ebe",
+      "imageSha256": "5d6ab3b8f060dcbc436c0aab3e44714349fe57e4649d42103bae27a55b6debcc",
+      "contentSha256": "d487d1f1eec506d70726641514dc136fb548421d3e61ca294a28750f350903c2",
+      "conceptId": "logic-gates",
+      "questionSha256": "9e271666d82171de8bf39f71d7ba7f4650bd3686a507b8f5d52cb250f1ed2696",
+      "explanationSha256": "2d6a2785956d5a7075d38213b586df3a93a32ce1bba2a32e5fbedf409862ada1",
+      "mappingSha256": "6e9d333572b199faf7a3f915b7e2f635724f147382c543553e88bc4ce0f4b446"
+    },
+    {
+      "id": "HIST-TECH01-2020S-Q022",
+      "approvalFingerprint": "22170cf7b2064bdfe7318b2fc1966c221ac3aacd25ef36e90aaa2276bf2cb9e4",
+      "imageSha256": "128fceab16e7fca9151ea2a3fd50089b6eb50119c3d6a213da6df1b7a6b340df",
+      "contentSha256": "b4115f98c1781750f956da54efa5b61991b44d0d35e0ffaa2fde266711390bed",
+      "conceptId": "logic-gates",
+      "questionSha256": "d4d74cedfdadb1488571243c342e3e40181a9e3019a4b5e3ce30f4ef7cb2805e",
+      "explanationSha256": "e31f9fd7bff595746a4cd215ad5e697e82077b7bf130160eefcbcc86a68e1f78",
+      "mappingSha256": "9c1b8414a78a31818c33cf9c4c422b3aeda8aba71b661a059bbae9b8e30ef789"
+    },
+    {
+      "id": "HIST-TECH01-2020S-Q023",
+      "approvalFingerprint": "177ab6653b767f54b89b8338c274fa5b90b30436d27cd14d486f64c797187cae",
+      "imageSha256": "43de7a6dca160fd7c6d75b1a82c90d82d22afb3d07b3e062b0b9e44c0680f1b6",
+      "contentSha256": "502c8d3840449e752069cae525e6b66ebff43845cb29c0d740cc94bff91b72ab",
+      "conceptId": "logic-gates",
+      "questionSha256": "2388bcdea94914bb1b2757a0a867767c18d4a5b94ebf28a5cc911c7a1d437f6e",
+      "explanationSha256": "698105925977878d3a97a6c2a292aeaa07664a7af03ea325b3924d15bb5229eb",
+      "mappingSha256": "84582afb0f2164d99447ab912ca049923d75c43e3cfe23157537081b0d05e926"
+    },
+    {
+      "id": "HIST-TECH01-2019A-Q001",
+      "approvalFingerprint": "e11ce0832ee58f54ca71e185dae949434bbb29720bc0db2d12f5f81cc76f92bb",
+      "imageSha256": "9336dfda814ba061466cdb955e99b476d8e504373857df686c85a1644ab35dce",
+      "contentSha256": "d5485c7b2189762f039169885b2047fae7f8e7e7d0126a8a28076efc16474bab",
+      "conceptId": "logic-gates",
+      "questionSha256": "028f53a10e274963944b1bb3e35809cc8d512b948b78c848d88e95442679d0ac",
+      "explanationSha256": "94106dd1d626844f2658bb54c8dc47efcf218ff028f51e3e77888dc53a9a1e59",
+      "mappingSha256": "22f319833be40e7f20f7f4e39db3de4ddbf53808f6716f498e240b2ad98b968d"
+    },
+    {
+      "id": "HIST-TECH01-2016S-Q001",
+      "approvalFingerprint": "b7b2afd6e758a179237fc5946410181699900a85cff4911c19864f10fc5e0c10",
+      "imageSha256": "2cdc8e721dfe5f83867f002b2c0cdbb6930f33478a21fec7de082f4b2a3d61f2",
+      "contentSha256": "195fbbfcbcec04caf1e9c9de199a00e115e6d9d6e7e68e5f89f38b07bf3531db",
+      "conceptId": "radix-conversion",
+      "questionSha256": "2250551e1d7ed89c71a23dd87c6d4f630bd2e143372716547f7d7f4a8efce629",
+      "explanationSha256": "37dc968ff80d485b43938be8dcafd929e40e753a3e70c814b191cd249923ac21",
+      "mappingSha256": "56e4863db05b9160e816f8f51df25638f18b2d0c4ba199af193acbe7165a0672"
+    },
+    {
+      "id": "HIST-TECH01-2014S-Q001",
+      "approvalFingerprint": "ca52dcd12234ac1621f9bdc204782116c341898d719f0ab0a3534526fecd79b2",
+      "imageSha256": "a5499fe56b817fe5ea7f0143daa4a8005c8363cfde7b95131b1886e8f1e43e0d",
+      "contentSha256": "34339c7a1f1241f9cea4d2d2c739e6075d05e3fd302a95e7990dcd83aab7897a",
+      "conceptId": "radix-conversion",
+      "questionSha256": "3972cda2d3e31aa1f942a0585d0c902db27062ee0872e458d0d8a7de7ecf01e8",
+      "explanationSha256": "df050450b9d687d9d853cf536036c49bababde74c0691a56234c6d2759889f3b",
+      "mappingSha256": "0fbb459bcaf220e858f162864ecf69a3368830cf3f0aa6db8d42207e84fad00b"
+    },
+    {
+      "id": "HIST-TECH01-2011A-Q001",
+      "approvalFingerprint": "0175554a515645b85f9923ad16bb44a954a92686403ad4f4ea60e4aed875a71a",
+      "imageSha256": "3a2e11f7e007097a198281b9d0939cca89fabc585db65a5402771debefa3135e",
+      "contentSha256": "f9c49607fa09c9ff65465300401a950fa042596543fda41e9d76d0b19f2fffd0",
+      "conceptId": "radix-conversion",
+      "questionSha256": "c5f1a1de87391cd91b240517228f258c86822c672ff30eeb93760d328941e91b",
+      "explanationSha256": "64bb5a8f9b2aa71e0dcbd5ccf3672cadd31ad32afb464d6fc2dcb6f3d2912743",
+      "mappingSha256": "4c33345c22e0122a8757a1ac4a320d5802727b0fce78b1ddc219f24f551869b5"
+    },
+    {
+      "id": "HIST-TECH01-2009A-Q001",
+      "approvalFingerprint": "5882f62aee9798fd443312e5a7ebfd0e1e223da929cd14a0e9f33f780326c272",
+      "imageSha256": "264e63fd47e32f40d814a67ca1e0644f0cdf0fd065bc2db8e9acf231fcf5f74a",
+      "contentSha256": "f2db5011c2c3616668e2cbf0fe5db14c8913dacebb3b9952e1d26f03533d3f9b",
+      "conceptId": "radix-conversion",
+      "questionSha256": "f859451e6ee4b2e554f144945e172df927924c1b7402d2ba940e643e8807aa67",
+      "explanationSha256": "0767c466656d56267cd11412882ec0fb5620d6a40bf9b01a9daae47609723ea9",
+      "mappingSha256": "37aa6b1dd7aba845623b8cba0769560dd61ef5ca630c3209a1c138330f1eac3b"
+    },
+    {
+      "id": "HIST-TECH01-2009A-Q008",
+      "approvalFingerprint": "c7e5c33854449b02a25cb4534827d41b806d9d99995c662814d37095679c63ab",
+      "imageSha256": "e0d2628cd9b4f932ceff5829cc35e7e6f0d5d33ccbefa2f6c9e69bca01cd3e3b",
+      "contentSha256": "72a6c53f81f1378b8357d11096cd81247ef98a18c052ade6cb70f8109c489dc9",
+      "conceptId": "logic-gates",
+      "questionSha256": "f8ca83d8617f9a0a051c6e8a1329df25bb47452561b0a57cc36fe1fb57bf8cb6",
+      "explanationSha256": "afd180a81f58d0bb6955b086650c8905616e2afd2fad1ef7501e98f22cbd84c6",
+      "mappingSha256": "64db0a295b797ff9794b54e30604b87ee5cc14ad895a0862f93edf523ba1651d"
+    },
+    {
+      "id": "HIST-TECH01-2008S-Q001",
+      "approvalFingerprint": "c187e1588f85c2b40d6deff9bbd901929e23ab3f2b12c8c8f6adcdb50606a3c7",
+      "imageSha256": "b0c64f79cb5436514fdbc06a06afb0d52910129021aaf64d66f149867443a7ed",
+      "contentSha256": "40a0282917efe63da5d35b0f798e53772d5f2cea272113dcc8a9434ae3272680",
+      "conceptId": "radix-conversion",
+      "questionSha256": "927cd05259572b28e6fa502243d57223929bad5a1fbde0d739a5a638e12919fb",
+      "explanationSha256": "3929dc5d541c2276e4bfff1087315ccaad48fdbf5bbae99af58bcbb40473993b",
+      "mappingSha256": "d24d8877462c9f45b37925fac1bf85d0788139c3a7885fa838432158205a6517"
+    },
+    {
+      "id": "HIST-TECH01-2007S-Q001",
+      "approvalFingerprint": "48dcb174bb571b096748f9e5a0a87454bfa471267e028b64895bc086b2f10ebf",
+      "imageSha256": "b72733f75c20fad19b22e7a846b78946d18cc6aa89ba9a3a7922bbd9d3b03671",
+      "contentSha256": "a1e8a8ad7c5534ef161e32e8f27a7fbf0a5f4fe54c44ea3337a141e0fd8a8993",
+      "conceptId": "radix-conversion",
+      "questionSha256": "4d2b73c8d0d59c6133330ad5cfb1ede0d17b77422f3c6dc3679ea994827db5c6",
+      "explanationSha256": "2cf776e7be5f45f34ccc88fa833c05b88a6ca7f4ca4b7ba7e284b0ccb950b4e3",
+      "mappingSha256": "abe9307512cb828a0bf73e5189cc2a4762eb15446ee16ece1df2d2d17c890549"
+    }
+  ]
+}

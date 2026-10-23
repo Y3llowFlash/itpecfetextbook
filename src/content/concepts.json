@@ -9,7 +9,8 @@
     "questionIds": [
       "2024A-A-Q009",
       "2025S-A-Q010",
-      "2026S-A-Q010"
+      "2026S-A-Q010",
+      "HIST-TECH01-2015A-Q011"
     ],
     "mappingEvidence": [
       {
@@ -38,6 +39,24 @@
           "processed topic and notes",
           "2026S_FE-A_Answers.pdf Q10"
         ]
+      },
+      {
+        "questionId": "HIST-TECH01-2015A-Q011",
+        "reason": "A cache miss means the required block is absent from cache but available in the next memory level.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 75,
+              "printedPage": 70,
+              "heading": "3-5-1 High Speed Memory Access / buffer memory",
+              "textSha256": "ae201b64c9e624c0b66d395c28ecb9fd1da89d75a057ba2ce14677dc9cf79597",
+              "checkedExcerpt": "on the basis of the directions of hardware or OS (software for controlling the computer), the data is loaded from main memory into the corresponding block of cache"
+            }
+          ]
+        ]
       }
     ],
     "videos": [
@@ -64,7 +83,13 @@
     "questionIds": [
       "2024S-A-Q001",
       "2025S-A-Q002",
-      "2026S-A-Q002"
+      "2026S-A-Q002",
+      "HIST-TECH01-2016S-Q001",
+      "HIST-TECH01-2014S-Q001",
+      "HIST-TECH01-2011A-Q001",
+      "HIST-TECH01-2009A-Q001",
+      "HIST-TECH01-2008S-Q001",
+      "HIST-TECH01-2007S-Q001"
     ],
     "mappingEvidence": [
       {
@@ -92,6 +117,138 @@
           "original question image",
           "2026S_FE-A_Answers.pdf Q2",
           "independent calculation or truth-table review"
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2016S-Q001",
+        "reason": "0.B1 base16 = 11/16 +1/256 =177/256. Each hex digit corresponds to four bits, giving 0.10110001 base2.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 29,
+              "printedPage": 24,
+              "heading": "2-2 Radix and Radix Conversion",
+              "textSha256": "27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419",
+              "checkedExcerpt": "ure 1-7 Decimal numbers and corresponding octal numbers (3) Hexadecimal numbers Hexadecimal numbers are numerical values that are represented by using sixteen numbers from 0 through 9, and A(10), B(11), C(12), D(13), E(14), and F(15) and that are carried over when 16 is reached. (1A6.E)16 = 1×162 + 10×161 + 6×160 + 14×16−1 = (422.875)10 * 16 in ( )16 shows that it is a hexadecimal number."
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 30,
+              "printedPage": 25,
+              "heading": "2-2 Radix and Radix Conversion / grouping binary digits",
+              "textSha256": "752f89c392b5b641578b5750dc2e3f2550795c32361c897ee87ca9ffed6828d9",
+              "checkedExcerpt": " the weight of each digit, and therefore the information of 4 digits of binary numbers corresponds to 1 digit of hexadecimal numbers. Binary number: (1011100.11101)2 ↓ (0101 1100 . 11100 1000)2 ↓ ... Separate after every 4 digits with radix point as reference. (0 is supplemented in the parts that fall short of 4 digits.) Hexadecimal number: ( 5 C . E 8 )16 ... Convert every 4 digits"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2014S-Q001",
+        "reason": "Read the original subscripts: 6140 base 8 + 10011100 base 2 - C46 base 16.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "calculation",
+              "operands": [
+                3168,
+                156,
+                3142
+              ],
+              "result": 182,
+              "optionsDecimal": {
+                "a": 181,
+                "b": 174,
+                "c": 180,
+                "d": 182
+              }
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2011A-Q001",
+        "reason": "Read the source subscripts:753 base8 minus A6 base16. They are491 and166 in decimal, giving325.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 29,
+              "printedPage": 24,
+              "heading": "2-2 Radix and Radix Conversion",
+              "textSha256": "27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419",
+              "checkedExcerpt": "ure 1-7 Decimal numbers and corresponding octal numbers (3) Hexadecimal numbers Hexadecimal numbers are numerical values that are represented by using sixteen numbers from 0 through 9, and A(10), B(11), C(12), D(13), E(14), and F(15) and that are carried over when 16 is reached. (1A6.E)16 = 1×162 + 10×161 + 6×160 + 14×16−1 = (422.875)10 * 16 in ( )16 shows that it is a hexadecimal number."
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2009A-Q001",
+        "reason": "3A.5C base16 =3*16+10+5/16+12/256=3735/64=58.359375.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 29,
+              "printedPage": 24,
+              "heading": "2-2 Radix and Radix Conversion",
+              "textSha256": "27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419",
+              "checkedExcerpt": "ure 1-7 Decimal numbers and corresponding octal numbers (3) Hexadecimal numbers Hexadecimal numbers are numerical values that are represented by using sixteen numbers from 0 through 9, and A(10), B(11), C(12), D(13), E(14), and F(15) and that are carried over when 16 is reached. (1A6.E)16 = 1×162 + 10×161 + 6×160 + 14×16−1 = (422.875)10 * 16 in ( )16 shows that it is a hexadecimal number."
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2008S-Q001",
+        "reason": "2A.4C base16 has binary0010 1010.0100 1100, so positive powers are5,3,1 and negative powers-2,-5,-6.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 29,
+              "printedPage": 24,
+              "heading": "2-2 Radix and Radix Conversion",
+              "textSha256": "27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419",
+              "checkedExcerpt": "ure 1-7 Decimal numbers and corresponding octal numbers (3) Hexadecimal numbers Hexadecimal numbers are numerical values that are represented by using sixteen numbers from 0 through 9, and A(10), B(11), C(12), D(13), E(14), and F(15) and that are carried over when 16 is reached. (1A6.E)16 = 1×162 + 10×161 + 6×160 + 14×16−1 = (422.875)10 * 16 in ( )16 shows that it is a hexadecimal number."
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 30,
+              "printedPage": 25,
+              "heading": "2-2 Radix and Radix Conversion / grouping binary digits",
+              "textSha256": "752f89c392b5b641578b5750dc2e3f2550795c32361c897ee87ca9ffed6828d9",
+              "checkedExcerpt": " the weight of each digit, and therefore the information of 4 digits of binary numbers corresponds to 1 digit of hexadecimal numbers. Binary number: (1011100.11101)2 ↓ (0101 1100 . 11100 1000)2 ↓ ... Separate after every 4 digits with radix point as reference. (0 is supplemented in the parts that fall short of 4 digits.) Hexadecimal number: ( 5 C . E 8 )16 ... Convert every 4 digits"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2007S-Q001",
+        "reason": "0.248 base16 =2/16+4/256+8/4096 =1/8+1/64+1/512=73/512.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 29,
+              "printedPage": 24,
+              "heading": "2-2 Radix and Radix Conversion",
+              "textSha256": "27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419",
+              "checkedExcerpt": "ure 1-7 Decimal numbers and corresponding octal numbers (3) Hexadecimal numbers Hexadecimal numbers are numerical values that are represented by using sixteen numbers from 0 through 9, and A(10), B(11), C(12), D(13), E(14), and F(15) and that are carried over when 16 is reached. (1A6.E)16 = 1×162 + 10×161 + 6×160 + 14×16−1 = (422.875)10 * 16 in ( )16 shows that it is a hexadecimal number."
+            }
+          ]
         ]
       }
     ],
@@ -175,7 +332,8 @@
     "summary": "Distinguish instruction storage, the next instruction address, flags and the stack pointer.",
     "questionIds": [
       "2025S-A-Q009",
-      "2026S-A-Q009"
+      "2026S-A-Q009",
+      "HIST-TECH01-2019A-Q012"
     ],
     "mappingEvidence": [
       {
@@ -194,6 +352,24 @@
           "original question image",
           "2026S_FE-A_Answers.pdf Q9",
           "independent calculation or truth-table review"
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2019A-Q012",
+        "reason": "The arrows carry the fetched instruction from main memory into a register, then to the instruction decoder.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 52,
+              "printedPage": 47,
+              "heading": "3-1 Configuration of CPU",
+              "textSha256": "97daacc48a2f1d7065a3797a62a0b4b6c3c2156c8a7a712b4c516a22df80c5ba",
+              "checkedExcerpt": "main registers (details of each register are explained later) are as follows: • Instruction register It stores the instructions to be executed. It is composed of an instruction part and an address part. • Instruction address register (program counter, program register) It stores the address (storing position in the main memory) of the instruction to be executed next. • General register It is used for various purposes such as storing the data to be processed. • Accumulator It stores the data for performing computations. It is sometimes also substituted with a general register. • Base address register It stores the beginning"
+            }
+          ]
         ]
       }
     ],
@@ -269,7 +445,31 @@
       "2024A-A-Q016",
       "2024S-A-Q016",
       "2025A-A-Q016",
-      "2026S-A-Q017"
+      "2026S-A-Q017",
+      "HIST-TECH01-2019S-Q023",
+      "HIST-TECH01-2018A-Q001",
+      "HIST-TECH01-2018A-Q022",
+      "HIST-TECH01-2018S-Q023",
+      "HIST-TECH01-2017A-Q021",
+      "HIST-TECH01-2017S-Q024",
+      "HIST-TECH01-2016A-Q022",
+      "HIST-TECH01-2016S-Q002",
+      "HIST-TECH01-2013A-Q002",
+      "HIST-TECH01-2009A-Q017",
+      "HIST-TECH01-2008A-Q009",
+      "HIST-TECH01-2008A-Q010",
+      "HIST-TECH01-2008S-Q018",
+      "HIST-TECH01-2007A-Q019",
+      "HIST-TECH01-2022S-Q001",
+      "HIST-TECH01-2021A-Q021",
+      "HIST-TECH01-2021S-Q001",
+      "HIST-TECH01-2021S-Q022",
+      "HIST-TECH01-2020A-Q002",
+      "HIST-TECH01-2020A-Q022",
+      "HIST-TECH01-2020S-Q022",
+      "HIST-TECH01-2020S-Q023",
+      "HIST-TECH01-2019A-Q001",
+      "HIST-TECH01-2009A-Q008"
     ],
     "mappingEvidence": [
       {
@@ -316,6 +516,771 @@
           "2026S_FE-A_Answers.pdf Q17",
           "independent calculation or truth-table review"
         ]
+      },
+      {
+        "questionId": "HIST-TECH01-2019S-Q023",
+        "reason": "Trace the first gate as A AND B and the second as A OR B, followed by an OR of both results.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "heading": "3-4-1 Logic Circuit",
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "(Arithmetic and Logical Unit) is a unit that performs arithmetic operations and logical operations. This unit is composed of various circuits. 3-4-1 Logic Circuit Logic circuit is a circuit that performs logical operations for logical processing of instructions by computers. Logical operations refer to arithmetic operations that have only two truth values of True (1) and False (0). [Main logical operations] 1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False "
+            },
+            {
+              "kind": "computed-truth-table",
+              "variables": [
+                "A",
+                "B"
+              ],
+              "rows": [
+                [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  1,
+                  1
+                ]
+              ]
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2018A-Q001",
+        "reason": "XOR is true for exactly one true input.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "heading": "3-4-1 Logic Circuit",
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "(Arithmetic and Logical Unit) is a unit that performs arithmetic operations and logical operations. This unit is composed of various circuits. 3-4-1 Logic Circuit Logic circuit is a circuit that performs logical operations for logical processing of instructions by computers. Logical operations refer to arithmetic operations that have only two truth values of True (1) and False (0). [Main logical operations] 1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False "
+            },
+            {
+              "kind": "computed-truth-table",
+              "variables": [
+                "p",
+                "q"
+              ],
+              "rows": [
+                [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0,
+                  0
+                ]
+              ]
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2018A-Q022",
+        "reason": "E is the XOR of A=1 and B=0, so E=1.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "heading": "3-4-1 Logic Circuit",
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "(Arithmetic and Logical Unit) is a unit that performs arithmetic operations and logical operations. This unit is composed of various circuits. 3-4-1 Logic Circuit Logic circuit is a circuit that performs logical operations for logical processing of instructions by computers. Logical operations refer to arithmetic operations that have only two truth values of True (1) and False (0). [Main logical operations] 1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False "
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2018S-Q023",
+        "reason": "The lower NAND gives NOT(B AND C); the final NOR negates its OR with A.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "heading": "3-4-1 Logic Circuit",
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "(Arithmetic and Logical Unit) is a unit that performs arithmetic operations and logical operations. This unit is composed of various circuits. 3-4-1 Logic Circuit Logic circuit is a circuit that performs logical operations for logical processing of instructions by computers. Logical operations refer to arithmetic operations that have only two truth values of True (1) and False (0). [Main logical operations] 1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False "
+            },
+            {
+              "kind": "computed-truth-table",
+              "variables": [
+                "A",
+                "B",
+                "C"
+              ],
+              "rows": [
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1,
+                  0,
+                  0
+                ]
+              ]
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2017A-Q021",
+        "reason": "Trace the source circuit as Z = NOT(NOT X OR NOT(X OR NOT Y)).",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "heading": "3-4-1 Logic Circuit",
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "(Arithmetic and Logical Unit) is a unit that performs arithmetic operations and logical operations. This unit is composed of various circuits. 3-4-1 Logic Circuit Logic circuit is a circuit that performs logical operations for logical processing of instructions by computers. Logical operations refer to arithmetic operations that have only two truth values of True (1) and False (0). [Main logical operations] 1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False "
+            },
+            {
+              "kind": "computed-truth-table",
+              "variables": [
+                "X",
+                "Y"
+              ],
+              "rows": [
+                [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  1,
+                  1
+                ]
+              ]
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2017S-Q024",
+        "reason": "Equality of two input bits is XNOR: true for 00 and 11, false for 01 and 10.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "heading": "3-4-1 Logic Circuit",
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "(Arithmetic and Logical Unit) is a unit that performs arithmetic operations and logical operations. This unit is composed of various circuits. 3-4-1 Logic Circuit Logic circuit is a circuit that performs logical operations for logical processing of instructions by computers. Logical operations refer to arithmetic operations that have only two truth values of True (1) and False (0). [Main logical operations] 1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False "
+            },
+            {
+              "kind": "computed-truth-table",
+              "variables": [
+                "X",
+                "Y"
+              ],
+              "rows": [
+                [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1,
+                  1
+                ]
+              ]
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2016A-Q022",
+        "reason": "The middle OR produces NOT A OR NOT B. ANDing that with A gives A AND NOT B; ANDing it with B gives NOT A AND B.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "heading": "3-4-1 Logic Circuit",
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "(Arithmetic and Logical Unit) is a unit that performs arithmetic operations and logical operations. This unit is composed of various circuits. 3-4-1 Logic Circuit Logic circuit is a circuit that performs logical operations for logical processing of instructions by computers. Logical operations refer to arithmetic operations that have only two truth values of True (1) and False (0). [Main logical operations] 1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False "
+            },
+            {
+              "kind": "computed-truth-table",
+              "variables": [
+                "A",
+                "B"
+              ],
+              "rows": [
+                [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0,
+                  0
+                ]
+              ]
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2016S-Q002",
+        "reason": "The original equation is (A AND B) OR X OR (B AND C) = (A AND B) OR (NOT A AND C).",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "heading": "3-4-1 Logic Circuit",
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "(Arithmetic and Logical Unit) is a unit that performs arithmetic operations and logical operations. This unit is composed of various circuits. 3-4-1 Logic Circuit Logic circuit is a circuit that performs logical operations for logical processing of instructions by computers. Logical operations refer to arithmetic operations that have only two truth values of True (1) and False (0). [Main logical operations] 1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False "
+            },
+            {
+              "kind": "computed-truth-table",
+              "variables": [
+                "A",
+                "B",
+                "C"
+              ],
+              "rows": [
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  1,
+                  1,
+                  1
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ]
+              ]
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2013A-Q002",
+        "reason": "XOR accepts exactly 01 and 10.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 69,
+              "printedPage": 64,
+              "heading": "3-4-1 Logic Circuit / XOR and logical design",
+              "textSha256": "b26e0590632468a146244504ce22b38c51e1c61bfd1a94cd92adb3789271befd",
+              "checkedExcerpt": "le circuits as in the case of NAND circuits and NOR circuits. In such cases, it is called logical design (or circuit design) to think about the combination of basic circuits for achieving the targeted results (truth values). In logical design, logical expressions (logical functions) obtained from the truth tables are simplified using the rules of logical operations (logical laws), and the optimum combination of basic circuits is determined. (“Optimum” means that the design is performed in consideration of performance, efficiency, and cost."
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2009A-Q017",
+        "reason": "Each self-connected NAND inverts its input. The last NAND receives NOT X and NOT Y.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "heading": "3-4-1 Logic Circuit / Main logical laws",
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8",
+              "checkedExcerpt": "  • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determi"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2008A-Q009",
+        "reason": "Distribute (X OR Y) AND (X OR Z) to obtain X OR (Y AND Z). The extra XY and XZ terms are absorbed by X.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "heading": "3-4-1 Logic Circuit / Main logical laws",
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8",
+              "checkedExcerpt": "  • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determi"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2008A-Q010",
+        "reason": "At least two of three inputs must be 1. Every such assignment has a true pairwise product.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "heading": "3-4-1 Logic Circuit / Main logical laws",
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8",
+              "checkedExcerpt": "  • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determi"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2008S-Q018",
+        "reason": "Trace both input rails and all connection dots. W=NOT A AND NOT B, X=A AND NOT B, Y=NOT A AND B, Z=A AND B.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "heading": "3-4-1 Logic Circuit / Main logical operations",
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "ues of True (1) and False (0). [Main logical operations] 1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False (0) when both input values are False (0), or else the output is True (1) (when either one is True (1)). 3) Negation operation (NOT) The output becomes False (0) when the input value is True (1), and the output is True (1) when the input value is False (0). 4) Exclusive logical sum (Exclusive OR) operation (XOR or EOR) The output becomes False (0) when both input values are the same"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2007A-Q019",
+        "reason": "Reference X=(A AND B) OR NOT B = (A OR NOT B) AND (B OR NOT B) = A OR NOT B.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "heading": "3-4-1 Logic Circuit / Main logical laws",
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8",
+              "checkedExcerpt": "  • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determi"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2022S-Q001",
+        "reason": "NOR(A,B)=NOT A AND NOT B. A gives NOT A AND (A OR NOT B), which reduces to this function.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "heading": "3-4-1 Logic Circuit / Main logical laws",
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8",
+              "checkedExcerpt": "  • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determi"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2021A-Q021",
+        "reason": "The diagram ORs the AND(A,B) result with OR(A,B). Its output is (AB) OR A OR B = A OR B.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "heading": "3-4-1 Logic Circuit / Main logical laws",
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8",
+              "checkedExcerpt": "  • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determi"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2021S-Q001",
+        "reason": "Distribute (x OR y) AND (x OR z): x OR xy OR xz OR yz. Absorb xy and xz into x.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "heading": "3-4-1 Logic Circuit / Main logical laws",
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8",
+              "checkedExcerpt": "  • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determi"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2021S-Q022",
+        "reason": "The stem asks which circuit is NOT an implementation of AB OR CD. A directly ORs products; B applies De Morgan to NAND products; D inverts both NAND outputs at OR inputs. All three implement AB OR CD.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 68,
+              "printedPage": 63,
+              "heading": "3-4-1 Logic Circuit / NAND and NOR",
+              "textSha256": "0d4b63b814973a25037c28e66d92f6e2f65667d47f397e9e8a6a794d9e6f12bd",
+              "checkedExcerpt": " as shown below. X NOT X Figure 1-28 NOT circuit 0 1 1 0 4) NAND circuit This circuit performs negative logical product (negative AND) operation (NAND). NAND operation is the arithmetic operation that negates the results of AND operation. The truth table and MIL symbol of NAND circuit are as shown below. NAND circuit is formed by combining AND circuit and NOT circuit. X Y X NAND Y Figure 1-29 NAND circuit 0 0 1 0 1 1 1 0 1 1 1 0 5) NOR circuit This circuit performs negative logical sum operation (NOR). NOR operation is the arithmetic operation that negates the results of OR operation. The truth table and MIL symbol of NOR circuit are as shown below. NO"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "heading": "3-4-1 Logic Circuit / Main logical laws",
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8",
+              "checkedExcerpt": "  • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determi"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2020A-Q002",
+        "reason": "A = p AND (NOT p OR q) AND NOT q = (p AND NOT p AND NOT q) OR (p AND q AND NOT q) = 0.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "heading": "3-4-1 Logic Circuit / Main logical laws",
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8",
+              "checkedExcerpt": "  • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determi"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2020A-Q022",
+        "reason": "Negate each input of the existing OR: NOT X OR NOT Y = NOT(X AND Y), NAND.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 68,
+              "printedPage": 63,
+              "heading": "3-4-1 Logic Circuit / NOT and NAND",
+              "textSha256": "0d4b63b814973a25037c28e66d92f6e2f65667d47f397e9e8a6a794d9e6f12bd",
+              "checkedExcerpt": " Y X OR Y Figure 1-27 OR circuit 0 0 0 0 1 1 1 0 1 1 1 1 3) NOT circuit This circuit performs negation operation (NOT). The truth table and MIL symbol of NOT circuit are as shown below. X NOT X Figure 1-28 NOT circuit 0 1 1 0 4) NAND circuit This circuit performs negative logical product (negative AND) operation (NAND). NAND operation is the arithmetic operation that negates the results of AND operation. The truth table and MIL symbol of NAND circuit are as shown below. NAND circuit is formed by combining AND circuit and NOT circuit. X Y X NAND Y Figure 1-29 NAND circuit 0 0 1 0 1 1 1 0 1 1 1 0 5) NOR circuit This circuit performs negative logical sum "
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "heading": "3-4-1 Logic Circuit / Main logical laws",
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8",
+              "checkedExcerpt": "  • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determi"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2020S-Q022",
+        "reason": "The reference NANDs x,y and ORs the result with NOT z (bubble on the lower OR input).",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "heading": "3-4-1 Logic Circuit / Main logical laws",
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8",
+              "checkedExcerpt": "  • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determi"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2020S-Q023",
+        "reason": "XOR requires at least one input true but not both: (A OR B) AND NOT(A AND B).",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "heading": "3-4-1 Logic Circuit / Main logical laws",
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8",
+              "checkedExcerpt": "  • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determi"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 69,
+              "printedPage": 64,
+              "heading": "3-4-1 Logic Circuit / XOR",
+              "textSha256": "b26e0590632468a146244504ce22b38c51e1c61bfd1a94cd92adb3789271befd",
+              "checkedExcerpt": "64 6) XOR circuit This circuit performs exclusive logical sum operation (XOR). The truth table and MIL symbol of XOR circuit are as shown below. X Y X XOR Y Figure 1-31 XOR circuit 0 0 0 0 1 1 1 0 1 1 1 0 XOR circuit is also formed by combining the basic circuits. However, it cannot be formed with a combination of simple circuits as in the case of NAND circuits and NOR circuits. In such cases, it is called logical design (or circuit design) to think about the combination of basic circuits for achieving the targeted results (truth values). In logical design, logical expressions (logical functions) obtained from the truth tables are s"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2019A-Q001",
+        "reason": "B = pq OR NOT p OR p NOT q = p(q OR NOT q) OR NOT p = 1.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "heading": "3-4-1 Logic Circuit / Main logical laws",
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8",
+              "checkedExcerpt": "  • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determi"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2009A-Q008",
+        "reason": "The original units occur A,B,C left to right, each XORing its incoming four-bit word with its stored key. Input1101, keys0001,0101,1101 produce0100.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "heading": "3-4-1 Logic Circuit / Exclusive OR",
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "he output is True (1) when the input value is False (0). 4) Exclusive logical sum (Exclusive OR) operation (XOR or EOR) The output becomes False (0) when both input values are the same, and the output is True (1) when both input values are different. The table below summarizes the relations between input and output of the respective logical operation. This kind of table is referred to as a truth table. Input AND OR NOT XOR X Y (X AND Y) (X OR Y) (NOT X) (X XOR Y) True (1) True (1) True (1) True (1) False (0) False (0) True (1) False (0) False (0) True (1) False (0) True (1) False (0) True (1) False (0) True (1) True (1) True (1) False (0) False (0) Fal"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 69,
+              "printedPage": 64,
+              "heading": "3-4-1 XOR circuit",
+              "textSha256": "b26e0590632468a146244504ce22b38c51e1c61bfd1a94cd92adb3789271befd",
+              "checkedExcerpt": "64 6) XOR circuit This circuit performs exclusive logical sum operation (XOR). The truth table and MIL symbol of XOR circuit are as shown below. X Y X XOR Y Figure 1-31 XOR circuit 0 0 0 0 1 1 1 0 1 1 1 0 XOR circuit is also formed by combining the basic circuits. However, it cannot be formed with a combination of simple circuits as in the case of NAND circuits and NOR circuits. In such cases, it is called logical design (or circuit design) to think about the combination of basic circuits for achieving the targeted results (truth values). In logical design, logical expressions (logical functions) ob"
+            }
+          ]
+        ]
       }
     ],
     "videos": [
@@ -352,7 +1317,8 @@
     "summary": "Add seek, average rotational latency, controller overhead and transfer time.",
     "questionIds": [
       "2024S-A-Q009",
-      "2025A-A-Q009"
+      "2025A-A-Q009",
+      "HIST-TECH01-2010A-Q016"
     ],
     "mappingEvidence": [
       {
@@ -372,6 +1338,24 @@
           "2025A_FE-A_Answers.pdf Q9",
           "independent calculation or truth-table review"
         ]
+      },
+      {
+        "questionId": "HIST-TECH01-2010A-Q016",
+        "reason": "Fragmented files require additional disk-head movement across separated areas. Defragmentation reorganizes them into consecutive areas to reduce access time.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 91,
+              "printedPage": 85,
+              "heading": "4-1-3 Average Access Time of Magnetic Disk Drive",
+              "textSha256": "0970994f39041976e4dce49cc427e99737273794a379fca451b3902a96cf73ae",
+              "checkedExcerpt": "e will become longer. Therefore, it is necessary to perform defragmentation in order to eliminate fragmentation. Example: Calculate the average access time for reading a data block of 2,000 bytes recorded in a magnetic disk drive having the following specifications. Rotational speed 3,000 rotations/minute Bytes/track 10,000 bytes Average seek time 30 milliseconds"
+            }
+          ]
+        ]
       }
     ],
     "videos": []
@@ -384,7 +1368,8 @@
     "anchor": "disk-access",
     "summary": "Distinguish rearranging file blocks for mechanical access from deleting files or preventing hardware failures.",
     "questionIds": [
-      "2024A-A-Q010"
+      "2024A-A-Q010",
+      "HIST-TECH01-2017S-Q014"
     ],
     "mappingEvidence": [
       {
@@ -394,6 +1379,33 @@
           "original question image",
           "2024A_FE-A_Answers.pdf Q10",
           "independent calculation or truth-table review"
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2017S-Q014",
+        "reason": "Scattering parts of a saved file into non-contiguous disk clusters is fragmentation.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 91,
+              "printedPage": 85,
+              "heading": "4-1-3 Access Time of Magnetic Disk Drive",
+              "textSha256": "0970994f39041976e4dce49cc427e99737273794a379fca451b3902a96cf73ae",
+              "checkedExcerpt": "the average access time. Moreover, when data is recorded in a piecemeal manner (fragmentation), the average access time will become longer. Therefore, it is necessary to perform defragmentation in order to eliminate fragmentation. Example: Calculate the average access time for reading a data block of 2,000 bytes recorded in a magnetic disk drive having the following specifications. Rotational speed 3,000 rotations/minute Bytes/track 10,000 bytes Average seek time 30 milliseconds"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 195,
+              "printedPage": 185,
+              "heading": "1-1 Systematic Classification / Service programs",
+              "textSha256": "b2ca21b1bbe5588659cd3c9789f617b5dfa9d6b2b23db1990b644b00314cb615",
+              "checkedExcerpt": "store it to their original multiple files, and a disk management utility (e.g., disk defragmentation of Windows) that provide functions for the effective use of a hard disk."
+            }
+          ]
         ]
       }
     ],
@@ -407,7 +1419,9 @@
     "anchor": "interface-types",
     "summary": "Recognize the USB logical device limit and distinguish storage and display interfaces.",
     "questionIds": [
-      "2024S-A-Q010"
+      "2024S-A-Q010",
+      "HIST-TECH01-2021S-Q014",
+      "HIST-TECH01-2018A-Q013"
     ],
     "mappingEvidence": [
       {
@@ -417,6 +1431,54 @@
           "original question image",
           "2024S_FE-A_Answers.pdf Q10",
           "independent calculation or truth-table review"
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2021S-Q014",
+        "reason": "USB 3.0 SuperSpeed has a nominal signaling rate of 5 Gbit/s.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "primary-source",
+              "url": "https://usb.org/document-library/inter-chip-supplement-usb-revision-30-specification-revision-102",
+              "finding": "USB-IF specifies that USB 3.0 adds 5 Gbps transfer support.",
+              "checkedAt": "2026-10-22"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 114,
+              "printedPage": 108,
+              "heading": "5-5-2 Types of Input/Output Interface",
+              "textSha256": "28d8db735ce9cb3b4b91def979f363b7ee8c78b397f21ebad31de5ce1e179a49",
+              "checkedExcerpt": "addition to the three types of data transfer modes of USB 2.0, SuperSpeed mode (5,120Mbps) is added. Also power management is improved in the standard. (4) IEEE 1394 IEEE 1394 is a serial interface that allows high-speed transfer of data and is used for connecting multimedia-related devices such as digital cameras. It is available in three types of data transfer modes (100 Mbps, 200 Mbps, and 400 Mbps), and its main characteristic is that devices can be connected even without going through a PC. This standard is owned by IEEE (Institute of Electrical and Electronics Engineers), and Apple’s FireWire and Sony’s i.Link are tr"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2018A-Q013",
+        "reason": "USB 3.0 SuperSpeed has a nominal signaling rate of 5 Gbit/s.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "primary-source",
+              "url": "https://usb.org/document-library/inter-chip-supplement-usb-revision-30-specification-revision-102",
+              "finding": "USB-IF specifies that USB 3.0 adds 5 Gbps transfer support.",
+              "checkedAt": "2026-10-22"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 114,
+              "printedPage": 108,
+              "heading": "5-5-2 Types of Input/Output Interface",
+              "textSha256": "28d8db735ce9cb3b4b91def979f363b7ee8c78b397f21ebad31de5ce1e179a49",
+              "checkedExcerpt": "addition to the three types of data transfer modes of USB 2.0, SuperSpeed mode (5,120Mbps) is added. Also power management is improved in the standard. (4) IEEE 1394 IEEE 1394 is a serial interface that allows high-speed transfer of data and is used for connecting multimedia-related devices such as digital cameras. It is available in three types of data transfer modes (100 Mbps, 200 Mbps, and 400 Mbps), and its main characteristic is that devices can be connected even without going through a PC. This standard is owned by IEEE (Institute of Electrical and Electronics Engineers), and Apple’s FireWire and Sony’s i.Link are tr"
+            }
+          ]
         ]
       }
     ],

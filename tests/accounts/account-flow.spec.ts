@@ -1,5 +1,7 @@
 import { test, expect, type BrowserContext, type Page } from '@playwright/test';
 import release from '../../src/content/hardware-source-release.json' with { type: 'json' };
+import historicalRelease from '../../docs/development/evidence/historical-release-36.json' with {type:'json'};
+import explanations from '../../src/content/explanations.json' with {type:'json'};
 const diskFigureId=release.lessons.find(l=>l.slug==='auxiliary-storage')!.pages.flatMap(p=>p.blocks).find(b=>b.regionIds.includes('figure-1-42'))!.id;
 
 test.beforeAll(() => {
@@ -14,7 +16,10 @@ async function googleSignIn(page: Page, email: string, name: string) {
   await popup.locator('#email-input').fill(email);
   await popup.locator('#display-name-input').fill(name);
   await popup.locator('#sign-in').click();
-  await expect(page.getByRole('heading', { name: `Learning with ${name}` })).toBeVisible();
+  // The real Google popup loader also runs inside the local emulator. Wait for
+  // its authenticated UI signal using the existing sync deadline; no mock,
+  // skipped assertion or production request is substituted for sign-in.
+  await expect(page.getByRole('heading', { name: `Learning with ${name}` })).toBeVisible({ timeout: 20000 });
   await expect(page.locator('#account').getByRole('status')).toHaveText('Progress backed up', { timeout: 20000 });
 }
 async function emulatorTraffic(context: BrowserContext) {
@@ -27,6 +32,22 @@ async function emulatorTraffic(context: BrowserContext) {
   });
   return blocked;
 }
+
+test('authorized historical answer and bookmark synchronize without changing existing progress identities',async({browser})=>{
+  const a=await browser.newContext(),b=await browser.newContext();await emulatorTraffic(a);await emulatorTraffic(b);
+  const first=await a.newPage(),second=await b.newPage(),email=`historical-${Date.now()}@example.test`;
+  const entry=historicalRelease.records.find(r=>r.id==='HIST-TECH01-2019A-Q012')!,e=explanations.find(e=>e.questionId===entry.id)!;
+  await first.goto(`/practice/${entry.conceptId}/?question=${entry.id}`);
+  await first.getByRole('radio',{name:new RegExp(`^Option ${e.answer.toUpperCase()}:`)}).check();await first.getByRole('button',{name:'Check answer'}).click();
+  await expect(first.getByText('✓ That’s correct.')).toBeVisible();await first.getByRole('button',{name:'◇ Bookmark'}).click();
+  await first.goto('/progress/');await googleSignIn(first,email,'Historical Student');
+  await second.goto('/progress/');await googleSignIn(second,email,'Historical Student');
+  await expect(second.getByRole('button',{name:`Remove bookmark ${entry.id}`})).toBeVisible();
+  await second.goto(`/practice/${entry.conceptId}/?question=${entry.id}`);
+  await expect(second.getByText('✓ That’s correct.')).toBeVisible();await expect(second.getByRole('button',{name:'◆ Bookmarked'})).toBeVisible();
+  await expect(second.locator('.answer-summary')).toHaveText(e.summary);
+  await a.close();await b.close();
+});
 
 test('Google popup, guest migration, two devices, offline recovery and account switching', async ({ browser }, testInfo) => {
   const firstContext = await browser.newContext();
