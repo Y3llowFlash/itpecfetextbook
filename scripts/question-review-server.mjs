@@ -6,10 +6,11 @@ import {execFileSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
 const candidateMode=process.argv.includes('--approval-candidates');
 const batch2=process.argv.includes('--batch2');
-if(process.argv.slice(2).some(arg=>!['--approval-candidates','--batch2'].includes(arg)) || (batch2&&!candidateMode))throw Error('Use --approval-candidates with optional --batch2');
-const candidates=candidateMode?JSON.parse(execFileSync('python',['scripts/approval_candidates.py','check',...(batch2?['--batch','2']:[])],{encoding:'utf8',maxBuffer:2_000_000})):null;
+const batch3=process.argv.includes('--batch3');
+if(process.argv.slice(2).some(arg=>!['--approval-candidates','--batch2','--batch3'].includes(arg)) || ((batch2||batch3)&&!candidateMode) || (batch2&&batch3))throw Error('Use --approval-candidates with one optional batch selection');
+const candidates=candidateMode?JSON.parse(execFileSync('python',['scripts/approval_candidates.py','check',...(batch3?['--batch','3']:batch2?['--batch','2']:[])],{encoding:'utf8',maxBuffer:2_000_000})):null;
 const root = await realpath('.local/historical/technology-01');
-const port = Number(process.env.QUESTION_REVIEW_PORT || (batch2?4330:4319));
+const port = Number(process.env.QUESTION_REVIEW_PORT || (batch3?4334:batch2?4330:4319));
 if(!Number.isInteger(port)||port<1024||port>65535)throw Error('Invalid owner-review port');
 const server = createServer(async (req,res) => {
   try {
