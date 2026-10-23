@@ -19,9 +19,7 @@ if(batch===3&&!dryRun)execFileSync('python',['scripts/release_3.py','publication
 const nativeManifest=JSON.parse(await readFile('.local/historical/technology-01/manifest.json','utf8'));
 // This reviewed source must pass the exact prepared candidate gate, even if its
 // optional editorial marker or package was accidentally removed. No fallback.
-const finalPackage=batch===4
-  ? JSON.parse(execFileSync('python',['scripts/hardware_batch04.py','publisher-check'],{encoding:'utf8',maxBuffer:2_000_000}))
-  : nativeManifest.sourceSha256==='5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1'
+const finalPackage=nativeManifest.sourceSha256==='5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1'
   ? JSON.parse(execFileSync('python',['scripts/approval_candidates.py','check','--publisher-check','--batch',String(batch)],{encoding:'utf8',maxBuffer:2_000_000})) : null;
 if((batch===2||batch===3||batch===4)&&!finalPackage)throw Error('The selected batch requires its exact source-bound candidate package');
 const finalScope=finalPackage?new Set<string>([...finalPackage.questionIds,...(finalPackage.releasedQuestionIds||[])]):null;

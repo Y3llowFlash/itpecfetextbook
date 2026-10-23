@@ -174,6 +174,7 @@ def prepare():
 def check(publisher=False,batch=1):
     if batch==2:return check_batch02(publisher)
     if batch==3:return check_batch03(publisher)
+    if batch==4:return check_batch04(publisher)
     root=editorial.folder();context=editorial.inputs();manifest=h.read_json(root/'manifest.json')
     if not manifest or manifest.get('schema')!='itpec-final-approval-candidates-v1' or manifest.get('questionIds')!=context['questionIds'] or manifest.get('conceptCounts')!=context['conceptCounts'] or len(manifest.get('candidates',[]))!=36 or manifest.get('privateOnly') is not True or manifest.get('readOnly') is not True or manifest.get('publicationApprovalGranted') is not False:
         raise ValueError('Missing, expanded or unapproved-scope candidate package')
@@ -594,23 +595,23 @@ def batch03_associations(context,records,reviews,concepts):
     return result
 
 
-def validate_batch03_reviews(context,records,reviews,concepts,associations,*,prepare=False,existing_concepts=None):
+def validate_batch03_reviews(context,records,reviews,concepts,associations,*,prepare=False,existing_concepts=None,root=None,expected_highlights=14,review_schema='itpec-batch03-final-source-review-v1'):
     """Combine the existing structural highlight gate with explicit source review.
 
     Missing/stale review evidence fails closed. A genuine recorded source finding
     blocks the affected candidate; it is never relabeled as owner approval.
     """
-    root=batch03_folder();plan=root/'concept-plan.json'
+    root=root or batch03_folder();plan=root/'concept-plan.json'
     if prepare:save(plan,concepts)
     elif h.read_json(plan)!=concepts:raise ValueError('Final concept plan changed')
     run=subprocess.run(['node',str(h.ROOT/'node_modules/tsx/dist/cli.mjs'),'scripts/historical-highlight.ts',str(plan),*([str(existing_concepts)] if existing_concepts else [])],cwd=h.ROOT,capture_output=True,text=True,encoding='utf8')
     if run.returncode:raise ValueError('Existing highlight gate failed: '+run.stderr)
     structural=json.loads(run.stdout);new=[c for c in concepts if c['newConcept']]
-    if len(structural)!=14 or {r['conceptId'] for r in structural}!={c['id'] for c in new}:raise ValueError('Exact 14 highlight gate results required')
+    if len(structural)!=expected_highlights or {r['conceptId'] for r in structural}!={c['id'] for c in new}:raise ValueError(f'Exact {expected_highlights} highlight gate results required')
     ledger=h.read_json(root/'source-review.json')
-    if not ledger or ledger.get('schema')!='itpec-batch03-final-source-review-v1' or ledger.get('sourceSha256')!=context['sourceSha256'] or ledger.get('textbookSha256')!=context['textbookSha256'] or ledger.get('nativeSnapshot')!=context['snapshot'] or ledger.get('ownerApprovalGranted') is not False:raise ValueError('Missing or stale independent final source review')
+    if not ledger or ledger.get('schema')!=review_schema or ledger.get('sourceSha256')!=context['sourceSha256'] or ledger.get('textbookSha256')!=context['textbookSha256'] or ledger.get('nativeSnapshot')!=context['snapshot'] or ledger.get('ownerApprovalGranted') is not False:raise ValueError('Missing or stale independent final source review')
     source={r['id']:r for r in records};rows=ledger.get('questions',[]);editorial=ledger.get('highlights',[])
-    if [r['id'] for r in rows]!=context['questionIds'] or len(editorial)!=14 or {r['conceptId'] for r in editorial}!={c['id'] for c in new}:raise ValueError('Final source-review scope changed')
+    if [r['id'] for r in rows]!=context['questionIds'] or len(editorial)!=expected_highlights or {r['conceptId'] for r in editorial}!={c['id'] for c in new}:raise ValueError('Final source-review scope changed')
     for row in rows:
         r=source[row['id']];v=reviews[r['id']]
         if row.get('sourceBinding')!=qa.extraction_binding(r) or row.get('reviewSha256')!=qa.object_hash(v) or row.get('visibleSha256')!=qa.object_hash(visible(r,v)) or row.get('rawTranscriptSha256')!=r['contentSha256'] or set(row.get('literalOptionWording',{}))!=set('abcd') or row.get('status') not in ['source-rechecked','correction-required'] or row.get('ownerApprovalGranted') is not False:raise ValueError('Stale image, transcription, answer or final review evidence')
@@ -627,8 +628,8 @@ def validate_batch03_reviews(context,records,reviews,concepts,associations,*,pre
     return rows,report
 
 
-def batch03_entries(context,records,reviews,concepts,associations,source_rows,report):
-    root=batch03_folder();ids=context['questionIds']
+def batch03_entries(context,records,reviews,concepts,associations,source_rows,report,*,root=None):
+    root=root or batch03_folder();ids=context['questionIds']
     bank=[q for q in h.read_json(root/'before/batch/preview/app/src/content/pilot-bank.json') if q['id'] in ids]
     answers=[e for e in h.read_json(root/'before/batch/preview/app/src/content/explanations.json') if e['questionId'] in ids]
     entries=build_entries(records,reviews,ids,associations,bank,answers,expected_count=40)
@@ -654,7 +655,7 @@ def batch03_fingerprint(context,entries,concepts,report):
     return qa.object_hash({'ids':context['questionIds'],'candidates':entries,'conceptDefinitions':concepts,'highlightIntegration':report,'sourceSha256':context['sourceSha256'],'textbookSha256':context['textbookSha256']})
 
 
-def batch03_gallery(manifest,concepts):
+def batch03_gallery(manifest,concepts,*,highlight_count=14):
     page=render_gallery(manifest,concepts);esc=lambda x:html.escape(str(x),quote=True)
     for e in manifest['candidates']:
         transcription=e['sourceTranscription']
@@ -663,12 +664,12 @@ def batch03_gallery(manifest,concepts):
         details=f'<details class="literal-source"><summary>Literal source wording and editorial clarifications</summary><p>{esc(transcription["note"])}</p><h4>Literal source options</h4><ol>{literal}</ol><h4>Editorial clarifications in the unchanged preview</h4><ul>{notes}</ul><details><summary>Preserved raw PDF text extraction</summary><pre style="white-space:pre-wrap;overflow-wrap:anywhere">{esc(transcription["immutableRawTranscript"])}</pre></details></details>'
         pattern=r'(<article\b[^>]*data-question="'+re.escape(e['id'])+r'"[\s\S]*?)(<nav aria-label="Question navigation">)'
         page=re.sub(pattern,lambda m:m[1]+details+m[2],page,count=1)
-    links='<section id="highlight-index"><h2>All 14 proposed highlights</h2><ol>'+''.join(f'<li><a href="#highlight-{esc(r["conceptId"])}">{esc(r["conceptId"])}</a></li>' for r in manifest['highlightIntegration'])+'</ol></section>'
+    links=f'<section id="highlight-index"><h2>All {highlight_count} proposed highlights</h2><ol>'+''.join(f'<li><a href="#highlight-{esc(r["conceptId"])}">{esc(r["conceptId"])}</a></li>' for r in manifest['highlightIntegration'])+'</ol></section>'
     cards=[]
     for row in manifest['highlightIntegration']:
         review=row['editorialReview'];ids=' · '.join(f'<a href="#{esc(i)}">{esc(i)}</a>' for i in review['questionIds'])
         cards.append(f'<section class="highlight-review" id="highlight-{esc(row["conceptId"])}"><h2>{esc(row["conceptId"])}</h2><p>{esc(row["status"])} · Owner editorial approval absent</p><p>Printed p.{row["printedPage"]} / physical PDF p.{row["physicalPdfPage"]} · {esc(row["sourceParagraphId"])}</p><blockquote>{esc(row["sourceParagraph"])}</blockquote><p>{esc(review["teachingJustification"])}</p><p>{esc(review["continuationContext"])}</p><p>{esc(review["answerNeutralityRationale"])}</p><p>Associated questions: {ids}</p><a href="#highlight-index">All highlights</a></section>')
-    return page.replace('<nav aria-label="Concept groups">', '<p><a href="#highlight-index">Inspect all 14 proposed highlights</a> · Candidate-set fingerprint: <code>'+esc(manifest['candidateSetFingerprint'])+'</code></p><nav aria-label="Concept groups">').replace('</body>',links+''.join(cards)+'</body>')
+    return page.replace('<nav aria-label="Concept groups">', f'<p><a href="#highlight-index">Inspect all {highlight_count} proposed highlights</a> · Candidate-set fingerprint: <code>'+esc(manifest['candidateSetFingerprint'])+'</code></p><nav aria-label="Concept groups">').replace('</body>',links+''.join(cards)+'</body>')
 
 
 def prepare_batch03():
@@ -738,14 +739,230 @@ def write_batch03_report(manifest):
     if not target.exists() or target.read_text('utf8')!=text:target.write_text(text,encoding='utf8')
 
 
+BATCH04_BASELINE='4bfdd608def68e511aa0a55fa748c575459c1334'
+BATCH04_INPUTS=('completion-report.md','completion-receipt.json','candidate-recommendation.json','review-diff.json','inventory.csv',
+    'preservation-report.json','eligibility-report.json','coverage-analysis.json','excluded-deferred.json','highlight-inventory.json',
+    'highlight-validation.json','decisions-concepts.json','highlight-plan.json','validation/idempotency.json',
+    'preview/manifest.json','preview/app/src/content/pilot-bank.json','preview/app/src/content/explanations.json',
+    'preview/app/src/content/concepts.json','preview/app/src/content/owner-review.json','decisions.json','baseline-guard.json')
+BATCH04_COMPLEX={40,58,97,111,147,195,216,222,265,283,287,289,333}
+
+
+def batch04_folder():
+    import hardware_batch04 as batch
+    return batch.WORK/'final-approval'
+
+
+def freeze_batch04():
+    """Freeze the authorized completed preparation, before publisher changes."""
+    import hardware_batch04 as batch
+    root=batch04_folder()
+    if (root/'preparation-inputs.json').exists():return
+    if batch.core.git('branch','--show-current')!=batch.BRANCH or batch.core.git('rev-parse','HEAD')!=BATCH04_BASELINE or batch.core.git('rev-parse','origin/main')!=batch.BASELINE:
+        raise ValueError('Exact Batch 4 preparation commit, feature branch and production baseline required')
+    pm=batch.check();receipt=h.read_json(batch.WORK/'completion-receipt.json')
+    if receipt.get('commit')!=BATCH04_BASELINE or receipt.get('nativeSnapshot')!=qa.snapshot_hashes(h.WORK) or receipt.get('previewManifestSha256')!=h.digest((batch.WORK/'preview/manifest.json').read_bytes()) or receipt.get('decisionLedgerSha256')!=h.digest((batch.WORK/'decisions.json').read_bytes()) or receipt.get('newApprovals')!=0 or receipt.get('newPublications')!=0:
+        raise ValueError('Completed Batch 4 fingerprints changed; do not refresh the preparation identity')
+    files={name:h.digest((batch.WORK/name).read_bytes()) for name in BATCH04_INPUTS}
+    for name in BATCH04_INPUTS:
+        target=root/'before/batch'/name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(batch.WORK/name,target)
+    for name in ['questions.json','reviews.json','manifest.json','index.html']:
+        target=root/'before/native'/name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(h.WORK/name,target)
+    published=h.read_json(h.ROOT/'public/data/questions.json');bank=h.read_json(batch.APP/'src/content/pilot-bank.json');ids=pm['questionIds']
+    released=[q['id'] for q in published if q['id'].startswith('HIST-')]
+    counts=dict(sorted(Counter(q['topic'] for q in bank if q['id'] in ids).items()))
+    if len(published)!=536 or len(released)!=116 or len(ids)!=40 or len(set(ids))!=40 or set(ids)&set(released) or len(counts)!=20:raise ValueError('Exact Batch 4 new/public scope changed')
+    save(root/'preparation-inputs.json',{'schema':'itpec-final-candidate-preparation-batch04-v1','baselineCommit':BATCH04_BASELINE,
+        'productionBaseline':batch.BASELINE,'files':files,'snapshot':qa.snapshot_hashes(h.WORK),'questionIds':ids,'conceptCounts':counts,
+        'releasedQuestionIds':released,'publicFiles':batch.core.public_fingerprints(),
+        'nativeFiles':{name:h.digest((h.WORK/name).read_bytes()) for name in ['questions.json','reviews.json','manifest.json','index.html']},
+        'sourceSha256':batch.audit.SOURCE_SHA,'textbookSha256':batch.audit.BOOK_SHA,'publicationApprovalGranted':False})
+
+
+def refresh_batch04_preview():
+    """Revalidate changed implementation; require byte-identical preview output."""
+    import hardware_batch04 as batch
+    root=batch04_folder();context=h.read_json(root/'preparation-inputs.json')
+    if (root/'preview-revalidation.json').exists():return
+    original=h.read_json(root/'before/batch/preview/manifest.json');current=h.read_json(batch.WORK/'preview/manifest.json')
+    if qa.snapshot_hashes(h.WORK)!=context['snapshot'] or current!=original:raise ValueError('Exact original preview and native snapshot required; no automatic rebinding')
+    for name,sha in original['implementation'].items():
+        data=subprocess.check_output(['git','show',f'{BATCH04_BASELINE}:{name}'],cwd=h.ROOT)
+        checkout=name=='package-lock.json' and h.digest(data.replace(b'\r\n',b'\n').replace(b'\n',b'\r\n'))==sha
+        if h.digest(data)!=sha and not checkout:raise ValueError('Preparation implementation differs from the authorized Git commit')
+    if current['implementation']!=batch.implementation():batch.prepare()
+    updated=h.read_json(batch.WORK/'preview/manifest.json')
+    if {k:v for k,v in updated.items() if k!='implementation'}!={k:v for k,v in original.items() if k!='implementation'} or qa.snapshot_hashes(h.WORK)!=context['snapshot']:
+        raise ValueError('Revalidation changed served bytes, native reviews, IDs or student-visible content')
+    for name in BATCH04_INPUTS:
+        if name!='preview/manifest.json' and h.digest((batch.WORK/name).read_bytes())!=context['files'][name]:raise ValueError('Read-only preparation artifact changed: '+name)
+    batch.check()
+    save(root/'preview-revalidation.json',{'originalManifestSha256':context['files']['preview/manifest.json'],
+        'currentManifestSha256':h.digest((batch.WORK/'preview/manifest.json').read_bytes()),'implementation':batch.implementation(),
+        'nativeSnapshot':context['snapshot'],'studentAndOwnerPreviewBytesEqual':True,
+        'reason':'Existing publisher now checks the final Batch 4 candidate package; only implementation fingerprint changed, all served preview bytes preserved.'})
+
+
+def batch04_inputs():
+    import hardware_batch04 as batch
+    root=batch04_folder();context=h.read_json(root/'preparation-inputs.json')
+    if not context or context.get('schema')!='itpec-final-candidate-preparation-batch04-v1' or context.get('baselineCommit')!=BATCH04_BASELINE or context.get('productionBaseline')!=batch.BASELINE or context.get('publicationApprovalGranted') is not False or set(context.get('files',{}))!=set(BATCH04_INPUTS):raise ValueError('Missing exact Batch 4 preparation context')
+    if batch.core.git('branch','--show-current')!=batch.BRANCH or subprocess.run(['git','merge-base','--is-ancestor',BATCH04_BASELINE,'HEAD'],cwd=h.ROOT,capture_output=True).returncode:raise ValueError('Wrong Batch 4 feature branch or ancestry')
+    for name,sha in context['files'].items():
+        if h.digest((root/'before/batch'/name).read_bytes())!=sha or (name!='preview/manifest.json' and h.digest((batch.WORK/name).read_bytes())!=sha):raise ValueError('Stale original Batch 4 input: '+name)
+    if qa.snapshot_hashes(root/'before/native')!=context['snapshot'] or qa.snapshot_hashes(h.WORK)!=context['snapshot']:raise ValueError('Frozen/live native snapshot changed')
+    for name,sha in context['nativeFiles'].items():
+        if h.digest((root/'before/native'/name).read_bytes())!=sha or h.digest((h.WORK/name).read_bytes())!=sha:raise ValueError('Read-only native history or approvals changed')
+    original=h.read_json(root/'before/batch/preview/manifest.json');current=batch.check();receipt=h.read_json(root/'preview-revalidation.json')
+    if not receipt or receipt.get('originalManifestSha256')!=context['files']['preview/manifest.json'] or receipt.get('currentManifestSha256')!=h.digest((batch.WORK/'preview/manifest.json').read_bytes()) or receipt.get('implementation')!=batch.implementation() or receipt.get('nativeSnapshot')!=context['snapshot'] or receipt.get('studentAndOwnerPreviewBytesEqual') is not True:raise ValueError('Missing or stale preview revalidation')
+    if {k:v for k,v in original.items() if k!='implementation'}!={k:v for k,v in current.items() if k!='implementation'}:raise ValueError('Reviewed preview bytes or IDs changed')
+    records=h.read_json(h.WORK/'questions.json');reviews=h.read_json(h.WORK/'reviews.json');frozen=h.read_json(root/'before/native/reviews.json')
+    validate_live_reviews(records,reviews,frozen,context['questionIds'])
+    published=h.read_json(h.ROOT/'public/data/questions.json');released=[q['id'] for q in published if q['id'].startswith('HIST-')]
+    if len(published)!=536 or len(released)!=116 or context['releasedQuestionIds']!=released or len(context['questionIds'])!=40 or len(set(context['questionIds']))!=40 or set(context['questionIds'])&{q['id'] for q in published}:raise ValueError('Exact candidate or public scope changed')
+    if context['publicFiles']!=batch.core.public_fingerprints() or h.digest(h.SOURCE.read_bytes())!=context['sourceSha256'] or h.digest(qa.TEXTBOOK.read_bytes())!=context['textbookSha256']:raise ValueError('Published or original source content changed')
+    index={r['id']:r for r in records}
+    for q in published:
+        if q['id'] in released and (not h.valid_approval(index[q['id']],reviews[q['id']]) or q['review']['approvalFingerprint']!=reviews[q['id']]['approval']['fingerprint']):raise ValueError('Prior historical approval changed')
+    h.verify_assets(records)
+    return context,records,reviews,frozen
+
+
+def batch04_concepts(context):
+    original=h.read_json(batch04_folder()/'before/batch/preview/app/src/content/concepts.json')
+    known={c['id']:c for c in h.read_json(h.ROOT/'src/content/concepts.json')};result=[]
+    for cid in context['conceptCounts']:
+        view=concept_view(next(c for c in original if c['id']==cid))
+        if cid in known and view!=concept_view(known[cid]):raise ValueError('Reused published highlight changed')
+        result.append({**view,'newConcept':cid not in known})
+    if len(result)!=20 or {c['id'] for c in result if c['newConcept']}!={'display-memory','cache-write-policies'}:raise ValueError('Exact 20 concepts / two new highlights required')
+    return result
+
+
+def batch04_associations(context,records,reviews,concepts):
+    import hardware_batch02 as shared
+    original=h.read_json(batch04_folder()/'before/batch/preview/manifest.json');result=[]
+    for qid in context['questionIds']:
+        v=reviews[qid];c=next(c for c in concepts if c['id']==v['mapping']['conceptId'])
+        a=shared.source_association({'id':qid,'currentMapping':v['mapping'],'auditClassification':{'evidence':v['mapping']['evidence']}},c)
+        if a!=next(row for row in original['associations'] if row['questionId']==qid):raise ValueError('Prepared question/highlight association changed')
+        source=(h.ROOT/a['sourceFile']).read_text('utf8')
+        if c.get('sourceHighlight'):pid=c['sourceHighlight']['passageId']
+        else:
+            anchor=re.search(r'<a\b[^>]*data-concept="'+re.escape(c['id'])+r'"',source);start=source.rfind('<p ',0,anchor.start());pid=re.search(r'\bid="([^"]+)"',source[start:source.find('>',start)])[1]
+        result.append({**a,'sourceParagraphId':pid})
+    return result
+
+
+def batch04_reviews(context,records,reviews,concepts,associations,*,prepare=False):
+    return validate_batch03_reviews(context,records,reviews,concepts,associations,prepare=prepare,root=batch04_folder(),expected_highlights=2,review_schema='itpec-batch04-final-source-review-v1')
+
+
+def batch04_entries(context,records,reviews,concepts,associations,rows,report):
+    entries=batch03_entries(context,records,reviews,concepts,associations,rows,report,root=batch04_folder())
+    recommendation=h.read_json(batch04_folder()/'before/batch/candidate-recommendation.json')
+    prior={e['id']:e for e in recommendation['questions']}
+    for e in entries:
+        if e['publicationFingerprint']!=prior[e['id']]['candidateFingerprint']:raise ValueError('Prepared candidate fingerprint changed: '+e['id'])
+        v=e['review'];e['dimensionFingerprints']={key:qa.object_hash(v[key]) for key in ['verification','explanation','extraction','metadata','classification','mapping']}
+        e['sourceTranscription']['literalSourceTypos']=e['finalSourceReview'].get('literalSourceTypos',[])
+        e['approvalContextFingerprint']=approval_context_fingerprint(e,e['conceptDefinition'])
+    return entries
+
+
+def batch04_gallery(manifest,concepts):
+    page=batch03_gallery(manifest,concepts,highlight_count=2);esc=lambda x:html.escape(str(x),quote=True)
+    special=[e for e in manifest['candidates'] if e['record']['regions'][0]['pdfPage'] in BATCH04_COMPLEX]
+    nav='<section id="complex-index"><h2>Complex source cases</h2><ol>'+''.join(f'<li><a href="#{esc(e["id"])}">PDF p.{e["record"]["regions"][0]["pdfPage"]} · {esc(e["id"])}</a></li>' for e in special)+'</ol></section>'
+    for e in manifest['candidates']:
+        c=e['conceptDefinition'];marker=f'<h4>Exact textbook placement</h4>'
+        # Add only owner-gallery links; the student/source application is untouched.
+        pattern=r'(<article\b[^>]*data-question="'+re.escape(e['id'])+r'"[\s\S]*?)(<h4>Exact textbook placement</h4>)'
+        link=f'<p><a class="concept-source-link" href="http://127.0.0.1:4336{esc(c["sectionUrl"])}#concept-{esc(c["id"])}">Open exact concept in private textbook preview</a></p>'
+        page=re.sub(pattern,lambda m:m[1]+link+m[2],page,count=1)
+    return page.replace('<section id="question-index">',nav+'<section id="question-index">')
+
+
+def batch04_equality(entries):
+    return {'questions':40,'conceptDefinitionsEqual':20,'allStudentVisibleFieldsEqual':True,'fields':list(entries[0]['studentVisible']),
+        'academicChanges':0,'newContentCorrections':0,'imagesComparedToOriginalPixels':40,'originalPreviewAssetBytesEqual':True}
+
+
+def prepare_batch04():
+    root=batch04_folder()
+    if (root/'manifest.json').exists():
+        manifest=check_batch04();write_batch04_report(manifest);print('Exact Batch 4 package already prepared; unchanged and unapproved.');return
+    freeze_batch04();refresh_batch04_preview();context,records,reviews,_=batch04_inputs()
+    concepts=batch04_concepts(context);associations=batch04_associations(context,records,reviews,concepts)
+    rows,report=batch04_reviews(context,records,reviews,concepts,associations,prepare=True)
+    entries=batch04_entries(context,records,reviews,concepts,associations,rows,report)
+    with fitz.open(h.SOURCE) as pdf:qa.validate_source_images([e['record'] for e in entries],pdf)
+    manifest={'schema':'itpec-final-approval-candidates-v1','batch':4,'baselineCommit':BATCH04_BASELINE,'featureCommit':BATCH04_BASELINE,
+        'privateOnly':True,'readOnly':True,'publicationApprovalGranted':False,'preparationInputsSha256':qa.object_hash(context),
+        'catalogSnapshot':context['snapshot'],'sourceSha256':context['sourceSha256'],'textbookSha256':context['textbookSha256'],
+        'questionIds':context['questionIds'],'conceptCounts':context['conceptCounts'],'conceptDefinitions':concepts,'highlightIntegration':report,'expectedNewHighlights':2,
+        'implementation':implementation(),'sourceReviewSha256':h.digest((root/'source-review.json').read_bytes()),'previewRevalidationSha256':h.digest((root/'preview-revalidation.json').read_bytes()),
+        'previewEquality':batch04_equality(entries),'publicCatalogSha256':h.digest((h.ROOT/'public/data/questions.json').read_bytes()),'finalVisualReview':rows,'candidates':entries}
+    manifest['candidateSetFingerprint']=batch03_fingerprint(context,entries,concepts,report)
+    page=batch04_gallery(manifest,concepts);(root/'index.html').write_text(page,encoding='utf8')
+    manifest['galleryAssets']={'/':{'path':str(root/'index.html'),'sha256':h.digest((root/'index.html').read_bytes())},**{f'/images/{e["id"]}.webp':{'path':str(h.WORK/e['record']['images'][0]['path']),'sha256':e['record']['images'][0]['sha256']} for e in entries}}
+    save(root/'manifest.json',manifest);check_batch04();write_batch04_report(manifest)
+    print('Prepared exact Batch 4 final package: 40 unapproved questions; 20 concepts; two new source-validated highlights.')
+
+
+def check_batch04(publisher=False):
+    # No approval transition is accepted, even for a publisher dry run.
+    root=batch04_folder();context,records,reviews,_=batch04_inputs();manifest=h.read_json(root/'manifest.json')
+    concepts=batch04_concepts(context);associations=batch04_associations(context,records,reviews,concepts)
+    rows,report=batch04_reviews(context,records,reviews,concepts,associations)
+    entries=batch04_entries(context,records,reviews,concepts,associations,rows,report)
+    validate_final_package(manifest,entries,concepts,report,context,batch=4)
+    if manifest.get('implementation')!=implementation() or manifest.get('baselineCommit')!=BATCH04_BASELINE or manifest.get('featureCommit')!=BATCH04_BASELINE or manifest.get('expectedNewHighlights')!=2 or manifest.get('preparationInputsSha256')!=qa.object_hash(context) or manifest.get('catalogSnapshot')!=context['snapshot'] or manifest.get('sourceSha256')!=context['sourceSha256'] or manifest.get('textbookSha256')!=context['textbookSha256'] or manifest.get('publicCatalogSha256')!=h.digest((h.ROOT/'public/data/questions.json').read_bytes()) or manifest.get('sourceReviewSha256')!=h.digest((root/'source-review.json').read_bytes()) or manifest.get('previewRevalidationSha256')!=h.digest((root/'preview-revalidation.json').read_bytes()):raise ValueError('Stale Batch 4 candidate package or implementation/source binding')
+    if manifest.get('previewEquality')!=batch04_equality(entries) or manifest.get('finalVisualReview')!=rows:raise ValueError('Final source review or preview equality changed')
+    if (root/'index.html').read_text('utf8')!=batch04_gallery(manifest,concepts):raise ValueError('Owner gallery differs from exact candidates')
+    assets={'/':{'path':str(root/'index.html'),'sha256':h.digest((root/'index.html').read_bytes())},**{f'/images/{e["id"]}.webp':{'path':str(h.WORK/e['record']['images'][0]['path']),'sha256':e['record']['images'][0]['sha256']} for e in entries}}
+    if manifest.get('galleryAssets')!=assets:raise ValueError('Gallery allowlist or original image binding changed')
+    return manifest
+
+
+def write_batch04_report(manifest):
+    root=batch04_folder();entries=manifest['candidates']
+    save(root/'equality-report.json',manifest['previewEquality']|{'studentHashes':{e['id']:e['studentVisibleSha256'] for e in entries},'contextFingerprints':{e['id']:e['approvalContextFingerprint'] for e in entries}})
+    save(root/'highlight-integration-report.json',manifest['highlightIntegration'])
+    save(root/'owner-review-checklist.json',[{'id':e['id'],'pdfPage':e['record']['regions'][0]['pdfPage'],'conceptId':e['review']['mapping']['conceptId'],
+        'technicallyEligible':e['technicalEligibility'],'readiness':e['readiness'],'remainingBlockers':e['remainingBlockers'],
+        'publicationFingerprint':e['publicationFingerprint'],'approvalContextFingerprint':e['approvalContextFingerprint'],'dimensionFingerprints':e['dimensionFingerprints']} for e in entries])
+    lines=['# Batch 4 final publication candidate package','',
+        'Exactly 40 candidates across 20 Hardware concepts: 18 reused published definitions and two new highlights. All 40 are technically eligible and unapproved; zero required academic/editorial repairs. No native record, source image, answer, explanation, identity, approval or production content changed.',
+        'All student-visible question fields, choices, answers, worked explanations, metadata, mappings, images and concepts equal the frozen private preview. Publisher integration was revalidated by rebuilding through the existing preparation engine: only its implementation fingerprint changed, while every native object and served source/build byte remained identical. The original preparation manifest/receipt/reports remain archived and unchanged.',
+        f'Candidate-set fingerprint: `{manifest["candidateSetFingerprint"]}`. Exact manifest SHA-256: `{h.digest((root/"manifest.json").read_bytes())}`.',
+        '', '| Canonical ID | PDF page / examination | Concept / heading | Eligible | Approval and blockers | Publication fingerprint | Context fingerprint |','|---|---|---|---|---|---|---|']
+    for e in entries:
+        r=e['record'];m=e['review']['mapping'];lines.append(f'| {e["id"]} | {r["regions"][0]["pdfPage"]} / {r["year"]}{r["season"]} Q{r["number"]} FE AM A | {m["conceptId"]} / {m["headingNumber"]} | {e["technicalEligibility"]} | unapproved; {", ".join(e["remainingBlockers"])} | {e["publicationFingerprint"]} | {e["approvalContextFingerprint"]} |')
+    lines+=['','## Highlight review and complex sources','',
+        'Display memory: two questions, heading 5-2-1, printed p.98 / physical p.104. Cache write policies: one question, heading 3-5-1, highlighted introductory context printed p.71 / physical p.76; direct write-policy teaching printed p.72 / physical p.77. Both exact fragments, book checksums, page identities and question associations are included in the candidate/context/set fingerprints. No wording, option selection or question-specific answer annotation was added. All 18 reused definitions remain unchanged.',
+        'Final complex cases reconfirmed: Technology-01 physical pp.40, 58, 97, 111, 147, 195, 216, 222, 265, 283, 287, 289 and 333. Original diagrams/options are authoritative; neutral diagram/table linearization is labeled separately from literal source wording. The p.111 source typo “bimary” remains in the raw transcript/image; the separately documented accessible correction remains “binary”. Repaired effective extractions on pp.111/283/287 are present in the final native payload. All 40 crops were pixel-compared again against the original PDF. No academic answer was reopened or altered.',
+        '', '## Read-only review and future owner authorization','',
+        'Launch `node scripts/question-review-server.mjs --approval-candidates --batch4`; open http://127.0.0.1:4338/. Twenty concept groups, two dedicated highlight cards and direct links for all thirteen complex source cases are provided. GET/HEAD only; exact Host/Origin, hash allowlist and loopback root; source PDFs/native JSON/unselected images denied; no scripts, forms, approval action or progress/Firebase runtime is served.',
+        '1. Review this exact package and the forty question cards, both proposed highlights, all source/accessible/academic fields and remaining blockers. Technical eligibility does not grant approval.',
+        '2. In a separately explicitly authorized milestone, bind owner authorization to the exact manifest SHA-256 above, candidate-set fingerprint, all forty publication fingerprints and context fingerprints. The three records using new highlights additionally require their exact highlight-definition hash as owner editorial authorization.',
+        '3. Use the existing native approval architecture only after that authorization. The receipt must include candidateManifestSha256, candidateSetFingerprint and each approvalContextFingerprint; new-highlight records must also bind highlightEditorialAuthorization. This milestone creates none of these owner approval fields.',
+        '4. Recheck source/review/preview equality and all fingerprints immediately before approval and again before a publication dry run. Any student-visible question, answer, explanation, image, description, metadata, mapping, highlight, source passage or package change invalidates the old authorization. Re-review changed material; do not refresh authorization silently.',
+        '5. Before a later production release, explicitly account for Release 3’s unresolved 52 HTML hash differences and blocked live HTML/UI verification. The prior exhaustive and final bounded investigations remain open operational evidence, not harmless differences or passed live tests. No regression is confirmed and current evidence does not warrant rollback. Do not repeat identical network failures without new evidence.',
+        '', '## Preservation and validation','',
+        '536 public question/image pairs (420 Practice + 36 + 40 + 40 historical), all 116 prior approvals, all 333 academic histories and seven qualified cases remain unchanged. The 217 unpublished historical questions remain private. Practice authority, source history, guest/account progress, bookmarks, reading checkpoints, filters and landing behavior are preserved; production source and asset fingerprints are unchanged.',
+        'The existing publisher `--batch 4 --dry-run` requires this exact package and still exports only the 116 already approved records. Expected additions/updates/conflicts are zero. Non-dry-run Batch 4 publication is rejected before source access or mutation. Tests/build, exact package digest, commit and clean-tree receipts are recorded in validation-results.md and completion-receipt.json. No approval, publication, merge, deployment, rollback, additional historical PDF or student-data mutation occurred.']
+    (root/'completion-report.md').write_text('\n'.join(lines)+'\n',encoding='utf8')
+
+
 if __name__=='__main__':
-    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('command',choices=['prepare','check']);parser.add_argument('--publisher-check',action='store_true');parser.add_argument('--batch',type=int,choices=[1,2,3],default=1);args=parser.parse_args()
-    if args.command=='prepare':prepare_batch03() if args.batch==3 else prepare_batch02() if args.batch==2 else prepare()
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('command',choices=['prepare','check']);parser.add_argument('--publisher-check',action='store_true');parser.add_argument('--batch',type=int,choices=[1,2,3,4],default=1);args=parser.parse_args()
+    if args.command=='prepare':prepare_batch04() if args.batch==4 else prepare_batch03() if args.batch==3 else prepare_batch02() if args.batch==2 else prepare()
     else:
         manifest=check(args.publisher_check,args.batch)
         live=h.read_json(h.WORK/'reviews.json')
-        folder=batch03_folder() if args.batch==3 else batch02_folder() if args.batch==2 else editorial.folder()
-        released=h.read_json(folder/'preparation-inputs.json')['releasedQuestionIds'] if args.batch in [2,3] else []
+        folder=batch04_folder() if args.batch==4 else batch03_folder() if args.batch==3 else batch02_folder() if args.batch==2 else editorial.folder()
+        released=h.read_json(folder/'preparation-inputs.json')['releasedQuestionIds'] if args.batch in [2,3,4] else []
         print(json.dumps({'questionIds':manifest['questionIds'],'candidates':len(manifest['candidates']),'unapproved':sum(live[qid]['approval']['status']=='unapproved' for qid in manifest['questionIds']),'publicationApprovalGranted':False,
             'releasedQuestionIds':released,'conceptDefinitions':manifest.get('conceptDefinitions',[]) if args.publisher_check else None,
             'galleryAssets':manifest['galleryAssets'] if not args.publisher_check else None,'directory':str(folder)},ensure_ascii=False))
