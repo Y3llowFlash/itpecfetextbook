@@ -4,7 +4,11 @@ import { validateHistoricalRelease, checksum } from '../scripts/historical-relea
 const read = (p: string) => JSON.parse(readFileSync(p,'utf8'));
 const expansion=read('docs/development/evidence/historical-release-40.json');
 const third=read('docs/development/evidence/historical-release-3.json'),fourth=read('docs/development/evidence/historical-release-4.json');
-const latestBank=read('public/data/questions.json'),latestAnswers=read('src/content/explanations.json'),latestConcepts=read('src/content/concepts.json');
+const fifth=read('docs/development/evidence/historical-release-5.json');
+const release5Bank=read('public/data/questions.json'),release5Answers=read('src/content/explanations.json'),release5Concepts=read('src/content/concepts.json');
+const fifthIds=new Set(fifth.records.map((r:any)=>r.id)),fifthConcepts=new Set(fifth.newHighlights.map((r:any)=>r.id));
+const latestBank=release5Bank.filter((q:any)=>!fifthIds.has(q.id)),latestAnswers=release5Answers.filter((e:any)=>!fifthIds.has(e.questionId));
+const latestConcepts=release5Concepts.filter((c:any)=>!fifthConcepts.has(c.id)).map((c:any)=>({...c,questionIds:c.questionIds.filter((id:string)=>!fifthIds.has(id)),mappingEvidence:c.mappingEvidence.filter((e:any)=>!fifthIds.has(e.questionId))}));
 const fourthIds=new Set(fourth.records.map((r:any)=>r.id)),fourthConcepts=new Set(fourth.newHighlights.map((r:any)=>r.id));
 const fullBank=latestBank.filter((q:any)=>!fourthIds.has(q.id)),fullAnswers=latestAnswers.filter((e:any)=>!fourthIds.has(e.questionId));
 const fullConcepts=latestConcepts.filter((c:any)=>!fourthConcepts.has(c.id)).map((c:any)=>({...c,questionIds:c.questionIds.filter((id:string)=>!fourthIds.has(id)),mappingEvidence:c.mappingEvidence.filter((e:any)=>!fourthIds.has(e.questionId))}));
@@ -88,5 +92,27 @@ describe('exact Release 4 append-only authorization',()=>{
   for(const field of ['candidateManifestSha256','candidateSetFingerprint','authorizedCount','excludedUnapproved'])expect(()=>validate(latestBank,latestAnswers,latestConcepts,{...fourth,[field]:'changed'})).toThrow();
   const b=structuredClone(latestBank);b.find((q:any)=>thirdIds.has(q.id)).correctAnswer='changed';expect(()=>validate(b)).toThrow();
   expect(()=>validate([...latestBank,{...latestBank[0],id:'HIST-UNAPPROVED'}])).toThrow();
+ });
+});
+
+describe('exact Release 5 append-only authorization',()=>{
+ const validate=(b=release5Bank,a=release5Answers,c=release5Concepts,r=fifth)=>validateHistoricalRelease(b,a,c,receipt,expansion,third,fourth,r);
+ it('validates 616 records, exact 40 additions, one highlight and unchanged 576',()=>{
+  expect(()=>validate()).not.toThrow();expect(fifth.records).toHaveLength(40);
+  expect(fifth.newHighlights.map((r:any)=>r.id)).toEqual(['flip-flops']);
+ });
+ it('rejects each candidate answer, accessibility, mapping and highlight change',()=>{
+  for(const entry of fifth.records){
+   const b=structuredClone(release5Bank);b.find((q:any)=>q.id===entry.id).correctAnswer='invalid';expect(()=>validate(b)).toThrow();
+   const a=structuredClone(release5Answers);a.find((e:any)=>e.questionId===entry.id).imageDescription='changed';expect(()=>validate(release5Bank,a)).toThrow();
+   const mapped=structuredClone(release5Bank);mapped.find((q:any)=>q.id===entry.id).review.mappings[0].conceptId='wrong';expect(()=>validate(mapped)).toThrow();
+  }
+  const c=structuredClone(release5Concepts);c.find((c:any)=>c.id==='flip-flops').sourceHighlight.fragmentSha256='stale';expect(()=>validate(release5Bank,release5Answers,c)).toThrow();
+ },30000);
+ it('rejects stale authorization, old-record changes, extra records and extra highlights',()=>{
+  for(const field of ['candidateManifestSha256','candidateSetFingerprint','authorizedCount','excludedUnapproved'])expect(()=>validate(release5Bank,release5Answers,release5Concepts,{...fifth,[field]:'changed'})).toThrow();
+  const b=structuredClone(release5Bank);b.find((q:any)=>fourthIds.has(q.id)).correctAnswer='changed';expect(()=>validate(b)).toThrow();
+  expect(()=>validate([...release5Bank,{...release5Bank[0],id:'HIST-UNAPPROVED'}])).toThrow();
+  expect(()=>validate(release5Bank,release5Answers,[...release5Concepts,{...release5Concepts[0],id:'unauthorized-highlight'}])).toThrow();
  });
 });

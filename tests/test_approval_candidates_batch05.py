@@ -9,6 +9,16 @@ from unittest.mock import patch
 from test_approval_candidates_batch03 import fixture
 import approval_candidates as c
 import hardware_batch05 as b
+import release_5 as release
+from contextlib import nullcontext
+from functools import wraps
+
+def archived_preparation(test):
+    @wraps(test)
+    def run(*args,**kwargs):
+        with release.preparation_fixture() if (release.FOLDER/'state.json').exists() else nullcontext():
+            return test(*args,**kwargs)
+    return run
 import approval_batch05 as f
 
 
@@ -43,11 +53,12 @@ class FinalBatch05Tests(unittest.TestCase):
 
     def test_batch4_cannot_publish_without_separate_release_implementation(self):
         result=subprocess.run(['node','node_modules/tsx/dist/cli.mjs','scripts/publish-historical-questions.ts','--batch','5'],cwd=c.h.ROOT,capture_output=True,text=True)
-        self.assertNotEqual(result.returncode,0);self.assertIn('separate explicit owner authorization',result.stderr)
+        self.assertNotEqual(result.returncode,0);self.assertIn('publication-gate',result.stderr)
 
     @unittest.skipUnless((f.folder()/'manifest.json').exists(),'Private source package is not committed')
+    @archived_preparation
     def test_actual_package_preview_equality_and_read_only_preservation(self):
-        manifest=f.check();context,records,reviews=f.inputs()
+        manifest=release.validate_package() if (release.FOLDER/'state.json').exists() else f.check();context,records,reviews=f.inputs()
         self.assertEqual(len(manifest['candidates']),40);self.assertEqual(len(manifest['conceptDefinitions']),16)
         self.assertEqual([r['conceptId'] for r in manifest['highlightIntegration']],['flip-flops'])
         self.assertEqual(len(context['releasedQuestionIds']),156)
@@ -59,6 +70,7 @@ class FinalBatch05Tests(unittest.TestCase):
             self.assertEqual(e['publicationFingerprint'],c.h.publication_fingerprint(e['record'],e['review']))
 
     @unittest.skipUnless((f.folder()/'manifest.json').exists(),'Private source package is not committed')
+    @archived_preparation
     def test_source_review_stale_missing_and_false_checks_rejected(self):
         context,records,reviews=f.inputs();definitions=f.concepts(context);links=f.associations(context,records,reviews,definitions)
         read=c.h.read_json;ledger=read(f.folder()/'source-review.json')
@@ -77,8 +89,17 @@ class FinalBatch05Tests(unittest.TestCase):
     def test_combined_preparation_idempotent_and_stale_manifest_rejected(self):
         paths=[f.folder()/'manifest.json',f.folder()/'index.html',b.WORK/'preview/manifest.json',c.h.WORK/'reviews.json']
         before={str(p):p.read_bytes() for p in paths}
-        b.prepare();f.prepare()
+        if (release.FOLDER/'state.json').exists():
+            self.assertRaises(ValueError,b.prepare);self.assertRaises(ValueError,f.prepare)
+            release.validate_package();release.validate_package()
+        else:b.prepare();f.prepare()
         self.assertEqual(before,{str(p):p.read_bytes() for p in paths})
+        if (release.FOLDER/'state.json').exists():
+            # Live approvals/publication deliberately invalidate preparation inputs.
+            # Archive validation independently checks the exact manifest/Git bindings.
+            self.assertEqual(release.context()[1]['candidateSetFingerprint'],release.SET_FP)
+            self.assertEqual(c.h.digest((f.folder()/'manifest.json').read_bytes()),release.MANIFEST_SHA)
+            return
         read=c.h.read_json;manifest=read(f.folder()/'manifest.json');manifest['implementation']={}
         def replace(path,*args):return manifest if path==f.folder()/'manifest.json' else read(path,*args)
         with patch.object(c.h,'read_json',side_effect=replace),self.assertRaisesRegex(ValueError,'Stale'):f.check()

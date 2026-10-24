@@ -175,6 +175,9 @@ def check(publisher=False,batch=1):
     if batch==2:return check_batch02(publisher)
     if batch==3:return check_batch03(publisher)
     if batch==5:
+        if publisher:
+            import release_5
+            if (release_5.FOLDER/'state.json').exists():return release_5.publisher_check()
         from approval_batch05 import check
         return check(publisher)
     if batch==4:return check_batch04(publisher)

@@ -14,7 +14,8 @@ if(process.argv.slice(2).some(arg=>!['--batch02','--batch03','--batch04','--batc
 const previewRoot=batch05?'.local/historical-batches/technology01-hardware-batch05/preview':batch04?'.local/historical-batches/technology01-hardware-batch04/preview':batch03?'.local/historical-batches/technology01-hardware-batch03/preview':batch02?'.local/historical-batches/technology01-hardware-batch02/preview':'.local/private-student-preview';
 const archivedBatch3=batch03&&existsSync(path.join(root,'.local/releases/historical-40-batch03/state.json'));
 const archivedBatch4=batch04&&existsSync(path.join(root,'.local/releases/historical-40-batch04/state.json'));
-const checked=spawnSync('python',archivedBatch4?['scripts/release_4.py','archive-preview']:archivedBatch3?['scripts/release_3.py','archive-preview']:[batch05?'scripts/hardware_batch05.py':batch04?'scripts/hardware_batch04.py':batch03?'scripts/hardware_batch03.py':batch02?'scripts/hardware_batch02.py':'scripts/private_student_preview.py','check'],{cwd:root,stdio:archivedBatch3||archivedBatch4?'pipe':'inherit'});
+const archivedBatch5=batch05&&existsSync(path.join(root,'.local/releases/historical-40-batch05/state.json'));
+const checked=spawnSync('python',archivedBatch5?['scripts/release_5.py','archive-preview']:archivedBatch4?['scripts/release_4.py','archive-preview']:archivedBatch3?['scripts/release_3.py','archive-preview']:[batch05?'scripts/hardware_batch05.py':batch04?'scripts/hardware_batch04.py':batch03?'scripts/hardware_batch03.py':batch02?'scripts/hardware_batch02.py':'scripts/private_student_preview.py','check'],{cwd:root,stdio:archivedBatch3||archivedBatch4||archivedBatch5?'pipe':'inherit'});
 if(checked.status!==0)throw Error('Private preview integrity failed; run npm run questions:pilot:prepare');
 const manifest=JSON.parse(await readFile(path.join(root,previewRoot,'manifest.json'),'utf8'));
 const port=Number(process.env.PILOT_PORT||(batch05?4340:batch04?4336:batch03?4332:batch02?4327:4324));

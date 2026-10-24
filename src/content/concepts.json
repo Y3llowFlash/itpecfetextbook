@@ -16,7 +16,8 @@
       "HIST-TECH01-2009A-Q028",
       "HIST-TECH01-2011A-Q011",
       "HIST-TECH01-2022S-Q013",
-      "HIST-TECH01-2015S-Q011"
+      "HIST-TECH01-2015S-Q011",
+      "HIST-TECH01-2018S-Q010"
     ],
     "mappingEvidence": [
       {
@@ -171,6 +172,24 @@
             }
           ]
         ]
+      },
+      {
+        "questionId": "HIST-TECH01-2018S-Q010",
+        "reason": "Original question image and actual 3-5-1 teaching re-read; cache-memory is directly supported by the exact quoted passage(s), not inferred from a heading.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "checkedExcerpt": "memory). In other words, average access time (effective access time) as seen from the processor is decided on the basis of the extent to which the required data is found in cache memory. Therefore, it is determined by weighted average of access time of cache memory and access time of main memory. Here, the access time is determined by considering both the probability (hit ratio) that the required data is available in cache memory and the probability (NFP (Not Found Probability)) that the required data is not available in cache memory. “Hit ratio+NFP=1” always holds true. Example: Calculate the average access time of the following processor. NFP (probability that the required data is not available in cache memory) is 0.1. Access destination Access time (nanosecond) Cache memory 50 Main memory 500 Average access time of processor = Access time of cache memory × hit ratio + Access time of main memory × NFP = 50 nanoseconds × (1 − 0.1) + 500 nanoseconds × 0.1 = 95 nanoseconds From this example, it is clear that the higher the hit ratio is, the shorter the average access time is because of increased access to cache memory . When Havard architecture , which independently loads instructions and data , is used , cache memory is also separated into instruction cache and data cache . In this case , creating a program consolidating process ( instruction ) sections that are frequently executed will increase the hit ratio of instruction cache, which may shorten the average access time (access speed will improve).",
+              "kind": "textbook-source",
+              "pdfPage": 76,
+              "printedPage": 71,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "16642cba08a2bb57f7761c6f5bf389c157c2c9a4f16ffd1abe7b6cf36e65cc89"
+            }
+          ]
+        ]
       }
     ],
     "videos": [
@@ -204,7 +223,15 @@
       "HIST-TECH01-2009A-Q001",
       "HIST-TECH01-2008S-Q001",
       "HIST-TECH01-2007S-Q001",
-      "HIST-TECH01-2021A-Q001"
+      "HIST-TECH01-2021A-Q001",
+      "HIST-TECH01-2020A-Q001",
+      "HIST-TECH01-2017A-Q001",
+      "HIST-TECH01-2015S-Q002",
+      "HIST-TECH01-2010S-Q001",
+      "HIST-TECH01-2010S-Q004",
+      "HIST-TECH01-2009S-Q001",
+      "HIST-TECH01-2009S-Q002",
+      "HIST-TECH01-2007S-Q002"
     ],
     "mappingEvidence": [
       {
@@ -392,6 +419,213 @@
             }
           ]
         ]
+      },
+      {
+        "questionId": "HIST-TECH01-2020A-Q001",
+        "reason": "Original question image and actual 2-2 teaching re-read; radix-conversion is directly supported by the exact quoted passage(s), not inferred from a heading.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "checkedExcerpt": "with two numbers, 0 and 1. (101.1)2 = 1×22 + 0×21 + 1×20 + 1×2−1 = (5.5)10 * 2 in ( )2 shows that it is a binary number. Decimal numbers and their corresponding binary numbers are as shown below. Binary numbers can use only two numbers of 0 and 1 for one digit. Therefore, the number of digits quickly becomes large, compared with decimal numbers. Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Binary numbers 0 1 10 11 100 101 110 111 1000 1001 1010 ... Figure 1-6 Decimal numbers and corresponding binary numbers (2) Octal numbers Octal numbers are numerical values that are represented by using eight numbers from 0 through 7 and that are carried over when 8 is reached. (317.5)8 = 3×82 + 1×81 + 7×80 + 5×8−1 = (207.625)10 * 8 in ( )8 shows that it is an octal number Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Octal numbers 0 1 2 3 4 5 6 7 10 11 12 ... Figure 1-7 Decimal numbers and corresponding octal numbers (3) Hexadecimal numbers Hexadecimal numbers are numerical values that are represented by using sixteen numbers from 0 through 9, and A(10), B(11), C(12), D(13), E(14), and F(15) and that are carried over when 16 is reached. (1A6.E)16 = 1×162 + 10×161 + 6×160 + 14×16−1 = (422.875)10 * 16 in ( )16 shows that it is a hexadecimal number.",
+              "kind": "textbook-source",
+              "pdfPage": 29,
+              "printedPage": 24,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419"
+            },
+            {
+              "checkedExcerpt": "(5) Radix conversion Radix conversion means changing the radix of a numerical value. It is also radix conversion to convert a binary number (radix 2) into an octal number (radix 8) or a hexadecimal number (radix 16). When radix has a constant (power) relation as in the case of binary numbers, octal numbers, and hexadecimal numbers, radix conversion can be done by consolidating multiple digits. However, when radix does not have a constant (power) relation as in the case of binary numbers and decimal numbers, it is necessary to convert through computation. 1) Radix conversion from a binary number into a decimal number Radix conversion from a binary number to a decimal number can be performed by adding the weight of each digit that is 1 in the binary number. (This is the same as adding the results that are obtained by multiplying the weight of each digit with the number (0 or 1) of each digit.) Example: Perform radix conversion of the binary number (1001101.101)2 into a decimal number. 2) Radix conversion from a decimal number into a binary number Radix conversion from a decimal number into a binary number is performed separately for the integer part and the fractional part. The integer part can be converted by repeatedly dividing by 2 until the quotient becomes 0, and then arranging the remainder of calculation results in sequence from the back. A fractional part can be converted by continuously multiplying by 2 until the fractional part in calculation results becomes 0, and then arranging the integer part of each calculation result in sequence from the front.",
+              "kind": "textbook-source",
+              "pdfPage": 31,
+              "printedPage": 26,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "82b72f4c645a83ebec1bc01d448d249b28d8d3a10b8943a3b27747b928ffbeee"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2017A-Q001",
+        "reason": "Original question image and actual 2-2 teaching re-read; radix-conversion is directly supported by the exact quoted passage(s), not inferred from a heading.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "checkedExcerpt": "with two numbers, 0 and 1. (101.1)2 = 1×22 + 0×21 + 1×20 + 1×2−1 = (5.5)10 * 2 in ( )2 shows that it is a binary number. Decimal numbers and their corresponding binary numbers are as shown below. Binary numbers can use only two numbers of 0 and 1 for one digit. Therefore, the number of digits quickly becomes large, compared with decimal numbers. Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Binary numbers 0 1 10 11 100 101 110 111 1000 1001 1010 ... Figure 1-6 Decimal numbers and corresponding binary numbers (2) Octal numbers Octal numbers are numerical values that are represented by using eight numbers from 0 through 7 and that are carried over when 8 is reached. (317.5)8 = 3×82 + 1×81 + 7×80 + 5×8−1 = (207.625)10 * 8 in ( )8 shows that it is an octal number Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Octal numbers 0 1 2 3 4 5 6 7 10 11 12 ... Figure 1-7 Decimal numbers and corresponding octal numbers (3) Hexadecimal numbers Hexadecimal numbers are numerical values that are represented by using sixteen numbers from 0 through 9, and A(10), B(11), C(12), D(13), E(14), and F(15) and that are carried over when 16 is reached. (1A6.E)16 = 1×162 + 10×161 + 6×160 + 14×16−1 = (422.875)10 * 16 in ( )16 shows that it is a hexadecimal number.",
+              "kind": "textbook-source",
+              "pdfPage": 29,
+              "printedPage": 24,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419"
+            },
+            {
+              "checkedExcerpt": "Relation between binary numbers, octal numbers, and hexadecimal numbers Binary numbers have an extremely large number of digits compared with decimal numbers. Although computers can handle binary numbers without problems, it is very difficult for a human being to understand when the internal status of computers is concerned. Therefore, octal numbers and hexadecimal numbers are used so that people can understand more easily. Octal numbers use the power of 8 (= 23) as the weight of each digit, and therefore the information of 3 digits of binary numbers corresponds to 1 digit of octal numbers. Binary number: (1011100.11101)2 ↓ (001 011 100 . 111 010)2 ↓ ... Separate after every 3 digits with radix point as reference. (0 is supplemented in the parts that fall short of 3 digits.) Octal numbers: ( 1 3 4 . 7 2 )8 ... Convert every 3 digits Hexadecimal numbers use the power of 16(= 24) as the weight of each digit, and therefore the information of 4 digits of binary numbers corresponds to 1 digit of hexadecimal numbers. Binary number: (1011100.11101)2 ↓ (0101 1100 . 11100 1000)2 ↓ ... Separate after every 4 digits with radix point as reference. (0 is supplemented in the parts that fall short of 4 digits.) Hexadecimal number: ( 5 C . E 8 )16 ... Convert every 4 digits",
+              "kind": "textbook-source",
+              "pdfPage": 30,
+              "printedPage": 25,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "752f89c392b5b641578b5750dc2e3f2550795c32361c897ee87ca9ffed6828d9"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2015S-Q002",
+        "reason": "Original question image and actual 2-2 teaching re-read; radix-conversion is directly supported by the exact quoted passage(s), not inferred from a heading.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "checkedExcerpt": "(5) Radix conversion Radix conversion means changing the radix of a numerical value. It is also radix conversion to convert a binary number (radix 2) into an octal number (radix 8) or a hexadecimal number (radix 16). When radix has a constant (power) relation as in the case of binary numbers, octal numbers, and hexadecimal numbers, radix conversion can be done by consolidating multiple digits. However, when radix does not have a constant (power) relation as in the case of binary numbers and decimal numbers, it is necessary to convert through computation. 1) Radix conversion from a binary number into a decimal number Radix conversion from a binary number to a decimal number can be performed by adding the weight of each digit that is 1 in the binary number. (This is the same as adding the results that are obtained by multiplying the weight of each digit with the number (0 or 1) of each digit.) Example: Perform radix conversion of the binary number (1001101.101)2 into a decimal number. 2) Radix conversion from a decimal number into a binary number Radix conversion from a decimal number into a binary number is performed separately for the integer part and the fractional part. The integer part can be converted by repeatedly dividing by 2 until the quotient becomes 0, and then arranging the remainder of calculation results in sequence from the back. A fractional part can be converted by continuously multiplying by 2 until the fractional part in calculation results becomes 0, and then arranging the integer part of each calculation result in sequence from the front.",
+              "kind": "textbook-source",
+              "pdfPage": 31,
+              "printedPage": 26,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "82b72f4c645a83ebec1bc01d448d249b28d8d3a10b8943a3b27747b928ffbeee"
+            },
+            {
+              "checkedExcerpt": "Decimal number: (67.6875)10 = Binary number: (1000011.1011)2 = (001 000 011 . 101 100)2 = Octal number: ( 1 0 3 . 5 4 )8 [Fractional number that cannot be represented by the finite number of digits] When the fractional part of a decimal number is converted into an n-adic number, it gets into a loop as the fractional part of calculation results does not become 0, and it may not be converted into a finite fraction. For example, converting the decimal number (0.2)10 into a binary number gives the following. In this manner, when the results of radix conversion become an infinite fraction (or recurring fraction), numerical values are handled as approximate values inside the computer.",
+              "kind": "textbook-source",
+              "pdfPage": 33,
+              "printedPage": 28,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "d2e2b7cbbfb2c37bea9761db1702d19f9d66c32038286453dea5f703fe00a8b8"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2010S-Q001",
+        "reason": "Original question image and actual 2-2 teaching re-read; radix-conversion is directly supported by the exact quoted passage(s), not inferred from a heading.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "checkedExcerpt": "1 Hardware 27 Example: Perform radix conversion of the decimal number (77.625)10 into a binary number. A summary of radix conversion between decimal numbers and n-adic numbers is provided below. [Procedure of radix conversion from an n-adic number into a decimal number] Add all results obtained by multiplying the weight (power of n) of each digit by the number {from 0 through (n−1)} of each digit. [Procedure of radix conversion from a decimal number into an n-adic number] Integer part: Repeatedly divide by n until the quotient becomes 0, and then arrange the remainder of calculation results in sequence from the back. Radix part: Continuously multiply the radix part by n until the radix part in calculation results becomes 0, and then arrange the integer part of each calculation result in sequence from the front. For example, below is an example of radix conversion of the decimal number (67.6875)10 into an octal number. However, when the radix conversion from decimal to octal or hexadecimal is performed, it may be easier to convert from decimal to binary, and then convert the result into octal or hexadecimal.",
+              "kind": "textbook-source",
+              "pdfPage": 32,
+              "printedPage": 27,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "1384fa93bc88b2aaf2b2b1668769ecfb5dd2e2854906bae70aab4c4dff32efff"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2010S-Q004",
+        "reason": "Original question image and actual 2-2 teaching re-read; radix-conversion is directly supported by the exact quoted passage(s), not inferred from a heading.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "checkedExcerpt": "with two numbers, 0 and 1. (101.1)2 = 1×22 + 0×21 + 1×20 + 1×2−1 = (5.5)10 * 2 in ( )2 shows that it is a binary number. Decimal numbers and their corresponding binary numbers are as shown below. Binary numbers can use only two numbers of 0 and 1 for one digit. Therefore, the number of digits quickly becomes large, compared with decimal numbers. Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Binary numbers 0 1 10 11 100 101 110 111 1000 1001 1010 ... Figure 1-6 Decimal numbers and corresponding binary numbers (2) Octal numbers Octal numbers are numerical values that are represented by using eight numbers from 0 through 7 and that are carried over when 8 is reached. (317.5)8 = 3×82 + 1×81 + 7×80 + 5×8−1 = (207.625)10 * 8 in ( )8 shows that it is an octal number Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Octal numbers 0 1 2 3 4 5 6 7 10 11 12 ... Figure 1-7 Decimal numbers and corresponding octal numbers (3) Hexadecimal numbers Hexadecimal numbers are numerical values that are represented by using sixteen numbers from 0 through 9, and A(10), B(11), C(12), D(13), E(14), and F(15) and that are carried over when 16 is reached. (1A6.E)16 = 1×162 + 10×161 + 6×160 + 14×16−1 = (422.875)10 * 16 in ( )16 shows that it is a hexadecimal number.",
+              "kind": "textbook-source",
+              "pdfPage": 29,
+              "printedPage": 24,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419"
+            },
+            {
+              "checkedExcerpt": "Relation between binary numbers, octal numbers, and hexadecimal numbers Binary numbers have an extremely large number of digits compared with decimal numbers. Although computers can handle binary numbers without problems, it is very difficult for a human being to understand when the internal status of computers is concerned. Therefore, octal numbers and hexadecimal numbers are used so that people can understand more easily. Octal numbers use the power of 8 (= 23) as the weight of each digit, and therefore the information of 3 digits of binary numbers corresponds to 1 digit of octal numbers. Binary number: (1011100.11101)2 ↓ (001 011 100 . 111 010)2 ↓ ... Separate after every 3 digits with radix point as reference. (0 is supplemented in the parts that fall short of 3 digits.) Octal numbers: ( 1 3 4 . 7 2 )8 ... Convert every 3 digits Hexadecimal numbers use the power of 16(= 24) as the weight of each digit, and therefore the information of 4 digits of binary numbers corresponds to 1 digit of hexadecimal numbers. Binary number: (1011100.11101)2 ↓ (0101 1100 . 11100 1000)2 ↓ ... Separate after every 4 digits with radix point as reference. (0 is supplemented in the parts that fall short of 4 digits.) Hexadecimal number: ( 5 C . E 8 )16 ... Convert every 4 digits",
+              "kind": "textbook-source",
+              "pdfPage": 30,
+              "printedPage": 25,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "752f89c392b5b641578b5750dc2e3f2550795c32361c897ee87ca9ffed6828d9"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2009S-Q001",
+        "reason": "Original question image and actual 2-2 teaching re-read; radix-conversion is directly supported by the exact quoted passage(s), not inferred from a heading.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "checkedExcerpt": "with two numbers, 0 and 1. (101.1)2 = 1×22 + 0×21 + 1×20 + 1×2−1 = (5.5)10 * 2 in ( )2 shows that it is a binary number. Decimal numbers and their corresponding binary numbers are as shown below. Binary numbers can use only two numbers of 0 and 1 for one digit. Therefore, the number of digits quickly becomes large, compared with decimal numbers. Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Binary numbers 0 1 10 11 100 101 110 111 1000 1001 1010 ... Figure 1-6 Decimal numbers and corresponding binary numbers (2) Octal numbers Octal numbers are numerical values that are represented by using eight numbers from 0 through 7 and that are carried over when 8 is reached. (317.5)8 = 3×82 + 1×81 + 7×80 + 5×8−1 = (207.625)10 * 8 in ( )8 shows that it is an octal number Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Octal numbers 0 1 2 3 4 5 6 7 10 11 12 ... Figure 1-7 Decimal numbers and corresponding octal numbers (3) Hexadecimal numbers Hexadecimal numbers are numerical values that are represented by using sixteen numbers from 0 through 9, and A(10), B(11), C(12), D(13), E(14), and F(15) and that are carried over when 16 is reached. (1A6.E)16 = 1×162 + 10×161 + 6×160 + 14×16−1 = (422.875)10 * 16 in ( )16 shows that it is a hexadecimal number.",
+              "kind": "textbook-source",
+              "pdfPage": 29,
+              "printedPage": 24,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419"
+            },
+            {
+              "checkedExcerpt": "Relation between binary numbers, octal numbers, and hexadecimal numbers Binary numbers have an extremely large number of digits compared with decimal numbers. Although computers can handle binary numbers without problems, it is very difficult for a human being to understand when the internal status of computers is concerned. Therefore, octal numbers and hexadecimal numbers are used so that people can understand more easily. Octal numbers use the power of 8 (= 23) as the weight of each digit, and therefore the information of 3 digits of binary numbers corresponds to 1 digit of octal numbers. Binary number: (1011100.11101)2 ↓ (001 011 100 . 111 010)2 ↓ ... Separate after every 3 digits with radix point as reference. (0 is supplemented in the parts that fall short of 3 digits.) Octal numbers: ( 1 3 4 . 7 2 )8 ... Convert every 3 digits Hexadecimal numbers use the power of 16(= 24) as the weight of each digit, and therefore the information of 4 digits of binary numbers corresponds to 1 digit of hexadecimal numbers. Binary number: (1011100.11101)2 ↓ (0101 1100 . 11100 1000)2 ↓ ... Separate after every 4 digits with radix point as reference. (0 is supplemented in the parts that fall short of 4 digits.) Hexadecimal number: ( 5 C . E 8 )16 ... Convert every 4 digits",
+              "kind": "textbook-source",
+              "pdfPage": 30,
+              "printedPage": 25,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "752f89c392b5b641578b5750dc2e3f2550795c32361c897ee87ca9ffed6828d9"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2009S-Q002",
+        "reason": "Original question image and actual 2-2 teaching re-read; radix-conversion is directly supported by the exact quoted passage(s), not inferred from a heading.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "checkedExcerpt": "with two numbers, 0 and 1. (101.1)2 = 1×22 + 0×21 + 1×20 + 1×2−1 = (5.5)10 * 2 in ( )2 shows that it is a binary number. Decimal numbers and their corresponding binary numbers are as shown below. Binary numbers can use only two numbers of 0 and 1 for one digit. Therefore, the number of digits quickly becomes large, compared with decimal numbers. Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Binary numbers 0 1 10 11 100 101 110 111 1000 1001 1010 ... Figure 1-6 Decimal numbers and corresponding binary numbers (2) Octal numbers Octal numbers are numerical values that are represented by using eight numbers from 0 through 7 and that are carried over when 8 is reached. (317.5)8 = 3×82 + 1×81 + 7×80 + 5×8−1 = (207.625)10 * 8 in ( )8 shows that it is an octal number Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Octal numbers 0 1 2 3 4 5 6 7 10 11 12 ... Figure 1-7 Decimal numbers and corresponding octal numbers (3) Hexadecimal numbers Hexadecimal numbers are numerical values that are represented by using sixteen numbers from 0 through 9, and A(10), B(11), C(12), D(13), E(14), and F(15) and that are carried over when 16 is reached. (1A6.E)16 = 1×162 + 10×161 + 6×160 + 14×16−1 = (422.875)10 * 16 in ( )16 shows that it is a hexadecimal number.",
+              "kind": "textbook-source",
+              "pdfPage": 29,
+              "printedPage": 24,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419"
+            },
+            {
+              "checkedExcerpt": "1 Hardware 27 Example: Perform radix conversion of the decimal number (77.625)10 into a binary number. A summary of radix conversion between decimal numbers and n-adic numbers is provided below. [Procedure of radix conversion from an n-adic number into a decimal number] Add all results obtained by multiplying the weight (power of n) of each digit by the number {from 0 through (n−1)} of each digit. [Procedure of radix conversion from a decimal number into an n-adic number] Integer part: Repeatedly divide by n until the quotient becomes 0, and then arrange the remainder of calculation results in sequence from the back. Radix part: Continuously multiply the radix part by n until the radix part in calculation results becomes 0, and then arrange the integer part of each calculation result in sequence from the front. For example, below is an example of radix conversion of the decimal number (67.6875)10 into an octal number. However, when the radix conversion from decimal to octal or hexadecimal is performed, it may be easier to convert from decimal to binary, and then convert the result into octal or hexadecimal.",
+              "kind": "textbook-source",
+              "pdfPage": 32,
+              "printedPage": 27,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "1384fa93bc88b2aaf2b2b1668769ecfb5dd2e2854906bae70aab4c4dff32efff"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2007S-Q002",
+        "reason": "Original question image and actual 2-2 teaching re-read; radix-conversion is directly supported by the exact quoted passage(s), not inferred from a heading.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "checkedExcerpt": "with two numbers, 0 and 1. (101.1)2 = 1×22 + 0×21 + 1×20 + 1×2−1 = (5.5)10 * 2 in ( )2 shows that it is a binary number. Decimal numbers and their corresponding binary numbers are as shown below. Binary numbers can use only two numbers of 0 and 1 for one digit. Therefore, the number of digits quickly becomes large, compared with decimal numbers. Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Binary numbers 0 1 10 11 100 101 110 111 1000 1001 1010 ... Figure 1-6 Decimal numbers and corresponding binary numbers (2) Octal numbers Octal numbers are numerical values that are represented by using eight numbers from 0 through 7 and that are carried over when 8 is reached. (317.5)8 = 3×82 + 1×81 + 7×80 + 5×8−1 = (207.625)10 * 8 in ( )8 shows that it is an octal number Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Octal numbers 0 1 2 3 4 5 6 7 10 11 12 ... Figure 1-7 Decimal numbers and corresponding octal numbers (3) Hexadecimal numbers Hexadecimal numbers are numerical values that are represented by using sixteen numbers from 0 through 9, and A(10), B(11), C(12), D(13), E(14), and F(15) and that are carried over when 16 is reached. (1A6.E)16 = 1×162 + 10×161 + 6×160 + 14×16−1 = (422.875)10 * 16 in ( )16 shows that it is a hexadecimal number.",
+              "kind": "textbook-source",
+              "pdfPage": 29,
+              "printedPage": 24,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419"
+            },
+            {
+              "checkedExcerpt": "1 Hardware 27 Example: Perform radix conversion of the decimal number (77.625)10 into a binary number. A summary of radix conversion between decimal numbers and n-adic numbers is provided below. [Procedure of radix conversion from an n-adic number into a decimal number] Add all results obtained by multiplying the weight (power of n) of each digit by the number {from 0 through (n−1)} of each digit. [Procedure of radix conversion from a decimal number into an n-adic number] Integer part: Repeatedly divide by n until the quotient becomes 0, and then arrange the remainder of calculation results in sequence from the back. Radix part: Continuously multiply the radix part by n until the radix part in calculation results becomes 0, and then arrange the integer part of each calculation result in sequence from the front. For example, below is an example of radix conversion of the decimal number (67.6875)10 into an octal number. However, when the radix conversion from decimal to octal or hexadecimal is performed, it may be easier to convert from decimal to binary, and then convert the result into octal or hexadecimal.",
+              "kind": "textbook-source",
+              "pdfPage": 32,
+              "printedPage": 27,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "1384fa93bc88b2aaf2b2b1668769ecfb5dd2e2854906bae70aab4c4dff32efff"
+            }
+          ]
+        ]
       }
     ],
     "videos": []
@@ -526,7 +760,8 @@
       "HIST-TECH01-2013A-Q001",
       "HIST-TECH01-2010A-Q001",
       "HIST-TECH01-2018S-Q001",
-      "HIST-TECH01-2007S-Q004"
+      "HIST-TECH01-2007S-Q004",
+      "HIST-TECH01-2008A-Q002"
     ],
     "mappingEvidence": [
       {
@@ -627,6 +862,24 @@
             }
           ]
         ]
+      },
+      {
+        "questionId": "HIST-TECH01-2008A-Q002",
+        "reason": "Original question image and actual 2-3-4 teaching re-read; signed-shifts is directly supported by the exact quoted passage(s), not inferred from a heading.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "checkedExcerpt": "Because of this, computation rules of arithmetic shift can be summarized as follows: [Computation rules of arithmetic shift] • With an arithmetic shift to left by n bits, the value becomes 2n times of the original number. • With an arithmetic shift to right by n bits, the value becomes 2−n times of the original number. (It is the value that is obtained by dividing the original number by 2n) (2) Logical shift Logical shift is the shift operation used when the position of bits are changed. Its main difference from the arithmetic shift is that it does not treat the sign bit in a special manner. [Rules of logical shift] • Shift (move) the sign bit as well. • Truncate extra bits that are shifted out as a result of the shift. • Store 0 in the empty bit position that is created as a result of shift.",
+              "kind": "textbook-source",
+              "pdfPage": 49,
+              "printedPage": 44,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "842c04587b857023fdf8cdf66df09a3f066a700c8383fbd99d9bb384efb686b7"
+            }
+          ]
+        ]
       }
     ],
     "videos": []
@@ -667,7 +920,8 @@
       "HIST-TECH01-2019A-Q012",
       "HIST-TECH01-2021A-Q011",
       "HIST-TECH01-2018A-Q010",
-      "HIST-TECH01-2021S-Q011"
+      "HIST-TECH01-2021S-Q011",
+      "HIST-TECH01-2013S-Q011"
     ],
     "mappingEvidence": [
       {
@@ -759,6 +1013,24 @@
             }
           ]
         ]
+      },
+      {
+        "questionId": "HIST-TECH01-2013S-Q011",
+        "reason": "Original question image and actual 3-1 teaching re-read; cpu-registers is directly supported by the exact quoted passage(s), not inferred from a heading.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "checkedExcerpt": "• Instruction register It stores the instructions to be executed. It is composed of an instruction part and an address part. • Instruction address register (program counter, program register) It stores the address (storing position in the main memory) of the instruction to be executed next.",
+              "kind": "textbook-source",
+              "pdfPage": 52,
+              "printedPage": 47,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "97daacc48a2f1d7065a3797a62a0b4b6c3c2156c8a7a712b4c516a22df80c5ba"
+            }
+          ]
+        ]
       }
     ],
     "videos": [
@@ -786,7 +1058,11 @@
       "2025A-A-Q008",
       "HIST-TECH01-2020A-Q011",
       "HIST-TECH01-2020S-Q010",
-      "HIST-TECH01-2016A-Q010"
+      "HIST-TECH01-2016A-Q010",
+      "HIST-TECH01-2014S-Q024",
+      "HIST-TECH01-2013A-Q012",
+      "HIST-TECH01-2010S-Q015",
+      "HIST-TECH01-2007S-Q021"
     ],
     "mappingEvidence": [
       {
@@ -869,6 +1145,87 @@
             }
           ]
         ]
+      },
+      {
+        "questionId": "HIST-TECH01-2014S-Q024",
+        "reason": "Original question image and actual 3-3-4 teaching re-read; interrupts is directly supported by the exact quoted passage(s), not inferred from a heading.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "checkedExcerpt": "[Processing sequence of processor when interrupt has occurred] 1) Switch from user mode to privilege mode. 2) Save the values of various registers (program counter, etc.). 3) Decide the starting address of the interrupt process routine (interrupt program). 4) Execute the interrupt process routine. 5) After the execution of the interrupt process routine is complete, restore the values of various registers that are saved in step 2. 6) Switch from privilege mode to user mode, and restart the interrupted process. According to conditions that an interrupt occurs, this can be classified described below. Here, it is assumed that multiple interrupts may occur simultaneously, and therefore priority ranking is assigned to each interrupt. 1) External interrupt: This is an interrupt that occurs because of a reason not related to the process being executed. • Timer interrupt This is an interrupt that occurs when the time measured in the timer, such as interval timer and watchdog timer, has exceeded the specified time (i.e., the timer has been timed-out). • Input/output interrupt (input/output completion interrupt) This is an interrupt that occurs when an input/output operation has been completed. • Machine check interrupt This is an interrupt that occurs because of a hardware malfunction, a power failure, or such other factor. • Restart interrupt This is an interrupt that occurs when the user has pressed the external restart switch. 2) Internal interrupt: This is an interrupt that occurs because of the process being executed. This is also referred to as a trap. • SVC (SuperVisor Call) interrupt This is an interrupt that occurs when supervisor (program that offers basic functions) is requested to invoke a process, such as when input/output instruction is used or storage protection exception happens. • Program interrupt",
+              "kind": "textbook-source",
+              "pdfPage": 65,
+              "printedPage": 60,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "b668a0efaa1f8b55cb59357fddc547f8d106ad6af9e262e39cf1e1156e3e46d5"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2013A-Q012",
+        "reason": "Original question image and actual 3-3-4 teaching re-read; interrupts is directly supported by the exact quoted passage(s), not inferred from a heading.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "checkedExcerpt": "[Processing sequence of processor when interrupt has occurred] 1) Switch from user mode to privilege mode. 2) Save the values of various registers (program counter, etc.). 3) Decide the starting address of the interrupt process routine (interrupt program). 4) Execute the interrupt process routine. 5) After the execution of the interrupt process routine is complete, restore the values of various registers that are saved in step 2. 6) Switch from privilege mode to user mode, and restart the interrupted process. According to conditions that an interrupt occurs, this can be classified described below. Here, it is assumed that multiple interrupts may occur simultaneously, and therefore priority ranking is assigned to each interrupt. 1) External interrupt: This is an interrupt that occurs because of a reason not related to the process being executed. • Timer interrupt This is an interrupt that occurs when the time measured in the timer, such as interval timer and watchdog timer, has exceeded the specified time (i.e., the timer has been timed-out). • Input/output interrupt (input/output completion interrupt) This is an interrupt that occurs when an input/output operation has been completed. • Machine check interrupt This is an interrupt that occurs because of a hardware malfunction, a power failure, or such other factor. • Restart interrupt This is an interrupt that occurs when the user has pressed the external restart switch. 2) Internal interrupt: This is an interrupt that occurs because of the process being executed. This is also referred to as a trap. • SVC (SuperVisor Call) interrupt This is an interrupt that occurs when supervisor (program that offers basic functions) is requested to invoke a process, such as when input/output instruction is used or storage protection exception happens. • Program interrupt",
+              "kind": "textbook-source",
+              "pdfPage": 65,
+              "printedPage": 60,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "b668a0efaa1f8b55cb59357fddc547f8d106ad6af9e262e39cf1e1156e3e46d5"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2010S-Q015",
+        "reason": "Original question image and actual 3-3-4 teaching re-read; interrupts is directly supported by the exact quoted passage(s), not inferred from a heading.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "checkedExcerpt": "[Processing sequence of processor when interrupt has occurred] 1) Switch from user mode to privilege mode. 2) Save the values of various registers (program counter, etc.). 3) Decide the starting address of the interrupt process routine (interrupt program). 4) Execute the interrupt process routine. 5) After the execution of the interrupt process routine is complete, restore the values of various registers that are saved in step 2. 6) Switch from privilege mode to user mode, and restart the interrupted process. According to conditions that an interrupt occurs, this can be classified described below. Here, it is assumed that multiple interrupts may occur simultaneously, and therefore priority ranking is assigned to each interrupt. 1) External interrupt: This is an interrupt that occurs because of a reason not related to the process being executed. • Timer interrupt This is an interrupt that occurs when the time measured in the timer, such as interval timer and watchdog timer, has exceeded the specified time (i.e., the timer has been timed-out). • Input/output interrupt (input/output completion interrupt) This is an interrupt that occurs when an input/output operation has been completed. • Machine check interrupt This is an interrupt that occurs because of a hardware malfunction, a power failure, or such other factor. • Restart interrupt This is an interrupt that occurs when the user has pressed the external restart switch. 2) Internal interrupt: This is an interrupt that occurs because of the process being executed. This is also referred to as a trap. • SVC (SuperVisor Call) interrupt This is an interrupt that occurs when supervisor (program that offers basic functions) is requested to invoke a process, such as when input/output instruction is used or storage protection exception happens. • Program interrupt",
+              "kind": "textbook-source",
+              "pdfPage": 65,
+              "printedPage": 60,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "b668a0efaa1f8b55cb59357fddc547f8d106ad6af9e262e39cf1e1156e3e46d5"
+            },
+            {
+              "checkedExcerpt": "1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False (0) when both input values are False (0), or else the output is True (1) (when either one is True (1)). 3) Negation operation (NOT) The output becomes False (0) when the input value is True (1), and the output is True (1) when the input value is False (0). 4) Exclusive logical sum (Exclusive OR) operation (XOR or EOR) The output becomes False (0) when both input values are the same, and the output is True (1) when both input values are different.",
+              "kind": "textbook-source",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2007S-Q021",
+        "reason": "Original question image and actual 3-3-4 teaching re-read; interrupts is directly supported by the exact quoted passage(s), not inferred from a heading.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "checkedExcerpt": "[Processing sequence of processor when interrupt has occurred] 1) Switch from user mode to privilege mode. 2) Save the values of various registers (program counter, etc.). 3) Decide the starting address of the interrupt process routine (interrupt program). 4) Execute the interrupt process routine. 5) After the execution of the interrupt process routine is complete, restore the values of various registers that are saved in step 2. 6) Switch from privilege mode to user mode, and restart the interrupted process. According to conditions that an interrupt occurs, this can be classified described below. Here, it is assumed that multiple interrupts may occur simultaneously, and therefore priority ranking is assigned to each interrupt. 1) External interrupt: This is an interrupt that occurs because of a reason not related to the process being executed. • Timer interrupt This is an interrupt that occurs when the time measured in the timer, such as interval timer and watchdog timer, has exceeded the specified time (i.e., the timer has been timed-out). • Input/output interrupt (input/output completion interrupt) This is an interrupt that occurs when an input/output operation has been completed. • Machine check interrupt This is an interrupt that occurs because of a hardware malfunction, a power failure, or such other factor. • Restart interrupt This is an interrupt that occurs when the user has pressed the external restart switch. 2) Internal interrupt: This is an interrupt that occurs because of the process being executed. This is also referred to as a trap. • SVC (SuperVisor Call) interrupt This is an interrupt that occurs when supervisor (program that offers basic functions) is requested to invoke a process, such as when input/output instruction is used or storage protection exception happens. • Program interrupt",
+              "kind": "textbook-source",
+              "pdfPage": 65,
+              "printedPage": 60,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "b668a0efaa1f8b55cb59357fddc547f8d106ad6af9e262e39cf1e1156e3e46d5"
+            }
+          ]
+        ]
       }
     ],
     "videos": []
@@ -935,7 +1292,15 @@
       "HIST-TECH01-2009A-Q008",
       "HIST-TECH01-2020A-Q004",
       "HIST-TECH01-2009S-Q007",
-      "HIST-TECH01-2017S-Q001"
+      "HIST-TECH01-2017S-Q001",
+      "HIST-TECH01-2012S-Q026",
+      "HIST-TECH01-2012S-Q027",
+      "HIST-TECH01-2011A-Q002",
+      "HIST-TECH01-2010A-Q026",
+      "HIST-TECH01-2010S-Q030",
+      "HIST-TECH01-2009A-Q009",
+      "HIST-TECH01-2022S-Q021",
+      "HIST-TECH01-2019A-Q024"
     ],
     "mappingEvidence": [
       {
@@ -1810,6 +2175,240 @@
             }
           ]
         ]
+      },
+      {
+        "questionId": "HIST-TECH01-2012S-Q026",
+        "reason": "Original question image and actual 3-4-1 teaching re-read; logic-gates is directly supported by the exact quoted passage(s), not inferred from a heading.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "checkedExcerpt": "1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False (0) when both input values are False (0), or else the output is True (1) (when either one is True (1)). 3) Negation operation (NOT) The output becomes False (0) when the input value is True (1), and the output is True (1) when the input value is False (0). 4) Exclusive logical sum (Exclusive OR) operation (XOR or EOR) The output becomes False (0) when both input values are the same, and the output is True (1) when both input values are different.",
+              "kind": "textbook-source",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed"
+            },
+            {
+              "checkedExcerpt": "XOR circuit is also formed by combining the basic circuits. However, it cannot be formed with a combination of simple circuits as in the case of NAND circuits and NOR circuits. In such cases, it is called logical design (or circuit design) to think about the combination of basic circuits for achieving the targeted results (truth values). In logical design, logical expressions (logical functions) obtained from the truth tables are simplified using the rules of logical operations (logical laws), and the optimum combination of basic circuits is determined. (“Optimum” means that the design is performed in consideration of performance, efficiency, and cost.",
+              "kind": "textbook-source",
+              "pdfPage": 69,
+              "printedPage": 64,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "b26e0590632468a146244504ce22b38c51e1c61bfd1a94cd92adb3789271befd"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2012S-Q027",
+        "reason": "Original question image and actual 3-4-1 teaching re-read; logic-gates is directly supported by the exact quoted passage(s), not inferred from a heading.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "checkedExcerpt": "1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False (0) when both input values are False (0), or else the output is True (1) (when either one is True (1)). 3) Negation operation (NOT) The output becomes False (0) when the input value is True (1), and the output is True (1) when the input value is False (0). 4) Exclusive logical sum (Exclusive OR) operation (XOR or EOR) The output becomes False (0) when both input values are the same, and the output is True (1) when both input values are different.",
+              "kind": "textbook-source",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed"
+            },
+            {
+              "checkedExcerpt": "XOR circuit is also formed by combining the basic circuits. However, it cannot be formed with a combination of simple circuits as in the case of NAND circuits and NOR circuits. In such cases, it is called logical design (or circuit design) to think about the combination of basic circuits for achieving the targeted results (truth values). In logical design, logical expressions (logical functions) obtained from the truth tables are simplified using the rules of logical operations (logical laws), and the optimum combination of basic circuits is determined. (“Optimum” means that the design is performed in consideration of performance, efficiency, and cost.",
+              "kind": "textbook-source",
+              "pdfPage": 69,
+              "printedPage": 64,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "b26e0590632468a146244504ce22b38c51e1c61bfd1a94cd92adb3789271befd"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2011A-Q002",
+        "reason": "Original question image and actual 3-4-1 teaching re-read; logic-gates is directly supported by the exact quoted passage(s), not inferred from a heading.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "checkedExcerpt": "XOR circuit is also formed by combining the basic circuits. However, it cannot be formed with a combination of simple circuits as in the case of NAND circuits and NOR circuits. In such cases, it is called logical design (or circuit design) to think about the combination of basic circuits for achieving the targeted results (truth values). In logical design, logical expressions (logical functions) obtained from the truth tables are simplified using the rules of logical operations (logical laws), and the optimum combination of basic circuits is determined. (“Optimum” means that the design is performed in consideration of performance, efficiency, and cost.",
+              "kind": "textbook-source",
+              "pdfPage": 69,
+              "printedPage": 64,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "b26e0590632468a146244504ce22b38c51e1c61bfd1a94cd92adb3789271befd"
+            },
+            {
+              "checkedExcerpt": "[Main logical laws] * AND operation is represented with ˄, OR operation is represented with ˅, and NOT operation is represented with ¬. • Idempotent laws A A A   A A A   • Commutative laws A B B A    A B B A    • Associative laws C ) B A ( ) C B ( A      C ) B A ( ) C B ( A      • Distributive laws ) C A ( ) B A ( ) C B ( A       ) C A ( ) B A ( ) C B ( A       • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determine logical expression F",
+              "kind": "textbook-source",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2010A-Q026",
+        "reason": "Original question image and actual 3-4-1 teaching re-read; logic-gates is directly supported by the exact quoted passage(s), not inferred from a heading.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "checkedExcerpt": "4) NAND circuit This circuit performs negative logical product (negative AND) operation (NAND). NAND operation is the arithmetic operation that negates the results of AND operation. The truth table and MIL symbol of NAND circuit are as shown below. NAND circuit is formed by combining AND circuit and NOT circuit. X Y X NAND Y Figure 1-29 NAND circuit 0 0 1 0 1 1 1 0 1 1 1 0 5) NOR circuit This circuit performs negative logical sum operation (NOR). NOR operation is the arithmetic operation that negates the results of OR operation. The truth table and MIL symbol of NOR circuit are as shown below. NOR circuit is formed by combining OR circuit and NOT circuit. X Y X NOR Y Figure 1-30 NOR circuit 0 0 1 0 1 0 1 0 0 1 1 0",
+              "kind": "textbook-source",
+              "pdfPage": 68,
+              "printedPage": 63,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "0d4b63b814973a25037c28e66d92f6e2f65667d47f397e9e8a6a794d9e6f12bd"
+            },
+            {
+              "checkedExcerpt": "XOR circuit is also formed by combining the basic circuits. However, it cannot be formed with a combination of simple circuits as in the case of NAND circuits and NOR circuits. In such cases, it is called logical design (or circuit design) to think about the combination of basic circuits for achieving the targeted results (truth values). In logical design, logical expressions (logical functions) obtained from the truth tables are simplified using the rules of logical operations (logical laws), and the optimum combination of basic circuits is determined. (“Optimum” means that the design is performed in consideration of performance, efficiency, and cost.",
+              "kind": "textbook-source",
+              "pdfPage": 69,
+              "printedPage": 64,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "b26e0590632468a146244504ce22b38c51e1c61bfd1a94cd92adb3789271befd"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2010S-Q030",
+        "reason": "Original question image and actual 3-4-1 teaching re-read; logic-gates is directly supported by the exact quoted passage(s), not inferred from a heading.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "checkedExcerpt": "1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False (0) when both input values are False (0), or else the output is True (1) (when either one is True (1)). 3) Negation operation (NOT) The output becomes False (0) when the input value is True (1), and the output is True (1) when the input value is False (0). 4) Exclusive logical sum (Exclusive OR) operation (XOR or EOR) The output becomes False (0) when both input values are the same, and the output is True (1) when both input values are different.",
+              "kind": "textbook-source",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed"
+            },
+            {
+              "checkedExcerpt": "4) NAND circuit This circuit performs negative logical product (negative AND) operation (NAND). NAND operation is the arithmetic operation that negates the results of AND operation. The truth table and MIL symbol of NAND circuit are as shown below. NAND circuit is formed by combining AND circuit and NOT circuit. X Y X NAND Y Figure 1-29 NAND circuit 0 0 1 0 1 1 1 0 1 1 1 0 5) NOR circuit This circuit performs negative logical sum operation (NOR). NOR operation is the arithmetic operation that negates the results of OR operation. The truth table and MIL symbol of NOR circuit are as shown below. NOR circuit is formed by combining OR circuit and NOT circuit. X Y X NOR Y Figure 1-30 NOR circuit 0 0 1 0 1 0 1 0 0 1 1 0",
+              "kind": "textbook-source",
+              "pdfPage": 68,
+              "printedPage": 63,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "0d4b63b814973a25037c28e66d92f6e2f65667d47f397e9e8a6a794d9e6f12bd"
+            },
+            {
+              "checkedExcerpt": "XOR circuit is also formed by combining the basic circuits. However, it cannot be formed with a combination of simple circuits as in the case of NAND circuits and NOR circuits. In such cases, it is called logical design (or circuit design) to think about the combination of basic circuits for achieving the targeted results (truth values). In logical design, logical expressions (logical functions) obtained from the truth tables are simplified using the rules of logical operations (logical laws), and the optimum combination of basic circuits is determined. (“Optimum” means that the design is performed in consideration of performance, efficiency, and cost.",
+              "kind": "textbook-source",
+              "pdfPage": 69,
+              "printedPage": 64,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "b26e0590632468a146244504ce22b38c51e1c61bfd1a94cd92adb3789271befd"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2009A-Q009",
+        "reason": "Original question image and actual 3-4-1 teaching re-read; logic-gates is directly supported by the exact quoted passage(s), not inferred from a heading.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "checkedExcerpt": "1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False (0) when both input values are False (0), or else the output is True (1) (when either one is True (1)). 3) Negation operation (NOT) The output becomes False (0) when the input value is True (1), and the output is True (1) when the input value is False (0). 4) Exclusive logical sum (Exclusive OR) operation (XOR or EOR) The output becomes False (0) when both input values are the same, and the output is True (1) when both input values are different.",
+              "kind": "textbook-source",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed"
+            },
+            {
+              "checkedExcerpt": "XOR circuit is also formed by combining the basic circuits. However, it cannot be formed with a combination of simple circuits as in the case of NAND circuits and NOR circuits. In such cases, it is called logical design (or circuit design) to think about the combination of basic circuits for achieving the targeted results (truth values). In logical design, logical expressions (logical functions) obtained from the truth tables are simplified using the rules of logical operations (logical laws), and the optimum combination of basic circuits is determined. (“Optimum” means that the design is performed in consideration of performance, efficiency, and cost.",
+              "kind": "textbook-source",
+              "pdfPage": 69,
+              "printedPage": 64,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "b26e0590632468a146244504ce22b38c51e1c61bfd1a94cd92adb3789271befd"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2022S-Q021",
+        "reason": "Original question image and actual 3-4-1 teaching re-read; logic-gates is directly supported by the exact quoted passage(s), not inferred from a heading.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "checkedExcerpt": "4) NAND circuit This circuit performs negative logical product (negative AND) operation (NAND). NAND operation is the arithmetic operation that negates the results of AND operation. The truth table and MIL symbol of NAND circuit are as shown below. NAND circuit is formed by combining AND circuit and NOT circuit. X Y X NAND Y Figure 1-29 NAND circuit 0 0 1 0 1 1 1 0 1 1 1 0 5) NOR circuit This circuit performs negative logical sum operation (NOR). NOR operation is the arithmetic operation that negates the results of OR operation. The truth table and MIL symbol of NOR circuit are as shown below. NOR circuit is formed by combining OR circuit and NOT circuit. X Y X NOR Y Figure 1-30 NOR circuit 0 0 1 0 1 0 1 0 0 1 1 0",
+              "kind": "textbook-source",
+              "pdfPage": 68,
+              "printedPage": 63,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "0d4b63b814973a25037c28e66d92f6e2f65667d47f397e9e8a6a794d9e6f12bd"
+            },
+            {
+              "checkedExcerpt": "XOR circuit is also formed by combining the basic circuits. However, it cannot be formed with a combination of simple circuits as in the case of NAND circuits and NOR circuits. In such cases, it is called logical design (or circuit design) to think about the combination of basic circuits for achieving the targeted results (truth values). In logical design, logical expressions (logical functions) obtained from the truth tables are simplified using the rules of logical operations (logical laws), and the optimum combination of basic circuits is determined. (“Optimum” means that the design is performed in consideration of performance, efficiency, and cost.",
+              "kind": "textbook-source",
+              "pdfPage": 69,
+              "printedPage": 64,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "b26e0590632468a146244504ce22b38c51e1c61bfd1a94cd92adb3789271befd"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2019A-Q024",
+        "reason": "Original question image and actual 3-4-1 teaching re-read; logic-gates is directly supported by the exact quoted passage(s), not inferred from a heading.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "checkedExcerpt": "4) NAND circuit This circuit performs negative logical product (negative AND) operation (NAND). NAND operation is the arithmetic operation that negates the results of AND operation. The truth table and MIL symbol of NAND circuit are as shown below. NAND circuit is formed by combining AND circuit and NOT circuit. X Y X NAND Y Figure 1-29 NAND circuit 0 0 1 0 1 1 1 0 1 1 1 0 5) NOR circuit This circuit performs negative logical sum operation (NOR). NOR operation is the arithmetic operation that negates the results of OR operation. The truth table and MIL symbol of NOR circuit are as shown below. NOR circuit is formed by combining OR circuit and NOT circuit. X Y X NOR Y Figure 1-30 NOR circuit 0 0 1 0 1 0 1 0 0 1 1 0",
+              "kind": "textbook-source",
+              "pdfPage": 68,
+              "printedPage": 63,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "0d4b63b814973a25037c28e66d92f6e2f65667d47f397e9e8a6a794d9e6f12bd"
+            },
+            {
+              "checkedExcerpt": "XOR circuit is also formed by combining the basic circuits. However, it cannot be formed with a combination of simple circuits as in the case of NAND circuits and NOR circuits. In such cases, it is called logical design (or circuit design) to think about the combination of basic circuits for achieving the targeted results (truth values). In logical design, logical expressions (logical functions) obtained from the truth tables are simplified using the rules of logical operations (logical laws), and the optimum combination of basic circuits is determined. (“Optimum” means that the design is performed in consideration of performance, efficiency, and cost.",
+              "kind": "textbook-source",
+              "pdfPage": 69,
+              "printedPage": 64,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "b26e0590632468a146244504ce22b38c51e1c61bfd1a94cd92adb3789271befd"
+            },
+            {
+              "checkedExcerpt": "[Main logical laws] * AND operation is represented with ˄, OR operation is represented with ˅, and NOT operation is represented with ¬. • Idempotent laws A A A   A A A   • Commutative laws A B B A    A B B A    • Associative laws C ) B A ( ) C B ( A      C ) B A ( ) C B ( A      • Distributive laws ) C A ( ) B A ( ) C B ( A       ) C A ( ) B A ( ) C B ( A       • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determine logical expression F",
+              "kind": "textbook-source",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8"
+            }
+          ]
+        ]
       }
     ],
     "videos": [
@@ -2054,7 +2653,8 @@
       "2024S-A-Q010",
       "HIST-TECH01-2021S-Q014",
       "HIST-TECH01-2018A-Q013",
-      "HIST-TECH01-2008S-Q025"
+      "HIST-TECH01-2008S-Q025",
+      "HIST-TECH01-2009S-Q025"
     ],
     "mappingEvidence": [
       {
@@ -2140,6 +2740,24 @@
             }
           ]
         ]
+      },
+      {
+        "questionId": "HIST-TECH01-2009S-Q025",
+        "reason": "Original question image and actual 5-5-2 teaching re-read; usb-interface is directly supported by the exact quoted passage(s), not inferred from a heading.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "checkedExcerpt": "(3) USB (Universal Serial Bus) USB is a serial interface standardized in 1996, and it can connect various peripheral devices such as a keyboard, a mouse, and a modem. By using a USB hub, up to 127 devices can be connected in the tree configuration. Multiple standards for the shape of connectors are defined according to the device to be used.",
+              "kind": "textbook-source",
+              "pdfPage": 113,
+              "printedPage": 107,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "dc0ac94224ac349601fb4e55d1b2f368c14b9df6990bed8566415f31dba58cca"
+            }
+          ]
+        ]
       }
     ],
     "videos": []
@@ -2180,7 +2798,9 @@
       "HIST-TECH01-2016S-Q011",
       "HIST-TECH01-2014S-Q013",
       "HIST-TECH01-2009A-Q018",
-      "HIST-TECH01-2007A-Q022"
+      "HIST-TECH01-2007A-Q022",
+      "HIST-TECH01-2011A-Q010",
+      "HIST-TECH01-2007S-Q020"
     ],
     "mappingEvidence": [
       {
@@ -2293,6 +2913,60 @@
       },
       {
         "questionId": "HIST-TECH01-2007A-Q022",
+        "reason": "Original question image and actual 3-5-2 teaching re-read; processor-pipeline is directly supported by the exact quoted passage(s), not inferred from a heading.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "checkedExcerpt": "Pipeline control (or the pipeline processing) divides the execution cycle of each instruction into multiple stages, and by shifting each stage little by little and executing multiple stages separately, multiple instructions are executed simultaneously and in parallel.",
+              "kind": "textbook-source",
+              "pdfPage": 79,
+              "printedPage": 74,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "43e5268e1ad8127dce9376794ed8fcbff11fb38c272846ee59191dd800b9f312"
+            },
+            {
+              "checkedExcerpt": "Pipeline control is a method of advanced control of instructions. Therefore, efficiency will decline if there are instructions (jump instructions) that change the execution sequence of instruction. Moreover, if the execution time of each instruction is different, the waiting time may be required before starting the execution of a stage, and efficiency will decline. Figure 1-40 Pipeline control with poor efficiency For efficient pipeline control, it is necessary that the execution time of all instructions be almost the same. Among the different architectures of processors (computers), RISC architecture is suitable for this concept, while CISC architecture is not very suitable.",
+              "kind": "textbook-source",
+              "pdfPage": 80,
+              "printedPage": 75,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "af2abb85be02f4e30285b0a3a5670cf1fe5386a9ca908c0d972c3651fa6748a9"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2011A-Q010",
+        "reason": "Original question image and actual 3-5-2 teaching re-read; processor-pipeline is directly supported by the exact quoted passage(s), not inferred from a heading.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "checkedExcerpt": "Pipeline control (or the pipeline processing) divides the execution cycle of each instruction into multiple stages, and by shifting each stage little by little and executing multiple stages separately, multiple instructions are executed simultaneously and in parallel.",
+              "kind": "textbook-source",
+              "pdfPage": 79,
+              "printedPage": 74,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "43e5268e1ad8127dce9376794ed8fcbff11fb38c272846ee59191dd800b9f312"
+            },
+            {
+              "checkedExcerpt": "Pipeline control is a method of advanced control of instructions. Therefore, efficiency will decline if there are instructions (jump instructions) that change the execution sequence of instruction. Moreover, if the execution time of each instruction is different, the waiting time may be required before starting the execution of a stage, and efficiency will decline. Figure 1-40 Pipeline control with poor efficiency For efficient pipeline control, it is necessary that the execution time of all instructions be almost the same. Among the different architectures of processors (computers), RISC architecture is suitable for this concept, while CISC architecture is not very suitable.",
+              "kind": "textbook-source",
+              "pdfPage": 80,
+              "printedPage": 75,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "af2abb85be02f4e30285b0a3a5670cf1fe5386a9ca908c0d972c3651fa6748a9"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2007S-Q020",
         "reason": "Original question image and actual 3-5-2 teaching re-read; processor-pipeline is directly supported by the exact quoted passage(s), not inferred from a heading.",
         "reviewedAgainst": [
           "original question image",
@@ -2481,7 +3155,9 @@
       "HIST-TECH01-2019S-Q010",
       "HIST-TECH01-2013A-Q013",
       "HIST-TECH01-2012A-Q018",
-      "HIST-TECH01-2011A-Q027"
+      "HIST-TECH01-2011A-Q027",
+      "HIST-TECH01-2014A-Q023",
+      "HIST-TECH01-2014S-Q028"
     ],
     "mappingEvidence": [
       {
@@ -2654,6 +3330,42 @@
             }
           ]
         ]
+      },
+      {
+        "questionId": "HIST-TECH01-2014A-Q023",
+        "reason": "Original question image and actual 3-2-1 teaching re-read; memory-devices is directly supported by the exact quoted passage(s), not inferred from a heading.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "checkedExcerpt": "• Flash memory: This is semiconductor memory where data can be rewritten after data is erased in units of blocks through electrical operations. Flash memory is a type of EEPROM. Therefore, the number of rewritable timesis limited. However, it is used for various applications as a portable and convenient storage medium. 3-2-2 Components of Main Memory In broad terms, the main memory unit is composed of three components. • Memory unit This contains memory cells (storage devices) that record data. • Read/write feature This reads and writes data in the recording area (collection of memory cells). • Address selection feature This interprets the specified address and selects the recording area of data. Figure 1-14 Components of main memory Access operation to main memory is done as follows:",
+              "kind": "textbook-source",
+              "pdfPage": 56,
+              "printedPage": 51,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "160f7f81f75d39ed89036a247b39dde4e9fd12a488160bde9ee082925a267902"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2014S-Q028",
+        "reason": "Original question image and actual 3-2-1 teaching re-read; memory-devices is directly supported by the exact quoted passage(s), not inferred from a heading.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "checkedExcerpt": "• SRAM (Static RAM) While its operating speed is high, it is expensive and it also has high power consumption. As for its memory mechanism, it uses a flip-flop circuit that continues to retain the preceding status, and electrical charge that records information can be retained as long as power is supplied. However, its disadvantages are a low degree of integration because of complex configuration of the circuit, and storage capacity that is smaller compared with DRAM. It is mainly used in registers or other memory devices. • DRAM (Dynamic RAM) While its operating speed is somewhat slow, it uses a simple circuit where electrical charge is retained by condenser or capacitor. Therefore, the degree of integration is high, and large capacity memory can be easily created at low cost. However, electrical charge that records information is lost over time, and therefore it is necessary to rewrite (refresh) the information. Examples include SDRAM (Synchronous DRAM) or DDR SDRAM (Double Data Rate SDRAM) used in main memory, and RDRAM (Rambus DRAM) that uses Rambus technology in the external bus interface. (2) ROM (Read Only Memory) ROM is IC memory that can be used only for reading data. It has a property (non-volatility) where data is not lost even when the power is off. • Mask ROM This is a type of ROM where users cannot write data. This memory is used to store programs or data in factories, and the information is used only for the purpose of reference.",
+              "kind": "textbook-source",
+              "pdfPage": 55,
+              "printedPage": 50,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "cff41ce38db0a47f6283af34b5223088ef2d7dfc65ad32c1c1e59626ff05b526"
+            }
+          ]
+        ]
       }
     ],
     "videos": [],
@@ -2724,7 +3436,8 @@
       "HIST-TECH01-2017S-Q010",
       "HIST-TECH01-2016A-Q009",
       "HIST-TECH01-2016S-Q013",
-      "HIST-TECH01-2014A-Q011"
+      "HIST-TECH01-2014A-Q011",
+      "HIST-TECH01-2007S-Q019"
     ],
     "mappingEvidence": [
       {
@@ -2870,6 +3583,42 @@
             }
           ]
         ]
+      },
+      {
+        "questionId": "HIST-TECH01-2007S-Q019",
+        "reason": "Original question image and actual 3-3-3 teaching re-read; addressing-modes is directly supported by the exact quoted passage(s), not inferred from a heading.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "checkedExcerpt": "3-3-3 Addressing Mode Addressing mode is the method of determining the effective address from the value recorded in the address part of instruction, and then fetching the operand. The addressing mode is classified into two methods: one is the method (address modification) of determining the effective address from the value of the address part of instruction and the other is the method of determining the operand from the effective address. (1) Method of determining effective address from the value of the address part (address modification) 1) Absolute addressing In this method, the value of the address part is used as the effective address as it is. 2) Index addressing In this method, the effective address is determined by adding the value of the index register to the value of the address part. A general register is also used as the index register, and it is necessary to specify which general register to use in such cases.",
+              "kind": "textbook-source",
+              "pdfPage": 62,
+              "printedPage": 57,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "b22721484223170521d3471fde4744f2f5297a5c361e63e68d74ef0f396b7723"
+            },
+            {
+              "checkedExcerpt": "4) Relative addressing In this method, the effective address is determined by adding the value of the instruction address register (program counter) to the value of the address part. This means the relative position from the instruction being executed.",
+              "kind": "textbook-source",
+              "pdfPage": 63,
+              "printedPage": 58,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "df93596937a7d7bf65098945f79c27f2c427a9e2ba65478aae17a0a9cf842222"
+            },
+            {
+              "checkedExcerpt": "2) Direct addressing In this method, the content (value) of main memory referenced by the effective address is used as operand. Generally, direct addressing where there is no description concerning address modification can be considered as absolute addressing, and it can be considered as direct addressing when only address modification is specified. Figure 1-23 Direct addressing 3) Indirect addressing In this method, the content (value) of main memory referenced by the effective address is used as the address of operand. Double (in the example shown in Figure 1-24, data stored in address 120 is fetched as operand), and triple indirect addressing is also possible. Figure 1-24 Indirect addressing",
+              "kind": "textbook-source",
+              "pdfPage": 64,
+              "printedPage": 59,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "3ccf13e4b15d65e8f2f44687262569836e8962342ee82a9796255c5fd0356f02"
+            }
+          ]
+        ]
       }
     ],
     "videos": [],
@@ -3001,7 +3750,8 @@
     "questionIds": [
       "HIST-TECH01-2017S-Q012",
       "HIST-TECH01-2014S-Q014",
-      "HIST-TECH01-2012A-Q017"
+      "HIST-TECH01-2012A-Q017",
+      "HIST-TECH01-2007S-Q024"
     ],
     "mappingEvidence": [
       {
@@ -3042,6 +3792,24 @@
       },
       {
         "questionId": "HIST-TECH01-2012A-Q017",
+        "reason": "Original question image and actual 3-5-1 teaching re-read; memory-interleaving is directly supported by the exact quoted passage(s), not inferred from a heading.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "checkedExcerpt": "Memory interleave is a method where main memory is divided into several sections (bank) that are simultaneously and independently accessed in order to improve the average access time of main memory.",
+              "kind": "textbook-source",
+              "pdfPage": 78,
+              "printedPage": 73,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "92a5c6015e2691151bfd3c8c2a1ae0e5d4d8760151fc90ce62200211526e0da0"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2007S-Q024",
         "reason": "Original question image and actual 3-5-1 teaching re-read; memory-interleaving is directly supported by the exact quoted passage(s), not inferred from a heading.",
         "reviewedAgainst": [
           "original question image",
@@ -3415,7 +4183,10 @@
       "HIST-TECH01-2016A-Q002",
       "HIST-TECH01-2009S-Q004",
       "HIST-TECH01-2020S-Q001",
-      "HIST-TECH01-2015S-Q001"
+      "HIST-TECH01-2015S-Q001",
+      "HIST-TECH01-2012A-Q003",
+      "HIST-TECH01-2009A-Q002",
+      "HIST-TECH01-2007A-Q001"
     ],
     "mappingEvidence": [
       {
@@ -3534,6 +4305,123 @@
             }
           ]
         ]
+      },
+      {
+        "questionId": "HIST-TECH01-2012A-Q003",
+        "reason": "Original question image and actual 2-3-2 teaching re-read; signed-integers is directly supported by the exact quoted passage(s), not inferred from a heading.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "checkedExcerpt": "1) Fixed point numbers In this form of representation, numerical values are handled by fixing the radix point at a specific position. Generally, it is mostly used for handling integer numbers by fixing the position of the radix point in the least significant bit. ▲ (Position of radix point) In this form of representation, after numerical values are converted into binary numbers, they are used without modification according to the position of the radix point. Example: Represent (89)10 as an 8 bit fixed point number. (89)10=(1011001)2 ↓ 0 1 0 1 1 0 0 1 In fixed point numbers, methods of representing negative numbers (representation forms of negative numbers) are important. The two main methods are described below. A: Signed absolute value notation In this method, the most significant 1 bit is used as a sign bit, and 0 is stored in it if the numerical value is positive, while 1 is stored in it if the numerical value is negative. In the remaining bits, the binary bit string is stored as it is. Example: Represent (+89)10 and (−89)10 with an 8-bit fixed point number (signed absolute value). (89)10 = (1011001)2 (+89)10: 0 1 0 1 1 0 0 1 (−89)10: 1 1 0 1 1 0 0 1 B: Complement notation In this method, when a negative number is represented, the complement of the positive number is used.",
+              "kind": "textbook-source",
+              "pdfPage": 39,
+              "printedPage": 34,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "5946d31a5a250ce77c93662f89ffe2a364b4bba19c3df837adeaedcc00d55eca"
+            },
+            {
+              "checkedExcerpt": "1 Hardware 35 [Complement] By using a certain number as the reference value, the shortfall is shown with respect to this reference value. In n-adic number, there is a complement of n and a complement of n−1. • Complement of n−1 ... Reference value is the maximum value that has the same number of digits. • Complement of n ... Reference value is the minimum value that has one more additional digit. The complement can be determined by subtracting from the reference value the number for which the complement is to be determined. Example 1: Determine the complement of decimal number (614)10 • 9’s complement • 10’s complement 999 1000 − 614 − 614 385 386 Example 2: Determine the complement of binary number (01101101)2 • 1’s complement • 2’s complement 11111111 100000000 − 01101101 − 01101101 10010010 10010011 Example: Represent (+89)10 and (−89)10 with an 8-bit fixed point number (2’s complement). (89)10 = (1011001)2 → 100000000 − 01011001 10100111 (+89)10: 0 1 0 1 1 0 0 1 (−89)10: 1 0 1 0 0 1 1 1 Generally, 2’s complement notation is often used in fixed point numbers for the following reasons.",
+              "kind": "textbook-source",
+              "pdfPage": 40,
+              "printedPage": 35,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "cb08d6e0e7d24577cf917f94e10d9aaaed3d6c215936caae1d33b5c8322fdd60"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2009A-Q002",
+        "reason": "Original question image and actual 2-3-2 teaching re-read; signed-integers is directly supported by the exact quoted passage(s), not inferred from a heading.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "checkedExcerpt": "1) Fixed point numbers In this form of representation, numerical values are handled by fixing the radix point at a specific position. Generally, it is mostly used for handling integer numbers by fixing the position of the radix point in the least significant bit. ▲ (Position of radix point) In this form of representation, after numerical values are converted into binary numbers, they are used without modification according to the position of the radix point. Example: Represent (89)10 as an 8 bit fixed point number. (89)10=(1011001)2 ↓ 0 1 0 1 1 0 0 1 In fixed point numbers, methods of representing negative numbers (representation forms of negative numbers) are important. The two main methods are described below. A: Signed absolute value notation In this method, the most significant 1 bit is used as a sign bit, and 0 is stored in it if the numerical value is positive, while 1 is stored in it if the numerical value is negative. In the remaining bits, the binary bit string is stored as it is. Example: Represent (+89)10 and (−89)10 with an 8-bit fixed point number (signed absolute value). (89)10 = (1011001)2 (+89)10: 0 1 0 1 1 0 0 1 (−89)10: 1 1 0 1 1 0 0 1 B: Complement notation In this method, when a negative number is represented, the complement of the positive number is used.",
+              "kind": "textbook-source",
+              "pdfPage": 39,
+              "printedPage": 34,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "5946d31a5a250ce77c93662f89ffe2a364b4bba19c3df837adeaedcc00d55eca"
+            },
+            {
+              "checkedExcerpt": "1 Hardware 35 [Complement] By using a certain number as the reference value, the shortfall is shown with respect to this reference value. In n-adic number, there is a complement of n and a complement of n−1. • Complement of n−1 ... Reference value is the maximum value that has the same number of digits. • Complement of n ... Reference value is the minimum value that has one more additional digit. The complement can be determined by subtracting from the reference value the number for which the complement is to be determined. Example 1: Determine the complement of decimal number (614)10 • 9’s complement • 10’s complement 999 1000 − 614 − 614 385 386 Example 2: Determine the complement of binary number (01101101)2 • 1’s complement • 2’s complement 11111111 100000000 − 01101101 − 01101101 10010010 10010011 Example: Represent (+89)10 and (−89)10 with an 8-bit fixed point number (2’s complement). (89)10 = (1011001)2 → 100000000 − 01011001 10100111 (+89)10: 0 1 0 1 1 0 0 1 (−89)10: 1 0 1 0 0 1 1 1 Generally, 2’s complement notation is often used in fixed point numbers for the following reasons.",
+              "kind": "textbook-source",
+              "pdfPage": 40,
+              "printedPage": 35,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "cb08d6e0e7d24577cf917f94e10d9aaaed3d6c215936caae1d33b5c8322fdd60"
+            },
+            {
+              "checkedExcerpt": "2. A wide range of numerical values can be represented. When signed absolute values are used, two types of 0s, namely (+0) and (−0), occur. However, there is only one type of 0 when 2’s complement is used. Since the information amount of identical numbers of bits is the same, 2’s complement enables the representation of a wider range of numerical values.",
+              "kind": "textbook-source",
+              "pdfPage": 41,
+              "printedPage": 36,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "6c2e75d45619a5e6a7b9e5fd212762cd73346edb6428485ad33a063f00938ba9"
+            },
+            {
+              "checkedExcerpt": "[Range of numerical values that can be represented with n bits (2’s complement)] From −2n−1 through +2n−1−1",
+              "kind": "textbook-source",
+              "pdfPage": 42,
+              "printedPage": 37,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "718cb51354c6920803d3e804c3aea117901e6e009c8530368dd23982ea2b7927"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2007A-Q001",
+        "reason": "Original question image and actual 2-3-2 teaching re-read; signed-integers is directly supported by the exact quoted passage(s), not inferred from a heading.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "checkedExcerpt": "1) Fixed point numbers In this form of representation, numerical values are handled by fixing the radix point at a specific position. Generally, it is mostly used for handling integer numbers by fixing the position of the radix point in the least significant bit. ▲ (Position of radix point) In this form of representation, after numerical values are converted into binary numbers, they are used without modification according to the position of the radix point. Example: Represent (89)10 as an 8 bit fixed point number. (89)10=(1011001)2 ↓ 0 1 0 1 1 0 0 1 In fixed point numbers, methods of representing negative numbers (representation forms of negative numbers) are important. The two main methods are described below. A: Signed absolute value notation In this method, the most significant 1 bit is used as a sign bit, and 0 is stored in it if the numerical value is positive, while 1 is stored in it if the numerical value is negative. In the remaining bits, the binary bit string is stored as it is. Example: Represent (+89)10 and (−89)10 with an 8-bit fixed point number (signed absolute value). (89)10 = (1011001)2 (+89)10: 0 1 0 1 1 0 0 1 (−89)10: 1 1 0 1 1 0 0 1 B: Complement notation In this method, when a negative number is represented, the complement of the positive number is used.",
+              "kind": "textbook-source",
+              "pdfPage": 39,
+              "printedPage": 34,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "5946d31a5a250ce77c93662f89ffe2a364b4bba19c3df837adeaedcc00d55eca"
+            },
+            {
+              "checkedExcerpt": "1 Hardware 35 [Complement] By using a certain number as the reference value, the shortfall is shown with respect to this reference value. In n-adic number, there is a complement of n and a complement of n−1. • Complement of n−1 ... Reference value is the maximum value that has the same number of digits. • Complement of n ... Reference value is the minimum value that has one more additional digit. The complement can be determined by subtracting from the reference value the number for which the complement is to be determined. Example 1: Determine the complement of decimal number (614)10 • 9’s complement • 10’s complement 999 1000 − 614 − 614 385 386 Example 2: Determine the complement of binary number (01101101)2 • 1’s complement • 2’s complement 11111111 100000000 − 01101101 − 01101101 10010010 10010011 Example: Represent (+89)10 and (−89)10 with an 8-bit fixed point number (2’s complement). (89)10 = (1011001)2 → 100000000 − 01011001 10100111 (+89)10: 0 1 0 1 1 0 0 1 (−89)10: 1 0 1 0 0 1 1 1 Generally, 2’s complement notation is often used in fixed point numbers for the following reasons.",
+              "kind": "textbook-source",
+              "pdfPage": 40,
+              "printedPage": 35,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "cb08d6e0e7d24577cf917f94e10d9aaaed3d6c215936caae1d33b5c8322fdd60"
+            },
+            {
+              "checkedExcerpt": "2. A wide range of numerical values can be represented. When signed absolute values are used, two types of 0s, namely (+0) and (−0), occur. However, there is only one type of 0 when 2’s complement is used. Since the information amount of identical numbers of bits is the same, 2’s complement enables the representation of a wider range of numerical values.",
+              "kind": "textbook-source",
+              "pdfPage": 41,
+              "printedPage": 36,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "6c2e75d45619a5e6a7b9e5fd212762cd73346edb6428485ad33a063f00938ba9"
+            },
+            {
+              "checkedExcerpt": "[Range of numerical values that can be represented with n bits (2’s complement)] From −2n−1 through +2n−1−1",
+              "kind": "textbook-source",
+              "pdfPage": 42,
+              "printedPage": 37,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "718cb51354c6920803d3e804c3aea117901e6e009c8530368dd23982ea2b7927"
+            }
+          ]
+        ]
       }
     ],
     "videos": [],
@@ -3553,7 +4441,9 @@
     "questionIds": [
       "HIST-TECH01-2018A-Q012",
       "HIST-TECH01-2010S-Q016",
-      "HIST-TECH01-2008S-Q017"
+      "HIST-TECH01-2008S-Q017",
+      "HIST-TECH01-2014A-Q001",
+      "HIST-TECH01-2010A-Q014"
     ],
     "mappingEvidence": [
       {
@@ -3645,6 +4535,78 @@
             }
           ]
         ]
+      },
+      {
+        "questionId": "HIST-TECH01-2014A-Q001",
+        "reason": "Original question image and actual 3-2-2 teaching re-read; memory-addressing is directly supported by the exact quoted passage(s), not inferred from a heading.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "checkedExcerpt": "• Flash memory: This is semiconductor memory where data can be rewritten after data is erased in units of blocks through electrical operations. Flash memory is a type of EEPROM. Therefore, the number of rewritable timesis limited. However, it is used for various applications as a portable and convenient storage medium. 3-2-2 Components of Main Memory In broad terms, the main memory unit is composed of three components. • Memory unit This contains memory cells (storage devices) that record data. • Read/write feature This reads and writes data in the recording area (collection of memory cells). • Address selection feature This interprets the specified address and selects the recording area of data. Figure 1-14 Components of main memory Access operation to main memory is done as follows:",
+              "kind": "textbook-source",
+              "pdfPage": 56,
+              "printedPage": 51,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "160f7f81f75d39ed89036a247b39dde4e9fd12a488160bde9ee082925a267902"
+            },
+            {
+              "checkedExcerpt": "[Access operation to main memory] 1) Through address bus, the specified address is handed over to the address selection feature. 2) The address selection feature decodes the specified address by using the address decoder, and selects the recording area to be accessed. (address selection operation) 3) The read/write feature reads and writes data in the selected recording area. When data is read, data that is read from the recording area is passed on to the CPU via data bus. When data is written, data that is transferred from the CPU via data bus is written in the recording area.",
+              "kind": "textbook-source",
+              "pdfPage": 57,
+              "printedPage": 52,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "952276357b5088ea6f791c2a38c8c03e44c8a25094d9a4d9e1c04a2823a319ef"
+            },
+            {
+              "checkedExcerpt": "with two numbers, 0 and 1. (101.1)2 = 1×22 + 0×21 + 1×20 + 1×2−1 = (5.5)10 * 2 in ( )2 shows that it is a binary number. Decimal numbers and their corresponding binary numbers are as shown below. Binary numbers can use only two numbers of 0 and 1 for one digit. Therefore, the number of digits quickly becomes large, compared with decimal numbers. Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Binary numbers 0 1 10 11 100 101 110 111 1000 1001 1010 ... Figure 1-6 Decimal numbers and corresponding binary numbers (2) Octal numbers Octal numbers are numerical values that are represented by using eight numbers from 0 through 7 and that are carried over when 8 is reached. (317.5)8 = 3×82 + 1×81 + 7×80 + 5×8−1 = (207.625)10 * 8 in ( )8 shows that it is an octal number Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Octal numbers 0 1 2 3 4 5 6 7 10 11 12 ... Figure 1-7 Decimal numbers and corresponding octal numbers (3) Hexadecimal numbers Hexadecimal numbers are numerical values that are represented by using sixteen numbers from 0 through 9, and A(10), B(11), C(12), D(13), E(14), and F(15) and that are carried over when 16 is reached. (1A6.E)16 = 1×162 + 10×161 + 6×160 + 14×16−1 = (422.875)10 * 16 in ( )16 shows that it is a hexadecimal number.",
+              "kind": "textbook-source",
+              "pdfPage": 29,
+              "printedPage": 24,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2010A-Q014",
+        "reason": "Original question image and actual 3-2-2 teaching re-read; memory-addressing is directly supported by the exact quoted passage(s), not inferred from a heading.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "checkedExcerpt": "• Flash memory: This is semiconductor memory where data can be rewritten after data is erased in units of blocks through electrical operations. Flash memory is a type of EEPROM. Therefore, the number of rewritable timesis limited. However, it is used for various applications as a portable and convenient storage medium. 3-2-2 Components of Main Memory In broad terms, the main memory unit is composed of three components. • Memory unit This contains memory cells (storage devices) that record data. • Read/write feature This reads and writes data in the recording area (collection of memory cells). • Address selection feature This interprets the specified address and selects the recording area of data. Figure 1-14 Components of main memory Access operation to main memory is done as follows:",
+              "kind": "textbook-source",
+              "pdfPage": 56,
+              "printedPage": 51,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "160f7f81f75d39ed89036a247b39dde4e9fd12a488160bde9ee082925a267902"
+            },
+            {
+              "checkedExcerpt": "[Access operation to main memory] 1) Through address bus, the specified address is handed over to the address selection feature. 2) The address selection feature decodes the specified address by using the address decoder, and selects the recording area to be accessed. (address selection operation) 3) The read/write feature reads and writes data in the selected recording area. When data is read, data that is read from the recording area is passed on to the CPU via data bus. When data is written, data that is transferred from the CPU via data bus is written in the recording area.",
+              "kind": "textbook-source",
+              "pdfPage": 57,
+              "printedPage": 52,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "952276357b5088ea6f791c2a38c8c03e44c8a25094d9a4d9e1c04a2823a319ef"
+            },
+            {
+              "checkedExcerpt": "There are two types (0, 1) of information that can be represented with 1 bit, and the number of bit combinations is referred to as the information amount. The information amount that can be represented with 2 bits is of 4 types (00, 01, 10, 11), the information amount that can be represented with 3 bits is of 8 types (000, 001, 010, 011, 100, 101, 110, 111), ... and so on. Figure1-5 Number of bits and information amount As shown in Figure 1-5, branches increase with the increase of every one bit used, and the information amount that can be represented keeps on doubling. In other words, the information amount that can be represented with n bits is of 2n types (2n shows the power of 2, and means multiplying 2 by itself n times). Using this concept, a summary of the information amount that can be represented with byte and word (16 bits) is given below. * Information amount of n bits = 2n types • Information amount that can be represented with 1 byte (=8 bits) = 28 types = 256 types (00000000 through 11111111) • Information amount that can be represented with 1 word (=16 bits) = 216 types = 65,536 types (0000000000000000 through 1111111111111111)",
+              "kind": "textbook-source",
+              "pdfPage": 26,
+              "printedPage": 21,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "ec4b3ea5335f0bcd568d6d6d1b14de254afc4f996f2922fbde0e9d5081865c2f"
+            }
+          ]
+        ]
       }
     ],
     "videos": [],
@@ -3662,7 +4624,8 @@
     "sectionUrl": "/chapters/hardware/data-representation/",
     "anchor": "concept-data-representation",
     "questionIds": [
-      "HIST-TECH01-2014S-Q004"
+      "HIST-TECH01-2014S-Q004",
+      "HIST-TECH01-2009A-Q019"
     ],
     "mappingEvidence": [
       {
@@ -3679,6 +4642,24 @@
               "textSha256": "ec4b3ea5335f0bcd568d6d6d1b14de254afc4f996f2922fbde0e9d5081865c2f",
               "checkedExcerpt": "There are two types (0, 1) of information that can be represented with 1 bit, and the number of bit combinations is referred to as the information amount. The information amount that can be represented with 2 bits is of 4 types (00, 01, 10, 11), the information amount that can be represented with 3 bits is of 8 types (000, 001, 010, 011, 100, 101, 110, 111), ... and so on. Figure1-5 Number of bits and information amount As shown in Figure 1-5, branches increase with the increase of every one bit used, and the information amount that can be represented keeps on doubling. In other words, the information amount that can be represented with n bits is of 2n types (2n shows the power of 2, and means multiplying 2 by itself n times). Using this concept, a summary of the information amount that can be represented with byte and word (16 bits) is given below. * Information amount of n bits = 2n types • Information amount that can be represented with 1 byte (=8 bits) = 28 types = 256 types (00000000 through 11111111) • Information amount that can be represented with 1 word (=16 bits) = 216 types = 65,536 types (0000000000000000 through 1111111111111111)",
               "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2009A-Q019",
+        "reason": "Original question image and actual 2-1 teaching re-read; data-representation is directly supported by the exact quoted passage(s), not inferred from a heading. The source explicitly teaches 2^n distinguishable bit combinations. Applying it to selecting sixteen register identities is the question’s application; the book is not claimed to define this machine’s register-identification field.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "checkedExcerpt": "There are two types (0, 1) of information that can be represented with 1 bit, and the number of bit combinations is referred to as the information amount. The information amount that can be represented with 2 bits is of 4 types (00, 01, 10, 11), the information amount that can be represented with 3 bits is of 8 types (000, 001, 010, 011, 100, 101, 110, 111), ... and so on. Figure1-5 Number of bits and information amount As shown in Figure 1-5, branches increase with the increase of every one bit used, and the information amount that can be represented keeps on doubling. In other words, the information amount that can be represented with n bits is of 2n types (2n shows the power of 2, and means multiplying 2 by itself n times). Using this concept, a summary of the information amount that can be represented with byte and word (16 bits) is given below. * Information amount of n bits = 2n types • Information amount that can be represented with 1 byte (=8 bits) = 28 types = 256 types (00000000 through 11111111) • Information amount that can be represented with 1 word (=16 bits) = 216 types = 65,536 types (0000000000000000 through 1111111111111111)",
+              "kind": "textbook-source",
+              "pdfPage": 26,
+              "printedPage": 21,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "ec4b3ea5335f0bcd568d6d6d1b14de254afc4f996f2922fbde0e9d5081865c2f"
             }
           ]
         ]
@@ -4470,7 +5451,8 @@
     "sectionUrl": "/chapters/hardware/cpu-and-main-memory/",
     "anchor": "fev1-201504-ch1-r1-pdf-077-b010-l03-text-0",
     "questionIds": [
-      "HIST-TECH01-2008A-Q026"
+      "HIST-TECH01-2008A-Q026",
+      "HIST-TECH01-2013S-Q014"
     ],
     "mappingEvidence": [
       {
@@ -4496,6 +5478,33 @@
               "role": "direct",
               "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
               "textSha256": "92a5c6015e2691151bfd3c8c2a1ae0e5d4d8760151fc90ce62200211526e0da0"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2013S-Q014",
+        "reason": "Original question image and actual 3-5-1 teaching re-read; memory-hierarchy is directly supported by the exact quoted passage(s), not inferred from a heading. Multi-level sequence is directly taught on physical p.77, while p.76 supplies weighted complete service times. Preserve the existing explicit alternative incremental-cost qualification; do not infer it from the printed key.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "checkedExcerpt": "memory). In other words, average access time (effective access time) as seen from the processor is decided on the basis of the extent to which the required data is found in cache memory. Therefore, it is determined by weighted average of access time of cache memory and access time of main memory. Here, the access time is determined by considering both the probability (hit ratio) that the required data is available in cache memory and the probability (NFP (Not Found Probability)) that the required data is not available in cache memory. “Hit ratio+NFP=1” always holds true. Example: Calculate the average access time of the following processor. NFP (probability that the required data is not available in cache memory) is 0.1. Access destination Access time (nanosecond) Cache memory 50 Main memory 500 Average access time of processor = Access time of cache memory × hit ratio + Access time of main memory × NFP = 50 nanoseconds × (1 − 0.1) + 500 nanoseconds × 0.1 = 95 nanoseconds From this example, it is clear that the higher the hit ratio is, the shorter the average access time is because of increased access to cache memory . When Havard architecture , which independently loads instructions and data , is used , cache memory is also separated into instruction cache and data cache . In this case , creating a program consolidating process ( instruction ) sections that are frequently executed will increase the hit ratio of instruction cache, which may shorten the average access time (access speed will improve).",
+              "kind": "textbook-source",
+              "pdfPage": 76,
+              "printedPage": 71,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "16642cba08a2bb57f7761c6f5bf389c157c2c9a4f16ffd1abe7b6cf36e65cc89"
+            },
+            {
+              "checkedExcerpt": "In modern-day computers, there is a large difference in the speed of processor and the speed of main memory. Therefore, it is common to use multi-level cache configuration where cache memory is divided into 2 levels, namely, primary cache and secondary cache. In this case, the processor will access in the sequence of primary cache → secondary cache → main memory. Figure 1-35 Multi-level cache configuration",
+              "kind": "textbook-source",
+              "pdfPage": 77,
+              "printedPage": 72,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "bcd00e2a51a63797a2917746e44fed627b7e95b09f1aeb4ee74181bd4a6a5443"
             }
           ]
         ]
@@ -4784,6 +5793,99 @@
       "headingNumber": "5-2-1",
       "passageId": "fev1-201504-ch1-r1-pdf-104-b011-l00-text-0",
       "fragmentSha256": "a3d9c972de1da0d8211c78309e7493eb565888cb43ef839460a20894a6ed2e55"
+    }
+  },
+  {
+    "id": "flip-flops",
+    "title": "Flip-flops and sequential circuits",
+    "summary": "Relate stored state and cross-coupled gates to a two-state memory cell.",
+    "sectionId": "fe-v1-ch01-s03",
+    "sectionUrl": "/chapters/hardware/cpu-and-main-memory/",
+    "anchor": "fev1-201504-ch1-r1-pdf-067-b002-l18-text-0",
+    "questionIds": [
+      "HIST-TECH01-2019A-Q022",
+      "HIST-TECH01-2008S-Q019",
+      "HIST-TECH01-2007S-Q018"
+    ],
+    "mappingEvidence": [
+      {
+        "questionId": "HIST-TECH01-2019A-Q022",
+        "reason": "Original question image and actual 3-4-1 teaching re-read; flip-flops is directly supported by the exact quoted passage(s), not inferred from a heading.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "checkedExcerpt": "Sequential circuit is a logic circuit where the output is decided on the basis of the input at that time and earlier status. Flip-flop circuit, which is one of the main sequential circuits, has two stable states, and it is used in storage cells of SRAM. Figure 1-25 shows the circuit diagram of a flip-flop for reference and the truth table. Circuit symbols used in Figure 1-25 are one of the methods of representing electronic circuits, and it is referred to as MIL (Military Specifications and Standards) symbols.",
+              "kind": "textbook-source",
+              "pdfPage": 67,
+              "printedPage": 62,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "82d4142195d967a0b4cc8b2c6564354bed5de7c9acec6ba514a43f30813b0c2f"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2008S-Q019",
+        "reason": "Original question image and actual 3-4-1 teaching re-read; flip-flops is directly supported by the exact quoted passage(s), not inferred from a heading.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "checkedExcerpt": "Sequential circuit is a logic circuit where the output is decided on the basis of the input at that time and earlier status. Flip-flop circuit, which is one of the main sequential circuits, has two stable states, and it is used in storage cells of SRAM. Figure 1-25 shows the circuit diagram of a flip-flop for reference and the truth table. Circuit symbols used in Figure 1-25 are one of the methods of representing electronic circuits, and it is referred to as MIL (Military Specifications and Standards) symbols.",
+              "kind": "textbook-source",
+              "pdfPage": 67,
+              "printedPage": 62,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "82d4142195d967a0b4cc8b2c6564354bed5de7c9acec6ba514a43f30813b0c2f"
+            },
+            {
+              "checkedExcerpt": "4) NAND circuit This circuit performs negative logical product (negative AND) operation (NAND). NAND operation is the arithmetic operation that negates the results of AND operation. The truth table and MIL symbol of NAND circuit are as shown below. NAND circuit is formed by combining AND circuit and NOT circuit. X Y X NAND Y Figure 1-29 NAND circuit 0 0 1 0 1 1 1 0 1 1 1 0 5) NOR circuit This circuit performs negative logical sum operation (NOR). NOR operation is the arithmetic operation that negates the results of OR operation. The truth table and MIL symbol of NOR circuit are as shown below. NOR circuit is formed by combining OR circuit and NOT circuit. X Y X NOR Y Figure 1-30 NOR circuit 0 0 1 0 1 0 1 0 0 1 1 0",
+              "kind": "textbook-source",
+              "pdfPage": 68,
+              "printedPage": 63,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "0d4b63b814973a25037c28e66d92f6e2f65667d47f397e9e8a6a794d9e6f12bd"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2007S-Q018",
+        "reason": "Original question image and actual 3-4-1 teaching re-read; flip-flops is directly supported by the exact quoted passage(s), not inferred from a heading.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "checkedExcerpt": "Sequential circuit is a logic circuit where the output is decided on the basis of the input at that time and earlier status. Flip-flop circuit, which is one of the main sequential circuits, has two stable states, and it is used in storage cells of SRAM. Figure 1-25 shows the circuit diagram of a flip-flop for reference and the truth table. Circuit symbols used in Figure 1-25 are one of the methods of representing electronic circuits, and it is referred to as MIL (Military Specifications and Standards) symbols.",
+              "kind": "textbook-source",
+              "pdfPage": 67,
+              "printedPage": 62,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "82d4142195d967a0b4cc8b2c6564354bed5de7c9acec6ba514a43f30813b0c2f"
+            },
+            {
+              "checkedExcerpt": "4) NAND circuit This circuit performs negative logical product (negative AND) operation (NAND). NAND operation is the arithmetic operation that negates the results of AND operation. The truth table and MIL symbol of NAND circuit are as shown below. NAND circuit is formed by combining AND circuit and NOT circuit. X Y X NAND Y Figure 1-29 NAND circuit 0 0 1 0 1 1 1 0 1 1 1 0 5) NOR circuit This circuit performs negative logical sum operation (NOR). NOR operation is the arithmetic operation that negates the results of OR operation. The truth table and MIL symbol of NOR circuit are as shown below. NOR circuit is formed by combining OR circuit and NOT circuit. X Y X NOR Y Figure 1-30 NOR circuit 0 0 1 0 1 0 1 0 0 1 1 0",
+              "kind": "textbook-source",
+              "pdfPage": 68,
+              "printedPage": 63,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "0d4b63b814973a25037c28e66d92f6e2f65667d47f397e9e8a6a794d9e6f12bd"
+            }
+          ]
+        ]
+      }
+    ],
+    "videos": [],
+    "sourceHighlight": {
+      "headingNumber": "3-4-1",
+      "passageId": "fev1-201504-ch1-r1-pdf-067-b002-l18-text-0",
+      "fragmentSha256": "66234021b267e6a188483552f92bc3a97d0002dc7a70409df94cc1438d4f152d"
     }
   }
 ]

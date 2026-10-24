@@ -27,7 +27,7 @@ describe('complete cache practice interaction', () => {
     view.unmount(); render(<Practice {...props}/>);
     expect(screen.getByRole('heading',{name:'No questions match these filters'})).toBeTruthy();
     await user.click(screen.getByRole('button',{name:'Reset filters'}));
-    expect(screen.getAllByRole('button',{name:/Question \d+, unanswered/})).toHaveLength(10);
+    expect(screen.getAllByRole('button',{name:/Question \d+, unanswered/})).toHaveLength(11);
   });
   it('keeps feedback visible in unanswered mode, then navigates to the remaining questions',async()=>{
     const user=userEvent.setup(); render(<Practice {...props}/>);
@@ -35,14 +35,14 @@ describe('complete cache practice interaction', () => {
     await user.click(screen.getByRole('radio',{name:/Option B: 360 ns/}));
     await user.click(screen.getByRole('button',{name:'Check answer'}));
     expect(screen.getByText('✓ That’s correct.')).toBeTruthy();
-    expect(screen.getByText('Answer saved · 9 unanswered remain')).toBeTruthy();
+    expect(screen.getByText('Answer saved · 10 unanswered remain')).toBeTruthy();
     await user.click(screen.getByRole('button',{name:'Next →'}));
     expect(screen.getByRole('heading',{name:'2025 Spring · Subject A · Q10'})).toBeTruthy();
     expect(guestStore.getSnapshot().progress.attempts).toHaveLength(1);
   });
   it('records only submitted answers and shows the checked explanation', async () => {
     const user = userEvent.setup(); render(<Practice {...props} />);
-    expect(screen.getByText('10 related published questions. Take them one at a time.')).toBeTruthy();
+    expect(screen.getByText('11 related published questions. Take them one at a time.')).toBeTruthy();
     await user.click(screen.getByRole('radio', { name: /Option B: 360 ns/ }));
     expect(guestStore.getSnapshot().progress.attempts).toHaveLength(0);
     await user.click(screen.getByRole('button', { name: 'Check answer' }));
@@ -69,7 +69,7 @@ describe('complete cache practice interaction', () => {
     expect(screen.getByRole('heading', { name: '2011 Autumn · Morning · Q11' })).toBeTruthy();
     await user.click(screen.getByRole('button', { name: 'Next →' }));
     expect(screen.getByRole('heading', { name: '2015 Autumn · Morning · Q11' })).toBeTruthy();
-    await user.click(screen.getByRole('button', { name: 'Question 9, unanswered' }));
+    await user.click(screen.getByRole('button', { name: 'Question 10, unanswered' }));
     expect(screen.getByRole('heading', { name: '2019 Spring · Morning · Q11' })).toBeTruthy();
     await user.click(screen.getByRole('button', { name: 'Next →' }));
     expect(screen.getByRole('heading', { name: '2022 Spring · Morning · Q13' })).toBeTruthy();

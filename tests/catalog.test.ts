@@ -1,15 +1,17 @@
 // @vitest-environment node
 import { describe, expect, it } from 'vitest';
 import { concepts, explanationMap, publishedQuestions, questionsForConcept } from '../src/lib/catalog';
+import fifth from '../docs/development/evidence/historical-release-5.json';
 import { safeYoutubeId } from '../src/components/VideoRecommendation';
 
 describe('published pilot catalog', () => {
   it('resolves exactly the reviewed real question IDs and never includes unpublished duplicates', async () => {
     const questions = await publishedQuestions();
-    expect(questions).toHaveLength(576);
+    expect(questions).toHaveLength(616);
     const real = questionsForConcept(concepts[0], questions);
-    expect(real.map((q) => q.id)).toEqual(['2024A-A-Q009', '2025S-A-Q010', '2026S-A-Q010','HIST-TECH01-2009A-Q028','HIST-TECH01-2011A-Q011','HIST-TECH01-2015A-Q011','HIST-TECH01-2015S-Q011','HIST-TECH01-2019A-Q013','HIST-TECH01-2019S-Q011','HIST-TECH01-2022S-Q013']);
-    expect(questionsForConcept(concepts[0], [...questions, real[0]])).toHaveLength(10);
+    expect(real.map((q) => q.id)).toEqual(['2024A-A-Q009', '2025S-A-Q010', '2026S-A-Q010','HIST-TECH01-2009A-Q028','HIST-TECH01-2011A-Q011','HIST-TECH01-2015A-Q011','HIST-TECH01-2015S-Q011','HIST-TECH01-2018S-Q010','HIST-TECH01-2019A-Q013','HIST-TECH01-2019S-Q011','HIST-TECH01-2022S-Q013']);
+    expect(fifth.records.filter(r=>r.conceptId===concepts[0].id).map(r=>r.id)).toEqual(['HIST-TECH01-2018S-Q010']);
+    expect(questionsForConcept(concepts[0], [...questions, real[0]])).toHaveLength(11);
     expect(questionsForConcept(concepts[0], [{ ...real[0], is_published: false } as never])).toEqual([]);
     for (const question of real) expect(explanationMap.get(question.id)?.answer).toBe(question.correctAnswer);
   });

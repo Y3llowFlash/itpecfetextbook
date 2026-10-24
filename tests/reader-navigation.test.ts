@@ -66,9 +66,9 @@ describe('original source navigation',()=>{
  it('derives only contextual published questions and mapped videos, with no default cache recommendation',async()=>{
   const bank=await publishedQuestions();
   const cache=studyContext(contents.find(n=>n.number==='3-5-1')!,[...bank,{...bank.find(q=>q.id==='2024A-A-Q009')!,id:'unpublished',is_published:false} as never]);
-   expect(cache.questionIds).toEqual(['2024A-A-Q009','2025S-A-Q010','2026S-A-Q010','HIST-TECH01-2009A-Q028','HIST-TECH01-2011A-Q011','HIST-TECH01-2015A-Q011','HIST-TECH01-2015S-Q011','HIST-TECH01-2019A-Q013','HIST-TECH01-2019S-Q011','HIST-TECH01-2022S-Q013','HIST-TECH01-2012A-Q017','HIST-TECH01-2014S-Q014','HIST-TECH01-2017S-Q012','HIST-TECH01-2008A-Q026','HIST-TECH01-2011S-Q014']);expect(cache.videos[0].url).toBe('https://t.me/itpecmm/101');
+   expect(cache.questionIds).toEqual(['2024A-A-Q009','2025S-A-Q010','2026S-A-Q010','HIST-TECH01-2009A-Q028','HIST-TECH01-2011A-Q011','HIST-TECH01-2015A-Q011','HIST-TECH01-2015S-Q011','HIST-TECH01-2018S-Q010','HIST-TECH01-2019A-Q013','HIST-TECH01-2019S-Q011','HIST-TECH01-2022S-Q013','HIST-TECH01-2007S-Q024','HIST-TECH01-2012A-Q017','HIST-TECH01-2014S-Q014','HIST-TECH01-2017S-Q012','HIST-TECH01-2008A-Q026','HIST-TECH01-2013S-Q014','HIST-TECH01-2011S-Q014']);expect(cache.videos[0].url).toBe('https://t.me/itpecmm/101');
   const basic=studyContext(mainContents[0],bank);expect(basic.links.map(l=>l.id)).toEqual(['five-major-units']);expect(basic.videos).toEqual([]);
    const disk=studyContext(contents.find(n=>n.number==='4-1-3')!,bank);expect(disk.questionIds).toHaveLength(9);expect(disk.links.map(l=>l.id)).toEqual(['disk-access','defragmentation']);
-   expect(new Set(mainContents.flatMap(node=>studyContext(node,bank).questionIds)).size).toBe(179);
+   expect(new Set(mainContents.flatMap(node=>studyContext(node,bank).questionIds)).size).toBe(219);
  });
 });

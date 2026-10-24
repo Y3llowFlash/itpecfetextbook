@@ -8,7 +8,8 @@ export function canonical(value: unknown): string {
 }
 export const checksum = (value: unknown) => createHash('sha256').update(canonical(value)).digest('hex');
 
-export function validateHistoricalRelease(questions: any[], explanations: any[], concepts: any[], receipt: any, expansion?: any, third?: any, fourth?: any) {
+export function validateHistoricalRelease(questions: any[], explanations: any[], concepts: any[], receipt: any, expansion?: any, third?: any, fourth?: any, fifth?: any) {
+  if (fifth) { validateFifth(questions, explanations, concepts, receipt, expansion, third, fourth, fifth); return; }
   if (fourth) { validateFourth(questions, explanations, concepts, receipt, expansion, third, fourth); return; }
   if (third) { validateThird(questions, explanations, concepts, receipt, expansion, third); return; }
   if (expansion) {
@@ -109,5 +110,30 @@ function validateFourth(questions:any[], explanations:any[], concepts:any[], fir
   for(const entry of receipt.newHighlights){
     const c=concepts.find(c=>c.id===entry.id),definition=c&&Object.fromEntries(['id','title','summary','sectionId','sectionUrl','anchor','sourceHighlight'].filter(k=>k in c).map(k=>[k,c[k]]));
     if(!c||checksum(definition)!==entry.definitionSha256||checksum(c.sourceHighlight)!==checksum(entry.sourceHighlight))throw Error('Release 4 owner-reviewed highlight changed');
+  }
+}
+
+/** Release 5 recursively verifies the exact unchanged Release 4 subset. */
+function validateFifth(questions:any[], explanations:any[], concepts:any[], first:any, second:any, third:any, fourth:any, receipt:any) {
+  if(receipt.schema!=='itpec-historical-release-5-v1'||receipt.authorizedCount!==40||receipt.records.length!==40||receipt.excludedUnapproved!==137||receipt.total!==616||receipt.historicalCount!==196||receipt.images!==616||receipt.candidateManifestSha256!=='1618204cf7a991ec6cabb482c8badebe8b5c77125a9f3515faa6f8cc56fe4e39'||receipt.candidateSetFingerprint!=='681e50824fafdd0b18e4519ad4ac651348e3479deb301c08837ab6d3aec2c1c2')throw Error('Invalid Release 5 authorization');
+  const ids=new Set<string>(receipt.records.map((r:any)=>r.id)),newConcepts=new Set<string>(receipt.newHighlights.map((r:any)=>r.id));
+  if(ids.size!==40||newConcepts.size!==1||receipt.newHighlights.length!==1||questions.length!==616||new Set(questions.map(q=>q.id)).size!==616||concepts.length!==45||[...first.records,...second.records,...third.records,...fourth.records].some((r:any)=>ids.has(r.id)))throw Error('Expanded or overlapping Release 5 scope');
+  const old=questions.filter(q=>!ids.has(q.id)),oldAnswers=explanations.filter(e=>!ids.has(e.questionId));
+  const oldConcepts=concepts.filter(c=>!newConcepts.has(c.id)).map(c=>({...c,questionIds:c.questionIds.filter((id:string)=>!ids.has(id)),mappingEvidence:c.mappingEvidence.filter((e:any)=>!ids.has(e.questionId))}));
+  validateHistoricalRelease(old,oldAnswers,oldConcepts,first,second,third,fourth);
+  if(checksum(Object.fromEntries(old.map(q=>[q.id,q])))!==receipt.previousRecordsSha256||checksum(oldAnswers)!==receipt.previousExplanationsSha256||checksum(oldConcepts)!==receipt.previousConceptsSha256)throw Error('Previous release content changed');
+  const counts:Record<string,number>={};
+  for(const entry of receipt.records){
+    const q=questions.find(q=>q.id===entry.id),e=explanations.find(e=>e.questionId===entry.id);
+    if(!q||!e||q.format!=='historical'||checksum(q)!==entry.questionSha256||checksum(e)!==entry.explanationSha256||checksum(q.review.mappings)!==entry.mappingSha256||q.review.approvalFingerprint!==entry.approvalFingerprint||q.image.sha256!==entry.imageSha256)throw Error('Release 5 approved payload changed: '+entry.id);
+    if(q.correctAnswer!==e.answer||q.paper!=='AM'||q.subject!=='A'||q.review.examType!=='FE'||q.review.reviewStatus!=='approved'||q.review.publicationStatus!=='published')throw Error('Invalid Release 5 grading or metadata');
+    const links=concepts.filter(c=>c.questionIds.includes(q.id));
+    if(links.length!==1||links[0].id!==entry.conceptId||q.review.mappings[0].conceptId!==entry.conceptId)throw Error('Release 5 placement changed');
+    counts[entry.conceptId]=(counts[entry.conceptId]||0)+1;
+  }
+  if(Object.keys(counts).length!==16||checksum(counts)!==checksum(receipt.conceptCounts))throw Error('Release 5 concept distribution changed');
+  for(const entry of receipt.newHighlights){
+    const c=concepts.find(c=>c.id===entry.id),definition=c&&Object.fromEntries(['id','title','summary','sectionId','sectionUrl','anchor','sourceHighlight'].filter(k=>k in c).map(k=>[k,c[k]]));
+    if(!c||checksum(definition)!==entry.definitionSha256||checksum(c.sourceHighlight)!==checksum(entry.sourceHighlight))throw Error('Release 5 owner-reviewed highlight changed');
   }
 }

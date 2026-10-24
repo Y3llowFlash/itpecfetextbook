@@ -268,7 +268,8 @@
       "sectionId": "fe-v1-ch01-s03",
       "path": "/chapters/hardware/cpu-and-main-memory/",
       "conceptIds": [
-        "logic-gates"
+        "logic-gates",
+        "flip-flops"
       ]
     },
     {

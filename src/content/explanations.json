@@ -3915,5 +3915,876 @@
     "reviewedAgainst": [
       "{\"kind\":\"calculation\",\"result\":37.5,\"derivation\":[\"At 2400 rpm one revolution takes 25 ms, so average rotational latency is 12.5 ms.\",\"Transfer time for 15/25 of a track is 15 ms. Add 10 ms seek: 10+12.5+15=37.5 ms.\"]}"
     ]
+  },
+  {
+    "questionId": "HIST-TECH01-2019A-Q022",
+    "revision": "451806886486",
+    "answer": "c",
+    "summary": "A sequential circuit must retain state, so its output can depend on earlier inputs.",
+    "steps": [
+      "A sequential circuit must retain state, so its output can depend on earlier inputs.",
+      "A flip-flop has two stable states and stores a bit. Adders and logic gates alone are combinational; a capacitor is not the named bistable sequential circuit."
+    ],
+    "takeaway": "A flip-flop stores one bit using two stable states.",
+    "optionText": {
+      "a": "Adder circuit",
+      "b": "Capacitor",
+      "c": "Flip-flop",
+      "d": "NAND gate"
+    },
+    "imageDescription": "Q22. Which of the following is a sequential circuit that has two (2) stable states?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":62,\"pdfPage\":67,\"lineIds\":[\"pdf-067-b002-l19\",\"pdf-067-b002-l20\",\"pdf-067-b002-l21\",\"pdf-067-b002-l22\",\"pdf-067-b002-l23\",\"pdf-067-b003-l00\"],\"textSha256\":\"25b4d01db21d8bbe6fbbb8a8a9143b22a435cce0c2a7559d55872af74446e7ff\",\"checkedText\":\"that time and earlier status. Flip-flop circuit, which is one of the main sequential circuits, has \\ntwo stable states, and it is used in storage cells of SRAM. Figure 1-25 shows the circuit \\ndiagram of a flip-flop for reference and the truth table. Circuit symbols used in Figure 1-25 \\nare one of the methods of representing electronic circuits, and it is referred to as MIL (Military \\nSpecifications and Standards) symbols. \\nS \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2014A-Q023",
+    "revision": "af2b66b646cb",
+    "answer": "b",
+    "summary": "Flash is nonvolatile electrically programmable memory.",
+    "steps": [
+      "Flash is nonvolatile electrically programmable memory.",
+      "Its erase operation is electrical and normally works in blocks. Periodic refresh identifies DRAM, ultraviolet erasure identifies UV-EPROM, and high-speed flip-flop cache identifies SRAM."
+    ],
+    "takeaway": "Flash retains data without power and erases electrically in blocks.",
+    "optionText": {
+      "a": "It can write data electrically and erase it all at once with ultraviolet light.",
+      "b": "It can write data electrically and erase it electrically in units of blocks.",
+      "c": "It is often used as cache memory because of the high-speed rewritable capability.",
+      "d": "It needs to rewrite (i.e., refresh) data within a given period of time."
+    },
+    "imageDescription": "Q23. Which of the following is an appropriate description concerning flash memory?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":51,\"pdfPage\":56,\"lineIds\":[\"pdf-056-b002-l00\",\"pdf-056-b002-l01\",\"pdf-056-b002-l02\",\"pdf-056-b002-l03\",\"pdf-056-b002-l04\",\"pdf-056-b002-l05\",\"pdf-056-b002-l06\",\"pdf-056-b003-l00\"],\"textSha256\":\"a885525206481939efbdf24ee6ce81a55736995a4bde71461e8c8acec38126d5\",\"checkedText\":\" \\n• Flash memory: \\nThis is semiconductor memory where data can be rewritten after data is \\nerased in units of blocks through electrical operations. Flash memory is a \\ntype of EEPROM. Therefore, the number of rewritable timesis limited. \\nHowever, it is used for various applications as a portable and convenient \\nstorage medium. \\n \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2014S-Q024",
+    "revision": "f2aff4f0e613",
+    "answer": "c",
+    "summary": "External interrupts arise from events independent of the instruction currently executing, including a timer, completed I/O or hardware malfunction.",
+    "steps": [
+      "External interrupts arise from events independent of the instruction currently executing, including a timer, completed I/O or hardware malfunction.",
+      "Internal interrupts arise from program execution, such as arithmetic exceptions or supervisor calls. The CPU assigns priorities when multiple interrupt causes can occur."
+    ],
+    "takeaway": "Classify the cause of an interrupt, rather than where its handler runs.",
+    "optionText": {
+      "a": "An interrupt that is caused by access to a non-existent page in virtual memory",
+      "b": "An interrupt that is caused by an arithmetic overflow or divide-by-zero",
+      "c": "An interrupt that is caused by an interval timer when the specified time elapses",
+      "d": "An interrupt that is caused by the execution of a software interrupt instruction"
+    },
+    "imageDescription": "Q24. Which of the following is classified as an external interrupt?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":60,\"pdfPage\":65,\"lineIds\":[\"pdf-065-b004-l01\",\"pdf-065-b004-l02\",\"pdf-065-b004-l03\",\"pdf-065-b004-l04\",\"pdf-065-b004-l05\",\"pdf-065-b004-l06\",\"pdf-065-b005-l00\",\"pdf-065-b005-l01\",\"pdf-065-b005-l02\",\"pdf-065-b005-l03\",\"pdf-065-b005-l04\",\"pdf-065-b005-l05\",\"pdf-065-b005-l06\",\"pdf-065-b005-l07\",\"pdf-065-b006-l00\"],\"textSha256\":\"d461088be15d6da916832fe2d76e803e03194fed0eb427c4523282d0e5ba25af\",\"checkedText\":\"According to conditions that an interrupt occurs, this can be classified described below. Here, \\nit is assumed that multiple interrupts may occur simultaneously, and therefore priority ranking \\nis assigned to each interrupt. \\n \\n1) External interrupt: This is an interrupt that occurs because of a reason not related to the \\nprocess being executed. \\n• Timer interrupt \\nThis is an interrupt that occurs when the time measured in the timer, such as \\ninterval timer and watchdog timer, has exceeded the specified time (i.e., the timer \\nhas been timed-out). \\n• Input/output interrupt (input/output completion interrupt) \\nThis is an interrupt that occurs when an input/output operation has been \\ncompleted. \\n• Machine check interrupt \\nThis is an interrupt that occurs because of a hardware malfunction, a power \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2014S-Q028",
+    "revision": "652cd3d7b875",
+    "answer": "b",
+    "summary": "SRAM uses a bistable flip-flop circuit, needing more transistors per stored bit; DRAM uses a simpler capacitor-based cell.",
+    "steps": [
+      "SRAM uses a bistable flip-flop circuit, needing more transistors per stored bit; DRAM uses a simpler capacitor-based cell.",
+      "SRAM is fast and needs no periodic refresh while powered. DRAM has greater density and lower cost per bit but needs refresh. Both are volatile; the exact relevant feature is selected from the question options."
+    ],
+    "takeaway": "Compare cell structure, refresh, density and speed separately.",
+    "optionText": {
+      "a": "DRAM has the disadvantage of higher cost.",
+      "b": "DRAM is suitable for a higher level of integration.",
+      "c": "DRAM stores data in an electronic circuit called a flip-flop.",
+      "d": "DRAM transfers data at a faster speed."
+    },
+    "imageDescription": "Q28. Which of the following is a characteristic of DRAM, in comparison with SRAM?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":50,\"pdfPage\":55,\"lineIds\":[\"pdf-055-b001-l00\",\"pdf-055-b002-l00\",\"pdf-055-b002-l01\",\"pdf-055-b002-l02\",\"pdf-055-b002-l03\",\"pdf-055-b002-l04\",\"pdf-055-b002-l05\",\"pdf-055-b002-l06\",\"pdf-055-b002-l07\",\"pdf-055-b002-l08\",\"pdf-055-b002-l09\",\"pdf-055-b002-l10\",\"pdf-055-b002-l11\",\"pdf-055-b002-l12\",\"pdf-055-b002-l13\",\"pdf-055-b002-l14\",\"pdf-055-b003-l00\",\"pdf-055-b003-l01\",\"pdf-055-b003-l02\",\"pdf-055-b003-l03\"],\"textSha256\":\"7dd7a60dd9696ca4c155df14e1e29c7b79aa770bd4b16170c83a731c77fab6e6\",\"checkedText\":\"50 \\n• SRAM (Static RAM) \\nWhile its operating speed is high, it is expensive and it also has high power \\nconsumption. As for its memory mechanism, it uses a flip-flop circuit that continues to \\nretain the preceding status, and electrical charge that records information can be \\nretained as long as power is supplied. However, its disadvantages are a low degree of \\nintegration because of complex configuration of the circuit, and storage capacity that is \\nsmaller compared with DRAM. It is mainly used in registers or other memory devices.\\n• DRAM (Dynamic RAM) \\nWhile its operating speed is somewhat slow, it uses a simple circuit where electrical \\ncharge is retained by condenser or capacitor. Therefore, the degree of integration is \\nhigh, and large capacity memory can be easily created at low cost. However, electrical \\ncharge that records information is lost over time, and therefore it is necessary to \\nrewrite (refresh) the information. Examples include SDRAM (Synchronous DRAM) \\nor DDR SDRAM (Double Data Rate SDRAM) used in main memory, and RDRAM \\n(Rambus DRAM) that uses Rambus technology in the external bus interface. \\n \\n(2) ROM (Read Only Memory) \\n \\nROM is IC memory that can be used only for reading data. It has a property (non-volatility) \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2013A-Q012",
+    "revision": "04af13282054",
+    "answer": "c",
+    "summary": "First enter privilege mode, then save the program counter so the interrupted program can resume.",
+    "steps": [
+      "First enter privilege mode, then save the program counter so the interrupted program can resume.",
+      "Determine the handler address before executing it. The numbered sequence is 2 → 1 → 3 → 4."
+    ],
+    "takeaway": "Save return state before running an interrupt handler.",
+    "optionText": {
+      "a": "1 → 3 → 4 → 2",
+      "b": "1 → 4 → 2 → 3",
+      "c": "2 → 1 → 3 → 4",
+      "d": "2 → 3 → 4 → 1"
+    },
+    "imageDescription": "Q12. Which of the following is the appropriate course of actions to be taken by a processor at the occurrence of an interrupt? (1) Saving of the program register (i.e., program counter) (2) Transition from the user mode to the privilege mode (3) Determination of the start address of the interrupt processing routine (4) Execution of the interrupt processing routine",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":60,\"pdfPage\":65,\"lineIds\":[\"pdf-065-b002-l00\",\"pdf-065-b003-l00\",\"pdf-065-b003-l01\",\"pdf-065-b003-l02\",\"pdf-065-b003-l03\",\"pdf-065-b003-l04\",\"pdf-065-b003-l05\",\"pdf-065-b003-l06\",\"pdf-065-b004-l00\"],\"textSha256\":\"4a56a7a32579a98c3d83a4971c3b6fbba1015486f6f83b1d1af90dfa51d2612b\",\"checkedText\":\"[Processing sequence of processor when interrupt has occurred] \\n1) Switch from user mode to privilege mode. \\n2) Save the values of various registers (program counter, etc.). \\n3) Decide the starting address of the interrupt process routine (interrupt program). \\n4) Execute the interrupt process routine. \\n5) After the execution of the interrupt process routine is complete, restore the values of \\nvarious registers that are saved in step 2. \\n6) Switch from privilege mode to user mode, and restart the interrupted process. \\n \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2013S-Q011",
+    "revision": "2a5f614874d0",
+    "answer": "d",
+    "summary": "The fetch unit needs the memory address of the next instruction, rather than the instruction bits or an arithmetic result.",
+    "steps": [
+      "The fetch unit needs the memory address of the next instruction, rather than the instruction bits or an arithmetic result.",
+      "The instruction address register is also called the program counter or program register. The instruction register holds the fetched instruction; an accumulator holds operands or results."
+    ],
+    "takeaway": "The PC identifies where to fetch the next instruction.",
+    "optionText": {
+      "a": "In order to decode an instruction, it contains the instruction that is read out from the memory.",
+      "b": "In order to execute a conditional branch instruction, it contains the state of operation results.",
+      "c": "In order to perform an arithmetic or logical operation, it contains data that is read out from the memory.",
+      "d": "In order to read out an instruction, it contains the address where the next instruction is stored."
+    },
+    "imageDescription": "Q11. Which of the following is a role of the program register (i.e., program counter) of the CPU?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":47,\"pdfPage\":52,\"lineIds\":[\"pdf-052-b004-l02\",\"pdf-052-b004-l03\",\"pdf-052-b004-l04\",\"pdf-052-b004-l05\",\"pdf-052-b004-l06\",\"pdf-052-b004-l07\"],\"textSha256\":\"d61112c8dfee5ff859e196add1a29d171c50c24dcdc2123520621985f26b3824\",\"checkedText\":\"address part. \\n• Instruction address register (program counter, program register) \\nIt stores the address (storing position in the main memory) of the instruction to be \\nexecuted next. \\n• General register \\nIt is used for various purposes such as storing the data to be processed. \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2012S-Q026",
+    "revision": "d5b8942313e5",
+    "answer": "b",
+    "summary": "The three AND branches are A AND C, B AND NOT C, and NOT A AND C; their OR is C OR (B AND NOT C)=B OR C.",
+    "steps": [
+      "The three AND branches are A AND C, B AND NOT C, and NOT A AND C; their OR is C OR (B AND NOT C)=B OR C.",
+      "Output zero needs B=C=0. Of the source table rows (0,0,1),(1,0,0),(1,1,0),(1,1,1), only row B has both zero."
+    ],
+    "takeaway": "Output zero needs B=C=0. Of the source table rows (0,0,1),(1,0,0),(1,1,0),(1,1,1), only row B has both zero.",
+    "optionText": {
+      "a": "A: 0; B: 0; C: 1",
+      "b": "A: 1; B: 0; C: 0",
+      "c": "A: 1; B: 1; C: 0",
+      "d": "A: 1; B: 1; C: 1"
+    },
+    "imageDescription": "In a logic circuit shown below, which of the following is an appropriate combination of input signals A through C that can generate the output signal 0? Three AND gates have inputs (A,C), (B,NOT C), and (NOT A,C), from top to bottom. The first two outputs enter an OR gate. Its output and the third AND output enter a final OR gate labeled Output. The choice table columns are A, B, C.",
+    "reviewedAgainst": [
+      "{\"kind\":\"original-question\",\"sourceSha256\":\"5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1\",\"pdfPage\":125,\"imageSha256\":[\"a7b07227257c38af7a3291cd801825ec3bded2c0615e67bcf0cdd33616af4bb9\"],\"manualVisualReview\":\"Original source render independently inspected in Batch 2, 2026-10-22\"}",
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":70,\"printedPage\":65,\"heading\":\"3-4-1 Logic Circuit / Main logical laws\",\"textSha256\":\"e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8\",\"checkedExcerpt\":\"A ( ) B A ( ) C B ( A       • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determine logical expression F\"}",
+      "{\"kind\":\"source-row-evaluation\",\"rows\":[[0,0,1,1],[1,0,0,0],[1,1,0,1],[1,1,1,1]]}",
+      "{\"kind\":\"computed-truth-table\",\"variables\":[\"A\",\"B\",\"C\"],\"rows\":[[0,0,0,0,0],[0,0,1,1,1],[0,1,0,1,1],[0,1,1,1,1],[1,0,0,0,0],[1,0,1,1,1],[1,1,0,1,1],[1,1,1,1,1]]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2012S-Q027",
+    "revision": "a5d9c73f0cda",
+    "answer": "b",
+    "summary": "Read each stable interval between waveform transitions. The six input pairs are 00,11,10,01,10,11 and F is 1,1,0,0,0,1.",
+    "steps": [
+      "Read each stable interval between waveform transitions. The six input pairs are 00,11,10,01,10,11 and F is 1,1,0,0,0,1.",
+      "F is high precisely when A=B, so the gate is XNOR, option B. This is a combinational timing question, not an edge-triggered storage element."
+    ],
+    "takeaway": "F is high precisely when A=B, so the gate is XNOR, option B. This is a combinational timing question, not an edge-triggered storage element.",
+    "optionText": {
+      "a": "AND",
+      "b": "Exclusive-NOR",
+      "c": "Exclusive-OR",
+      "d": "NOR"
+    },
+    "imageDescription": "The figure shown below represents a logic gate and its timing chart. Which of the following is an appropriate logical function of this gate? A and B are the input signals and F is the output signal. A and B enter the left of a box labeled Gate; F exits its right. Reading the six successive stable time intervals from left to right, the traces (A,B,F) are (0,0,1), (1,1,1), (1,0,0), (0,1,0), (1,0,0), (1,1,1). Vertical labels beside the waveforms identify levels 1 and 0.",
+    "reviewedAgainst": [
+      "{\"kind\":\"original-question\",\"sourceSha256\":\"5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1\",\"pdfPage\":126,\"imageSha256\":[\"4ac3fae48c9674a4f689ccc0627d0e750f460a8b5d435ceafee08fb6cdc3cbde\"],\"manualVisualReview\":\"Original source render independently inspected in Batch 2, 2026-10-22\"}",
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":69,\"printedPage\":64,\"heading\":\"3-4-1 Logic Circuit / XOR and logical design\",\"textSha256\":\"b26e0590632468a146244504ce22b38c51e1c61bfd1a94cd92adb3789271befd\",\"checkedExcerpt\":\"le circuits as in the case of NAND circuits and NOR circuits. In such cases, it is called logical design (or circuit design) to think about the combination of basic circuits for achieving the targeted results (truth values). In logical design, logical expressions (logical functions) obtained from the truth tables are simplified using the rules of logical operations (logical laws), and the optimum combination of basic circuits is determined. (“Optimum” means that the design is performed in consideration of performance, efficiency, and cost.\"}",
+      "{\"kind\":\"waveform-intervals\",\"rows\":[[0,0,1],[1,1,1],[1,0,0],[0,1,0],[1,0,0],[1,1,1]]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2011A-Q002",
+    "revision": "82ac4d85cd0e",
+    "answer": "b",
+    "summary": "NOT(A <= B OR C < D) = NOT(A <= B) AND NOT(C < D).",
+    "steps": [
+      "NOT(A <= B OR C < D) = NOT(A <= B) AND NOT(C < D).",
+      "Complementing the inequalities gives A > B AND C >= D."
+    ],
+    "takeaway": "Complementing the inequalities gives A > B AND C >= D.",
+    "optionText": {
+      "a": "A < B and C ≤ D",
+      "b": "A > B and C ≥ D",
+      "c": "A < B or C ≤ D",
+      "d": "A > B or C ≥ D"
+    },
+    "imageDescription": "Which of the following is equivalent to the logical expression not (A ≤ B or C < D)? Here, A, B, C, and D are variables, and the resulting values of A ≤ B and C < D can be either 1 for true or 0 for false.",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":\"A > B AND C >= D\",\"derivation\":[\"NOT(A <= B OR C < D) = NOT(A <= B) AND NOT(C < D).\",\"Complementing the inequalities gives A > B AND C >= D.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2011A-Q010",
+    "revision": "a8d5a805d89a",
+    "answer": "d",
+    "summary": "Divide each instruction into stages such as fetch, decode and execute.",
+    "steps": [
+      "Divide each instruction into stages such as fetch, decode and execute.",
+      "While one instruction executes a later stage, following instructions occupy earlier stages. This overlapping, staggered execution is pipelining; multicore uses separate cores and VLIW uses statically scheduled parallel operations."
+    ],
+    "takeaway": "Pipelining overlaps stages of successive instructions.",
+    "optionText": {
+      "a": "Each machine instruction is replaced with a combination of lower level microinstructions at the time of execution.",
+      "b": "In order to execute multiple instructions simultaneously, each instruction is assigned to a specific computing unit when the compiler generates an object code.",
+      "c": "Multiple instructions are executed simultaneously by dynamically deciding which computing unit to use at the time of executing each instruction.",
+      "d": "The processing of each instruction is divided into multiple stages in the processor, and thus multiple instructions are executed in parallel."
+    },
+    "imageDescription": "Q10. Which of the following is the characteristic of pipeline control?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":74,\"pdfPage\":79,\"lineIds\":[\"pdf-079-b004-l16\",\"pdf-079-b004-l17\",\"pdf-079-b004-l18\",\"pdf-079-b004-l19\",\"pdf-079-b004-l20\",\"pdf-079-b004-l21\"],\"textSha256\":\"fefc95019a2bcc0bd6be163af196c658af9144b81141806438117b5e63aa4e73\",\"checkedText\":\" \\n(2) Pipeline control \\n \\nPipeline control (or the pipeline processing) divides the execution cycle of each instruction \\ninto multiple stages, and by shifting each stage little by little and executing multiple stages \\nseparately, multiple instructions are executed simultaneously and in parallel. \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2010A-Q026",
+    "revision": "89589d27e733",
+    "answer": "c",
+    "summary": "The requested expression is (X AND Y) OR (NOT X AND NOT Y), equivalence/XNOR.",
+    "steps": [
+      "The requested expression is (X AND Y) OR (NOT X AND NOT Y), equivalence/XNOR.",
+      "Circuit C uses two first-level NANDs for XY and NOT X NOT Y followed by NAND; De Morgan produces the required OR. A is constant 0, B constant 1, D XOR."
+    ],
+    "takeaway": "Circuit C uses two first-level NANDs for XY and NOT X NOT Y followed by NAND; De Morgan produces the required OR. A is constant 0, B constant 1, D XOR.",
+    "optionText": {
+      "a": "Three AND gates: Z = AND(AND(X,Y),AND(NOT X,NOT Y))",
+      "b": "Three OR gates: Z = OR(OR(X,Y),OR(NOT X,NOT Y))",
+      "c": "Three NAND gates: Z = NAND(NAND(X,Y),NAND(NOT X,NOT Y))",
+      "d": "Three NOR gates: Z = NOR(NOR(X,Y),NOR(NOT X,NOT Y))"
+    },
+    "imageDescription": "Which of the following circuits can write out 1 to the output line Z only when the input lines X and Y have the same value? Each option has an upper first-level gate fed by X and Y, a lower first-level gate fed by separately inverted X and Y, and a final gate fed by those two outputs. All three gates in a given option are of the type specified in that choice. Output bubbles are part of NAND and NOR symbols.",
+    "reviewedAgainst": [
+      "{\"kind\":\"original-question\",\"sourceSha256\":\"5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1\",\"pdfPage\":146,\"imageSha256\":[\"49117caf58d64828963aed0115fc5fc061e6ba2d9d47cf2e9ff5b5e6050342b4\"],\"manualVisualReview\":\"Original source render independently inspected in Batch 3, 2026-10-22; printed key was visible, not a blind solve.\"}",
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":70,\"printedPage\":65,\"heading\":\"3-4-1 Logic Circuit / Main logical laws\",\"textSha256\":\"e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8\",\"checkedExcerpt\":\"  • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determi\"}",
+      "{\"kind\":\"computed-source-option-truth-tables\",\"variables\":[\"X\",\"Y\"],\"matches\":[\"c\"],\"rows\":[[0,0,1,0,1,1,0],[0,1,0,0,1,0,1],[1,0,0,0,1,0,1],[1,1,1,0,1,1,0]]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2010S-Q015",
+    "revision": "a81472144d3d",
+    "answer": "a",
+    "summary": "Division by zero is caused by executing an invalid arithmetic operation in the running program.",
+    "steps": [
+      "Division by zero is caused by executing an invalid arithmetic operation in the running program.",
+      "It is therefore an internal program exception. Power failures, I/O completion and hardware parity failures are external causes in the textbook classification."
+    ],
+    "takeaway": "A divide-by-zero exception is an internal interrupt.",
+    "optionText": {
+      "a": "Interrupt by divide-by-zero",
+      "b": "Interrupt by I/O completion",
+      "c": "Interrupt by power failures such as a momentary blackout of commercial power",
+      "d": "Interrupt by the occurrence of a memory parity error"
+    },
+    "imageDescription": "Q15. Which of the following is classified as an internal interrupt?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":60,\"pdfPage\":65,\"lineIds\":[\"pdf-065-b007-l00\",\"pdf-065-b007-l01\",\"pdf-065-b007-l02\",\"pdf-065-b008-l00\",\"pdf-065-b008-l01\",\"pdf-065-b009-l00\"],\"textSha256\":\"6855047c640c38965678af49c7813d62748636a3d501c22cb8b0c71303fe7bba\",\"checkedText\":\" \\n2) Internal interrupt: This is an interrupt that occurs because of the process being executed. \\nThis is also referred to as a trap. \\n• SVC (SuperVisor Call) interrupt \\nThis is an interrupt that occurs when supervisor (program that offers basic \\nfunctions) is requested to invoke a process, such as when input/output instruction \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2010S-Q030",
+    "revision": "7c2faf88e7e7",
+    "answer": "d",
+    "summary": "S1=1 means dark, while S2=0 or S3=0 means motion. Thus lamp = S1 AND (NOT S2 OR NOT S3).",
+    "steps": [
+      "S1=1 means dark, while S2=0 or S3=0 means motion. Thus lamp = S1 AND (NOT S2 OR NOT S3).",
+      "By De Morgan this is S1 AND NAND(S2,S3). D is the only source circuit with that function."
+    ],
+    "takeaway": "By De Morgan this is S1 AND NAND(S2,S3). D is the only source circuit with that function.",
+    "optionText": {
+      "a": "S1 passes through NOT; S2 and NOT S3 enter OR; those outputs enter AND, producing Bulb.",
+      "b": "S2 and S3 enter XOR followed by output inversion; that output and S1 enter AND, producing Bulb.",
+      "c": "S2 and S3 enter XOR followed by output inversion; that output and S1 enter OR, producing Bulb.",
+      "d": "S2 and S3 enter NAND; that output and S1 enter AND, producing Bulb."
+    },
+    "imageDescription": "Q30. As shown in the floor layout below, there are three sensors S1, S2, and S3 that control a light bulb in the middle of a hallway. The sensor S1 is a light sensor that generates the output signal “0” only when sunlight (or some other external light source) is detected. In case of no light, the output signal of S1 is “1”. The two sensors S2 and S3 are infrared sensors that generate the output signal “0” only when either S2 or S3 detects the movement of a thermal target in its effective range. If no movement is detected, the output signal is “1”. Which of the following logic circuits can be used to control a switch of the light bulb? Here, the bulb is turned on only when the output signal “Bulb” of the given logic circuit is “1”. Sunlight streams in the hallway through the windows, and the light bulb in the hallway does not affect the sensor S1. Floor layout: a bent hallway runs along the top and left of a large room, with another room on the right. S1 is beside the top exterior window, S2 at the left bend, S3 along the top near the right branch. Bulb is beside the top of the large room. The four choices show signal paths to the output labeled Bulb.",
+    "reviewedAgainst": [
+      "{\"kind\":\"original-question\",\"sourceSha256\":\"5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1\",\"pdfPage\":154,\"imageSha256\":[\"fedb43a99d9437cfec4aa396d8289d6112a30961f34d295165f6a4727959817d\"],\"manualVisualReview\":\"Original source render independently inspected in Batch 3, 2026-10-22; printed key was visible, not a blind solve.\"}",
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":70,\"printedPage\":65,\"heading\":\"3-4-1 Logic Circuit / Main logical laws\",\"textSha256\":\"e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8\",\"checkedExcerpt\":\"  • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determi\"}",
+      "{\"kind\":\"computed-source-option-truth-tables\",\"variables\":[\"S1\",\"S2\",\"S3\"],\"matches\":[\"d\"],\"rows\":[[0,0,0,0,1,0,1,0],[0,0,1,0,0,0,0,0],[0,1,0,0,1,0,0,0],[0,1,1,0,1,0,1,0],[1,0,0,1,0,1,1,1],[1,0,1,1,0,0,1,1],[1,1,0,1,0,0,1,1],[1,1,1,0,0,1,1,0]]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2009A-Q009",
+    "revision": "64b5a045c867",
+    "answer": "b",
+    "summary": "The source table is true only at ABC=001,010,011. In every true row A=0 and at least one of B,C=1.",
+    "steps": [
+      "The source table is true only at ABC=001,010,011. In every true row A=0 and at least one of B,C=1.",
+      "F=NOT A AND (B OR C), option B. Compare all four original expressions, retaining both parentheses and complement scope."
+    ],
+    "takeaway": "F=NOT A AND (B OR C), option B. Compare all four original expressions, retaining both parentheses and complement scope.",
+    "optionText": {
+      "a": "A ∩ (NOT B) ∩ C",
+      "b": "(NOT A) ∩ (B ∪ C)",
+      "c": "A ∪ (NOT B) ∪ C",
+      "d": "(NOT A) ∩ (B ∩ C)"
+    },
+    "imageDescription": "As shown in the truth table below, when an output signal is generated using three input signals A, B, and C, which of the following Boolean expressions can be applied to the output signal? Here, ∩ means logical product, ∪ means logical sum, and an overbar means logical negation. The table columns are A, B, C, Output signal. Rows (A,B,C; output) are (0,0,0;0), (0,0,1;1), (0,1,0;1), (0,1,1;1), (1,0,0;0), (1,0,1;0), (1,1,0;0), (1,1,1;0).",
+    "reviewedAgainst": [
+      "{\"kind\":\"original-question\",\"sourceSha256\":\"5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1\",\"pdfPage\":158,\"imageSha256\":[\"0e4cf8b14806462389e13057274dde5b1d957b01efbb6a1a03630213ec58e34e\"],\"manualVisualReview\":\"Original source render independently inspected in Batch 3, 2026-10-22; printed key was visible, not a blind solve.\"}",
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":69,\"printedPage\":64,\"heading\":\"3-4-1 Logic Circuit / XOR\",\"textSha256\":\"b26e0590632468a146244504ce22b38c51e1c61bfd1a94cd92adb3789271befd\",\"checkedExcerpt\":\"64 6) XOR circuit This circuit performs exclusive logical sum operation (XOR). The truth table and MIL symbol of XOR circuit are as shown below. X Y X XOR Y Figure 1-31 XOR circuit 0 0 0 0 1 1 1 0 1 1 1 0 XOR circuit is also formed by combining the basic circuits. However, it cannot be formed with a combination of simple circuits as in the case of NAND circuits and NOR circuits. In such cases, it is called logical design (or circuit design) to think about the combination of basic circuits for achieving the targeted results (truth values). In logical design, logical expressions (logical functions) obtained from the truth tables are s\"}",
+      "{\"kind\":\"computed-source-option-truth-tables\",\"variables\":[\"A\",\"B\",\"C\"],\"matches\":[\"b\"],\"rows\":[[0,0,0,0,0,0,1,0],[0,0,1,1,0,1,1,0],[0,1,0,1,0,1,0,0],[0,1,1,1,0,1,1,1],[1,0,0,0,0,0,1,0],[1,0,1,0,1,0,1,0],[1,1,0,0,0,0,1,0],[1,1,1,0,0,0,1,0]]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2009S-Q025",
+    "revision": "2cad8d2ee8a8",
+    "answer": "a",
+    "summary": "USB is a serial peripheral interface, with hubs allowing a tree of attached devices.",
+    "steps": [
+      "USB is a serial peripheral interface, with hubs allowing a tree of attached devices.",
+      "In the USB 1.1/2.0 context, low-speed serves keyboards and mice, full-speed serves peripherals such as printers, and high-speed supports faster devices. FireWire is IEEE 1394; infrared and parallel daisy-chain interfaces are different."
+    ],
+    "takeaway": "USB uses serial links and a hub-based device tree.",
+    "optionText": {
+      "a": "A serial interface that connects devices in a tree topology via hubs",
+      "b": "A serial interface that uses infrared rays to transfer data to devices such as printers",
+      "c": "A parallel interface that connects devices such as hard disks and printers in a daisy-chain configuration",
+      "d": "A parallel interface that connects PCs to internal devices such as CD-ROM drives and DVD drives"
+    },
+    "imageDescription": "Q25. Which of the following is an explanation of USB?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":107,\"pdfPage\":113,\"lineIds\":[\"pdf-113-b002-l02\",\"pdf-113-b002-l03\",\"pdf-113-b002-l04\",\"pdf-113-b002-l05\",\"pdf-113-b003-l00\",\"pdf-113-b003-l01\",\"pdf-113-b003-l02\",\"pdf-113-b003-l03\",\"pdf-113-b006-l00\",\"pdf-113-b006-l01\",\"pdf-113-b006-l02\",\"pdf-113-b006-l03\",\"pdf-113-b006-l04\",\"pdf-113-b006-l05\",\"pdf-113-b006-l06\",\"pdf-113-b006-l07\",\"pdf-113-b006-l08\",\"pdf-113-b006-l09\"],\"textSha256\":\"a6bdb17a16f619eedbb4d7937d247ee6d1f119caa60feb5f99f23e837c8f7d71\",\"checkedText\":\"expansion slot of a PC. (The analog input/output board is also an interface board.) There \\nare some products that support serial interface board, parallel interface board, and data \\ntransfer method (input/output interface). For example, in order to increase RS-232C \\ninterface ports, you can mount a serial interface board or an RS-232C interface board. \\n \\n(2) SCSI (Small Computer Systems Interface) \\n \\nSCSI is a parallel interface used for connecting computers like PCs to peripheral devices. It is \\n \\nIn SCSI-3, serial interface technique based on the serial SCSI is standardized, which allows \\nhigh-speed data transfer at 50 to 200 Mbps. \\n \\n(3) USB (Universal Serial Bus) \\n \\nUSB is a serial interface standardized in 1996, and it can connect various peripheral devices \\nsuch as a keyboard, a mouse, and a modem. By using a USB hub, up to 127 devices can be \\nconnected in the tree configuration. Multiple standards for the shape of connectors are defined \\naccording to the device to be used. \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2008S-Q019",
+    "revision": "1e654a5a6838",
+    "answer": "d",
+    "summary": "For NAND, Q=NOT(Sbar AND Qbar), Qbar=NOT(Rbar AND Q); solve the feedback equations for every input pair.",
+    "steps": [
+      "For NAND, Q=NOT(Sbar AND Qbar), Qbar=NOT(Rbar AND Q); solve the feedback equations for every input pair.",
+      "Active-low NAND inputs 00 force both outputs 1 (forbidden); 01 sets Q=1,10 resets Q=0,11 holds. D is the exact table.",
+      "The original calls the forbidden condition unstable. Both outputs have a definite equal level while asserted; complementary state is invalid and release can race. Do not swap NAND and NOR polarities."
+    ],
+    "takeaway": "The original calls the forbidden condition unstable. Both outputs have a definite equal level while asserted; complementary state is invalid and release can race. Do not swap NAND and NOR polarities.",
+    "optionText": {
+      "a": "unchanged; (0,1); (1,0); unstable",
+      "b": "unchanged; (1,0); (0,1); unstable",
+      "c": "unstable; (0,1); (1,0); unchanged",
+      "d": "unstable; (1,0); (0,1); unchanged"
+    },
+    "imageDescription": "The figure shows an RS flip-flop using two NAND gates. Which of the following is the correct truth table for the flip-flop? Here, unchanged means the outputs maintain a previous state, and unstable means the outputs are in an unstable state. The upper NAND receives S̅ and feedback from Q̅, and outputs Q. The lower NAND receives R̅ and feedback from Q, and outputs Q̅. The feedback wires cross without a junction. Choice input columns are S̅, R̅; output columns are Q, Q̅. Each choice lists input pairs 00, 01, 10, 11 in that order.",
+    "reviewedAgainst": [
+      "{\"kind\":\"original-question\",\"sourceSha256\":\"5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1\",\"pdfPage\":190,\"imageSha256\":[\"064b661bdc5b779048f28a0c17adf93e3854f1aa789e8830080241c6bee0323d\"],\"manualVisualReview\":\"Original source render independently inspected in Batch 4, 2026-10-22; printed key was visible, not a blind solve.\"}",
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":67,\"printedPage\":62,\"heading\":\"3-4-1 Logic Circuit / Sequential circuit\",\"textSha256\":\"82d4142195d967a0b4cc8b2c6564354bed5de7c9acec6ba514a43f30813b0c2f\",\"checkedExcerpt\":\"R Y”, XOR is also expressed as “ Y X  ” and “ Y X ” . (1) Sequential circuit Sequential circuit is a logic circuit where the output is decided on the basis of the input at that time and earlier status. Flip-flop circuit, which is one of the main sequential circuits, has two stable states, and it is used in storage cells of SRAM. Figure 1-25 shows the circuit diagram of a flip-flop for reference and the truth table. Circuit symbols used in Figure 1-25 are one of the methods of representing electronic circuits, and it is referred to as MIL (Military Specifications and Standards) symbols. S R X Y Comments 1 1 X Y No change 1 0 0 1 Reset 0 1 1 0 Set 0 0 \"}",
+      "{\"kind\":\"feedback-fixed-point-table\",\"matches\":[\"d\"],\"rows\":[\"invalid\",[1,0],[0,1],\"hold\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2007S-Q018",
+    "revision": "9a2cc247b3c0",
+    "answer": "a",
+    "summary": "For NOR, Q=NOT(R OR Qbar), Qbar=NOT(S OR Q); solve the feedback equations for every input pair.",
+    "steps": [
+      "For NOR, Q=NOT(R OR Qbar), Qbar=NOT(S OR Q); solve the feedback equations for every input pair.",
+      "Active-high NOR inputs 00 hold,01 reset Q=0,10 set Q=1,11 force both outputs 0 (forbidden). A is the exact table.",
+      "The original calls the forbidden condition unstable. Both outputs have a definite equal level while asserted; complementary state is invalid and release can race. Do not swap NAND and NOR polarities."
+    ],
+    "takeaway": "The original calls the forbidden condition unstable. Both outputs have a definite equal level while asserted; complementary state is invalid and release can race. Do not swap NAND and NOR polarities.",
+    "optionText": {
+      "a": "unchanged; (0,1); (1,0); unstable",
+      "b": "unchanged; (1,0); (0,1); unstable",
+      "c": "unstable; (0,1); (1,0); unchanged",
+      "d": "unstable; (1,0); (0,1); unchanged"
+    },
+    "imageDescription": "The figure shows an RS flip-flop using two NOR gates. Which of the following is the correct truth table for the flip-flop? Here, unchanged means the outputs maintain a previous state, and unstable means the outputs are in an unstable state. The upper NOR receives R and feedback from Q̅, and outputs Q. The lower NOR receives S and feedback from Q, and outputs Q̅. The feedback wires cross without a junction. Choice input columns are S, R; output columns are Q, Q̅. Each choice lists input pairs 00, 01, 10, 11 in that order.",
+    "reviewedAgainst": [
+      "{\"kind\":\"original-question\",\"sourceSha256\":\"5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1\",\"pdfPage\":208,\"imageSha256\":[\"c25a43ee37c5777741a8a2d493d507d788d29683103a251de147d5c61d218e3a\"],\"manualVisualReview\":\"Original source render independently inspected in Batch 4, 2026-10-22; printed key was visible, not a blind solve.\"}",
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":67,\"printedPage\":62,\"heading\":\"3-4-1 Logic Circuit / Sequential circuit\",\"textSha256\":\"82d4142195d967a0b4cc8b2c6564354bed5de7c9acec6ba514a43f30813b0c2f\",\"checkedExcerpt\":\"R Y”, XOR is also expressed as “ Y X  ” and “ Y X ” . (1) Sequential circuit Sequential circuit is a logic circuit where the output is decided on the basis of the input at that time and earlier status. Flip-flop circuit, which is one of the main sequential circuits, has two stable states, and it is used in storage cells of SRAM. Figure 1-25 shows the circuit diagram of a flip-flop for reference and the truth table. Circuit symbols used in Figure 1-25 are one of the methods of representing electronic circuits, and it is referred to as MIL (Military Specifications and Standards) symbols. S R X Y Comments 1 1 X Y No change 1 0 0 1 Reset 0 1 1 0 Set 0 0 \"}",
+      "{\"kind\":\"feedback-fixed-point-table\",\"matches\":[\"a\"],\"rows\":[\"hold\",[0,1],[1,0],\"invalid\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2007S-Q019",
+    "revision": "4f8697e607d2",
+    "answer": "b",
+    "summary": "In source column order Direct,Indirect,PC-relative,Indexed, the required effective operand addresses are X2,memory[X2],X1+X2,X2+X4.",
+    "steps": [
+      "In source column order Direct,Indirect,PC-relative,Indexed, the required effective operand addresses are X2,memory[X2],X1+X2,X2+X4.",
+      "Only B has all four formulas. Source X1 is program-counter address, X2 instruction address field, X4 index contents, and parentheses mean a memory lookup, not ordinary grouping."
+    ],
+    "takeaway": "Only B has all four formulas. Source X1 is program-counter address, X2 instruction address field, X4 index contents, and parentheses mean a memory lookup, not ordinary grouping.",
+    "optionText": {
+      "a": "Direct: X₃=X₂; Indirect: X₃=X₂+X₄; PC-relative: X₃=(X₂); Indexed: X₃=X₁+X₂",
+      "b": "Direct: X₃=X₂; Indirect: X₃=(X₂); PC-relative: X₃=X₁+X₂; Indexed: X₃=X₂+X₄",
+      "c": "Direct: X₃=X₂; Indirect: X₃=(X₂); PC-relative: X₃=X₂+X₄; Indexed: X₃=X₁+X₂",
+      "d": "Direct: X₃=(X₂); Indirect: X₃=X₂; PC-relative: X₃=X₁+X₂; Indexed: X₃=X₂+X₄"
+    },
+    "imageDescription": "Q19. Which of the following is the correct combination of various addressing modes? Here, X₁ is an address which is stored in a program counter. X₂ is an address part of an instruction which is addressed by X₁. X₃ is an address in which an operand needed to execute an instruction is stored. X₄ is a value in an index register. (X₂) means the contents of location X₂. Addressing mode Direct Indirect PC (Program Counter)-relative Indexed The choice-table column order is Direct, Indirect, PC (Program Counter)-relative, Indexed.",
+    "reviewedAgainst": [
+      "{\"kind\":\"original-question\",\"sourceSha256\":\"5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1\",\"pdfPage\":209,\"imageSha256\":[\"69c1a98810919e974ca374af03f7fbcfe054b7959748e1a2380c26042c1d6a96\"],\"manualVisualReview\":\"Original source render independently inspected in Batch 4, 2026-10-22; printed key was visible, not a blind solve.\"}",
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":62,\"printedPage\":57,\"heading\":\"3-3-3 Addressing Mode / absolute and index\",\"textSha256\":\"b22721484223170521d3471fde4744f2f5297a5c361e63e68d74ef0f396b7723\",\"checkedExcerpt\":\" address part is used as the effective address as it is. 2) Index addressing In this method, the effective address is determined by adding the value of the index register to the value of the address part. A general register is also used as the index register, and it is necessary to specify which general register to use in such cases.\"}",
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":63,\"printedPage\":58,\"heading\":\"3-3-3 Addressing Mode / relative\",\"textSha256\":\"df93596937a7d7bf65098945f79c27f2c427a9e2ba65478aae17a0a9cf842222\",\"checkedExcerpt\":\"the relative position from the beginning of the program. 4) Relative addressing In this method, the effective address is determined by adding the value of the instruction address register (program counter) to the value of the address part. This means the relative position from the instruction being executed. (2) Method of determining operand from the effective address 1) Immediate addressing In this method, the effective address is used as it is as operand. Since it does not reference main memory, execution speed is somewhat faster than other addressing. Figure 1-22 Immediate addressing\"}",
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":64,\"printedPage\":59,\"heading\":\"3-3-3 Addressing Mode / direct and indirect\",\"textSha256\":\"3ccf13e4b15d65e8f2f44687262569836e8962342ee82a9796255c5fd0356f02\",\"checkedExcerpt\":\"modification is specified. Figure 1-23 Direct addressing 3) Indirect addressing In this method, the content (value) of main memory referenced by the effective address is used as the address of operand. Double (in the example shown in Figure 1-24, data stored in address 120 is fetched as operand), and triple indirect addressing is also possible. Figure 1-24 Indirect addressing 3-3-4 Interrupt Interrupt means executing a separate process (instruction) while a series of processes (instructions) are being executed. Instead of user mode (mode where there are restrictions on the use of CPU), which is normally used, the interrupt process is executed in privil\"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2007S-Q021",
+    "revision": "1214596e1f17",
+    "answer": "b",
+    "summary": "External interrupts arise from events independent of the instruction currently executing, including a timer, completed I/O or hardware malfunction.",
+    "steps": [
+      "External interrupts arise from events independent of the instruction currently executing, including a timer, completed I/O or hardware malfunction.",
+      "Internal interrupts arise from program execution, such as arithmetic exceptions or supervisor calls. The CPU assigns priorities when multiple interrupt causes can occur."
+    ],
+    "takeaway": "Classify the cause of an interrupt, rather than where its handler runs.",
+    "optionText": {
+      "a": "Applications must constantly detect the occurrence of interrupts.",
+      "b": "A priority is individually assigned to the cause of an interrupt in preparation for the occurrence of multiple interrupts.",
+      "c": "The operation completion notice from an I/O device is classified as an internal interrupt.",
+      "d": "When the CPU accepts an interrupt, it stops the program currently being executed and stores the information needed to restart the program in the designated area of the hard disk."
+    },
+    "imageDescription": "Q21. Which of the following is an appropriate statement in regard to interrupts?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":60,\"pdfPage\":65,\"lineIds\":[\"pdf-065-b004-l01\",\"pdf-065-b004-l02\",\"pdf-065-b004-l03\",\"pdf-065-b004-l04\",\"pdf-065-b004-l05\",\"pdf-065-b004-l06\",\"pdf-065-b005-l00\",\"pdf-065-b005-l01\",\"pdf-065-b005-l02\",\"pdf-065-b005-l03\",\"pdf-065-b005-l04\",\"pdf-065-b005-l05\",\"pdf-065-b005-l06\",\"pdf-065-b005-l07\",\"pdf-065-b006-l00\"],\"textSha256\":\"d461088be15d6da916832fe2d76e803e03194fed0eb427c4523282d0e5ba25af\",\"checkedText\":\"According to conditions that an interrupt occurs, this can be classified described below. Here, \\nit is assumed that multiple interrupts may occur simultaneously, and therefore priority ranking \\nis assigned to each interrupt. \\n \\n1) External interrupt: This is an interrupt that occurs because of a reason not related to the \\nprocess being executed. \\n• Timer interrupt \\nThis is an interrupt that occurs when the time measured in the timer, such as \\ninterval timer and watchdog timer, has exceeded the specified time (i.e., the timer \\nhas been timed-out). \\n• Input/output interrupt (input/output completion interrupt) \\nThis is an interrupt that occurs when an input/output operation has been \\ncompleted. \\n• Machine check interrupt \\nThis is an interrupt that occurs because of a hardware malfunction, a power \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2007S-Q024",
+    "revision": "1b1823828fd2",
+    "answer": "b",
+    "summary": "Split main memory into banks that can operate independently.",
+    "steps": [
+      "Split main memory into banks that can operate independently.",
+      "Overlapping accesses to these banks improves access throughput. This is distinct from a cache buffer, DMA I/O transfers or widening a data bus."
+    ],
+    "takeaway": "Interleaving overlaps accesses to independent memory banks.",
+    "optionText": {
+      "a": "Compensating the difference between the access time of main memory and that of hard disk.",
+      "b": "Dividing main memory into several banks and speeding up access to sequential addresses in memory.",
+      "c": "Updating cache and main memory simultaneously.",
+      "d": "Writing data not needed in cache to main memory when fetching new data to cache memory."
+    },
+    "imageDescription": "Q24. Which of the following is an appropriate description of memory interleaving?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":73,\"pdfPage\":78,\"lineIds\":[\"pdf-078-b004-l01\",\"pdf-078-b004-l02\",\"pdf-078-b004-l03\",\"pdf-078-b004-l04\",\"pdf-078-b004-l05\",\"pdf-078-b004-l06\",\"pdf-078-b005-l00\",\"pdf-078-b006-l00\",\"pdf-078-b006-l01\",\"pdf-078-b006-l02\",\"pdf-078-b006-l03\",\"pdf-078-b006-l04\",\"pdf-078-b006-l05\",\"pdf-078-b007-l00\"],\"textSha256\":\"f2b7d353b6d2e323e1df9aac63967bda1783eb0d4fdec81635c15c3010ce8996\",\"checkedText\":\" \\n(2) Memory interleave \\n \\nMemory interleave is a method where main memory is divided into several sections (bank) \\nthat are simultaneously and independently accessed in order to improve the average access \\ntime of main memory. \\n \\nFigure 1-38  Memory interleave method \\n \\nMemory interleave is a method of reading the data in advance, and it is useful for the \\nprocessing of data that is located in the contiguous area of main memory. However, data may \\nnot be referenced in the sequence of storage area at all times, and the average access time may \\nnot be always proportionate to the number of banks (even if there are 4 banks, the average \\n \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2022S-Q021",
+    "revision": "1d9f01dd07ef",
+    "answer": "d",
+    "summary": "In D, T=NOR(A,B), U=NOR(A,T)=NOT A AND B, V=NOR(B,T)=A AND NOT B. Final NOR(U,V) is XNOR.",
+    "steps": [
+      "In D, T=NOR(A,B), U=NOR(A,T)=NOT A AND B, V=NOR(B,T)=A AND NOT B. Final NOR(U,V) is XNOR.",
+      "All four source topologies were traced: A is XOR, B AND, C OR, D XNOR. Tied-input NORs invert; do not ignore an output bubble or copy a NAND implementation."
+    ],
+    "takeaway": "All four source topologies were traced: A is XOR, B AND, C OR, D XNOR. Tied-input NORs invert; do not ignore an output bubble or copy a NAND implementation.",
+    "optionText": {
+      "a": "G=NOR(A,A); H=NOR(B,B); Y=NOR(NOR(A,B),NOR(G,H))",
+      "b": "Y=NOR(NOR(A,A),NOR(B,B))",
+      "c": "T=NOR(A,B); Y=NOR(T,T)",
+      "d": "T=NOR(A,B); Y=NOR(NOR(A,T),NOR(B,T))"
+    },
+    "imageDescription": "Which of the following is the Exclusive-NOR logic function that is implemented with two-input NOR gates? All gates shown have output-inversion bubbles. In the choice descriptions, G, H and T are neutral editorial wire names local to that option; NOR(U,V) identifies a gate with inputs U and V. A tied-input gate receives the same signal at both inputs.",
+    "reviewedAgainst": [
+      "{\"kind\":\"original-question\",\"sourceSha256\":\"5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1\",\"pdfPage\":223,\"imageSha256\":[\"a5b763b05266d89da7eceb3d7eafb7d526b756886d9e2a913fb87847c2ca0e40\"],\"manualVisualReview\":\"Original source render independently inspected in Batch 4, 2026-10-22; printed key was visible, not a blind solve.\"}",
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":68,\"printedPage\":63,\"heading\":\"3-4-1 Logic Circuit / NOR\",\"textSha256\":\"0d4b63b814973a25037c28e66d92f6e2f65667d47f397e9e8a6a794d9e6f12bd\",\"checkedExcerpt\":\" NAND Y Figure 1-29 NAND circuit 0 0 1 0 1 1 1 0 1 1 1 0 5) NOR circuit This circuit performs negative logical sum operation (NOR). NOR operation is the arithmetic operation that negates the results of OR operation. The truth table and MIL symbol of NOR circuit are as shown below. NOR circuit is formed by combining OR circuit and NOT circuit. X Y X NOR Y Figure 1-30 NOR circuit 0 0 1 0 1 0 1 0 0 1 1 0\"}",
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":70,\"printedPage\":65,\"heading\":\"3-4-1 Logic Circuit / Main logical laws\",\"textSha256\":\"e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8\",\"checkedExcerpt\":\"  • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determi\"}",
+      "{\"kind\":\"computed-source-option-truth-tables\",\"variables\":[\"A\",\"B\"],\"matches\":[\"d\"],\"rows\":[[0,0,1,0,0,0,1],[0,1,0,1,0,1,0],[1,0,0,1,0,1,0],[1,1,1,0,1,1,1]]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2020A-Q001",
+    "revision": "4557d6595a3b",
+    "answer": "c",
+    "summary": "32=2^5 and 7=111 binary.",
+    "steps": [
+      "32=2^5 and 7=111 binary.",
+      "7/32 = 0.00111 binary = 1/8+1/16+1/32."
+    ],
+    "takeaway": "7/32 = 0.00111 binary = 1/8+1/16+1/32.",
+    "optionText": {
+      "a": "0.001011",
+      "b": "0.001101",
+      "c": "0.00111",
+      "d": "0.0111"
+    },
+    "imageDescription": "Q1. When the decimal arithmetic expression, 7 / 32, is evaluated, which of the following represents the result in binary?",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":0.21875,\"derivation\":[\"32=2^5 and 7=111 binary.\",\"7/32 = 0.00111 binary = 1/8+1/16+1/32.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2019A-Q024",
+    "revision": "f05c26d0b725",
+    "answer": "b",
+    "summary": "Reference F=NOT[(A AND B) AND (B OR C)] simplifies to NOT(A AND B).",
+    "steps": [
+      "Reference F=NOT[(A AND B) AND (B OR C)] simplifies to NOT(A AND B).",
+      "Trace every NAND input from the source. In B, top two NANDs restore AB; the lower tied-input NANDs produce NOT B,NOT C and their NAND produces B OR C. The final NAND is the reference.",
+      "D differs: its middle first-level NAND receives B,C, not B,B, while the bottom tied-input NAND receives C,C. This lower branch simplifies to C, so D is NOT(ABC). A and C both simplify to NOT(BC). All eight ABC inputs uniquely select B; similar drawings are not identical topologies."
+    ],
+    "takeaway": "D differs: its middle first-level NAND receives B,C, not B,B, while the bottom tied-input NAND receives C,C. This lower branch simplifies to C, so D is NOT(ABC). A and C both simplify to NOT(BC). All eight ABC inputs uniquely select B; similar drawings are not identical topologies.",
+    "optionText": {
+      "a": "F=NAND(NAND(NAND(A,B),NAND(B,B)),NAND(NAND(C,C),NAND(C,C)))",
+      "b": "F=NAND(NAND(NAND(A,B),NAND(A,B)),NAND(NAND(B,B),NAND(C,C)))",
+      "c": "F=NAND(NAND(NAND(A,B),NAND(B,B)),NAND(NAND(B,C),NAND(B,C)))",
+      "d": "F=NAND(NAND(NAND(A,B),NAND(A,B)),NAND(B,NAND(C,C)))"
+    },
+    "imageDescription": "Which of the following is an equivalent representation of the circuit below where only NAND gates are used? In the source circuit, AND(A,B) and OR(B,C) feed a final NAND gate whose output is F. B branches to both first-level gates. The answer circuits contain only NAND gates with output bubbles. NAND(U,V) below denotes the literal gate wiring; a tied-input NAND receives the same signal at both inputs.",
+    "reviewedAgainst": [
+      "{\"kind\":\"original-question\",\"sourceSha256\":\"5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1\",\"pdfPage\":243,\"imageSha256\":[\"e9433cd49102efe771ba599310f63e3740f68a7cafe5b34e7720805ab6c70409\"],\"manualVisualReview\":\"Original source render independently inspected in Batch 4, 2026-10-22; printed key was visible, not a blind solve.\"}",
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":70,\"printedPage\":65,\"heading\":\"3-4-1 Logic Circuit / Main logical laws\",\"textSha256\":\"e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8\",\"checkedExcerpt\":\"  • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determi\"}",
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":68,\"printedPage\":63,\"heading\":\"3-4-1 Logic Circuit / NAND\",\"textSha256\":\"0d4b63b814973a25037c28e66d92f6e2f65667d47f397e9e8a6a794d9e6f12bd\",\"checkedExcerpt\":\" as shown below. X NOT X Figure 1-28 NOT circuit 0 1 1 0 4) NAND circuit This circuit performs negative logical product (negative AND) operation (NAND). NAND operation is the arithmetic operation that negates the results of AND operation. The truth table and MIL symbol of NAND circuit are as shown below. NAND circuit is formed by combining AND circuit and NOT circuit. X Y X NAND Y Figure 1-29 NAND circuit 0 0 1 0 1 1 1 0 1 1 1 0 5) NOR circuit This circuit performs negative logical sum operation (NOR). NOR operation is the arithmetic operation that negates the results of OR operation. The truth table and MIL symbol of NOR circuit are as shown below. NO\"}",
+      "{\"kind\":\"computed-source-option-truth-tables\",\"variables\":[\"A\",\"B\",\"C\"],\"matches\":[\"b\"],\"rows\":[[0,0,0,1,1,1,1,1],[0,0,1,1,1,1,1,1],[0,1,0,1,1,1,1,1],[0,1,1,1,0,1,0,1],[1,0,0,1,1,1,1,1],[1,0,1,1,1,1,1,1],[1,1,0,0,1,0,1,1],[1,1,1,0,0,0,0,0]]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2018S-Q010",
+    "revision": "11859a784d6b",
+    "answer": "c",
+    "summary": "The question explicitly gives hit time 0.01 microseconds and miss time 0.11 microseconds, including transfer and cache access.",
+    "steps": [
+      "The question explicitly gives hit time 0.01 microseconds and miss time 0.11 microseconds, including transfer and cache access.",
+      "Average = 0.9×0.01 + 0.1×0.11 = 0.020 microseconds."
+    ],
+    "takeaway": "Average = 0.9×0.01 + 0.1×0.11 = 0.020 microseconds.",
+    "optionText": {
+      "a": "0.011 µs",
+      "b": "0.019 µs",
+      "c": "0.020 µs",
+      "d": "0.091 µs"
+    },
+    "imageDescription": "Q10. A computer has two levels of memories, cache memory and main memory, with an access time of 0.01 µs and 0.1 µs respectively. If the hit ratio of the cache memory is 90%, which of the following is the appropriate average memory access time for this system? In this scenario, if the data is in the cache memory, the processor accesses the data directly with an access time of 0.01 µs. However, if a cache miss occurs, the data is required to be transferred from the main memory to the cache memory first, and then subsequently accessed from the cache memory. Thus, the access time becomes 0.11 µs.",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":0.020000000000000004,\"derivation\":[\"The question explicitly gives hit time 0.01 microseconds and miss time 0.11 microseconds, including transfer and cache access.\",\"Average = 0.9×0.01 + 0.1×0.11 = 0.020 microseconds.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2017A-Q001",
+    "revision": "5dfd869e2d8a",
+    "answer": "a",
+    "summary": "F1B0 hexadecimal is 1111000110110000 binary. Group as 001 111 000 110 110 000 to obtain 170660 octal.",
+    "steps": [
+      "F1B0 hexadecimal is 1111000110110000 binary. Group as 001 111 000 110 110 000 to obtain 170660 octal.",
+      "The fraction .C is .1100 binary, or .6 octal. The complete number is 170660.6 octal."
+    ],
+    "takeaway": "The fraction .C is .1100 binary, or .6 octal. The complete number is 170660.6 octal.",
+    "optionText": {
+      "a": "170660.6",
+      "b": "361540.14",
+      "c": "743300.6",
+      "d": "5213052.3"
+    },
+    "imageDescription": "Q1. What is the octal representation of a hexadecimal fraction F1B0.C?",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":\"0o170660.6\",\"derivation\":[\"F1B0 hexadecimal is 1111000110110000 binary. Group as 001 111 000 110 110 000 to obtain 170660 octal.\",\"The fraction .C is .1100 binary, or .6 octal. The complete number is 170660.6 octal.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2015S-Q002",
+    "revision": "9e2ae5b4260c",
+    "answer": "d",
+    "summary": "The fractional part 0.525 is 21/40. Option D is .100(0011) in binary.",
+    "steps": [
+      "The fractional part 0.525 is 21/40. Option D is .100(0011) in binary.",
+      "Its finite prefix .100 is 1/2; its repeating tail is 2^(-3)×(3/15)=1/40. Together they give 21/40."
+    ],
+    "takeaway": "Its finite prefix .100 is 1/2; its repeating tail is 2^(-3)×(3/15)=1/40. Together they give 21/40.",
+    "optionText": {
+      "a": "101.11",
+      "b": "101.1000011",
+      "c": "101.10(0011)",
+      "d": "101.100(0011)"
+    },
+    "imageDescription": "Q2. Which of the following is the appropriate binary fraction that is equivalent to the decimal value 5.525? Here, the binary string enclosed in parentheses is repeated infinitely.",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":\"101.100(0011)\",\"derivation\":[\"The fractional part 0.525 is 21/40. Option D is .100(0011) in binary.\",\"Its finite prefix .100 is 1/2; its repeating tail is 2^(-3)×(3/15)=1/40. Together they give 21/40.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2014A-Q001",
+    "revision": "1f4e5c852f9c",
+    "answer": "c",
+    "summary": "The initial address 0274 octal is 188 decimal. The last of 400 records starts 399 locations later.",
+    "steps": [
+      "The initial address 0274 octal is 188 decimal. The last of 400 records starts 399 locations later.",
+      "188+399=587 decimal = 1113 octal. Do not add 400, which points after the final record."
+    ],
+    "takeaway": "188+399=587 decimal = 1113 octal. Do not add 400, which points after the final record.",
+    "optionText": {
+      "a": "0673₈",
+      "b": "0674₈",
+      "c": "1113₈",
+      "d": "1114₈"
+    },
+    "imageDescription": "Q1. When a total of 400 data records are stored in contiguous memory starting from the address 0274₈, which of the following is the address where the last data record is stored? Here, each data record occupies one address location, and each address is represented in radix notation.",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":\"0o1113\",\"derivation\":[\"The initial address 0274 octal is 188 decimal. The last of 400 records starts 399 locations later.\",\"188+399=587 decimal = 1113 octal. Do not add 400, which points after the final record.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2013S-Q014",
+    "revision": "e8b1cf930472",
+    "answer": "b",
+    "summary": "The L2 miss probability 1/2 is conditional on reaching L2 after the 1/20 L1 miss. Service probabilities are 19/20 at L1,1/40 at L2,1/40 at main memory.",
+    "steps": [
+      "The L2 miss probability 1/2 is conditional on reaching L2 after the 1/20 L1 miss. Service probabilities are 19/20 at L1,1/40 at L2,1/40 at main memory.",
+      "Under complete latency per serving level, E[T]=(19/20)*1+(1/40)*10+(1/40)*100=37/10=3.7 cycles, B. This matches the actual textbook mutually exclusive hit/miss weighted-latency model; the next page explains the multi-level sequence.",
+      "State the assumption explicitly. If 1,10,100 were incremental serial lookup costs, the calculation would instead be 1+(1/20)*10+(1/40)*100=4.0 cycles. The source gives data-access times, not additional miss penalties. Do not use a matching printed key or the absence of 4.0 alone as verification."
+    ],
+    "takeaway": "State the assumption explicitly. If 1,10,100 were incremental serial lookup costs, the calculation would instead be 1+(1/20)*10+(1/40)*100=4.0 cycles. The source gives data-access times, not additional miss penalties. Do not use a matching printed key or the absence of 4.0 alone as verification.",
+    "optionText": {
+      "a": "2.8",
+      "b": "3.7",
+      "c": "37",
+      "d": "52.3"
+    },
+    "imageDescription": "Q14. Cache memory is usually organized at multiple levels, such as L1 for level 1 and L2 for level 2, with L1 having the smallest storage capacity but the fastest memory speed. The data in L1, L2, and main memory can be accessed using 1, 10, and 100 clock cycles, respectively. When the cache miss rates in L1 and L2 are 5% and 50% respectively, what is the average memory access time in clock cycles?",
+    "reviewedAgainst": [
+      "{\"kind\":\"original-question\",\"sourceSha256\":\"5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1\",\"pdfPage\":274,\"imageSha256\":[\"402b715159066cdf667da67546faeb44621c5818ce406c309d2521e78637440d\"],\"manualVisualReview\":\"Original source render independently inspected in Batch 5, 2026-10-22; printed key was visible, not a blind solve.\"}",
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":76,\"printedPage\":71,\"heading\":\"3-5-1 High Speed Memory Access / weighted access\",\"textSha256\":\"16642cba08a2bb57f7761c6f5bf389c157c2c9a4f16ffd1abe7b6cf36e65cc89\",\"checkedExcerpt\":\"ta is found in cache memory. Therefore, it is determined by weighted average of access time of cache memory and access time of main memory. Here, the access time is determined by considering both the probability (hit ratio) that the required data is available in cache memory and the probability (NFP (Not Found Probability)) that the required data is not available in cache memory. “Hit ratio+NFP=1” always holds true. Example: Calculate the average access time of the following processor. NFP (probability that the required data is not available in cache memory) is 0.1. Access destination Access time (nanosecond) Cache memory 50 Main memory 500 Average acc\"}",
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":77,\"printedPage\":72,\"heading\":\"3-5-1 Multi-level cache configuration\",\"textSha256\":\"bcd00e2a51a63797a2917746e44fed627b7e95b09f1aeb4ee74181bd4a6a5443\",\"checkedExcerpt\":\"nd the speed of main memory. Therefore, it is common to use multi-level cache configuration where cache memory is divided into 2 levels, namely, primary cache and secondary cache. In this case, the processor will access in the sequence of primary cache → secondary cache → main memory. Figure 1-35 Multi-level cache configuration Meanwhile, there is disk cache, which is another buffer memory. This buffer memory is placed between main memory and auxiliary storage (hard disk), and it may use a part of main memory, or semiconductor memory may be installed separately. Figure 1-36 Working of disk cache Basically, the higher the access speed of storage, the sm\"}",
+      "{\"kind\":\"computed-exact-source-options\",\"matches\":[\"b\"],\"rows\":[{\"values\":{},\"result\":\"37/10\",\"choices\":{\"a\":\"14/5\",\"b\":\"37/10\",\"c\":\"37\",\"d\":\"523/10\"},\"matches\":[\"b\"]}],\"units\":\"clock cycles, complete serving-level latency\"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2012A-Q003",
+    "revision": "0cd4264e0e39",
+    "answer": "c",
+    "summary": "24 decimal is 00011000 binary.",
+    "steps": [
+      "24 decimal is 00011000 binary.",
+      "Invert for one's complement 11100111; add 1 for two's complement 11101000."
+    ],
+    "takeaway": "Invert for one's complement 11100111; add 1 for two's complement 11101000.",
+    "optionText": {
+      "a": "One’s complement: 00011001; Two’s complement: 00011010",
+      "b": "One’s complement: 00011010; Two’s complement: 00011001",
+      "c": "One’s complement: 11100111; Two’s complement: 11101000",
+      "d": "One’s complement: 11101000; Two’s complement: 11100111"
+    },
+    "imageDescription": "Q3. When the decimal integer “–24” is represented in 8-bit binary by using one’s complement and two’s complement, which of the following is the correct combination? One’s complement Two’s complement",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":[\"11100111\",\"11101000\"],\"derivation\":[\"24 decimal is 00011000 binary.\",\"Invert for one's complement 11100111; add 1 for two's complement 11101000.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2010A-Q014",
+    "revision": "bea54061aedb",
+    "answer": "d",
+    "summary": "24 address lines select 2^24 words.",
+    "steps": [
+      "24 address lines select 2^24 words.",
+      "Each word has 16 bits, so the chip contains 2^24×16 one-bit cells."
+    ],
+    "takeaway": "Each word has 16 bits, so the chip contains 2^24×16 one-bit cells.",
+    "optionText": {
+      "a": "2¹⁶",
+      "b": "2²⁴",
+      "c": "24 × 16",
+      "d": "2²⁴ × 16"
+    },
+    "imageDescription": "Q14. How many memory cells (or latches for holding 1 bit each) are implemented in SRAM with 24 address lines and 16 data lines?",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":268435456,\"derivation\":[\"24 address lines select 2^24 words.\",\"Each word has 16 bits, so the chip contains 2^24×16 one-bit cells.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2010S-Q001",
+    "revision": "d6c5a4100b2e",
+    "answer": "c",
+    "summary": "100_n-34_n=44_n gives n^2-3n-4=4n+4, hence n^2-7n-8=0.",
+    "steps": [
+      "100_n-34_n=44_n gives n^2-3n-4=4n+4, hence n^2-7n-8=0.",
+      "The valid radix is n=8, so 26_n=2×8+6=22 decimal."
+    ],
+    "takeaway": "The valid radix is n=8, so 26_n=2×8+6=22 decimal.",
+    "optionText": {
+      "a": "18",
+      "b": "20",
+      "c": "22",
+      "d": "38"
+    },
+    "imageDescription": "When the equation 100ₙ − 34ₙ = 44ₙ holds, which of the following represents 26ₙ? Each subscript n indicates the radix. When there is no subscript, radix 10 is implied.",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":22,\"derivation\":[\"100_n-34_n=44_n gives n^2-3n-4=4n+4, hence n^2-7n-8=0.\",\"The valid radix is n=8, so 26_n=2×8+6=22 decimal.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2010S-Q004",
+    "revision": "8a317e39aafb",
+    "answer": "b",
+    "summary": "The given powers of 16 form DB93 hexadecimal.",
+    "steps": [
+      "The given powers of 16 form DB93 hexadecimal.",
+      "Its binary nibbles contain 3+3+2+2=10 one-bits."
+    ],
+    "takeaway": "Its binary nibbles contain 3+3+2+2=10 one-bits.",
+    "optionText": {
+      "a": "6",
+      "b": "10",
+      "c": "13",
+      "d": "16"
+    },
+    "imageDescription": "When the resulting value of the expression 13 × 16³ + 11 × 16² + 9 × 16 + 3 is represented in binary, how many 1 bits are included in the binary value?",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":10,\"derivation\":[\"The given powers of 16 form DB93 hexadecimal.\",\"Its binary nibbles contain 3+3+2+2=10 one-bits.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2009A-Q002",
+    "revision": "1b283da32f25",
+    "answer": "b",
+    "summary": "The 16-bit signed range is -32768 through 32767.",
+    "steps": [
+      "The 16-bit signed range is -32768 through 32767.",
+      "1FFF×4=32764 fits; DFFF means -8193 and ×4=-32772 does not fit; E000×4=-32768 fits; FFFF×4=-4 fits."
+    ],
+    "takeaway": "1FFF×4=32764 fits; DFFF means -8193 and ×4=-32772 does not fit; E000×4=-32768 fits; FFFF×4=-4 fits.",
+    "optionText": {
+      "a": "1FFF",
+      "b": "DFFF",
+      "c": "E000",
+      "d": "FFFF"
+    },
+    "imageDescription": "Q2. Which of the following hexadecimal numbers, representing signed 16-bit binary numbers, results in overflow when multiplied by 4? Here, a negative number is represented in 2’s complement.",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":[32764,-32772,-32768,-4],\"derivation\":[\"The 16-bit signed range is -32768 through 32767.\",\"1FFF×4=32764 fits; DFFF means -8193 and ×4=-32772 does not fit; E000×4=-32768 fits; FFFF×4=-4 fits.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2009A-Q019",
+    "revision": "2b7ea262042a",
+    "answer": "c",
+    "summary": "A b-bit field can select 2^b registers.",
+    "steps": [
+      "A b-bit field can select 2^b registers.",
+      "2^4=16, so four bits are required."
+    ],
+    "takeaway": "2^4=16, so four bits are required.",
+    "optionText": {
+      "a": "2",
+      "b": "3",
+      "c": "4",
+      "d": "5"
+    },
+    "imageDescription": "Q19. At least how many bits are required for the register identification field of a machine instruction code in order to specify one of 16 general purpose registers in the machine?",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":4,\"derivation\":[\"A b-bit field can select 2^b registers.\",\"2^4=16, so four bits are required.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2009S-Q001",
+    "revision": "43439a3b4ef1",
+    "answer": "b",
+    "summary": "Evaluate each side in decimal: A gives 10+8=18; B gives 13+4=17.",
+    "steps": [
+      "Evaluate each side in decimal: A gives 10+8=18; B gives 13+4=17.",
+      "C gives 12+3=15; D gives 11+2=13. Only B equals 17."
+    ],
+    "takeaway": "C gives 12+3=15; D gives 11+2=13. Only B equals 17.",
+    "optionText": {
+      "a": "1010₂ + 10₈ = 17₁₀",
+      "b": "1101₂ + 4₁₆ = 17₁₀",
+      "c": "14₈ + 11₂ = 16₁₀",
+      "d": "B₁₆ + 10₂ = 14₁₀"
+    },
+    "imageDescription": "Which of the following arithmetic expressions is correct? Here, a number is written in radix notation: a decimal subscript following the number indicates the radix.",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":[18,17,15,13],\"derivation\":[\"Evaluate each side in decimal: A gives 10+8=18; B gives 13+4=17.\",\"C gives 12+3=15; D gives 11+2=13. Only B equals 17.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2009S-Q002",
+    "revision": "d4b59891b07a",
+    "answer": "d",
+    "summary": "101101.101 binary is 45.625; 11101.110 is 29.75.",
+    "steps": [
+      "101101.101 binary is 45.625; 11101.110 is 29.75.",
+      "The difference is 15.875, or 1111.111 binary."
+    ],
+    "takeaway": "The difference is 15.875, or 1111.111 binary.",
+    "optionText": {
+      "a": "111.001",
+      "b": "111.111",
+      "c": "1111.001",
+      "d": "1111.111"
+    },
+    "imageDescription": "Q2. When the binary fraction 11101.110 is subtracted from the binary fraction 101101.101, what is the correct result?",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":15.875,\"derivation\":[\"101101.101 binary is 45.625; 11101.110 is 29.75.\",\"The difference is 15.875, or 1111.111 binary.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2008A-Q002",
+    "revision": "c9b04ea04708",
+    "answer": "c",
+    "summary": "A two-bit left shift produces 4x when overflow is excluded.",
+    "steps": [
+      "A two-bit left shift produces 4x when overflow is excluded.",
+      "Adding x gives 5x."
+    ],
+    "takeaway": "Adding x gives 5x.",
+    "optionText": {
+      "a": "3",
+      "b": "4",
+      "c": "5",
+      "d": "6"
+    },
+    "imageDescription": "Q2. A register stores a numerical value representing a binary number. After a positive integer x is entered in the register, the following operation is performed: “shift the register value two bits to the left and add x.” How many times as large as x is the new value of the register? Here, the shift does not cause an overflow.",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":\"5x\",\"derivation\":[\"A two-bit left shift produces 4x when overflow is excluded.\",\"Adding x gives 5x.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2007A-Q001",
+    "revision": "e1414fd3a6f0",
+    "answer": "c",
+    "summary": "Eleven-bit two's complement ranges from -2^10 through 2^10-1.",
+    "steps": [
+      "Eleven-bit two's complement ranges from -2^10 through 2^10-1.",
+      "This is -1024 through 1023."
+    ],
+    "takeaway": "This is -1024 through 1023.",
+    "optionText": {
+      "a": "-2048 to 2047",
+      "b": "-2048 to 2048",
+      "c": "-1024 to 1023",
+      "d": "-1024 to 1024"
+    },
+    "imageDescription": "Q1. What range of decimal numbers can be represented with an 11-bit two's-complement number?",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":[-1024,1023],\"derivation\":[\"Eleven-bit two's complement ranges from -2^10 through 2^10-1.\",\"This is -1024 through 1023.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2007S-Q002",
+    "revision": "4120ce1582a5",
+    "answer": "c",
+    "summary": "Treat FEDC as the numerator over 16^4. Multiply the numerator by four: FEDC×4=3FB70 hexadecimal.",
+    "steps": [
+      "Treat FEDC as the numerator over 16^4. Multiply the numerator by four: FEDC×4=3FB70 hexadecimal.",
+      "Restore four fractional hexadecimal digits: 3.FB70."
+    ],
+    "takeaway": "Restore four fractional hexadecimal digits: 3.FB70.",
+    "optionText": {
+      "a": "1.FDB8",
+      "b": "2.FB78",
+      "c": "3.FB70",
+      "d": "F.EDC0"
+    },
+    "imageDescription": "Q2. Which of the following is the correct value of the quadruple of hexadecimal fraction 0.FEDC?",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":\"3.FB70\",\"derivation\":[\"Treat FEDC as the numerator over 16^4. Multiply the numerator by four: FEDC×4=3FB70 hexadecimal.\",\"Restore four fractional hexadecimal digits: 3.FB70.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2007S-Q020",
+    "revision": "82a8ce5e89e5",
+    "answer": "c",
+    "summary": "For five stages and twenty instructions with no stalls, total cycles are k+N-1.",
+    "steps": [
+      "For five stages and twenty instructions with no stalls, total cycles are k+N-1.",
+      "5+20-1 = 24 cycles."
+    ],
+    "takeaway": "5+20-1 = 24 cycles.",
+    "optionText": {
+      "a": "20",
+      "b": "21",
+      "c": "24",
+      "d": "25"
+    },
+    "imageDescription": "Q20. A computer is designed to enable pipeline control so that each instruction can be completed in five cycles. How many cycles are needed to execute 20 instructions? Here, all instructions can be executed without being stopped halfway.",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":24,\"derivation\":[\"For five stages and twenty instructions with no stalls, total cycles are k+N-1.\",\"5+20-1 = 24 cycles.\"]}"
+    ]
   }
 ]

@@ -20740,6 +20740,117 @@
     }
   },
   {
+    "id": "HIST-TECH01-2007A-Q001",
+    "examId": "2007A_FE_AM",
+    "number": 1,
+    "year": 2007,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Numeric Data",
+    "topic": "Two’s-complement integers",
+    "mapping": {
+      "headingNumber": "2-3-2",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-036-b002-l22-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2007A-Q001.ffc89ac7592b.webp",
+      "width": 1945,
+      "height": 552,
+      "sha256": "ffc89ac7592b7c63c1f50eac79ee3d5b52e21597a6ec5274d6df5a3bec1b4b0a"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 318,
+      "pageEnd": 318,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2007A-Q001"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            318
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "signed-integers",
+          "evidence": [
+            {
+              "checkedExcerpt": "1) Fixed point numbers In this form of representation, numerical values are handled by fixing the radix point at a specific position. Generally, it is mostly used for handling integer numbers by fixing the position of the radix point in the least significant bit. ▲ (Position of radix point) In this form of representation, after numerical values are converted into binary numbers, they are used without modification according to the position of the radix point. Example: Represent (89)10 as an 8 bit fixed point number. (89)10=(1011001)2 ↓ 0 1 0 1 1 0 0 1 In fixed point numbers, methods of representing negative numbers (representation forms of negative numbers) are important. The two main methods are described below. A: Signed absolute value notation In this method, the most significant 1 bit is used as a sign bit, and 0 is stored in it if the numerical value is positive, while 1 is stored in it if the numerical value is negative. In the remaining bits, the binary bit string is stored as it is. Example: Represent (+89)10 and (−89)10 with an 8-bit fixed point number (signed absolute value). (89)10 = (1011001)2 (+89)10: 0 1 0 1 1 0 0 1 (−89)10: 1 1 0 1 1 0 0 1 B: Complement notation In this method, when a negative number is represented, the complement of the positive number is used.",
+              "kind": "textbook-source",
+              "pdfPage": 39,
+              "printedPage": 34,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "5946d31a5a250ce77c93662f89ffe2a364b4bba19c3df837adeaedcc00d55eca"
+            },
+            {
+              "checkedExcerpt": "1 Hardware 35 [Complement] By using a certain number as the reference value, the shortfall is shown with respect to this reference value. In n-adic number, there is a complement of n and a complement of n−1. • Complement of n−1 ... Reference value is the maximum value that has the same number of digits. • Complement of n ... Reference value is the minimum value that has one more additional digit. The complement can be determined by subtracting from the reference value the number for which the complement is to be determined. Example 1: Determine the complement of decimal number (614)10 • 9’s complement • 10’s complement 999 1000 − 614 − 614 385 386 Example 2: Determine the complement of binary number (01101101)2 • 1’s complement • 2’s complement 11111111 100000000 − 01101101 − 01101101 10010010 10010011 Example: Represent (+89)10 and (−89)10 with an 8-bit fixed point number (2’s complement). (89)10 = (1011001)2 → 100000000 − 01011001 10100111 (+89)10: 0 1 0 1 1 0 0 1 (−89)10: 1 0 1 0 0 1 1 1 Generally, 2’s complement notation is often used in fixed point numbers for the following reasons.",
+              "kind": "textbook-source",
+              "pdfPage": 40,
+              "printedPage": 35,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "cb08d6e0e7d24577cf917f94e10d9aaaed3d6c215936caae1d33b5c8322fdd60"
+            },
+            {
+              "checkedExcerpt": "2. A wide range of numerical values can be represented. When signed absolute values are used, two types of 0s, namely (+0) and (−0), occur. However, there is only one type of 0 when 2’s complement is used. Since the information amount of identical numbers of bits is the same, 2’s complement enables the representation of a wider range of numerical values.",
+              "kind": "textbook-source",
+              "pdfPage": 41,
+              "printedPage": 36,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "6c2e75d45619a5e6a7b9e5fd212762cd73346edb6428485ad33a063f00938ba9"
+            },
+            {
+              "checkedExcerpt": "[Range of numerical values that can be represented with n bits (2’s complement)] From −2n−1 through +2n−1−1",
+              "kind": "textbook-source",
+              "pdfPage": 42,
+              "printedPage": 37,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "718cb51354c6920803d3e804c3aea117901e6e009c8530368dd23982ea2b7927"
+            }
+          ],
+          "headingNumber": "2-3-2",
+          "reason": "Original question image and actual 2-3-2 teaching re-read; signed-integers is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s02",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-036-b002-l22-text-0"
+        }
+      ],
+      "approvalFingerprint": "e1414fd3a6f068ac979e41cb6d471994e03cc9ad4e84b1c8eec61645ebd6add4"
+    }
+  },
+  {
     "id": "HIST-TECH01-2007A-Q005",
     "examId": "2007A_FE_AM",
     "number": 5,
@@ -21264,6 +21375,99 @@
     }
   },
   {
+    "id": "HIST-TECH01-2007S-Q002",
+    "examId": "2007S_FE_AM",
+    "number": 2,
+    "year": 2007,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Radix and Radix Conversion",
+    "topic": "Radix conversion",
+    "mapping": {
+      "headingNumber": "2-2",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-028-b009-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2007S-Q002.eb66852de3ce.webp",
+      "width": 1945,
+      "height": 332,
+      "sha256": "eb66852de3ce7e2d04a1dd7ce58c73509c2e5db99e4a143635940246ce7c3684"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 328,
+      "pageEnd": 328,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2007S-Q002"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            328
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "radix-conversion",
+          "evidence": [
+            {
+              "checkedExcerpt": "with two numbers, 0 and 1. (101.1)2 = 1×22 + 0×21 + 1×20 + 1×2−1 = (5.5)10 * 2 in ( )2 shows that it is a binary number. Decimal numbers and their corresponding binary numbers are as shown below. Binary numbers can use only two numbers of 0 and 1 for one digit. Therefore, the number of digits quickly becomes large, compared with decimal numbers. Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Binary numbers 0 1 10 11 100 101 110 111 1000 1001 1010 ... Figure 1-6 Decimal numbers and corresponding binary numbers (2) Octal numbers Octal numbers are numerical values that are represented by using eight numbers from 0 through 7 and that are carried over when 8 is reached. (317.5)8 = 3×82 + 1×81 + 7×80 + 5×8−1 = (207.625)10 * 8 in ( )8 shows that it is an octal number Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Octal numbers 0 1 2 3 4 5 6 7 10 11 12 ... Figure 1-7 Decimal numbers and corresponding octal numbers (3) Hexadecimal numbers Hexadecimal numbers are numerical values that are represented by using sixteen numbers from 0 through 9, and A(10), B(11), C(12), D(13), E(14), and F(15) and that are carried over when 16 is reached. (1A6.E)16 = 1×162 + 10×161 + 6×160 + 14×16−1 = (422.875)10 * 16 in ( )16 shows that it is a hexadecimal number.",
+              "kind": "textbook-source",
+              "pdfPage": 29,
+              "printedPage": 24,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419"
+            },
+            {
+              "checkedExcerpt": "1 Hardware 27 Example: Perform radix conversion of the decimal number (77.625)10 into a binary number. A summary of radix conversion between decimal numbers and n-adic numbers is provided below. [Procedure of radix conversion from an n-adic number into a decimal number] Add all results obtained by multiplying the weight (power of n) of each digit by the number {from 0 through (n−1)} of each digit. [Procedure of radix conversion from a decimal number into an n-adic number] Integer part: Repeatedly divide by n until the quotient becomes 0, and then arrange the remainder of calculation results in sequence from the back. Radix part: Continuously multiply the radix part by n until the radix part in calculation results becomes 0, and then arrange the integer part of each calculation result in sequence from the front. For example, below is an example of radix conversion of the decimal number (67.6875)10 into an octal number. However, when the radix conversion from decimal to octal or hexadecimal is performed, it may be easier to convert from decimal to binary, and then convert the result into octal or hexadecimal.",
+              "kind": "textbook-source",
+              "pdfPage": 32,
+              "printedPage": 27,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "1384fa93bc88b2aaf2b2b1668769ecfb5dd2e2854906bae70aab4c4dff32efff"
+            }
+          ],
+          "headingNumber": "2-2",
+          "reason": "Original question image and actual 2-2 teaching re-read; radix-conversion is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s02",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-028-b009-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "4120ce1582a51dffa6a5fd6f4290fe5e9ad498b1e9d5b101bac773c317c6648f"
+    }
+  },
+  {
     "id": "HIST-TECH01-2007S-Q003",
     "examId": "2007S_FE_AM",
     "number": 3,
@@ -21635,6 +21839,462 @@
         }
       ],
       "approvalFingerprint": "c452fc0d6fc89c579d096853f52e6cafb690b6a3e83860eaa7f2d9b2ccf47e6d"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2007S-Q018",
+    "examId": "2007S_FE_AM",
+    "number": 18,
+    "year": 2007,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "a",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Flip-flops and sequential circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2007S-Q018.c25a43ee37c5.webp",
+      "width": 1945,
+      "height": 1935,
+      "sha256": "c25a43ee37c5777741a8a2d493d507d788d29683103a251de147d5c61d218e3a"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 208,
+      "pageEnd": 208,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2007S-Q018"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            208
+          ],
+          "printedAnswer": "a"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "flip-flops",
+          "evidence": [
+            {
+              "checkedExcerpt": "Sequential circuit is a logic circuit where the output is decided on the basis of the input at that time and earlier status. Flip-flop circuit, which is one of the main sequential circuits, has two stable states, and it is used in storage cells of SRAM. Figure 1-25 shows the circuit diagram of a flip-flop for reference and the truth table. Circuit symbols used in Figure 1-25 are one of the methods of representing electronic circuits, and it is referred to as MIL (Military Specifications and Standards) symbols.",
+              "kind": "textbook-source",
+              "pdfPage": 67,
+              "printedPage": 62,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "82d4142195d967a0b4cc8b2c6564354bed5de7c9acec6ba514a43f30813b0c2f"
+            },
+            {
+              "checkedExcerpt": "4) NAND circuit This circuit performs negative logical product (negative AND) operation (NAND). NAND operation is the arithmetic operation that negates the results of AND operation. The truth table and MIL symbol of NAND circuit are as shown below. NAND circuit is formed by combining AND circuit and NOT circuit. X Y X NAND Y Figure 1-29 NAND circuit 0 0 1 0 1 1 1 0 1 1 1 0 5) NOR circuit This circuit performs negative logical sum operation (NOR). NOR operation is the arithmetic operation that negates the results of OR operation. The truth table and MIL symbol of NOR circuit are as shown below. NOR circuit is formed by combining OR circuit and NOT circuit. X Y X NOR Y Figure 1-30 NOR circuit 0 0 1 0 1 0 1 0 0 1 1 0",
+              "kind": "textbook-source",
+              "pdfPage": 68,
+              "printedPage": 63,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "0d4b63b814973a25037c28e66d92f6e2f65667d47f397e9e8a6a794d9e6f12bd"
+            }
+          ],
+          "headingNumber": "3-4-1",
+          "reason": "Original question image and actual 3-4-1 teaching re-read; flip-flops is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "9a2cc247b3c0ce6a0e15b9d18d8c41a240e2c122f427fee2a76ee7375679a0ca"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2007S-Q019",
+    "examId": "2007S_FE_AM",
+    "number": 19,
+    "year": 2007,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Addressing Mode",
+    "topic": "Instruction addressing modes",
+    "mapping": {
+      "headingNumber": "3-3-3",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-062-b005-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2007S-Q019.69c1a9881091.webp",
+      "width": 1945,
+      "height": 907,
+      "sha256": "69c1a98810919e974ca374af03f7fbcfe054b7959748e1a2380c26042c1d6a96"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 209,
+      "pageEnd": 209,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2007S-Q019"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            209
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "addressing-modes",
+          "evidence": [
+            {
+              "checkedExcerpt": "3-3-3 Addressing Mode Addressing mode is the method of determining the effective address from the value recorded in the address part of instruction, and then fetching the operand. The addressing mode is classified into two methods: one is the method (address modification) of determining the effective address from the value of the address part of instruction and the other is the method of determining the operand from the effective address. (1) Method of determining effective address from the value of the address part (address modification) 1) Absolute addressing In this method, the value of the address part is used as the effective address as it is. 2) Index addressing In this method, the effective address is determined by adding the value of the index register to the value of the address part. A general register is also used as the index register, and it is necessary to specify which general register to use in such cases.",
+              "kind": "textbook-source",
+              "pdfPage": 62,
+              "printedPage": 57,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "b22721484223170521d3471fde4744f2f5297a5c361e63e68d74ef0f396b7723"
+            },
+            {
+              "checkedExcerpt": "4) Relative addressing In this method, the effective address is determined by adding the value of the instruction address register (program counter) to the value of the address part. This means the relative position from the instruction being executed.",
+              "kind": "textbook-source",
+              "pdfPage": 63,
+              "printedPage": 58,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "df93596937a7d7bf65098945f79c27f2c427a9e2ba65478aae17a0a9cf842222"
+            },
+            {
+              "checkedExcerpt": "2) Direct addressing In this method, the content (value) of main memory referenced by the effective address is used as operand. Generally, direct addressing where there is no description concerning address modification can be considered as absolute addressing, and it can be considered as direct addressing when only address modification is specified. Figure 1-23 Direct addressing 3) Indirect addressing In this method, the content (value) of main memory referenced by the effective address is used as the address of operand. Double (in the example shown in Figure 1-24, data stored in address 120 is fetched as operand), and triple indirect addressing is also possible. Figure 1-24 Indirect addressing",
+              "kind": "textbook-source",
+              "pdfPage": 64,
+              "printedPage": 59,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "3ccf13e4b15d65e8f2f44687262569836e8962342ee82a9796255c5fd0356f02"
+            }
+          ],
+          "headingNumber": "3-3-3",
+          "reason": "Original question image and actual 3-3-3 teaching re-read; addressing-modes is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-062-b005-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "4f8697e607d267482ab1dcb67a0a4ede9af9e7f723021d4bab8d21b3951d767a"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2007S-Q020",
+    "examId": "2007S_FE_AM",
+    "number": 20,
+    "year": 2007,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Speeding-up of Processor",
+    "topic": "Instruction pipelining",
+    "mapping": {
+      "headingNumber": "3-5-2",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-079-b003-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2007S-Q020.cdcb32245115.webp",
+      "width": 1945,
+      "height": 402,
+      "sha256": "cdcb32245115824afb148d604bd8b099a4eef8c120b9cb0c0526fe4ecb97643e"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 331,
+      "pageEnd": 331,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2007S-Q020"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            331
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "processor-pipeline",
+          "evidence": [
+            {
+              "checkedExcerpt": "Pipeline control (or the pipeline processing) divides the execution cycle of each instruction into multiple stages, and by shifting each stage little by little and executing multiple stages separately, multiple instructions are executed simultaneously and in parallel.",
+              "kind": "textbook-source",
+              "pdfPage": 79,
+              "printedPage": 74,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "43e5268e1ad8127dce9376794ed8fcbff11fb38c272846ee59191dd800b9f312"
+            },
+            {
+              "checkedExcerpt": "Pipeline control is a method of advanced control of instructions. Therefore, efficiency will decline if there are instructions (jump instructions) that change the execution sequence of instruction. Moreover, if the execution time of each instruction is different, the waiting time may be required before starting the execution of a stage, and efficiency will decline. Figure 1-40 Pipeline control with poor efficiency For efficient pipeline control, it is necessary that the execution time of all instructions be almost the same. Among the different architectures of processors (computers), RISC architecture is suitable for this concept, while CISC architecture is not very suitable.",
+              "kind": "textbook-source",
+              "pdfPage": 80,
+              "printedPage": 75,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "af2abb85be02f4e30285b0a3a5670cf1fe5386a9ca908c0d972c3651fa6748a9"
+            }
+          ],
+          "headingNumber": "3-5-2",
+          "reason": "Original question image and actual 3-5-2 teaching re-read; processor-pipeline is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-079-b003-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "82a8ce5e89e503669d6833bd2ba4aa07d071ba714005c608d0d76866f20f4daa"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2007S-Q021",
+    "examId": "2007S_FE_AM",
+    "number": 21,
+    "year": 2007,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Interrupt",
+    "topic": "Interrupt priority",
+    "mapping": {
+      "headingNumber": "3-3-4",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-064-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2007S-Q021.ab3eea118ae4.webp",
+      "width": 1933,
+      "height": 777,
+      "sha256": "ab3eea118ae41b6094843f2653ac053fb661b60e4b91e51ee36c1a62d264da00"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 210,
+      "pageEnd": 210,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2007S-Q021"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            210
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "interrupts",
+          "evidence": [
+            {
+              "checkedExcerpt": "[Processing sequence of processor when interrupt has occurred] 1) Switch from user mode to privilege mode. 2) Save the values of various registers (program counter, etc.). 3) Decide the starting address of the interrupt process routine (interrupt program). 4) Execute the interrupt process routine. 5) After the execution of the interrupt process routine is complete, restore the values of various registers that are saved in step 2. 6) Switch from privilege mode to user mode, and restart the interrupted process. According to conditions that an interrupt occurs, this can be classified described below. Here, it is assumed that multiple interrupts may occur simultaneously, and therefore priority ranking is assigned to each interrupt. 1) External interrupt: This is an interrupt that occurs because of a reason not related to the process being executed. • Timer interrupt This is an interrupt that occurs when the time measured in the timer, such as interval timer and watchdog timer, has exceeded the specified time (i.e., the timer has been timed-out). • Input/output interrupt (input/output completion interrupt) This is an interrupt that occurs when an input/output operation has been completed. • Machine check interrupt This is an interrupt that occurs because of a hardware malfunction, a power failure, or such other factor. • Restart interrupt This is an interrupt that occurs when the user has pressed the external restart switch. 2) Internal interrupt: This is an interrupt that occurs because of the process being executed. This is also referred to as a trap. • SVC (SuperVisor Call) interrupt This is an interrupt that occurs when supervisor (program that offers basic functions) is requested to invoke a process, such as when input/output instruction is used or storage protection exception happens. • Program interrupt",
+              "kind": "textbook-source",
+              "pdfPage": 65,
+              "printedPage": 60,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "b668a0efaa1f8b55cb59357fddc547f8d106ad6af9e262e39cf1e1156e3e46d5"
+            }
+          ],
+          "headingNumber": "3-3-4",
+          "reason": "Original question image and actual 3-3-4 teaching re-read; interrupts is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-064-b006-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "1214596e1f170ebbd28808e10d29129a790996c4282dbb31e9c6b7eb5d70b961"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2007S-Q024",
+    "examId": "2007S_FE_AM",
+    "number": 24,
+    "year": 2007,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "High Speed Memory Access",
+    "topic": "Memory interleaving",
+    "mapping": {
+      "headingNumber": "3-5-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-075-b005-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2007S-Q024.d4f6f8bb1222.webp",
+      "width": 1933,
+      "height": 703,
+      "sha256": "d4f6f8bb122215ec7b93d4f596decd80949ae7fbe3cc98496bca05c22cec567f"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 212,
+      "pageEnd": 212,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2007S-Q024"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            212
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "memory-interleaving",
+          "evidence": [
+            {
+              "checkedExcerpt": "Memory interleave is a method where main memory is divided into several sections (bank) that are simultaneously and independently accessed in order to improve the average access time of main memory.",
+              "kind": "textbook-source",
+              "pdfPage": 78,
+              "printedPage": 73,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "92a5c6015e2691151bfd3c8c2a1ae0e5d4d8760151fc90ce62200211526e0da0"
+            }
+          ],
+          "headingNumber": "3-5-1",
+          "reason": "Original question image and actual 3-5-1 teaching re-read; memory-interleaving is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-075-b005-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "1b1823828fd22b59928bc749e68db7d99215e6aa5aac0ddac2d0cb13ea826b1a"
     }
   },
   {
@@ -22169,6 +22829,90 @@
         }
       ],
       "approvalFingerprint": "3d9499930f102f235ecbdf2ea78e03a2cd246b617061484386faa390370e8f40"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2008A-Q002",
+    "examId": "2008A_FE_AM",
+    "number": 2,
+    "year": 2008,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Shift Operation",
+    "topic": "Signed integers and shifts",
+    "mapping": {
+      "headingNumber": "2-3-4",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-048-b005-l01-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2008A-Q002.474ed04e0580.webp",
+      "width": 1945,
+      "height": 469,
+      "sha256": "474ed04e05804c1584c0bc6bd716e350c2861480c68e877d5f677556b71a805b"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 309,
+      "pageEnd": 309,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2008A-Q002"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            309
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "signed-shifts",
+          "evidence": [
+            {
+              "checkedExcerpt": "Because of this, computation rules of arithmetic shift can be summarized as follows: [Computation rules of arithmetic shift] • With an arithmetic shift to left by n bits, the value becomes 2n times of the original number. • With an arithmetic shift to right by n bits, the value becomes 2−n times of the original number. (It is the value that is obtained by dividing the original number by 2n) (2) Logical shift Logical shift is the shift operation used when the position of bits are changed. Its main difference from the arithmetic shift is that it does not treat the sign bit in a special manner. [Rules of logical shift] • Shift (move) the sign bit as well. • Truncate extra bits that are shifted out as a result of the shift. • Store 0 in the empty bit position that is created as a result of shift.",
+              "kind": "textbook-source",
+              "pdfPage": 49,
+              "printedPage": 44,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "842c04587b857023fdf8cdf66df09a3f066a700c8383fbd99d9bb384efb686b7"
+            }
+          ],
+          "headingNumber": "2-3-4",
+          "reason": "Original question image and actual 2-3-4 teaching re-read; signed-shifts is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s02",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-048-b005-l01-text-0"
+        }
+      ],
+      "approvalFingerprint": "c9b04ea04708f28f581535e02df777c8f36f48f0c4ffbbd064dcefb14745c894"
     }
   },
   {
@@ -23065,6 +23809,99 @@
     }
   },
   {
+    "id": "HIST-TECH01-2008S-Q019",
+    "examId": "2008S_FE_AM",
+    "number": 19,
+    "year": 2008,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "d",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Flip-flops and sequential circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2008S-Q019.064b661bdc5b.webp",
+      "width": 1940,
+      "height": 2003,
+      "sha256": "064b661bdc5b779048f28a0c17adf93e3854f1aa789e8830080241c6bee0323d"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 190,
+      "pageEnd": 190,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2008S-Q019"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            190
+          ],
+          "printedAnswer": "d"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "flip-flops",
+          "evidence": [
+            {
+              "checkedExcerpt": "Sequential circuit is a logic circuit where the output is decided on the basis of the input at that time and earlier status. Flip-flop circuit, which is one of the main sequential circuits, has two stable states, and it is used in storage cells of SRAM. Figure 1-25 shows the circuit diagram of a flip-flop for reference and the truth table. Circuit symbols used in Figure 1-25 are one of the methods of representing electronic circuits, and it is referred to as MIL (Military Specifications and Standards) symbols.",
+              "kind": "textbook-source",
+              "pdfPage": 67,
+              "printedPage": 62,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "82d4142195d967a0b4cc8b2c6564354bed5de7c9acec6ba514a43f30813b0c2f"
+            },
+            {
+              "checkedExcerpt": "4) NAND circuit This circuit performs negative logical product (negative AND) operation (NAND). NAND operation is the arithmetic operation that negates the results of AND operation. The truth table and MIL symbol of NAND circuit are as shown below. NAND circuit is formed by combining AND circuit and NOT circuit. X Y X NAND Y Figure 1-29 NAND circuit 0 0 1 0 1 1 1 0 1 1 1 0 5) NOR circuit This circuit performs negative logical sum operation (NOR). NOR operation is the arithmetic operation that negates the results of OR operation. The truth table and MIL symbol of NOR circuit are as shown below. NOR circuit is formed by combining OR circuit and NOT circuit. X Y X NOR Y Figure 1-30 NOR circuit 0 0 1 0 1 0 1 0 0 1 1 0",
+              "kind": "textbook-source",
+              "pdfPage": 68,
+              "printedPage": 63,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "0d4b63b814973a25037c28e66d92f6e2f65667d47f397e9e8a6a794d9e6f12bd"
+            }
+          ],
+          "headingNumber": "3-4-1",
+          "reason": "Original question image and actual 3-4-1 teaching re-read; flip-flops is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "1e654a5a68386821e5c89c97cd1985985c66e09d014fc4d66be636a5b984955e"
+    }
+  },
+  {
     "id": "HIST-TECH01-2008S-Q021",
     "examId": "2008S_FE_AM",
     "number": 21,
@@ -23421,6 +24258,117 @@
     }
   },
   {
+    "id": "HIST-TECH01-2009A-Q002",
+    "examId": "2009A_FE_AM",
+    "number": 2,
+    "year": 2009,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Numeric Data",
+    "topic": "Two’s-complement integers",
+    "mapping": {
+      "headingNumber": "2-3-2",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-036-b002-l22-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2009A-Q002.22b59e457fa3.webp",
+      "width": 1945,
+      "height": 398,
+      "sha256": "22b59e457fa345cf382228622759f446b6d0572447dab53097e7013fb6d1dfd6"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 295,
+      "pageEnd": 295,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2009A-Q002"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            295
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "signed-integers",
+          "evidence": [
+            {
+              "checkedExcerpt": "1) Fixed point numbers In this form of representation, numerical values are handled by fixing the radix point at a specific position. Generally, it is mostly used for handling integer numbers by fixing the position of the radix point in the least significant bit. ▲ (Position of radix point) In this form of representation, after numerical values are converted into binary numbers, they are used without modification according to the position of the radix point. Example: Represent (89)10 as an 8 bit fixed point number. (89)10=(1011001)2 ↓ 0 1 0 1 1 0 0 1 In fixed point numbers, methods of representing negative numbers (representation forms of negative numbers) are important. The two main methods are described below. A: Signed absolute value notation In this method, the most significant 1 bit is used as a sign bit, and 0 is stored in it if the numerical value is positive, while 1 is stored in it if the numerical value is negative. In the remaining bits, the binary bit string is stored as it is. Example: Represent (+89)10 and (−89)10 with an 8-bit fixed point number (signed absolute value). (89)10 = (1011001)2 (+89)10: 0 1 0 1 1 0 0 1 (−89)10: 1 1 0 1 1 0 0 1 B: Complement notation In this method, when a negative number is represented, the complement of the positive number is used.",
+              "kind": "textbook-source",
+              "pdfPage": 39,
+              "printedPage": 34,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "5946d31a5a250ce77c93662f89ffe2a364b4bba19c3df837adeaedcc00d55eca"
+            },
+            {
+              "checkedExcerpt": "1 Hardware 35 [Complement] By using a certain number as the reference value, the shortfall is shown with respect to this reference value. In n-adic number, there is a complement of n and a complement of n−1. • Complement of n−1 ... Reference value is the maximum value that has the same number of digits. • Complement of n ... Reference value is the minimum value that has one more additional digit. The complement can be determined by subtracting from the reference value the number for which the complement is to be determined. Example 1: Determine the complement of decimal number (614)10 • 9’s complement • 10’s complement 999 1000 − 614 − 614 385 386 Example 2: Determine the complement of binary number (01101101)2 • 1’s complement • 2’s complement 11111111 100000000 − 01101101 − 01101101 10010010 10010011 Example: Represent (+89)10 and (−89)10 with an 8-bit fixed point number (2’s complement). (89)10 = (1011001)2 → 100000000 − 01011001 10100111 (+89)10: 0 1 0 1 1 0 0 1 (−89)10: 1 0 1 0 0 1 1 1 Generally, 2’s complement notation is often used in fixed point numbers for the following reasons.",
+              "kind": "textbook-source",
+              "pdfPage": 40,
+              "printedPage": 35,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "cb08d6e0e7d24577cf917f94e10d9aaaed3d6c215936caae1d33b5c8322fdd60"
+            },
+            {
+              "checkedExcerpt": "2. A wide range of numerical values can be represented. When signed absolute values are used, two types of 0s, namely (+0) and (−0), occur. However, there is only one type of 0 when 2’s complement is used. Since the information amount of identical numbers of bits is the same, 2’s complement enables the representation of a wider range of numerical values.",
+              "kind": "textbook-source",
+              "pdfPage": 41,
+              "printedPage": 36,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "6c2e75d45619a5e6a7b9e5fd212762cd73346edb6428485ad33a063f00938ba9"
+            },
+            {
+              "checkedExcerpt": "[Range of numerical values that can be represented with n bits (2’s complement)] From −2n−1 through +2n−1−1",
+              "kind": "textbook-source",
+              "pdfPage": 42,
+              "printedPage": 37,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "718cb51354c6920803d3e804c3aea117901e6e009c8530368dd23982ea2b7927"
+            }
+          ],
+          "headingNumber": "2-3-2",
+          "reason": "Original question image and actual 2-3-2 teaching re-read; signed-integers is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s02",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-036-b002-l22-text-0"
+        }
+      ],
+      "approvalFingerprint": "1b283da32f25048713f6585789b2d89f5c8fe261d5acc7a6d698331cd5ff7a84"
+    }
+  },
+  {
     "id": "HIST-TECH01-2009A-Q003",
     "examId": "2009A_FE_AM",
     "number": 3,
@@ -23694,6 +24642,99 @@
     }
   },
   {
+    "id": "HIST-TECH01-2009A-Q009",
+    "examId": "2009A_FE_AM",
+    "number": 9,
+    "year": 2009,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2009A-Q009.0e4cf8b14806.webp",
+      "width": 1946,
+      "height": 1433,
+      "sha256": "0e4cf8b14806462389e13057274dde5b1d957b01efbb6a1a03630213ec58e34e"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 158,
+      "pageEnd": 158,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2009A-Q009"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            158
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "logic-gates",
+          "evidence": [
+            {
+              "checkedExcerpt": "1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False (0) when both input values are False (0), or else the output is True (1) (when either one is True (1)). 3) Negation operation (NOT) The output becomes False (0) when the input value is True (1), and the output is True (1) when the input value is False (0). 4) Exclusive logical sum (Exclusive OR) operation (XOR or EOR) The output becomes False (0) when both input values are the same, and the output is True (1) when both input values are different.",
+              "kind": "textbook-source",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed"
+            },
+            {
+              "checkedExcerpt": "XOR circuit is also formed by combining the basic circuits. However, it cannot be formed with a combination of simple circuits as in the case of NAND circuits and NOR circuits. In such cases, it is called logical design (or circuit design) to think about the combination of basic circuits for achieving the targeted results (truth values). In logical design, logical expressions (logical functions) obtained from the truth tables are simplified using the rules of logical operations (logical laws), and the optimum combination of basic circuits is determined. (“Optimum” means that the design is performed in consideration of performance, efficiency, and cost.",
+              "kind": "textbook-source",
+              "pdfPage": 69,
+              "printedPage": 64,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "b26e0590632468a146244504ce22b38c51e1c61bfd1a94cd92adb3789271befd"
+            }
+          ],
+          "headingNumber": "3-4-1",
+          "reason": "Original question image and actual 3-4-1 teaching re-read; logic-gates is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "64b5a045c86763b1963f00fa451550e1d358a3787f86cb0357635719b461084d"
+    }
+  },
+  {
     "id": "HIST-TECH01-2009A-Q017",
     "examId": "2009A_FE_AM",
     "number": 17,
@@ -23868,6 +24909,90 @@
         }
       ],
       "approvalFingerprint": "ea2e83754bb1432e7d881a3585fce12eb35a044e3a763bc0a6075cbc1b61e611"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2009A-Q019",
+    "examId": "2009A_FE_AM",
+    "number": 19,
+    "year": 2009,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Data Representation",
+    "topic": "Bits and distinct values",
+    "mapping": {
+      "headingNumber": "2-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-025-b004-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2009A-Q019.379a93c6f1d9.webp",
+      "width": 1945,
+      "height": 323,
+      "sha256": "379a93c6f1d95e10711c3c1960b7cc5dd9dd1522c7efc328f0a3348888859439"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 298,
+      "pageEnd": 298,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2009A-Q019"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            298
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "data-representation",
+          "evidence": [
+            {
+              "checkedExcerpt": "There are two types (0, 1) of information that can be represented with 1 bit, and the number of bit combinations is referred to as the information amount. The information amount that can be represented with 2 bits is of 4 types (00, 01, 10, 11), the information amount that can be represented with 3 bits is of 8 types (000, 001, 010, 011, 100, 101, 110, 111), ... and so on. Figure1-5 Number of bits and information amount As shown in Figure 1-5, branches increase with the increase of every one bit used, and the information amount that can be represented keeps on doubling. In other words, the information amount that can be represented with n bits is of 2n types (2n shows the power of 2, and means multiplying 2 by itself n times). Using this concept, a summary of the information amount that can be represented with byte and word (16 bits) is given below. * Information amount of n bits = 2n types • Information amount that can be represented with 1 byte (=8 bits) = 28 types = 256 types (00000000 through 11111111) • Information amount that can be represented with 1 word (=16 bits) = 216 types = 65,536 types (0000000000000000 through 1111111111111111)",
+              "kind": "textbook-source",
+              "pdfPage": 26,
+              "printedPage": 21,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "ec4b3ea5335f0bcd568d6d6d1b14de254afc4f996f2922fbde0e9d5081865c2f"
+            }
+          ],
+          "headingNumber": "2-1",
+          "reason": "Original question image and actual 2-1 teaching re-read; data-representation is directly supported by the exact quoted passage(s), not inferred from a heading. The source explicitly teaches 2^n distinguishable bit combinations. Applying it to selecting sixteen register identities is the question’s application; the book is not claimed to define this machine’s register-identification field.",
+          "sectionId": "fe-v1-ch01-s02",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-025-b004-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "2b7ea262042acc8c2173c606198fe66734ef6f7c8ae397222ff68a7b1ff622eb"
     }
   },
   {
@@ -24218,6 +25343,192 @@
         }
       ],
       "approvalFingerprint": "214bd61b82117eac735ea9fc5e9fb0132d40c232e5090e3f9074aa45b4aa98c4"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2009S-Q001",
+    "examId": "2009S_FE_AM",
+    "number": 1,
+    "year": 2009,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Radix and Radix Conversion",
+    "topic": "Radix conversion",
+    "mapping": {
+      "headingNumber": "2-2",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-028-b009-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2009S-Q001.16696a7da11e.webp",
+      "width": 1945,
+      "height": 476,
+      "sha256": "16696a7da11e8f7004d0456b7dac7fe3f1fa325dd569c6a9fe1f60fb57aee3f4"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 301,
+      "pageEnd": 301,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2009S-Q001"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            301
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "radix-conversion",
+          "evidence": [
+            {
+              "checkedExcerpt": "with two numbers, 0 and 1. (101.1)2 = 1×22 + 0×21 + 1×20 + 1×2−1 = (5.5)10 * 2 in ( )2 shows that it is a binary number. Decimal numbers and their corresponding binary numbers are as shown below. Binary numbers can use only two numbers of 0 and 1 for one digit. Therefore, the number of digits quickly becomes large, compared with decimal numbers. Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Binary numbers 0 1 10 11 100 101 110 111 1000 1001 1010 ... Figure 1-6 Decimal numbers and corresponding binary numbers (2) Octal numbers Octal numbers are numerical values that are represented by using eight numbers from 0 through 7 and that are carried over when 8 is reached. (317.5)8 = 3×82 + 1×81 + 7×80 + 5×8−1 = (207.625)10 * 8 in ( )8 shows that it is an octal number Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Octal numbers 0 1 2 3 4 5 6 7 10 11 12 ... Figure 1-7 Decimal numbers and corresponding octal numbers (3) Hexadecimal numbers Hexadecimal numbers are numerical values that are represented by using sixteen numbers from 0 through 9, and A(10), B(11), C(12), D(13), E(14), and F(15) and that are carried over when 16 is reached. (1A6.E)16 = 1×162 + 10×161 + 6×160 + 14×16−1 = (422.875)10 * 16 in ( )16 shows that it is a hexadecimal number.",
+              "kind": "textbook-source",
+              "pdfPage": 29,
+              "printedPage": 24,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419"
+            },
+            {
+              "checkedExcerpt": "Relation between binary numbers, octal numbers, and hexadecimal numbers Binary numbers have an extremely large number of digits compared with decimal numbers. Although computers can handle binary numbers without problems, it is very difficult for a human being to understand when the internal status of computers is concerned. Therefore, octal numbers and hexadecimal numbers are used so that people can understand more easily. Octal numbers use the power of 8 (= 23) as the weight of each digit, and therefore the information of 3 digits of binary numbers corresponds to 1 digit of octal numbers. Binary number: (1011100.11101)2 ↓ (001 011 100 . 111 010)2 ↓ ... Separate after every 3 digits with radix point as reference. (0 is supplemented in the parts that fall short of 3 digits.) Octal numbers: ( 1 3 4 . 7 2 )8 ... Convert every 3 digits Hexadecimal numbers use the power of 16(= 24) as the weight of each digit, and therefore the information of 4 digits of binary numbers corresponds to 1 digit of hexadecimal numbers. Binary number: (1011100.11101)2 ↓ (0101 1100 . 11100 1000)2 ↓ ... Separate after every 4 digits with radix point as reference. (0 is supplemented in the parts that fall short of 4 digits.) Hexadecimal number: ( 5 C . E 8 )16 ... Convert every 4 digits",
+              "kind": "textbook-source",
+              "pdfPage": 30,
+              "printedPage": 25,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "752f89c392b5b641578b5750dc2e3f2550795c32361c897ee87ca9ffed6828d9"
+            }
+          ],
+          "headingNumber": "2-2",
+          "reason": "Original question image and actual 2-2 teaching re-read; radix-conversion is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s02",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-028-b009-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "43439a3b4ef1c5bd09c135bd7f0f3b3758d8e8b68a2f36c0aa234834bd1ae803"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2009S-Q002",
+    "examId": "2009S_FE_AM",
+    "number": 2,
+    "year": 2009,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "d",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Radix and Radix Conversion",
+    "topic": "Radix conversion",
+    "mapping": {
+      "headingNumber": "2-2",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-028-b009-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2009S-Q002.575487175e63.webp",
+      "width": 1944,
+      "height": 399,
+      "sha256": "575487175e63a0e0b0778e44b52ea0083e5adb66fb2c47015cc086cc44b22c67"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 302,
+      "pageEnd": 302,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2009S-Q002"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            302
+          ],
+          "printedAnswer": "d"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "radix-conversion",
+          "evidence": [
+            {
+              "checkedExcerpt": "with two numbers, 0 and 1. (101.1)2 = 1×22 + 0×21 + 1×20 + 1×2−1 = (5.5)10 * 2 in ( )2 shows that it is a binary number. Decimal numbers and their corresponding binary numbers are as shown below. Binary numbers can use only two numbers of 0 and 1 for one digit. Therefore, the number of digits quickly becomes large, compared with decimal numbers. Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Binary numbers 0 1 10 11 100 101 110 111 1000 1001 1010 ... Figure 1-6 Decimal numbers and corresponding binary numbers (2) Octal numbers Octal numbers are numerical values that are represented by using eight numbers from 0 through 7 and that are carried over when 8 is reached. (317.5)8 = 3×82 + 1×81 + 7×80 + 5×8−1 = (207.625)10 * 8 in ( )8 shows that it is an octal number Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Octal numbers 0 1 2 3 4 5 6 7 10 11 12 ... Figure 1-7 Decimal numbers and corresponding octal numbers (3) Hexadecimal numbers Hexadecimal numbers are numerical values that are represented by using sixteen numbers from 0 through 9, and A(10), B(11), C(12), D(13), E(14), and F(15) and that are carried over when 16 is reached. (1A6.E)16 = 1×162 + 10×161 + 6×160 + 14×16−1 = (422.875)10 * 16 in ( )16 shows that it is a hexadecimal number.",
+              "kind": "textbook-source",
+              "pdfPage": 29,
+              "printedPage": 24,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419"
+            },
+            {
+              "checkedExcerpt": "1 Hardware 27 Example: Perform radix conversion of the decimal number (77.625)10 into a binary number. A summary of radix conversion between decimal numbers and n-adic numbers is provided below. [Procedure of radix conversion from an n-adic number into a decimal number] Add all results obtained by multiplying the weight (power of n) of each digit by the number {from 0 through (n−1)} of each digit. [Procedure of radix conversion from a decimal number into an n-adic number] Integer part: Repeatedly divide by n until the quotient becomes 0, and then arrange the remainder of calculation results in sequence from the back. Radix part: Continuously multiply the radix part by n until the radix part in calculation results becomes 0, and then arrange the integer part of each calculation result in sequence from the front. For example, below is an example of radix conversion of the decimal number (67.6875)10 into an octal number. However, when the radix conversion from decimal to octal or hexadecimal is performed, it may be easier to convert from decimal to binary, and then convert the result into octal or hexadecimal.",
+              "kind": "textbook-source",
+              "pdfPage": 32,
+              "printedPage": 27,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "1384fa93bc88b2aaf2b2b1668769ecfb5dd2e2854906bae70aab4c4dff32efff"
+            }
+          ],
+          "headingNumber": "2-2",
+          "reason": "Original question image and actual 2-2 teaching re-read; radix-conversion is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s02",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-028-b009-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "d4b59891b07aebed216c9ba0a4b95794c200b3349214c573287408dc511ba291"
     }
   },
   {
@@ -24666,6 +25977,90 @@
     }
   },
   {
+    "id": "HIST-TECH01-2009S-Q025",
+    "examId": "2009S_FE_AM",
+    "number": 25,
+    "year": 2009,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "a",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Types of Input/Output Interfaces and their Characteristics",
+    "topic": "USB interfaces",
+    "mapping": {
+      "headingNumber": "5-5-2",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-112-b008-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2009S-Q025.1d3907d68459.webp",
+      "width": 1933,
+      "height": 624,
+      "sha256": "1d3907d684593156579a53e28e0800d60c268e5463e0ebdecbd16f31b5bbcf2d"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 175,
+      "pageEnd": 175,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2009S-Q025"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            175
+          ],
+          "printedAnswer": "a"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "usb-interface",
+          "evidence": [
+            {
+              "checkedExcerpt": "(3) USB (Universal Serial Bus) USB is a serial interface standardized in 1996, and it can connect various peripheral devices such as a keyboard, a mouse, and a modem. By using a USB hub, up to 127 devices can be connected in the tree configuration. Multiple standards for the shape of connectors are defined according to the device to be used.",
+              "kind": "textbook-source",
+              "pdfPage": 113,
+              "printedPage": 107,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "dc0ac94224ac349601fb4e55d1b2f368c14b9df6990bed8566415f31dba58cca"
+            }
+          ],
+          "headingNumber": "5-5-2",
+          "reason": "Original question image and actual 5-5-2 teaching re-read; usb-interface is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s05",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-112-b008-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "2cad8d2ee8a87420b492e1bb720665e2515bd374a107684d2bfa57e9b4891b4a"
+    }
+  },
+  {
     "id": "HIST-TECH01-2009S-Q026",
     "examId": "2009S_FE_AM",
     "number": 26,
@@ -24920,6 +26315,108 @@
     }
   },
   {
+    "id": "HIST-TECH01-2010A-Q014",
+    "examId": "2010A_FE_AM",
+    "number": 14,
+    "year": 2010,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "d",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Components of Main Memory",
+    "topic": "Memory addresses and bus lines",
+    "mapping": {
+      "headingNumber": "3-2-2",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-056-b004-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2010A-Q014.b4f5894b56fa.webp",
+      "width": 1945,
+      "height": 324,
+      "sha256": "b4f5894b56fa024aa1ad1bd3077670c8a623cfab70582e6c12a06357f2be7ef4"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 288,
+      "pageEnd": 288,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2010A-Q014"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            288
+          ],
+          "printedAnswer": "d"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "memory-addressing",
+          "evidence": [
+            {
+              "checkedExcerpt": "• Flash memory: This is semiconductor memory where data can be rewritten after data is erased in units of blocks through electrical operations. Flash memory is a type of EEPROM. Therefore, the number of rewritable timesis limited. However, it is used for various applications as a portable and convenient storage medium. 3-2-2 Components of Main Memory In broad terms, the main memory unit is composed of three components. • Memory unit This contains memory cells (storage devices) that record data. • Read/write feature This reads and writes data in the recording area (collection of memory cells). • Address selection feature This interprets the specified address and selects the recording area of data. Figure 1-14 Components of main memory Access operation to main memory is done as follows:",
+              "kind": "textbook-source",
+              "pdfPage": 56,
+              "printedPage": 51,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "160f7f81f75d39ed89036a247b39dde4e9fd12a488160bde9ee082925a267902"
+            },
+            {
+              "checkedExcerpt": "[Access operation to main memory] 1) Through address bus, the specified address is handed over to the address selection feature. 2) The address selection feature decodes the specified address by using the address decoder, and selects the recording area to be accessed. (address selection operation) 3) The read/write feature reads and writes data in the selected recording area. When data is read, data that is read from the recording area is passed on to the CPU via data bus. When data is written, data that is transferred from the CPU via data bus is written in the recording area.",
+              "kind": "textbook-source",
+              "pdfPage": 57,
+              "printedPage": 52,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "952276357b5088ea6f791c2a38c8c03e44c8a25094d9a4d9e1c04a2823a319ef"
+            },
+            {
+              "checkedExcerpt": "There are two types (0, 1) of information that can be represented with 1 bit, and the number of bit combinations is referred to as the information amount. The information amount that can be represented with 2 bits is of 4 types (00, 01, 10, 11), the information amount that can be represented with 3 bits is of 8 types (000, 001, 010, 011, 100, 101, 110, 111), ... and so on. Figure1-5 Number of bits and information amount As shown in Figure 1-5, branches increase with the increase of every one bit used, and the information amount that can be represented keeps on doubling. In other words, the information amount that can be represented with n bits is of 2n types (2n shows the power of 2, and means multiplying 2 by itself n times). Using this concept, a summary of the information amount that can be represented with byte and word (16 bits) is given below. * Information amount of n bits = 2n types • Information amount that can be represented with 1 byte (=8 bits) = 28 types = 256 types (00000000 through 11111111) • Information amount that can be represented with 1 word (=16 bits) = 216 types = 65,536 types (0000000000000000 through 1111111111111111)",
+              "kind": "textbook-source",
+              "pdfPage": 26,
+              "printedPage": 21,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "ec4b3ea5335f0bcd568d6d6d1b14de254afc4f996f2922fbde0e9d5081865c2f"
+            }
+          ],
+          "headingNumber": "3-2-2",
+          "reason": "Original question image and actual 3-2-2 teaching re-read; memory-addressing is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-056-b004-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "bea54061aedb6d741254e03217fda8d1594175e08527df48b3caf459f6384a50"
+    }
+  },
+  {
     "id": "HIST-TECH01-2010A-Q015",
     "examId": "2010A_FE_AM",
     "number": 15,
@@ -25097,6 +26594,99 @@
     }
   },
   {
+    "id": "HIST-TECH01-2010A-Q026",
+    "examId": "2010A_FE_AM",
+    "number": 26,
+    "year": 2010,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2010A-Q026.49117caf58d6.webp",
+      "width": 1945,
+      "height": 1636,
+      "sha256": "49117caf58d64828963aed0115fc5fc061e6ba2d9d47cf2e9ff5b5e6050342b4"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 146,
+      "pageEnd": 146,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2010A-Q026"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            146
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "logic-gates",
+          "evidence": [
+            {
+              "checkedExcerpt": "4) NAND circuit This circuit performs negative logical product (negative AND) operation (NAND). NAND operation is the arithmetic operation that negates the results of AND operation. The truth table and MIL symbol of NAND circuit are as shown below. NAND circuit is formed by combining AND circuit and NOT circuit. X Y X NAND Y Figure 1-29 NAND circuit 0 0 1 0 1 1 1 0 1 1 1 0 5) NOR circuit This circuit performs negative logical sum operation (NOR). NOR operation is the arithmetic operation that negates the results of OR operation. The truth table and MIL symbol of NOR circuit are as shown below. NOR circuit is formed by combining OR circuit and NOT circuit. X Y X NOR Y Figure 1-30 NOR circuit 0 0 1 0 1 0 1 0 0 1 1 0",
+              "kind": "textbook-source",
+              "pdfPage": 68,
+              "printedPage": 63,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "0d4b63b814973a25037c28e66d92f6e2f65667d47f397e9e8a6a794d9e6f12bd"
+            },
+            {
+              "checkedExcerpt": "XOR circuit is also formed by combining the basic circuits. However, it cannot be formed with a combination of simple circuits as in the case of NAND circuits and NOR circuits. In such cases, it is called logical design (or circuit design) to think about the combination of basic circuits for achieving the targeted results (truth values). In logical design, logical expressions (logical functions) obtained from the truth tables are simplified using the rules of logical operations (logical laws), and the optimum combination of basic circuits is determined. (“Optimum” means that the design is performed in consideration of performance, efficiency, and cost.",
+              "kind": "textbook-source",
+              "pdfPage": 69,
+              "printedPage": 64,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "b26e0590632468a146244504ce22b38c51e1c61bfd1a94cd92adb3789271befd"
+            }
+          ],
+          "headingNumber": "3-4-1",
+          "reason": "Original question image and actual 3-4-1 teaching re-read; logic-gates is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "89589d27e7333c0b4223cb01b5598b886c8df8bbdf4493a47610554952f816eb"
+    }
+  },
+  {
     "id": "HIST-TECH01-2010A-Q027",
     "examId": "2010A_FE_AM",
     "number": 27,
@@ -25190,6 +26780,183 @@
     }
   },
   {
+    "id": "HIST-TECH01-2010S-Q001",
+    "examId": "2010S_FE_AM",
+    "number": 1,
+    "year": 2010,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Radix and Radix Conversion",
+    "topic": "Radix conversion",
+    "mapping": {
+      "headingNumber": "2-2",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-028-b009-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2010S-Q001.35326bd74f8e.webp",
+      "width": 1965,
+      "height": 399,
+      "sha256": "35326bd74f8e3783a60c1c782db79f881f0b7f763bcae7e360c6107089c83dd1"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 290,
+      "pageEnd": 290,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2010S-Q001"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            290
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "radix-conversion",
+          "evidence": [
+            {
+              "checkedExcerpt": "1 Hardware 27 Example: Perform radix conversion of the decimal number (77.625)10 into a binary number. A summary of radix conversion between decimal numbers and n-adic numbers is provided below. [Procedure of radix conversion from an n-adic number into a decimal number] Add all results obtained by multiplying the weight (power of n) of each digit by the number {from 0 through (n−1)} of each digit. [Procedure of radix conversion from a decimal number into an n-adic number] Integer part: Repeatedly divide by n until the quotient becomes 0, and then arrange the remainder of calculation results in sequence from the back. Radix part: Continuously multiply the radix part by n until the radix part in calculation results becomes 0, and then arrange the integer part of each calculation result in sequence from the front. For example, below is an example of radix conversion of the decimal number (67.6875)10 into an octal number. However, when the radix conversion from decimal to octal or hexadecimal is performed, it may be easier to convert from decimal to binary, and then convert the result into octal or hexadecimal.",
+              "kind": "textbook-source",
+              "pdfPage": 32,
+              "printedPage": 27,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "1384fa93bc88b2aaf2b2b1668769ecfb5dd2e2854906bae70aab4c4dff32efff"
+            }
+          ],
+          "headingNumber": "2-2",
+          "reason": "Original question image and actual 2-2 teaching re-read; radix-conversion is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s02",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-028-b009-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "d6c5a4100b2e9beec140635ef622d783913ac941961644eefc87fb36ba5bce94"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2010S-Q004",
+    "examId": "2010S_FE_AM",
+    "number": 4,
+    "year": 2010,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Radix and Radix Conversion",
+    "topic": "Radix conversion",
+    "mapping": {
+      "headingNumber": "2-2",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-028-b009-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2010S-Q004.7359bc18f8e7.webp",
+      "width": 1945,
+      "height": 335,
+      "sha256": "7359bc18f8e75ca1580395d119a840db59e9d209cf8645140f8356a4d73eee40"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 291,
+      "pageEnd": 291,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2010S-Q004"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            291
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "radix-conversion",
+          "evidence": [
+            {
+              "checkedExcerpt": "with two numbers, 0 and 1. (101.1)2 = 1×22 + 0×21 + 1×20 + 1×2−1 = (5.5)10 * 2 in ( )2 shows that it is a binary number. Decimal numbers and their corresponding binary numbers are as shown below. Binary numbers can use only two numbers of 0 and 1 for one digit. Therefore, the number of digits quickly becomes large, compared with decimal numbers. Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Binary numbers 0 1 10 11 100 101 110 111 1000 1001 1010 ... Figure 1-6 Decimal numbers and corresponding binary numbers (2) Octal numbers Octal numbers are numerical values that are represented by using eight numbers from 0 through 7 and that are carried over when 8 is reached. (317.5)8 = 3×82 + 1×81 + 7×80 + 5×8−1 = (207.625)10 * 8 in ( )8 shows that it is an octal number Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Octal numbers 0 1 2 3 4 5 6 7 10 11 12 ... Figure 1-7 Decimal numbers and corresponding octal numbers (3) Hexadecimal numbers Hexadecimal numbers are numerical values that are represented by using sixteen numbers from 0 through 9, and A(10), B(11), C(12), D(13), E(14), and F(15) and that are carried over when 16 is reached. (1A6.E)16 = 1×162 + 10×161 + 6×160 + 14×16−1 = (422.875)10 * 16 in ( )16 shows that it is a hexadecimal number.",
+              "kind": "textbook-source",
+              "pdfPage": 29,
+              "printedPage": 24,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419"
+            },
+            {
+              "checkedExcerpt": "Relation between binary numbers, octal numbers, and hexadecimal numbers Binary numbers have an extremely large number of digits compared with decimal numbers. Although computers can handle binary numbers without problems, it is very difficult for a human being to understand when the internal status of computers is concerned. Therefore, octal numbers and hexadecimal numbers are used so that people can understand more easily. Octal numbers use the power of 8 (= 23) as the weight of each digit, and therefore the information of 3 digits of binary numbers corresponds to 1 digit of octal numbers. Binary number: (1011100.11101)2 ↓ (001 011 100 . 111 010)2 ↓ ... Separate after every 3 digits with radix point as reference. (0 is supplemented in the parts that fall short of 3 digits.) Octal numbers: ( 1 3 4 . 7 2 )8 ... Convert every 3 digits Hexadecimal numbers use the power of 16(= 24) as the weight of each digit, and therefore the information of 4 digits of binary numbers corresponds to 1 digit of hexadecimal numbers. Binary number: (1011100.11101)2 ↓ (0101 1100 . 11100 1000)2 ↓ ... Separate after every 4 digits with radix point as reference. (0 is supplemented in the parts that fall short of 4 digits.) Hexadecimal number: ( 5 C . E 8 )16 ... Convert every 4 digits",
+              "kind": "textbook-source",
+              "pdfPage": 30,
+              "printedPage": 25,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "752f89c392b5b641578b5750dc2e3f2550795c32361c897ee87ca9ffed6828d9"
+            }
+          ],
+          "headingNumber": "2-2",
+          "reason": "Original question image and actual 2-2 teaching re-read; radix-conversion is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s02",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-028-b009-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "8a317e39aafbc4957a5aba0152747efb59df8c0fda3dc94e2c53d5604299fd26"
+    }
+  },
+  {
     "id": "HIST-TECH01-2010S-Q014",
     "examId": "2010S_FE_AM",
     "number": 14,
@@ -25272,6 +27039,99 @@
         }
       ],
       "approvalFingerprint": "8020e754e3fda0356d528c3fcb7501eda6b3c27c5bad633185ff1a5593e14a2d"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2010S-Q015",
+    "examId": "2010S_FE_AM",
+    "number": 15,
+    "year": 2010,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "a",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Interrupt",
+    "topic": "Interrupt priority",
+    "mapping": {
+      "headingNumber": "3-3-4",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-064-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2010S-Q015.f79b3fb38811.webp",
+      "width": 1830,
+      "height": 474,
+      "sha256": "f79b3fb38811420617036f333916becd3f52421a30c3a60cc8a24cdeb144e135"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 150,
+      "pageEnd": 150,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2010S-Q015"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            150
+          ],
+          "printedAnswer": "a"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "interrupts",
+          "evidence": [
+            {
+              "checkedExcerpt": "[Processing sequence of processor when interrupt has occurred] 1) Switch from user mode to privilege mode. 2) Save the values of various registers (program counter, etc.). 3) Decide the starting address of the interrupt process routine (interrupt program). 4) Execute the interrupt process routine. 5) After the execution of the interrupt process routine is complete, restore the values of various registers that are saved in step 2. 6) Switch from privilege mode to user mode, and restart the interrupted process. According to conditions that an interrupt occurs, this can be classified described below. Here, it is assumed that multiple interrupts may occur simultaneously, and therefore priority ranking is assigned to each interrupt. 1) External interrupt: This is an interrupt that occurs because of a reason not related to the process being executed. • Timer interrupt This is an interrupt that occurs when the time measured in the timer, such as interval timer and watchdog timer, has exceeded the specified time (i.e., the timer has been timed-out). • Input/output interrupt (input/output completion interrupt) This is an interrupt that occurs when an input/output operation has been completed. • Machine check interrupt This is an interrupt that occurs because of a hardware malfunction, a power failure, or such other factor. • Restart interrupt This is an interrupt that occurs when the user has pressed the external restart switch. 2) Internal interrupt: This is an interrupt that occurs because of the process being executed. This is also referred to as a trap. • SVC (SuperVisor Call) interrupt This is an interrupt that occurs when supervisor (program that offers basic functions) is requested to invoke a process, such as when input/output instruction is used or storage protection exception happens. • Program interrupt",
+              "kind": "textbook-source",
+              "pdfPage": 65,
+              "printedPage": 60,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "b668a0efaa1f8b55cb59357fddc547f8d106ad6af9e262e39cf1e1156e3e46d5"
+            },
+            {
+              "checkedExcerpt": "1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False (0) when both input values are False (0), or else the output is True (1) (when either one is True (1)). 3) Negation operation (NOT) The output becomes False (0) when the input value is True (1), and the output is True (1) when the input value is False (0). 4) Exclusive logical sum (Exclusive OR) operation (XOR or EOR) The output becomes False (0) when both input values are the same, and the output is True (1) when both input values are different.",
+              "kind": "textbook-source",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed"
+            }
+          ],
+          "headingNumber": "3-3-4",
+          "reason": "Original question image and actual 3-3-4 teaching re-read; interrupts is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-064-b006-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "a81472144d3d723616b344a8a08b984f4e57d15673f42852afc3354892232f9a"
     }
   },
   {
@@ -25456,6 +27316,108 @@
     }
   },
   {
+    "id": "HIST-TECH01-2010S-Q030",
+    "examId": "2010S_FE_AM",
+    "number": 30,
+    "year": 2010,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "d",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2010S-Q030.fedb43a99d94.webp",
+      "width": 2206,
+      "height": 2894,
+      "sha256": "fedb43a99d9437cfec4aa396d8289d6112a30961f34d295165f6a4727959817d"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 154,
+      "pageEnd": 154,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2010S-Q030"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            154
+          ],
+          "printedAnswer": "d"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "logic-gates",
+          "evidence": [
+            {
+              "checkedExcerpt": "1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False (0) when both input values are False (0), or else the output is True (1) (when either one is True (1)). 3) Negation operation (NOT) The output becomes False (0) when the input value is True (1), and the output is True (1) when the input value is False (0). 4) Exclusive logical sum (Exclusive OR) operation (XOR or EOR) The output becomes False (0) when both input values are the same, and the output is True (1) when both input values are different.",
+              "kind": "textbook-source",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed"
+            },
+            {
+              "checkedExcerpt": "4) NAND circuit This circuit performs negative logical product (negative AND) operation (NAND). NAND operation is the arithmetic operation that negates the results of AND operation. The truth table and MIL symbol of NAND circuit are as shown below. NAND circuit is formed by combining AND circuit and NOT circuit. X Y X NAND Y Figure 1-29 NAND circuit 0 0 1 0 1 1 1 0 1 1 1 0 5) NOR circuit This circuit performs negative logical sum operation (NOR). NOR operation is the arithmetic operation that negates the results of OR operation. The truth table and MIL symbol of NOR circuit are as shown below. NOR circuit is formed by combining OR circuit and NOT circuit. X Y X NOR Y Figure 1-30 NOR circuit 0 0 1 0 1 0 1 0 0 1 1 0",
+              "kind": "textbook-source",
+              "pdfPage": 68,
+              "printedPage": 63,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "0d4b63b814973a25037c28e66d92f6e2f65667d47f397e9e8a6a794d9e6f12bd"
+            },
+            {
+              "checkedExcerpt": "XOR circuit is also formed by combining the basic circuits. However, it cannot be formed with a combination of simple circuits as in the case of NAND circuits and NOR circuits. In such cases, it is called logical design (or circuit design) to think about the combination of basic circuits for achieving the targeted results (truth values). In logical design, logical expressions (logical functions) obtained from the truth tables are simplified using the rules of logical operations (logical laws), and the optimum combination of basic circuits is determined. (“Optimum” means that the design is performed in consideration of performance, efficiency, and cost.",
+              "kind": "textbook-source",
+              "pdfPage": 69,
+              "printedPage": 64,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "b26e0590632468a146244504ce22b38c51e1c61bfd1a94cd92adb3789271befd"
+            }
+          ],
+          "headingNumber": "3-4-1",
+          "reason": "Original question image and actual 3-4-1 teaching re-read; logic-gates is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "7c2faf88e7e78b3463dc55142a1c41a7ad1d47a06ca5cd10379e95e2fead289e"
+    }
+  },
+  {
     "id": "HIST-TECH01-2010S-Q031",
     "examId": "2010S_FE_AM",
     "number": 31,
@@ -25631,6 +27593,192 @@
         }
       ],
       "approvalFingerprint": "0175554a515645b85f9923ad16bb44a954a92686403ad4f4ea60e4aed875a71a"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2011A-Q002",
+    "examId": "2011A_FE_AM",
+    "number": 2,
+    "year": 2011,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2011A-Q002.9effdca8da61.webp",
+      "width": 1944,
+      "height": 486,
+      "sha256": "9effdca8da611b3a014f8aa5b827f622bea158029d8d71b28d2b67e742364059"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 128,
+      "pageEnd": 128,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2011A-Q002"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            128
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "logic-gates",
+          "evidence": [
+            {
+              "checkedExcerpt": "XOR circuit is also formed by combining the basic circuits. However, it cannot be formed with a combination of simple circuits as in the case of NAND circuits and NOR circuits. In such cases, it is called logical design (or circuit design) to think about the combination of basic circuits for achieving the targeted results (truth values). In logical design, logical expressions (logical functions) obtained from the truth tables are simplified using the rules of logical operations (logical laws), and the optimum combination of basic circuits is determined. (“Optimum” means that the design is performed in consideration of performance, efficiency, and cost.",
+              "kind": "textbook-source",
+              "pdfPage": 69,
+              "printedPage": 64,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "b26e0590632468a146244504ce22b38c51e1c61bfd1a94cd92adb3789271befd"
+            },
+            {
+              "checkedExcerpt": "[Main logical laws] * AND operation is represented with ˄, OR operation is represented with ˅, and NOT operation is represented with ¬. • Idempotent laws A A A   A A A   • Commutative laws A B B A    A B B A    • Associative laws C ) B A ( ) C B ( A      C ) B A ( ) C B ( A      • Distributive laws ) C A ( ) B A ( ) C B ( A       ) C A ( ) B A ( ) C B ( A       • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determine logical expression F",
+              "kind": "textbook-source",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8"
+            }
+          ],
+          "headingNumber": "3-4-1",
+          "reason": "Original question image and actual 3-4-1 teaching re-read; logic-gates is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "82ac4d85cd0e522b73bca00a76590be448a4eedbcc82512e9c078787214fba04"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2011A-Q010",
+    "examId": "2011A_FE_AM",
+    "number": 10,
+    "year": 2011,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "d",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Speeding-up of Processor",
+    "topic": "Instruction pipelining",
+    "mapping": {
+      "headingNumber": "3-5-2",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-079-b003-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2011A-Q010.b1f0a0451349.webp",
+      "width": 1933,
+      "height": 778,
+      "sha256": "b1f0a0451349b813e5484aa7d25b1b6e5e5be3da6523a6e07aa6badf896ea655"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 130,
+      "pageEnd": 130,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2011A-Q010"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            130
+          ],
+          "printedAnswer": "d"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "processor-pipeline",
+          "evidence": [
+            {
+              "checkedExcerpt": "Pipeline control (or the pipeline processing) divides the execution cycle of each instruction into multiple stages, and by shifting each stage little by little and executing multiple stages separately, multiple instructions are executed simultaneously and in parallel.",
+              "kind": "textbook-source",
+              "pdfPage": 79,
+              "printedPage": 74,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "43e5268e1ad8127dce9376794ed8fcbff11fb38c272846ee59191dd800b9f312"
+            },
+            {
+              "checkedExcerpt": "Pipeline control is a method of advanced control of instructions. Therefore, efficiency will decline if there are instructions (jump instructions) that change the execution sequence of instruction. Moreover, if the execution time of each instruction is different, the waiting time may be required before starting the execution of a stage, and efficiency will decline. Figure 1-40 Pipeline control with poor efficiency For efficient pipeline control, it is necessary that the execution time of all instructions be almost the same. Among the different architectures of processors (computers), RISC architecture is suitable for this concept, while CISC architecture is not very suitable.",
+              "kind": "textbook-source",
+              "pdfPage": 80,
+              "printedPage": 75,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "af2abb85be02f4e30285b0a3a5670cf1fe5386a9ca908c0d972c3651fa6748a9"
+            }
+          ],
+          "headingNumber": "3-5-2",
+          "reason": "Original question image and actual 3-5-2 teaching re-read; processor-pipeline is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-079-b003-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "a8d5a805d89a1249d1ec15b2f798dae7356b3e2705bb03a46e7945a4fa9110b3"
     }
   },
   {
@@ -26412,6 +28560,99 @@
     }
   },
   {
+    "id": "HIST-TECH01-2012A-Q003",
+    "examId": "2012A_FE_AM",
+    "number": 3,
+    "year": 2012,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Numeric Data",
+    "topic": "Two’s-complement integers",
+    "mapping": {
+      "headingNumber": "2-3-2",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-036-b002-l22-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2012A-Q003.73d092c7de64.webp",
+      "width": 1945,
+      "height": 679,
+      "sha256": "73d092c7de64ecde6f8b9a3cd4a5355a2eaa3a00d9b421f03c764aa6e6aaa559"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 277,
+      "pageEnd": 277,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2012A-Q003"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            277
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "signed-integers",
+          "evidence": [
+            {
+              "checkedExcerpt": "1) Fixed point numbers In this form of representation, numerical values are handled by fixing the radix point at a specific position. Generally, it is mostly used for handling integer numbers by fixing the position of the radix point in the least significant bit. ▲ (Position of radix point) In this form of representation, after numerical values are converted into binary numbers, they are used without modification according to the position of the radix point. Example: Represent (89)10 as an 8 bit fixed point number. (89)10=(1011001)2 ↓ 0 1 0 1 1 0 0 1 In fixed point numbers, methods of representing negative numbers (representation forms of negative numbers) are important. The two main methods are described below. A: Signed absolute value notation In this method, the most significant 1 bit is used as a sign bit, and 0 is stored in it if the numerical value is positive, while 1 is stored in it if the numerical value is negative. In the remaining bits, the binary bit string is stored as it is. Example: Represent (+89)10 and (−89)10 with an 8-bit fixed point number (signed absolute value). (89)10 = (1011001)2 (+89)10: 0 1 0 1 1 0 0 1 (−89)10: 1 1 0 1 1 0 0 1 B: Complement notation In this method, when a negative number is represented, the complement of the positive number is used.",
+              "kind": "textbook-source",
+              "pdfPage": 39,
+              "printedPage": 34,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "5946d31a5a250ce77c93662f89ffe2a364b4bba19c3df837adeaedcc00d55eca"
+            },
+            {
+              "checkedExcerpt": "1 Hardware 35 [Complement] By using a certain number as the reference value, the shortfall is shown with respect to this reference value. In n-adic number, there is a complement of n and a complement of n−1. • Complement of n−1 ... Reference value is the maximum value that has the same number of digits. • Complement of n ... Reference value is the minimum value that has one more additional digit. The complement can be determined by subtracting from the reference value the number for which the complement is to be determined. Example 1: Determine the complement of decimal number (614)10 • 9’s complement • 10’s complement 999 1000 − 614 − 614 385 386 Example 2: Determine the complement of binary number (01101101)2 • 1’s complement • 2’s complement 11111111 100000000 − 01101101 − 01101101 10010010 10010011 Example: Represent (+89)10 and (−89)10 with an 8-bit fixed point number (2’s complement). (89)10 = (1011001)2 → 100000000 − 01011001 10100111 (+89)10: 0 1 0 1 1 0 0 1 (−89)10: 1 0 1 0 0 1 1 1 Generally, 2’s complement notation is often used in fixed point numbers for the following reasons.",
+              "kind": "textbook-source",
+              "pdfPage": 40,
+              "printedPage": 35,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "cb08d6e0e7d24577cf917f94e10d9aaaed3d6c215936caae1d33b5c8322fdd60"
+            }
+          ],
+          "headingNumber": "2-3-2",
+          "reason": "Original question image and actual 2-3-2 teaching re-read; signed-integers is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s02",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-036-b002-l22-text-0"
+        }
+      ],
+      "approvalFingerprint": "0cd4264e0e39d1304532aaacc56dd4313f0b8bca0f0cec3a91f9fefda7ecf753"
+    }
+  },
+  {
     "id": "HIST-TECH01-2012A-Q017",
     "examId": "2012A_FE_AM",
     "number": 17,
@@ -26661,6 +28902,192 @@
         }
       ],
       "approvalFingerprint": "e1983fe1d6dd7a07bc910f946f7a3bd7a397d4552f07669126614710da83e816"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2012S-Q026",
+    "examId": "2012S_FE_AM",
+    "number": 26,
+    "year": 2012,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2012S-Q026.a7b07227257c.webp",
+      "width": 1944,
+      "height": 1166,
+      "sha256": "a7b07227257c38af7a3291cd801825ec3bded2c0615e67bcf0cdd33616af4bb9"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 125,
+      "pageEnd": 125,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2012S-Q026"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            125
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "logic-gates",
+          "evidence": [
+            {
+              "checkedExcerpt": "1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False (0) when both input values are False (0), or else the output is True (1) (when either one is True (1)). 3) Negation operation (NOT) The output becomes False (0) when the input value is True (1), and the output is True (1) when the input value is False (0). 4) Exclusive logical sum (Exclusive OR) operation (XOR or EOR) The output becomes False (0) when both input values are the same, and the output is True (1) when both input values are different.",
+              "kind": "textbook-source",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed"
+            },
+            {
+              "checkedExcerpt": "XOR circuit is also formed by combining the basic circuits. However, it cannot be formed with a combination of simple circuits as in the case of NAND circuits and NOR circuits. In such cases, it is called logical design (or circuit design) to think about the combination of basic circuits for achieving the targeted results (truth values). In logical design, logical expressions (logical functions) obtained from the truth tables are simplified using the rules of logical operations (logical laws), and the optimum combination of basic circuits is determined. (“Optimum” means that the design is performed in consideration of performance, efficiency, and cost.",
+              "kind": "textbook-source",
+              "pdfPage": 69,
+              "printedPage": 64,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "b26e0590632468a146244504ce22b38c51e1c61bfd1a94cd92adb3789271befd"
+            }
+          ],
+          "headingNumber": "3-4-1",
+          "reason": "Original question image and actual 3-4-1 teaching re-read; logic-gates is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "d5b8942313e57be5ff71aa2efd77280c33d02a5d1e4e9fd0362577ab3c3617ab"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2012S-Q027",
+    "examId": "2012S_FE_AM",
+    "number": 27,
+    "year": 2012,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2012S-Q027.4ac3fae48c96.webp",
+      "width": 1944,
+      "height": 887,
+      "sha256": "4ac3fae48c9674a4f689ccc0627d0e750f460a8b5d435ceafee08fb6cdc3cbde"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 126,
+      "pageEnd": 126,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2012S-Q027"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            126
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "logic-gates",
+          "evidence": [
+            {
+              "checkedExcerpt": "1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False (0) when both input values are False (0), or else the output is True (1) (when either one is True (1)). 3) Negation operation (NOT) The output becomes False (0) when the input value is True (1), and the output is True (1) when the input value is False (0). 4) Exclusive logical sum (Exclusive OR) operation (XOR or EOR) The output becomes False (0) when both input values are the same, and the output is True (1) when both input values are different.",
+              "kind": "textbook-source",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed"
+            },
+            {
+              "checkedExcerpt": "XOR circuit is also formed by combining the basic circuits. However, it cannot be formed with a combination of simple circuits as in the case of NAND circuits and NOR circuits. In such cases, it is called logical design (or circuit design) to think about the combination of basic circuits for achieving the targeted results (truth values). In logical design, logical expressions (logical functions) obtained from the truth tables are simplified using the rules of logical operations (logical laws), and the optimum combination of basic circuits is determined. (“Optimum” means that the design is performed in consideration of performance, efficiency, and cost.",
+              "kind": "textbook-source",
+              "pdfPage": 69,
+              "printedPage": 64,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "b26e0590632468a146244504ce22b38c51e1c61bfd1a94cd92adb3789271befd"
+            }
+          ],
+          "headingNumber": "3-4-1",
+          "reason": "Original question image and actual 3-4-1 teaching re-read; logic-gates is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "a5d9c73f0cda3c7d0662fb373ce4b6b068358e00f9f488a5c9f59fd54fa14121"
     }
   },
   {
@@ -26918,6 +29345,90 @@
     }
   },
   {
+    "id": "HIST-TECH01-2013A-Q012",
+    "examId": "2013A_FE_AM",
+    "number": 12,
+    "year": 2013,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Interrupt",
+    "topic": "Interrupt priority",
+    "mapping": {
+      "headingNumber": "3-3-4",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-064-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2013A-Q012.53af270215ac.webp",
+      "width": 1945,
+      "height": 736,
+      "sha256": "53af270215ac1dc51b3c373997d9c28a5f400d98de9a6f24601a17d0b7b3192d"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 96,
+      "pageEnd": 96,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2013A-Q012"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            96
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "interrupts",
+          "evidence": [
+            {
+              "checkedExcerpt": "[Processing sequence of processor when interrupt has occurred] 1) Switch from user mode to privilege mode. 2) Save the values of various registers (program counter, etc.). 3) Decide the starting address of the interrupt process routine (interrupt program). 4) Execute the interrupt process routine. 5) After the execution of the interrupt process routine is complete, restore the values of various registers that are saved in step 2. 6) Switch from privilege mode to user mode, and restart the interrupted process. According to conditions that an interrupt occurs, this can be classified described below. Here, it is assumed that multiple interrupts may occur simultaneously, and therefore priority ranking is assigned to each interrupt. 1) External interrupt: This is an interrupt that occurs because of a reason not related to the process being executed. • Timer interrupt This is an interrupt that occurs when the time measured in the timer, such as interval timer and watchdog timer, has exceeded the specified time (i.e., the timer has been timed-out). • Input/output interrupt (input/output completion interrupt) This is an interrupt that occurs when an input/output operation has been completed. • Machine check interrupt This is an interrupt that occurs because of a hardware malfunction, a power failure, or such other factor. • Restart interrupt This is an interrupt that occurs when the user has pressed the external restart switch. 2) Internal interrupt: This is an interrupt that occurs because of the process being executed. This is also referred to as a trap. • SVC (SuperVisor Call) interrupt This is an interrupt that occurs when supervisor (program that offers basic functions) is requested to invoke a process, such as when input/output instruction is used or storage protection exception happens. • Program interrupt",
+              "kind": "textbook-source",
+              "pdfPage": 65,
+              "printedPage": 60,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "b668a0efaa1f8b55cb59357fddc547f8d106ad6af9e262e39cf1e1156e3e46d5"
+            }
+          ],
+          "headingNumber": "3-3-4",
+          "reason": "Original question image and actual 3-3-4 teaching re-read; interrupts is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-064-b006-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "04af13282054e4ca514876a3bcd5228f02d3a59154ae79a1c7e03b3b33d24031"
+    }
+  },
+  {
     "id": "HIST-TECH01-2013A-Q013",
     "examId": "2013A_FE_AM",
     "number": 13,
@@ -27097,6 +29608,183 @@
     }
   },
   {
+    "id": "HIST-TECH01-2013S-Q011",
+    "examId": "2013S_FE_AM",
+    "number": 11,
+    "year": 2013,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "d",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Configuration of CPU",
+    "topic": "CPU registers",
+    "mapping": {
+      "headingNumber": "3-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-051-b004-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2013S-Q011.550c7f245840.webp",
+      "width": 1945,
+      "height": 849,
+      "sha256": "550c7f245840cb3541252438f523194965e432fbeecca93b0bb50d2507490648"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 106,
+      "pageEnd": 106,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2013S-Q011"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            106
+          ],
+          "printedAnswer": "d"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "cpu-registers",
+          "evidence": [
+            {
+              "checkedExcerpt": "• Instruction register It stores the instructions to be executed. It is composed of an instruction part and an address part. • Instruction address register (program counter, program register) It stores the address (storing position in the main memory) of the instruction to be executed next.",
+              "kind": "textbook-source",
+              "pdfPage": 52,
+              "printedPage": 47,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "97daacc48a2f1d7065a3797a62a0b4b6c3c2156c8a7a712b4c516a22df80c5ba"
+            }
+          ],
+          "headingNumber": "3-1",
+          "reason": "Original question image and actual 3-1 teaching re-read; cpu-registers is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-051-b004-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "2a5f614874d0eeda88962043a46c1594492f608e8eb1d63ce7fe3062f9cc5bd7"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2013S-Q014",
+    "examId": "2013S_FE_AM",
+    "number": 14,
+    "year": 2013,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "High Speed Memory Access",
+    "topic": "Memory hierarchy",
+    "mapping": {
+      "headingNumber": "3-5-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-075-b005-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2013S-Q014.402b71515906.webp",
+      "width": 1945,
+      "height": 549,
+      "sha256": "402b715159066cdf667da67546faeb44621c5818ce406c309d2521e78637440d"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 274,
+      "pageEnd": 274,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2013S-Q014"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            274
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "memory-hierarchy",
+          "evidence": [
+            {
+              "checkedExcerpt": "memory). In other words, average access time (effective access time) as seen from the processor is decided on the basis of the extent to which the required data is found in cache memory. Therefore, it is determined by weighted average of access time of cache memory and access time of main memory. Here, the access time is determined by considering both the probability (hit ratio) that the required data is available in cache memory and the probability (NFP (Not Found Probability)) that the required data is not available in cache memory. “Hit ratio+NFP=1” always holds true. Example: Calculate the average access time of the following processor. NFP (probability that the required data is not available in cache memory) is 0.1. Access destination Access time (nanosecond) Cache memory 50 Main memory 500 Average access time of processor = Access time of cache memory × hit ratio + Access time of main memory × NFP = 50 nanoseconds × (1 − 0.1) + 500 nanoseconds × 0.1 = 95 nanoseconds From this example, it is clear that the higher the hit ratio is, the shorter the average access time is because of increased access to cache memory . When Havard architecture , which independently loads instructions and data , is used , cache memory is also separated into instruction cache and data cache . In this case , creating a program consolidating process ( instruction ) sections that are frequently executed will increase the hit ratio of instruction cache, which may shorten the average access time (access speed will improve).",
+              "kind": "textbook-source",
+              "pdfPage": 76,
+              "printedPage": 71,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "16642cba08a2bb57f7761c6f5bf389c157c2c9a4f16ffd1abe7b6cf36e65cc89"
+            },
+            {
+              "checkedExcerpt": "In modern-day computers, there is a large difference in the speed of processor and the speed of main memory. Therefore, it is common to use multi-level cache configuration where cache memory is divided into 2 levels, namely, primary cache and secondary cache. In this case, the processor will access in the sequence of primary cache → secondary cache → main memory. Figure 1-35 Multi-level cache configuration",
+              "kind": "textbook-source",
+              "pdfPage": 77,
+              "printedPage": 72,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "bcd00e2a51a63797a2917746e44fed627b7e95b09f1aeb4ee74181bd4a6a5443"
+            }
+          ],
+          "headingNumber": "3-5-1",
+          "reason": "Original question image and actual 3-5-1 teaching re-read; memory-hierarchy is directly supported by the exact quoted passage(s), not inferred from a heading. Multi-level sequence is directly taught on physical p.77, while p.76 supplies weighted complete service times. Preserve the existing explicit alternative incremental-cost qualification; do not infer it from the printed key.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-075-b005-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "e8b1cf93047251d7135ee0fa0096e91a3545910247d3ce998fcbc261e80cd9d4"
+    }
+  },
+  {
     "id": "HIST-TECH01-2013S-Q027",
     "examId": "2013S_FE_AM",
     "number": 27,
@@ -27179,6 +29867,108 @@
         }
       ],
       "approvalFingerprint": "56ec81e3a8b7b3a53f5d2a1e91e0fe0f8ee14dddaf8e980d1a0f3bdc643705f1"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2014A-Q001",
+    "examId": "2014A_FE_AM",
+    "number": 1,
+    "year": 2014,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Components of Main Memory",
+    "topic": "Memory addresses and bus lines",
+    "mapping": {
+      "headingNumber": "3-2-2",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-056-b004-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2014A-Q001.b3ae423852d6.webp",
+      "width": 1993,
+      "height": 485,
+      "sha256": "b3ae423852d6ff7d90d3e28c2945d1bfc2b10e7f8c116f724d985afff4de77e3"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 266,
+      "pageEnd": 266,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2014A-Q001"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            266
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "memory-addressing",
+          "evidence": [
+            {
+              "checkedExcerpt": "• Flash memory: This is semiconductor memory where data can be rewritten after data is erased in units of blocks through electrical operations. Flash memory is a type of EEPROM. Therefore, the number of rewritable timesis limited. However, it is used for various applications as a portable and convenient storage medium. 3-2-2 Components of Main Memory In broad terms, the main memory unit is composed of three components. • Memory unit This contains memory cells (storage devices) that record data. • Read/write feature This reads and writes data in the recording area (collection of memory cells). • Address selection feature This interprets the specified address and selects the recording area of data. Figure 1-14 Components of main memory Access operation to main memory is done as follows:",
+              "kind": "textbook-source",
+              "pdfPage": 56,
+              "printedPage": 51,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "160f7f81f75d39ed89036a247b39dde4e9fd12a488160bde9ee082925a267902"
+            },
+            {
+              "checkedExcerpt": "[Access operation to main memory] 1) Through address bus, the specified address is handed over to the address selection feature. 2) The address selection feature decodes the specified address by using the address decoder, and selects the recording area to be accessed. (address selection operation) 3) The read/write feature reads and writes data in the selected recording area. When data is read, data that is read from the recording area is passed on to the CPU via data bus. When data is written, data that is transferred from the CPU via data bus is written in the recording area.",
+              "kind": "textbook-source",
+              "pdfPage": 57,
+              "printedPage": 52,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "952276357b5088ea6f791c2a38c8c03e44c8a25094d9a4d9e1c04a2823a319ef"
+            },
+            {
+              "checkedExcerpt": "with two numbers, 0 and 1. (101.1)2 = 1×22 + 0×21 + 1×20 + 1×2−1 = (5.5)10 * 2 in ( )2 shows that it is a binary number. Decimal numbers and their corresponding binary numbers are as shown below. Binary numbers can use only two numbers of 0 and 1 for one digit. Therefore, the number of digits quickly becomes large, compared with decimal numbers. Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Binary numbers 0 1 10 11 100 101 110 111 1000 1001 1010 ... Figure 1-6 Decimal numbers and corresponding binary numbers (2) Octal numbers Octal numbers are numerical values that are represented by using eight numbers from 0 through 7 and that are carried over when 8 is reached. (317.5)8 = 3×82 + 1×81 + 7×80 + 5×8−1 = (207.625)10 * 8 in ( )8 shows that it is an octal number Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Octal numbers 0 1 2 3 4 5 6 7 10 11 12 ... Figure 1-7 Decimal numbers and corresponding octal numbers (3) Hexadecimal numbers Hexadecimal numbers are numerical values that are represented by using sixteen numbers from 0 through 9, and A(10), B(11), C(12), D(13), E(14), and F(15) and that are carried over when 16 is reached. (1A6.E)16 = 1×162 + 10×161 + 6×160 + 14×16−1 = (422.875)10 * 16 in ( )16 shows that it is a hexadecimal number.",
+              "kind": "textbook-source",
+              "pdfPage": 29,
+              "printedPage": 24,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419"
+            }
+          ],
+          "headingNumber": "3-2-2",
+          "reason": "Original question image and actual 3-2-2 teaching re-read; memory-addressing is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-056-b004-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "1f4e5c852f9c694dba74c87fe69763874c3055923cd31ccefc9363d38798bd60"
     }
   },
   {
@@ -27451,6 +30241,90 @@
         }
       ],
       "approvalFingerprint": "0992ecab634386a39fa5c80f1d75d049a99215ffeaabd28fc594af798b528cfa"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2014A-Q023",
+    "examId": "2014A_FE_AM",
+    "number": 23,
+    "year": 2014,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Memory Devices",
+    "topic": "RAM, ROM and flash memory",
+    "mapping": {
+      "headingNumber": "3-2-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-054-b005-l01-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2014A-Q023.ac6980bc7c86.webp",
+      "width": 1857,
+      "height": 484,
+      "sha256": "ac6980bc7c8606f221d2369a9f592a74ccd40b9331bb4d8e04ba00bf050121be"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 86,
+      "pageEnd": 86,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2014A-Q023"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            86
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "memory-devices",
+          "evidence": [
+            {
+              "checkedExcerpt": "• Flash memory: This is semiconductor memory where data can be rewritten after data is erased in units of blocks through electrical operations. Flash memory is a type of EEPROM. Therefore, the number of rewritable timesis limited. However, it is used for various applications as a portable and convenient storage medium. 3-2-2 Components of Main Memory In broad terms, the main memory unit is composed of three components. • Memory unit This contains memory cells (storage devices) that record data. • Read/write feature This reads and writes data in the recording area (collection of memory cells). • Address selection feature This interprets the specified address and selects the recording area of data. Figure 1-14 Components of main memory Access operation to main memory is done as follows:",
+              "kind": "textbook-source",
+              "pdfPage": 56,
+              "printedPage": 51,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "160f7f81f75d39ed89036a247b39dde4e9fd12a488160bde9ee082925a267902"
+            }
+          ],
+          "headingNumber": "3-2-1",
+          "reason": "Original question image and actual 3-2-1 teaching re-read; memory-devices is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-054-b005-l01-text-0"
+        }
+      ],
+      "approvalFingerprint": "af2b66b646cb5d41ac126fa88795fcec5be1f97357ff451b4c8dfb1fa53761e8"
     }
   },
   {
@@ -27986,6 +30860,174 @@
     }
   },
   {
+    "id": "HIST-TECH01-2014S-Q024",
+    "examId": "2014S_FE_AM",
+    "number": 24,
+    "year": 2014,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Interrupt",
+    "topic": "Interrupt priority",
+    "mapping": {
+      "headingNumber": "3-3-4",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-064-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2014S-Q024.36ca48d30b51.webp",
+      "width": 1814,
+      "height": 474,
+      "sha256": "36ca48d30b5111f34af4d80e9ab73e6b53fd97f61cecac398da0e5023323c361"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 92,
+      "pageEnd": 92,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2014S-Q024"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            92
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "interrupts",
+          "evidence": [
+            {
+              "checkedExcerpt": "[Processing sequence of processor when interrupt has occurred] 1) Switch from user mode to privilege mode. 2) Save the values of various registers (program counter, etc.). 3) Decide the starting address of the interrupt process routine (interrupt program). 4) Execute the interrupt process routine. 5) After the execution of the interrupt process routine is complete, restore the values of various registers that are saved in step 2. 6) Switch from privilege mode to user mode, and restart the interrupted process. According to conditions that an interrupt occurs, this can be classified described below. Here, it is assumed that multiple interrupts may occur simultaneously, and therefore priority ranking is assigned to each interrupt. 1) External interrupt: This is an interrupt that occurs because of a reason not related to the process being executed. • Timer interrupt This is an interrupt that occurs when the time measured in the timer, such as interval timer and watchdog timer, has exceeded the specified time (i.e., the timer has been timed-out). • Input/output interrupt (input/output completion interrupt) This is an interrupt that occurs when an input/output operation has been completed. • Machine check interrupt This is an interrupt that occurs because of a hardware malfunction, a power failure, or such other factor. • Restart interrupt This is an interrupt that occurs when the user has pressed the external restart switch. 2) Internal interrupt: This is an interrupt that occurs because of the process being executed. This is also referred to as a trap. • SVC (SuperVisor Call) interrupt This is an interrupt that occurs when supervisor (program that offers basic functions) is requested to invoke a process, such as when input/output instruction is used or storage protection exception happens. • Program interrupt",
+              "kind": "textbook-source",
+              "pdfPage": 65,
+              "printedPage": 60,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "b668a0efaa1f8b55cb59357fddc547f8d106ad6af9e262e39cf1e1156e3e46d5"
+            }
+          ],
+          "headingNumber": "3-3-4",
+          "reason": "Original question image and actual 3-3-4 teaching re-read; interrupts is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-064-b006-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "f2aff4f0e613e5a5960f5d0475d337bc631b230ff9e3b21a322240b49fbe2dbc"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2014S-Q028",
+    "examId": "2014S_FE_AM",
+    "number": 28,
+    "year": 2014,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Memory Devices",
+    "topic": "RAM, ROM and flash memory",
+    "mapping": {
+      "headingNumber": "3-2-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-054-b005-l01-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2014S-Q028.bb6f3f692cd7.webp",
+      "width": 1835,
+      "height": 474,
+      "sha256": "bb6f3f692cd74bc36a21a8cc2f3e6b29dd828ccfeca6b3866159ba43f08cb851"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 94,
+      "pageEnd": 94,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2014S-Q028"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            94
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "memory-devices",
+          "evidence": [
+            {
+              "checkedExcerpt": "• SRAM (Static RAM) While its operating speed is high, it is expensive and it also has high power consumption. As for its memory mechanism, it uses a flip-flop circuit that continues to retain the preceding status, and electrical charge that records information can be retained as long as power is supplied. However, its disadvantages are a low degree of integration because of complex configuration of the circuit, and storage capacity that is smaller compared with DRAM. It is mainly used in registers or other memory devices. • DRAM (Dynamic RAM) While its operating speed is somewhat slow, it uses a simple circuit where electrical charge is retained by condenser or capacitor. Therefore, the degree of integration is high, and large capacity memory can be easily created at low cost. However, electrical charge that records information is lost over time, and therefore it is necessary to rewrite (refresh) the information. Examples include SDRAM (Synchronous DRAM) or DDR SDRAM (Double Data Rate SDRAM) used in main memory, and RDRAM (Rambus DRAM) that uses Rambus technology in the external bus interface. (2) ROM (Read Only Memory) ROM is IC memory that can be used only for reading data. It has a property (non-volatility) where data is not lost even when the power is off. • Mask ROM This is a type of ROM where users cannot write data. This memory is used to store programs or data in factories, and the information is used only for the purpose of reference.",
+              "kind": "textbook-source",
+              "pdfPage": 55,
+              "printedPage": 50,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "cff41ce38db0a47f6283af34b5223088ef2d7dfc65ad32c1c1e59626ff05b526"
+            }
+          ],
+          "headingNumber": "3-2-1",
+          "reason": "Original question image and actual 3-2-1 teaching re-read; memory-devices is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-054-b005-l01-text-0"
+        }
+      ],
+      "approvalFingerprint": "652cd3d7b8757b35e16efd8f34b9c004d4029376c9535a28079ecc7897124fe6"
+    }
+  },
+  {
     "id": "HIST-TECH01-2015A-Q011",
     "examId": "2015A_FE_AM",
     "number": 11,
@@ -28331,6 +31373,99 @@
         }
       ],
       "approvalFingerprint": "a9578e4204cdd5ee43e3ac5b53ba8264bad51be121f260ccabfba836cc49b1fc"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2015S-Q002",
+    "examId": "2015S_FE_AM",
+    "number": 2,
+    "year": 2015,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "d",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Radix and Radix Conversion",
+    "topic": "Radix conversion",
+    "mapping": {
+      "headingNumber": "2-2",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-028-b009-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2015S-Q002.e663e4d66204.webp",
+      "width": 1993,
+      "height": 409,
+      "sha256": "e663e4d66204c05ee32b2ad0277c85eabd982989da6057412580f85054271677"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 264,
+      "pageEnd": 264,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2015S-Q002"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            264
+          ],
+          "printedAnswer": "d"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "radix-conversion",
+          "evidence": [
+            {
+              "checkedExcerpt": "(5) Radix conversion Radix conversion means changing the radix of a numerical value. It is also radix conversion to convert a binary number (radix 2) into an octal number (radix 8) or a hexadecimal number (radix 16). When radix has a constant (power) relation as in the case of binary numbers, octal numbers, and hexadecimal numbers, radix conversion can be done by consolidating multiple digits. However, when radix does not have a constant (power) relation as in the case of binary numbers and decimal numbers, it is necessary to convert through computation. 1) Radix conversion from a binary number into a decimal number Radix conversion from a binary number to a decimal number can be performed by adding the weight of each digit that is 1 in the binary number. (This is the same as adding the results that are obtained by multiplying the weight of each digit with the number (0 or 1) of each digit.) Example: Perform radix conversion of the binary number (1001101.101)2 into a decimal number. 2) Radix conversion from a decimal number into a binary number Radix conversion from a decimal number into a binary number is performed separately for the integer part and the fractional part. The integer part can be converted by repeatedly dividing by 2 until the quotient becomes 0, and then arranging the remainder of calculation results in sequence from the back. A fractional part can be converted by continuously multiplying by 2 until the fractional part in calculation results becomes 0, and then arranging the integer part of each calculation result in sequence from the front.",
+              "kind": "textbook-source",
+              "pdfPage": 31,
+              "printedPage": 26,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "82b72f4c645a83ebec1bc01d448d249b28d8d3a10b8943a3b27747b928ffbeee"
+            },
+            {
+              "checkedExcerpt": "Decimal number: (67.6875)10 = Binary number: (1000011.1011)2 = (001 000 011 . 101 100)2 = Octal number: ( 1 0 3 . 5 4 )8 [Fractional number that cannot be represented by the finite number of digits] When the fractional part of a decimal number is converted into an n-adic number, it gets into a loop as the fractional part of calculation results does not become 0, and it may not be converted into a finite fraction. For example, converting the decimal number (0.2)10 into a binary number gives the following. In this manner, when the results of radix conversion become an infinite fraction (or recurring fraction), numerical values are handled as approximate values inside the computer.",
+              "kind": "textbook-source",
+              "pdfPage": 33,
+              "printedPage": 28,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "d2e2b7cbbfb2c37bea9761db1702d19f9d66c32038286453dea5f703fe00a8b8"
+            }
+          ],
+          "headingNumber": "2-2",
+          "reason": "Original question image and actual 2-2 teaching re-read; radix-conversion is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s02",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-028-b009-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "9e2ae5b4260c4a9123456324be7afb532c5b200f985dca00674b2108a37f0f31"
     }
   },
   {
@@ -29482,6 +32617,99 @@
         }
       ],
       "approvalFingerprint": "c4975fbde822a415d5429e2bbbe3b438e0ed5427afc6f5f223fa1fded82c4d81"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2017A-Q001",
+    "examId": "2017A_FE_AM",
+    "number": 1,
+    "year": 2017,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "a",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Radix and Radix Conversion",
+    "topic": "Radix conversion",
+    "mapping": {
+      "headingNumber": "2-2",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-028-b009-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2017A-Q001.f1397d12cb27.webp",
+      "width": 1521,
+      "height": 340,
+      "sha256": "f1397d12cb2759e7b9aa291718fa0cf180f33ef9326f796965a9277f40a470b3"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 254,
+      "pageEnd": 254,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2017A-Q001"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            254
+          ],
+          "printedAnswer": "a"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "radix-conversion",
+          "evidence": [
+            {
+              "checkedExcerpt": "with two numbers, 0 and 1. (101.1)2 = 1×22 + 0×21 + 1×20 + 1×2−1 = (5.5)10 * 2 in ( )2 shows that it is a binary number. Decimal numbers and their corresponding binary numbers are as shown below. Binary numbers can use only two numbers of 0 and 1 for one digit. Therefore, the number of digits quickly becomes large, compared with decimal numbers. Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Binary numbers 0 1 10 11 100 101 110 111 1000 1001 1010 ... Figure 1-6 Decimal numbers and corresponding binary numbers (2) Octal numbers Octal numbers are numerical values that are represented by using eight numbers from 0 through 7 and that are carried over when 8 is reached. (317.5)8 = 3×82 + 1×81 + 7×80 + 5×8−1 = (207.625)10 * 8 in ( )8 shows that it is an octal number Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Octal numbers 0 1 2 3 4 5 6 7 10 11 12 ... Figure 1-7 Decimal numbers and corresponding octal numbers (3) Hexadecimal numbers Hexadecimal numbers are numerical values that are represented by using sixteen numbers from 0 through 9, and A(10), B(11), C(12), D(13), E(14), and F(15) and that are carried over when 16 is reached. (1A6.E)16 = 1×162 + 10×161 + 6×160 + 14×16−1 = (422.875)10 * 16 in ( )16 shows that it is a hexadecimal number.",
+              "kind": "textbook-source",
+              "pdfPage": 29,
+              "printedPage": 24,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419"
+            },
+            {
+              "checkedExcerpt": "Relation between binary numbers, octal numbers, and hexadecimal numbers Binary numbers have an extremely large number of digits compared with decimal numbers. Although computers can handle binary numbers without problems, it is very difficult for a human being to understand when the internal status of computers is concerned. Therefore, octal numbers and hexadecimal numbers are used so that people can understand more easily. Octal numbers use the power of 8 (= 23) as the weight of each digit, and therefore the information of 3 digits of binary numbers corresponds to 1 digit of octal numbers. Binary number: (1011100.11101)2 ↓ (001 011 100 . 111 010)2 ↓ ... Separate after every 3 digits with radix point as reference. (0 is supplemented in the parts that fall short of 3 digits.) Octal numbers: ( 1 3 4 . 7 2 )8 ... Convert every 3 digits Hexadecimal numbers use the power of 16(= 24) as the weight of each digit, and therefore the information of 4 digits of binary numbers corresponds to 1 digit of hexadecimal numbers. Binary number: (1011100.11101)2 ↓ (0101 1100 . 11100 1000)2 ↓ ... Separate after every 4 digits with radix point as reference. (0 is supplemented in the parts that fall short of 4 digits.) Hexadecimal number: ( 5 C . E 8 )16 ... Convert every 4 digits",
+              "kind": "textbook-source",
+              "pdfPage": 30,
+              "printedPage": 25,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "752f89c392b5b641578b5750dc2e3f2550795c32361c897ee87ca9ffed6828d9"
+            }
+          ],
+          "headingNumber": "2-2",
+          "reason": "Original question image and actual 2-2 teaching re-read; radix-conversion is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s02",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-028-b009-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "5dfd869e2d8a1a8f1a189085a9c11692db898f0ffda72df88475cc9eef5cae26"
     }
   },
   {
@@ -31248,6 +34476,90 @@
     }
   },
   {
+    "id": "HIST-TECH01-2018S-Q010",
+    "examId": "2018S_FE_AM",
+    "number": 10,
+    "year": 2018,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "High Speed Memory Access",
+    "topic": "Cache memory",
+    "mapping": {
+      "headingNumber": "3-5-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-075-b005-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2018S-Q010.5132e05e9bab.webp",
+      "width": 1992,
+      "height": 715,
+      "sha256": "5132e05e9bab414b48af2e371ddaa4011510d6e7323c67c19833d25900b14376"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 252,
+      "pageEnd": 252,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2018S-Q010"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            252
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "cache-memory",
+          "evidence": [
+            {
+              "checkedExcerpt": "memory). In other words, average access time (effective access time) as seen from the processor is decided on the basis of the extent to which the required data is found in cache memory. Therefore, it is determined by weighted average of access time of cache memory and access time of main memory. Here, the access time is determined by considering both the probability (hit ratio) that the required data is available in cache memory and the probability (NFP (Not Found Probability)) that the required data is not available in cache memory. “Hit ratio+NFP=1” always holds true. Example: Calculate the average access time of the following processor. NFP (probability that the required data is not available in cache memory) is 0.1. Access destination Access time (nanosecond) Cache memory 50 Main memory 500 Average access time of processor = Access time of cache memory × hit ratio + Access time of main memory × NFP = 50 nanoseconds × (1 − 0.1) + 500 nanoseconds × 0.1 = 95 nanoseconds From this example, it is clear that the higher the hit ratio is, the shorter the average access time is because of increased access to cache memory . When Havard architecture , which independently loads instructions and data , is used , cache memory is also separated into instruction cache and data cache . In this case , creating a program consolidating process ( instruction ) sections that are frequently executed will increase the hit ratio of instruction cache, which may shorten the average access time (access speed will improve).",
+              "kind": "textbook-source",
+              "pdfPage": 76,
+              "printedPage": 71,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "16642cba08a2bb57f7761c6f5bf389c157c2c9a4f16ffd1abe7b6cf36e65cc89"
+            }
+          ],
+          "headingNumber": "3-5-1",
+          "reason": "Original question image and actual 3-5-1 teaching re-read; cache-memory is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-075-b005-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "11859a784d6bc9baf5d27c2a295c1ae9d5920ca83dfbebc315c6ec6ac61f0a41"
+    }
+  },
+  {
     "id": "HIST-TECH01-2018S-Q011",
     "examId": "2018S_FE_AM",
     "number": 11,
@@ -31917,6 +35229,90 @@
     }
   },
   {
+    "id": "HIST-TECH01-2019A-Q022",
+    "examId": "2019A_FE_AM",
+    "number": 22,
+    "year": 2019,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Flip-flops and sequential circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2019A-Q022.f835bf7bd462.webp",
+      "width": 1709,
+      "height": 324,
+      "sha256": "f835bf7bd4625b10413b681471e9701369e5903a15d7abaafbbe03788a7f5100"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2019A-Q022"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            24
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "flip-flops",
+          "evidence": [
+            {
+              "checkedExcerpt": "Sequential circuit is a logic circuit where the output is decided on the basis of the input at that time and earlier status. Flip-flop circuit, which is one of the main sequential circuits, has two stable states, and it is used in storage cells of SRAM. Figure 1-25 shows the circuit diagram of a flip-flop for reference and the truth table. Circuit symbols used in Figure 1-25 are one of the methods of representing electronic circuits, and it is referred to as MIL (Military Specifications and Standards) symbols.",
+              "kind": "textbook-source",
+              "pdfPage": 67,
+              "printedPage": 62,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "82d4142195d967a0b4cc8b2c6564354bed5de7c9acec6ba514a43f30813b0c2f"
+            }
+          ],
+          "headingNumber": "3-4-1",
+          "reason": "Original question image and actual 3-4-1 teaching re-read; flip-flops is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "451806886486f4381fbb70ea030ac9774c5c3570e4f2bf36c95d9b528c84d787"
+    }
+  },
+  {
     "id": "HIST-TECH01-2019A-Q023",
     "examId": "2019A_FE_AM",
     "number": 23,
@@ -31998,6 +35394,108 @@
         }
       ],
       "approvalFingerprint": "b6794dd015b82022a36710ac5485c4f4fe2e8521d19e6be997a7fc6325f67605"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2019A-Q024",
+    "examId": "2019A_FE_AM",
+    "number": 24,
+    "year": 2019,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2019A-Q024.e9433cd49102.webp",
+      "width": 1992,
+      "height": 1350,
+      "sha256": "e9433cd49102efe771ba599310f63e3740f68a7cafe5b34e7720805ab6c70409"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 243,
+      "pageEnd": 243,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2019A-Q024"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            243
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "logic-gates",
+          "evidence": [
+            {
+              "checkedExcerpt": "4) NAND circuit This circuit performs negative logical product (negative AND) operation (NAND). NAND operation is the arithmetic operation that negates the results of AND operation. The truth table and MIL symbol of NAND circuit are as shown below. NAND circuit is formed by combining AND circuit and NOT circuit. X Y X NAND Y Figure 1-29 NAND circuit 0 0 1 0 1 1 1 0 1 1 1 0 5) NOR circuit This circuit performs negative logical sum operation (NOR). NOR operation is the arithmetic operation that negates the results of OR operation. The truth table and MIL symbol of NOR circuit are as shown below. NOR circuit is formed by combining OR circuit and NOT circuit. X Y X NOR Y Figure 1-30 NOR circuit 0 0 1 0 1 0 1 0 0 1 1 0",
+              "kind": "textbook-source",
+              "pdfPage": 68,
+              "printedPage": 63,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "0d4b63b814973a25037c28e66d92f6e2f65667d47f397e9e8a6a794d9e6f12bd"
+            },
+            {
+              "checkedExcerpt": "XOR circuit is also formed by combining the basic circuits. However, it cannot be formed with a combination of simple circuits as in the case of NAND circuits and NOR circuits. In such cases, it is called logical design (or circuit design) to think about the combination of basic circuits for achieving the targeted results (truth values). In logical design, logical expressions (logical functions) obtained from the truth tables are simplified using the rules of logical operations (logical laws), and the optimum combination of basic circuits is determined. (“Optimum” means that the design is performed in consideration of performance, efficiency, and cost.",
+              "kind": "textbook-source",
+              "pdfPage": 69,
+              "printedPage": 64,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "b26e0590632468a146244504ce22b38c51e1c61bfd1a94cd92adb3789271befd"
+            },
+            {
+              "checkedExcerpt": "[Main logical laws] * AND operation is represented with ˄, OR operation is represented with ˅, and NOT operation is represented with ¬. • Idempotent laws A A A   A A A   • Commutative laws A B B A    A B B A    • Associative laws C ) B A ( ) C B ( A      C ) B A ( ) C B ( A      • Distributive laws ) C A ( ) B A ( ) C B ( A       ) C A ( ) B A ( ) C B ( A       • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determine logical expression F",
+              "kind": "textbook-source",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8"
+            }
+          ],
+          "headingNumber": "3-4-1",
+          "reason": "Original question image and actual 3-4-1 teaching re-read; logic-gates is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "f05c26d0b72513cd718936cb8daec192d871defe903df6d6b987ac7f0f1377c4"
     }
   },
   {
@@ -32465,6 +35963,99 @@
         }
       ],
       "approvalFingerprint": "e1b3350c625bfc60677d4040eb875d3d622da486da2881d8379ecb0b5a0ff920"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2020A-Q001",
+    "examId": "2020A_FE_AM",
+    "number": 1,
+    "year": 2020,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Radix and Radix Conversion",
+    "topic": "Radix conversion",
+    "mapping": {
+      "headingNumber": "2-2",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-028-b009-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2020A-Q001.a35893eaf579.webp",
+      "width": 1992,
+      "height": 324,
+      "sha256": "a35893eaf5795dff688968339859154db8ae9b7d5e7e8285cc65f65803a7c834"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 233,
+      "pageEnd": 233,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2020A-Q001"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            233
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "radix-conversion",
+          "evidence": [
+            {
+              "checkedExcerpt": "with two numbers, 0 and 1. (101.1)2 = 1×22 + 0×21 + 1×20 + 1×2−1 = (5.5)10 * 2 in ( )2 shows that it is a binary number. Decimal numbers and their corresponding binary numbers are as shown below. Binary numbers can use only two numbers of 0 and 1 for one digit. Therefore, the number of digits quickly becomes large, compared with decimal numbers. Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Binary numbers 0 1 10 11 100 101 110 111 1000 1001 1010 ... Figure 1-6 Decimal numbers and corresponding binary numbers (2) Octal numbers Octal numbers are numerical values that are represented by using eight numbers from 0 through 7 and that are carried over when 8 is reached. (317.5)8 = 3×82 + 1×81 + 7×80 + 5×8−1 = (207.625)10 * 8 in ( )8 shows that it is an octal number Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Octal numbers 0 1 2 3 4 5 6 7 10 11 12 ... Figure 1-7 Decimal numbers and corresponding octal numbers (3) Hexadecimal numbers Hexadecimal numbers are numerical values that are represented by using sixteen numbers from 0 through 9, and A(10), B(11), C(12), D(13), E(14), and F(15) and that are carried over when 16 is reached. (1A6.E)16 = 1×162 + 10×161 + 6×160 + 14×16−1 = (422.875)10 * 16 in ( )16 shows that it is a hexadecimal number.",
+              "kind": "textbook-source",
+              "pdfPage": 29,
+              "printedPage": 24,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419"
+            },
+            {
+              "checkedExcerpt": "(5) Radix conversion Radix conversion means changing the radix of a numerical value. It is also radix conversion to convert a binary number (radix 2) into an octal number (radix 8) or a hexadecimal number (radix 16). When radix has a constant (power) relation as in the case of binary numbers, octal numbers, and hexadecimal numbers, radix conversion can be done by consolidating multiple digits. However, when radix does not have a constant (power) relation as in the case of binary numbers and decimal numbers, it is necessary to convert through computation. 1) Radix conversion from a binary number into a decimal number Radix conversion from a binary number to a decimal number can be performed by adding the weight of each digit that is 1 in the binary number. (This is the same as adding the results that are obtained by multiplying the weight of each digit with the number (0 or 1) of each digit.) Example: Perform radix conversion of the binary number (1001101.101)2 into a decimal number. 2) Radix conversion from a decimal number into a binary number Radix conversion from a decimal number into a binary number is performed separately for the integer part and the fractional part. The integer part can be converted by repeatedly dividing by 2 until the quotient becomes 0, and then arranging the remainder of calculation results in sequence from the back. A fractional part can be converted by continuously multiplying by 2 until the fractional part in calculation results becomes 0, and then arranging the integer part of each calculation result in sequence from the front.",
+              "kind": "textbook-source",
+              "pdfPage": 31,
+              "printedPage": 26,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "82b72f4c645a83ebec1bc01d448d249b28d8d3a10b8943a3b27747b928ffbeee"
+            }
+          ],
+          "headingNumber": "2-2",
+          "reason": "Original question image and actual 2-2 teaching re-read; radix-conversion is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s02",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-028-b009-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "4557d6595a3b8ce1004f2ea369da61f7f5761557be075c3cc4bc95ba92cdc31a"
     }
   },
   {
@@ -34780,6 +38371,99 @@
         }
       ],
       "approvalFingerprint": "6191f55001cbdb86575927690f508f89559d1f7b3eb5b7ab91df20aa2566fd38"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2022S-Q021",
+    "examId": "2022S_FE_AM",
+    "number": 21,
+    "year": 2022,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "d",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2022S-Q021.a5b763b05266.webp",
+      "width": 1949,
+      "height": 987,
+      "sha256": "a5b763b05266d89da7eceb3d7eafb7d526b756886d9e2a913fb87847c2ca0e40"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 223,
+      "pageEnd": 223,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2022S-Q021"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            223
+          ],
+          "printedAnswer": "d"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "chapterId": "fe-v1-ch01",
+          "conceptId": "logic-gates",
+          "evidence": [
+            {
+              "checkedExcerpt": "4) NAND circuit This circuit performs negative logical product (negative AND) operation (NAND). NAND operation is the arithmetic operation that negates the results of AND operation. The truth table and MIL symbol of NAND circuit are as shown below. NAND circuit is formed by combining AND circuit and NOT circuit. X Y X NAND Y Figure 1-29 NAND circuit 0 0 1 0 1 1 1 0 1 1 1 0 5) NOR circuit This circuit performs negative logical sum operation (NOR). NOR operation is the arithmetic operation that negates the results of OR operation. The truth table and MIL symbol of NOR circuit are as shown below. NOR circuit is formed by combining OR circuit and NOT circuit. X Y X NOR Y Figure 1-30 NOR circuit 0 0 1 0 1 0 1 0 0 1 1 0",
+              "kind": "textbook-source",
+              "pdfPage": 68,
+              "printedPage": 63,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "0d4b63b814973a25037c28e66d92f6e2f65667d47f397e9e8a6a794d9e6f12bd"
+            },
+            {
+              "checkedExcerpt": "XOR circuit is also formed by combining the basic circuits. However, it cannot be formed with a combination of simple circuits as in the case of NAND circuits and NOR circuits. In such cases, it is called logical design (or circuit design) to think about the combination of basic circuits for achieving the targeted results (truth values). In logical design, logical expressions (logical functions) obtained from the truth tables are simplified using the rules of logical operations (logical laws), and the optimum combination of basic circuits is determined. (“Optimum” means that the design is performed in consideration of performance, efficiency, and cost.",
+              "kind": "textbook-source",
+              "pdfPage": 69,
+              "printedPage": 64,
+              "role": "direct",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "textSha256": "b26e0590632468a146244504ce22b38c51e1c61bfd1a94cd92adb3789271befd"
+            }
+          ],
+          "headingNumber": "3-4-1",
+          "reason": "Original question image and actual 3-4-1 teaching re-read; logic-gates is directly supported by the exact quoted passage(s), not inferred from a heading.",
+          "sectionId": "fe-v1-ch01-s03",
+          "status": "verified",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+        }
+      ],
+      "approvalFingerprint": "1d9f01dd07efad0fc1263c6438ffdcc28a2f3b48435f265055468786a7d1b37d"
     }
   },
   {
