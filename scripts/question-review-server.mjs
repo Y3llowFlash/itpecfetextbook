@@ -8,15 +8,16 @@ import {existsSync} from 'node:fs';
 const candidateMode=process.argv.includes('--approval-candidates');
 const batch2=process.argv.includes('--batch2');
 const batch3=process.argv.includes('--batch3');
+const batch6=process.argv.includes('--batch6');
 const batch5=process.argv.includes('--batch5');
 const batch4=process.argv.includes('--batch4');
-if(process.argv.slice(2).some(arg=>!['--approval-candidates','--batch2','--batch3','--batch4','--batch5'].includes(arg)) || ((batch2||batch3||batch4||batch5)&&!candidateMode) || [batch2,batch3,batch4,batch5].filter(Boolean).length>1)throw Error('Use --approval-candidates with one optional batch selection');
+if(process.argv.slice(2).some(arg=>!['--approval-candidates','--batch2','--batch3','--batch4','--batch5','--batch6'].includes(arg)) || ((batch2||batch3||batch4||batch5||batch6)&&!candidateMode) || [batch2,batch3,batch4,batch5,batch6].filter(Boolean).length>1)throw Error('Use --approval-candidates with one optional batch selection');
 const archivedBatch3=batch3&&existsSync('.local/releases/historical-40-batch03/state.json');
 const archivedBatch4=batch4&&existsSync('.local/releases/historical-40-batch04/state.json');
 const archivedBatch5=batch5&&existsSync('.local/releases/historical-40-batch05/state.json');
-const candidates=candidateMode?JSON.parse(execFileSync('python',archivedBatch5?['scripts/release_5.py','archive-candidates']:archivedBatch4?['scripts/release_4.py','archive-candidates']:archivedBatch3?['scripts/release_3.py','archive-candidates']:['scripts/approval_candidates.py','check',...(batch5?['--batch','5']:batch4?['--batch','4']:batch3?['--batch','3']:batch2?['--batch','2']:[])],{encoding:'utf8',maxBuffer:2_000_000})):null;
+const candidates=candidateMode?JSON.parse(execFileSync('python',archivedBatch5?['scripts/release_5.py','archive-candidates']:archivedBatch4?['scripts/release_4.py','archive-candidates']:archivedBatch3?['scripts/release_3.py','archive-candidates']:['scripts/approval_candidates.py','check',...(batch6?['--batch','6']:batch5?['--batch','5']:batch4?['--batch','4']:batch3?['--batch','3']:batch2?['--batch','2']:[])],{encoding:'utf8',maxBuffer:2_000_000})):null;
 const root = await realpath('.local/historical/technology-01');
-const port = Number(process.env.QUESTION_REVIEW_PORT || (batch5?4342:batch4?4338:batch3?4334:batch2?4330:4319));
+const port = Number(process.env.QUESTION_REVIEW_PORT || (batch6?4346:batch5?4342:batch4?4338:batch3?4334:batch2?4330:4319));
 if(!Number.isInteger(port)||port<1024||port>65535)throw Error('Invalid owner-review port');
 const server = createServer(async (req,res) => {
   try {
