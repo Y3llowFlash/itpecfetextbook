@@ -5,6 +5,7 @@ import receipt from '../../docs/development/evidence/historical-release-36.json'
 import expansion from '../../docs/development/evidence/historical-release-40.json' with {type:'json'};
 import third from '../../docs/development/evidence/historical-release-3.json' with {type:'json'};
 import fourth from '../../docs/development/evidence/historical-release-4.json' with {type:'json'};
+import sixth from '../../docs/development/evidence/historical-release-6.json' with {type:'json'};
 import fifth from '../../docs/development/evidence/historical-release-5.json' with {type:'json'};
 import explanations from '../../src/content/explanations.json' with {type:'json'};
 import concepts from '../../src/content/concepts.json' with {type:'json'};
@@ -14,8 +15,8 @@ const sha=(b:Buffer)=>createHash('sha256').update(b).digest('hex');
 test('real served catalog and all 36 image bytes equal the reviewed release; private records are absent',async({request})=>{
   const response=await request.get('/data/questions.json');expect(response.ok()).toBe(true);
   expect(sha(await response.body())).toBe(sha(readFileSync('public/data/questions.json')));
-  const served=await response.json();expect(served).toHaveLength(616);
-  expect(served.filter((q:any)=>q.format==='historical').map((q:any)=>q.id).sort()).toEqual([...receipt.records,...expansion.records,...third.records,...fourth.records,...fifth.records].map(r=>r.id).sort());
+  const served=await response.json();expect(served).toHaveLength(656);
+  expect(served.filter((q:any)=>q.format==='historical').map((q:any)=>q.id).sort()).toEqual([...receipt.records,...expansion.records,...third.records,...fourth.records,...fifth.records,...sixth.records].map(r=>r.id).sort());
   for(const entry of receipt.records){
     const q=served.find((q:any)=>q.id===entry.id),image=await request.get(q.image.src);
     expect(image.ok(),entry.id).toBe(true);expect(sha(await image.body()),entry.id).toBe(entry.imageSha256);
@@ -64,10 +65,11 @@ for(const [id,width] of [['HIST-TECH01-2019A-Q012',375],['HIST-TECH01-2019S-Q023
 test('historical source filtering and unanswered navigation preserve submitted feedback',async({page})=>{
  const first=receipt.records.filter(r=>r.conceptId==='logic-gates').map(r=>bank.find((q:any)=>q.id===r.id)).sort((a,b)=>a.id.localeCompare(b.id))[0];
  await page.goto(`/practice/logic-gates/?question=${first.id}`);await page.getByRole('combobox',{name:'Question source'}).selectOption('historical-pdf');
- await expect(page.locator('.practice-filters')).toContainText('35 of 40 questions match.');
+ const collection=concepts.find(c=>c.id==='logic-gates')!;const total=collection.questionIds.length,historical=bank.filter((q:any)=>collection.questionIds.includes(q.id)&&q.format==='historical').length;
+ await expect(page.locator('.practice-filters')).toContainText(`${historical} of ${total} questions match.`);
  await page.getByRole('checkbox',{name:'Unanswered only'}).check();
  await expect(page.locator('.source-note').filter({hasText:'ID:'})).toContainText(first.id);
  await page.getByRole('radio',{name:new RegExp(`^Option ${first.correctAnswer.toUpperCase()}:`)}).check();await page.getByRole('button',{name:'Check answer'}).click();
- await expect(page.getByText('✓ That’s correct.')).toBeVisible();await expect(page.getByText('Answer saved · 34 unanswered remain')).toBeVisible();
+ await expect(page.getByText('✓ That’s correct.')).toBeVisible();await expect(page.getByText(`Answer saved · ${historical-1} unanswered remain`)).toBeVisible();
  await page.getByRole('button',{name:'Next →'}).click();await expect(page.getByText('✓ That’s correct.')).toHaveCount(0);
 });

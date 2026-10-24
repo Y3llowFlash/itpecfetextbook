@@ -12,6 +12,7 @@ import {canonicalReadingPosition} from '../src/lib/reading-routes';
 import historicalRelease from '../docs/development/evidence/historical-release-36.json';
 import expansion from '../docs/development/evidence/historical-release-40.json';
 import third from '../docs/development/evidence/historical-release-3.json';
+import sixth from '../docs/development/evidence/historical-release-6.json';
 import fifth from '../docs/development/evidence/historical-release-5.json';
 import fourth from '../docs/development/evidence/historical-release-4.json';
 import { checksum } from '../scripts/historical-release-integrity';
@@ -40,10 +41,10 @@ describe('completed Hardware chapter', () => {
       for (const reference of [lesson, ...lesson.headings]) for (let p = reference.pages[0]; p <= reference.pages[1]; p++) expect(physical(p)).toBeDefined();
     }
   });
-  it('links 23 original plus 196 owner-approved questions with complete matching explanations', async () => {
+  it('links 23 original plus 236 owner-approved questions with complete matching explanations', async () => {
     const bank = await publishedQuestions();
     const linked = new Set(concepts.flatMap((concept) => concept.questionIds));
-    expect(concepts).toHaveLength(45); expect(linked.size).toBe(219);
+    expect(concepts).toHaveLength(45); expect(linked.size).toBe(259);
     expect([...linked].sort()).toEqual(bank.filter((question) => question.chapter === 'Chapter 1 Hardware').map((question) => question.id).sort());
     for (const concept of concepts) {
       const questions = questionsForConcept(concept, bank);
@@ -55,7 +56,7 @@ describe('completed Hardware chapter', () => {
         if(question.format==='historical') {
           // Preserve the exact approved worked reasoning, including valid
           // two-step explanations; never pad it to satisfy an older fixture.
-          expect(checksum(explanation)).toBe([...historicalRelease.records,...expansion.records,...third.records,...fourth.records,...fifth.records].find(r=>r.id===question.id)!.explanationSha256);
+          expect(checksum(explanation)).toBe([...historicalRelease.records,...expansion.records,...third.records,...fourth.records,...fifth.records,...sixth.records].find(r=>r.id===question.id)!.explanationSha256);
         } else expect(explanation.steps.length).toBeGreaterThanOrEqual(3);
         expect(Object.keys(explanation.optionText)).toEqual(question.options);
         if(question.format!=='historical')expect(explanation.reviewedAgainst.some((item) => /original.*image/.test(item))).toBe(true);

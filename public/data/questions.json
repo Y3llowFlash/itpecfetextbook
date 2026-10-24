@@ -20851,6 +20851,90 @@
     }
   },
   {
+    "id": "HIST-TECH01-2007A-Q004",
+    "examId": "2007A_FE_AM",
+    "number": 4,
+    "year": 2007,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "d",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Shift Operation",
+    "topic": "Signed integers and shifts",
+    "mapping": {
+      "headingNumber": "2-3-4",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-048-b005-l01-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2007A-Q004.3332528c4384.webp",
+      "width": 1945,
+      "height": 402,
+      "sha256": "3332528c4384158d9d51c1d03f4753b3e29fe375a76fcad7218ddc47be09711e"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 321,
+      "pageEnd": 321,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2007A-Q004"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            321
+          ],
+          "printedAnswer": "d"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s02",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-048-b005-l01-text-0",
+          "headingNumber": "2-3-4",
+          "conceptId": "signed-shifts",
+          "reason": "Original question image, complete Volume 1 and actual 2-3-4 teaching re-read. The exact source passage(s) teach signed-shifts; no heading-only inference is used.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 49,
+              "printedPage": 44,
+              "textSha256": "842c04587b857023fdf8cdf66df09a3f066a700c8383fbd99d9bb384efb686b7",
+              "checkedExcerpt": "Because of this, computation rules of arithmetic shift can be summarized as follows: [Computation rules of arithmetic shift] • With an arithmetic shift to left by n bits, the value becomes 2n times of the original number. • With an arithmetic shift to right by n bits, the value becomes 2−n times of the original number. (It is the value that is obtained by dividing the original number by 2n) (2) Logical shift Logical shift is the shift operation used when the position of bits are changed. Its main difference from the arithmetic shift is that it does not treat the sign bit in a special manner. [Rules of logical shift] • Shift (move) the sign bit as well. • Truncate extra bits that are shifted out as a result of the shift. • Store 0 in the empty bit position that is created as a result of shift. Example: Compare the results of 2-bit arithmetic shift right and 2-bit logical shift right for (−16)10 = (11110000)2. 1) Perform 2-bit arithmetic shift right. 2) Perform 2-bit logical shift right.",
+              "role": "direct"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "fe58df2b4b621f623cb03313949f181f3806a14de0fc6e88f4d0991b4d34d267"
+    }
+  },
+  {
     "id": "HIST-TECH01-2007A-Q005",
     "examId": "2007A_FE_AM",
     "number": 5,
@@ -21109,6 +21193,183 @@
         }
       ],
       "approvalFingerprint": "0fbe595002e6806d9d21b69f684e494a1958d9e2f06f47d18a5329fdbcc89e68"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2007A-Q024",
+    "examId": "2007A_FE_AM",
+    "number": 24,
+    "year": 2007,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "d",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Interrupt",
+    "topic": "Interrupt priority",
+    "mapping": {
+      "headingNumber": "3-3-4",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-064-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2007A-Q024.8f450753ad06.webp",
+      "width": 1932,
+      "height": 627,
+      "sha256": "8f450753ad063a9856c03385665cbc17bc6985f8e670e06cce6e15321d797932"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 201,
+      "pageEnd": 201,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2007A-Q024"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            201
+          ],
+          "printedAnswer": "d"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-064-b006-l00-text-0",
+          "headingNumber": "3-3-4",
+          "conceptId": "interrupts",
+          "reason": "Original question image, complete Volume 1 and actual 3-3-4 teaching re-read. The exact source passage(s) teach interrupts; no heading-only inference is used.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 65,
+              "printedPage": 60,
+              "textSha256": "b668a0efaa1f8b55cb59357fddc547f8d106ad6af9e262e39cf1e1156e3e46d5",
+              "checkedExcerpt": "[Processing sequence of processor when interrupt has occurred] 1) Switch from user mode to privilege mode. 2) Save the values of various registers (program counter, etc.). 3) Decide the starting address of the interrupt process routine (interrupt program). 4) Execute the interrupt process routine. 5) After the execution of the interrupt process routine is complete, restore the values of various registers that are saved in step 2. 6) Switch from privilege mode to user mode, and restart the interrupted process. According to conditions that an interrupt occurs, this can be classified described below. Here, it is assumed that multiple interrupts may occur simultaneously, and therefore priority ranking is assigned to each interrupt. 1) External interrupt: This is an interrupt that occurs because of a reason not related to the process being executed. • Timer interrupt This is an interrupt that occurs when the time measured in the timer, such as interval timer and watchdog timer, has exceeded the specified time (i.e., the timer has been timed-out). • Input/output interrupt (input/output completion interrupt) This is an interrupt that occurs when an input/output operation has been completed. • Machine check interrupt This is an interrupt that occurs because of a hardware malfunction, a power failure, or such other factor. • Restart interrupt This is an interrupt that occurs when the user has pressed the external restart switch. 2) Internal interrupt: This is an interrupt that occurs because of the process being executed. This is also referred to as a trap. • SVC (SuperVisor Call) interrupt This is an interrupt that occurs when supervisor (program that offers basic functions) is requested to invoke a process, such as when input/output instruction is used or storage protection exception happens. • Program interrupt",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "[Main logical operations] 1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False (0) when both input values are False (0), or else the output is True (1) (when either one is True (1)). 3) Negation operation (NOT) The output becomes False (0) when the input value is True (1), and the output is True (1) when the input value is False (0). 4) Exclusive logical sum (Exclusive OR) operation (XOR or EOR) The output becomes False (0) when both input values are the same, and the output is True (1) when both input values are different. The table below summarizes the relations between input and output of the respective logical operation. This kind of table is referred to as a truth table. Input AND OR NOT XOR X Y (X AND Y) (X OR Y) (NOT X) (X XOR Y) True (1) True (1) True (1) True (1) False (0) False (0) True (1) False (0) False (0) True (1) False (0) True (1) False (0) True (1) False (0) True (1) True (1) True (1) False (0) False (0) False (0) False (0) True (1) False (0)",
+              "role": "direct"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "4e59cbdd0b0bd5a360c38b3643374511edd749d152975dd424a79022a4e5a860"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2007A-Q027",
+    "examId": "2007A_FE_AM",
+    "number": 27,
+    "year": 2007,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "High Speed Memory Access",
+    "topic": "Memory interleaving",
+    "mapping": {
+      "headingNumber": "3-5-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-075-b005-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2007A-Q027.680f1406079d.webp",
+      "width": 1945,
+      "height": 852,
+      "sha256": "680f1406079d5f8f2239bd7e04d75daf7e1a550c399979d7885a70eec9d31feb"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 203,
+      "pageEnd": 203,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2007A-Q027"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            203
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-075-b005-l00-text-0",
+          "headingNumber": "3-5-1",
+          "conceptId": "memory-interleaving",
+          "reason": "Original question image, complete Volume 1 and actual 3-5-1 teaching re-read. The exact source passage(s) teach memory-interleaving; no heading-only inference is used.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 78,
+              "printedPage": 73,
+              "textSha256": "92a5c6015e2691151bfd3c8c2a1ae0e5d4d8760151fc90ce62200211526e0da0",
+              "checkedExcerpt": "(2) Memory interleave Memory interleave is a method where main memory is divided into several sections (bank) that are simultaneously and independently accessed in order to improve the average access time of main memory. Figure 1-38 Memory interleave method Memory interleave is a method of reading the data in advance, and it is useful for the processing of data that is located in the contiguous area of main memory. However, data may not be referenced in the sequence of storage area at all times, and the average access time may not be always proportionate to the number of banks (even if there are 4 banks, the average Auxiliary storage (Hard disk) Disk cache Register Low-speed, high-capacity Main memory Secondary cache Primary cache High-speed, low-capacity Cache memory",
+              "role": "direct"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "edf458498ec2aaceccb855b934a24a43720c4905ed5d2f7758627a87cfc22741"
     }
   },
   {
@@ -22214,6 +22475,90 @@
     }
   },
   {
+    "id": "HIST-TECH01-2007S-Q023",
+    "examId": "2007S_FE_AM",
+    "number": 23,
+    "year": 2007,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "d",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "High Speed Memory Access",
+    "topic": "Cache memory",
+    "mapping": {
+      "headingNumber": "3-5-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-075-b005-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2007S-Q023.acca8095c595.webp",
+      "width": 1944,
+      "height": 865,
+      "sha256": "acca8095c595cc869bec78eb614f683b3c47d7e3b1bc1c6019767e6c02a90e23"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 332,
+      "pageEnd": 332,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2007S-Q023"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            332
+          ],
+          "printedAnswer": "d"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-075-b005-l00-text-0",
+          "headingNumber": "3-5-1",
+          "conceptId": "cache-memory",
+          "reason": "Original question image, complete Volume 1 and actual 3-5-1 teaching re-read. The exact source passage(s) teach cache-memory; no heading-only inference is used.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 76,
+              "printedPage": 71,
+              "textSha256": "16642cba08a2bb57f7761c6f5bf389c157c2c9a4f16ffd1abe7b6cf36e65cc89",
+              "checkedExcerpt": "memory). In other words, average access time (effective access time) as seen from the processor is decided on the basis of the extent to which the required data is found in cache memory. Therefore, it is determined by weighted average of access time of cache memory and access time of main memory. Here, the access time is determined by considering both the probability (hit ratio) that the required data is available in cache memory and the probability (NFP (Not Found Probability)) that the required data is not available in cache memory. “Hit ratio+NFP=1” always holds true. Example: Calculate the average access time of the following processor. NFP (probability that the required data is not available in cache memory) is 0.1. Access destination Access time (nanosecond) Cache memory 50 Main memory 500 Average access time of processor = Access time of cache memory × hit ratio + Access time of main memory × NFP = 50 nanoseconds × (1 − 0.1) + 500 nanoseconds × 0.1 = 95 nanoseconds From this example, it is clear that the higher the hit ratio is, the shorter the average access time is because of increased access to cache memory . When Havard architecture , which independently loads instructions and data , is used , cache memory is also separated into instruction cache and data cache . In this case , creating a program consolidating process ( instruction ) sections that are frequently executed will increase the hit ratio of instruction cache, which may shorten the average access time (access speed will improve).",
+              "role": "direct"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "e5f5f79713cd89c097801cf58631130700b935ee20dc78b9aecc3ddf0101a077"
+    }
+  },
+  {
     "id": "HIST-TECH01-2007S-Q024",
     "examId": "2007S_FE_AM",
     "number": 24,
@@ -22832,6 +23177,99 @@
     }
   },
   {
+    "id": "HIST-TECH01-2008A-Q001",
+    "examId": "2008A_FE_AM",
+    "number": 1,
+    "year": 2008,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Radix and Radix Conversion",
+    "topic": "Radix conversion",
+    "mapping": {
+      "headingNumber": "2-2",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-028-b009-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2008A-Q001.27b1b95de611.webp",
+      "width": 1945,
+      "height": 330,
+      "sha256": "27b1b95de61134347aa99a6334441af35d022498eeba0725147cd25f6aa3336d"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 308,
+      "pageEnd": 308,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2008A-Q001"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            308
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s02",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-028-b009-l00-text-0",
+          "headingNumber": "2-2",
+          "conceptId": "radix-conversion",
+          "reason": "Original question image, complete Volume 1 and actual 2-2 teaching re-read. The exact source passage(s) teach radix-conversion; no heading-only inference is used.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 29,
+              "printedPage": 24,
+              "textSha256": "27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419",
+              "checkedExcerpt": "(101.1)2 = 1×22 + 0×21 + 1×20 + 1×2−1 = (5.5)10 * 2 in ( )2 shows that it is a binary number. Decimal numbers and their corresponding binary numbers are as shown below. Binary numbers can use only two numbers of 0 and 1 for one digit. Therefore, the number of digits quickly becomes large, compared with decimal numbers. Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Binary numbers 0 1 10 11 100 101 110 111 1000 1001 1010 ... Figure 1-6 Decimal numbers and corresponding binary numbers (2) Octal numbers Octal numbers are numerical values that are represented by using eight numbers from 0 through 7 and that are carried over when 8 is reached. (317.5)8 = 3×82 + 1×81 + 7×80 + 5×8−1 = (207.625)10 * 8 in ( )8 shows that it is an octal number Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Octal numbers 0 1 2 3 4 5 6 7 10 11 12 ... Figure 1-7 Decimal numbers and corresponding octal numbers (3) Hexadecimal numbers Hexadecimal numbers are numerical values that are represented by using sixteen numbers from 0 through 9, and A(10), B(11), C(12), D(13), E(14), and F(15) and that are carried over when 16 is reached. (1A6.E)16 = 1×162 + 10×161 + 6×160 + 14×16−1 = (422.875)10 * 16 in ( )16 shows that it is a hexadecimal number.",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 33,
+              "printedPage": 28,
+              "textSha256": "d2e2b7cbbfb2c37bea9761db1702d19f9d66c32038286453dea5f703fe00a8b8",
+              "checkedExcerpt": "[Fractional number that cannot be represented by the finite number of digits] When the fractional part of a decimal number is converted into an n-adic number, it gets into a loop as the fractional part of calculation results does not become 0, and it may not be converted into a finite fraction. For example, converting the decimal number (0.2)10 into a binary number gives the following. In this manner, when the results of radix conversion become an infinite fraction (or recurring fraction), numerical values are handled as approximate values inside the computer.",
+              "role": "direct"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "a5588d02df90f275d08ee35e1fa78ac19a946239fa47a44b24a474dde52b2bc8"
+    }
+  },
+  {
     "id": "HIST-TECH01-2008A-Q002",
     "examId": "2008A_FE_AM",
     "number": 2,
@@ -22913,6 +23351,99 @@
         }
       ],
       "approvalFingerprint": "c9b04ea04708f28f581535e02df777c8f36f48f0c4ffbbd064dcefb14745c894"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2008A-Q003",
+    "examId": "2008A_FE_AM",
+    "number": 3,
+    "year": 2008,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "a",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2008A-Q003.7eef4bb1fe61.webp",
+      "width": 1945,
+      "height": 549,
+      "sha256": "7eef4bb1fe61c4160cb9580fbde55ce80bede6d715a4922fca9de65ccf6ead8d"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 310,
+      "pageEnd": 310,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2008A-Q003"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            310
+          ],
+          "printedAnswer": "a"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "logic-gates",
+          "reason": "Original question image, complete Volume 1 and actual 3-4-1 teaching re-read. The exact source passage(s) teach logic-gates; no heading-only inference is used. The question defines bitwise operators. Apply the directly taught AND/OR truth functions at each supplied bit position, with positional radix weights. The modulo/divisibility identity is an examination application, not a fabricated textbook masking algorithm. The existing bit-masks/shift anchor is not reused because its subsection is unrelated.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "[Main logical operations] 1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False (0) when both input values are False (0), or else the output is True (1) (when either one is True (1)). 3) Negation operation (NOT) The output becomes False (0) when the input value is True (1), and the output is True (1) when the input value is False (0). 4) Exclusive logical sum (Exclusive OR) operation (XOR or EOR) The output becomes False (0) when both input values are the same, and the output is True (1) when both input values are different. The table below summarizes the relations between input and output of the respective logical operation. This kind of table is referred to as a truth table. Input AND OR NOT XOR X Y (X AND Y) (X OR Y) (NOT X) (X XOR Y) True (1) True (1) True (1) True (1) False (0) False (0) True (1) False (0) False (0) True (1) False (0) True (1) False (0) True (1) False (0) True (1) True (1) True (1) False (0) False (0) False (0) False (0) True (1) False (0)",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 29,
+              "printedPage": 24,
+              "textSha256": "27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419",
+              "checkedExcerpt": "(101.1)2 = 1×22 + 0×21 + 1×20 + 1×2−1 = (5.5)10 * 2 in ( )2 shows that it is a binary number. Decimal numbers and their corresponding binary numbers are as shown below. Binary numbers can use only two numbers of 0 and 1 for one digit. Therefore, the number of digits quickly becomes large, compared with decimal numbers. Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Binary numbers 0 1 10 11 100 101 110 111 1000 1001 1010 ... Figure 1-6 Decimal numbers and corresponding binary numbers (2) Octal numbers Octal numbers are numerical values that are represented by using eight numbers from 0 through 7 and that are carried over when 8 is reached. (317.5)8 = 3×82 + 1×81 + 7×80 + 5×8−1 = (207.625)10 * 8 in ( )8 shows that it is an octal number Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Octal numbers 0 1 2 3 4 5 6 7 10 11 12 ... Figure 1-7 Decimal numbers and corresponding octal numbers (3) Hexadecimal numbers Hexadecimal numbers are numerical values that are represented by using sixteen numbers from 0 through 9, and A(10), B(11), C(12), D(13), E(14), and F(15) and that are carried over when 16 is reached. (1A6.E)16 = 1×162 + 10×161 + 6×160 + 14×16−1 = (422.875)10 * 16 in ( )16 shows that it is a hexadecimal number.",
+              "role": "direct"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "762ad55bdcd83a87c28004f3a17bf369fc009eca34479e2adf50804c475ff83c"
     }
   },
   {
@@ -23536,6 +24067,99 @@
     }
   },
   {
+    "id": "HIST-TECH01-2008S-Q002",
+    "examId": "2008S_FE_AM",
+    "number": 2,
+    "year": 2008,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Radix and Radix Conversion",
+    "topic": "Radix conversion",
+    "mapping": {
+      "headingNumber": "2-2",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-028-b009-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2008S-Q002.bc73ed8bc07a.webp",
+      "width": 1493,
+      "height": 398,
+      "sha256": "bc73ed8bc07a6761c9c1f9e47f0b7736aec2bfa73579de6823c31bea15dcbfa5"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 316,
+      "pageEnd": 316,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2008S-Q002"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            316
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s02",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-028-b009-l00-text-0",
+          "headingNumber": "2-2",
+          "conceptId": "radix-conversion",
+          "reason": "Original question image, complete Volume 1 and actual 2-2 teaching re-read. The exact source passage(s) teach radix-conversion; no heading-only inference is used.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 28,
+              "printedPage": 23,
+              "textSha256": "59d79fb5524dadcaffedb86ae2e75e711b60692d901e8da8a3d749289484cd57",
+              "checkedExcerpt": "2 - 2 Radix and Radix Conversion Decimal numbers that we normally use are numbers that are obtained by raising each digit to the power of 10 by using ten numbers from 0 through 9. (362.9)10 = 3×102 + 6×101 + 2×100 + 9×10−1 = (362.9)10 *10 in ( )10 shows that it is a decimal number. Here, the weight (10) of the decimal digit is called radix, and numbers represented with radix n are referred to as n-adic numbers. n-adic numbers are represented by using n numbers from 0 through (n−1) that are carried over when n is reached. (1) Binary numbers Binary numbers are represented by using two numbers 0 and 1 that are carried over when 2 is reached. The smallest unit of information handled inside computers is a bit, and only two numbers of 0 and 1 can be used. Therefore, computers use binary numbers that represent numerical values",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 29,
+              "printedPage": 24,
+              "textSha256": "27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419",
+              "checkedExcerpt": "(101.1)2 = 1×22 + 0×21 + 1×20 + 1×2−1 = (5.5)10 * 2 in ( )2 shows that it is a binary number. Decimal numbers and their corresponding binary numbers are as shown below. Binary numbers can use only two numbers of 0 and 1 for one digit. Therefore, the number of digits quickly becomes large, compared with decimal numbers. Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Binary numbers 0 1 10 11 100 101 110 111 1000 1001 1010 ... Figure 1-6 Decimal numbers and corresponding binary numbers (2) Octal numbers Octal numbers are numerical values that are represented by using eight numbers from 0 through 7 and that are carried over when 8 is reached. (317.5)8 = 3×82 + 1×81 + 7×80 + 5×8−1 = (207.625)10 * 8 in ( )8 shows that it is an octal number Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Octal numbers 0 1 2 3 4 5 6 7 10 11 12 ... Figure 1-7 Decimal numbers and corresponding octal numbers (3) Hexadecimal numbers Hexadecimal numbers are numerical values that are represented by using sixteen numbers from 0 through 9, and A(10), B(11), C(12), D(13), E(14), and F(15) and that are carried over when 16 is reached. (1A6.E)16 = 1×162 + 10×161 + 6×160 + 14×16−1 = (422.875)10 * 16 in ( )16 shows that it is a hexadecimal number.",
+              "role": "direct"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "bc409c98e8709ad0e94bae45fd1f2b2e1a739a4547ce2fc1f9c72229d9e09463"
+    }
+  },
+  {
     "id": "HIST-TECH01-2008S-Q003",
     "examId": "2008S_FE_AM",
     "number": 3,
@@ -23619,6 +24243,183 @@
         }
       ],
       "approvalFingerprint": "1639b10034db827aee92b4d120771ee97031c107a49b07c536cfe4d3d4a34e96"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2008S-Q004",
+    "examId": "2008S_FE_AM",
+    "number": 4,
+    "year": 2008,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "d",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2008S-Q004.def0525a2286.webp",
+      "width": 1941,
+      "height": 698,
+      "sha256": "def0525a2286c3edb08aeea0766245e19ed5dcd4d366e6b28abb9037412ddff4"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 187,
+      "pageEnd": 187,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2008S-Q004"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            187
+          ],
+          "printedAnswer": "d"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "logic-gates",
+          "reason": "Original question image, complete Volume 1 and actual 3-4-1 teaching re-read. The exact source passage(s) teach logic-gates; no heading-only inference is used. Although the question mentions a program loop, it tests only Boolean negation of a range condition. Chapter 1 De Morgan laws are primary; program-control teaching is not asserted.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8",
+              "checkedExcerpt": "[Main logical laws] * AND operation is represented with ˄, OR operation is represented with ˅, and NOT operation is represented with ¬. • Idempotent laws A A A   A A A   • Commutative laws A B B A    A B B A    • Associative laws C ) B A ( ) C B ( A      C ) B A ( ) C B ( A      • Distributive laws ) C A ( ) B A ( ) C B ( A       ) C A ( ) B A ( ) C B ( A       • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determine logical expression F",
+              "role": "direct"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "aba5f2e7673bb5d6f9b95ca9e3153fe80d948a62157808641aedc826d489a7e2"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2008S-Q005",
+    "examId": "2008S_FE_AM",
+    "number": 5,
+    "year": 2008,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2008S-Q005.5c1c809730bd.webp",
+      "width": 1940,
+      "height": 1049,
+      "sha256": "5c1c809730bdb6fb7cb578ae64a38d901216588e3ede0ab8a605e7f2267a71b1"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 188,
+      "pageEnd": 188,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2008S-Q005"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            188
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "logic-gates",
+          "reason": "Original question image, complete Volume 1 and actual 3-4-1 teaching re-read. The exact source passage(s) teach logic-gates; no heading-only inference is used.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "[Main logical operations] 1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False (0) when both input values are False (0), or else the output is True (1) (when either one is True (1)). 3) Negation operation (NOT) The output becomes False (0) when the input value is True (1), and the output is True (1) when the input value is False (0). 4) Exclusive logical sum (Exclusive OR) operation (XOR or EOR) The output becomes False (0) when both input values are the same, and the output is True (1) when both input values are different. The table below summarizes the relations between input and output of the respective logical operation. This kind of table is referred to as a truth table. Input AND OR NOT XOR X Y (X AND Y) (X OR Y) (NOT X) (X XOR Y) True (1) True (1) True (1) True (1) False (0) False (0) True (1) False (0) False (0) True (1) False (0) True (1) False (0) True (1) False (0) True (1) True (1) True (1) False (0) False (0) False (0) False (0) True (1) False (0)",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 68,
+              "printedPage": 63,
+              "textSha256": "0d4b63b814973a25037c28e66d92f6e2f65667d47f397e9e8a6a794d9e6f12bd",
+              "checkedExcerpt": "4) NAND circuit This circuit performs negative logical product (negative AND) operation (NAND). NAND operation is the arithmetic operation that negates the results of AND operation. The truth table and MIL symbol of NAND circuit are as shown below. NAND circuit is formed by combining AND circuit and NOT circuit. X Y X NAND Y Figure 1-29 NAND circuit 0 0 1 0 1 1 1 0 1 1 1 0 5) NOR circuit This circuit performs negative logical sum operation (NOR). NOR operation is the arithmetic operation that negates the results of OR operation. The truth table and MIL symbol of NOR circuit are as shown below. NOR circuit is formed by combining OR circuit and NOT circuit. X Y X NOR Y Figure 1-30 NOR circuit 0 0 1 0 1 0 1 0 0 1 1 0",
+              "role": "direct"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "063826872fb9cfb231037c4a39d6e45dc061e9b95ce11d6c114b08f9a4c2d800"
     }
   },
   {
@@ -23985,6 +24786,90 @@
         }
       ],
       "approvalFingerprint": "dc09ffdf4801702c23d355113745a67533551ba1a1aece4483eee969ef6e8ba7"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2008S-Q022",
+    "examId": "2008S_FE_AM",
+    "number": 22,
+    "year": 2008,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "d",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "High Speed Memory Access",
+    "topic": "Cache write policies",
+    "mapping": {
+      "headingNumber": "3-5-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-075-b005-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2008S-Q022.a25a13c3927b.webp",
+      "width": 1928,
+      "height": 848,
+      "sha256": "a25a13c3927bc3d65aa4bea22947404494778f5217e0914398bfb817690bb627"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 193,
+      "pageEnd": 193,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2008S-Q022"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            193
+          ],
+          "printedAnswer": "d"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-075-b005-l00-text-0",
+          "headingNumber": "3-5-1",
+          "conceptId": "cache-write-policies",
+          "reason": "Original question image, complete Volume 1 and actual 3-5-1 teaching re-read. The exact source passage(s) teach cache-write-policies; no heading-only inference is used. Replace the broad cache-memory proposal with the more precise existing cache-write-policies highlight and the literal write-through/write-back definitions.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 77,
+              "printedPage": 72,
+              "textSha256": "bcd00e2a51a63797a2917746e44fed627b7e95b09f1aeb4ee74181bd4a6a5443",
+              "checkedExcerpt": "[Writing methods from cache memory] 1) Write-through method That method reflects the update in main memory whenever data is updated . While certainty is high, main memory needs to be accessed for every process, so operating speed is somewhat slow. 2) Write-back method In this method, data is not updated in main memory while data is updated in cache memory. Data is updated in main memory only when data from cache memory is removed. While its operating speed is fast, inconsistency in the data of main memory may occur at some point in time.",
+              "role": "direct"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "02affb0fc4c0a2d6978d4116cd6eb4189bfa1f9dab6c64457bb1e87ade127757"
     }
   },
   {
@@ -25090,6 +25975,99 @@
     }
   },
   {
+    "id": "HIST-TECH01-2009A-Q021",
+    "examId": "2009A_FE_AM",
+    "number": 21,
+    "year": 2009,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "d",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Configuration of CPU",
+    "topic": "CPU registers",
+    "mapping": {
+      "headingNumber": "3-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-051-b004-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2009A-Q021.0d2ffe267c8e.webp",
+      "width": 1945,
+      "height": 474,
+      "sha256": "0d2ffe267c8ec3d62c43b9a98b3259ff1a0afdfa47017e11025b2d70cbc9970f"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 162,
+      "pageEnd": 162,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2009A-Q021"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            162
+          ],
+          "printedAnswer": "d"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-051-b004-l00-text-0",
+          "headingNumber": "3-1",
+          "conceptId": "cpu-registers",
+          "reason": "Original question image, complete Volume 1 and actual 3-1 teaching re-read. The exact source passage(s) teach cpu-registers; no heading-only inference is used.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 52,
+              "printedPage": 47,
+              "textSha256": "97daacc48a2f1d7065a3797a62a0b4b6c3c2156c8a7a712b4c516a22df80c5ba",
+              "checkedExcerpt": "• Instruction address register (program counter, program register) It stores the address (storing position in the main memory) of the instruction to be executed next.",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 60,
+              "printedPage": 55,
+              "textSha256": "12c86d34697faba9af8a44dc5dd32890c32adc3436c85f52bc2aca7628b5bbf1",
+              "checkedExcerpt": "(1) Instruction fetching In instruction fetching, on the basis of the directions given by the control unit, an instruction stored in the address shown by the instruction address register is fetched from main memory, and it is stored in the instruction register. After the instruction is fetched, instruction word length L (number of words where 1 instruction fetched is stored) is added to the instruction address register for fetching the next instruction. Figure 1-18 Instruction fetching",
+              "role": "direct"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "c277798c61ca3a6ce0d3f2278dfcb04aa5afb424761be9d33ac864df2bf6d696"
+    }
+  },
+  {
     "id": "HIST-TECH01-2009A-Q026",
     "examId": "2009A_FE_AM",
     "number": 26,
@@ -25797,6 +26775,108 @@
     }
   },
   {
+    "id": "HIST-TECH01-2009S-Q017",
+    "examId": "2009S_FE_AM",
+    "number": 17,
+    "year": 2009,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "d",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2009S-Q017.9b144ed7537b.webp",
+      "width": 1945,
+      "height": 1925,
+      "sha256": "9b144ed7537bbcc249fd8523cb884532ff36e0c1f45d890aee1d1a5bc5366c79"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 171,
+      "pageEnd": 171,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2009S-Q017"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            171
+          ],
+          "printedAnswer": "d"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "logic-gates",
+          "reason": "Original question image, complete Volume 1 and actual 3-4-1 teaching re-read. The exact source passage(s) teach logic-gates; no heading-only inference is used.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "[Main logical operations] 1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False (0) when both input values are False (0), or else the output is True (1) (when either one is True (1)). 3) Negation operation (NOT) The output becomes False (0) when the input value is True (1), and the output is True (1) when the input value is False (0). 4) Exclusive logical sum (Exclusive OR) operation (XOR or EOR) The output becomes False (0) when both input values are the same, and the output is True (1) when both input values are different. The table below summarizes the relations between input and output of the respective logical operation. This kind of table is referred to as a truth table. Input AND OR NOT XOR X Y (X AND Y) (X OR Y) (NOT X) (X XOR Y) True (1) True (1) True (1) True (1) False (0) False (0) True (1) False (0) False (0) True (1) False (0) True (1) False (0) True (1) False (0) True (1) True (1) True (1) False (0) False (0) False (0) False (0) True (1) False (0)",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 68,
+              "printedPage": 63,
+              "textSha256": "0d4b63b814973a25037c28e66d92f6e2f65667d47f397e9e8a6a794d9e6f12bd",
+              "checkedExcerpt": "4) NAND circuit This circuit performs negative logical product (negative AND) operation (NAND). NAND operation is the arithmetic operation that negates the results of AND operation. The truth table and MIL symbol of NAND circuit are as shown below. NAND circuit is formed by combining AND circuit and NOT circuit. X Y X NAND Y Figure 1-29 NAND circuit 0 0 1 0 1 1 1 0 1 1 1 0 5) NOR circuit This circuit performs negative logical sum operation (NOR). NOR operation is the arithmetic operation that negates the results of OR operation. The truth table and MIL symbol of NOR circuit are as shown below. NOR circuit is formed by combining OR circuit and NOT circuit. X Y X NOR Y Figure 1-30 NOR circuit 0 0 1 0 1 0 1 0 0 1 1 0",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8",
+              "checkedExcerpt": "[Main logical laws] * AND operation is represented with ˄, OR operation is represented with ˅, and NOT operation is represented with ¬. • Idempotent laws A A A   A A A   • Commutative laws A B B A    A B B A    • Associative laws C ) B A ( ) C B ( A      C ) B A ( ) C B ( A      • Distributive laws ) C A ( ) B A ( ) C B ( A       ) C A ( ) B A ( ) C B ( A       • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determine logical expression F",
+              "role": "direct"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "39482ba1520543ff8fedcb5670a915e6b07926df1320b2459a560ad4b30c32d0"
+    }
+  },
+  {
     "id": "HIST-TECH01-2009S-Q021",
     "examId": "2009S_FE_AM",
     "number": 21,
@@ -26228,6 +27308,90 @@
         }
       ],
       "approvalFingerprint": "bd52c6c80e46aadeca224d47cdc062ce94ffe8302e123c58cc65b7483532c061"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2010A-Q002",
+    "examId": "2010A_FE_AM",
+    "number": 2,
+    "year": 2010,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Arithmetic Operation Circuit",
+    "topic": "Half and full adders",
+    "mapping": {
+      "headingNumber": "3-4-2",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-071-b008-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2010A-Q002.26ecd414fd0f.webp",
+      "width": 1945,
+      "height": 889,
+      "sha256": "26ecd414fd0fb6720596b469110d58381f7dfd96abf1a30be91e785372f1504c"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 144,
+      "pageEnd": 144,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2010A-Q002"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            144
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-071-b008-l00-text-0",
+          "headingNumber": "3-4-2",
+          "conceptId": "arithmetic-circuits",
+          "reason": "Original question image, complete Volume 1 and actual 3-4-2 teaching re-read. The exact source passage(s) teach arithmetic-circuits; no heading-only inference is used.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 72,
+              "printedPage": 67,
+              "textSha256": "3014194254dd63e5fd16b50b29c6a4c896990b9f8c36beecdc7e121c554188d0",
+              "checkedExcerpt": "First, the adder circuit is considered here. The basis of addition in a computer is 2-bit addition that adds one bit to one bit. Here, then, a circuit to perform 2-bit addition is considered. As 2-bit addition, the following four types are possible. The results of the addition of two 1-bit binary numbers are shown below. [Results of the addition of two 1-bit binary numbers] Values to be added Operation result X Y Carry (c) Sum (s) 0 0 0 0 0 1 0 1 1 0 0 1 1 1 1 0 From this table, it is clear that carry is 1 only when two entered values are both 1, this is a logical product operation (AND). It is also clear that sum is 0 when two entered values are the same and 1 when they are different, and therefore, this is an exclusive logical sum operation (XOR). Therefore, a circuit diagram with the configuration below is derived. This circuit is called a half adder. Figure 1-32 Circuit diagram of half adder Adder circuit of a computer is configured with this half adder as the basis. However, in half adder, carry from low order is not taken into account. Therefore, arithmetic operation of numerical values represented with multiple bits cannot be performed. Because of that, another adder circuit of 3 bits including carry from low order becomes necessary. The table below summarizes the results of arithmetic operation of 3-bit addition considering carry (c0) from low order.",
+              "role": "direct"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "af98b940b59e7bb9e92818a4e983905595c61795b61d7f5aba7886fe25b08d64"
     }
   },
   {
@@ -27689,6 +28853,99 @@
     }
   },
   {
+    "id": "HIST-TECH01-2011A-Q003",
+    "examId": "2011A_FE_AM",
+    "number": 3,
+    "year": 2011,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2011A-Q003.6e4c2b87f8c0.webp",
+      "width": 1945,
+      "height": 1036,
+      "sha256": "6e4c2b87f8c0396550aae0547ee65b49cd5c1fcc5f3ba957029328f6384b1219"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 129,
+      "pageEnd": 129,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2011A-Q003"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            129
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "logic-gates",
+          "reason": "Original question image, complete Volume 1 and actual 3-4-1 teaching re-read. The exact source passage(s) teach logic-gates; no heading-only inference is used.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "[Main logical operations] 1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False (0) when both input values are False (0), or else the output is True (1) (when either one is True (1)). 3) Negation operation (NOT) The output becomes False (0) when the input value is True (1), and the output is True (1) when the input value is False (0). 4) Exclusive logical sum (Exclusive OR) operation (XOR or EOR) The output becomes False (0) when both input values are the same, and the output is True (1) when both input values are different. The table below summarizes the relations between input and output of the respective logical operation. This kind of table is referred to as a truth table. Input AND OR NOT XOR X Y (X AND Y) (X OR Y) (NOT X) (X XOR Y) True (1) True (1) True (1) True (1) False (0) False (0) True (1) False (0) False (0) True (1) False (0) True (1) False (0) True (1) False (0) True (1) True (1) True (1) False (0) False (0) False (0) False (0) True (1) False (0)",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8",
+              "checkedExcerpt": "[Main logical laws] * AND operation is represented with ˄, OR operation is represented with ˅, and NOT operation is represented with ¬. • Idempotent laws A A A   A A A   • Commutative laws A B B A    A B B A    • Associative laws C ) B A ( ) C B ( A      C ) B A ( ) C B ( A      • Distributive laws ) C A ( ) B A ( ) C B ( A       ) C A ( ) B A ( ) C B ( A       • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determine logical expression F",
+              "role": "direct"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "c7ae9f25b9309844f4252a28d57bb80fa2f661c537b9238c3f54886cbdec4130"
+    }
+  },
+  {
     "id": "HIST-TECH01-2011A-Q010",
     "examId": "2011A_FE_AM",
     "number": 10,
@@ -28032,6 +29289,90 @@
         }
       ],
       "approvalFingerprint": "0296e99f2ec01e1490c7e26fcb3d1bd9a70356cc6e5580922454a12c8b6178cc"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2011A-Q025",
+    "examId": "2011A_FE_AM",
+    "number": 25,
+    "year": 2011,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2011A-Q025.782f2f21ba47.webp",
+      "width": 1944,
+      "height": 661,
+      "sha256": "782f2f21ba4793396503d5eaec7c7a9d435f9ff389a0b05fda23c4f5c4bc2286"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 133,
+      "pageEnd": 133,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2011A-Q025"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            133
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "logic-gates",
+          "reason": "Original question image, complete Volume 1 and actual 3-4-1 teaching re-read. The exact source passage(s) teach logic-gates; no heading-only inference is used.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 68,
+              "printedPage": 63,
+              "textSha256": "0d4b63b814973a25037c28e66d92f6e2f65667d47f397e9e8a6a794d9e6f12bd",
+              "checkedExcerpt": "4) NAND circuit This circuit performs negative logical product (negative AND) operation (NAND). NAND operation is the arithmetic operation that negates the results of AND operation. The truth table and MIL symbol of NAND circuit are as shown below. NAND circuit is formed by combining AND circuit and NOT circuit. X Y X NAND Y Figure 1-29 NAND circuit 0 0 1 0 1 1 1 0 1 1 1 0 5) NOR circuit This circuit performs negative logical sum operation (NOR). NOR operation is the arithmetic operation that negates the results of OR operation. The truth table and MIL symbol of NOR circuit are as shown below. NOR circuit is formed by combining OR circuit and NOT circuit. X Y X NOR Y Figure 1-30 NOR circuit 0 0 1 0 1 0 1 0 0 1 1 0",
+              "role": "direct"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "19d831478eae5888a9b55fad1738d02b44142bb8d48ea65ca8f8bde80ec720b9"
     }
   },
   {
@@ -28458,6 +29799,99 @@
     }
   },
   {
+    "id": "HIST-TECH01-2011S-Q027",
+    "examId": "2011S_FE_AM",
+    "number": 27,
+    "year": 2011,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "d",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Flip-flops and sequential circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2011S-Q027.d656d643b9b2.webp",
+      "width": 1945,
+      "height": 402,
+      "sha256": "d656d643b9b2e1221da9b93880ac5cdb7057f9843f2d2854c2d6eac36801f889"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 143,
+      "pageEnd": 143,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2011S-Q027"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            143
+          ],
+          "printedAnswer": "d"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "flip-flops",
+          "reason": "Original question image, complete Volume 1 and actual 3-4-1 teaching re-read. The exact source passage(s) teach flip-flops; no heading-only inference is used.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 67,
+              "printedPage": 62,
+              "textSha256": "82d4142195d967a0b4cc8b2c6564354bed5de7c9acec6ba514a43f30813b0c2f",
+              "checkedExcerpt": "(1) Sequential circuit Sequential circuit is a logic circuit where the output is decided on the basis of the input at that time and earlier status. Flip-flop circuit, which is one of the main sequential circuits, has two stable states, and it is used in storage cells of SRAM. Figure 1-25 shows the circuit diagram of a flip-flop for reference and the truth table. Circuit symbols used in Figure 1-25 are one of the methods of representing electronic circuits, and it is referred to as MIL (Military Specifications and Standards) symbols. S R X Y Comments 1 1 X Y No change 1 0 0 1 Reset 0 1 1 0 Set 0 0 (Invalid) Figure 1-25 Circuit diagram of flip-flop and truth table",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 55,
+              "printedPage": 50,
+              "textSha256": "cff41ce38db0a47f6283af34b5223088ef2d7dfc65ad32c1c1e59626ff05b526",
+              "checkedExcerpt": "• SRAM (Static RAM) While its operating speed is high, it is expensive and it also has high power consumption. As for its memory mechanism, it uses a flip-flop circuit that continues to retain the preceding status, and electrical charge that records information can be retained as long as power is supplied. However, its disadvantages are a low degree of integration because of complex configuration of the circuit, and storage capacity that is smaller compared with DRAM. It is mainly used in registers or other memory devices. • DRAM (Dynamic RAM) While its operating speed is somewhat slow, it uses a simple circuit where electrical charge is retained by condenser or capacitor. Therefore, the degree of integration is high, and large capacity memory can be easily created at low cost. However, electrical charge that records information is lost over time, and therefore it is necessary to rewrite (refresh) the information. Examples include SDRAM (Synchronous DRAM) or DDR SDRAM (Double Data Rate SDRAM) used in main memory, and RDRAM (Rambus DRAM) that uses Rambus technology in the external bus interface.",
+              "role": "direct"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "ee4c7fe72227c332b5cefc9b5183809a9348578ae8a635d10fd22c4df36ce089"
+    }
+  },
+  {
     "id": "HIST-TECH01-2012A-Q002",
     "examId": "2012A_FE_AM",
     "number": 2,
@@ -28650,6 +30084,90 @@
         }
       ],
       "approvalFingerprint": "0cd4264e0e39d1304532aaacc56dd4313f0b8bca0f0cec3a91f9fefda7ecf753"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2012A-Q014",
+    "examId": "2012A_FE_AM",
+    "number": 14,
+    "year": 2012,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Interrupt",
+    "topic": "Interrupt priority",
+    "mapping": {
+      "headingNumber": "3-3-4",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-064-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2012A-Q014.b3971aec0a9a.webp",
+      "width": 1614,
+      "height": 474,
+      "sha256": "b3971aec0a9a00f2c373244da09efc0ea06e1cc48c26470e0b4cda2eb66966a9"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 113,
+      "pageEnd": 113,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2012A-Q014"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            113
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-064-b006-l00-text-0",
+          "headingNumber": "3-3-4",
+          "conceptId": "interrupts",
+          "reason": "Original question image, complete Volume 1 and actual 3-3-4 teaching re-read. The exact source passage(s) teach interrupts; no heading-only inference is used.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 65,
+              "printedPage": 60,
+              "textSha256": "b668a0efaa1f8b55cb59357fddc547f8d106ad6af9e262e39cf1e1156e3e46d5",
+              "checkedExcerpt": "[Processing sequence of processor when interrupt has occurred] 1) Switch from user mode to privilege mode. 2) Save the values of various registers (program counter, etc.). 3) Decide the starting address of the interrupt process routine (interrupt program). 4) Execute the interrupt process routine. 5) After the execution of the interrupt process routine is complete, restore the values of various registers that are saved in step 2. 6) Switch from privilege mode to user mode, and restart the interrupted process. According to conditions that an interrupt occurs, this can be classified described below. Here, it is assumed that multiple interrupts may occur simultaneously, and therefore priority ranking is assigned to each interrupt. 1) External interrupt: This is an interrupt that occurs because of a reason not related to the process being executed. • Timer interrupt This is an interrupt that occurs when the time measured in the timer, such as interval timer and watchdog timer, has exceeded the specified time (i.e., the timer has been timed-out). • Input/output interrupt (input/output completion interrupt) This is an interrupt that occurs when an input/output operation has been completed. • Machine check interrupt This is an interrupt that occurs because of a hardware malfunction, a power failure, or such other factor. • Restart interrupt This is an interrupt that occurs when the user has pressed the external restart switch. 2) Internal interrupt: This is an interrupt that occurs because of the process being executed. This is also referred to as a trap. • SVC (SuperVisor Call) interrupt This is an interrupt that occurs when supervisor (program that offers basic functions) is requested to invoke a process, such as when input/output instruction is used or storage protection exception happens. • Program interrupt",
+              "role": "direct"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "399e109eea695d20aca07ceab55beb04fd2f24fc7f39f9f5ba78824c1c61c390"
     }
   },
   {
@@ -28902,6 +30420,192 @@
         }
       ],
       "approvalFingerprint": "e1983fe1d6dd7a07bc910f946f7a3bd7a397d4552f07669126614710da83e816"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2012S-Q001",
+    "examId": "2012S_FE_AM",
+    "number": 1,
+    "year": 2012,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "d",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Radix and Radix Conversion",
+    "topic": "Radix conversion",
+    "mapping": {
+      "headingNumber": "2-2",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-028-b009-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2012S-Q001.3c609c9f9cf1.webp",
+      "width": 1945,
+      "height": 399,
+      "sha256": "3c609c9f9cf13a3c1c6c7971fb71a269d7de7e2a911a29ae9a0e59ebf22b490e"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 278,
+      "pageEnd": 278,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2012S-Q001"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            278
+          ],
+          "printedAnswer": "d"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s02",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-028-b009-l00-text-0",
+          "headingNumber": "2-2",
+          "conceptId": "radix-conversion",
+          "reason": "Original question image, complete Volume 1 and actual 2-2 teaching re-read. The exact source passage(s) teach radix-conversion; no heading-only inference is used.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 29,
+              "printedPage": 24,
+              "textSha256": "27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419",
+              "checkedExcerpt": "(101.1)2 = 1×22 + 0×21 + 1×20 + 1×2−1 = (5.5)10 * 2 in ( )2 shows that it is a binary number. Decimal numbers and their corresponding binary numbers are as shown below. Binary numbers can use only two numbers of 0 and 1 for one digit. Therefore, the number of digits quickly becomes large, compared with decimal numbers. Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Binary numbers 0 1 10 11 100 101 110 111 1000 1001 1010 ... Figure 1-6 Decimal numbers and corresponding binary numbers (2) Octal numbers Octal numbers are numerical values that are represented by using eight numbers from 0 through 7 and that are carried over when 8 is reached. (317.5)8 = 3×82 + 1×81 + 7×80 + 5×8−1 = (207.625)10 * 8 in ( )8 shows that it is an octal number Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Octal numbers 0 1 2 3 4 5 6 7 10 11 12 ... Figure 1-7 Decimal numbers and corresponding octal numbers (3) Hexadecimal numbers Hexadecimal numbers are numerical values that are represented by using sixteen numbers from 0 through 9, and A(10), B(11), C(12), D(13), E(14), and F(15) and that are carried over when 16 is reached. (1A6.E)16 = 1×162 + 10×161 + 6×160 + 14×16−1 = (422.875)10 * 16 in ( )16 shows that it is a hexadecimal number.",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 33,
+              "printedPage": 28,
+              "textSha256": "d2e2b7cbbfb2c37bea9761db1702d19f9d66c32038286453dea5f703fe00a8b8",
+              "checkedExcerpt": "[Fractional number that cannot be represented by the finite number of digits] When the fractional part of a decimal number is converted into an n-adic number, it gets into a loop as the fractional part of calculation results does not become 0, and it may not be converted into a finite fraction. For example, converting the decimal number (0.2)10 into a binary number gives the following. In this manner, when the results of radix conversion become an infinite fraction (or recurring fraction), numerical values are handled as approximate values inside the computer.",
+              "role": "direct"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "0d7a306b36e8f376c367b652d3e71f9f54a39f829cc701f0bcf4eecdbcef39f8"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2012S-Q013",
+    "examId": "2012S_FE_AM",
+    "number": 13,
+    "year": 2012,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "d",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Memory Devices",
+    "topic": "RAM, ROM and flash memory",
+    "mapping": {
+      "headingNumber": "3-2-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-054-b005-l01-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2012S-Q013.7d2291648613.webp",
+      "width": 1397,
+      "height": 324,
+      "sha256": "7d2291648613dcaaadd73a588d2be8686f6d0a8249fb9ce3315229988435703e"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 121,
+      "pageEnd": 121,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2012S-Q013"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            121
+          ],
+          "printedAnswer": "d"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-054-b005-l01-text-0",
+          "headingNumber": "3-2-1",
+          "conceptId": "memory-devices",
+          "reason": "Original question image, complete Volume 1 and actual 3-2-1 teaching re-read. The exact source passage(s) teach memory-devices; no heading-only inference is used.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 55,
+              "printedPage": 50,
+              "textSha256": "cff41ce38db0a47f6283af34b5223088ef2d7dfc65ad32c1c1e59626ff05b526",
+              "checkedExcerpt": "• SRAM (Static RAM) While its operating speed is high, it is expensive and it also has high power consumption. As for its memory mechanism, it uses a flip-flop circuit that continues to retain the preceding status, and electrical charge that records information can be retained as long as power is supplied. However, its disadvantages are a low degree of integration because of complex configuration of the circuit, and storage capacity that is smaller compared with DRAM. It is mainly used in registers or other memory devices. • DRAM (Dynamic RAM) While its operating speed is somewhat slow, it uses a simple circuit where electrical charge is retained by condenser or capacitor. Therefore, the degree of integration is high, and large capacity memory can be easily created at low cost. However, electrical charge that records information is lost over time, and therefore it is necessary to rewrite (refresh) the information. Examples include SDRAM (Synchronous DRAM) or DDR SDRAM (Double Data Rate SDRAM) used in main memory, and RDRAM (Rambus DRAM) that uses Rambus technology in the external bus interface.",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 75,
+              "printedPage": 70,
+              "textSha256": "ae201b64c9e624c0b66d395c28ecb9fd1da89d75a057ba2ce14677dc9cf79597",
+              "checkedExcerpt": "(1) Buffer memory Buffer memory is the medium-speed storage installed between high-speed storage and low-speed storage. Cache memory, which is a buffer memory, is the medium-speed storage composed of SRAM and installed between high-speed register and low-speed main memory. Figure 1-34 Working of cache memory In a computer system where cache memory is used, if the data required by the processor is available (when it is hit) in cache memory, then cache memory is accessed. On the other hand, when the data is not there (when it is mishit) in cache memory, main memory is accessed (in precise terms, on the basis of the directions of hardware or OS (software for controlling the computer), the data is loaded from main memory into the corresponding block of cache",
+              "role": "direct"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "0a707162edfc9b978677e1d9fdd21e6d38d3525987dacd3e3346bce6f3b5bac0"
     }
   },
   {
@@ -29522,6 +31226,90 @@
     }
   },
   {
+    "id": "HIST-TECH01-2013A-Q014",
+    "examId": "2013A_FE_AM",
+    "number": 14,
+    "year": 2013,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "High Speed Memory Access",
+    "topic": "Memory hierarchy",
+    "mapping": {
+      "headingNumber": "3-5-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-075-b005-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2013A-Q014.489bb0d7c10b.webp",
+      "width": 1933,
+      "height": 773,
+      "sha256": "489bb0d7c10b79ec490c46249f17b881f97fadacde511e3a18657b10fcf8fc55"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 98,
+      "pageEnd": 98,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2013A-Q014"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            98
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-075-b005-l00-text-0",
+          "headingNumber": "3-5-1",
+          "conceptId": "memory-hierarchy",
+          "reason": "Original question image, complete Volume 1 and actual 3-5-1 teaching re-read. The exact source passage(s) teach memory-hierarchy; no heading-only inference is used. Replace the broad cache-memory proposal with the existing memory-hierarchy highlight; the actual paragraph explicitly teaches primary/secondary caches and access order.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 77,
+              "printedPage": 72,
+              "textSha256": "bcd00e2a51a63797a2917746e44fed627b7e95b09f1aeb4ee74181bd4a6a5443",
+              "checkedExcerpt": "In modern-day computers, there is a large difference in the speed of processor and the speed of main memory. Therefore, it is common to use multi-level cache configuration where cache memory is divided into 2 levels, namely, primary cache and secondary cache. In this case, the processor will access in the sequence of primary cache → secondary cache → main memory. Figure 1-35 Multi-level cache configuration ",
+              "role": "direct"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "d6bcc276e13583e3e24728a06dbca76ea87abeab028c0c0de35b224c4fda10e0"
+    }
+  },
+  {
     "id": "HIST-TECH01-2013A-Q016",
     "examId": "2013A_FE_AM",
     "number": 16,
@@ -29605,6 +31393,183 @@
         }
       ],
       "approvalFingerprint": "62a977478de0f9b5a59f9f28722500212bdd12ad1e109331e87ddbaabd43cb5a"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2013A-Q027",
+    "examId": "2013A_FE_AM",
+    "number": 27,
+    "year": 2013,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Flip-flops and sequential circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2013A-Q027.6588f859f9da.webp",
+      "width": 1945,
+      "height": 398,
+      "sha256": "6588f859f9daa48ded12f97ab8f92abc4bf8b86c0ced1f10588848e95a0f1716"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 101,
+      "pageEnd": 101,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2013A-Q027"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            101
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "flip-flops",
+          "reason": "Original question image, complete Volume 1 and actual 3-4-1 teaching re-read. The exact source passage(s) teach flip-flops; no heading-only inference is used.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 67,
+              "printedPage": 62,
+              "textSha256": "82d4142195d967a0b4cc8b2c6564354bed5de7c9acec6ba514a43f30813b0c2f",
+              "checkedExcerpt": "(1) Sequential circuit Sequential circuit is a logic circuit where the output is decided on the basis of the input at that time and earlier status. Flip-flop circuit, which is one of the main sequential circuits, has two stable states, and it is used in storage cells of SRAM. Figure 1-25 shows the circuit diagram of a flip-flop for reference and the truth table. Circuit symbols used in Figure 1-25 are one of the methods of representing electronic circuits, and it is referred to as MIL (Military Specifications and Standards) symbols. S R X Y Comments 1 1 X Y No change 1 0 0 1 Reset 0 1 1 0 Set 0 0 (Invalid) Figure 1-25 Circuit diagram of flip-flop and truth table",
+              "role": "direct"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "19457521fb43acc98a6f97a586e5c12d09b161a178b4c0c3c3f2be9fecd6bb37"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2013S-Q001",
+    "examId": "2013S_FE_AM",
+    "number": 1,
+    "year": 2013,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Radix and Radix Conversion",
+    "topic": "Radix conversion",
+    "mapping": {
+      "headingNumber": "2-2",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-028-b009-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2013S-Q001.913ffc87a130.webp",
+      "width": 1945,
+      "height": 324,
+      "sha256": "913ffc87a13008e66c7e139ef715f346c510bf06d66edae26e86dd723c5cb0b1"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 272,
+      "pageEnd": 272,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2013S-Q001"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            272
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s02",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-028-b009-l00-text-0",
+          "headingNumber": "2-2",
+          "conceptId": "radix-conversion",
+          "reason": "Original question image, complete Volume 1 and actual 2-2 teaching re-read. The exact source passage(s) teach radix-conversion; no heading-only inference is used.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 29,
+              "printedPage": 24,
+              "textSha256": "27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419",
+              "checkedExcerpt": "(101.1)2 = 1×22 + 0×21 + 1×20 + 1×2−1 = (5.5)10 * 2 in ( )2 shows that it is a binary number. Decimal numbers and their corresponding binary numbers are as shown below. Binary numbers can use only two numbers of 0 and 1 for one digit. Therefore, the number of digits quickly becomes large, compared with decimal numbers. Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Binary numbers 0 1 10 11 100 101 110 111 1000 1001 1010 ... Figure 1-6 Decimal numbers and corresponding binary numbers (2) Octal numbers Octal numbers are numerical values that are represented by using eight numbers from 0 through 7 and that are carried over when 8 is reached. (317.5)8 = 3×82 + 1×81 + 7×80 + 5×8−1 = (207.625)10 * 8 in ( )8 shows that it is an octal number Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Octal numbers 0 1 2 3 4 5 6 7 10 11 12 ... Figure 1-7 Decimal numbers and corresponding octal numbers (3) Hexadecimal numbers Hexadecimal numbers are numerical values that are represented by using sixteen numbers from 0 through 9, and A(10), B(11), C(12), D(13), E(14), and F(15) and that are carried over when 16 is reached. (1A6.E)16 = 1×162 + 10×161 + 6×160 + 14×16−1 = (422.875)10 * 16 in ( )16 shows that it is a hexadecimal number.",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 31,
+              "printedPage": 26,
+              "textSha256": "82b72f4c645a83ebec1bc01d448d249b28d8d3a10b8943a3b27747b928ffbeee",
+              "checkedExcerpt": "(5) Radix conversion Radix conversion means changing the radix of a numerical value. It is also radix conversion to convert a binary number (radix 2) into an octal number (radix 8) or a hexadecimal number (radix 16). When radix has a constant (power) relation as in the case of binary numbers, octal numbers, and hexadecimal numbers, radix conversion can be done by consolidating multiple digits. However, when radix does not have a constant (power) relation as in the case of binary numbers and decimal numbers, it is necessary to convert through computation. 1) Radix conversion from a binary number into a decimal number Radix conversion from a binary number to a decimal number can be performed by adding the weight of each digit that is 1 in the binary number. (This is the same as adding the results that are obtained by multiplying the weight of each digit with the number (0 or 1) of each digit.) Example: Perform radix conversion of the binary number (1001101.101)2 into a decimal number. 2) Radix conversion from a decimal number into a binary number Radix conversion from a decimal number into a binary number is performed separately for the integer part and the fractional part. The integer part can be converted by repeatedly dividing by 2 until the quotient becomes 0, and then arranging the remainder of calculation results in sequence from the back. A fractional part can be converted by continuously multiplying by 2 until the fractional part in calculation results becomes 0, and then arranging the integer part of each calculation result in sequence from the front.",
+              "role": "direct"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "966e54ae6f7e5057de7de6302fe0e35d26326e2708e69f0cafaddbcd8efb1d17"
     }
   },
   {
@@ -29867,6 +31832,99 @@
         }
       ],
       "approvalFingerprint": "56ec81e3a8b7b3a53f5d2a1e91e0fe0f8ee14dddaf8e980d1a0f3bdc643705f1"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2013S-Q028",
+    "examId": "2013S_FE_AM",
+    "number": 28,
+    "year": 2013,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "d",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2013S-Q028.53852bb74e7a.webp",
+      "width": 1945,
+      "height": 736,
+      "sha256": "53852bb74e7a5b59006605644a5f6d24375f0f3261cf8899cf792022d2e35403"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 109,
+      "pageEnd": 109,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2013S-Q028"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            109
+          ],
+          "printedAnswer": "d"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "logic-gates",
+          "reason": "Original question image, complete Volume 1 and actual 3-4-1 teaching re-read. The exact source passage(s) teach logic-gates; no heading-only inference is used.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 68,
+              "printedPage": 63,
+              "textSha256": "0d4b63b814973a25037c28e66d92f6e2f65667d47f397e9e8a6a794d9e6f12bd",
+              "checkedExcerpt": "4) NAND circuit This circuit performs negative logical product (negative AND) operation (NAND). NAND operation is the arithmetic operation that negates the results of AND operation. The truth table and MIL symbol of NAND circuit are as shown below. NAND circuit is formed by combining AND circuit and NOT circuit. X Y X NAND Y Figure 1-29 NAND circuit 0 0 1 0 1 1 1 0 1 1 1 0 5) NOR circuit This circuit performs negative logical sum operation (NOR). NOR operation is the arithmetic operation that negates the results of OR operation. The truth table and MIL symbol of NOR circuit are as shown below. NOR circuit is formed by combining OR circuit and NOT circuit. X Y X NOR Y Figure 1-30 NOR circuit 0 0 1 0 1 0 1 0 0 1 1 0",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 69,
+              "printedPage": 64,
+              "textSha256": "b26e0590632468a146244504ce22b38c51e1c61bfd1a94cd92adb3789271befd",
+              "checkedExcerpt": "6) XOR circuit This circuit performs exclusive logical sum operation (XOR). The truth table and MIL symbol of XOR circuit are as shown below. X Y X XOR Y Figure 1-31 XOR circuit 0 0 0 0 1 1 1 0 1 1 1 0 XOR circuit is also formed by combining the basic circuits. However, it cannot be formed with a combination of simple circuits as in the case of NAND circuits and NOR circuits. In such cases, it is called logical design (or circuit design) to think about the combination of basic circuits for achieving the targeted results (truth values). In logical design, logical expressions (logical functions) obtained from the truth tables are simplified using the rules of logical operations (logical laws), and the optimum combination of basic circuits is determined. (“Optimum” means that the design is performed in consideration of performance, efficiency, and cost.",
+              "role": "direct"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "047ccb8f09b78150f95df9c834b33986d0982a44fc7c8838931347c5200b40e1"
     }
   },
   {
@@ -30241,6 +32299,99 @@
         }
       ],
       "approvalFingerprint": "0992ecab634386a39fa5c80f1d75d049a99215ffeaabd28fc594af798b528cfa"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2014A-Q021",
+    "examId": "2014A_FE_AM",
+    "number": 21,
+    "year": 2014,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2014A-Q021.fbbba1e504cb.webp",
+      "width": 1993,
+      "height": 1987,
+      "sha256": "fbbba1e504cbb7220f9746091b689def1b6e6828724f2d7034fc85f6c697ae43"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 85,
+      "pageEnd": 85,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2014A-Q021"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            85
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "logic-gates",
+          "reason": "Original question image, complete Volume 1 and actual 3-4-1 teaching re-read. The exact source passage(s) teach logic-gates; no heading-only inference is used. This is an application of the explicitly drawn AND/OR/NOT gates, whose truth functions and combination circuits are directly taught on physical pp.66–68. The selector arrangement and selection condition are supplied by the examination itself. Placement is under basic logic-gate evaluation; no claim is made that the book names or teaches a general multiplexer design method. This corrects the earlier mapping proposal by narrowing the teaching scope, not by labeling a contextual multiplexer passage as direct.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "[Main logical operations] 1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False (0) when both input values are False (0), or else the output is True (1) (when either one is True (1)). 3) Negation operation (NOT) The output becomes False (0) when the input value is True (1), and the output is True (1) when the input value is False (0). 4) Exclusive logical sum (Exclusive OR) operation (XOR or EOR) The output becomes False (0) when both input values are the same, and the output is True (1) when both input values are different. The table below summarizes the relations between input and output of the respective logical operation. This kind of table is referred to as a truth table. Input AND OR NOT XOR X Y (X AND Y) (X OR Y) (NOT X) (X XOR Y) True (1) True (1) True (1) True (1) False (0) False (0) True (1) False (0) False (0) True (1) False (0) True (1) False (0) True (1) False (0) True (1) True (1) True (1) False (0) False (0) False (0) False (0) True (1) False (0)",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 68,
+              "printedPage": 63,
+              "textSha256": "0d4b63b814973a25037c28e66d92f6e2f65667d47f397e9e8a6a794d9e6f12bd",
+              "checkedExcerpt": "4) NAND circuit This circuit performs negative logical product (negative AND) operation (NAND). NAND operation is the arithmetic operation that negates the results of AND operation. The truth table and MIL symbol of NAND circuit are as shown below. NAND circuit is formed by combining AND circuit and NOT circuit. X Y X NAND Y Figure 1-29 NAND circuit 0 0 1 0 1 1 1 0 1 1 1 0 5) NOR circuit This circuit performs negative logical sum operation (NOR). NOR operation is the arithmetic operation that negates the results of OR operation. The truth table and MIL symbol of NOR circuit are as shown below. NOR circuit is formed by combining OR circuit and NOT circuit. X Y X NOR Y Figure 1-30 NOR circuit 0 0 1 0 1 0 1 0 0 1 1 0",
+              "role": "direct"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "a9e88ea9a93c8fb8ea1c8fe2ecb86844826c1341572fdd7694648653a785fba9"
     }
   },
   {
@@ -31028,6 +33179,276 @@
     }
   },
   {
+    "id": "HIST-TECH01-2015A-Q001",
+    "examId": "2015A_FE_AM",
+    "number": 1,
+    "year": 2015,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Radix and Radix Conversion",
+    "topic": "Radix conversion",
+    "mapping": {
+      "headingNumber": "2-2",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-028-b009-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2015A-Q001.7d195887581a.webp",
+      "width": 1796,
+      "height": 249,
+      "sha256": "7d195887581a6981b1baaa52b1c69be90d290cc643fe62a65959416ed889f792"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 261,
+      "pageEnd": 261,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2015A-Q001"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            261
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s02",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-028-b009-l00-text-0",
+          "headingNumber": "2-2",
+          "conceptId": "radix-conversion",
+          "reason": "Original question image, complete Volume 1 and actual 2-2 teaching re-read. The exact source passage(s) teach radix-conversion; no heading-only inference is used.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 29,
+              "printedPage": 24,
+              "textSha256": "27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419",
+              "checkedExcerpt": "(101.1)2 = 1×22 + 0×21 + 1×20 + 1×2−1 = (5.5)10 * 2 in ( )2 shows that it is a binary number. Decimal numbers and their corresponding binary numbers are as shown below. Binary numbers can use only two numbers of 0 and 1 for one digit. Therefore, the number of digits quickly becomes large, compared with decimal numbers. Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Binary numbers 0 1 10 11 100 101 110 111 1000 1001 1010 ... Figure 1-6 Decimal numbers and corresponding binary numbers (2) Octal numbers Octal numbers are numerical values that are represented by using eight numbers from 0 through 7 and that are carried over when 8 is reached. (317.5)8 = 3×82 + 1×81 + 7×80 + 5×8−1 = (207.625)10 * 8 in ( )8 shows that it is an octal number Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Octal numbers 0 1 2 3 4 5 6 7 10 11 12 ... Figure 1-7 Decimal numbers and corresponding octal numbers (3) Hexadecimal numbers Hexadecimal numbers are numerical values that are represented by using sixteen numbers from 0 through 9, and A(10), B(11), C(12), D(13), E(14), and F(15) and that are carried over when 16 is reached. (1A6.E)16 = 1×162 + 10×161 + 6×160 + 14×16−1 = (422.875)10 * 16 in ( )16 shows that it is a hexadecimal number.",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 33,
+              "printedPage": 28,
+              "textSha256": "d2e2b7cbbfb2c37bea9761db1702d19f9d66c32038286453dea5f703fe00a8b8",
+              "checkedExcerpt": "[Fractional number that cannot be represented by the finite number of digits] When the fractional part of a decimal number is converted into an n-adic number, it gets into a loop as the fractional part of calculation results does not become 0, and it may not be converted into a finite fraction. For example, converting the decimal number (0.2)10 into a binary number gives the following. In this manner, when the results of radix conversion become an infinite fraction (or recurring fraction), numerical values are handled as approximate values inside the computer.",
+              "role": "direct"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "1c1e121179283588c07679608b47e00c94de7acd22ecd052677d6e5f87251ef4"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2015A-Q002",
+    "examId": "2015A_FE_AM",
+    "number": 2,
+    "year": 2015,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2015A-Q002.d102f827eb93.webp",
+      "width": 1732,
+      "height": 327,
+      "sha256": "d102f827eb934d5a17e060f7f12adeedd85f539fa9121f72d109ecc84c946915"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 72,
+      "pageEnd": 72,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2015A-Q002"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            72
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "logic-gates",
+          "reason": "Original question image, complete Volume 1 and actual 3-4-1 teaching re-read. The exact source passage(s) teach logic-gates; no heading-only inference is used.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "[Main logical operations] 1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False (0) when both input values are False (0), or else the output is True (1) (when either one is True (1)). 3) Negation operation (NOT) The output becomes False (0) when the input value is True (1), and the output is True (1) when the input value is False (0). 4) Exclusive logical sum (Exclusive OR) operation (XOR or EOR) The output becomes False (0) when both input values are the same, and the output is True (1) when both input values are different. The table below summarizes the relations between input and output of the respective logical operation. This kind of table is referred to as a truth table. Input AND OR NOT XOR X Y (X AND Y) (X OR Y) (NOT X) (X XOR Y) True (1) True (1) True (1) True (1) False (0) False (0) True (1) False (0) False (0) True (1) False (0) True (1) False (0) True (1) False (0) True (1) True (1) True (1) False (0) False (0) False (0) False (0) True (1) False (0)",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8",
+              "checkedExcerpt": "[Main logical laws] * AND operation is represented with ˄, OR operation is represented with ˅, and NOT operation is represented with ¬. • Idempotent laws A A A   A A A   • Commutative laws A B B A    A B B A    • Associative laws C ) B A ( ) C B ( A      C ) B A ( ) C B ( A      • Distributive laws ) C A ( ) B A ( ) C B ( A       ) C A ( ) B A ( ) C B ( A       • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determine logical expression F",
+              "role": "direct"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "8df6968e6ce4da01dc42a33f471a3d96e1ca6e9864e8b304ab927504a6959600"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2015A-Q010",
+    "examId": "2015A_FE_AM",
+    "number": 10,
+    "year": 2015,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Addressing Mode",
+    "topic": "Instruction addressing modes",
+    "mapping": {
+      "headingNumber": "3-3-3",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-062-b005-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2015A-Q010.03fc7f0daecd.webp",
+      "width": 1993,
+      "height": 1073,
+      "sha256": "03fc7f0daecd41a1bf63403674f5280c2b75a5d850dd52aab8b07eaa8d4f100f"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 73,
+      "pageEnd": 73,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2015A-Q010"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            73
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-062-b005-l00-text-0",
+          "headingNumber": "3-3-3",
+          "conceptId": "addressing-modes",
+          "reason": "Original question image, complete Volume 1 and actual 3-3-3 teaching re-read. The exact source passage(s) teach addressing-modes; no heading-only inference is used.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 64,
+              "printedPage": 59,
+              "textSha256": "3ccf13e4b15d65e8f2f44687262569836e8962342ee82a9796255c5fd0356f02",
+              "checkedExcerpt": "3) Indirect addressing In this method, the content (value) of main memory referenced by the effective address is used as the address of operand. Double (in the example shown in Figure 1-24, data stored in address 120 is fetched as operand), and triple indirect addressing is also possible. Figure 1-24 Indirect addressing",
+              "role": "direct"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "a1cbbd86e69aa2a0851224c8fbfc50acb3b9fc30a4270455149a9d88425e6ab1"
+    }
+  },
+  {
     "id": "HIST-TECH01-2015A-Q011",
     "examId": "2015A_FE_AM",
     "number": 11,
@@ -31288,6 +33709,99 @@
         }
       ],
       "approvalFingerprint": "ccde74dc8e1a053f0448f998293400c2b2a96a32828c98055cd0aceeaab4d6ed"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2015A-Q022",
+    "examId": "2015A_FE_AM",
+    "number": 22,
+    "year": 2015,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2015A-Q022.f96544277571.webp",
+      "width": 1992,
+      "height": 691,
+      "sha256": "f965442775714e6998988f153d0b204c3de5398c2b40af11944f6220769a04fa"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 77,
+      "pageEnd": 77,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2015A-Q022"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            77
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "logic-gates",
+          "reason": "Original question image, complete Volume 1 and actual 3-4-1 teaching re-read. The exact source passage(s) teach logic-gates; no heading-only inference is used.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "[Main logical operations] 1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False (0) when both input values are False (0), or else the output is True (1) (when either one is True (1)). 3) Negation operation (NOT) The output becomes False (0) when the input value is True (1), and the output is True (1) when the input value is False (0). 4) Exclusive logical sum (Exclusive OR) operation (XOR or EOR) The output becomes False (0) when both input values are the same, and the output is True (1) when both input values are different. The table below summarizes the relations between input and output of the respective logical operation. This kind of table is referred to as a truth table. Input AND OR NOT XOR X Y (X AND Y) (X OR Y) (NOT X) (X XOR Y) True (1) True (1) True (1) True (1) False (0) False (0) True (1) False (0) False (0) True (1) False (0) True (1) False (0) True (1) False (0) True (1) True (1) True (1) False (0) False (0) False (0) False (0) True (1) False (0)",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 68,
+              "printedPage": 63,
+              "textSha256": "0d4b63b814973a25037c28e66d92f6e2f65667d47f397e9e8a6a794d9e6f12bd",
+              "checkedExcerpt": "4) NAND circuit This circuit performs negative logical product (negative AND) operation (NAND). NAND operation is the arithmetic operation that negates the results of AND operation. The truth table and MIL symbol of NAND circuit are as shown below. NAND circuit is formed by combining AND circuit and NOT circuit. X Y X NAND Y Figure 1-29 NAND circuit 0 0 1 0 1 1 1 0 1 1 1 0 5) NOR circuit This circuit performs negative logical sum operation (NOR). NOR operation is the arithmetic operation that negates the results of OR operation. The truth table and MIL symbol of NOR circuit are as shown below. NOR circuit is formed by combining OR circuit and NOT circuit. X Y X NOR Y Figure 1-30 NOR circuit 0 0 1 0 1 0 1 0 0 1 1 0",
+              "role": "direct"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "f0632cacd7927304787401ca31858a752dfe39cc78e0e5b5655c2898296c8b39"
     }
   },
   {
@@ -32620,6 +35134,192 @@
     }
   },
   {
+    "id": "HIST-TECH01-2016S-Q024",
+    "examId": "2016S_FE_AM",
+    "number": 24,
+    "year": 2016,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "d",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2016S-Q024.3f174a4f41ec.webp",
+      "width": 1992,
+      "height": 1032,
+      "sha256": "3f174a4f41ec84d8e958b3bebe78423ae40a0eb83355c8f00cf8212d32f021b9"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 68,
+      "pageEnd": 68,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2016S-Q024"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            68
+          ],
+          "printedAnswer": "d"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "logic-gates",
+          "reason": "Original question image, complete Volume 1 and actual 3-4-1 teaching re-read. The exact source passage(s) teach logic-gates; no heading-only inference is used.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 68,
+              "printedPage": 63,
+              "textSha256": "0d4b63b814973a25037c28e66d92f6e2f65667d47f397e9e8a6a794d9e6f12bd",
+              "checkedExcerpt": "4) NAND circuit This circuit performs negative logical product (negative AND) operation (NAND). NAND operation is the arithmetic operation that negates the results of AND operation. The truth table and MIL symbol of NAND circuit are as shown below. NAND circuit is formed by combining AND circuit and NOT circuit. X Y X NAND Y Figure 1-29 NAND circuit 0 0 1 0 1 1 1 0 1 1 1 0 5) NOR circuit This circuit performs negative logical sum operation (NOR). NOR operation is the arithmetic operation that negates the results of OR operation. The truth table and MIL symbol of NOR circuit are as shown below. NOR circuit is formed by combining OR circuit and NOT circuit. X Y X NOR Y Figure 1-30 NOR circuit 0 0 1 0 1 0 1 0 0 1 1 0",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 69,
+              "printedPage": 64,
+              "textSha256": "b26e0590632468a146244504ce22b38c51e1c61bfd1a94cd92adb3789271befd",
+              "checkedExcerpt": "6) XOR circuit This circuit performs exclusive logical sum operation (XOR). The truth table and MIL symbol of XOR circuit are as shown below. X Y X XOR Y Figure 1-31 XOR circuit 0 0 0 0 1 1 1 0 1 1 1 0 XOR circuit is also formed by combining the basic circuits. However, it cannot be formed with a combination of simple circuits as in the case of NAND circuits and NOR circuits. In such cases, it is called logical design (or circuit design) to think about the combination of basic circuits for achieving the targeted results (truth values). In logical design, logical expressions (logical functions) obtained from the truth tables are simplified using the rules of logical operations (logical laws), and the optimum combination of basic circuits is determined. (“Optimum” means that the design is performed in consideration of performance, efficiency, and cost.",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8",
+              "checkedExcerpt": "[Main logical laws] * AND operation is represented with ˄, OR operation is represented with ˅, and NOT operation is represented with ¬. • Idempotent laws A A A   A A A   • Commutative laws A B B A    A B B A    • Associative laws C ) B A ( ) C B ( A      C ) B A ( ) C B ( A      • Distributive laws ) C A ( ) B A ( ) C B ( A       ) C A ( ) B A ( ) C B ( A       • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determine logical expression F",
+              "role": "direct"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "61ec7a570d0863ba161498d6ffda517303e8ff82bde799755c19570deca77190"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2016S-Q025",
+    "examId": "2016S_FE_AM",
+    "number": 25,
+    "year": 2016,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Flip-flops and sequential circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2016S-Q025.caffa1764922.webp",
+      "width": 1734,
+      "height": 327,
+      "sha256": "caffa1764922095541e42109507bb01a6329a0a2f29861205231b264b2be3bfe"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 69,
+      "pageEnd": 69,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2016S-Q025"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            69
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "flip-flops",
+          "reason": "Original question image, complete Volume 1 and actual 3-4-1 teaching re-read. The exact source passage(s) teach flip-flops; no heading-only inference is used.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 67,
+              "printedPage": 62,
+              "textSha256": "82d4142195d967a0b4cc8b2c6564354bed5de7c9acec6ba514a43f30813b0c2f",
+              "checkedExcerpt": "(1) Sequential circuit Sequential circuit is a logic circuit where the output is decided on the basis of the input at that time and earlier status. Flip-flop circuit, which is one of the main sequential circuits, has two stable states, and it is used in storage cells of SRAM. Figure 1-25 shows the circuit diagram of a flip-flop for reference and the truth table. Circuit symbols used in Figure 1-25 are one of the methods of representing electronic circuits, and it is referred to as MIL (Military Specifications and Standards) symbols. S R X Y Comments 1 1 X Y No change 1 0 0 1 Reset 0 1 1 0 Set 0 0 (Invalid) Figure 1-25 Circuit diagram of flip-flop and truth table",
+              "role": "direct"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "52178758d15a9a05fcaef5f8d7fab0c16161a61701e1f8497a5dd7949812fede"
+    }
+  },
+  {
     "id": "HIST-TECH01-2017A-Q001",
     "examId": "2017A_FE_AM",
     "number": 1,
@@ -33095,6 +35795,183 @@
     }
   },
   {
+    "id": "HIST-TECH01-2017A-Q022",
+    "examId": "2017A_FE_AM",
+    "number": 22,
+    "year": 2017,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2017A-Q022.05f7590ef930.webp",
+      "width": 1992,
+      "height": 410,
+      "sha256": "05f7590ef93094c159a355e83695de5ffadb7564ce9f628876d8eaf8a857b47a"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 46,
+      "pageEnd": 46,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2017A-Q022"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            46
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "logic-gates",
+          "reason": "Original question image, complete Volume 1 and actual 3-4-1 teaching re-read. The exact source passage(s) teach logic-gates; no heading-only inference is used.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 68,
+              "printedPage": 63,
+              "textSha256": "0d4b63b814973a25037c28e66d92f6e2f65667d47f397e9e8a6a794d9e6f12bd",
+              "checkedExcerpt": "4) NAND circuit This circuit performs negative logical product (negative AND) operation (NAND). NAND operation is the arithmetic operation that negates the results of AND operation. The truth table and MIL symbol of NAND circuit are as shown below. NAND circuit is formed by combining AND circuit and NOT circuit. X Y X NAND Y Figure 1-29 NAND circuit 0 0 1 0 1 1 1 0 1 1 1 0 5) NOR circuit This circuit performs negative logical sum operation (NOR). NOR operation is the arithmetic operation that negates the results of OR operation. The truth table and MIL symbol of NOR circuit are as shown below. NOR circuit is formed by combining OR circuit and NOT circuit. X Y X NOR Y Figure 1-30 NOR circuit 0 0 1 0 1 0 1 0 0 1 1 0",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 69,
+              "printedPage": 64,
+              "textSha256": "b26e0590632468a146244504ce22b38c51e1c61bfd1a94cd92adb3789271befd",
+              "checkedExcerpt": "6) XOR circuit This circuit performs exclusive logical sum operation (XOR). The truth table and MIL symbol of XOR circuit are as shown below. X Y X XOR Y Figure 1-31 XOR circuit 0 0 0 0 1 1 1 0 1 1 1 0 XOR circuit is also formed by combining the basic circuits. However, it cannot be formed with a combination of simple circuits as in the case of NAND circuits and NOR circuits. In such cases, it is called logical design (or circuit design) to think about the combination of basic circuits for achieving the targeted results (truth values). In logical design, logical expressions (logical functions) obtained from the truth tables are simplified using the rules of logical operations (logical laws), and the optimum combination of basic circuits is determined. (“Optimum” means that the design is performed in consideration of performance, efficiency, and cost.",
+              "role": "direct"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "b14e08438fcfb04e60001a3613b84e4e4297fbc310c7174bbaa40ac7ad9096a9"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2017A-Q023",
+    "examId": "2017A_FE_AM",
+    "number": 23,
+    "year": 2017,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "d",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Memory Devices",
+    "topic": "RAM, ROM and flash memory",
+    "mapping": {
+      "headingNumber": "3-2-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-054-b005-l01-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2017A-Q023.57b58eef3e9c.webp",
+      "width": 1890,
+      "height": 265,
+      "sha256": "57b58eef3e9c387f6abfd4c93752e28258687a84d9a57ddd674425caf8351d42"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 47,
+      "pageEnd": 47,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2017A-Q023"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            47
+          ],
+          "printedAnswer": "d"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-054-b005-l01-text-0",
+          "headingNumber": "3-2-1",
+          "conceptId": "memory-devices",
+          "reason": "Original question image, complete Volume 1 and actual 3-2-1 teaching re-read. The exact source passage(s) teach memory-devices; no heading-only inference is used.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 55,
+              "printedPage": 50,
+              "textSha256": "cff41ce38db0a47f6283af34b5223088ef2d7dfc65ad32c1c1e59626ff05b526",
+              "checkedExcerpt": "• SRAM (Static RAM) While its operating speed is high, it is expensive and it also has high power consumption. As for its memory mechanism, it uses a flip-flop circuit that continues to retain the preceding status, and electrical charge that records information can be retained as long as power is supplied. However, its disadvantages are a low degree of integration because of complex configuration of the circuit, and storage capacity that is smaller compared with DRAM. It is mainly used in registers or other memory devices. • DRAM (Dynamic RAM) While its operating speed is somewhat slow, it uses a simple circuit where electrical charge is retained by condenser or capacitor. Therefore, the degree of integration is high, and large capacity memory can be easily created at low cost. However, electrical charge that records information is lost over time, and therefore it is necessary to rewrite (refresh) the information. Examples include SDRAM (Synchronous DRAM) or DDR SDRAM (Double Data Rate SDRAM) used in main memory, and RDRAM (Rambus DRAM) that uses Rambus technology in the external bus interface.",
+              "role": "direct"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "8b8c75fdf2ae921053745bad57ae6f474e9617741a2346bba4aa1b5408a94ec2"
+    }
+  },
+  {
     "id": "HIST-TECH01-2017S-Q001",
     "examId": "2017S_FE_AM",
     "number": 1,
@@ -33185,6 +36062,90 @@
         }
       ],
       "approvalFingerprint": "b6f0ba53c32747b4214c01bc80c50be83a68d7711645a5949a1a4509bcef8fe6"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2017S-Q002",
+    "examId": "2017S_FE_AM",
+    "number": 2,
+    "year": 2017,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2017S-Q002.50bd1e3e2179.webp",
+      "width": 1992,
+      "height": 553,
+      "sha256": "50bd1e3e21798e99bba0a9fdbfb8b7c4743bb33dbc40f44eb3718011e51bbe9f"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 49,
+      "pageEnd": 49,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2017S-Q002"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            49
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "logic-gates",
+          "reason": "Original question image, complete Volume 1 and actual 3-4-1 teaching re-read. The exact source passage(s) teach logic-gates; no heading-only inference is used.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8",
+              "checkedExcerpt": "[Main logical laws] * AND operation is represented with ˄, OR operation is represented with ˅, and NOT operation is represented with ¬. • Idempotent laws A A A   A A A   • Commutative laws A B B A    A B B A    • Associative laws C ) B A ( ) C B ( A      C ) B A ( ) C B ( A      • Distributive laws ) C A ( ) B A ( ) C B ( A       ) C A ( ) B A ( ) C B ( A       • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determine logical expression F",
+              "role": "direct"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "a1954bb7d39eb3ff46218a7d17803b8c92ec5e4257e2f4a8cdc755d3c09f5d8b"
     }
   },
   {
@@ -33631,6 +36592,90 @@
     }
   },
   {
+    "id": "HIST-TECH01-2017S-Q023",
+    "examId": "2017S_FE_AM",
+    "number": 23,
+    "year": 2017,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "c",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Memory Devices",
+    "topic": "RAM, ROM and flash memory",
+    "mapping": {
+      "headingNumber": "3-2-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-054-b005-l01-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2017S-Q023.845939b3708f.webp",
+      "width": 1935,
+      "height": 549,
+      "sha256": "845939b3708fff681836593808dc1de2dc0460cc603109ddccaa08a849d6c07e"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 55,
+      "pageEnd": 55,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2017S-Q023"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            55
+          ],
+          "printedAnswer": "c"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-054-b005-l01-text-0",
+          "headingNumber": "3-2-1",
+          "conceptId": "memory-devices",
+          "reason": "Original question image, complete Volume 1 and actual 3-2-1 teaching re-read. The exact source passage(s) teach memory-devices; no heading-only inference is used.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 55,
+              "printedPage": 50,
+              "textSha256": "cff41ce38db0a47f6283af34b5223088ef2d7dfc65ad32c1c1e59626ff05b526",
+              "checkedExcerpt": "• SRAM (Static RAM) While its operating speed is high, it is expensive and it also has high power consumption. As for its memory mechanism, it uses a flip-flop circuit that continues to retain the preceding status, and electrical charge that records information can be retained as long as power is supplied. However, its disadvantages are a low degree of integration because of complex configuration of the circuit, and storage capacity that is smaller compared with DRAM. It is mainly used in registers or other memory devices. • DRAM (Dynamic RAM) While its operating speed is somewhat slow, it uses a simple circuit where electrical charge is retained by condenser or capacitor. Therefore, the degree of integration is high, and large capacity memory can be easily created at low cost. However, electrical charge that records information is lost over time, and therefore it is necessary to rewrite (refresh) the information. Examples include SDRAM (Synchronous DRAM) or DDR SDRAM (Double Data Rate SDRAM) used in main memory, and RDRAM (Rambus DRAM) that uses Rambus technology in the external bus interface.",
+              "role": "direct"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "2ab43f6e8c317d502120b028c1a3ede9c57f69f289a620923c84a7e0d9fd8237"
+    }
+  },
+  {
     "id": "HIST-TECH01-2017S-Q024",
     "examId": "2017S_FE_AM",
     "number": 24,
@@ -33745,6 +36790,99 @@
         }
       ],
       "approvalFingerprint": "c69a0afa49cdd9fd29f0a9615cb9b139901c0fe65ffc239adce4b5c52e9e04da"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2017S-Q025",
+    "examId": "2017S_FE_AM",
+    "number": 25,
+    "year": 2017,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "d",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2017S-Q025.67397024fbbf.webp",
+      "width": 1992,
+      "height": 931,
+      "sha256": "67397024fbbf025f7f9dee6b08c71c9185b4ea9f033379fbc0a574e4640b4f68"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 57,
+      "pageEnd": 57,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2017S-Q025"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            57
+          ],
+          "printedAnswer": "d"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "logic-gates",
+          "reason": "Original question image, complete Volume 1 and actual 3-4-1 teaching re-read. The exact source passage(s) teach logic-gates; no heading-only inference is used.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "[Main logical operations] 1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False (0) when both input values are False (0), or else the output is True (1) (when either one is True (1)). 3) Negation operation (NOT) The output becomes False (0) when the input value is True (1), and the output is True (1) when the input value is False (0). 4) Exclusive logical sum (Exclusive OR) operation (XOR or EOR) The output becomes False (0) when both input values are the same, and the output is True (1) when both input values are different. The table below summarizes the relations between input and output of the respective logical operation. This kind of table is referred to as a truth table. Input AND OR NOT XOR X Y (X AND Y) (X OR Y) (NOT X) (X XOR Y) True (1) True (1) True (1) True (1) False (0) False (0) True (1) False (0) False (0) True (1) False (0) True (1) False (0) True (1) False (0) True (1) True (1) True (1) False (0) False (0) False (0) False (0) True (1) False (0)",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 69,
+              "printedPage": 64,
+              "textSha256": "b26e0590632468a146244504ce22b38c51e1c61bfd1a94cd92adb3789271befd",
+              "checkedExcerpt": "6) XOR circuit This circuit performs exclusive logical sum operation (XOR). The truth table and MIL symbol of XOR circuit are as shown below. X Y X XOR Y Figure 1-31 XOR circuit 0 0 0 0 1 1 1 0 1 1 1 0 XOR circuit is also formed by combining the basic circuits. However, it cannot be formed with a combination of simple circuits as in the case of NAND circuits and NOR circuits. In such cases, it is called logical design (or circuit design) to think about the combination of basic circuits for achieving the targeted results (truth values). In logical design, logical expressions (logical functions) obtained from the truth tables are simplified using the rules of logical operations (logical laws), and the optimum combination of basic circuits is determined. (“Optimum” means that the design is performed in consideration of performance, efficiency, and cost.",
+              "role": "direct"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "313d71c3d678a01a4ac36267ec22a36e3e706c5b0c6764777685fd80fecbad47"
     }
   },
   {
@@ -34387,6 +37525,108 @@
         }
       ],
       "approvalFingerprint": "4d876aafb4c37897a4ca361320b4768dc51165259f52ca523d6b5a8873b1147c"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2018S-Q003",
+    "examId": "2018S_FE_AM",
+    "number": 3,
+    "year": 2018,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2018S-Q003.14f2c4ec5847.webp",
+      "width": 1980,
+      "height": 655,
+      "sha256": "14f2c4ec584783098184af56aafca05488070e14f68cc58ccccad1cc3633fea4"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 37,
+      "pageEnd": 37,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2018S-Q003"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            37
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "logic-gates",
+          "reason": "Original question image, complete Volume 1 and actual 3-4-1 teaching re-read. The exact source passage(s) teach logic-gates; no heading-only inference is used.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "[Main logical operations] 1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False (0) when both input values are False (0), or else the output is True (1) (when either one is True (1)). 3) Negation operation (NOT) The output becomes False (0) when the input value is True (1), and the output is True (1) when the input value is False (0). 4) Exclusive logical sum (Exclusive OR) operation (XOR or EOR) The output becomes False (0) when both input values are the same, and the output is True (1) when both input values are different. The table below summarizes the relations between input and output of the respective logical operation. This kind of table is referred to as a truth table. Input AND OR NOT XOR X Y (X AND Y) (X OR Y) (NOT X) (X XOR Y) True (1) True (1) True (1) True (1) False (0) False (0) True (1) False (0) False (0) True (1) False (0) True (1) False (0) True (1) False (0) True (1) True (1) True (1) False (0) False (0) False (0) False (0) True (1) False (0)",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 68,
+              "printedPage": 63,
+              "textSha256": "0d4b63b814973a25037c28e66d92f6e2f65667d47f397e9e8a6a794d9e6f12bd",
+              "checkedExcerpt": "4) NAND circuit This circuit performs negative logical product (negative AND) operation (NAND). NAND operation is the arithmetic operation that negates the results of AND operation. The truth table and MIL symbol of NAND circuit are as shown below. NAND circuit is formed by combining AND circuit and NOT circuit. X Y X NAND Y Figure 1-29 NAND circuit 0 0 1 0 1 1 1 0 1 1 1 0 5) NOR circuit This circuit performs negative logical sum operation (NOR). NOR operation is the arithmetic operation that negates the results of OR operation. The truth table and MIL symbol of NOR circuit are as shown below. NOR circuit is formed by combining OR circuit and NOT circuit. X Y X NOR Y Figure 1-30 NOR circuit 0 0 1 0 1 0 1 0 0 1 1 0",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8",
+              "checkedExcerpt": "[Main logical laws] * AND operation is represented with ˄, OR operation is represented with ˅, and NOT operation is represented with ¬. • Idempotent laws A A A   A A A   • Commutative laws A B B A    A B B A    • Associative laws C ) B A ( ) C B ( A      C ) B A ( ) C B ( A      • Distributive laws ) C A ( ) B A ( ) C B ( A       ) C A ( ) B A ( ) C B ( A       • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determine logical expression F",
+              "role": "direct"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "076e63526fcea965820aa335a843d67f99d86c95030fe8ff1aa82d4321db1efe"
     }
   },
   {
@@ -36228,6 +39468,90 @@
     }
   },
   {
+    "id": "HIST-TECH01-2020A-Q010",
+    "examId": "2020A_FE_AM",
+    "number": 10,
+    "year": 2020,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "b",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "High Speed Memory Access",
+    "topic": "Cache memory",
+    "mapping": {
+      "headingNumber": "3-5-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-075-b005-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2020A-Q010.44cdabfac30e.webp",
+      "width": 1993,
+      "height": 1011,
+      "sha256": "44cdabfac30ef45cba279ef7e2c9e4df2d098d0a0070951b1aa448d73cfe9e5d"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 235,
+      "pageEnd": 235,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2020A-Q010"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            235
+          ],
+          "printedAnswer": "b"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-075-b005-l00-text-0",
+          "headingNumber": "3-5-1",
+          "conceptId": "cache-memory",
+          "reason": "Original question image, complete Volume 1 and actual 3-5-1 teaching re-read. The exact source passage(s) teach cache-memory; no heading-only inference is used.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 76,
+              "printedPage": 71,
+              "textSha256": "16642cba08a2bb57f7761c6f5bf389c157c2c9a4f16ffd1abe7b6cf36e65cc89",
+              "checkedExcerpt": "memory). In other words, average access time (effective access time) as seen from the processor is decided on the basis of the extent to which the required data is found in cache memory. Therefore, it is determined by weighted average of access time of cache memory and access time of main memory. Here, the access time is determined by considering both the probability (hit ratio) that the required data is available in cache memory and the probability (NFP (Not Found Probability)) that the required data is not available in cache memory. “Hit ratio+NFP=1” always holds true. Example: Calculate the average access time of the following processor. NFP (probability that the required data is not available in cache memory) is 0.1. Access destination Access time (nanosecond) Cache memory 50 Main memory 500 Average access time of processor = Access time of cache memory × hit ratio + Access time of main memory × NFP = 50 nanoseconds × (1 − 0.1) + 500 nanoseconds × 0.1 = 95 nanoseconds From this example, it is clear that the higher the hit ratio is, the shorter the average access time is because of increased access to cache memory . When Havard architecture , which independently loads instructions and data , is used , cache memory is also separated into instruction cache and data cache . In this case , creating a program consolidating process ( instruction ) sections that are frequently executed will increase the hit ratio of instruction cache, which may shorten the average access time (access speed will improve).",
+              "role": "direct"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "c83999314e8be5427637ac34ef8e9ac9549920bd4851e0ca08e75e4cfa0281f3"
+    }
+  },
+  {
     "id": "HIST-TECH01-2020A-Q011",
     "examId": "2020A_FE_AM",
     "number": 11,
@@ -37324,6 +40648,99 @@
     }
   },
   {
+    "id": "HIST-TECH01-2021A-Q002",
+    "examId": "2021A_FE_AM",
+    "number": 2,
+    "year": 2021,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "a",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2021A-Q002.058b3db4742c.webp",
+      "width": 1992,
+      "height": 553,
+      "sha256": "058b3db4742c8237d3bce2113d696690db9ebd0176cc080de316956fbab6f69e"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 226,
+      "pageEnd": 226,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2021A-Q002"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            226
+          ],
+          "printedAnswer": "a"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "logic-gates",
+          "reason": "Original question image, complete Volume 1 and actual 3-4-1 teaching re-read. The exact source passage(s) teach logic-gates; no heading-only inference is used. The question defines bitwise operators. Apply the directly taught AND/OR truth functions at each supplied bit position, with positional radix weights. The modulo/divisibility identity is an examination application, not a fabricated textbook masking algorithm. The existing bit-masks/shift anchor is not reused because its subsection is unrelated.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "[Main logical operations] 1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False (0) when both input values are False (0), or else the output is True (1) (when either one is True (1)). 3) Negation operation (NOT) The output becomes False (0) when the input value is True (1), and the output is True (1) when the input value is False (0). 4) Exclusive logical sum (Exclusive OR) operation (XOR or EOR) The output becomes False (0) when both input values are the same, and the output is True (1) when both input values are different. The table below summarizes the relations between input and output of the respective logical operation. This kind of table is referred to as a truth table. Input AND OR NOT XOR X Y (X AND Y) (X OR Y) (NOT X) (X XOR Y) True (1) True (1) True (1) True (1) False (0) False (0) True (1) False (0) False (0) True (1) False (0) True (1) False (0) True (1) False (0) True (1) True (1) True (1) False (0) False (0) False (0) False (0) True (1) False (0)",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 29,
+              "printedPage": 24,
+              "textSha256": "27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419",
+              "checkedExcerpt": "(101.1)2 = 1×22 + 0×21 + 1×20 + 1×2−1 = (5.5)10 * 2 in ( )2 shows that it is a binary number. Decimal numbers and their corresponding binary numbers are as shown below. Binary numbers can use only two numbers of 0 and 1 for one digit. Therefore, the number of digits quickly becomes large, compared with decimal numbers. Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Binary numbers 0 1 10 11 100 101 110 111 1000 1001 1010 ... Figure 1-6 Decimal numbers and corresponding binary numbers (2) Octal numbers Octal numbers are numerical values that are represented by using eight numbers from 0 through 7 and that are carried over when 8 is reached. (317.5)8 = 3×82 + 1×81 + 7×80 + 5×8−1 = (207.625)10 * 8 in ( )8 shows that it is an octal number Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Octal numbers 0 1 2 3 4 5 6 7 10 11 12 ... Figure 1-7 Decimal numbers and corresponding octal numbers (3) Hexadecimal numbers Hexadecimal numbers are numerical values that are represented by using sixteen numbers from 0 through 9, and A(10), B(11), C(12), D(13), E(14), and F(15) and that are carried over when 16 is reached. (1A6.E)16 = 1×162 + 10×161 + 6×160 + 14×16−1 = (422.875)10 * 16 in ( )16 shows that it is a hexadecimal number.",
+              "role": "direct"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "5780c24e6cb0f22bd516e708adacc7dc9e3fd87da4808978dff451f201918efb"
+    }
+  },
+  {
     "id": "HIST-TECH01-2021A-Q011",
     "examId": "2021A_FE_AM",
     "number": 11,
@@ -37407,6 +40824,90 @@
         }
       ],
       "approvalFingerprint": "d3e7f21d5cfa278a98af1f2b4f2ede7ed57fb03242b0c6fa8d552653a5a64e69"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2021A-Q012",
+    "examId": "2021A_FE_AM",
+    "number": 12,
+    "year": 2021,
+    "season": "A",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "d",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "High Speed Memory Access",
+    "topic": "Cache memory",
+    "mapping": {
+      "headingNumber": "3-5-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-075-b005-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2021A-Q012.977ef051f293.webp",
+      "width": 1993,
+      "height": 949,
+      "sha256": "977ef051f2932a87bc8091254789d3b0ade1f2fa4fd49ebb59b6e5eaeb7f6a65"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 227,
+      "pageEnd": 227,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2021A-Q012"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            227
+          ],
+          "printedAnswer": "d"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-075-b005-l00-text-0",
+          "headingNumber": "3-5-1",
+          "conceptId": "cache-memory",
+          "reason": "Original question image, complete Volume 1 and actual 3-5-1 teaching re-read. The exact source passage(s) teach cache-memory; no heading-only inference is used.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 76,
+              "printedPage": 71,
+              "textSha256": "16642cba08a2bb57f7761c6f5bf389c157c2c9a4f16ffd1abe7b6cf36e65cc89",
+              "checkedExcerpt": "memory). In other words, average access time (effective access time) as seen from the processor is decided on the basis of the extent to which the required data is found in cache memory. Therefore, it is determined by weighted average of access time of cache memory and access time of main memory. Here, the access time is determined by considering both the probability (hit ratio) that the required data is available in cache memory and the probability (NFP (Not Found Probability)) that the required data is not available in cache memory. “Hit ratio+NFP=1” always holds true. Example: Calculate the average access time of the following processor. NFP (probability that the required data is not available in cache memory) is 0.1. Access destination Access time (nanosecond) Cache memory 50 Main memory 500 Average access time of processor = Access time of cache memory × hit ratio + Access time of main memory × NFP = 50 nanoseconds × (1 − 0.1) + 500 nanoseconds × 0.1 = 95 nanoseconds From this example, it is clear that the higher the hit ratio is, the shorter the average access time is because of increased access to cache memory . When Havard architecture , which independently loads instructions and data , is used , cache memory is also separated into instruction cache and data cache . In this case , creating a program consolidating process ( instruction ) sections that are frequently executed will increase the hit ratio of instruction cache, which may shorten the average access time (access speed will improve).",
+              "role": "direct"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "78590951e9b3d802f4a7201703e820dbc3ad59dbc32ca41e4b3e668832ddcd03"
     }
   },
   {
@@ -38192,6 +41693,99 @@
         }
       ],
       "approvalFingerprint": "a13457993b5475a14d1fb91de3ad608a95eb6c840813f36d4746dc1cf810f6e9"
+    }
+  },
+  {
+    "id": "HIST-TECH01-2022S-Q002",
+    "examId": "2022S_FE_AM",
+    "number": 2,
+    "year": 2022,
+    "season": "S",
+    "subject": "A",
+    "paper": "AM",
+    "format": "historical",
+    "sourceKind": "past_paper",
+    "examLabel": "",
+    "correctAnswer": "a",
+    "options": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "is_published": true,
+    "chapter": "Chapter 1 Hardware",
+    "section": "Logic Circuit",
+    "topic": "Logic gates and equivalent circuits",
+    "mapping": {
+      "headingNumber": "3-4-1",
+      "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0"
+    },
+    "image": {
+      "src": "/questions/HIST-TECH01-2022S-Q002.099829156e94.webp",
+      "width": 1968,
+      "height": 478,
+      "sha256": "099829156e94a739308fa14ff568d753d9286862122636220ce215c8e4231d5c"
+    },
+    "source": {
+      "dataset": "Technology-01.pdf",
+      "questionPdf": "Technology-01.pdf",
+      "pageStart": 220,
+      "pageEnd": 220,
+      "originalImagePath": "",
+      "documentPath": "questions/HIST-TECH01-2022S-Q002"
+    },
+    "review": {
+      "examType": "FE",
+      "sources": [
+        {
+          "kind": "historical-pdf",
+          "sourceId": "technology-01",
+          "filename": "Technology-01.pdf",
+          "sha256": "5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1",
+          "pages": [
+            220
+          ],
+          "printedAnswer": "a"
+        }
+      ],
+      "answerVerification": "verified",
+      "mappingStatus": "verified",
+      "extractionQuality": "complete",
+      "reviewStatus": "approved",
+      "publicationStatus": "published",
+      "mappings": [
+        {
+          "status": "verified",
+          "chapterId": "fe-v1-ch01",
+          "sectionId": "fe-v1-ch01-s03",
+          "subsectionId": "fev1-201504-ch1-r1-pdf-066-b006-l00-text-0",
+          "headingNumber": "3-4-1",
+          "conceptId": "logic-gates",
+          "reason": "Original question image, complete Volume 1 and actual 3-4-1 teaching re-read. The exact source passage(s) teach logic-gates; no heading-only inference is used. The question defines bitwise operators. Apply the directly taught AND/OR truth functions at each supplied bit position, with positional radix weights. The modulo/divisibility identity is an examination application, not a fabricated textbook masking algorithm. The existing bit-masks/shift anchor is not reused because its subsection is unrelated.",
+          "evidence": [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "[Main logical operations] 1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False (0) when both input values are False (0), or else the output is True (1) (when either one is True (1)). 3) Negation operation (NOT) The output becomes False (0) when the input value is True (1), and the output is True (1) when the input value is False (0). 4) Exclusive logical sum (Exclusive OR) operation (XOR or EOR) The output becomes False (0) when both input values are the same, and the output is True (1) when both input values are different. The table below summarizes the relations between input and output of the respective logical operation. This kind of table is referred to as a truth table. Input AND OR NOT XOR X Y (X AND Y) (X OR Y) (NOT X) (X XOR Y) True (1) True (1) True (1) True (1) False (0) False (0) True (1) False (0) False (0) True (1) False (0) True (1) False (0) True (1) False (0) True (1) True (1) True (1) False (0) False (0) False (0) False (0) True (1) False (0)",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 29,
+              "printedPage": 24,
+              "textSha256": "27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419",
+              "checkedExcerpt": "(101.1)2 = 1×22 + 0×21 + 1×20 + 1×2−1 = (5.5)10 * 2 in ( )2 shows that it is a binary number. Decimal numbers and their corresponding binary numbers are as shown below. Binary numbers can use only two numbers of 0 and 1 for one digit. Therefore, the number of digits quickly becomes large, compared with decimal numbers. Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Binary numbers 0 1 10 11 100 101 110 111 1000 1001 1010 ... Figure 1-6 Decimal numbers and corresponding binary numbers (2) Octal numbers Octal numbers are numerical values that are represented by using eight numbers from 0 through 7 and that are carried over when 8 is reached. (317.5)8 = 3×82 + 1×81 + 7×80 + 5×8−1 = (207.625)10 * 8 in ( )8 shows that it is an octal number Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Octal numbers 0 1 2 3 4 5 6 7 10 11 12 ... Figure 1-7 Decimal numbers and corresponding octal numbers (3) Hexadecimal numbers Hexadecimal numbers are numerical values that are represented by using sixteen numbers from 0 through 9, and A(10), B(11), C(12), D(13), E(14), and F(15) and that are carried over when 16 is reached. (1A6.E)16 = 1×162 + 10×161 + 6×160 + 14×16−1 = (422.875)10 * 16 in ( )16 shows that it is a hexadecimal number.",
+              "role": "direct"
+            }
+          ]
+        }
+      ],
+      "approvalFingerprint": "ba029814909b8ee5d48fd7f70a653d431f494b515d3f6be8850bebb7ac709f7a"
     }
   },
   {

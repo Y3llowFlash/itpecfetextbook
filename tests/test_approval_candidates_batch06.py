@@ -9,6 +9,16 @@ from unittest.mock import patch
 from test_approval_candidates_batch03 import fixture
 import approval_candidates as c
 import hardware_batch06 as b
+import release_6 as release
+from contextlib import nullcontext
+from functools import wraps
+
+def archived_preparation(test):
+    @wraps(test)
+    def run(*args,**kwargs):
+        with release.preparation_fixture() if (release.FOLDER/'state.json').exists() else nullcontext():
+            return test(*args,**kwargs)
+    return run
 import approval_batch06 as f
 
 
@@ -43,9 +53,10 @@ class FinalBatch06Tests(unittest.TestCase):
 
     def test_batch4_cannot_publish_without_separate_release_implementation(self):
         result=subprocess.run(['node','node_modules/tsx/dist/cli.mjs','scripts/publish-historical-questions.ts','--batch','6'],cwd=c.h.ROOT,capture_output=True,text=True)
-        self.assertNotEqual(result.returncode,0);self.assertIn('separate explicit owner authorization',result.stderr)
+        self.assertNotEqual(result.returncode,0);self.assertIn('publication-gate',result.stderr)
 
     @unittest.skipUnless((f.folder()/'manifest.json').exists(),'Private source package is not committed')
+    @archived_preparation
     def test_actual_package_preview_equality_and_read_only_preservation(self):
         manifest=f.check();context,records,reviews=f.inputs()
         self.assertEqual(len(manifest['candidates']),40);self.assertEqual(len(manifest['conceptDefinitions']),13)
@@ -59,6 +70,7 @@ class FinalBatch06Tests(unittest.TestCase):
             self.assertEqual(e['publicationFingerprint'],c.h.publication_fingerprint(e['record'],e['review']))
 
     @unittest.skipUnless((f.folder()/'manifest.json').exists(),'Private source package is not committed')
+    @archived_preparation
     def test_source_review_stale_missing_and_false_checks_rejected(self):
         context,records,reviews=f.inputs();definitions=f.concepts(context);links=f.associations(context,records,reviews,definitions)
         read=c.h.read_json;ledger=read(f.folder()/'source-review.json')
@@ -74,6 +86,7 @@ class FinalBatch06Tests(unittest.TestCase):
                 f.source_reviews(context,records,reviews,definitions,links)
 
     @unittest.skipUnless((f.folder()/'manifest.json').exists(),'Private source package is not committed')
+    @archived_preparation
     def test_combined_preparation_idempotent_and_stale_manifest_rejected(self):
         paths=[f.folder()/'manifest.json',f.folder()/'index.html',b.WORK/'preview/manifest.json',c.h.WORK/'reviews.json']
         before={str(p):p.read_bytes() for p in paths}

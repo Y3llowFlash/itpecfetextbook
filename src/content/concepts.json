@@ -17,7 +17,10 @@
       "HIST-TECH01-2011A-Q011",
       "HIST-TECH01-2022S-Q013",
       "HIST-TECH01-2015S-Q011",
-      "HIST-TECH01-2018S-Q010"
+      "HIST-TECH01-2018S-Q010",
+      "HIST-TECH01-2021A-Q012",
+      "HIST-TECH01-2020A-Q010",
+      "HIST-TECH01-2007S-Q023"
     ],
     "mappingEvidence": [
       {
@@ -190,6 +193,60 @@
             }
           ]
         ]
+      },
+      {
+        "questionId": "HIST-TECH01-2021A-Q012",
+        "reason": "Original question image, complete Volume 1 and actual 3-5-1 teaching re-read. The exact source passage(s) teach cache-memory; no heading-only inference is used.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 76,
+              "printedPage": 71,
+              "textSha256": "16642cba08a2bb57f7761c6f5bf389c157c2c9a4f16ffd1abe7b6cf36e65cc89",
+              "checkedExcerpt": "memory). In other words, average access time (effective access time) as seen from the processor is decided on the basis of the extent to which the required data is found in cache memory. Therefore, it is determined by weighted average of access time of cache memory and access time of main memory. Here, the access time is determined by considering both the probability (hit ratio) that the required data is available in cache memory and the probability (NFP (Not Found Probability)) that the required data is not available in cache memory. “Hit ratio+NFP=1” always holds true. Example: Calculate the average access time of the following processor. NFP (probability that the required data is not available in cache memory) is 0.1. Access destination Access time (nanosecond) Cache memory 50 Main memory 500 Average access time of processor = Access time of cache memory × hit ratio + Access time of main memory × NFP = 50 nanoseconds × (1 − 0.1) + 500 nanoseconds × 0.1 = 95 nanoseconds From this example, it is clear that the higher the hit ratio is, the shorter the average access time is because of increased access to cache memory . When Havard architecture , which independently loads instructions and data , is used , cache memory is also separated into instruction cache and data cache . In this case , creating a program consolidating process ( instruction ) sections that are frequently executed will increase the hit ratio of instruction cache, which may shorten the average access time (access speed will improve).",
+              "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2020A-Q010",
+        "reason": "Original question image, complete Volume 1 and actual 3-5-1 teaching re-read. The exact source passage(s) teach cache-memory; no heading-only inference is used.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 76,
+              "printedPage": 71,
+              "textSha256": "16642cba08a2bb57f7761c6f5bf389c157c2c9a4f16ffd1abe7b6cf36e65cc89",
+              "checkedExcerpt": "memory). In other words, average access time (effective access time) as seen from the processor is decided on the basis of the extent to which the required data is found in cache memory. Therefore, it is determined by weighted average of access time of cache memory and access time of main memory. Here, the access time is determined by considering both the probability (hit ratio) that the required data is available in cache memory and the probability (NFP (Not Found Probability)) that the required data is not available in cache memory. “Hit ratio+NFP=1” always holds true. Example: Calculate the average access time of the following processor. NFP (probability that the required data is not available in cache memory) is 0.1. Access destination Access time (nanosecond) Cache memory 50 Main memory 500 Average access time of processor = Access time of cache memory × hit ratio + Access time of main memory × NFP = 50 nanoseconds × (1 − 0.1) + 500 nanoseconds × 0.1 = 95 nanoseconds From this example, it is clear that the higher the hit ratio is, the shorter the average access time is because of increased access to cache memory . When Havard architecture , which independently loads instructions and data , is used , cache memory is also separated into instruction cache and data cache . In this case , creating a program consolidating process ( instruction ) sections that are frequently executed will increase the hit ratio of instruction cache, which may shorten the average access time (access speed will improve).",
+              "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2007S-Q023",
+        "reason": "Original question image, complete Volume 1 and actual 3-5-1 teaching re-read. The exact source passage(s) teach cache-memory; no heading-only inference is used.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 76,
+              "printedPage": 71,
+              "textSha256": "16642cba08a2bb57f7761c6f5bf389c157c2c9a4f16ffd1abe7b6cf36e65cc89",
+              "checkedExcerpt": "memory). In other words, average access time (effective access time) as seen from the processor is decided on the basis of the extent to which the required data is found in cache memory. Therefore, it is determined by weighted average of access time of cache memory and access time of main memory. Here, the access time is determined by considering both the probability (hit ratio) that the required data is available in cache memory and the probability (NFP (Not Found Probability)) that the required data is not available in cache memory. “Hit ratio+NFP=1” always holds true. Example: Calculate the average access time of the following processor. NFP (probability that the required data is not available in cache memory) is 0.1. Access destination Access time (nanosecond) Cache memory 50 Main memory 500 Average access time of processor = Access time of cache memory × hit ratio + Access time of main memory × NFP = 50 nanoseconds × (1 − 0.1) + 500 nanoseconds × 0.1 = 95 nanoseconds From this example, it is clear that the higher the hit ratio is, the shorter the average access time is because of increased access to cache memory . When Havard architecture , which independently loads instructions and data , is used , cache memory is also separated into instruction cache and data cache . In this case , creating a program consolidating process ( instruction ) sections that are frequently executed will increase the hit ratio of instruction cache, which may shorten the average access time (access speed will improve).",
+              "role": "direct"
+            }
+          ]
+        ]
       }
     ],
     "videos": [
@@ -231,7 +288,12 @@
       "HIST-TECH01-2010S-Q004",
       "HIST-TECH01-2009S-Q001",
       "HIST-TECH01-2009S-Q002",
-      "HIST-TECH01-2007S-Q002"
+      "HIST-TECH01-2007S-Q002",
+      "HIST-TECH01-2015A-Q001",
+      "HIST-TECH01-2013S-Q001",
+      "HIST-TECH01-2012S-Q001",
+      "HIST-TECH01-2008A-Q001",
+      "HIST-TECH01-2008S-Q002"
     ],
     "mappingEvidence": [
       {
@@ -626,6 +688,141 @@
             }
           ]
         ]
+      },
+      {
+        "questionId": "HIST-TECH01-2015A-Q001",
+        "reason": "Original question image, complete Volume 1 and actual 2-2 teaching re-read. The exact source passage(s) teach radix-conversion; no heading-only inference is used.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 29,
+              "printedPage": 24,
+              "textSha256": "27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419",
+              "checkedExcerpt": "(101.1)2 = 1×22 + 0×21 + 1×20 + 1×2−1 = (5.5)10 * 2 in ( )2 shows that it is a binary number. Decimal numbers and their corresponding binary numbers are as shown below. Binary numbers can use only two numbers of 0 and 1 for one digit. Therefore, the number of digits quickly becomes large, compared with decimal numbers. Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Binary numbers 0 1 10 11 100 101 110 111 1000 1001 1010 ... Figure 1-6 Decimal numbers and corresponding binary numbers (2) Octal numbers Octal numbers are numerical values that are represented by using eight numbers from 0 through 7 and that are carried over when 8 is reached. (317.5)8 = 3×82 + 1×81 + 7×80 + 5×8−1 = (207.625)10 * 8 in ( )8 shows that it is an octal number Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Octal numbers 0 1 2 3 4 5 6 7 10 11 12 ... Figure 1-7 Decimal numbers and corresponding octal numbers (3) Hexadecimal numbers Hexadecimal numbers are numerical values that are represented by using sixteen numbers from 0 through 9, and A(10), B(11), C(12), D(13), E(14), and F(15) and that are carried over when 16 is reached. (1A6.E)16 = 1×162 + 10×161 + 6×160 + 14×16−1 = (422.875)10 * 16 in ( )16 shows that it is a hexadecimal number.",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 33,
+              "printedPage": 28,
+              "textSha256": "d2e2b7cbbfb2c37bea9761db1702d19f9d66c32038286453dea5f703fe00a8b8",
+              "checkedExcerpt": "[Fractional number that cannot be represented by the finite number of digits] When the fractional part of a decimal number is converted into an n-adic number, it gets into a loop as the fractional part of calculation results does not become 0, and it may not be converted into a finite fraction. For example, converting the decimal number (0.2)10 into a binary number gives the following. In this manner, when the results of radix conversion become an infinite fraction (or recurring fraction), numerical values are handled as approximate values inside the computer.",
+              "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2013S-Q001",
+        "reason": "Original question image, complete Volume 1 and actual 2-2 teaching re-read. The exact source passage(s) teach radix-conversion; no heading-only inference is used.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 29,
+              "printedPage": 24,
+              "textSha256": "27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419",
+              "checkedExcerpt": "(101.1)2 = 1×22 + 0×21 + 1×20 + 1×2−1 = (5.5)10 * 2 in ( )2 shows that it is a binary number. Decimal numbers and their corresponding binary numbers are as shown below. Binary numbers can use only two numbers of 0 and 1 for one digit. Therefore, the number of digits quickly becomes large, compared with decimal numbers. Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Binary numbers 0 1 10 11 100 101 110 111 1000 1001 1010 ... Figure 1-6 Decimal numbers and corresponding binary numbers (2) Octal numbers Octal numbers are numerical values that are represented by using eight numbers from 0 through 7 and that are carried over when 8 is reached. (317.5)8 = 3×82 + 1×81 + 7×80 + 5×8−1 = (207.625)10 * 8 in ( )8 shows that it is an octal number Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Octal numbers 0 1 2 3 4 5 6 7 10 11 12 ... Figure 1-7 Decimal numbers and corresponding octal numbers (3) Hexadecimal numbers Hexadecimal numbers are numerical values that are represented by using sixteen numbers from 0 through 9, and A(10), B(11), C(12), D(13), E(14), and F(15) and that are carried over when 16 is reached. (1A6.E)16 = 1×162 + 10×161 + 6×160 + 14×16−1 = (422.875)10 * 16 in ( )16 shows that it is a hexadecimal number.",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 31,
+              "printedPage": 26,
+              "textSha256": "82b72f4c645a83ebec1bc01d448d249b28d8d3a10b8943a3b27747b928ffbeee",
+              "checkedExcerpt": "(5) Radix conversion Radix conversion means changing the radix of a numerical value. It is also radix conversion to convert a binary number (radix 2) into an octal number (radix 8) or a hexadecimal number (radix 16). When radix has a constant (power) relation as in the case of binary numbers, octal numbers, and hexadecimal numbers, radix conversion can be done by consolidating multiple digits. However, when radix does not have a constant (power) relation as in the case of binary numbers and decimal numbers, it is necessary to convert through computation. 1) Radix conversion from a binary number into a decimal number Radix conversion from a binary number to a decimal number can be performed by adding the weight of each digit that is 1 in the binary number. (This is the same as adding the results that are obtained by multiplying the weight of each digit with the number (0 or 1) of each digit.) Example: Perform radix conversion of the binary number (1001101.101)2 into a decimal number. 2) Radix conversion from a decimal number into a binary number Radix conversion from a decimal number into a binary number is performed separately for the integer part and the fractional part. The integer part can be converted by repeatedly dividing by 2 until the quotient becomes 0, and then arranging the remainder of calculation results in sequence from the back. A fractional part can be converted by continuously multiplying by 2 until the fractional part in calculation results becomes 0, and then arranging the integer part of each calculation result in sequence from the front.",
+              "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2012S-Q001",
+        "reason": "Original question image, complete Volume 1 and actual 2-2 teaching re-read. The exact source passage(s) teach radix-conversion; no heading-only inference is used.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 29,
+              "printedPage": 24,
+              "textSha256": "27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419",
+              "checkedExcerpt": "(101.1)2 = 1×22 + 0×21 + 1×20 + 1×2−1 = (5.5)10 * 2 in ( )2 shows that it is a binary number. Decimal numbers and their corresponding binary numbers are as shown below. Binary numbers can use only two numbers of 0 and 1 for one digit. Therefore, the number of digits quickly becomes large, compared with decimal numbers. Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Binary numbers 0 1 10 11 100 101 110 111 1000 1001 1010 ... Figure 1-6 Decimal numbers and corresponding binary numbers (2) Octal numbers Octal numbers are numerical values that are represented by using eight numbers from 0 through 7 and that are carried over when 8 is reached. (317.5)8 = 3×82 + 1×81 + 7×80 + 5×8−1 = (207.625)10 * 8 in ( )8 shows that it is an octal number Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Octal numbers 0 1 2 3 4 5 6 7 10 11 12 ... Figure 1-7 Decimal numbers and corresponding octal numbers (3) Hexadecimal numbers Hexadecimal numbers are numerical values that are represented by using sixteen numbers from 0 through 9, and A(10), B(11), C(12), D(13), E(14), and F(15) and that are carried over when 16 is reached. (1A6.E)16 = 1×162 + 10×161 + 6×160 + 14×16−1 = (422.875)10 * 16 in ( )16 shows that it is a hexadecimal number.",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 33,
+              "printedPage": 28,
+              "textSha256": "d2e2b7cbbfb2c37bea9761db1702d19f9d66c32038286453dea5f703fe00a8b8",
+              "checkedExcerpt": "[Fractional number that cannot be represented by the finite number of digits] When the fractional part of a decimal number is converted into an n-adic number, it gets into a loop as the fractional part of calculation results does not become 0, and it may not be converted into a finite fraction. For example, converting the decimal number (0.2)10 into a binary number gives the following. In this manner, when the results of radix conversion become an infinite fraction (or recurring fraction), numerical values are handled as approximate values inside the computer.",
+              "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2008A-Q001",
+        "reason": "Original question image, complete Volume 1 and actual 2-2 teaching re-read. The exact source passage(s) teach radix-conversion; no heading-only inference is used.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 29,
+              "printedPage": 24,
+              "textSha256": "27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419",
+              "checkedExcerpt": "(101.1)2 = 1×22 + 0×21 + 1×20 + 1×2−1 = (5.5)10 * 2 in ( )2 shows that it is a binary number. Decimal numbers and their corresponding binary numbers are as shown below. Binary numbers can use only two numbers of 0 and 1 for one digit. Therefore, the number of digits quickly becomes large, compared with decimal numbers. Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Binary numbers 0 1 10 11 100 101 110 111 1000 1001 1010 ... Figure 1-6 Decimal numbers and corresponding binary numbers (2) Octal numbers Octal numbers are numerical values that are represented by using eight numbers from 0 through 7 and that are carried over when 8 is reached. (317.5)8 = 3×82 + 1×81 + 7×80 + 5×8−1 = (207.625)10 * 8 in ( )8 shows that it is an octal number Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Octal numbers 0 1 2 3 4 5 6 7 10 11 12 ... Figure 1-7 Decimal numbers and corresponding octal numbers (3) Hexadecimal numbers Hexadecimal numbers are numerical values that are represented by using sixteen numbers from 0 through 9, and A(10), B(11), C(12), D(13), E(14), and F(15) and that are carried over when 16 is reached. (1A6.E)16 = 1×162 + 10×161 + 6×160 + 14×16−1 = (422.875)10 * 16 in ( )16 shows that it is a hexadecimal number.",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 33,
+              "printedPage": 28,
+              "textSha256": "d2e2b7cbbfb2c37bea9761db1702d19f9d66c32038286453dea5f703fe00a8b8",
+              "checkedExcerpt": "[Fractional number that cannot be represented by the finite number of digits] When the fractional part of a decimal number is converted into an n-adic number, it gets into a loop as the fractional part of calculation results does not become 0, and it may not be converted into a finite fraction. For example, converting the decimal number (0.2)10 into a binary number gives the following. In this manner, when the results of radix conversion become an infinite fraction (or recurring fraction), numerical values are handled as approximate values inside the computer.",
+              "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2008S-Q002",
+        "reason": "Original question image, complete Volume 1 and actual 2-2 teaching re-read. The exact source passage(s) teach radix-conversion; no heading-only inference is used.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 28,
+              "printedPage": 23,
+              "textSha256": "59d79fb5524dadcaffedb86ae2e75e711b60692d901e8da8a3d749289484cd57",
+              "checkedExcerpt": "2 - 2 Radix and Radix Conversion Decimal numbers that we normally use are numbers that are obtained by raising each digit to the power of 10 by using ten numbers from 0 through 9. (362.9)10 = 3×102 + 6×101 + 2×100 + 9×10−1 = (362.9)10 *10 in ( )10 shows that it is a decimal number. Here, the weight (10) of the decimal digit is called radix, and numbers represented with radix n are referred to as n-adic numbers. n-adic numbers are represented by using n numbers from 0 through (n−1) that are carried over when n is reached. (1) Binary numbers Binary numbers are represented by using two numbers 0 and 1 that are carried over when 2 is reached. The smallest unit of information handled inside computers is a bit, and only two numbers of 0 and 1 can be used. Therefore, computers use binary numbers that represent numerical values",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 29,
+              "printedPage": 24,
+              "textSha256": "27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419",
+              "checkedExcerpt": "(101.1)2 = 1×22 + 0×21 + 1×20 + 1×2−1 = (5.5)10 * 2 in ( )2 shows that it is a binary number. Decimal numbers and their corresponding binary numbers are as shown below. Binary numbers can use only two numbers of 0 and 1 for one digit. Therefore, the number of digits quickly becomes large, compared with decimal numbers. Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Binary numbers 0 1 10 11 100 101 110 111 1000 1001 1010 ... Figure 1-6 Decimal numbers and corresponding binary numbers (2) Octal numbers Octal numbers are numerical values that are represented by using eight numbers from 0 through 7 and that are carried over when 8 is reached. (317.5)8 = 3×82 + 1×81 + 7×80 + 5×8−1 = (207.625)10 * 8 in ( )8 shows that it is an octal number Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Octal numbers 0 1 2 3 4 5 6 7 10 11 12 ... Figure 1-7 Decimal numbers and corresponding octal numbers (3) Hexadecimal numbers Hexadecimal numbers are numerical values that are represented by using sixteen numbers from 0 through 9, and A(10), B(11), C(12), D(13), E(14), and F(15) and that are carried over when 16 is reached. (1A6.E)16 = 1×162 + 10×161 + 6×160 + 14×16−1 = (422.875)10 * 16 in ( )16 shows that it is a hexadecimal number.",
+              "role": "direct"
+            }
+          ]
+        ]
       }
     ],
     "videos": []
@@ -761,7 +958,8 @@
       "HIST-TECH01-2010A-Q001",
       "HIST-TECH01-2018S-Q001",
       "HIST-TECH01-2007S-Q004",
-      "HIST-TECH01-2008A-Q002"
+      "HIST-TECH01-2008A-Q002",
+      "HIST-TECH01-2007A-Q004"
     ],
     "mappingEvidence": [
       {
@@ -880,6 +1078,24 @@
             }
           ]
         ]
+      },
+      {
+        "questionId": "HIST-TECH01-2007A-Q004",
+        "reason": "Original question image, complete Volume 1 and actual 2-3-4 teaching re-read. The exact source passage(s) teach signed-shifts; no heading-only inference is used.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 49,
+              "printedPage": 44,
+              "textSha256": "842c04587b857023fdf8cdf66df09a3f066a700c8383fbd99d9bb384efb686b7",
+              "checkedExcerpt": "Because of this, computation rules of arithmetic shift can be summarized as follows: [Computation rules of arithmetic shift] • With an arithmetic shift to left by n bits, the value becomes 2n times of the original number. • With an arithmetic shift to right by n bits, the value becomes 2−n times of the original number. (It is the value that is obtained by dividing the original number by 2n) (2) Logical shift Logical shift is the shift operation used when the position of bits are changed. Its main difference from the arithmetic shift is that it does not treat the sign bit in a special manner. [Rules of logical shift] • Shift (move) the sign bit as well. • Truncate extra bits that are shifted out as a result of the shift. • Store 0 in the empty bit position that is created as a result of shift. Example: Compare the results of 2-bit arithmetic shift right and 2-bit logical shift right for (−16)10 = (11110000)2. 1) Perform 2-bit arithmetic shift right. 2) Perform 2-bit logical shift right.",
+              "role": "direct"
+            }
+          ]
+        ]
       }
     ],
     "videos": []
@@ -921,7 +1137,8 @@
       "HIST-TECH01-2021A-Q011",
       "HIST-TECH01-2018A-Q010",
       "HIST-TECH01-2021S-Q011",
-      "HIST-TECH01-2013S-Q011"
+      "HIST-TECH01-2013S-Q011",
+      "HIST-TECH01-2009A-Q021"
     ],
     "mappingEvidence": [
       {
@@ -1031,6 +1248,33 @@
             }
           ]
         ]
+      },
+      {
+        "questionId": "HIST-TECH01-2009A-Q021",
+        "reason": "Original question image, complete Volume 1 and actual 3-1 teaching re-read. The exact source passage(s) teach cpu-registers; no heading-only inference is used.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 52,
+              "printedPage": 47,
+              "textSha256": "97daacc48a2f1d7065a3797a62a0b4b6c3c2156c8a7a712b4c516a22df80c5ba",
+              "checkedExcerpt": "• Instruction address register (program counter, program register) It stores the address (storing position in the main memory) of the instruction to be executed next.",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 60,
+              "printedPage": 55,
+              "textSha256": "12c86d34697faba9af8a44dc5dd32890c32adc3436c85f52bc2aca7628b5bbf1",
+              "checkedExcerpt": "(1) Instruction fetching In instruction fetching, on the basis of the directions given by the control unit, an instruction stored in the address shown by the instruction address register is fetched from main memory, and it is stored in the instruction register. After the instruction is fetched, instruction word length L (number of words where 1 instruction fetched is stored) is added to the instruction address register for fetching the next instruction. Figure 1-18 Instruction fetching",
+              "role": "direct"
+            }
+          ]
+        ]
       }
     ],
     "videos": [
@@ -1062,7 +1306,9 @@
       "HIST-TECH01-2014S-Q024",
       "HIST-TECH01-2013A-Q012",
       "HIST-TECH01-2010S-Q015",
-      "HIST-TECH01-2007S-Q021"
+      "HIST-TECH01-2007S-Q021",
+      "HIST-TECH01-2012A-Q014",
+      "HIST-TECH01-2007A-Q024"
     ],
     "mappingEvidence": [
       {
@@ -1226,6 +1472,51 @@
             }
           ]
         ]
+      },
+      {
+        "questionId": "HIST-TECH01-2012A-Q014",
+        "reason": "Original question image, complete Volume 1 and actual 3-3-4 teaching re-read. The exact source passage(s) teach interrupts; no heading-only inference is used.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 65,
+              "printedPage": 60,
+              "textSha256": "b668a0efaa1f8b55cb59357fddc547f8d106ad6af9e262e39cf1e1156e3e46d5",
+              "checkedExcerpt": "[Processing sequence of processor when interrupt has occurred] 1) Switch from user mode to privilege mode. 2) Save the values of various registers (program counter, etc.). 3) Decide the starting address of the interrupt process routine (interrupt program). 4) Execute the interrupt process routine. 5) After the execution of the interrupt process routine is complete, restore the values of various registers that are saved in step 2. 6) Switch from privilege mode to user mode, and restart the interrupted process. According to conditions that an interrupt occurs, this can be classified described below. Here, it is assumed that multiple interrupts may occur simultaneously, and therefore priority ranking is assigned to each interrupt. 1) External interrupt: This is an interrupt that occurs because of a reason not related to the process being executed. • Timer interrupt This is an interrupt that occurs when the time measured in the timer, such as interval timer and watchdog timer, has exceeded the specified time (i.e., the timer has been timed-out). • Input/output interrupt (input/output completion interrupt) This is an interrupt that occurs when an input/output operation has been completed. • Machine check interrupt This is an interrupt that occurs because of a hardware malfunction, a power failure, or such other factor. • Restart interrupt This is an interrupt that occurs when the user has pressed the external restart switch. 2) Internal interrupt: This is an interrupt that occurs because of the process being executed. This is also referred to as a trap. • SVC (SuperVisor Call) interrupt This is an interrupt that occurs when supervisor (program that offers basic functions) is requested to invoke a process, such as when input/output instruction is used or storage protection exception happens. • Program interrupt",
+              "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2007A-Q024",
+        "reason": "Original question image, complete Volume 1 and actual 3-3-4 teaching re-read. The exact source passage(s) teach interrupts; no heading-only inference is used.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 65,
+              "printedPage": 60,
+              "textSha256": "b668a0efaa1f8b55cb59357fddc547f8d106ad6af9e262e39cf1e1156e3e46d5",
+              "checkedExcerpt": "[Processing sequence of processor when interrupt has occurred] 1) Switch from user mode to privilege mode. 2) Save the values of various registers (program counter, etc.). 3) Decide the starting address of the interrupt process routine (interrupt program). 4) Execute the interrupt process routine. 5) After the execution of the interrupt process routine is complete, restore the values of various registers that are saved in step 2. 6) Switch from privilege mode to user mode, and restart the interrupted process. According to conditions that an interrupt occurs, this can be classified described below. Here, it is assumed that multiple interrupts may occur simultaneously, and therefore priority ranking is assigned to each interrupt. 1) External interrupt: This is an interrupt that occurs because of a reason not related to the process being executed. • Timer interrupt This is an interrupt that occurs when the time measured in the timer, such as interval timer and watchdog timer, has exceeded the specified time (i.e., the timer has been timed-out). • Input/output interrupt (input/output completion interrupt) This is an interrupt that occurs when an input/output operation has been completed. • Machine check interrupt This is an interrupt that occurs because of a hardware malfunction, a power failure, or such other factor. • Restart interrupt This is an interrupt that occurs when the user has pressed the external restart switch. 2) Internal interrupt: This is an interrupt that occurs because of the process being executed. This is also referred to as a trap. • SVC (SuperVisor Call) interrupt This is an interrupt that occurs when supervisor (program that offers basic functions) is requested to invoke a process, such as when input/output instruction is used or storage protection exception happens. • Program interrupt",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "[Main logical operations] 1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False (0) when both input values are False (0), or else the output is True (1) (when either one is True (1)). 3) Negation operation (NOT) The output becomes False (0) when the input value is True (1), and the output is True (1) when the input value is False (0). 4) Exclusive logical sum (Exclusive OR) operation (XOR or EOR) The output becomes False (0) when both input values are the same, and the output is True (1) when both input values are different. The table below summarizes the relations between input and output of the respective logical operation. This kind of table is referred to as a truth table. Input AND OR NOT XOR X Y (X AND Y) (X OR Y) (NOT X) (X XOR Y) True (1) True (1) True (1) True (1) False (0) False (0) True (1) False (0) False (0) True (1) False (0) True (1) False (0) True (1) False (0) True (1) True (1) True (1) False (0) False (0) False (0) False (0) True (1) False (0)",
+              "role": "direct"
+            }
+          ]
+        ]
       }
     ],
     "videos": []
@@ -1300,7 +1591,24 @@
       "HIST-TECH01-2010S-Q030",
       "HIST-TECH01-2009A-Q009",
       "HIST-TECH01-2022S-Q021",
-      "HIST-TECH01-2019A-Q024"
+      "HIST-TECH01-2019A-Q024",
+      "HIST-TECH01-2018S-Q003",
+      "HIST-TECH01-2017A-Q022",
+      "HIST-TECH01-2017S-Q002",
+      "HIST-TECH01-2017S-Q025",
+      "HIST-TECH01-2016S-Q024",
+      "HIST-TECH01-2015A-Q002",
+      "HIST-TECH01-2015A-Q022",
+      "HIST-TECH01-2014A-Q021",
+      "HIST-TECH01-2013S-Q028",
+      "HIST-TECH01-2011A-Q003",
+      "HIST-TECH01-2011A-Q025",
+      "HIST-TECH01-2009S-Q017",
+      "HIST-TECH01-2008S-Q004",
+      "HIST-TECH01-2008S-Q005",
+      "HIST-TECH01-2022S-Q002",
+      "HIST-TECH01-2021A-Q002",
+      "HIST-TECH01-2008A-Q003"
     ],
     "mappingEvidence": [
       {
@@ -2409,6 +2717,465 @@
             }
           ]
         ]
+      },
+      {
+        "questionId": "HIST-TECH01-2018S-Q003",
+        "reason": "Original question image, complete Volume 1 and actual 3-4-1 teaching re-read. The exact source passage(s) teach logic-gates; no heading-only inference is used.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "[Main logical operations] 1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False (0) when both input values are False (0), or else the output is True (1) (when either one is True (1)). 3) Negation operation (NOT) The output becomes False (0) when the input value is True (1), and the output is True (1) when the input value is False (0). 4) Exclusive logical sum (Exclusive OR) operation (XOR or EOR) The output becomes False (0) when both input values are the same, and the output is True (1) when both input values are different. The table below summarizes the relations between input and output of the respective logical operation. This kind of table is referred to as a truth table. Input AND OR NOT XOR X Y (X AND Y) (X OR Y) (NOT X) (X XOR Y) True (1) True (1) True (1) True (1) False (0) False (0) True (1) False (0) False (0) True (1) False (0) True (1) False (0) True (1) False (0) True (1) True (1) True (1) False (0) False (0) False (0) False (0) True (1) False (0)",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 68,
+              "printedPage": 63,
+              "textSha256": "0d4b63b814973a25037c28e66d92f6e2f65667d47f397e9e8a6a794d9e6f12bd",
+              "checkedExcerpt": "4) NAND circuit This circuit performs negative logical product (negative AND) operation (NAND). NAND operation is the arithmetic operation that negates the results of AND operation. The truth table and MIL symbol of NAND circuit are as shown below. NAND circuit is formed by combining AND circuit and NOT circuit. X Y X NAND Y Figure 1-29 NAND circuit 0 0 1 0 1 1 1 0 1 1 1 0 5) NOR circuit This circuit performs negative logical sum operation (NOR). NOR operation is the arithmetic operation that negates the results of OR operation. The truth table and MIL symbol of NOR circuit are as shown below. NOR circuit is formed by combining OR circuit and NOT circuit. X Y X NOR Y Figure 1-30 NOR circuit 0 0 1 0 1 0 1 0 0 1 1 0",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8",
+              "checkedExcerpt": "[Main logical laws] * AND operation is represented with ˄, OR operation is represented with ˅, and NOT operation is represented with ¬. • Idempotent laws A A A   A A A   • Commutative laws A B B A    A B B A    • Associative laws C ) B A ( ) C B ( A      C ) B A ( ) C B ( A      • Distributive laws ) C A ( ) B A ( ) C B ( A       ) C A ( ) B A ( ) C B ( A       • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determine logical expression F",
+              "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2017A-Q022",
+        "reason": "Original question image, complete Volume 1 and actual 3-4-1 teaching re-read. The exact source passage(s) teach logic-gates; no heading-only inference is used.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 68,
+              "printedPage": 63,
+              "textSha256": "0d4b63b814973a25037c28e66d92f6e2f65667d47f397e9e8a6a794d9e6f12bd",
+              "checkedExcerpt": "4) NAND circuit This circuit performs negative logical product (negative AND) operation (NAND). NAND operation is the arithmetic operation that negates the results of AND operation. The truth table and MIL symbol of NAND circuit are as shown below. NAND circuit is formed by combining AND circuit and NOT circuit. X Y X NAND Y Figure 1-29 NAND circuit 0 0 1 0 1 1 1 0 1 1 1 0 5) NOR circuit This circuit performs negative logical sum operation (NOR). NOR operation is the arithmetic operation that negates the results of OR operation. The truth table and MIL symbol of NOR circuit are as shown below. NOR circuit is formed by combining OR circuit and NOT circuit. X Y X NOR Y Figure 1-30 NOR circuit 0 0 1 0 1 0 1 0 0 1 1 0",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 69,
+              "printedPage": 64,
+              "textSha256": "b26e0590632468a146244504ce22b38c51e1c61bfd1a94cd92adb3789271befd",
+              "checkedExcerpt": "6) XOR circuit This circuit performs exclusive logical sum operation (XOR). The truth table and MIL symbol of XOR circuit are as shown below. X Y X XOR Y Figure 1-31 XOR circuit 0 0 0 0 1 1 1 0 1 1 1 0 XOR circuit is also formed by combining the basic circuits. However, it cannot be formed with a combination of simple circuits as in the case of NAND circuits and NOR circuits. In such cases, it is called logical design (or circuit design) to think about the combination of basic circuits for achieving the targeted results (truth values). In logical design, logical expressions (logical functions) obtained from the truth tables are simplified using the rules of logical operations (logical laws), and the optimum combination of basic circuits is determined. (“Optimum” means that the design is performed in consideration of performance, efficiency, and cost.",
+              "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2017S-Q002",
+        "reason": "Original question image, complete Volume 1 and actual 3-4-1 teaching re-read. The exact source passage(s) teach logic-gates; no heading-only inference is used.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8",
+              "checkedExcerpt": "[Main logical laws] * AND operation is represented with ˄, OR operation is represented with ˅, and NOT operation is represented with ¬. • Idempotent laws A A A   A A A   • Commutative laws A B B A    A B B A    • Associative laws C ) B A ( ) C B ( A      C ) B A ( ) C B ( A      • Distributive laws ) C A ( ) B A ( ) C B ( A       ) C A ( ) B A ( ) C B ( A       • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determine logical expression F",
+              "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2017S-Q025",
+        "reason": "Original question image, complete Volume 1 and actual 3-4-1 teaching re-read. The exact source passage(s) teach logic-gates; no heading-only inference is used.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "[Main logical operations] 1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False (0) when both input values are False (0), or else the output is True (1) (when either one is True (1)). 3) Negation operation (NOT) The output becomes False (0) when the input value is True (1), and the output is True (1) when the input value is False (0). 4) Exclusive logical sum (Exclusive OR) operation (XOR or EOR) The output becomes False (0) when both input values are the same, and the output is True (1) when both input values are different. The table below summarizes the relations between input and output of the respective logical operation. This kind of table is referred to as a truth table. Input AND OR NOT XOR X Y (X AND Y) (X OR Y) (NOT X) (X XOR Y) True (1) True (1) True (1) True (1) False (0) False (0) True (1) False (0) False (0) True (1) False (0) True (1) False (0) True (1) False (0) True (1) True (1) True (1) False (0) False (0) False (0) False (0) True (1) False (0)",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 69,
+              "printedPage": 64,
+              "textSha256": "b26e0590632468a146244504ce22b38c51e1c61bfd1a94cd92adb3789271befd",
+              "checkedExcerpt": "6) XOR circuit This circuit performs exclusive logical sum operation (XOR). The truth table and MIL symbol of XOR circuit are as shown below. X Y X XOR Y Figure 1-31 XOR circuit 0 0 0 0 1 1 1 0 1 1 1 0 XOR circuit is also formed by combining the basic circuits. However, it cannot be formed with a combination of simple circuits as in the case of NAND circuits and NOR circuits. In such cases, it is called logical design (or circuit design) to think about the combination of basic circuits for achieving the targeted results (truth values). In logical design, logical expressions (logical functions) obtained from the truth tables are simplified using the rules of logical operations (logical laws), and the optimum combination of basic circuits is determined. (“Optimum” means that the design is performed in consideration of performance, efficiency, and cost.",
+              "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2016S-Q024",
+        "reason": "Original question image, complete Volume 1 and actual 3-4-1 teaching re-read. The exact source passage(s) teach logic-gates; no heading-only inference is used.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 68,
+              "printedPage": 63,
+              "textSha256": "0d4b63b814973a25037c28e66d92f6e2f65667d47f397e9e8a6a794d9e6f12bd",
+              "checkedExcerpt": "4) NAND circuit This circuit performs negative logical product (negative AND) operation (NAND). NAND operation is the arithmetic operation that negates the results of AND operation. The truth table and MIL symbol of NAND circuit are as shown below. NAND circuit is formed by combining AND circuit and NOT circuit. X Y X NAND Y Figure 1-29 NAND circuit 0 0 1 0 1 1 1 0 1 1 1 0 5) NOR circuit This circuit performs negative logical sum operation (NOR). NOR operation is the arithmetic operation that negates the results of OR operation. The truth table and MIL symbol of NOR circuit are as shown below. NOR circuit is formed by combining OR circuit and NOT circuit. X Y X NOR Y Figure 1-30 NOR circuit 0 0 1 0 1 0 1 0 0 1 1 0",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 69,
+              "printedPage": 64,
+              "textSha256": "b26e0590632468a146244504ce22b38c51e1c61bfd1a94cd92adb3789271befd",
+              "checkedExcerpt": "6) XOR circuit This circuit performs exclusive logical sum operation (XOR). The truth table and MIL symbol of XOR circuit are as shown below. X Y X XOR Y Figure 1-31 XOR circuit 0 0 0 0 1 1 1 0 1 1 1 0 XOR circuit is also formed by combining the basic circuits. However, it cannot be formed with a combination of simple circuits as in the case of NAND circuits and NOR circuits. In such cases, it is called logical design (or circuit design) to think about the combination of basic circuits for achieving the targeted results (truth values). In logical design, logical expressions (logical functions) obtained from the truth tables are simplified using the rules of logical operations (logical laws), and the optimum combination of basic circuits is determined. (“Optimum” means that the design is performed in consideration of performance, efficiency, and cost.",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8",
+              "checkedExcerpt": "[Main logical laws] * AND operation is represented with ˄, OR operation is represented with ˅, and NOT operation is represented with ¬. • Idempotent laws A A A   A A A   • Commutative laws A B B A    A B B A    • Associative laws C ) B A ( ) C B ( A      C ) B A ( ) C B ( A      • Distributive laws ) C A ( ) B A ( ) C B ( A       ) C A ( ) B A ( ) C B ( A       • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determine logical expression F",
+              "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2015A-Q002",
+        "reason": "Original question image, complete Volume 1 and actual 3-4-1 teaching re-read. The exact source passage(s) teach logic-gates; no heading-only inference is used.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "[Main logical operations] 1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False (0) when both input values are False (0), or else the output is True (1) (when either one is True (1)). 3) Negation operation (NOT) The output becomes False (0) when the input value is True (1), and the output is True (1) when the input value is False (0). 4) Exclusive logical sum (Exclusive OR) operation (XOR or EOR) The output becomes False (0) when both input values are the same, and the output is True (1) when both input values are different. The table below summarizes the relations between input and output of the respective logical operation. This kind of table is referred to as a truth table. Input AND OR NOT XOR X Y (X AND Y) (X OR Y) (NOT X) (X XOR Y) True (1) True (1) True (1) True (1) False (0) False (0) True (1) False (0) False (0) True (1) False (0) True (1) False (0) True (1) False (0) True (1) True (1) True (1) False (0) False (0) False (0) False (0) True (1) False (0)",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8",
+              "checkedExcerpt": "[Main logical laws] * AND operation is represented with ˄, OR operation is represented with ˅, and NOT operation is represented with ¬. • Idempotent laws A A A   A A A   • Commutative laws A B B A    A B B A    • Associative laws C ) B A ( ) C B ( A      C ) B A ( ) C B ( A      • Distributive laws ) C A ( ) B A ( ) C B ( A       ) C A ( ) B A ( ) C B ( A       • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determine logical expression F",
+              "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2015A-Q022",
+        "reason": "Original question image, complete Volume 1 and actual 3-4-1 teaching re-read. The exact source passage(s) teach logic-gates; no heading-only inference is used.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "[Main logical operations] 1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False (0) when both input values are False (0), or else the output is True (1) (when either one is True (1)). 3) Negation operation (NOT) The output becomes False (0) when the input value is True (1), and the output is True (1) when the input value is False (0). 4) Exclusive logical sum (Exclusive OR) operation (XOR or EOR) The output becomes False (0) when both input values are the same, and the output is True (1) when both input values are different. The table below summarizes the relations between input and output of the respective logical operation. This kind of table is referred to as a truth table. Input AND OR NOT XOR X Y (X AND Y) (X OR Y) (NOT X) (X XOR Y) True (1) True (1) True (1) True (1) False (0) False (0) True (1) False (0) False (0) True (1) False (0) True (1) False (0) True (1) False (0) True (1) True (1) True (1) False (0) False (0) False (0) False (0) True (1) False (0)",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 68,
+              "printedPage": 63,
+              "textSha256": "0d4b63b814973a25037c28e66d92f6e2f65667d47f397e9e8a6a794d9e6f12bd",
+              "checkedExcerpt": "4) NAND circuit This circuit performs negative logical product (negative AND) operation (NAND). NAND operation is the arithmetic operation that negates the results of AND operation. The truth table and MIL symbol of NAND circuit are as shown below. NAND circuit is formed by combining AND circuit and NOT circuit. X Y X NAND Y Figure 1-29 NAND circuit 0 0 1 0 1 1 1 0 1 1 1 0 5) NOR circuit This circuit performs negative logical sum operation (NOR). NOR operation is the arithmetic operation that negates the results of OR operation. The truth table and MIL symbol of NOR circuit are as shown below. NOR circuit is formed by combining OR circuit and NOT circuit. X Y X NOR Y Figure 1-30 NOR circuit 0 0 1 0 1 0 1 0 0 1 1 0",
+              "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2014A-Q021",
+        "reason": "Original question image, complete Volume 1 and actual 3-4-1 teaching re-read. The exact source passage(s) teach logic-gates; no heading-only inference is used. This is an application of the explicitly drawn AND/OR/NOT gates, whose truth functions and combination circuits are directly taught on physical pp.66–68. The selector arrangement and selection condition are supplied by the examination itself. Placement is under basic logic-gate evaluation; no claim is made that the book names or teaches a general multiplexer design method. This corrects the earlier mapping proposal by narrowing the teaching scope, not by labeling a contextual multiplexer passage as direct.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "[Main logical operations] 1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False (0) when both input values are False (0), or else the output is True (1) (when either one is True (1)). 3) Negation operation (NOT) The output becomes False (0) when the input value is True (1), and the output is True (1) when the input value is False (0). 4) Exclusive logical sum (Exclusive OR) operation (XOR or EOR) The output becomes False (0) when both input values are the same, and the output is True (1) when both input values are different. The table below summarizes the relations between input and output of the respective logical operation. This kind of table is referred to as a truth table. Input AND OR NOT XOR X Y (X AND Y) (X OR Y) (NOT X) (X XOR Y) True (1) True (1) True (1) True (1) False (0) False (0) True (1) False (0) False (0) True (1) False (0) True (1) False (0) True (1) False (0) True (1) True (1) True (1) False (0) False (0) False (0) False (0) True (1) False (0)",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 68,
+              "printedPage": 63,
+              "textSha256": "0d4b63b814973a25037c28e66d92f6e2f65667d47f397e9e8a6a794d9e6f12bd",
+              "checkedExcerpt": "4) NAND circuit This circuit performs negative logical product (negative AND) operation (NAND). NAND operation is the arithmetic operation that negates the results of AND operation. The truth table and MIL symbol of NAND circuit are as shown below. NAND circuit is formed by combining AND circuit and NOT circuit. X Y X NAND Y Figure 1-29 NAND circuit 0 0 1 0 1 1 1 0 1 1 1 0 5) NOR circuit This circuit performs negative logical sum operation (NOR). NOR operation is the arithmetic operation that negates the results of OR operation. The truth table and MIL symbol of NOR circuit are as shown below. NOR circuit is formed by combining OR circuit and NOT circuit. X Y X NOR Y Figure 1-30 NOR circuit 0 0 1 0 1 0 1 0 0 1 1 0",
+              "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2013S-Q028",
+        "reason": "Original question image, complete Volume 1 and actual 3-4-1 teaching re-read. The exact source passage(s) teach logic-gates; no heading-only inference is used.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 68,
+              "printedPage": 63,
+              "textSha256": "0d4b63b814973a25037c28e66d92f6e2f65667d47f397e9e8a6a794d9e6f12bd",
+              "checkedExcerpt": "4) NAND circuit This circuit performs negative logical product (negative AND) operation (NAND). NAND operation is the arithmetic operation that negates the results of AND operation. The truth table and MIL symbol of NAND circuit are as shown below. NAND circuit is formed by combining AND circuit and NOT circuit. X Y X NAND Y Figure 1-29 NAND circuit 0 0 1 0 1 1 1 0 1 1 1 0 5) NOR circuit This circuit performs negative logical sum operation (NOR). NOR operation is the arithmetic operation that negates the results of OR operation. The truth table and MIL symbol of NOR circuit are as shown below. NOR circuit is formed by combining OR circuit and NOT circuit. X Y X NOR Y Figure 1-30 NOR circuit 0 0 1 0 1 0 1 0 0 1 1 0",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 69,
+              "printedPage": 64,
+              "textSha256": "b26e0590632468a146244504ce22b38c51e1c61bfd1a94cd92adb3789271befd",
+              "checkedExcerpt": "6) XOR circuit This circuit performs exclusive logical sum operation (XOR). The truth table and MIL symbol of XOR circuit are as shown below. X Y X XOR Y Figure 1-31 XOR circuit 0 0 0 0 1 1 1 0 1 1 1 0 XOR circuit is also formed by combining the basic circuits. However, it cannot be formed with a combination of simple circuits as in the case of NAND circuits and NOR circuits. In such cases, it is called logical design (or circuit design) to think about the combination of basic circuits for achieving the targeted results (truth values). In logical design, logical expressions (logical functions) obtained from the truth tables are simplified using the rules of logical operations (logical laws), and the optimum combination of basic circuits is determined. (“Optimum” means that the design is performed in consideration of performance, efficiency, and cost.",
+              "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2011A-Q003",
+        "reason": "Original question image, complete Volume 1 and actual 3-4-1 teaching re-read. The exact source passage(s) teach logic-gates; no heading-only inference is used.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "[Main logical operations] 1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False (0) when both input values are False (0), or else the output is True (1) (when either one is True (1)). 3) Negation operation (NOT) The output becomes False (0) when the input value is True (1), and the output is True (1) when the input value is False (0). 4) Exclusive logical sum (Exclusive OR) operation (XOR or EOR) The output becomes False (0) when both input values are the same, and the output is True (1) when both input values are different. The table below summarizes the relations between input and output of the respective logical operation. This kind of table is referred to as a truth table. Input AND OR NOT XOR X Y (X AND Y) (X OR Y) (NOT X) (X XOR Y) True (1) True (1) True (1) True (1) False (0) False (0) True (1) False (0) False (0) True (1) False (0) True (1) False (0) True (1) False (0) True (1) True (1) True (1) False (0) False (0) False (0) False (0) True (1) False (0)",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8",
+              "checkedExcerpt": "[Main logical laws] * AND operation is represented with ˄, OR operation is represented with ˅, and NOT operation is represented with ¬. • Idempotent laws A A A   A A A   • Commutative laws A B B A    A B B A    • Associative laws C ) B A ( ) C B ( A      C ) B A ( ) C B ( A      • Distributive laws ) C A ( ) B A ( ) C B ( A       ) C A ( ) B A ( ) C B ( A       • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determine logical expression F",
+              "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2011A-Q025",
+        "reason": "Original question image, complete Volume 1 and actual 3-4-1 teaching re-read. The exact source passage(s) teach logic-gates; no heading-only inference is used.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 68,
+              "printedPage": 63,
+              "textSha256": "0d4b63b814973a25037c28e66d92f6e2f65667d47f397e9e8a6a794d9e6f12bd",
+              "checkedExcerpt": "4) NAND circuit This circuit performs negative logical product (negative AND) operation (NAND). NAND operation is the arithmetic operation that negates the results of AND operation. The truth table and MIL symbol of NAND circuit are as shown below. NAND circuit is formed by combining AND circuit and NOT circuit. X Y X NAND Y Figure 1-29 NAND circuit 0 0 1 0 1 1 1 0 1 1 1 0 5) NOR circuit This circuit performs negative logical sum operation (NOR). NOR operation is the arithmetic operation that negates the results of OR operation. The truth table and MIL symbol of NOR circuit are as shown below. NOR circuit is formed by combining OR circuit and NOT circuit. X Y X NOR Y Figure 1-30 NOR circuit 0 0 1 0 1 0 1 0 0 1 1 0",
+              "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2009S-Q017",
+        "reason": "Original question image, complete Volume 1 and actual 3-4-1 teaching re-read. The exact source passage(s) teach logic-gates; no heading-only inference is used.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "[Main logical operations] 1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False (0) when both input values are False (0), or else the output is True (1) (when either one is True (1)). 3) Negation operation (NOT) The output becomes False (0) when the input value is True (1), and the output is True (1) when the input value is False (0). 4) Exclusive logical sum (Exclusive OR) operation (XOR or EOR) The output becomes False (0) when both input values are the same, and the output is True (1) when both input values are different. The table below summarizes the relations between input and output of the respective logical operation. This kind of table is referred to as a truth table. Input AND OR NOT XOR X Y (X AND Y) (X OR Y) (NOT X) (X XOR Y) True (1) True (1) True (1) True (1) False (0) False (0) True (1) False (0) False (0) True (1) False (0) True (1) False (0) True (1) False (0) True (1) True (1) True (1) False (0) False (0) False (0) False (0) True (1) False (0)",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 68,
+              "printedPage": 63,
+              "textSha256": "0d4b63b814973a25037c28e66d92f6e2f65667d47f397e9e8a6a794d9e6f12bd",
+              "checkedExcerpt": "4) NAND circuit This circuit performs negative logical product (negative AND) operation (NAND). NAND operation is the arithmetic operation that negates the results of AND operation. The truth table and MIL symbol of NAND circuit are as shown below. NAND circuit is formed by combining AND circuit and NOT circuit. X Y X NAND Y Figure 1-29 NAND circuit 0 0 1 0 1 1 1 0 1 1 1 0 5) NOR circuit This circuit performs negative logical sum operation (NOR). NOR operation is the arithmetic operation that negates the results of OR operation. The truth table and MIL symbol of NOR circuit are as shown below. NOR circuit is formed by combining OR circuit and NOT circuit. X Y X NOR Y Figure 1-30 NOR circuit 0 0 1 0 1 0 1 0 0 1 1 0",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8",
+              "checkedExcerpt": "[Main logical laws] * AND operation is represented with ˄, OR operation is represented with ˅, and NOT operation is represented with ¬. • Idempotent laws A A A   A A A   • Commutative laws A B B A    A B B A    • Associative laws C ) B A ( ) C B ( A      C ) B A ( ) C B ( A      • Distributive laws ) C A ( ) B A ( ) C B ( A       ) C A ( ) B A ( ) C B ( A       • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determine logical expression F",
+              "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2008S-Q004",
+        "reason": "Original question image, complete Volume 1 and actual 3-4-1 teaching re-read. The exact source passage(s) teach logic-gates; no heading-only inference is used. Although the question mentions a program loop, it tests only Boolean negation of a range condition. Chapter 1 De Morgan laws are primary; program-control teaching is not asserted.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 70,
+              "printedPage": 65,
+              "textSha256": "e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8",
+              "checkedExcerpt": "[Main logical laws] * AND operation is represented with ˄, OR operation is represented with ˅, and NOT operation is represented with ¬. • Idempotent laws A A A   A A A   • Commutative laws A B B A    A B B A    • Associative laws C ) B A ( ) C B ( A      C ) B A ( ) C B ( A      • Distributive laws ) C A ( ) B A ( ) C B ( A       ) C A ( ) B A ( ) C B ( A       • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determine logical expression F",
+              "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2008S-Q005",
+        "reason": "Original question image, complete Volume 1 and actual 3-4-1 teaching re-read. The exact source passage(s) teach logic-gates; no heading-only inference is used.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "[Main logical operations] 1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False (0) when both input values are False (0), or else the output is True (1) (when either one is True (1)). 3) Negation operation (NOT) The output becomes False (0) when the input value is True (1), and the output is True (1) when the input value is False (0). 4) Exclusive logical sum (Exclusive OR) operation (XOR or EOR) The output becomes False (0) when both input values are the same, and the output is True (1) when both input values are different. The table below summarizes the relations between input and output of the respective logical operation. This kind of table is referred to as a truth table. Input AND OR NOT XOR X Y (X AND Y) (X OR Y) (NOT X) (X XOR Y) True (1) True (1) True (1) True (1) False (0) False (0) True (1) False (0) False (0) True (1) False (0) True (1) False (0) True (1) False (0) True (1) True (1) True (1) False (0) False (0) False (0) False (0) True (1) False (0)",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 68,
+              "printedPage": 63,
+              "textSha256": "0d4b63b814973a25037c28e66d92f6e2f65667d47f397e9e8a6a794d9e6f12bd",
+              "checkedExcerpt": "4) NAND circuit This circuit performs negative logical product (negative AND) operation (NAND). NAND operation is the arithmetic operation that negates the results of AND operation. The truth table and MIL symbol of NAND circuit are as shown below. NAND circuit is formed by combining AND circuit and NOT circuit. X Y X NAND Y Figure 1-29 NAND circuit 0 0 1 0 1 1 1 0 1 1 1 0 5) NOR circuit This circuit performs negative logical sum operation (NOR). NOR operation is the arithmetic operation that negates the results of OR operation. The truth table and MIL symbol of NOR circuit are as shown below. NOR circuit is formed by combining OR circuit and NOT circuit. X Y X NOR Y Figure 1-30 NOR circuit 0 0 1 0 1 0 1 0 0 1 1 0",
+              "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2022S-Q002",
+        "reason": "Original question image, complete Volume 1 and actual 3-4-1 teaching re-read. The exact source passage(s) teach logic-gates; no heading-only inference is used. The question defines bitwise operators. Apply the directly taught AND/OR truth functions at each supplied bit position, with positional radix weights. The modulo/divisibility identity is an examination application, not a fabricated textbook masking algorithm. The existing bit-masks/shift anchor is not reused because its subsection is unrelated.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "[Main logical operations] 1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False (0) when both input values are False (0), or else the output is True (1) (when either one is True (1)). 3) Negation operation (NOT) The output becomes False (0) when the input value is True (1), and the output is True (1) when the input value is False (0). 4) Exclusive logical sum (Exclusive OR) operation (XOR or EOR) The output becomes False (0) when both input values are the same, and the output is True (1) when both input values are different. The table below summarizes the relations between input and output of the respective logical operation. This kind of table is referred to as a truth table. Input AND OR NOT XOR X Y (X AND Y) (X OR Y) (NOT X) (X XOR Y) True (1) True (1) True (1) True (1) False (0) False (0) True (1) False (0) False (0) True (1) False (0) True (1) False (0) True (1) False (0) True (1) True (1) True (1) False (0) False (0) False (0) False (0) True (1) False (0)",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 29,
+              "printedPage": 24,
+              "textSha256": "27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419",
+              "checkedExcerpt": "(101.1)2 = 1×22 + 0×21 + 1×20 + 1×2−1 = (5.5)10 * 2 in ( )2 shows that it is a binary number. Decimal numbers and their corresponding binary numbers are as shown below. Binary numbers can use only two numbers of 0 and 1 for one digit. Therefore, the number of digits quickly becomes large, compared with decimal numbers. Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Binary numbers 0 1 10 11 100 101 110 111 1000 1001 1010 ... Figure 1-6 Decimal numbers and corresponding binary numbers (2) Octal numbers Octal numbers are numerical values that are represented by using eight numbers from 0 through 7 and that are carried over when 8 is reached. (317.5)8 = 3×82 + 1×81 + 7×80 + 5×8−1 = (207.625)10 * 8 in ( )8 shows that it is an octal number Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Octal numbers 0 1 2 3 4 5 6 7 10 11 12 ... Figure 1-7 Decimal numbers and corresponding octal numbers (3) Hexadecimal numbers Hexadecimal numbers are numerical values that are represented by using sixteen numbers from 0 through 9, and A(10), B(11), C(12), D(13), E(14), and F(15) and that are carried over when 16 is reached. (1A6.E)16 = 1×162 + 10×161 + 6×160 + 14×16−1 = (422.875)10 * 16 in ( )16 shows that it is a hexadecimal number.",
+              "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2021A-Q002",
+        "reason": "Original question image, complete Volume 1 and actual 3-4-1 teaching re-read. The exact source passage(s) teach logic-gates; no heading-only inference is used. The question defines bitwise operators. Apply the directly taught AND/OR truth functions at each supplied bit position, with positional radix weights. The modulo/divisibility identity is an examination application, not a fabricated textbook masking algorithm. The existing bit-masks/shift anchor is not reused because its subsection is unrelated.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "[Main logical operations] 1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False (0) when both input values are False (0), or else the output is True (1) (when either one is True (1)). 3) Negation operation (NOT) The output becomes False (0) when the input value is True (1), and the output is True (1) when the input value is False (0). 4) Exclusive logical sum (Exclusive OR) operation (XOR or EOR) The output becomes False (0) when both input values are the same, and the output is True (1) when both input values are different. The table below summarizes the relations between input and output of the respective logical operation. This kind of table is referred to as a truth table. Input AND OR NOT XOR X Y (X AND Y) (X OR Y) (NOT X) (X XOR Y) True (1) True (1) True (1) True (1) False (0) False (0) True (1) False (0) False (0) True (1) False (0) True (1) False (0) True (1) False (0) True (1) True (1) True (1) False (0) False (0) False (0) False (0) True (1) False (0)",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 29,
+              "printedPage": 24,
+              "textSha256": "27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419",
+              "checkedExcerpt": "(101.1)2 = 1×22 + 0×21 + 1×20 + 1×2−1 = (5.5)10 * 2 in ( )2 shows that it is a binary number. Decimal numbers and their corresponding binary numbers are as shown below. Binary numbers can use only two numbers of 0 and 1 for one digit. Therefore, the number of digits quickly becomes large, compared with decimal numbers. Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Binary numbers 0 1 10 11 100 101 110 111 1000 1001 1010 ... Figure 1-6 Decimal numbers and corresponding binary numbers (2) Octal numbers Octal numbers are numerical values that are represented by using eight numbers from 0 through 7 and that are carried over when 8 is reached. (317.5)8 = 3×82 + 1×81 + 7×80 + 5×8−1 = (207.625)10 * 8 in ( )8 shows that it is an octal number Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Octal numbers 0 1 2 3 4 5 6 7 10 11 12 ... Figure 1-7 Decimal numbers and corresponding octal numbers (3) Hexadecimal numbers Hexadecimal numbers are numerical values that are represented by using sixteen numbers from 0 through 9, and A(10), B(11), C(12), D(13), E(14), and F(15) and that are carried over when 16 is reached. (1A6.E)16 = 1×162 + 10×161 + 6×160 + 14×16−1 = (422.875)10 * 16 in ( )16 shows that it is a hexadecimal number.",
+              "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2008A-Q003",
+        "reason": "Original question image, complete Volume 1 and actual 3-4-1 teaching re-read. The exact source passage(s) teach logic-gates; no heading-only inference is used. The question defines bitwise operators. Apply the directly taught AND/OR truth functions at each supplied bit position, with positional radix weights. The modulo/divisibility identity is an examination application, not a fabricated textbook masking algorithm. The existing bit-masks/shift anchor is not reused because its subsection is unrelated.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 66,
+              "printedPage": 61,
+              "textSha256": "8d3416963847cd430366f6f0dc7834b3e6837f8db008c05ab682c51a02d91aed",
+              "checkedExcerpt": "[Main logical operations] 1) Logical product operation (AND) The output becomes True (1) when both input values are True (1), or else the output is False (0) (when either one is False (0)). 2) Logical sum operation (OR) The output becomes False (0) when both input values are False (0), or else the output is True (1) (when either one is True (1)). 3) Negation operation (NOT) The output becomes False (0) when the input value is True (1), and the output is True (1) when the input value is False (0). 4) Exclusive logical sum (Exclusive OR) operation (XOR or EOR) The output becomes False (0) when both input values are the same, and the output is True (1) when both input values are different. The table below summarizes the relations between input and output of the respective logical operation. This kind of table is referred to as a truth table. Input AND OR NOT XOR X Y (X AND Y) (X OR Y) (NOT X) (X XOR Y) True (1) True (1) True (1) True (1) False (0) False (0) True (1) False (0) False (0) True (1) False (0) True (1) False (0) True (1) False (0) True (1) True (1) True (1) False (0) False (0) False (0) False (0) True (1) False (0)",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 29,
+              "printedPage": 24,
+              "textSha256": "27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419",
+              "checkedExcerpt": "(101.1)2 = 1×22 + 0×21 + 1×20 + 1×2−1 = (5.5)10 * 2 in ( )2 shows that it is a binary number. Decimal numbers and their corresponding binary numbers are as shown below. Binary numbers can use only two numbers of 0 and 1 for one digit. Therefore, the number of digits quickly becomes large, compared with decimal numbers. Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Binary numbers 0 1 10 11 100 101 110 111 1000 1001 1010 ... Figure 1-6 Decimal numbers and corresponding binary numbers (2) Octal numbers Octal numbers are numerical values that are represented by using eight numbers from 0 through 7 and that are carried over when 8 is reached. (317.5)8 = 3×82 + 1×81 + 7×80 + 5×8−1 = (207.625)10 * 8 in ( )8 shows that it is an octal number Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Octal numbers 0 1 2 3 4 5 6 7 10 11 12 ... Figure 1-7 Decimal numbers and corresponding octal numbers (3) Hexadecimal numbers Hexadecimal numbers are numerical values that are represented by using sixteen numbers from 0 through 9, and A(10), B(11), C(12), D(13), E(14), and F(15) and that are carried over when 16 is reached. (1A6.E)16 = 1×162 + 10×161 + 6×160 + 14×16−1 = (422.875)10 * 16 in ( )16 shows that it is a hexadecimal number.",
+              "role": "direct"
+            }
+          ]
+        ]
       }
     ],
     "videos": [
@@ -3157,7 +3924,10 @@
       "HIST-TECH01-2012A-Q018",
       "HIST-TECH01-2011A-Q027",
       "HIST-TECH01-2014A-Q023",
-      "HIST-TECH01-2014S-Q028"
+      "HIST-TECH01-2014S-Q028",
+      "HIST-TECH01-2017A-Q023",
+      "HIST-TECH01-2017S-Q023",
+      "HIST-TECH01-2012S-Q013"
     ],
     "mappingEvidence": [
       {
@@ -3366,6 +4136,69 @@
             }
           ]
         ]
+      },
+      {
+        "questionId": "HIST-TECH01-2017A-Q023",
+        "reason": "Original question image, complete Volume 1 and actual 3-2-1 teaching re-read. The exact source passage(s) teach memory-devices; no heading-only inference is used.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 55,
+              "printedPage": 50,
+              "textSha256": "cff41ce38db0a47f6283af34b5223088ef2d7dfc65ad32c1c1e59626ff05b526",
+              "checkedExcerpt": "• SRAM (Static RAM) While its operating speed is high, it is expensive and it also has high power consumption. As for its memory mechanism, it uses a flip-flop circuit that continues to retain the preceding status, and electrical charge that records information can be retained as long as power is supplied. However, its disadvantages are a low degree of integration because of complex configuration of the circuit, and storage capacity that is smaller compared with DRAM. It is mainly used in registers or other memory devices. • DRAM (Dynamic RAM) While its operating speed is somewhat slow, it uses a simple circuit where electrical charge is retained by condenser or capacitor. Therefore, the degree of integration is high, and large capacity memory can be easily created at low cost. However, electrical charge that records information is lost over time, and therefore it is necessary to rewrite (refresh) the information. Examples include SDRAM (Synchronous DRAM) or DDR SDRAM (Double Data Rate SDRAM) used in main memory, and RDRAM (Rambus DRAM) that uses Rambus technology in the external bus interface.",
+              "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2017S-Q023",
+        "reason": "Original question image, complete Volume 1 and actual 3-2-1 teaching re-read. The exact source passage(s) teach memory-devices; no heading-only inference is used.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 55,
+              "printedPage": 50,
+              "textSha256": "cff41ce38db0a47f6283af34b5223088ef2d7dfc65ad32c1c1e59626ff05b526",
+              "checkedExcerpt": "• SRAM (Static RAM) While its operating speed is high, it is expensive and it also has high power consumption. As for its memory mechanism, it uses a flip-flop circuit that continues to retain the preceding status, and electrical charge that records information can be retained as long as power is supplied. However, its disadvantages are a low degree of integration because of complex configuration of the circuit, and storage capacity that is smaller compared with DRAM. It is mainly used in registers or other memory devices. • DRAM (Dynamic RAM) While its operating speed is somewhat slow, it uses a simple circuit where electrical charge is retained by condenser or capacitor. Therefore, the degree of integration is high, and large capacity memory can be easily created at low cost. However, electrical charge that records information is lost over time, and therefore it is necessary to rewrite (refresh) the information. Examples include SDRAM (Synchronous DRAM) or DDR SDRAM (Double Data Rate SDRAM) used in main memory, and RDRAM (Rambus DRAM) that uses Rambus technology in the external bus interface.",
+              "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2012S-Q013",
+        "reason": "Original question image, complete Volume 1 and actual 3-2-1 teaching re-read. The exact source passage(s) teach memory-devices; no heading-only inference is used.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 55,
+              "printedPage": 50,
+              "textSha256": "cff41ce38db0a47f6283af34b5223088ef2d7dfc65ad32c1c1e59626ff05b526",
+              "checkedExcerpt": "• SRAM (Static RAM) While its operating speed is high, it is expensive and it also has high power consumption. As for its memory mechanism, it uses a flip-flop circuit that continues to retain the preceding status, and electrical charge that records information can be retained as long as power is supplied. However, its disadvantages are a low degree of integration because of complex configuration of the circuit, and storage capacity that is smaller compared with DRAM. It is mainly used in registers or other memory devices. • DRAM (Dynamic RAM) While its operating speed is somewhat slow, it uses a simple circuit where electrical charge is retained by condenser or capacitor. Therefore, the degree of integration is high, and large capacity memory can be easily created at low cost. However, electrical charge that records information is lost over time, and therefore it is necessary to rewrite (refresh) the information. Examples include SDRAM (Synchronous DRAM) or DDR SDRAM (Double Data Rate SDRAM) used in main memory, and RDRAM (Rambus DRAM) that uses Rambus technology in the external bus interface.",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 75,
+              "printedPage": 70,
+              "textSha256": "ae201b64c9e624c0b66d395c28ecb9fd1da89d75a057ba2ce14677dc9cf79597",
+              "checkedExcerpt": "(1) Buffer memory Buffer memory is the medium-speed storage installed between high-speed storage and low-speed storage. Cache memory, which is a buffer memory, is the medium-speed storage composed of SRAM and installed between high-speed register and low-speed main memory. Figure 1-34 Working of cache memory In a computer system where cache memory is used, if the data required by the processor is available (when it is hit) in cache memory, then cache memory is accessed. On the other hand, when the data is not there (when it is mishit) in cache memory, main memory is accessed (in precise terms, on the basis of the directions of hardware or OS (software for controlling the computer), the data is loaded from main memory into the corresponding block of cache",
+              "role": "direct"
+            }
+          ]
+        ]
       }
     ],
     "videos": [],
@@ -3437,7 +4270,8 @@
       "HIST-TECH01-2016A-Q009",
       "HIST-TECH01-2016S-Q013",
       "HIST-TECH01-2014A-Q011",
-      "HIST-TECH01-2007S-Q019"
+      "HIST-TECH01-2007S-Q019",
+      "HIST-TECH01-2015A-Q010"
     ],
     "mappingEvidence": [
       {
@@ -3619,6 +4453,24 @@
             }
           ]
         ]
+      },
+      {
+        "questionId": "HIST-TECH01-2015A-Q010",
+        "reason": "Original question image, complete Volume 1 and actual 3-3-3 teaching re-read. The exact source passage(s) teach addressing-modes; no heading-only inference is used.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 64,
+              "printedPage": 59,
+              "textSha256": "3ccf13e4b15d65e8f2f44687262569836e8962342ee82a9796255c5fd0356f02",
+              "checkedExcerpt": "3) Indirect addressing In this method, the content (value) of main memory referenced by the effective address is used as the address of operand. Double (in the example shown in Figure 1-24, data stored in address 120 is fetched as operand), and triple indirect addressing is also possible. Figure 1-24 Indirect addressing",
+              "role": "direct"
+            }
+          ]
+        ]
       }
     ],
     "videos": [],
@@ -3751,7 +4603,8 @@
       "HIST-TECH01-2017S-Q012",
       "HIST-TECH01-2014S-Q014",
       "HIST-TECH01-2012A-Q017",
-      "HIST-TECH01-2007S-Q024"
+      "HIST-TECH01-2007S-Q024",
+      "HIST-TECH01-2007A-Q027"
     ],
     "mappingEvidence": [
       {
@@ -3822,6 +4675,24 @@
               "role": "direct",
               "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
               "textSha256": "92a5c6015e2691151bfd3c8c2a1ae0e5d4d8760151fc90ce62200211526e0da0"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2007A-Q027",
+        "reason": "Original question image, complete Volume 1 and actual 3-5-1 teaching re-read. The exact source passage(s) teach memory-interleaving; no heading-only inference is used.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 78,
+              "printedPage": 73,
+              "textSha256": "92a5c6015e2691151bfd3c8c2a1ae0e5d4d8760151fc90ce62200211526e0da0",
+              "checkedExcerpt": "(2) Memory interleave Memory interleave is a method where main memory is divided into several sections (bank) that are simultaneously and independently accessed in order to improve the average access time of main memory. Figure 1-38 Memory interleave method Memory interleave is a method of reading the data in advance, and it is useful for the processing of data that is located in the contiguous area of main memory. However, data may not be referenced in the sequence of storage area at all times, and the average access time may not be always proportionate to the number of banks (even if there are 4 banks, the average Auxiliary storage (Hard disk) Disk cache Register Low-speed, high-capacity Main memory Secondary cache Primary cache High-speed, low-capacity Cache memory",
+              "role": "direct"
             }
           ]
         ]
@@ -4686,7 +5557,8 @@
       "HIST-TECH01-2018S-Q022",
       "HIST-TECH01-2012A-Q002",
       "HIST-TECH01-2010A-Q027",
-      "HIST-TECH01-2007A-Q005"
+      "HIST-TECH01-2007A-Q005",
+      "HIST-TECH01-2010A-Q002"
     ],
     "mappingEvidence": [
       {
@@ -4856,6 +5728,24 @@
               "role": "direct",
               "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
               "textSha256": "0394048d8333196d8278259f1a961582643278579073a662942361306eaae59f"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2010A-Q002",
+        "reason": "Original question image, complete Volume 1 and actual 3-4-2 teaching re-read. The exact source passage(s) teach arithmetic-circuits; no heading-only inference is used.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 72,
+              "printedPage": 67,
+              "textSha256": "3014194254dd63e5fd16b50b29c6a4c896990b9f8c36beecdc7e121c554188d0",
+              "checkedExcerpt": "First, the adder circuit is considered here. The basis of addition in a computer is 2-bit addition that adds one bit to one bit. Here, then, a circuit to perform 2-bit addition is considered. As 2-bit addition, the following four types are possible. The results of the addition of two 1-bit binary numbers are shown below. [Results of the addition of two 1-bit binary numbers] Values to be added Operation result X Y Carry (c) Sum (s) 0 0 0 0 0 1 0 1 1 0 0 1 1 1 1 0 From this table, it is clear that carry is 1 only when two entered values are both 1, this is a logical product operation (AND). It is also clear that sum is 0 when two entered values are the same and 1 when they are different, and therefore, this is an exclusive logical sum operation (XOR). Therefore, a circuit diagram with the configuration below is derived. This circuit is called a half adder. Figure 1-32 Circuit diagram of half adder Adder circuit of a computer is configured with this half adder as the basis. However, in half adder, carry from low order is not taken into account. Therefore, arithmetic operation of numerical values represented with multiple bits cannot be performed. Because of that, another adder circuit of 3 bits including carry from low order becomes necessary. The table below summarizes the results of arithmetic operation of 3-bit addition considering carry (c0) from low order.",
+              "role": "direct"
             }
           ]
         ]
@@ -5452,7 +6342,8 @@
     "anchor": "fev1-201504-ch1-r1-pdf-077-b010-l03-text-0",
     "questionIds": [
       "HIST-TECH01-2008A-Q026",
-      "HIST-TECH01-2013S-Q014"
+      "HIST-TECH01-2013S-Q014",
+      "HIST-TECH01-2013A-Q014"
     ],
     "mappingEvidence": [
       {
@@ -5505,6 +6396,24 @@
               "role": "direct",
               "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
               "textSha256": "bcd00e2a51a63797a2917746e44fed627b7e95b09f1aeb4ee74181bd4a6a5443"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2013A-Q014",
+        "reason": "Original question image, complete Volume 1 and actual 3-5-1 teaching re-read. The exact source passage(s) teach memory-hierarchy; no heading-only inference is used. Replace the broad cache-memory proposal with the existing memory-hierarchy highlight; the actual paragraph explicitly teaches primary/secondary caches and access order.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 77,
+              "printedPage": 72,
+              "textSha256": "bcd00e2a51a63797a2917746e44fed627b7e95b09f1aeb4ee74181bd4a6a5443",
+              "checkedExcerpt": "In modern-day computers, there is a large difference in the speed of processor and the speed of main memory. Therefore, it is common to use multi-level cache configuration where cache memory is divided into 2 levels, namely, primary cache and secondary cache. In this case, the processor will access in the sequence of primary cache → secondary cache → main memory. Figure 1-35 Multi-level cache configuration ",
+              "role": "direct"
             }
           ]
         ]
@@ -5710,7 +6619,8 @@
     "sectionUrl": "/chapters/hardware/cpu-and-main-memory/",
     "anchor": "fev1-201504-ch1-r1-pdf-076-b010-l25-text-0",
     "questionIds": [
-      "HIST-TECH01-2011S-Q014"
+      "HIST-TECH01-2011S-Q014",
+      "HIST-TECH01-2008S-Q022"
     ],
     "mappingEvidence": [
       {
@@ -5727,6 +6637,24 @@
               "role": "direct",
               "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
               "textSha256": "bcd00e2a51a63797a2917746e44fed627b7e95b09f1aeb4ee74181bd4a6a5443"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2008S-Q022",
+        "reason": "Original question image, complete Volume 1 and actual 3-5-1 teaching re-read. The exact source passage(s) teach cache-write-policies; no heading-only inference is used. Replace the broad cache-memory proposal with the more precise existing cache-write-policies highlight and the literal write-through/write-back definitions.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 77,
+              "printedPage": 72,
+              "textSha256": "bcd00e2a51a63797a2917746e44fed627b7e95b09f1aeb4ee74181bd4a6a5443",
+              "checkedExcerpt": "[Writing methods from cache memory] 1) Write-through method That method reflects the update in main memory whenever data is updated . While certainty is high, main memory needs to be accessed for every process, so operating speed is somewhat slow. 2) Write-back method In this method, data is not updated in main memory while data is updated in cache memory. Data is updated in main memory only when data from cache memory is removed. While its operating speed is fast, inconsistency in the data of main memory may occur at some point in time.",
+              "role": "direct"
             }
           ]
         ]
@@ -5805,7 +6733,10 @@
     "questionIds": [
       "HIST-TECH01-2019A-Q022",
       "HIST-TECH01-2008S-Q019",
-      "HIST-TECH01-2007S-Q018"
+      "HIST-TECH01-2007S-Q018",
+      "HIST-TECH01-2016S-Q025",
+      "HIST-TECH01-2013A-Q027",
+      "HIST-TECH01-2011S-Q027"
     ],
     "mappingEvidence": [
       {
@@ -5876,6 +6807,69 @@
               "role": "direct",
               "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
               "textSha256": "0d4b63b814973a25037c28e66d92f6e2f65667d47f397e9e8a6a794d9e6f12bd"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2016S-Q025",
+        "reason": "Original question image, complete Volume 1 and actual 3-4-1 teaching re-read. The exact source passage(s) teach flip-flops; no heading-only inference is used.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 67,
+              "printedPage": 62,
+              "textSha256": "82d4142195d967a0b4cc8b2c6564354bed5de7c9acec6ba514a43f30813b0c2f",
+              "checkedExcerpt": "(1) Sequential circuit Sequential circuit is a logic circuit where the output is decided on the basis of the input at that time and earlier status. Flip-flop circuit, which is one of the main sequential circuits, has two stable states, and it is used in storage cells of SRAM. Figure 1-25 shows the circuit diagram of a flip-flop for reference and the truth table. Circuit symbols used in Figure 1-25 are one of the methods of representing electronic circuits, and it is referred to as MIL (Military Specifications and Standards) symbols. S R X Y Comments 1 1 X Y No change 1 0 0 1 Reset 0 1 1 0 Set 0 0 (Invalid) Figure 1-25 Circuit diagram of flip-flop and truth table",
+              "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2013A-Q027",
+        "reason": "Original question image, complete Volume 1 and actual 3-4-1 teaching re-read. The exact source passage(s) teach flip-flops; no heading-only inference is used.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 67,
+              "printedPage": 62,
+              "textSha256": "82d4142195d967a0b4cc8b2c6564354bed5de7c9acec6ba514a43f30813b0c2f",
+              "checkedExcerpt": "(1) Sequential circuit Sequential circuit is a logic circuit where the output is decided on the basis of the input at that time and earlier status. Flip-flop circuit, which is one of the main sequential circuits, has two stable states, and it is used in storage cells of SRAM. Figure 1-25 shows the circuit diagram of a flip-flop for reference and the truth table. Circuit symbols used in Figure 1-25 are one of the methods of representing electronic circuits, and it is referred to as MIL (Military Specifications and Standards) symbols. S R X Y Comments 1 1 X Y No change 1 0 0 1 Reset 0 1 1 0 Set 0 0 (Invalid) Figure 1-25 Circuit diagram of flip-flop and truth table",
+              "role": "direct"
+            }
+          ]
+        ]
+      },
+      {
+        "questionId": "HIST-TECH01-2011S-Q027",
+        "reason": "Original question image, complete Volume 1 and actual 3-4-1 teaching re-read. The exact source passage(s) teach flip-flops; no heading-only inference is used.",
+        "reviewedAgainst": [
+          "original question image",
+          [
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 67,
+              "printedPage": 62,
+              "textSha256": "82d4142195d967a0b4cc8b2c6564354bed5de7c9acec6ba514a43f30813b0c2f",
+              "checkedExcerpt": "(1) Sequential circuit Sequential circuit is a logic circuit where the output is decided on the basis of the input at that time and earlier status. Flip-flop circuit, which is one of the main sequential circuits, has two stable states, and it is used in storage cells of SRAM. Figure 1-25 shows the circuit diagram of a flip-flop for reference and the truth table. Circuit symbols used in Figure 1-25 are one of the methods of representing electronic circuits, and it is referred to as MIL (Military Specifications and Standards) symbols. S R X Y Comments 1 1 X Y No change 1 0 0 1 Reset 0 1 1 0 Set 0 0 (Invalid) Figure 1-25 Circuit diagram of flip-flop and truth table",
+              "role": "direct"
+            },
+            {
+              "kind": "textbook-source",
+              "sourceSha256": "1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b",
+              "pdfPage": 55,
+              "printedPage": 50,
+              "textSha256": "cff41ce38db0a47f6283af34b5223088ef2d7dfc65ad32c1c1e59626ff05b526",
+              "checkedExcerpt": "• SRAM (Static RAM) While its operating speed is high, it is expensive and it also has high power consumption. As for its memory mechanism, it uses a flip-flop circuit that continues to retain the preceding status, and electrical charge that records information can be retained as long as power is supplied. However, its disadvantages are a low degree of integration because of complex configuration of the circuit, and storage capacity that is smaller compared with DRAM. It is mainly used in registers or other memory devices. • DRAM (Dynamic RAM) While its operating speed is somewhat slow, it uses a simple circuit where electrical charge is retained by condenser or capacitor. Therefore, the degree of integration is high, and large capacity memory can be easily created at low cost. However, electrical charge that records information is lost over time, and therefore it is necessary to rewrite (refresh) the information. Examples include SDRAM (Synchronous DRAM) or DDR SDRAM (Double Data Rate SDRAM) used in main memory, and RDRAM (Rambus DRAM) that uses Rambus technology in the external bus interface.",
+              "role": "direct"
             }
           ]
         ]

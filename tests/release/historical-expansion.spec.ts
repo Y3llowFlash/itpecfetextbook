@@ -2,6 +2,7 @@ import {test,expect} from '@playwright/test';
 import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import receipt from '../../docs/development/evidence/historical-release-3.json' with {type:'json'};
+import sixth from '../../docs/development/evidence/historical-release-6.json' with {type:'json'};
 import fifth from '../../docs/development/evidence/historical-release-5.json' with {type:'json'};
 import fourth from '../../docs/development/evidence/historical-release-4.json' with {type:'json'};
 import second from '../../docs/development/evidence/historical-release-40.json' with {type:'json'};
@@ -10,7 +11,7 @@ import concepts from '../../src/content/concepts.json' with {type:'json'};
 import answers from '../../src/content/explanations.json' with {type:'json'};
 const bytes=readFileSync('public/data/questions.json'),bank=JSON.parse(bytes.toString());
 
-test('actual deployed catalog, all 616 original images, authorized historical scope and private exclusions',async({page})=>{
+test('actual deployed catalog, all 656 original images, authorized historical scope and private exclusions',async({page})=>{
   test.setTimeout(180_000);
   await page.goto('/');
   const result=await page.evaluate(async()=>{
@@ -23,8 +24,8 @@ test('actual deployed catalog, all 616 original images, authorized historical sc
     return {questions,catalogSha256:await sha(bytes),images,privateStatus};
   });
   expect(result.catalogSha256).toBe(createHash('sha256').update(bytes).digest('hex'));
-  expect(result.questions).toEqual(bank);expect(result.questions).toHaveLength(616);
-  expect(result.questions.filter((q:any)=>q.format==='historical').map((q:any)=>q.id).sort()).toEqual([...first.records,...second.records,...receipt.records,...fourth.records,...fifth.records].map(r=>r.id).sort());
+  expect(result.questions).toEqual(bank);expect(result.questions).toHaveLength(656);
+  expect(result.questions.filter((q:any)=>q.format==='historical').map((q:any)=>q.id).sort()).toEqual([...first.records,...second.records,...receipt.records,...fourth.records,...fifth.records,...sixth.records].map(r=>r.id).sort());
   for(const q of bank)expect(result.images[q.id],q.id).toBe(q.image.sha256);
   expect(result.privateStatus).toEqual([404,404,404,404]);
 });

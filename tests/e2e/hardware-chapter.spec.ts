@@ -36,7 +36,7 @@ for (const lesson of hardwareLessons.slice(0, 5)) {
 test('new concept practice returns to its source block and records guest completion/bookmarks', async ({ page }) => {
   await page.goto('/chapters/hardware/data-representation/');
   const highlight = page.locator('#concept-radix-conversion');
-  await expect(highlight).toContainText('18 questions');
+  await expect(highlight).toContainText('23 questions');
   await highlight.scrollIntoViewIfNeeded();
   const block=highlight.locator('xpath=ancestor::*[@data-reading-block][1]');
   const before = await block.evaluate((element) => element.getBoundingClientRect().top);

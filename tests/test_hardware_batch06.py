@@ -6,6 +6,16 @@ import subprocess
 import unittest
 from test_hardware_batch02 import fixture
 import hardware_batch06 as b
+import release_6 as release
+from contextlib import nullcontext
+from functools import wraps
+
+def archived_preparation(test):
+    @wraps(test)
+    def run(*args,**kwargs):
+        with release.preparation_fixture() if (release.FOLDER/'state.json').exists() else nullcontext():
+            return test(*args,**kwargs)
+    return run
 import approval_batch06 as final
 from contextlib import nullcontext
 
@@ -87,9 +97,10 @@ class Batch06Tests(unittest.TestCase):
 
     def test_publisher_rejects_non_dry_run_before_loading_any_source(self):
         result=subprocess.run(['node','node_modules/tsx/dist/cli.mjs','scripts/publish-historical-questions.ts','--batch','6'],cwd=b.h.ROOT,capture_output=True,text=True)
-        self.assertNotEqual(result.returncode,0);self.assertIn('separate explicit owner authorization',result.stderr)
+        self.assertNotEqual(result.returncode,0);self.assertIn('publication-gate',result.stderr)
 
     @unittest.skipUnless((b.WORK/'preview/manifest.json').exists(),'Private local source package intentionally absent from clones')
+    @archived_preparation
     def test_actual_selection_images_public_baseline_and_preview_equality(self):
         m=b.check();ledger,records,before,current,expected,published=b.load_context()
         self.assertEqual({e['pdfPage'] for e in ledger['entries']},b.PAGES)

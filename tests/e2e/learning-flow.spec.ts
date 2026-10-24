@@ -11,7 +11,7 @@ test('read, practise real questions, save progress, and return to the exact read
   const before = await concept.locator('xpath=ancestor::*[@data-reading-block][1]').evaluate((element) => element.getBoundingClientRect().top);
   await concept.click();
   await expect(page).toHaveURL(/\/practice\/cache-memory\//);
-  await expect(page.getByText('11 related published questions. Take them one at a time.')).toBeVisible();
+  await expect(page.getByText('14 related published questions. Take them one at a time.')).toBeVisible();
   await page.getByRole('radio', { name: 'Option A: 315 ns' }).check();
   await page.getByRole('button', { name: 'Check answer' }).click();
   await expect(page.getByText('Let’s work through it.')).toBeVisible();

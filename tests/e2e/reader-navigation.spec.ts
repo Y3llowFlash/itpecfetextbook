@@ -29,11 +29,11 @@ test('source subsection links, scrolling, keyboard focus and browser history sha
  await page.goto(`${CPU_PATH}#${CACHE_HEADING}`);
  const nav=page.locator('.sidebar nav');
  await expect(nav.locator('[aria-current="location"]')).toHaveAttribute('data-toc-link',cache.id);
-  await expect(page.locator('.context-questions .context-count')).toHaveText('18');
-  await expect(page.locator('.companion-practice[href="/practice/cache-memory/"]')).toContainText('11');
-  await expect(page.locator('.companion-practice[href="/practice/memory-interleaving/"]')).toContainText('4');
- await expect(page.locator('.companion-practice[href="/practice/memory-hierarchy/"]')).toContainText('2');
-  await expect(page.locator('.companion-practice[href="/practice/cache-write-policies/"]')).toContainText('1');
+  await expect(page.locator('.context-questions .context-count')).toHaveText('24');
+  await expect(page.locator('.companion-practice[href="/practice/cache-memory/"]')).toContainText('14');
+  await expect(page.locator('.companion-practice[href="/practice/memory-interleaving/"]')).toContainText('5');
+ await expect(page.locator('.companion-practice[href="/practice/memory-hierarchy/"]')).toContainText('3');
+  await expect(page.locator('.companion-practice[href="/practice/cache-write-policies/"]')).toContainText('2');
  await expect(page.getByRole('link',{name:'HDD, RAM, register & cache ↗'})).toHaveAttribute('href','https://t.me/itpecmm/101');
  // Use the original heading to simulate reading back through the section.
  await page.locator(`#${gates.id}`).evaluate(el=>scrollTo(0,scrollY+el.getBoundingClientRect().top-145));
