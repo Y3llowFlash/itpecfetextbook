@@ -173,6 +173,9 @@ def prepare():
 
 def check(publisher=False,batch=1):
     if batch==7:
+        if publisher:
+            import release_7
+            if (release_7.FOLDER/'state.json').exists():return release_7.publisher_check()
         from approval_batch07 import check
         return check(publisher)
     if batch==6:

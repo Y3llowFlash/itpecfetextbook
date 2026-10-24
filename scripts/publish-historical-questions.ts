@@ -14,7 +14,7 @@ const argumentsOnly=process.argv.slice(2),batchPosition=argumentsOnly.indexOf('-
 const batch=batchPosition<0?1:Number(argumentsOnly[batchPosition+1]);
 const allowed=argumentsOnly.filter((_,i)=>i!==batchPosition&&i!==batchPosition+1);
 if(![1,2,3,4,5,6,7].includes(batch)||(batchPosition<0?argumentsOnly:allowed).some(a=>a!=='--dry-run')||argumentsOnly.filter(a=>a==='--batch').length>1)throw Error('Use --dry-run and optional --batch 1|2|3|4|5|6|7');
-if(batch===7&&!dryRun)throw Error('Batch 7 is preparation-only; publication-gate requires separate owner authorization');
+if(batch===7&&!dryRun)execFileSync('python',['scripts/release_7.py','publication-gate'],{stdio:'pipe'});
 if(batch===6&&!dryRun)execFileSync('python',['scripts/release_6.py','publication-gate'],{stdio:'pipe'});
 if(batch===5&&!dryRun)execFileSync('python',['scripts/release_5.py','publication-gate'],{stdio:'pipe'});
 if(batch===4&&!dryRun)execFileSync('python',['scripts/release_4.py','publication-gate'],{stdio:'pipe'});

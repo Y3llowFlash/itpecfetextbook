@@ -15,11 +15,12 @@ import third from '../docs/development/evidence/historical-release-3.json';
 import fourth from '../docs/development/evidence/historical-release-4.json';
 import fifth from '../docs/development/evidence/historical-release-5.json';
 import sixth from '../docs/development/evidence/historical-release-6.json';
+import seventh from '../docs/development/evidence/historical-release-7.json';
 
 const root = path.resolve('.');
 const questions = await publishedQuestions();
 const raw = JSON.parse(await readFile(path.join(root, 'public/data/questions.json'), 'utf8'));
-validateHistoricalRelease(raw, [...explanationMap.values()], concepts, historicalRelease, expansion, third, fourth, fifth, sixth);
+validateHistoricalRelease(raw, [...explanationMap.values()], concepts, historicalRelease, expansion, third, fourth, fifth, sixth, seventh);
 if (questions.length !== raw.length || new Set(questions.map((q) => q.id)).size !== questions.length) throw new Error('All published records must be unique and explicitly is_published === true');
 const manifest = JSON.parse(await readFile(path.join(root, 'public/data/import-manifest.json'), 'utf8'));
 if (manifest.policy !== 'is_published === true' || manifest.total !== questions.length || manifest.datasetHash !== digest(JSON.stringify(questions))) throw new Error('Import manifest does not match the published snapshot');

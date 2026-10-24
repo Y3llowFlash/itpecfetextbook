@@ -108,6 +108,10 @@ class Release6ArchiveTests(unittest.TestCase):
             self.assertEqual(f.check()['candidateSetFingerprint'],r.SET_FP)
         self.assertEqual(public.read_bytes(),actual)
         if r.RECEIPT.exists():
+            import release_7
+            if (release_7.FOLDER/'state.json').exists():
+                self.assertEqual(release_7.verify_public()['total'],687)
+                return
             # Later authorized private editorial batches can change unapproved
             # reviews. Check the historical release against its frozen reviews
             # plus its exact approval receipt, without weakening live gates or

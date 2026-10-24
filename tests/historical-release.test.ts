@@ -6,7 +6,11 @@ const expansion=read('docs/development/evidence/historical-release-40.json');
 const third=read('docs/development/evidence/historical-release-3.json'),fourth=read('docs/development/evidence/historical-release-4.json');
 const fifth=read('docs/development/evidence/historical-release-5.json');
 const sixth=read('docs/development/evidence/historical-release-6.json');
-const release6Bank=read('public/data/questions.json'),release6Answers=read('src/content/explanations.json'),release6Concepts=read('src/content/concepts.json');
+const seventh=read('docs/development/evidence/historical-release-7.json');
+const release7Bank=read('public/data/questions.json'),release7Answers=read('src/content/explanations.json'),release7Concepts=read('src/content/concepts.json');
+const seventhIds=new Set(seventh.records.map((r:any)=>r.id));
+const release6Bank=release7Bank.filter((q:any)=>!seventhIds.has(q.id)),release6Answers=release7Answers.filter((e:any)=>!seventhIds.has(e.questionId));
+const release6Concepts=release7Concepts.map((c:any)=>({...c,questionIds:c.questionIds.filter((id:string)=>!seventhIds.has(id)),mappingEvidence:c.mappingEvidence.filter((e:any)=>!seventhIds.has(e.questionId))}));
 const sixthIds=new Set(sixth.records.map((r:any)=>r.id));
 const release5Bank=release6Bank.filter((q:any)=>!sixthIds.has(q.id)),release5Answers=release6Answers.filter((e:any)=>!sixthIds.has(e.questionId));
 const release5Concepts=release6Concepts.map((c:any)=>({...c,questionIds:c.questionIds.filter((id:string)=>!sixthIds.has(id)),mappingEvidence:c.mappingEvidence.filter((e:any)=>!sixthIds.has(e.questionId))}));
@@ -143,5 +147,31 @@ describe('exact Release 6 append-only authorization',()=>{
   for(const id of Object.keys(sixth.conceptCounts)){const c=structuredClone(release6Concepts);c.find((c:any)=>c.id===id).summary='changed';expect(()=>validate(release6Bank,release6Answers,c)).toThrow();}
   expect(()=>validate(release6Bank,release6Answers,[...release6Concepts,{...release6Concepts[0],id:'unauthorized-highlight'}])).toThrow();
   expect(()=>validate(release6Bank,release6Answers,release6Concepts,{...sixth,newHighlights:[{id:'unauthorized'}]})).toThrow();
+ });
+});
+
+
+describe('exact Release 7 append-only authorization',()=>{
+ const validate=(b=release7Bank,a=release7Answers,c=release7Concepts,r=seventh)=>validateHistoricalRelease(b,a,c,receipt,expansion,third,fourth,fifth,sixth,r);
+ it('validates 687 records, exact 31 additions, eight reused concepts and zero new highlights',()=>{
+  expect(()=>validate()).not.toThrow();expect(seventh.records).toHaveLength(31);expect(seventh.newHighlights).toEqual([]);
+  expect(Object.keys(seventh.conceptCounts)).toHaveLength(8);expect(release7Concepts).toHaveLength(release6Concepts.length);
+ });
+ for(const field of ['correctAnswer','image','review'])it(`rejects every candidate ${field} change`,()=>{
+  for(const entry of seventh.records){const b=structuredClone(release7Bank);b.find((q:any)=>q.id===entry.id)[field]='invalid';expect(()=>validate(b)).toThrow();}
+ },30000);
+ it('rejects every candidate accessible-description change',()=>{
+  for(const entry of seventh.records){const a=structuredClone(release7Answers);a.find((e:any)=>e.questionId===entry.id).imageDescription='changed';expect(()=>validate(release7Bank,a)).toThrow();}
+ },30000);
+ it('rejects every candidate mapping change',()=>{
+  for(const entry of seventh.records){const b=structuredClone(release7Bank);b.find((q:any)=>q.id===entry.id).review.mappings[0].conceptId='wrong';expect(()=>validate(b)).toThrow();}
+ },30000);
+ it('rejects stale scope, earlier record changes, extra records or changed reused highlights',()=>{
+  for(const field of ['candidateManifestSha256','candidateSetFingerprint','authorizedCount','excludedUnapproved'])expect(()=>validate(release7Bank,release7Answers,release7Concepts,{...seventh,[field]:'changed'})).toThrow();
+  const b=structuredClone(release7Bank);b.find((q:any)=>fifthIds.has(q.id)).correctAnswer='changed';expect(()=>validate(b)).toThrow();
+  expect(()=>validate([...release7Bank,{...release7Bank[0],id:'HIST-UNAPPROVED'}])).toThrow();
+  for(const id of Object.keys(seventh.conceptCounts)){const c=structuredClone(release7Concepts);c.find((c:any)=>c.id===id).summary='changed';expect(()=>validate(release7Bank,release7Answers,c)).toThrow();}
+  expect(()=>validate(release7Bank,release7Answers,[...release7Concepts,{...release7Concepts[0],id:'unauthorized-highlight'}])).toThrow();
+  expect(()=>validate(release7Bank,release7Answers,release7Concepts,{...seventh,newHighlights:[{id:'unauthorized'}]})).toThrow();
  });
 });

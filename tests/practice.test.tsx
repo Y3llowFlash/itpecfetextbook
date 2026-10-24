@@ -5,17 +5,31 @@ import fs from 'node:fs';
 import Practice from '../src/components/Practice';
 import definitions from '../src/content/concepts.json';
 import explanations from '../src/content/explanations.json';
+import release7 from '../docs/development/evidence/historical-release-7.json';
 import { guestStore } from '../src/lib/progress';
 import type { Concept, Question } from '../src/lib/models';
 
 const concept = definitions[0] as Concept;
 const bank = JSON.parse(fs.readFileSync('public/data/questions.json', 'utf8')) as Question[];
-const questions = bank.filter((q) => concept.questionIds.includes(q.id));
+const completeQuestions = bank.filter((q) => concept.questionIds.includes(q.id));
+const release7Ids = new Set(release7.records.map((r) => r.id));
+// Keep the existing fourteen-question interaction walkthrough on its unchanged
+// Release 6 subset. The full enlarged collection is checked separately below.
+const questions = completeQuestions.filter((q) => !release7Ids.has(q.id));
 const props = { concept, questions, explanations };
 beforeEach(() => { cleanup(); localStorage.clear(); guestStore.refresh(); history.replaceState(null, '', '/practice/cache-memory/'); });
 afterEach(cleanup);
 
 describe('complete cache practice interaction', () => {
+  it('includes exactly the five authorized Release 7 additions in the full cache collection', () => {
+    const added=release7.records.filter((r)=>r.conceptId===concept.id);
+    expect(questions).toHaveLength(14);expect(added).toHaveLength(5);
+    expect(completeQuestions).toHaveLength(19);
+    expect(completeQuestions.filter(q=>release7Ids.has(q.id)).map(q=>q.id).sort()).toEqual(added.map(r=>r.id).sort());
+    render(<Practice {...props} questions={completeQuestions}/>);
+    expect(screen.getAllByRole('button',{name:/Question \d+, unanswered/})).toHaveLength(19);
+    expect(screen.getByText('19 related published questions. Take them one at a time.')).toBeTruthy();
+  });
   it('remembers filters, safely handles empty results, and preserves progress', async () => {
     const user = userEvent.setup(); const view=render(<Practice {...props} />);
     await user.click(screen.getByRole('button',{name:'◇ Bookmark'}));

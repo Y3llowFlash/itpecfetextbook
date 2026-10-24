@@ -16,7 +16,10 @@ class Inventory07Tests(unittest.TestCase):
         cls.ledger=b.h.read_json(b.WORK/'decisions.json')
         cls.records=b.h.read_json(b.WORK/'before/questions.json')
         cls.before=b.h.read_json(b.WORK/'before/reviews.json')
-        cls.pages=b.core.book_pages();cls.public=b.h.read_json(b.h.ROOT/'public/data/questions.json')
+        cls.pages=b.core.book_pages()
+        import release_7
+        baseline=release_7.FOLDER/'before-public-questions.json'
+        cls.public=b.h.read_json(baseline if baseline.exists() else b.h.ROOT/'public/data/questions.json')
 
     def validate(self,root=None,ledger=None):
         return audit.validate_inventory(ledger or self.ledger,self.records,self.before,self.pages,self.public,root=root)

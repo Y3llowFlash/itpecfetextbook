@@ -5643,5 +5643,682 @@
     "reviewedAgainst": [
       "{\"kind\":\"calculation\",\"result\":0.8,\"derivation\":[\"Equal weighted access times give 15h+50(1-h)=10h+70(1-h).\",\"5h=20(1-h), so 25h=20 and h=0.8.\"]}"
     ]
+  },
+  {
+    "questionId": "HIST-TECH01-2016A-Q021",
+    "revision": "ce33e0d3a6e1",
+    "answer": "b",
+    "summary": "SRAM uses a bistable flip-flop circuit, needing more transistors per stored bit; DRAM uses a simpler capacitor-based cell.",
+    "steps": [
+      "SRAM uses a bistable flip-flop circuit, needing more transistors per stored bit; DRAM uses a simpler capacitor-based cell.",
+      "SRAM is fast and needs no periodic refresh while powered. DRAM has greater density and lower cost per bit but needs refresh. Both are volatile; the exact relevant feature is selected from the question options."
+    ],
+    "takeaway": "Compare cell structure, refresh, density and speed separately.",
+    "optionText": {
+      "a": "It does not require refresh nor access operations in order to retain data.",
+      "b": "It has a simple memory cell structure, and thus the price per bit is low.",
+      "c": "It is mainly used for cache memory",
+      "d": "It uses flip-flops for the memory cells to save data."
+    },
+    "imageDescription": "Q21. Which of the following is a characteristic of DRAM and not of SRAM?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":50,\"pdfPage\":55,\"lineIds\":[\"pdf-055-b001-l00\",\"pdf-055-b002-l00\",\"pdf-055-b002-l01\",\"pdf-055-b002-l02\",\"pdf-055-b002-l03\",\"pdf-055-b002-l04\",\"pdf-055-b002-l05\",\"pdf-055-b002-l06\",\"pdf-055-b002-l07\",\"pdf-055-b002-l08\",\"pdf-055-b002-l09\",\"pdf-055-b002-l10\",\"pdf-055-b002-l11\",\"pdf-055-b002-l12\",\"pdf-055-b002-l13\",\"pdf-055-b002-l14\",\"pdf-055-b003-l00\",\"pdf-055-b003-l01\",\"pdf-055-b003-l02\",\"pdf-055-b003-l03\"],\"textSha256\":\"7dd7a60dd9696ca4c155df14e1e29c7b79aa770bd4b16170c83a731c77fab6e6\",\"checkedText\":\"50 \\n• SRAM (Static RAM) \\nWhile its operating speed is high, it is expensive and it also has high power \\nconsumption. As for its memory mechanism, it uses a flip-flop circuit that continues to \\nretain the preceding status, and electrical charge that records information can be \\nretained as long as power is supplied. However, its disadvantages are a low degree of \\nintegration because of complex configuration of the circuit, and storage capacity that is \\nsmaller compared with DRAM. It is mainly used in registers or other memory devices.\\n• DRAM (Dynamic RAM) \\nWhile its operating speed is somewhat slow, it uses a simple circuit where electrical \\ncharge is retained by condenser or capacitor. Therefore, the degree of integration is \\nhigh, and large capacity memory can be easily created at low cost. However, electrical \\ncharge that records information is lost over time, and therefore it is necessary to \\nrewrite (refresh) the information. Examples include SDRAM (Synchronous DRAM) \\nor DDR SDRAM (Double Data Rate SDRAM) used in main memory, and RDRAM \\n(Rambus DRAM) that uses Rambus technology in the external bus interface. \\n \\n(2) ROM (Read Only Memory) \\n \\nROM is IC memory that can be used only for reading data. It has a property (non-volatility) \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2015A-Q021",
+    "revision": "b5bc02c34951",
+    "answer": "a",
+    "summary": "A DRAM cell stores a bit as electrical charge on a capacitor.",
+    "steps": [
+      "A DRAM cell stores a bit as electrical charge on a capacitor.",
+      "Charge leaks, so periodic refresh is needed. Its simple dense cells suit main memory. Flip-flops describe SRAM, ultraviolet erasure describes UV-EPROM, and factory-fixed contents describe mask ROM."
+    ],
+    "takeaway": "DRAM uses capacitor charge and requires refresh.",
+    "optionText": {
+      "a": "It is memory that needs to be refreshed, and is used for main memory in a PC.",
+      "b": "It is non-volatile memory that can erase and write data in units of one byte, and it is used\nwhen data preservation is required even if the power supply is interrupted.",
+      "c": "It is non-volatile memory that has NAND types and NOR types, and is used for SSD.",
+      "d": "Its memory cells are composed of flip-flops, and it is used for cache memory."
+    },
+    "imageDescription": "Q21. Which of the following is an appropriate explanation of DRAM?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":50,\"pdfPage\":55,\"lineIds\":[\"pdf-055-b002-l05\",\"pdf-055-b002-l06\",\"pdf-055-b002-l07\",\"pdf-055-b002-l08\",\"pdf-055-b002-l09\",\"pdf-055-b002-l10\",\"pdf-055-b002-l11\",\"pdf-055-b002-l12\",\"pdf-055-b002-l13\",\"pdf-055-b002-l14\",\"pdf-055-b003-l00\",\"pdf-055-b003-l01\",\"pdf-055-b003-l02\",\"pdf-055-b003-l03\"],\"textSha256\":\"9327bf8e3012f9fa96619aa89880398e94579ab7d77cbcc3c8f299c789fba543\",\"checkedText\":\"integration because of complex configuration of the circuit, and storage capacity that is \\nsmaller compared with DRAM. It is mainly used in registers or other memory devices.\\n• DRAM (Dynamic RAM) \\nWhile its operating speed is somewhat slow, it uses a simple circuit where electrical \\ncharge is retained by condenser or capacitor. Therefore, the degree of integration is \\nhigh, and large capacity memory can be easily created at low cost. However, electrical \\ncharge that records information is lost over time, and therefore it is necessary to \\nrewrite (refresh) the information. Examples include SDRAM (Synchronous DRAM) \\nor DDR SDRAM (Double Data Rate SDRAM) used in main memory, and RDRAM \\n(Rambus DRAM) that uses Rambus technology in the external bus interface. \\n \\n(2) ROM (Read Only Memory) \\n \\nROM is IC memory that can be used only for reading data. It has a property (non-volatility) \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2015S-Q025",
+    "revision": "7d59433522ea",
+    "answer": "d",
+    "summary": "The question requires fast memory or a cell made from flip-flops.",
+    "steps": [
+      "The question requires fast memory or a cell made from flip-flops.",
+      "SRAM uses flip-flop cells and is suitable for fast cache. DRAM and SDRAM use dynamic cells; EEPROM is electrically programmable nonvolatile storage."
+    ],
+    "takeaway": "SRAM is the flip-flop memory used for fast cache.",
+    "optionText": {
+      "a": "DRAM",
+      "b": "EEPROM",
+      "c": "SDRAM",
+      "d": "SRAM"
+    },
+    "imageDescription": "Q25. Which of the following is a memory module that uses a flip-flop circuit in a memory cell?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":50,\"pdfPage\":55,\"lineIds\":[\"pdf-055-b001-l00\",\"pdf-055-b002-l00\",\"pdf-055-b002-l01\",\"pdf-055-b002-l02\",\"pdf-055-b002-l03\",\"pdf-055-b002-l04\"],\"textSha256\":\"d3e2a9c5b903b9c11e9b65f646033e3dac08cb4f7112d06b864bea8e256e68c5\",\"checkedText\":\"50 \\n• SRAM (Static RAM) \\nWhile its operating speed is high, it is expensive and it also has high power \\nconsumption. As for its memory mechanism, it uses a flip-flop circuit that continues to \\nretain the preceding status, and electrical charge that records information can be \\nretained as long as power is supplied. However, its disadvantages are a low degree of \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2014S-Q027",
+    "revision": "c6593737c24c",
+    "answer": "b",
+    "summary": "Each self-connected NAND inverts one input: NOT X and NOT Y.",
+    "steps": [
+      "Each self-connected NAND inverts one input: NOT X and NOT Y.",
+      "The last NAND gives NOT(NOT X AND NOT Y)=X OR Y. Enumerating all four inputs matches only B."
+    ],
+    "takeaway": "The last NAND gives NOT(NOT X AND NOT Y)=X OR Y. Enumerating all four inputs matches only B.",
+    "optionText": {
+      "a": "X AND Y",
+      "b": "X OR Y",
+      "c": "NOT(X AND Y)",
+      "d": "NOT(X OR Y)"
+    },
+    "imageDescription": "Q27. Which logical expression indicates output Z of the combinational circuit? The source dot denotes AND, plus denotes OR, and a bar denotes NOT. X and Y each feed both pins of separate NAND gates; those results feed a third NAND. Four choices differ by AND/OR and the extent of their negation bars.",
+    "reviewedAgainst": [
+      "{\"kind\":\"original-question\",\"sourceSha256\":\"5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1\",\"pdfPage\":93,\"imageSha256\":[\"0758239bfdb0082cf3c6abda0404c90e434d0d7fdeba465285360a8a3f438326\"],\"manualVisualReview\":\"Original source render independently inspected in Batch 2, 2026-10-22\"}",
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":70,\"printedPage\":65,\"heading\":\"3-4-1 Logic Circuit / Main logical laws\",\"textSha256\":\"e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8\",\"checkedExcerpt\":\"A ( ) B A ( ) C B ( A       • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determine logical expression F\"}",
+      "{\"kind\":\"computed-source-option-truth-tables\",\"variables\":[\"X\",\"Y\"],\"matches\":[\"b\"],\"rows\":[[0,0,0,0,0,1,1],[0,1,1,0,1,1,0],[1,0,1,0,1,1,0],[1,1,1,1,1,0,0]]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2013A-Q015",
+    "revision": "939e988c4f5b",
+    "answer": "a",
+    "summary": "USB is a serial peripheral interface, with hubs allowing a tree of attached devices.",
+    "steps": [
+      "USB is a serial peripheral interface, with hubs allowing a tree of attached devices.",
+      "In the USB 1.1/2.0 context, low-speed serves keyboards and mice, full-speed serves peripherals such as printers, and high-speed supports faster devices. FireWire is IEEE 1394; infrared and parallel daisy-chain interfaces are different."
+    ],
+    "takeaway": "USB uses serial links and a hub-based device tree.",
+    "optionText": {
+      "a": "A serial interface to connect devices in a tree topology via hubs",
+      "b": "A serial interface to transfer data to devices such as printers by using infrared rays",
+      "c": "A parallel interface to connect CD-ROM or DVD drives housed in PCs",
+      "d": "A parallel interface to connect hard disks or printers in a daisy chain topology"
+    },
+    "imageDescription": "Q15. Which of the following is an explanation of USB?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":107,\"pdfPage\":113,\"lineIds\":[\"pdf-113-b002-l02\",\"pdf-113-b002-l03\",\"pdf-113-b002-l04\",\"pdf-113-b002-l05\",\"pdf-113-b003-l00\",\"pdf-113-b003-l01\",\"pdf-113-b003-l02\",\"pdf-113-b003-l03\",\"pdf-113-b006-l00\",\"pdf-113-b006-l01\",\"pdf-113-b006-l02\",\"pdf-113-b006-l03\",\"pdf-113-b006-l04\",\"pdf-113-b006-l05\",\"pdf-113-b006-l06\",\"pdf-113-b006-l07\",\"pdf-113-b006-l08\",\"pdf-113-b006-l09\"],\"textSha256\":\"a6bdb17a16f619eedbb4d7937d247ee6d1f119caa60feb5f99f23e837c8f7d71\",\"checkedText\":\"expansion slot of a PC. (The analog input/output board is also an interface board.) There \\nare some products that support serial interface board, parallel interface board, and data \\ntransfer method (input/output interface). For example, in order to increase RS-232C \\ninterface ports, you can mount a serial interface board or an RS-232C interface board. \\n \\n(2) SCSI (Small Computer Systems Interface) \\n \\nSCSI is a parallel interface used for connecting computers like PCs to peripheral devices. It is \\n \\nIn SCSI-3, serial interface technique based on the serial SCSI is standardized, which allows \\nhigh-speed data transfer at 50 to 200 Mbps. \\n \\n(3) USB (Universal Serial Bus) \\n \\nUSB is a serial interface standardized in 1996, and it can connect various peripheral devices \\nsuch as a keyboard, a mouse, and a modem. By using a USB hub, up to 127 devices can be \\nconnected in the tree configuration. Multiple standards for the shape of connectors are defined \\naccording to the device to be used. \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2013A-Q028",
+    "revision": "c77c5940b562",
+    "answer": "c",
+    "summary": "6D hex expands to P7…P0 = 01101101. The stem explicitly says that a segment lights only when its bit is 1.",
+    "steps": [
+      "6D hex expands to P7…P0 = 01101101. The stem explicitly says that a segment lights only when its bit is 1.",
+      "P0→a,P1→b,P2→c,P3→d,P4→e,P5→f,P6→g,P7→dot. Thus a,c,d,f,g are lit and b,e,dot are off. Only the original image in C matches all eight states."
+    ],
+    "takeaway": "P0→a,P1→b,P2→c,P3→d,P4→e,P5→f,P6→g,P7→dot. Thus a,c,d,f,g are lit and b,e,dot are off. Only the original image in C matches all eight states.",
+    "optionText": {
+      "a": "Segments b,c,e,f and dot ON; a,d,g OFF",
+      "b": "Segments a,b,c,d,g ON; e,f,dot OFF",
+      "c": "Segments a,c,d,f,g ON; b,e,dot OFF",
+      "d": "Segments b,c,f,g and dot ON; a,d,e OFF"
+    },
+    "imageDescription": "Q28. In an LED lighting circuit with seven segments and one dot as shown below, when 6D in hexadecimal is written out to the output port, which of the following is displayed? Here, P7 is the most significant bit, P0 is the least significant bit, and each segment or a small dot of the LED lights up only when the corresponding bit is 1. Diagram: P0, P1, P2, P3, P4, P5, P6 drive a, b, c, d, e, f, g respectively through resistors; P7 drives dot Dt. Segment positions are a top, b upper right, c lower right, d bottom, e lower left, f upper left, g center. Black fill means ON and outline means OFF. The common terminal is grounded.",
+    "reviewedAgainst": [
+      "{\"kind\":\"original-question\",\"sourceSha256\":\"5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1\",\"pdfPage\":102,\"imageSha256\":[\"24b939e2f45675cb41a7175d0cc826b3c89c5c247d47ad26d2aa3c99807860be\"],\"manualVisualReview\":\"Original source render independently inspected in Batch 2, 2026-10-22\"}",
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":103,\"printedPage\":97,\"heading\":\"5-2-1 Display\",\"textSha256\":\"8fd4f1c7e89ea6048c99f9903e30871936b8f4c88327c70027d2ce6bddbf6ce1\",\"checkedExcerpt\":\"that is used for exporting the processing results outside computers. Output units include displays that show the results and printers that print the results. 5-2-1 Display Display is a device that displays images in color by combining three primary colors of light, namely RGB (Red, Green, Blue). Screen is an aggregation of points (dots), and the higher the density of dots, the higher the display quality of images. This is also called the resolution of the screen, and dpi (dots per inch) is used as a unit of resolution.\"}",
+      "{\"kind\":\"segment-calculation\",\"valueHex\":\"6D\",\"bitsP7ToP0\":[0,1,1,0,1,1,0,1],\"lit\":[\"a\",\"c\",\"d\",\"f\",\"g\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2013S-Q006",
+    "revision": "bb12f046dc88",
+    "answer": "d",
+    "summary": "Let P be the AND of all n inputs and Q their OR. For all-zero inputs P=Q=0; for all-one inputs P=Q=1; otherwise P=0,Q=1.",
+    "steps": [
+      "Let P be the AND of all n inputs and Q their OR. For all-zero inputs P=Q=0; for all-one inputs P=Q=1; otherwise P=0,Q=1.",
+      "The required function is NOT P AND Q = NOT(P OR NOT Q), with both outer and inner bars as printed in D. This argument covers arbitrary n, not just a sample truth table."
+    ],
+    "takeaway": "The required function is NOT P AND Q = NOT(P OR NOT Q), with both outer and inner bars as printed in D. This argument covers arbitrary n, not just a sample truth table.",
+    "optionText": {
+      "a": "P OR Q",
+      "b": "P OR NOT Q",
+      "c": "NOT(P OR Q)",
+      "d": "NOT(P OR NOT Q)"
+    },
+    "imageDescription": "Q6. Which of the following is the logical expression whose resulting value is zero (0) only when the binary values of “x1, x2, ..., xn” are all zeros (0s) or all ones (1s)? Here, “·” and “+” represent the logical product and logical sum operators respectively, and “ x ” is the logical negation of “x”. In the accessible options, P denotes the product x1 AND x2 AND ... AND xn; Q denotes the sum x1 OR x2 OR ... OR xn. Parentheses specify the extent of every source complement bar.",
+    "reviewedAgainst": [
+      "{\"kind\":\"original-question\",\"sourceSha256\":\"5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1\",\"pdfPage\":105,\"imageSha256\":[\"169694cd93fb3ec131b31fde0128aa2fa40a25ccacaab617e3a21269a66732d5\"],\"manualVisualReview\":\"Original source render independently inspected in Batch 2, 2026-10-22\"}",
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":70,\"printedPage\":65,\"heading\":\"3-4-1 Logic Circuit / Main logical laws\",\"textSha256\":\"e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8\",\"checkedExcerpt\":\"A ( ) B A ( ) C B ( A       • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determine logical expression F\"}",
+      "{\"kind\":\"computed-source-option-truth-tables\",\"variables\":[\"x1\",\"x2\",\"x3\"],\"matches\":[\"d\"],\"rows\":[[0,0,0,0,0,1,1,0],[0,0,1,1,1,0,0,1],[0,1,0,1,1,0,0,1],[0,1,1,1,1,0,0,1],[1,0,0,1,1,0,0,1],[1,0,1,1,1,0,0,1],[1,1,0,1,1,0,0,1],[1,1,1,0,1,1,0,0]]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2013S-Q026",
+    "revision": "2dc68c35f777",
+    "answer": "b",
+    "summary": "A DRAM cell stores a bit as electrical charge on a capacitor.",
+    "steps": [
+      "A DRAM cell stores a bit as electrical charge on a capacitor.",
+      "Charge leaks, so periodic refresh is needed. Its simple dense cells suit main memory. Flip-flops describe SRAM, ultraviolet erasure describes UV-EPROM, and factory-fixed contents describe mask ROM."
+    ],
+    "takeaway": "DRAM uses capacitor charge and requires refresh.",
+    "optionText": {
+      "a": "It is a memory chip on which data can be written using a specially-designed device\nand erased by exposure to ultraviolet light.",
+      "b": "It is often used as main memory, and one bit is represented depending on whether or\nnot its capacitor is charged.",
+      "c": "It is used as memory to store microprograms that are written at the time of\nmanufacturing.",
+      "d": "It is used as high-speed memory such as cache which is composed of flip-flops, and\nthe manufacturing cost is high."
+    },
+    "imageDescription": "Q26. Which of the following is an appropriate explanation of DRAM?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":50,\"pdfPage\":55,\"lineIds\":[\"pdf-055-b002-l05\",\"pdf-055-b002-l06\",\"pdf-055-b002-l07\",\"pdf-055-b002-l08\",\"pdf-055-b002-l09\",\"pdf-055-b002-l10\",\"pdf-055-b002-l11\",\"pdf-055-b002-l12\",\"pdf-055-b002-l13\",\"pdf-055-b002-l14\",\"pdf-055-b003-l00\",\"pdf-055-b003-l01\",\"pdf-055-b003-l02\",\"pdf-055-b003-l03\"],\"textSha256\":\"9327bf8e3012f9fa96619aa89880398e94579ab7d77cbcc3c8f299c789fba543\",\"checkedText\":\"integration because of complex configuration of the circuit, and storage capacity that is \\nsmaller compared with DRAM. It is mainly used in registers or other memory devices.\\n• DRAM (Dynamic RAM) \\nWhile its operating speed is somewhat slow, it uses a simple circuit where electrical \\ncharge is retained by condenser or capacitor. Therefore, the degree of integration is \\nhigh, and large capacity memory can be easily created at low cost. However, electrical \\ncharge that records information is lost over time, and therefore it is necessary to \\nrewrite (refresh) the information. Examples include SDRAM (Synchronous DRAM) \\nor DDR SDRAM (Double Data Rate SDRAM) used in main memory, and RDRAM \\n(Rambus DRAM) that uses Rambus technology in the external bus interface. \\n \\n(2) ROM (Read Only Memory) \\n \\nROM is IC memory that can be used only for reading data. It has a property (non-volatility) \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2012A-Q015",
+    "revision": "8cdae9f125de",
+    "answer": "c",
+    "summary": "The instruction address field is 20; memory[20] is 25. The diagram follows that value to a second memory address.",
+    "steps": [
+      "The instruction address field is 20; memory[20] is 25. The diagram follows that value to a second memory address.",
+      "Reading the operand from memory[25] after reading its address from memory[20] is indirect addressing, option C."
+    ],
+    "takeaway": "Reading the operand from memory[25] after reading its address from memory[20] is indirect addressing, option C.",
+    "optionText": {
+      "a": "Direct addressing",
+      "b": "Index addressing",
+      "c": "Indirect addressing",
+      "d": "Relative addressing"
+    },
+    "imageDescription": "Q15. Which addressing scheme references main-memory data as shown? Instruction address field 20 points to main-memory address 20, whose contents 25 point to address 25 containing Data.",
+    "reviewedAgainst": [
+      "{\"kind\":\"original-question\",\"sourceSha256\":\"5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1\",\"pdfPage\":114,\"imageSha256\":[\"c9a2694372d64c5909d9e6d72bc6bd8b2b41b3ad03bdc38e0aed236bbcdc9428\"],\"manualVisualReview\":\"Original source render independently inspected in Batch 2, 2026-10-22\"}",
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":64,\"printedPage\":59,\"heading\":\"3-3-3 Addressing Mode\",\"textSha256\":\"3ccf13e4b15d65e8f2f44687262569836e8962342ee82a9796255c5fd0356f02\",\"checkedExcerpt\":\" addressing when only address modification is specified. Figure 1-23 Direct addressing 3) Indirect addressing In this method, the content (value) of main memory referenced by the effective address is used as the address of operand. Double (in the example shown in Figure 1-24, data stored in address 120 is fetched as operand), and triple indirect addressing is also possible. Figure 1-24 Indirect addressing 3-3-4 Interrupt Interrupt means executing a separate process (instruction) while a series of processes (instructions) are being executed. Instead of user mode (mode where there are restrictions on the use of CPU), which is normally used, the interrupt process is executed in privilege mode (mode where there are no restrictions on the use of CPU).\"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2012A-Q029",
+    "revision": "55045dc75503",
+    "answer": "c",
+    "summary": "The first two self-connected NAND gates produce NOT A and NOT B. Their NAND gives A OR B.",
+    "steps": [
+      "The first two self-connected NAND gates produce NOT A and NOT B. Their NAND gives A OR B.",
+      "The final self-connected NAND inverts it, giving NOT(A OR B), i.e. NOR in C."
+    ],
+    "takeaway": "The final self-connected NAND inverts it, giving NOT(A OR B), i.e. NOR in C.",
+    "optionText": {
+      "a": "AND",
+      "b": "NAND",
+      "c": "NOR",
+      "d": "OR"
+    },
+    "imageDescription": "Q29. Which logic gate is equivalent to the displayed circuit? Two input-inverting NANDs feed a third NAND, and a final self-connected NAND inverts its result. Options are AND,NAND,NOR,OR.",
+    "reviewedAgainst": [
+      "{\"kind\":\"original-question\",\"sourceSha256\":\"5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1\",\"pdfPage\":118,\"imageSha256\":[\"61472ef029c82c3503cf9c4a859f13a01741e501dad8fb42fe75bca28fc877de\"],\"manualVisualReview\":\"Original source render independently inspected in Batch 2, 2026-10-22\"}",
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":70,\"printedPage\":65,\"heading\":\"3-4-1 Logic Circuit / Main logical laws\",\"textSha256\":\"e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8\",\"checkedExcerpt\":\"A ( ) B A ( ) C B ( A       • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determine logical expression F\"}",
+      "{\"kind\":\"computed-source-option-truth-tables\",\"variables\":[\"A\",\"B\"],\"matches\":[\"c\"],\"rows\":[[0,0,1,0,1,1,0],[0,1,0,0,1,0,1],[1,0,0,0,1,0,1],[1,1,0,1,0,0,1]]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2012S-Q002",
+    "revision": "0620d47186eb",
+    "answer": "a",
+    "summary": "Expand x(y+z)+y(x+z)+xyz to xy+xz+xy+yz+xyz.",
+    "steps": [
+      "Expand x(y+z)+y(x+z)+xyz to xy+xz+xy+yz+xyz.",
+      "Idempotence removes duplicate xy; absorption xy+xyz=xy leaves xy+xz+yz."
+    ],
+    "takeaway": "Idempotence removes duplicate xy; absorption xy+xyz=xy leaves xy+xz+yz.",
+    "optionText": {
+      "a": "x AND y OR x AND z OR y AND z",
+      "b": "x AND y OR x AND z OR y AND z OR x AND (NOT y)",
+      "c": "x AND y OR z OR y AND x OR z OR x AND y AND z",
+      "d": "x AND z OR y AND z OR x AND y AND z"
+    },
+    "imageDescription": "Q2. Which of the following is equivalent to the logical expression below? Here, “AND” has higher precedence than “OR”, and “NOT” has the highest precedence. x AND (y OR z) OR y AND (x OR z) OR x AND y AND z",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":\"xy+xz+yz\",\"derivation\":[\"Expand x(y+z)+y(x+z)+xyz to xy+xz+xy+yz+xyz.\",\"Idempotence removes duplicate xy; absorption xy+xyz=xy leaves xy+xz+yz.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2012S-Q014",
+    "revision": "eb30b869d249",
+    "answer": "a",
+    "summary": "Write-through updates both cache and main memory for a write.",
+    "steps": [
+      "Write-through updates both cache and main memory for a write.",
+      "Write-back initially changes the cached block and writes the dirty block to main memory when it is replaced. Neither policy supplies virtual-memory capacity or requires a program-managed interrupt on every cache miss."
+    ],
+    "takeaway": "Distinguish immediate write-through from deferred write-back.",
+    "optionText": {
+      "a": "A write instruction rewrites cache in two ways: one is to rewrite both cache and\nmain memory, and the other is to rewrite only cache until the cache data is removed.",
+      "b": "Cache memory is used to fill the gap in memory capacity between real memory and\nvirtual memory.",
+      "c": "The substantial improvement in the access speed of semiconductor memory is\nmaking cache memory less necessary.",
+      "d": "When a cache miss occurs, an interrupt is generated so that the program can transfer\ndata from main memory to cache memory."
+    },
+    "imageDescription": "Q14. Which of the following is an appropriate description concerning cache memory?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":72,\"pdfPage\":77,\"lineIds\":[\"pdf-077-b002-l02\",\"pdf-077-b003-l00\",\"pdf-077-b004-l00\",\"pdf-077-b004-l01\",\"pdf-077-b004-l02\",\"pdf-077-b004-l03\",\"pdf-077-b005-l00\",\"pdf-077-b005-l01\",\"pdf-077-b005-l02\",\"pdf-077-b005-l03\"],\"textSha256\":\"bedbe0bc218f54571646bc3113986c7ef0992c306d5dfcc7d757bd0b353004d7\",\"checkedText\":\" \\n1) Write-through method \\nThat  method  reflects  the update  in main  memory  whenever  data is updated . \\nWhile certainty is high, main memory needs to be accessed for every process, so \\noperating speed is somewhat slow. \\n2) Write-back method \\nIn this method, data is not updated in main memory while data is updated in cache \\nmemory. Data is updated in main memory only when data from cache memory is \\nremoved. While its operating speed is fast, inconsistency in the data of main \\nmemory may occur at some point in time. \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2011A-Q026",
+    "revision": "2426b95b3adf",
+    "answer": "c",
+    "summary": "6D hex = 01101101, in P7 to P0 order. Each 1 turns its mapped segment ON.",
+    "steps": [
+      "6D hex = 01101101, in P7 to P0 order. Each 1 turns its mapped segment ON.",
+      "P0..P6 map to a..g and P7 to dot. The lit segments are a,c,d,f,g; b,e,dot are OFF. Comparing all eight states in each drawing uniquely selects C."
+    ],
+    "takeaway": "P0..P6 map to a..g and P7 to dot. The lit segments are a,c,d,f,g; b,e,dot are OFF. Comparing all eight states in each drawing uniquely selects C.",
+    "optionText": {
+      "a": "a,b,c,d,g and dot ON; e,f OFF",
+      "b": "b,c,f,g ON; a,d,e,dot OFF",
+      "c": "a,c,d,f,g ON; b,e,dot OFF",
+      "d": "a,b,c,f and dot ON; d,e,g OFF"
+    },
+    "imageDescription": "Q26. On a seven-segment LED lighting circuit as illustrated below, when 6D in hexadecimal is written out to the output port, which of the following is displayed? Here, P7 is the MSB (Most Significant Bit), and P0 is the LSB (Least Significant Bit). When 1 is written to a port, the corresponding LED segment is turned on. Diagram: P0, P1, P2, P3, P4, P5, P6 drive a, b, c, d, e, f, g respectively through resistors; P7 drives dot Dt. Segment positions are a top, b upper right, c lower right, d bottom, e lower left, f upper left, g center. Black fill means ON and outline means OFF. The common terminal is grounded.",
+    "reviewedAgainst": [
+      "{\"kind\":\"original-question\",\"sourceSha256\":\"5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1\",\"pdfPage\":134,\"imageSha256\":[\"fb457a1fd81e6e43c39f8571763981a674c22ed5a169e762c1533a5f49369ed8\"],\"manualVisualReview\":\"Original source render independently inspected in Batch 3, 2026-10-22; printed key was visible, not a blind solve.\"}",
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":103,\"printedPage\":97,\"heading\":\"5-2-1 Display\",\"textSha256\":\"8fd4f1c7e89ea6048c99f9903e30871936b8f4c88327c70027d2ce6bddbf6ce1\",\"checkedExcerpt\":\" processing results outside computers. Output units include displays that show the results and printers that print the results. 5-2-1 Display Display is a device that displays images in color by combining three primary colors of light, namely RGB (Red, Green, Blue). Screen is an aggregation of points (dots), and the higher the density of dots, the higher the display quality of images. This is also called the resolution of the screen, and dpi (dots per inch) is used as a unit of resolution.\"}",
+      "{\"kind\":\"segment-calculation\",\"bitsP7ToP0\":[0,1,1,0,1,1,0,1],\"on\":[\"a\",\"c\",\"d\",\"f\",\"g\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2011S-Q026",
+    "revision": "0eed52e6166f",
+    "answer": "b",
+    "summary": "The reference circuit ORs A AND B with NOT B.",
+    "steps": [
+      "The reference circuit ORs A AND B with NOT B.",
+      "By distributivity/absorption, (A AND B) OR NOT B = A OR NOT B. Only circuit B matches all four inputs."
+    ],
+    "takeaway": "By distributivity/absorption, (A AND B) OR NOT B = A OR NOT B. Only circuit B matches all four inputs.",
+    "optionText": {
+      "a": "A and B feed an AND gate; its output feeds NOT; result X.",
+      "b": "B feeds NOT; its output and A feed OR; result X.",
+      "c": "A branches directly to OR and to an AND gate whose other input is B; AND output feeds the other OR input; result X.",
+      "d": "B feeds NOT; its output and A feed AND; the AND output feeds another NOT; result X."
+    },
+    "imageDescription": "Q26. Which alternative circuit obtains the same output as the given circuit? A and B enter an AND; inverted B and that AND output enter OR. The four alternatives contain distinct AND/OR/inversion paths.",
+    "reviewedAgainst": [
+      "{\"kind\":\"original-question\",\"sourceSha256\":\"5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1\",\"pdfPage\":142,\"imageSha256\":[\"63c9e50b88f8434f618060f8c5cdf33de8ab92364c29b0ea0693b5365bf332af\"],\"manualVisualReview\":\"Original source render independently inspected in Batch 3, 2026-10-22; printed key was visible, not a blind solve.\"}",
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":70,\"printedPage\":65,\"heading\":\"3-4-1 Logic Circuit / Main logical laws\",\"textSha256\":\"e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8\",\"checkedExcerpt\":\"  • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determi\"}",
+      "{\"kind\":\"computed-source-option-truth-tables\",\"variables\":[\"A\",\"B\"],\"matches\":[\"b\"],\"rows\":[[0,0,1,1,1,0,1],[0,1,0,1,0,0,1],[1,0,1,1,1,1,0],[1,1,1,0,1,1,1]]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2010S-Q029",
+    "revision": "ea1d445da930",
+    "answer": "c",
+    "summary": "A DRAM cell stores a bit as electrical charge on a capacitor.",
+    "steps": [
+      "A DRAM cell stores a bit as electrical charge on a capacitor.",
+      "Charge leaks, so periodic refresh is needed. Its simple dense cells suit main memory. Flip-flops describe SRAM, ultraviolet erasure describes UV-EPROM, and factory-fixed contents describe mask ROM."
+    ],
+    "takeaway": "DRAM uses capacitor charge and requires refresh.",
+    "optionText": {
+      "a": "Data can be written with dedicated equipment.  It can be erased with ultraviolet\nirradiation.",
+      "b": "Data is written when it is manufactured.  It is used as memory for storing microprograms.",
+      "c": "It can represent one bit, depending on whether the capacitor is electrically charged or\nnot.  It is often used as main memory.",
+      "d": "It consists of flip-flops.  Although the access speed is fast, the manufacturing cost is\nhigh.  It is used for cache memory."
+    },
+    "imageDescription": "Q29. Which of the following is the appropriate explanation of DRAM?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":50,\"pdfPage\":55,\"lineIds\":[\"pdf-055-b002-l05\",\"pdf-055-b002-l06\",\"pdf-055-b002-l07\",\"pdf-055-b002-l08\",\"pdf-055-b002-l09\",\"pdf-055-b002-l10\",\"pdf-055-b002-l11\",\"pdf-055-b002-l12\",\"pdf-055-b002-l13\",\"pdf-055-b002-l14\",\"pdf-055-b003-l00\",\"pdf-055-b003-l01\",\"pdf-055-b003-l02\",\"pdf-055-b003-l03\"],\"textSha256\":\"9327bf8e3012f9fa96619aa89880398e94579ab7d77cbcc3c8f299c789fba543\",\"checkedText\":\"integration because of complex configuration of the circuit, and storage capacity that is \\nsmaller compared with DRAM. It is mainly used in registers or other memory devices.\\n• DRAM (Dynamic RAM) \\nWhile its operating speed is somewhat slow, it uses a simple circuit where electrical \\ncharge is retained by condenser or capacitor. Therefore, the degree of integration is \\nhigh, and large capacity memory can be easily created at low cost. However, electrical \\ncharge that records information is lost over time, and therefore it is necessary to \\nrewrite (refresh) the information. Examples include SDRAM (Synchronous DRAM) \\nor DDR SDRAM (Double Data Rate SDRAM) used in main memory, and RDRAM \\n(Rambus DRAM) that uses Rambus technology in the external bus interface. \\n \\n(2) ROM (Read Only Memory) \\n \\nROM is IC memory that can be used only for reading data. It has a property (non-volatility) \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2009A-Q010",
+    "revision": "850d69030afc",
+    "answer": "b",
+    "summary": "Self-NAND produces each inverted input.",
+    "steps": [
+      "Self-NAND produces each inverted input.",
+      "NAND(NOT X,NOT Y) = NOT(NOT X AND NOT Y) = X OR Y."
+    ],
+    "takeaway": "NAND(NOT X,NOT Y) = NOT(NOT X AND NOT Y) = X OR Y.",
+    "optionText": {
+      "a": "((X NAND Y) NAND X) NAND Y",
+      "b": "(X NAND X) NAND (Y NAND Y)",
+      "c": "(X NAND Y) NAND (X NAND Y)",
+      "d": "X NAND (Y NAND (X NAND Y))"
+    },
+    "imageDescription": "Q10. A “negative AND” operation “X NAND Y” of X and Y is defined as “NOT (X AND Y)”. Which of the following is the logical expression that represents “X OR Y” by using NAND only?",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":\"X OR Y\",\"derivation\":[\"Self-NAND produces each inverted input.\",\"NAND(NOT X,NOT Y) = NOT(NOT X AND NOT Y) = X OR Y.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2009S-Q019",
+    "revision": "1b5ebd8c2a72",
+    "answer": "d",
+    "summary": "The question requires fast memory or a cell made from flip-flops.",
+    "steps": [
+      "The question requires fast memory or a cell made from flip-flops.",
+      "SRAM uses flip-flop cells and is suitable for fast cache. DRAM and SDRAM use dynamic cells; EEPROM is electrically programmable nonvolatile storage."
+    ],
+    "takeaway": "SRAM is the flip-flop memory used for fast cache.",
+    "optionText": {
+      "a": "DRAM",
+      "b": "RDRAM",
+      "c": "SDRAM",
+      "d": "SRAM"
+    },
+    "imageDescription": "Q19. Which of the following is a high-speed memory technology that uses flip-flop circuits?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":50,\"pdfPage\":55,\"lineIds\":[\"pdf-055-b001-l00\",\"pdf-055-b002-l00\",\"pdf-055-b002-l01\",\"pdf-055-b002-l02\",\"pdf-055-b002-l03\",\"pdf-055-b002-l04\"],\"textSha256\":\"d3e2a9c5b903b9c11e9b65f646033e3dac08cb4f7112d06b864bea8e256e68c5\",\"checkedText\":\"50 \\n• SRAM (Static RAM) \\nWhile its operating speed is high, it is expensive and it also has high power \\nconsumption. As for its memory mechanism, it uses a flip-flop circuit that continues to \\nretain the preceding status, and electrical charge that records information can be \\nretained as long as power is supplied. However, its disadvantages are a low degree of \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2007A-Q010",
+    "revision": "9ea56d0f4f54",
+    "answer": "c",
+    "summary": "Distribute BC(B+C) = BCB + BCC = BC.",
+    "steps": [
+      "Distribute BC(B+C) = BCB + BCC = BC.",
+      "AB + BC factors to B(A+C)."
+    ],
+    "takeaway": "AB + BC factors to B(A+C).",
+    "optionText": {
+      "a": "(A AND B) OR (A AND C)",
+      "b": "(A AND C) OR B",
+      "c": "B AND (A OR C)",
+      "d": "B OR (A AND C)"
+    },
+    "imageDescription": "Q10. Which expression is equivalent to A AND B OR (B AND C AND (B OR C))? Source dot means AND and plus means OR.",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":\"B(A+C)\",\"derivation\":[\"Distribute BC(B+C) = BCB + BCC = BC.\",\"AB + BC factors to B(A+C).\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2007A-Q020",
+    "revision": "c1ae3b6fb1e5",
+    "answer": "d",
+    "summary": "The traditional stored-program CPU fetches instructions and exchanges data with main memory through a limited transfer path.",
+    "steps": [
+      "The traditional stored-program CPU fetches instructions and exchanges data with main memory through a limited transfer path.",
+      "The CPU-main-memory transfer rate, D, can constrain execution even when the CPU computes quickly. Main-memory capacity and peripheral I/O speed alone do not define this bottleneck."
+    ],
+    "takeaway": "The CPU-main-memory transfer rate, D, can constrain execution even when the CPU computes quickly. Main-memory capacity and peripheral I/O speed alone do not define this bottleneck.",
+    "optionText": {
+      "a": "Capacity of main memory",
+      "b": "CPU performance",
+      "c": "Data transfer speed between CPU and I/O devices",
+      "d": "Data transfer speed between CPU and main memory"
+    },
+    "imageDescription": "Q20. Which of the following leads to the von Neumann bottleneck?",
+    "reviewedAgainst": [
+      "{\"kind\":\"original-question\",\"sourceSha256\":\"5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1\",\"pdfPage\":199,\"imageSha256\":[\"5dbead86726bb4777cac157dd4474546d9667d23980c4f9edf37aae34bc2be40\"],\"manualVisualReview\":\"Original source render independently inspected in Batch 4, 2026-10-22; printed key was visible, not a blind solve.\"}",
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":53,\"printedPage\":48,\"heading\":\"3-1 Configuration of CPU / Bus\",\"textSha256\":\"6bc3b126aecc60493601ce245bce5afc960a1504b085ac973b933bae06421e3d\",\"checkedExcerpt\":\"ging data In conventional buses (Neumann architecture), the same bus was used for loading instructions and data. However, in modern-day computers, for loading instructions and data, Harvard architecture is used where independent buses are provided for loading instructions and data. The main buses presently used in PCs are shown below. Other than in PCs, various buses are used (there are also manufacturers’ specific buses).\"}",
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":75,\"printedPage\":70,\"heading\":\"3-5-1 High Speed Memory Access\",\"textSha256\":\"ae201b64c9e624c0b66d395c28ecb9fd1da89d75a057ba2ce14677dc9cf79597\",\"checkedExcerpt\":\"ry). High speed memory access is a technology that resolves bottlenecks caused by difference in access speeds (access gap) by even slightly accelerating access to main memory (DRAM), which has slower access speed compared with the register (SRAM) of the processor. (1) Buffer memory Buffer memory is the medium-speed storage installed between high-speed storage and low-speed storage. Cache memory, which is a buffer memory, is the medium-speed storage composed of SRAM and installed between high-speed register and low-speed main memory. Figure 1-34 Working of cache memory In a computer system where cache memory is used, if the data required by the processo\"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2007A-Q026",
+    "revision": "bc089934b10c",
+    "answer": "a",
+    "summary": "Processor execution is much faster than main-memory access.",
+    "steps": [
+      "Processor execution is much faster than main-memory access.",
+      "Fast cache levels bridge this speed gap by serving frequently used instructions and data. Cache is not a substitute for virtual-memory capacity or a general register."
+    ],
+    "takeaway": "Cache bridges the processor-to-main-memory speed gap.",
+    "optionText": {
+      "a": "To compensate for the difference between the main memory access speed and the\nprocessor speed",
+      "b": "To manage frequently-used programs on a resident basis",
+      "c": "To perform virtual memory address conversion at high speed",
+      "d": "To perform virtual memory paging process at high speed"
+    },
+    "imageDescription": "Q26. Which of the following appropriately describes the purpose of the cache memory used by processors?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":72,\"pdfPage\":77,\"lineIds\":[\"pdf-077-b006-l00\",\"pdf-077-b006-l01\",\"pdf-077-b006-l02\",\"pdf-077-b006-l03\",\"pdf-077-b006-l04\",\"pdf-077-b006-l05\",\"pdf-077-b007-l00\",\"pdf-077-b008-l00\",\"pdf-077-b009-l00\",\"pdf-077-b009-l01\",\"pdf-077-b009-l02\",\"pdf-077-b009-l03\"],\"textSha256\":\"0399900cbb532c4db8f8621cd9b7711f72205bb280930d8e82fef82e4f805fe8\",\"checkedText\":\" \\nIn modern-day computers, there is a large difference in the speed of processor and the speed \\nof main memory. Therefore, it is common to use multi-level cache configuration where cache \\nmemory is divided into 2 levels, namely, primary cache and secondary cache. In this case, \\nthe processor will access in the sequence of primary cache → secondary cache → main \\nmemory. \\n \\nFigure 1-35  Multi-level cache configuration \\n \\nMeanwhile, there is disk cache, which is another buffer memory. This buffer memory is \\nplaced between main memory and auxiliary storage (hard disk), and it may use a part of main \\nmemory, or semiconductor memory may be installed separately. \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2007S-Q022",
+    "revision": "5a651b50335f",
+    "answer": "c",
+    "summary": "Write-through updates both cache and main memory for a write.",
+    "steps": [
+      "Write-through updates both cache and main memory for a write.",
+      "Write-back initially changes the cached block and writes the dirty block to main memory when it is replaced. Neither policy supplies virtual-memory capacity or requires a program-managed interrupt on every cache miss."
+    ],
+    "takeaway": "Distinguish immediate write-through from deferred write-back.",
+    "optionText": {
+      "a": "Cache memory is used to compensate the difference in capacity between real storage\nand virtual storage.",
+      "b": "If a cache miss occurs in access to main memory, an interrupt occurs and data is\ntransferred from main memory to cache memory by the program.",
+      "c": "In one method, when executing a write instruction, data is written to both cache\nmemory and main memory.  In the other method, data is written only to a block in\ncache, and the modified block is written back into main memory only when it is\nreplaced.",
+      "d": "The need for cache memory is diminishing these days because of the significant\nimprovement in access speeds of semiconductor memory."
+    },
+    "imageDescription": "Q22. Which of the following is an appropriate description concerning cache memory?",
+    "reviewedAgainst": [
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"printedPage\":72,\"pdfPage\":77,\"lineIds\":[\"pdf-077-b002-l02\",\"pdf-077-b003-l00\",\"pdf-077-b004-l00\",\"pdf-077-b004-l01\",\"pdf-077-b004-l02\",\"pdf-077-b004-l03\",\"pdf-077-b005-l00\",\"pdf-077-b005-l01\",\"pdf-077-b005-l02\",\"pdf-077-b005-l03\"],\"textSha256\":\"bedbe0bc218f54571646bc3113986c7ef0992c306d5dfcc7d757bd0b353004d7\",\"checkedText\":\" \\n1) Write-through method \\nThat  method  reflects  the update  in main  memory  whenever  data is updated . \\nWhile certainty is high, main memory needs to be accessed for every process, so \\noperating speed is somewhat slow. \\n2) Write-back method \\nIn this method, data is not updated in main memory while data is updated in cache \\nmemory. Data is updated in main memory only when data from cache memory is \\nremoved. While its operating speed is fast, inconsistency in the data of main \\nmemory may occur at some point in time. \"}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2022S-Q022",
+    "revision": "7c667e76be9d",
+    "answer": "d",
+    "summary": "A valid five-row tape pattern has between one and four holes; all-zero and all-one patterns are invalid. There are 30 valid patterns among 32.",
+    "steps": [
+      "A valid five-row tape pattern has between one and four holes; all-zero and all-one patterns are invalid. There are 30 valid patterns among 32.",
+      "D negates the OR of the two invalid minterms. Compare all 32 inputs and the exact overbar scopes; B leaves E uncomplemented, so it is not the required detector."
+    ],
+    "takeaway": "D negates the OR of the two invalid minterms. Compare all 32 inputs and the exact overbar scopes; B leaves E uncomplemented, so it is not the required detector.",
+    "optionText": {
+      "a": "NOT(A*B*C*D*E) OR (A*B*C*D*E)",
+      "b": "(A OR B OR C OR D OR E) AND (NOT A OR NOT B OR NOT C OR NOT D OR E)",
+      "c": "(NOT A*NOT B*NOT C*NOT D*NOT E) OR NOT(A OR B OR C OR D OR E)",
+      "d": "NOT[(A*B*C*D*E) OR (NOT A*NOT B*NOT C*NOT D*NOT E)]"
+    },
+    "imageDescription": "Q22. A paper tape reader used as a computer input device reads a tape with five rows of holes as shown below. A hole punched in the tape indicates logic 1, and no hole indicates logic 0. As each hole pattern passes under the photocells, the pattern is translated into logic signals as a variable: A, B, C, D, or E. A valid pattern on the tape has at least one hole, and an invalid pattern has no hole or all five holes punched. Which of the following is a logical expression that has logic 1 when a valid pattern is being read and logic 0 when an invalid pattern is being read? Here, + represents logical OR, ∙ represents logical AND, and an overbar over A represents the negation of A in the logic expression. In the figure, • represents a punched hole on the tape. Diagram: five rows are read by photocells, with arrows to A, B, C, D, E from top to bottom. A punched hole denotes 1 and an unpunched position denotes 0. In the accessible options, AND and OR spell out the source dot and plus; parentheses preserve each complement bar.",
+    "reviewedAgainst": [
+      "{\"kind\":\"original-question\",\"sourceSha256\":\"5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1\",\"pdfPage\":224,\"imageSha256\":[\"75313eab1f2304fcf4c44abcf3938b15eb3c0aef8e971f3dca4820fcc38c1ad6\"],\"manualVisualReview\":\"Original source render independently inspected in Batch 4, 2026-10-22; printed key was visible, not a blind solve.\"}",
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":70,\"printedPage\":65,\"heading\":\"3-4-1 Logic Circuit / Main logical laws\",\"textSha256\":\"e2c456bf1965db7de7a9d16795b5cbeb1db7eb3098a8aaad5b31cb8bfc07fed8\",\"checkedExcerpt\":\"  • Absorption laws A ) B A ( A    A ) B A ( A    • De Morgan’s laws ) B ( ) A ( ) B A (       ) B ( ) A ( ) B A (       • Others A 0 A   0 0 A   1 1 A   A 1 A   1 ) A ( A    0 ) A ( A    A ) A (    (Returns to original by double negation) [Logical design of XOR circuit] 1) Focus on the parts where the output of the truth table is 1 and determine AND operation where the result is 1 on the basis of the input at that time. • When (X=0, Y=1): Y X   • When (X=1, Y=0): Y X   2) Create a circuit where the output will be 1 when either of the AND operations you determined is 1. In order to design such a circuit, determi\"}",
+      "{\"kind\":\"computed-source-option-truth-tables\",\"variables\":[\"A\",\"B\",\"C\",\"D\",\"E\"],\"matches\":[\"d\"],\"rows\":[[0,0,0,0,0,0,1,0,1,0],[0,0,0,0,1,1,1,1,0,1],[0,0,0,1,0,1,1,1,0,1],[0,0,0,1,1,1,1,1,0,1],[0,0,1,0,0,1,1,1,0,1],[0,0,1,0,1,1,1,1,0,1],[0,0,1,1,0,1,1,1,0,1],[0,0,1,1,1,1,1,1,0,1],[0,1,0,0,0,1,1,1,0,1],[0,1,0,0,1,1,1,1,0,1],[0,1,0,1,0,1,1,1,0,1],[0,1,0,1,1,1,1,1,0,1],[0,1,1,0,0,1,1,1,0,1],[0,1,1,0,1,1,1,1,0,1],[0,1,1,1,0,1,1,1,0,1],[0,1,1,1,1,1,1,1,0,1],[1,0,0,0,0,1,1,1,0,1],[1,0,0,0,1,1,1,1,0,1],[1,0,0,1,0,1,1,1,0,1],[1,0,0,1,1,1,1,1,0,1],[1,0,1,0,0,1,1,1,0,1],[1,0,1,0,1,1,1,1,0,1],[1,0,1,1,0,1,1,1,0,1],[1,0,1,1,1,1,1,1,0,1],[1,1,0,0,0,1,1,1,0,1],[1,1,0,0,1,1,1,1,0,1],[1,1,0,1,0,1,1,1,0,1],[1,1,0,1,1,1,1,1,0,1],[1,1,1,0,0,1,1,1,0,1],[1,1,1,0,1,1,1,1,0,1],[1,1,1,1,0,1,1,0,0,1],[1,1,1,1,1,0,1,1,0,0]]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2018A-Q024",
+    "revision": "fc721231466a",
+    "answer": "c",
+    "summary": "0x92 expands to P7..P0=10010010. The original explicitly states zero turns an LED ON in this common-anode circuit.",
+    "steps": [
+      "0x92 expands to P7..P0=10010010. The original explicitly states zero turns an LED ON in this common-anode circuit.",
+      "P0..P6 drive a..g; P7 drives the dot. Thus a,c,d,f,g ON and b,e,dot OFF. Comparing all eight states in every original drawing selects only C.",
+      "Do not apply active-high reasoning from a similar question. The reviewed option descriptions are editorial visual transcriptions, not text recovered from the source."
+    ],
+    "takeaway": "Do not apply active-high reasoning from a similar question. The reviewed option descriptions are editorial visual transcriptions, not text recovered from the source.",
+    "optionText": {
+      "a": "Segments a,b,c,d,g and dot ON; e,f OFF",
+      "b": "Segments b,c,f,g ON; a,d,e,dot OFF",
+      "c": "Segments a,c,d,f,g ON; b,e,dot OFF",
+      "d": "Segments a,c,d,e,f,g and dot ON; b OFF"
+    },
+    "imageDescription": "Q24. In a lighting circuit for an anode-common type LED with seven (7) segments, when 92 in hexadecimal is written out to the output port, which of the following is displayed? Here, P7 is the most significant bit (MSB), P0 is the least significant bit (LSB), and the LED lights up when the port output is 0. Diagram: P0, P1, P2, P3, P4, P5, P6 drive a, b, c, d, e, f, g respectively through resistors; P7 drives dot Dt. Segment positions are a top, b upper right, c lower right, d bottom, e lower left, f upper left, g center. Black fill means ON and outline means OFF. The common terminal connects to Vcc.",
+    "reviewedAgainst": [
+      "{\"kind\":\"original-question\",\"sourceSha256\":\"5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1\",\"pdfPage\":249,\"imageSha256\":[\"2be892ad326b811ad83d76cec3fdc1cd9f73144019a4051a85f98a0168f62096\"],\"manualVisualReview\":\"Original source render independently inspected in Batch 5, 2026-10-22; printed key was visible, not a blind solve.\"}",
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":103,\"printedPage\":97,\"heading\":\"5-2-1 Display / context only\",\"textSha256\":\"8fd4f1c7e89ea6048c99f9903e30871936b8f4c88327c70027d2ce6bddbf6ce1\",\"checkedExcerpt\":\" processing results outside computers. Output units include displays that show the results and printers that print the results. 5-2-1 Display Display is a device that displays images in color by combining three primary colors of light, namely RGB (Red, Green, Blue). Screen is an aggregation of points (dots), and the higher the density of dots, the higher the display quality of images. This is also called the resolution of the screen, and dpi (dots per inch) is used as a unit of resolution.\"}",
+      "{\"kind\":\"active-low-segment-enumeration\",\"valueHex\":\"92\",\"bitsP7ToP0\":\"10010010\",\"lit\":[\"a\",\"c\",\"d\",\"f\",\"g\"],\"sourceOptionPatterns\":{\"a\":[\"a\",\"b\",\"c\",\"d\",\"g\",\"dot\"],\"b\":[\"b\",\"c\",\"f\",\"g\"],\"c\":[\"a\",\"c\",\"d\",\"f\",\"g\"],\"d\":[\"a\",\"c\",\"d\",\"e\",\"f\",\"g\",\"dot\"]}}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2016A-Q001",
+    "revision": "a6a0d180068d",
+    "answer": "a",
+    "summary": "Subtracting 1 flips the rightmost 1 to 0 and the following zeros to ones.",
+    "steps": [
+      "Subtracting 1 flips the rightmost 1 to 0 and the following zeros to ones.",
+      "A XOR (A-1) marks the rightmost 1 and all lower positions; AND with A keeps only the rightmost original 1."
+    ],
+    "takeaway": "A XOR (A-1) marks the rightmost 1 and all lower positions; AND with A keeps only the rightmost original 1.",
+    "optionText": {
+      "a": "AND (logical product)",
+      "b": "NAND (negative logical product)",
+      "c": "OR (logical sum)",
+      "d": "XOR (exclusive logical sum)"
+    },
+    "imageDescription": "Q1. If a given bit string contains at least one 1-bit, the algorithm below leaves the rightmost 1-bit unchanged but makes all the others 0. For example, if the given bit string is 00101000, the result will be 00001000. Which of the following is the appropriate logical operation to be filled in D? Step 1: By regarding the given bit string A as an unsigned binary number, let B be the result of subtracting 1 from A. Step 2: Calculate the XOR (exclusive logical sum) of A and B, and let C be the result. Step 3: Calculate the D of A and C, then set the result back to A.",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":\"A AND (A XOR (A-1))\",\"derivation\":[\"Subtracting 1 flips the rightmost 1 to 0 and the following zeros to ones.\",\"A XOR (A-1) marks the rightmost 1 and all lower positions; AND with A keeps only the rightmost original 1.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2016A-Q012",
+    "revision": "5268d89dab72",
+    "answer": "b",
+    "summary": "Using weighted hit/miss times: A=15 ns; B=30 ns; C=0.6×20+0.4×70=40 ns; D=0.9×10+0.1×80=17 ns.",
+    "steps": [
+      "Using weighted hit/miss times: A=15 ns; B=30 ns; C=0.6×20+0.4×70=40 ns; D=0.9×10+0.1×80=17 ns.",
+      "Shortest to longest is A, D, B, C. Even if a miss includes the extra cache lookup, the same ordering results."
+    ],
+    "takeaway": "Shortest to longest is A, D, B, C. Even if a miss includes the extra cache lookup, the same ordering results.",
+    "optionText": {
+      "a": "A, B, C, D",
+      "b": "A, D, B, C",
+      "c": "C, D, A, B",
+      "d": "D, C, A, B"
+    },
+    "imageDescription": "Q12. Which of the following lists contain A through D in the order of shorter effective memory access time of the main memory? Table columns are system; cache use; cache access time in nanoseconds; cache hit ratio in percent; main memory access time in nanoseconds. A: no cache, dash, dash, 15. B: no cache, dash, dash, 30. C: yes, 20, 60, 70. D: yes, 10, 90, 80. The source dashes mean not applicable.",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":\"A,D,B,C\",\"derivation\":[\"Using weighted hit/miss times: A=15 ns; B=30 ns; C=0.6×20+0.4×70=40 ns; D=0.9×10+0.1×80=17 ns.\",\"Shortest to longest is A, D, B, C. Even if a miss includes the extra cache lookup, the same ordering results.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2014S-Q015",
+    "revision": "e8c95e235a8f",
+    "answer": "b",
+    "summary": "Using weighted hit/miss times: A=15 ns; B=30 ns; C=0.6×20+0.4×70=40 ns; D=0.9×10+0.1×80=17 ns.",
+    "steps": [
+      "Using weighted hit/miss times: A=15 ns; B=30 ns; C=0.6×20+0.4×70=40 ns; D=0.9×10+0.1×80=17 ns.",
+      "Shortest to longest is A, D, B, C. Even if a miss includes the extra cache lookup, the same ordering results."
+    ],
+    "takeaway": "Shortest to longest is A, D, B, C. Even if a miss includes the extra cache lookup, the same ordering results.",
+    "optionText": {
+      "a": "A, B, C, D",
+      "b": "A, D, B, C",
+      "c": "C, D, A, B",
+      "d": "D, C, A, B"
+    },
+    "imageDescription": "Q15. Which of the following is the list that arranges A through D in order of effective access time of main memory from shortest to longest? Table columns are system; cache use; cache access time in nanoseconds; cache hit ratio in percent; main memory access time in nanoseconds. A: no cache, dash, dash, 15. B: no cache, dash, dash, 30. C: yes, 20, 60, 70. D: yes, 10, 90, 80. The source dashes mean not applicable.",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":\"A,D,B,C\",\"derivation\":[\"Using weighted hit/miss times: A=15 ns; B=30 ns; C=0.6×20+0.4×70=40 ns; D=0.9×10+0.1×80=17 ns.\",\"Shortest to longest is A, D, B, C. Even if a miss includes the extra cache lookup, the same ordering results.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2010S-Q005",
+    "revision": "63b22c84be0e",
+    "answer": "c",
+    "summary": "xy+w=0 forces xy=0 and w=0. Then xz+w=1 forces x=1 and z=1.",
+    "steps": [
+      "xy+w=0 forces xy=0 and w=0. Then xz+w=1 forces x=1 and z=1.",
+      "With x=1 and xy=0, y=0. Thus (w,x,y,z)=(0,1,0,1)."
+    ],
+    "takeaway": "With x=1 and xy=0, y=0. Thus (w,x,y,z)=(0,1,0,1).",
+    "optionText": {
+      "a": "w=0, x=0, y=1, z=0",
+      "b": "w=0, x=1, y=0, z=0",
+      "c": "w=0, x=1, y=0, z=1",
+      "d": "w=1, x=1, y=0, z=1"
+    },
+    "imageDescription": "Q5. When the simultaneous Boolean equations x AND y = 0; (x AND z) OR w = 1; (x AND y) OR w = 0 hold, which is the correct solution? Source plus means OR and dot means AND. Each answer row lists w, x, y, z in that order.",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":[0,1,0,1],\"derivation\":[\"xy+w=0 forces xy=0 and w=0. Then xz+w=1 forces x=1 and z=1.\",\"With x=1 and xy=0, y=0. Thus (w,x,y,z)=(0,1,0,1).\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2009S-Q003",
+    "revision": "9db073a22431",
+    "answer": "b",
+    "summary": "Let x have2n binary digits1010...10, n>=1. Because its least bit is0, x/2 is0101...01; adding gives2n ones, namely2^(2n)-1.",
+    "steps": [
+      "Let x have2n binary digits1010...10, n>=1. Because its least bit is0, x/2 is0101...01; adding gives2n ones, namely2^(2n)-1.",
+      "Equivalently x=2*sum(4^k,k=0..n-1)=2*(4^n-1)/3, so(3/2)*x=4^n-1. This algebra proves the identity for all positive n; finite numerical cases only provide regression checks.",
+      "The original four alternatives differ in whether exponent2n or2n+1 is used and whether1 is subtracted. Only B holds. Preserve this occurrence separately from the mathematically identical problem in another year."
+    ],
+    "takeaway": "The original four alternatives differ in whether exponent2n or2n+1 is used and whether1 is subtracted. Only B holds. Preserve this occurrence separately from the mathematically identical problem in another year.",
+    "optionText": {
+      "a": "x+x/2=2^(2n)",
+      "b": "x+x/2=2^(2n)-1",
+      "c": "x+x/2=2^(2n+1)",
+      "d": "x+x/2=2^(2n+1)-1"
+    },
+    "imageDescription": "Q3. A natural number x is represented by the 2n-digit binary pattern 1010...10, with n pairs of 10. Which equation holds? All four source equations have x plus the fraction x over 2 on the left. Parentheses in the accessible exponent delimit its entire scope; subtraction after the power remains outside the exponent.",
+    "reviewedAgainst": [
+      "{\"kind\":\"original-question\",\"sourceSha256\":\"5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1\",\"pdfPage\":303,\"imageSha256\":[\"31369316c9b5569ff6271e227d82b57ba783fb76d1662cf3e8c535012724712a\"],\"manualVisualReview\":\"Original source render independently inspected in Batch 5, 2026-10-22; printed key was visible, not a blind solve.\"}",
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":29,\"printedPage\":24,\"heading\":\"2-2 Radix and Radix Conversion / binary weights\",\"textSha256\":\"27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419\",\"checkedExcerpt\":\"24 with two numbers, 0 and 1. (101.1)2 = 1×22 + 0×21 + 1×20 + 1×2−1 = (5.5)10 * 2 in ( )2 shows that it is a binary number. Decimal numbers and their corresponding binary numbers are as shown below. Binary numbers can use only two numbers of 0 and 1 for one digit. Therefore, the number of digits quickly becomes large, compared with decimal numbers. Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Binary numbers 0 1 10 11 100 101 110 111 1000 1001 1010 ... Figure 1-6 Decimal numbers and corresponding binary numbers (2) Octal numbers Octal numbers are numerical values that are represented by using eight numbers from 0 through 7 an\"}",
+      "{\"kind\":\"computed-exact-source-options\",\"matches\":[\"b\"],\"rows\":[{\"values\":{\"n\":1,\"x\":2},\"result\":\"3\",\"choices\":{\"a\":\"4\",\"b\":\"3\",\"c\":\"8\",\"d\":\"7\"},\"matches\":[\"b\"]},{\"values\":{\"n\":2,\"x\":10},\"result\":\"15\",\"choices\":{\"a\":\"16\",\"b\":\"15\",\"c\":\"32\",\"d\":\"31\"},\"matches\":[\"b\"]},{\"values\":{\"n\":3,\"x\":42},\"result\":\"63\",\"choices\":{\"a\":\"64\",\"b\":\"63\",\"c\":\"128\",\"d\":\"127\"},\"matches\":[\"b\"]},{\"values\":{\"n\":4,\"x\":170},\"result\":\"255\",\"choices\":{\"a\":\"256\",\"b\":\"255\",\"c\":\"512\",\"d\":\"511\"},\"matches\":[\"b\"]},{\"values\":{\"n\":5,\"x\":682},\"result\":\"1023\",\"choices\":{\"a\":\"1024\",\"b\":\"1023\",\"c\":\"2048\",\"d\":\"2047\"},\"matches\":[\"b\"]},{\"values\":{\"n\":6,\"x\":2730},\"result\":\"4095\",\"choices\":{\"a\":\"4096\",\"b\":\"4095\",\"c\":\"8192\",\"d\":\"8191\"},\"matches\":[\"b\"]},{\"values\":{\"n\":7,\"x\":10922},\"result\":\"16383\",\"choices\":{\"a\":\"16384\",\"b\":\"16383\",\"c\":\"32768\",\"d\":\"32767\"},\"matches\":[\"b\"]},{\"values\":{\"n\":8,\"x\":43690},\"result\":\"65535\",\"choices\":{\"a\":\"65536\",\"b\":\"65535\",\"c\":\"131072\",\"d\":\"131071\"},\"matches\":[\"b\"]},{\"values\":{\"n\":9,\"x\":174762},\"result\":\"262143\",\"choices\":{\"a\":\"262144\",\"b\":\"262143\",\"c\":\"524288\",\"d\":\"524287\"},\"matches\":[\"b\"]},{\"values\":{\"n\":10,\"x\":699050},\"result\":\"1048575\",\"choices\":{\"a\":\"1048576\",\"b\":\"1048575\",\"c\":\"2097152\",\"d\":\"2097151\"},\"matches\":[\"b\"]},{\"values\":{\"n\":11,\"x\":2796202},\"result\":\"4194303\",\"choices\":{\"a\":\"4194304\",\"b\":\"4194303\",\"c\":\"8388608\",\"d\":\"8388607\"},\"matches\":[\"b\"]},{\"values\":{\"n\":12,\"x\":11184810},\"result\":\"16777215\",\"choices\":{\"a\":\"16777216\",\"b\":\"16777215\",\"c\":\"33554432\",\"d\":\"33554431\"},\"matches\":[\"b\"]},{\"values\":{\"n\":13,\"x\":44739242},\"result\":\"67108863\",\"choices\":{\"a\":\"67108864\",\"b\":\"67108863\",\"c\":\"134217728\",\"d\":\"134217727\"},\"matches\":[\"b\"]},{\"values\":{\"n\":14,\"x\":178956970},\"result\":\"268435455\",\"choices\":{\"a\":\"268435456\",\"b\":\"268435455\",\"c\":\"536870912\",\"d\":\"536870911\"},\"matches\":[\"b\"]},{\"values\":{\"n\":15,\"x\":715827882},\"result\":\"1073741823\",\"choices\":{\"a\":\"1073741824\",\"b\":\"1073741823\",\"c\":\"2147483648\",\"d\":\"2147483647\"},\"matches\":[\"b\"]},{\"values\":{\"n\":16,\"x\":2863311530},\"result\":\"4294967295\",\"choices\":{\"a\":\"4294967296\",\"b\":\"4294967295\",\"c\":\"8589934592\",\"d\":\"8589934591\"},\"matches\":[\"b\"]}],\"units\":null}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2008A-Q025",
+    "revision": "33246ce5cffd",
+    "answer": "d",
+    "summary": "Use the weighted access convention from the textbook: 15=10h+60(1-h).",
+    "steps": [
+      "Use the weighted access convention from the textbook: 15=10h+60(1-h).",
+      "50h=45, so h=0.9. If a different miss-time convention is imposed, review the wording before publication."
+    ],
+    "takeaway": "50h=45, so h=0.9. If a different miss-time convention is imposed, review the wording before publication.",
+    "optionText": {
+      "a": "0.1",
+      "b": "0.17",
+      "c": "0.83",
+      "d": "0.9"
+    },
+    "imageDescription": "Q25. A system has a main memory access time of 60 nanoseconds (ns) and a cache memory access time of 10 ns. When the effective access time for accessing the main memory via the cache memory is 15 ns, what is the hit ratio of the cache memory?",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":0.9,\"derivation\":[\"Use the weighted access convention from the textbook: 15=10h+60(1-h).\",\"50h=45, so h=0.9. If a different miss-time convention is imposed, review the wording before publication.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2007A-Q002",
+    "revision": "483e1e70f86b",
+    "answer": "c",
+    "summary": "A rational fraction terminates in radix 8 only if its reduced denominator divides some power of 8.",
+    "steps": [
+      "A rational fraction terminates in radix 8 only if its reduced denominator divides some power of 8.",
+      "0.5=1/2 satisfies this. The other choices have a factor 5 in the denominator, so they recur in octal."
+    ],
+    "takeaway": "0.5=1/2 satisfies this. The other choices have a factor 5 in the denominator, so they recur in octal.",
+    "optionText": {
+      "a": "0.3",
+      "b": "0.4",
+      "c": "0.5",
+      "d": "0.8"
+    },
+    "imageDescription": "Q2. Which of the following decimal fractions becomes a finite fraction in an octal representation?",
+    "reviewedAgainst": [
+      "{\"kind\":\"calculation\",\"result\":\"0.5\",\"derivation\":[\"A rational fraction terminates in radix 8 only if its reduced denominator divides some power of 8.\",\"0.5=1/2 satisfies this. The other choices have a factor 5 in the denominator, so they recur in octal.\"]}"
+    ]
+  },
+  {
+    "questionId": "HIST-TECH01-2007A-Q003",
+    "revision": "af0ffb1853c7",
+    "answer": "b",
+    "summary": "Let x have2n binary digits1010...10, n>=1. Because its least bit is0, x/2 is0101...01; adding gives2n ones, namely2^(2n)-1.",
+    "steps": [
+      "Let x have2n binary digits1010...10, n>=1. Because its least bit is0, x/2 is0101...01; adding gives2n ones, namely2^(2n)-1.",
+      "Equivalently x=2*sum(4^k,k=0..n-1)=2*(4^n-1)/3, so(3/2)*x=4^n-1. This algebra proves the identity for all positive n; finite numerical cases only provide regression checks.",
+      "The original four alternatives differ in whether exponent2n or2n+1 is used and whether1 is subtracted. Only B holds. Preserve this occurrence separately from the mathematically identical problem in another year."
+    ],
+    "takeaway": "The original four alternatives differ in whether exponent2n or2n+1 is used and whether1 is subtracted. Only B holds. Preserve this occurrence separately from the mathematically identical problem in another year.",
+    "optionText": {
+      "a": "x+x/2=2^(2n)",
+      "b": "x+x/2=2^(2n)-1",
+      "c": "x+x/2=2^(2n+1)",
+      "d": "x+x/2=2^(2n+1)-1"
+    },
+    "imageDescription": "Q3. A natural number x is represented by the 2n-digit binary pattern 1010...10, with n pairs of 10. Which equation holds? All four source equations have x plus the fraction x over 2 on the left. Parentheses in the accessible exponent delimit its entire scope; subtraction after the power remains outside the exponent.",
+    "reviewedAgainst": [
+      "{\"kind\":\"original-question\",\"sourceSha256\":\"5c74e109ff2129f70189b55e79e7af3a806183cf0c1aa8082195aa942d1c16b1\",\"pdfPage\":320,\"imageSha256\":[\"4ebdf8dd11ab94b00eb5afe3a789f698fed2a30e5176aa8ae1ffd5d0bdfe539e\"],\"manualVisualReview\":\"Original source render independently inspected in Batch 5, 2026-10-22; printed key was visible, not a blind solve.\"}",
+      "{\"kind\":\"textbook-source\",\"sourceSha256\":\"1e1f2ec364a52751333b1e3ab2a2f2548e9345cd06a7c300b8a7075fb51c3d1b\",\"pdfPage\":29,\"printedPage\":24,\"heading\":\"2-2 Radix and Radix Conversion / binary weights\",\"textSha256\":\"27f62e8f5e0196aa368afe92f1b39267bcff8606f5f196206730d0034374c419\",\"checkedExcerpt\":\"24 with two numbers, 0 and 1. (101.1)2 = 1×22 + 0×21 + 1×20 + 1×2−1 = (5.5)10 * 2 in ( )2 shows that it is a binary number. Decimal numbers and their corresponding binary numbers are as shown below. Binary numbers can use only two numbers of 0 and 1 for one digit. Therefore, the number of digits quickly becomes large, compared with decimal numbers. Decimal numbers 0 1 2 3 4 5 6 7 8 9 10 ... Binary numbers 0 1 10 11 100 101 110 111 1000 1001 1010 ... Figure 1-6 Decimal numbers and corresponding binary numbers (2) Octal numbers Octal numbers are numerical values that are represented by using eight numbers from 0 through 7 an\"}",
+      "{\"kind\":\"computed-exact-source-options\",\"matches\":[\"b\"],\"rows\":[{\"values\":{\"n\":1,\"x\":2},\"result\":\"3\",\"choices\":{\"a\":\"4\",\"b\":\"3\",\"c\":\"8\",\"d\":\"7\"},\"matches\":[\"b\"]},{\"values\":{\"n\":2,\"x\":10},\"result\":\"15\",\"choices\":{\"a\":\"16\",\"b\":\"15\",\"c\":\"32\",\"d\":\"31\"},\"matches\":[\"b\"]},{\"values\":{\"n\":3,\"x\":42},\"result\":\"63\",\"choices\":{\"a\":\"64\",\"b\":\"63\",\"c\":\"128\",\"d\":\"127\"},\"matches\":[\"b\"]},{\"values\":{\"n\":4,\"x\":170},\"result\":\"255\",\"choices\":{\"a\":\"256\",\"b\":\"255\",\"c\":\"512\",\"d\":\"511\"},\"matches\":[\"b\"]},{\"values\":{\"n\":5,\"x\":682},\"result\":\"1023\",\"choices\":{\"a\":\"1024\",\"b\":\"1023\",\"c\":\"2048\",\"d\":\"2047\"},\"matches\":[\"b\"]},{\"values\":{\"n\":6,\"x\":2730},\"result\":\"4095\",\"choices\":{\"a\":\"4096\",\"b\":\"4095\",\"c\":\"8192\",\"d\":\"8191\"},\"matches\":[\"b\"]},{\"values\":{\"n\":7,\"x\":10922},\"result\":\"16383\",\"choices\":{\"a\":\"16384\",\"b\":\"16383\",\"c\":\"32768\",\"d\":\"32767\"},\"matches\":[\"b\"]},{\"values\":{\"n\":8,\"x\":43690},\"result\":\"65535\",\"choices\":{\"a\":\"65536\",\"b\":\"65535\",\"c\":\"131072\",\"d\":\"131071\"},\"matches\":[\"b\"]},{\"values\":{\"n\":9,\"x\":174762},\"result\":\"262143\",\"choices\":{\"a\":\"262144\",\"b\":\"262143\",\"c\":\"524288\",\"d\":\"524287\"},\"matches\":[\"b\"]},{\"values\":{\"n\":10,\"x\":699050},\"result\":\"1048575\",\"choices\":{\"a\":\"1048576\",\"b\":\"1048575\",\"c\":\"2097152\",\"d\":\"2097151\"},\"matches\":[\"b\"]},{\"values\":{\"n\":11,\"x\":2796202},\"result\":\"4194303\",\"choices\":{\"a\":\"4194304\",\"b\":\"4194303\",\"c\":\"8388608\",\"d\":\"8388607\"},\"matches\":[\"b\"]},{\"values\":{\"n\":12,\"x\":11184810},\"result\":\"16777215\",\"choices\":{\"a\":\"16777216\",\"b\":\"16777215\",\"c\":\"33554432\",\"d\":\"33554431\"},\"matches\":[\"b\"]},{\"values\":{\"n\":13,\"x\":44739242},\"result\":\"67108863\",\"choices\":{\"a\":\"67108864\",\"b\":\"67108863\",\"c\":\"134217728\",\"d\":\"134217727\"},\"matches\":[\"b\"]},{\"values\":{\"n\":14,\"x\":178956970},\"result\":\"268435455\",\"choices\":{\"a\":\"268435456\",\"b\":\"268435455\",\"c\":\"536870912\",\"d\":\"536870911\"},\"matches\":[\"b\"]},{\"values\":{\"n\":15,\"x\":715827882},\"result\":\"1073741823\",\"choices\":{\"a\":\"1073741824\",\"b\":\"1073741823\",\"c\":\"2147483648\",\"d\":\"2147483647\"},\"matches\":[\"b\"]},{\"values\":{\"n\":16,\"x\":2863311530},\"result\":\"4294967295\",\"choices\":{\"a\":\"4294967296\",\"b\":\"4294967295\",\"c\":\"8589934592\",\"d\":\"8589934591\"},\"matches\":[\"b\"]}],\"units\":null}"
+    ]
   }
 ]

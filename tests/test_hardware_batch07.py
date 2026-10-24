@@ -4,6 +4,18 @@ import subprocess
 import unittest
 from test_hardware_batch02 import fixture
 import hardware_batch07 as b
+import release_7 as release
+from contextlib import nullcontext
+from functools import wraps
+
+
+def archived_preparation(test):
+    @wraps(test)
+    def run(*args,**kwargs):
+        with release.preparation_fixture() if (release.FOLDER/'state.json').exists() else nullcontext():
+            return test(*args,**kwargs)
+    return run
+
 import approval_batch07 as final
 
 
@@ -85,9 +97,10 @@ class Batch07Tests(unittest.TestCase):
 
     def test_publisher_rejects_non_dry_run_before_loading_any_source(self):
         result=subprocess.run(['node','node_modules/tsx/dist/cli.mjs','scripts/publish-historical-questions.ts','--batch','7'],cwd=b.h.ROOT,capture_output=True,text=True)
-        self.assertNotEqual(result.returncode,0);self.assertIn('preparation-only',result.stderr)
+        self.assertNotEqual(result.returncode,0);self.assertIn('publication-gate',result.stderr)
 
     @unittest.skipUnless((b.WORK/'preview/manifest.json').exists(),'Private source package absent from clones')
+    @archived_preparation
     def test_actual_scope_immutability_and_final_equality(self):
         m=b.check();ledger,records,before,current,expected,published=b.load_context()
         self.assertEqual(len(m['questionIds']),31);self.assertEqual(len(published),656)
