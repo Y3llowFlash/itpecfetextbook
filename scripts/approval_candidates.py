@@ -172,6 +172,9 @@ def prepare():
 
 
 def check(publisher=False,batch=1):
+    if batch==7:
+        from approval_batch07 import check
+        return check(publisher)
     if batch==6:
         if publisher:
             import release_6
@@ -410,8 +413,8 @@ def prepare_batch02():
     print('Prepared exact 40-question Batch 2 owner package; zero approvals. node scripts/question-review-server.mjs --approval-candidates --batch2')
 
 
-def validate_final_package(manifest,expected_entries,concepts,highlight_report,context,*,batch=2):
-    if not manifest or manifest.get('schema')!='itpec-final-approval-candidates-v1' or manifest.get('batch')!=batch or manifest.get('privateOnly') is not True or manifest.get('readOnly') is not True or manifest.get('publicationApprovalGranted') is not False or manifest.get('questionIds')!=context['questionIds'] or manifest.get('conceptCounts')!=context['conceptCounts'] or len(manifest.get('candidates',[]))!=40:
+def validate_final_package(manifest,expected_entries,concepts,highlight_report,context,*,batch=2,expected_count=40):
+    if not manifest or manifest.get('schema')!='itpec-final-approval-candidates-v1' or manifest.get('batch')!=batch or manifest.get('privateOnly') is not True or manifest.get('readOnly') is not True or manifest.get('publicationApprovalGranted') is not False or manifest.get('questionIds')!=context['questionIds'] or manifest.get('conceptCounts')!=context['conceptCounts'] or len(manifest.get('candidates',[]))!=expected_count:
         raise ValueError(f'Missing or expanded exact Batch {batch} owner package')
     if manifest['candidates']!=expected_entries or manifest.get('conceptDefinitions')!=concepts or manifest.get('highlightIntegration')!=highlight_report:raise ValueError('Candidate content, context or highlight definition is stale')
     fingerprint=qa.object_hash({'ids':manifest['questionIds'],'candidates':expected_entries,'conceptDefinitions':concepts,'highlightIntegration':highlight_report,'sourceSha256':context['sourceSha256'],'textbookSha256':context['textbookSha256']})
@@ -640,11 +643,11 @@ def validate_batch03_reviews(context,records,reviews,concepts,associations,*,pre
     return rows,report
 
 
-def batch03_entries(context,records,reviews,concepts,associations,source_rows,report,*,root=None):
+def batch03_entries(context,records,reviews,concepts,associations,source_rows,report,*,root=None,expected_count=40):
     root=root or batch03_folder();ids=context['questionIds']
     bank=[q for q in h.read_json(root/'before/batch/preview/app/src/content/pilot-bank.json') if q['id'] in ids]
     answers=[e for e in h.read_json(root/'before/batch/preview/app/src/content/explanations.json') if e['questionId'] in ids]
-    entries=build_entries(records,reviews,ids,associations,bank,answers,expected_count=40)
+    entries=build_entries(records,reviews,ids,associations,bank,answers,expected_count=expected_count)
     for e in entries:
         c=next(c for c in concepts if c['id']==e['review']['mapping']['conceptId']);row=next(r for r in source_rows if r['id']==e['id'])
         highlight=next((r for r in report if r['conceptId']==c['id']),None)
@@ -971,8 +974,11 @@ def write_batch04_report(manifest):
 
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('command',choices=['prepare','check']);parser.add_argument('--publisher-check',action='store_true');parser.add_argument('--batch',type=int,choices=[1,2,3,4,5,6],default=1);args=parser.parse_args()
-    if args.command=='prepare' and args.batch==6:
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('command',choices=['prepare','check']);parser.add_argument('--publisher-check',action='store_true');parser.add_argument('--batch',type=int,choices=[1,2,3,4,5,6,7],default=1);args=parser.parse_args()
+    if args.command=='prepare' and args.batch==7:
+        from approval_batch07 import prepare
+        prepare()
+    elif args.command=='prepare' and args.batch==6:
         from approval_batch06 import prepare
         prepare()
     elif args.command=='prepare' and args.batch==5:
@@ -982,8 +988,8 @@ if __name__=='__main__':
     else:
         manifest=check(args.publisher_check,args.batch)
         live=h.read_json(h.WORK/'reviews.json')
-        folder=__import__('approval_batch06').folder() if args.batch==6 else __import__('approval_batch05').folder() if args.batch==5 else batch04_folder() if args.batch==4 else batch03_folder() if args.batch==3 else batch02_folder() if args.batch==2 else editorial.folder()
-        released=h.read_json(folder/'preparation-inputs.json')['releasedQuestionIds'] if args.batch in [2,3,4,5,6] else []
+        folder=__import__('approval_batch07').folder() if args.batch==7 else __import__('approval_batch06').folder() if args.batch==6 else __import__('approval_batch05').folder() if args.batch==5 else batch04_folder() if args.batch==4 else batch03_folder() if args.batch==3 else batch02_folder() if args.batch==2 else editorial.folder()
+        released=h.read_json(folder/'preparation-inputs.json')['releasedQuestionIds'] if args.batch in [2,3,4,5,6,7] else []
         print(json.dumps({'questionIds':manifest['questionIds'],'candidates':len(manifest['candidates']),'unapproved':sum(live[qid]['approval']['status']=='unapproved' for qid in manifest['questionIds']),'publicationApprovalGranted':False,
             'releasedQuestionIds':released,'conceptDefinitions':manifest.get('conceptDefinitions',[]) if args.publisher_check else None,
             'galleryAssets':manifest['galleryAssets'] if not args.publisher_check else None,'directory':str(folder)},ensure_ascii=False))

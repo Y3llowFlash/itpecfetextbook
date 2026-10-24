@@ -72,7 +72,8 @@ def validate_decisions(records,before,ledger,pages,published,concepts,nodes,*,sp
     if ledger.get('schema')!=spec['schema'] or ledger.get('baseline')!=spec['baseline'] or ledger.get('sourceSha256')!=audit.SOURCE_SHA or ledger.get('bookSha256')!=audit.BOOK_SHA:
         raise ValueError('Unrecognized preparation source/baseline')
     entries=ledger.get('entries',[]);ids=[e['id'] for e in entries];index={r['id']:r for r in records}
-    if len(entries)!=40 or len(set(ids))!=40 or {e.get('pdfPage') for e in entries}!=spec['pages']:raise ValueError('Exact 40-question scope required')
+    count=spec.get('count',40)
+    if not isinstance(count,int) or not 1<=count<=40 or len(entries)!=count or len(set(ids))!=count or {e.get('pdfPage') for e in entries}!=spec['pages']:raise ValueError(f'Exact {count}-question scope required')
     concept_index={c['id']:c for c in concepts};node_index={n['id']:n for n in nodes}
     if len(concept_index)!=len(concepts):raise ValueError('Duplicate concept IDs')
     for e in entries:

@@ -107,7 +107,22 @@ class Release6ArchiveTests(unittest.TestCase):
             self.assertEqual(public.read_bytes(),frozen)
             self.assertEqual(f.check()['candidateSetFingerprint'],r.SET_FP)
         self.assertEqual(public.read_bytes(),actual)
-        if r.RECEIPT.exists():self.assertEqual(r.verify_public()['total'],656)
+        if r.RECEIPT.exists():
+            # Later authorized private editorial batches can change unapproved
+            # reviews. Check the historical release against its frozen reviews
+            # plus its exact approval receipt, without weakening live gates or
+            # resetting the native catalog for the test.
+            released=h.read_json(r.FOLDER/'before-reviews.json')
+            live=h.read_json(h.WORK/'reviews.json')
+            for approval in h.read_json(r.FOLDER/'approvals.json')['records']:
+                value={k:v for k,v in approval.items() if k!='id'}
+                self.assertEqual(live[approval['id']]['approval'],value)
+                released[approval['id']]['approval']=value
+            original_read=h.read_json
+            def frozen_reviews(path,*args):
+                return copy.deepcopy(released) if Path(path)==h.WORK/'reviews.json' else original_read(path,*args)
+            with patch.object(h,'read_json',side_effect=frozen_reviews):
+                self.assertEqual(r.verify_public()['total'],656)
 
 
 if __name__=='__main__':unittest.main()

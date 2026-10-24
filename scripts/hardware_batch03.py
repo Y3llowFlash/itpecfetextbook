@@ -96,7 +96,7 @@ def payload(ledger,records,reviews,published,*,collection='batch03',selection_co
     return bank,answers,concepts,links
 
 
-def preview_overlay(bank,concepts,published,*,app=None,prefix=None,collection='batch03',label='Batch 3'):
+def preview_overlay(bank,concepts,published,*,app=None,prefix=None,collection='batch03',label='Batch 3',selection_count=40):
     APP=app or globals()['APP']
     PREFIX=prefix or globals()['PREFIX']
     APP.mkdir(parents=True,exist_ok=True);pilot.overlay(APP,PREFIX)
@@ -154,6 +154,12 @@ import candidates from '../content/owner-review.json';
         for relative in ['src/lib/models.ts','src/components/Practice.tsx','src/lib/question-highlights.ts','src/pages/index.astro','src/pages/review.astro']:
             file=APP/relative
             file.write_text(file.read_text('utf8').replace('batch03',collection).replace('Batch 3',label),encoding='utf8')
+    if selection_count!=40:
+        for relative in ['src/pages/index.astro','src/pages/review.astro']:
+            file=APP/relative
+            text=file.read_text('utf8')
+            for old,new in [('40 new private',f'{selection_count} new private'),('bank.length-40',f'bank.length-{selection_count}'),('All 40 ',f'All {selection_count} '),('40 technically',f'{selection_count} technically')]:text=text.replace(old,new)
+            file.write_text(text,encoding='utf8')
 
 
 def assets_for(bank,*,app=None):
